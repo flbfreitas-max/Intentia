@@ -17,5 +17,5 @@ estiver em audio.mp3 — nenhuma outra mudança é necessária.
 Os arquivos audio.mp3 atuais são placeholders com voz sintética
 (MBROLA br1), gerados em 21/07/2026 só para o fluxo funcionar.
 
-Durações-alvo: Dia 0 ≈ 1min30 · Dia 8 ≈ 12 min · Dia 14 ≈ 6-7 min ·
-Dia 28 ≈ 4-5 min (mais lento, com pausas) · demais ≈ 5-6 min.
+Durações-alvo: Etapa 0 ≈ 1min30 · Etapa 8 ≈ 12 min · Etapa 14 ≈ 6-7 min ·
+Etapa 28 ≈ 4-5 min (mais lento, com pausas) · demais ≈ 5-6 min.

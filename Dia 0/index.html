@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Dia 0 · Bem-vindo à travessia</title>
+<title>Intentia · Etapa 0 · Bem-vindo à travessia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -160,6 +160,24 @@
   footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:13px}
   footer .assinatura{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--verde-900);margin-bottom:6px}
 </style>
+<style>
+/* Player compacto (ajuste 21/07/2026): ~50% da altura original */
+.player{padding:12px 18px}
+.player-topo{margin-bottom:8px}
+.player-titulo{font-size:18px;line-height:1.25;margin-bottom:2px}
+.player-sub{margin-bottom:8px;font-size:12px}
+.waveform{height:20px;margin-bottom:6px;padding:2px 0}
+.player-tempo{margin-bottom:6px;font-size:11px}
+.player-controles{gap:14px}
+.ctrl-play{width:40px;height:40px}
+.ctrl-play svg{width:16px;height:16px}
+.ctrl-btn{padding:4px}
+.ctrl-btn svg{width:16px;height:16px}
+.player-extras{margin-top:8px;padding-top:8px}
+.vel-btn{padding:2px 8px;font-size:11px}
+.transcricao-btn{padding:5px 10px;font-size:11.5px}
+.ctrl-play{width:36px;height:36px}
+</style>
 </head>
 <body>
 <!--intentia-nav:start--><style>
@@ -203,7 +221,7 @@
   .intnav .intnav-pill .lbl{display:none}
   .intnav .intnav-pill{padding:6px 10px}
 }
-</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><span class="cur">Dia 0</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html" class="atual">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="personagens.html">Personagens</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><span class="intnav-pill disabled">←<span class="lbl"> Início</span></span><a class="intnav-pill" href="../Dia 1/index.html" title="Dia 1 (tecla →)"><span class="lbl">Dia 1 </span>→</a></span></nav><script>
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Jornada — início da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Jornada</a><span class="sep sep-capa">›</span><span class="cur">Etapa 0</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html" class="atual">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="personagens.html">Personagens</a></div></div><a class="intnav-jornada" href="../index.html">Jornada</a><span class="intnav-pill disabled">←<span class="lbl"> Início</span></span><a class="intnav-pill" href="../Dia 1/index.html" title="Etapa 1 (tecla →)"><span class="lbl">Etapa 1 </span>→</a></span></nav><script>
 (function(){
   // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
   document.addEventListener('keydown', function(e){
@@ -233,7 +251,7 @@
 
 <header>
   <div class="hero-inner">
-    <div class="eyebrow">Trilha Capital de Carreira · Bloco 0 · Dia 0</div>
+    <div class="eyebrow">Trilha Capital de Carreira · Bloco 0 · Etapa 0</div>
     <h1>Bem-vindo à <span class="grifo">travessia</span>.</h1>
     <p class="lede">O que você fez hoje, a maioria adia a vida inteira: decidiu parar de construir carreira no improviso. Este é o seu ponto de partida — os combinados, o método, as pessoas que vão te acompanhar e a primeira decisão intencional.</p>
   </div>
@@ -242,12 +260,12 @@
 
 <nav class="trilha" aria-label="Sequência do dia">
   <div class="nav-inner">
-    <a href="#audio" class="nav-item" data-target="audio"><span class="nav-num">1</span><span class="nav-label">Áudio</span></a>
-    <a href="#leva" class="nav-item" data-target="leva"><span class="nav-num">2</span><span class="nav-label">O que você leva</span></a>
-    <a href="#ponto" class="nav-item" data-target="ponto"><span class="nav-num">3</span><span class="nav-label">Ponto de partida</span></a>
-    <a href="#conteudo" class="nav-item" data-target="conteudo"><span class="nav-num">4</span><span class="nav-label">Conteúdo</span></a>
-    <a href="#bonus" class="nav-item" data-target="bonus"><span class="nav-num">5</span><span class="nav-label">Bônus</span></a>
-    <a href="#missao" class="nav-item" data-target="missao"><span class="nav-num">6</span><span class="nav-label">Missão</span></a>
+    <a href="#audio" class="nav-item" data-target="audio"><span class="nav-num"><svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg></span><span class="nav-label">Áudio</span></a>
+    <a href="#leva" class="nav-item" data-target="leva"><span class="nav-num"><svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span><span class="nav-label">O que você leva</span></a>
+    <a href="#ponto" class="nav-item" data-target="ponto"><span class="nav-num"><svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg></span><span class="nav-label">Ponto de partida</span></a>
+    <a href="#conteudo" class="nav-item" data-target="conteudo"><span class="nav-num"><svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></span><span class="nav-label">Conteúdo</span></a>
+    <a href="#bonus" class="nav-item" data-target="bonus"><span class="nav-num"><svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></span><span class="nav-label">Bônus</span></a>
+    <a href="#missao" class="nav-item" data-target="missao"><span class="nav-num"><svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg></span><span class="nav-label">Missão</span></a>
   </div>
 </nav>
 
@@ -291,7 +309,7 @@
     <h2>Você termina o dia sabendo…</h2>
     <p class="subtitulo">Três coisas essenciais para os próximos 28 dias fluírem.</p>
     <ul class="leva-lista">
-      <li><strong>O método completo</strong> — como o Capital de Carreira funciona, o que ele entrega no Dia 7 e no Dia 28, e o que ele nunca vai fazer com você.</li>
+      <li><strong>O método completo</strong> — como o Capital de Carreira funciona, o que ele entrega na Etapa 7 e na Etapa 28, e o que ele nunca vai fazer com você.</li>
       <li><strong>Quem vai te acompanhar</strong> — Camila, Rafael e Juliana, três profissionais de referência que ilustram cada dia com situações reconhecíveis.</li>
       <li><strong>Os combinados da travessia</strong> — a regra da honestidade, a promessa de confidencialidade, e o teto de tempo honesto (15-20 min por dia).</li>
     </ul>
@@ -322,7 +340,7 @@
         <li>Uma regra única: <b>honestidade</b>. Primeira resposta, sem editar.</li>
         <li>Só. Não pede talento, preparo prévio, nem "estar num bom momento". Pede presença.</li>
       </ul>
-      <p><b>O que ele entrega:</b> um método (Capital de Carreira), o seu <b>Retrato no Dia 7</b>, o seu <b>Plano Estratégico no Dia 28</b>.</p>
+      <p><b>O que ele entrega:</b> um método (Capital de Carreira), o seu <b>Retrato na Etapa 7</b>, o seu <b>Plano Estratégico na Etapa 28</b>.</p>
       <p><b>O que ele nunca vai fazer:</b> avaliar você, comparar você com outras pessoas, ou usar o que você escrever para qualquer coisa além de te devolver, organizado, o que você mesma trouxe.</p>
     </div>
 
@@ -335,13 +353,13 @@
         <li><b>Missão (10-15 min · essencial)</b> — o exercício do dia. É onde a jornada acontece de verdade.</li>
         <li><b>Material do dia (opcional)</b> — o que sai da missão, organizado.</li>
       </ul>
-      <p>Cada missão constrói uma peça — e as peças se encaixam. Quando o Dia 28 chegar, o seu plano estratégico não vai ser começado; vai ser <b>terminado</b>. Você o construiu no caminho, quinze minutos por vez.</p>
+      <p>Cada missão constrói uma peça — e as peças se encaixam. Quando a Etapa 28 chegar, o seu plano estratégico não vai ser começado; vai ser <b>terminado</b>. Você o construiu no caminho, quinze minutos por vez.</p>
     </div>
 
     <div class="conteudo-item">
       <h3><span class="marcador">03</span>De onde nasce o método</h3>
       <p>Existe um patrimônio invisível que move a sua trajetória — reputação, influência, relacionamentos, resultados, aprendizagem, credibilidade. Esse é o seu <b>Capital de Carreira</b>, e ele pode ser construído com intenção — com ou sem emprego formal neste momento.</p>
-      <p>Não é frase motivacional: é conceito pesquisado. Amanhã, no Dia 1, você conhece os seis ativos desse capital, um a um — e tira a sua primeira foto.</p>
+      <p>Não é frase motivacional: é conceito pesquisado. Amanhã, na Etapa 1, você conhece os seis ativos desse capital, um a um — e tira a sua primeira foto.</p>
     </div>
 
     <div class="conteudo-item">
@@ -369,7 +387,7 @@
       </span>
       <span style="flex:1;min-width:0">
         <span style="display:block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#FF6842;margin-bottom:4px">Para ir além · 8–10 min</span>
-        <span style="display:block;font-family:'Fraunces',Georgia,serif;font-size:19px;font-weight:600;color:#275750;line-height:1.2">Ler o playbook do Dia 0</span>
+        <span style="display:block;font-family:'Fraunces',Georgia,serif;font-size:19px;font-weight:600;color:#275750;line-height:1.2">Ler o playbook da Etapa 0</span>
         <span style="display:block;font-size:13.5px;color:#57706A;line-height:1.5;margin-top:3px">O contrato da travessia em profundidade: o método das 4 semanas, a anatomia de um dia, os três combinados e como atravessar bem.</span>
       </span>
       <span style="color:#FF6842;font-size:22px;flex-shrink:0">→</span>
@@ -404,10 +422,10 @@
   <section class="bloco" id="missao">
     <div class="bloco-num"><span class="n">6</span> Missão do Dia</div>
     <div class="missao-header">
-      <h2>A hora de concluir o Dia 0.</h2>
+      <h2>A hora de concluir a Etapa 0.</h2>
       <span class="missao-tempo">10 min</span>
     </div>
-    <p class="subtitulo">Quatro passos simples para preparar sua chegada ao Dia 1.</p>
+    <p class="subtitulo">Quatro passos simples para preparar sua chegada à Etapa 1.</p>
     <ol class="passos">
       <li>
         <strong>Ouça o áudio de boas-vindas <span class="tempo-passo">2 min</span></strong>
@@ -422,12 +440,12 @@
         <p>Releia os três acordos da travessia (bloco 4, item 01) e reconheça o que você está aceitando.</p>
       </li>
       <li>
-        <strong>Prepare a sua chegada ao Dia 1 <span class="tempo-passo">1 min</span></strong>
+        <strong>Prepare a sua chegada à Etapa 1 <span class="tempo-passo">1 min</span></strong>
         <p>Escolha o horário do dia em que você fará a jornada e, se quiser, configure um lembrete.</p>
       </li>
     </ol>
     <a href="../Dia 1/index.html" class="cta-missao">
-      <span class="cta-texto"><span class="cta-tempo">Amanhã</span>Ir para o Dia 1</span>
+      <span class="cta-texto"><span class="cta-tempo">Amanhã</span>Ir para a Etapa 1</span>
       <span class="cta-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
     </a>
   </section>
@@ -446,7 +464,7 @@
     </a>
     <a href="academia.html" style="display:block;background:#fff;border:1px solid #DAE6E1;border-radius:14px;padding:18px 20px;text-decoration:none;box-shadow:0 4px 14px rgba(39,87,80,.06)">
       <div style="font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:17px;color:#275750;margin-bottom:6px">Academia Intentia <span style="color:#FF6842">&rarr;</span></div>
-      <div style="font-size:13px;color:#57706A;line-height:1.5;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif">Os três resumos do Dia 0 — Newport, O'Kane e Koretz — em HTML e PDF.</div>
+      <div style="font-size:13px;color:#57706A;line-height:1.5;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif">Os três resumos da Etapa 0 — Newport, O'Kane e Koretz — em HTML e PDF.</div>
     </a>
   </div>
 </section>
@@ -456,7 +474,7 @@
 
 <footer>
   <div class="assinatura">Do reagir ao conduzir.</div>
-  <div>Dia 0 · Bem-vindo à travessia</div>
+  <div>Etapa 0 · Bem-vindo à travessia</div>
 </footer>
 
 <script>
@@ -567,6 +585,40 @@
     if(wf){ var bars = wf.querySelectorAll('.bar'); for(var i=0;i<bars.length;i++){ bars[i].classList.toggle('tocada', i/bars.length < frac); } }
   });
   audio.load();
+})();
+</script>
+
+<style>
+/* Navegação congelada (ajuste 21/07/2026): fixação garantida em qualquer navegador */
+nav.trilha.fixa{position:fixed !important;top:0;left:0;right:0;z-index:100;box-shadow:0 4px 16px rgba(39,87,80,.10)}
+</style>
+<script>
+(function(){
+  var nav=document.querySelector('nav.trilha');
+  if(!nav) return;
+  var spacer=document.createElement('div'); spacer.style.display='none';
+  nav.parentNode.insertBefore(spacer, nav.nextSibling);
+  var offset=null;
+  function medir(){
+    if(nav.classList.contains('fixa')) return;
+    var r=nav.getBoundingClientRect();
+    offset=r.top+(window.pageYOffset||document.documentElement.scrollTop);
+  }
+  function onScroll(){
+    if(offset===null) medir();
+    var y=window.pageYOffset||document.documentElement.scrollTop;
+    if(y>=offset){
+      if(!nav.classList.contains('fixa')){
+        spacer.style.height=nav.offsetHeight+'px'; spacer.style.display='block';
+        nav.classList.add('fixa');
+      }
+    } else if(nav.classList.contains('fixa')){
+      nav.classList.remove('fixa'); spacer.style.display='none'; medir();
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', function(){ offset=null; if(!nav.classList.contains('fixa')){ spacer.style.display='none'; } }, {passive:true});
+  medir(); onScroll();
 })();
 </script>
 </body>

@@ -11,3 +11,6 @@ Desktop.ini
 
 # Claude Code (config local)
 .claude/
+
+# Atalho local de publicacao
+publicar.bat

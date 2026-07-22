@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Trilha Capital de Carreira</title>
+<title>Intentia · Jornada — o seu caminho na Trilha Capital de Carreira</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -19,322 +19,605 @@
   body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.7;font-size:16.5px}
   .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
   .eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
-  header{background:var(--verde-900);color:var(--creme);padding:64px 24px 110px;position:relative;overflow:hidden}
-  .hero-inner{max-width:980px;margin:0 auto;position:relative;z-index:1}
+
+  header{background:var(--verde-900);color:var(--creme);padding:64px 24px 96px;position:relative;overflow:hidden}
+  .hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1}
   .logo-img{height:44px;display:block;margin:0 0 30px -12px}
   header .eyebrow{color:var(--verde-500);margin-bottom:16px}
-  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5.6vw,52px);line-height:1.1;letter-spacing:-.012em;margin-bottom:16px}
-  header .lede{font-size:17.5px;color:#CFE0D6;max-width:640px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5.6vw,48px);line-height:1.12;letter-spacing:-.01em;margin-bottom:16px}
+  header .lede{font-size:17.5px;color:#CFE0D6;max-width:600px}
   .arc{position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border:2px solid rgba(255,255,255,.10);border-radius:50%}
   .arc::after{content:"";position:absolute;top:24px;left:50%;width:20px;height:20px;border-radius:50%;background:var(--coral)}
-  .painel{max-width:980px;margin:-64px auto 0;padding:0 24px;position:relative;z-index:3}
-  .painel-card{background:#fff;border:1px solid var(--verde-100);border-radius:18px;padding:26px 28px;box-shadow:0 14px 40px rgba(39,87,80,.12);display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
-  @media(max-width:720px){.painel-card{grid-template-columns:1fr}}
-  .painel-tit{font-family:var(--serif);font-weight:600;font-size:21px;color:var(--verde-900);margin-bottom:6px}
-  .painel-sub{font-size:14px;color:var(--tinta-suave);max-width:520px}
-  .barra{height:10px;background:var(--verde-100);border-radius:999px;overflow:hidden;margin-top:14px;max-width:520px}
+  .volta-indice{display:inline-block;margin-bottom:18px;color:var(--verde-500);font-size:13px;font-weight:600;text-decoration:none}
+  .volta-indice:hover{color:var(--coral)}
+
+  .painel{max-width:860px;margin:-56px auto 0;padding:0 24px;position:relative;z-index:3}
+  .painel-card{background:#fff;border:1px solid var(--verde-100);border-radius:18px;padding:26px 28px;box-shadow:0 14px 40px rgba(39,87,80,.12)}
+  .painel-topo{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+  .painel-topo .tit{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--verde-900)}
+  .painel-topo .pct{font-family:var(--serif);font-weight:700;font-size:30px;color:var(--coral)}
+  .barra{height:12px;background:var(--verde-100);border-radius:999px;overflow:hidden;margin-bottom:20px}
   .barra i{display:block;height:100%;width:0;background:linear-gradient(90deg, var(--verde-700), var(--coral));border-radius:999px;transition:width .6s cubic-bezier(.22,1,.36,1)}
-  .painel-progresso{font-size:12.5px;color:var(--tinta-suave);margin-top:8px}
-  .painel-acoes{display:flex;flex-direction:column;gap:10px;min-width:230px}
-  .btn{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;border-radius:12px;padding:14px 22px;font-weight:700;font-size:15px;transition:transform .2s, box-shadow .2s}
-  .btn-jornada{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;box-shadow:0 10px 26px rgba(255,104,66,.32);font-family:var(--serif);font-size:17px}
-  .btn-jornada:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(255,104,66,.42)}
-  .btn-continuar{background:var(--creme);color:var(--verde-900);border:1.5px solid var(--verde-100);font-size:13.5px}
-  .btn-continuar:hover{border-color:var(--verde-500)}
-  main{max-width:980px;margin:0 auto;padding:44px 24px 24px}
-  .travessia{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:6px 22px 22px;margin-bottom:38px;box-shadow:0 4px 14px rgba(39,87,80,.05)}
-  .travessia .semana-eyebrow{margin-top:18px}
-  .semana{margin-bottom:38px}
-  .semana-header{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;border-bottom:2px solid var(--verde-100);padding-bottom:12px;margin-bottom:16px}
-  .semana-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
-  .semana-header h2{font-family:var(--serif);font-weight:600;font-size:22px;color:var(--verde-900);line-height:1.25;max-width:560px}
-  .entrega{font-size:13px;color:var(--verde-700);background:var(--verde-100);border-radius:10px;padding:8px 14px;font-weight:600;white-space:nowrap}
-  .entrega span{display:block;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);opacity:.75}
-  .dias-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:10px}
-  .dia-card{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:13px 16px;text-decoration:none;transition:transform .18s, box-shadow .18s, border-color .18s;position:relative}
-  .dia-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(39,87,80,.10);border-color:var(--verde-500)}
-  .dia-num{font-family:var(--serif);font-weight:700;font-size:19px;color:var(--verde-900);background:var(--areia);width:38px;height:38px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
-  .dia-titulo{font-size:13.5px;font-weight:600;color:var(--tinta);line-height:1.35}
-  .dia-check{display:none;position:absolute;top:-7px;right:-7px;width:22px;height:22px;border-radius:50%;background:#4A8B75;color:#fff;font-size:12px;font-weight:700;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.18)}
-  .dia-card.feito{border-color:#4A8B75;background:#F4FAF7}
-  .dia-card.feito .dia-num{background:#E1F0E9;color:#4A8B75}
-  .dia-card.feito .dia-check{display:inline-flex}
-  .rodape-links{max-width:980px;margin:0 auto;padding:0 24px 26px;display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px}
-  .rodape-links a{color:var(--tinta-suave);text-decoration:none;border-bottom:1px dashed var(--verde-500)}
-  .rodape-links a:hover{color:var(--coral)}
-  footer{background:var(--verde-900);color:#A9C6B8;padding:38px 24px;text-align:center;font-size:13px}
-  footer .fq{font-family:var(--serif);font-style:italic;color:var(--creme);max-width:520px;margin:0 auto 10px;font-size:16px}
+  .tiles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px}
+  @media(max-width:640px){.tiles{grid-template-columns:1fr}}
+  .tile{background:var(--creme);border:1px solid var(--verde-100);border-radius:12px;padding:14px 16px}
+  .tile b{display:block;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-suave);margin-bottom:4px}
+  .tile .v{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--verde-900);line-height:1.25}
+  .tile .n{font-size:12.5px;color:var(--tinta-suave);line-height:1.45;display:block;margin-top:2px}
+  .tile.destaque{background:var(--verde-900);border-color:var(--verde-900)}
+  .tile.destaque b{color:var(--verde-500)}
+  .tile.destaque .v{color:var(--creme)}
+  .tile.destaque .n{color:#A9C6B8}
+
+  .selos-tit{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-suave);margin-bottom:10px}
+  .selos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+  @media(max-width:640px){.selos{grid-template-columns:repeat(2,1fr)}}
+  .selo{border-radius:12px;padding:12px 10px 11px;text-align:center;border:1.5px dashed var(--verde-100);background:var(--areia);text-decoration:none;display:block;transition:transform .15s}
+  .selo .medalha{width:44px;height:44px;border-radius:50%;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:19px;background:#fff;border:1.5px dashed var(--verde-100);color:var(--verde-100)}
+  .selo .nome{font-size:11.5px;font-weight:700;color:var(--tinta-suave);line-height:1.3;display:block}
+  .selo .dia{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--verde-500);display:block;margin-top:2px}
+  .selo.ganho{border:1.5px solid var(--verde-100);background:#fff}
+  .selo.ganho:hover{transform:translateY(-2px)}
+  .selo.ganho .medalha{background:var(--verde-900);border:2px solid var(--coral);color:var(--creme);box-shadow:0 4px 14px rgba(39,87,80,.25)}
+  .selo.ganho .nome{color:var(--verde-900)}
+
+  .pecas{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--creme);border:1px solid var(--verde-100);border-radius:12px;padding:13px 16px}
+  .pecas .rot{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-suave)}
+  .pecas .slots{display:flex;gap:7px}
+  .peca{width:30px;height:30px;border-radius:9px;border:1.5px dashed var(--verde-100);background:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--verde-100);font-family:var(--serif)}
+  .peca.tem{background:var(--verde-700);border:none;color:var(--creme)}
+  .pecas .msg{font-size:12.5px;color:var(--tinta-suave);flex:1;min-width:140px}
+  .pecas.completa{background:var(--verde-900);border-color:var(--verde-900)}
+  .pecas.completa .rot{color:var(--verde-500)}
+  .pecas.completa .msg{color:#CFE0D6}
+  .pecas.completa .peca.tem{background:var(--coral)}
+
+  .sim-aviso{display:none;max-width:860px;margin:16px auto 0;padding:0 24px}
+  .sim-aviso.on{display:block}
+  .sim-aviso div{background:var(--coral-soft);border:1px solid var(--coral);border-radius:10px;padding:10px 18px;font-size:13.5px;font-weight:600;color:var(--verde-900)}
+
+  .trilha-wrap{max-width:860px;margin:34px auto 0;padding:0 24px 40px}
+  #trilha{position:relative}
+  #caminho-svg{position:absolute;top:0;left:0;z-index:0;pointer-events:none}
+  .no{position:absolute;z-index:2;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;text-decoration:none;border-radius:50%;transition:transform .15s}
+  .no .circ{border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700}
+  .no.normal .circ{width:48px;height:48px;font-size:17px}
+  .no.marco .circ{width:66px;height:66px;font-size:24px}
+  .no.feito .circ{background:var(--verde-900);color:var(--creme);border:none;box-shadow:0 4px 14px rgba(39,87,80,.22)}
+  .no.feito.marco .circ{border:2.5px solid var(--coral)}
+  .no.atual .circ{background:var(--coral);color:#fff;border:none;box-shadow:0 6px 20px rgba(255,104,66,.4);animation:pulsa 2.2s infinite}
+  .no.bloq .circ{background:#fff;color:var(--verde-500);border:1.5px dashed var(--verde-500);opacity:.75}
+  .no.bloq{cursor:not-allowed}
+  a.no:hover{transform:translate(-50%,-50%) scale(1.08)}
+  @keyframes pulsa{
+    0%{box-shadow:0 0 0 0 rgba(255,104,66,.45)}
+    70%{box-shadow:0 0 0 16px rgba(255,104,66,0)}
+    100%{box-shadow:0 0 0 0 rgba(255,104,66,0)}
+  }
+  .no .check{position:absolute;right:-3px;bottom:-3px;width:20px;height:20px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;border:2px solid var(--areia)}
+  .no.marco .check{width:24px;height:24px;font-size:13px}
+
+  .voce-aqui{position:absolute;z-index:3;transform:translate(-50%,0);background:var(--verde-900);color:var(--creme);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border-radius:999px;white-space:nowrap}
+  .voce-aqui::after{content:"";position:absolute;top:-5px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--verde-900)}
+
+  .rotulo{position:absolute;z-index:1;max-width:300px;background:#fff;border:1px solid var(--verde-100);border-radius:11px;padding:9px 14px;font-size:13px;line-height:1.45;box-shadow:0 4px 14px rgba(39,87,80,.06)}
+  @media(max-width:700px){.rotulo{max-width:200px;font-size:12px}}
+  @media(max-width:480px){.rotulo{max-width:150px}}
+  .rotulo .rd{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);display:block}
+  .rotulo .rt{font-weight:600;color:var(--verde-900);display:block}
+  .rotulo.bloq-r{opacity:.55}
+  .rotulo.bloq-r .rd{color:var(--verde-500)}
+  .rotulo .cadeado{font-size:11px;color:var(--tinta-suave);display:block;margin-top:2px}
+  .rotulo.marco-r{border-left:3px solid var(--coral)}
+  .rotulo .entrega-tag{display:inline-block;background:var(--verde-100);border-radius:999px;padding:1.5px 10px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--verde-700);margin-top:5px}
+
+  .placa{position:absolute;left:50%;transform:translateX(-50%);z-index:2;width:min(560px, calc(100% - 20px));background:var(--verde-900);color:var(--creme);border-radius:14px;padding:18px 24px;box-shadow:0 10px 30px rgba(39,87,80,.22)}
+  .placa .pe{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--coral-soft);margin-bottom:4px}
+  .placa h2{font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.3;margin-bottom:8px}
+  .placa .pb{height:7px;background:rgba(255,255,255,.15);border-radius:999px;overflow:hidden;margin-bottom:8px}
+  .placa .pb i{display:block;height:100%;width:0;background:var(--coral);border-radius:999px;transition:width .6s}
+  .placa .pl{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .placa .pd{font-size:11.5px;color:#A9C6B8;font-weight:600}
+  .placa .ent{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.12);border-radius:999px;padding:3px 12px;color:var(--creme)}
+
+  .chegada{position:absolute;left:50%;transform:translateX(-50%);z-index:2;text-align:center;width:min(480px,calc(100% - 20px))}
+  .chegada .band{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:22px 26px;box-shadow:0 10px 30px rgba(39,87,80,.10)}
+  .chegada .bt{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--verde-900);margin-bottom:6px}
+  .chegada p{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
+  .chegada.celebra .band{background:var(--verde-900);border-color:var(--verde-900)}
+  .chegada.celebra .bt{color:var(--creme)}
+  .chegada.celebra p{color:#CFE0D6}
+
+  #toast{position:fixed;left:50%;bottom:88px;transform:translateX(-50%) translateY(12px);background:var(--verde-900);color:var(--creme);font-size:13.5px;font-weight:600;padding:11px 20px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .25s, transform .25s;z-index:60;max-width:88vw;text-align:center}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  .demo{position:fixed;right:16px;bottom:16px;z-index:50;font-size:13px}
+  .demo summary{list-style:none;cursor:pointer;background:var(--verde-900);color:var(--creme);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:9px 18px;border-radius:999px;box-shadow:0 8px 24px rgba(39,87,80,.3);user-select:none}
+  .demo summary::-webkit-details-marker{display:none}
+  .demo[open] summary{background:var(--coral)}
+  .demo-card{position:absolute;right:0;bottom:46px;width:262px;background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:16px 18px;box-shadow:0 14px 40px rgba(39,87,80,.2)}
+  .demo-card b{display:block;font-family:var(--serif);font-size:15px;color:var(--verde-900);margin-bottom:2px}
+  .demo-card p{font-size:11.5px;color:var(--tinta-suave);line-height:1.45;margin-bottom:10px}
+  .demo-card input[type=range]{width:100%;accent-color:var(--coral)}
+  .demo-card .val{text-align:center;font-weight:700;color:var(--verde-900);font-size:13px;margin:4px 0 10px}
+  .demo-card .acoes{display:flex;gap:8px}
+  .demo-card button{flex:1;border:none;border-radius:999px;font-family:var(--sans);font-weight:700;font-size:12px;padding:8px 0;cursor:pointer}
+  .demo-card .aplicar{background:var(--coral);color:#fff}
+  .demo-card .limpar{background:var(--verde-100);color:var(--verde-700)}
+
+  footer{background:var(--verde-900);color:#A9C6B8;padding:44px 24px;text-align:center;font-size:13px;margin-top:30px}
+  footer .fq{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--creme);max-width:480px;margin:0 auto 14px;line-height:1.5}
 </style>
 </head>
 <body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+@media(max-width:620px){
+  .intnav{gap:10px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="index.html" title="Jornada — início da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="index.html">Jornada</a><span class="sep sep-capa">›</span><span class="cur">Jornada</span></span><span class="intnav-spacer"></span><span class="intnav-right"><a class="intnav-pill" href="mapa-trilha.html">Mapa da trilha</a></span></nav><!--intentia-nav:end-->
 
 <header>
   <div class="hero-inner">
     <img class="logo-img" src="data:image/png;base64,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Fz5877ozzq22C1p9iyAlVCip4ujuK68+dPiI3zz7rznLlgKAxhjnnBKSHP5tPyxSCkApFcdxLEQsRVk6c8q4Iy8++SsTxx4UxlFSl4YB1DrFG846b/XGjX977ZWki9f+sKmKY7mluroBW4MQ4odRn27djz7okL+8+nKnsrLoiyHohJCkyNQez4lQSuN81cYNa7duHtG/v+f79aaMM0psz73xvEnL1q19fdpHuXSGUSrrOz4jAIRSAhDFoug6owYOvv+6rx1+wKgaO99hmhu296/BAIoKztTCu003HwMQaNm2hwBoAFslOZ0HVSb5gZdKExB74IWhlIZhFEThIcMPuPWCi449+JAwiqqLeY3zppz4SimlkozxrJVilK3ctOG1qR+9NOWD+StXgFKWYWYThzNKL/LFtY8z5vhBVW1Nzy6VKorqtYSSLq2De/W54Zzzf/jH31mmpTGW/KZSKlHBIIoopaaulzSCOf/LKy+dNv6oimwuFnGpCyVFZk4+YtyRo8e89en0V6ZNmbtsab5oO2EYyx3Zn4QSwhkzdL1TLjegV+8jRx941NixowYOZpTanguE7DB0KCGu791z5bXrNm/+cM6sjJXaH7LsYinWb93amLONhGF4w9nnT583d+m6NdlUmkBSrkJJACFEJOI4FpZh0D0ZspQki+eLxc8Wzh87aIhTX6h8skgms+j/bvvmw50rn37nTdtzDU3njO3YnMH2Vg2h7wspu1ZUXHPmWdeccU55JlNrFztSa+F2/U0IQKDIUCbuTbmBkACkldNHB6gWcIURzBbas6GeadO4aEapkKJgu327d7/2zHMuOOFkyzTydpFQ0mhHoySdlxJimabOtKLvffD5rFc+/vC9mTM212zjlKVMM/k1IfGsF6nHAmaUFl176fq1Bw8fIZUq9aZwxmzfuer0syzDePzF59dt3SykAlAEiGUYPSu7jhk8mBLy6rSP6vV5KqV0TVu1acPvnn36/utvrC0GpZw6hBDOWMF1GKXnHHv86ROP3ri1atm6tWs2b9xcvc32PKXANPSMafXo0qV7p879evbqVlGR0s1IRK7vJ99olw8UUhq6/tDNt11+/z0rN6y3TLNjt/JVSumcr9y43vG9BjyulJAgCnt2qXz0rrsf/uufP1kwz/EDACCgGOMVudyAHr1GDhr4/sxZqzau1/iejGJTinH++rSP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SikB8ILAD4Ph/Qdc/pUzLj7lVJ1pG7dVvTl96pTPP5++YK7teYmUxkLEcRyLOI4FAGiaxhnjlOmaRkldkxCllJDYJbBtXvLksJzU9/R2jndr9ge2xac1eiHVRre9++aVM/79P/5Wgrrk5NPcwPfDgDVZEZsbci+EyKRS67ZsvvEnP5p84inXnXVu327d/dD3w3DHMV7LHitjNGNZjLI5y5Y+8fILr3w8JYrjXDrTrNdHNWW023Q27okLCSnTVmrqnNlf/7+H/vfr3+icyxUcBwAoo02xT5LVqdHrt+38l0olcQb3/v7Xny9ZdPvkS/p26+4GfhCFyawgTZ6QQkpd03KpzJzlS7//2KMzFy/MZjJ+EBRdt+A63SoqwqiersBt+MLujwJsgOoEIt4z7v3ExW0pkSNK1FfrPJkfSinbdZVSowcPufqMs046bBwl5I1pU1+d9tGcpUvXbt6kQOlco4wln5n0BTMhKWJA1H/nLUZUtT2MMc65LkS9Pk8qJSWsWYYC51zjPAlEqmdHz5jGRRv4YwjhjHPO612DpFKc87rbbtGllFKUEinJfb/7zeI1q288d1KPTpV+GARRmKytu1xXba9FBQAKFKMsZVnNurKQUueaAvjzKy++89n0SSecfObEY/r36EkI+GEYRpHcKc5r99a1O98AIcAZN7imcc3xvenz5/3n/XffmDa11i6krZSp683bvBJghBBCNM7rddsmQ9EmxjpnnBBilKi3k1TiZK24kJAibVnvz/zs0u9/7zuXXzVx7EGEUtf3kopguwia2kl/CADnPG2aGucNFIsm/53/st75zxkPeNisL5BUPE2b1tPvvDV13pzLTzvjrInH9OxcGQkRhEEshKrrirTrrNih9pRQU9MM3diar/nji8/98YXnCraT1GChlPphaDtu78qusZD1nHw352gZBbieCaHBHqwurhQwpVJkp6yIHW8LIbEQfhiahnHMwYeef9wJowcPWb5u7Q//+Pspcz7fUr1NKKVrWtqykkkGdYvXvrHn6gi2LwAAVNXW5tJpIUS975iQ0nG9WscmTZhpyfOrLhRSuiFk/btpQmjBsaWUClSL65gqACnk5prqKI5kfZlCUilO2eaa6lYZwUpRSg1d//NLL7w/c8akE048+fDxA3r01LimQIVxtKPyX3K2whljhAEoLwxWbVz/8ZzPm3vwk0hsNpXaWlvzf3//y1NvvHb0gQcfe8ihBw4Z1qWi3OAaAJFKxiJOXMc7rk62R7oywhKZKXjuktWrp86b8/6smbOXLvaCIGWa2VRayGbXoCFAbN/dXL0tiMJ6DyCFlK7n267XymWaEpK3i5uqt4UlL6Qc1/OCoDUGhZAybVpL16658af/c+Jh48477sSDhg2ryGQBSCzjWIjEdZGEoVBGOeMUiJSixrVnzV68qbqK01JRckoBbK2u1hmX9c9/IIQUXae5UW/JkphNpapqah584g//eOPVk48Yf/whhw8fMKAsk6FAFahIxFLWuQ9gexV9jXECJIijlevXv/XptOc+eG/JmlWWYVqmkUwhRkgcx5u2bevbvYcXBrsPeywEpywWAkj7DdIiwyaf3T4tYBPUS6nazkRFe8YIlgpSDK73su9GenanklhSykiITrmyw0YcMGHMgdl0+rMF89+d+em6LZtjITOWlRQQl6i1X+7EJSSbSjHKGngKSZ16x/Pa5gMJJOVWhGpV41VKaDadooSUvA4hQoodCUKtchJQGkZRGEVdKioOGjr8kOEHDOrdp1vnzhWZrMaYAoiFsH23qrZ2S031srVrF6xcsWjVyupinrUwO68u+D8WsesHhq53ragY0X/g0L79BvTq1aWsvFMul01nTE2jlCoFUskwjmzXzdt2dSG/dvOW5evXLlq1au2WTXm7SCm1dCOp2NCyoVBKWYaZMo0GtJtS4gaB5/ut0eCkP7ep6w1fyPE8PwxbK/aUKqUczzMNY0ifPkccMGbkwIG9unTpUtHJ0g1KiZTSi6LaQr6qtnbN5s2LVq2cs3zJui1bhBCMslI2zfb5T+sfaVLXZqPoOC2LPE8mRhhFQRhm0un+PXqOHjR4eN/+vbp2qywvK89mTU1PvloQRdWF/OZt1cvWrZmxeNHcZUu31FYbmm5o2u4zobK83DIMWX8rRsUZ21pba7suba9tg9upACsADeDZdL4PEb5q+55NyTPUKL3cycyQWgrqMpEIQC6dGdK374CevbwgWLBi+fyVK4QUpm4Ymgaou+2J5Fir0VapTX/3hBRKNbLbo03r39KYESwa/gVCoMUSWO/CF8VxFMeREDrnFdlcxrI0zhVALGIvCAqO43heclHOGW91z926pg5KhXEshBBSSKUs3cim0pZh6JpGGQUFQooojv0wdDzP8T2lgFNKGdW5xigt1ROimftsJaVsZJJQ2novdFLVruELtWEybp1WhWEshAKVS6XLMllT1yklQsogihzPy9t2LGJOGWNM5xwaa+PYlPnPWheAnUwMIWUUR7GQQghd03LpdNq0klmhlAqjyHbdWrsohGCM69sPhuq9+ViIBr6UAsUpa7fq264FGAAeTxUPpaGjyJ4QYAbKY9oldnqF5MZ2Ae6Uy1Xmyp3Q31JdnbeLnHHTMAB9y+3VCG6iddKGH9gm02CvXWjnKyanYUlIy47lbEe2OiU08UO27VT/79kkIUrKHZXdvuCC3kkC1R542Rod7bZ5pgCwVy70RW9KMn5EShFLqZIzu+SZEpIEkDb9me7NafnfCQkghZBKJdMCtqenJzvdRm++kR6X2w9H2i3tuBCHIoslH0fDPTF+iYW9XJDNkmo7hUDnHWdrTa1SkjGWTaUlFmFux7T5crbX9lh7fzO38yq2e6KuUkoosaevCzuVpYR6bkDt06OtoHTP3j3GjgAUANh1YJu/du3NabnzxCCUMti1zV0Tb77he27/NhNtt7clAD6LuCR7JOVcAhiMzItZ9Rf7MQghOGeapiWtV9DqRTrkxmUXvsRLo29pT43tvjwh958p0U4FWAGYBGZJtkFRYw9sLImCCMgHQuO77ZJwRUAQBEH2XwGWADqodZK+G/MUJUK18YenKCwWfFrMDYJiiyAIgqAAf1EmNUL+ERp5RTXSlt58qcAk8I9Qr1WU7wvnBAiCIAgK8N5DARig5gv+98jIMYjbSCeFgixTn0rtuchINbMPEoIgCIJ0fAFOjGCLqN8G5myhlVHV+rKUEoARCAh70E+5ABTNXwRBEAQFuF4YQFGRu71ULWEWQNQ69VVKZSk86FmfxTwFgOYvgiAIggLcgBEM8wS/3csElKVJCzVYAFClKjj53yD1VGhmiMKGRAiCIAgKcCPamSFqSqRd72Y2Ae/MQAA0XT4lQKQgRUDn7D4//Whg4dEvgiAI8qXDKkcNb/93maQFr5LszVjvxmAkExqoEEjSzoqU+BOpQBIwAMo4LFLaHW7mpUhPo/oiCIIgKMDN0mCDQB7Iq6G2VPEeHPoymaJAAAQoAUQCJD8KgCilEZJhYBFYT7TfB9YDnrVMsgyqL4IgCNI+4PvQvQoADYAQeCnU3ou0I3h8khaNJWEvBlmQmkrEFyShHmFbBFkotPdi/n6kbZAkRSCN574IgiAICnCL7WAFkCUgAN6JtLcirZKYA6jsQUUGlAZKEPAU3aroKknXSSqBmETlCMjmHBsjCIIgCApw/aYwAUgTBQAOkJmSR4LL7Um9FIADGESlCSQNSlB6EQRBEBTgtjSFAYABpEAlTSHJTv+kMM0XQRAEQQHeC0qMIAiCIPsQFIcAQRAEQVCAEQRBEAQFGEEQBEEQFGAEQRAEQQFGEARBEAQFGEEQBEFQgBEEQRAEQQFGEARBEBRgBEEQBEFQgBEEQRAEBRhBEARBUIARBEEQBEEBRhAEQRAUYARBEARBUIARBEEQBAUYQRAEQRAUYARBEARBAUYQBEEQBAUYQRAEQVCAEQRBEAQFGEEQBEEQFGAEQRAEQQFGEARBEAQFGEEQBEFQgBEEQRAEQQFGEARBkHbK/wcPL15yIvJcmgAAAABJRU5ErkJggg==" alt="Intentia">
-    <div class="eyebrow">Trilha Capital de Carreira · Dia 0 + 28 dias · 4 semanas</div>
+    <div class="eyebrow">Trilha Capital de Carreira · 28 dias · 4 semanas</div>
     <h1>Do reagir ao <span class="grifo">conduzir</span> — um dia por vez.</h1>
-    <p class="lede">Quatro semanas para fotografar onde você está, escolher uma direção, montar o plano de chegada e transformá-lo em rotina. Cada dia: um áudio, um conteúdo curto e uma missão de 15–20 minutos.</p>
+    <p class="lede">Quatro semanas para fotografar onde você está atualmente na sua carreira, escolher uma direção, montar o plano de chegada e transformá-lo em rotina. Cada dia: um áudio, um conteúdo curto e uma missão de 15–20 minutos.</p>
   </div>
   <div class="arc"></div>
 </header>
 
 <div class="painel">
   <div class="painel-card">
-    <div>
-      <div class="painel-tit">A sua jornada, no mapa</div>
-      <div class="painel-sub">O roadmap interativo mostra onde você está, as entregas de cada semana e o que falta para o Dia 28.</div>
-      <div class="barra"><i id="barra-fill"></i></div>
-      <div class="painel-progresso" id="progresso-txt">Progresso aparece aqui conforme você conclui as missões.</div>
+    <div class="painel-topo">
+      <span class="tit">Seu progresso na trilha</span>
+      <span class="pct" id="pct">0%</span>
     </div>
-    <div class="painel-acoes">
-      <a class="btn btn-jornada" href="jornada.html">Abrir a Jornada →</a>
-      <a class="btn btn-continuar" id="btn-continuar" href="Dia 0/index.html">Começar pelo Dia 0</a>
+    <div class="barra"><i id="barra-i"></i></div>
+
+    <div class="tiles">
+      <div class="tile">
+        <b>Dias concluídos</b>
+        <span class="v" id="t-dias">0 de 28</span>
+        <span class="n" id="t-dias-n">Etapa 0 · travessia à parte — pendente</span>
+      </div>
+      <div class="tile">
+        <b>Constância</b>
+        <span class="v" id="t-seq">—</span>
+        <span class="n" id="t-seq-n">constância vence intensidade</span>
+      </div>
+      <div class="tile destaque">
+        <b>Próximo marco</b>
+        <span class="v" id="t-marco">Retrato</span>
+        <span class="n" id="t-marco-n">na Etapa 7</span>
+      </div>
+    </div>
+
+    <div class="selos-tit">Selos da jornada — as quatro construções</div>
+    <div class="selos" id="selos"></div>
+
+    <div class="pecas" id="pecas-box">
+      <span class="rot">Peças do Retrato</span>
+      <div class="slots" id="pecas-slots"></div>
+      <span class="msg" id="pecas-msg">As missões das Etapas 1–6 geram as seis peças que montam o seu Retrato na Etapa 7.</span>
     </div>
   </div>
 </div>
 
-<main>
+<div class="sim-aviso" id="sim-aviso"><div id="sim-aviso-txt"></div></div>
 
-  <section class="travessia">
-    <div class="semana-eyebrow">Travessia · antes da Semana 1</div>
-    <div class="dias-grid" style="grid-template-columns:1fr">
-      <a class="dia-card" href="Dia 0/index.html" data-dia="0">
-        <span class="dia-num">0</span>
-        <span class="dia-titulo">Bem-vindo à travessia</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-    </div>
-    <p style="font-size:13px;color:var(--tinta-suave);margin-top:10px">O Dia 0 apresenta o contrato da travessia e os três profissionais de referência que acompanham você — <a href="Dia 0/personagens.html" style="color:var(--verde-700)">Camila, Rafael e Juliana</a>.</p>
-  </section>
-
-  <section class="semana">
-    <div class="semana-header">
-      <div>
-        <div class="semana-eyebrow">Semana 1 · Dias 1–7</div>
-        <h2>Onde eu realmente estou — e o que já construí sem perceber?</h2>
-      </div>
-      <div class="entrega"><span>Entrega da semana</span>Retrato + Valores</div>
-    </div>
-    <div class="dias-grid">
-      <a class="dia-card" href="Dia 1/index.html" data-dia="1">
-        <span class="dia-num">1</span>
-        <span class="dia-titulo">Os seis ativos do seu Capital de Carreira</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 2/index.html" data-dia="2">
-        <span class="dia-num">2</span>
-        <span class="dia-titulo">Sua trajetória conta</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 3/index.html" data-dia="3">
-        <span class="dia-num">3</span>
-        <span class="dia-titulo">O que você gerou — e dá para provar</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 4/index.html" data-dia="4">
-        <span class="dia-num">4</span>
-        <span class="dia-titulo">A reputação que trabalha por você</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 5/index.html" data-dia="5">
-        <span class="dia-num">5</span>
-        <span class="dia-titulo">A rede que trabalha por você</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 6/index.html" data-dia="6">
-        <span class="dia-num">6</span>
-        <span class="dia-titulo">A cadeia A·C·I — do que você sabe ao que sua palavra move</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 7/index.html" data-dia="7">
-        <span class="dia-num">7</span>
-        <span class="dia-titulo">Valores + Retrato de Capital de Carreira</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-    </div>
-  </section>
-  <section class="semana">
-    <div class="semana-header">
-      <div>
-        <div class="semana-eyebrow">Semana 2 · Dias 8–14</div>
-        <h2>Quem eu quero me tornar — e para onde faz sentido eu ir?</h2>
-      </div>
-      <div class="entrega"><span>Entrega da semana</span>Direção Escolhida + Marca</div>
-    </div>
-    <div class="dias-grid">
-      <a class="dia-card" href="Dia 8/index.html" data-dia="8">
-        <span class="dia-num">8</span>
-        <span class="dia-titulo">Futuros possíveis — três versões de você</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 9/index.html" data-dia="9">
-        <span class="dia-num">9</span>
-        <span class="dia-titulo">Carreira não linear</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 10/index.html" data-dia="10">
-        <span class="dia-num">10</span>
-        <span class="dia-titulo">Framework de decisão</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 11/index.html" data-dia="11">
-        <span class="dia-num">11</span>
-        <span class="dia-titulo">Armadilhas da decisão</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 12/index.html" data-dia="12">
-        <span class="dia-num">12</span>
-        <span class="dia-titulo">Propósito construído</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 13/index.html" data-dia="13">
-        <span class="dia-num">13</span>
-        <span class="dia-titulo">Essencial — o que fica quando você tira o resto</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 14/index.html" data-dia="14">
-        <span class="dia-num">14</span>
-        <span class="dia-titulo">Marca + Direção Escolhida</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-    </div>
-  </section>
-  <section class="semana">
-    <div class="semana-header">
-      <div>
-        <div class="semana-eyebrow">Semana 3 · Dias 15–21</div>
-        <h2>Como eu chego lá — presença, autoridade, redes, aprendizado, energia.</h2>
-      </div>
-      <div class="entrega"><span>Entrega da semana</span>Plano de Execução · v1</div>
-    </div>
-    <div class="dias-grid">
-      <a class="dia-card" href="Dia 15/index.html" data-dia="15">
-        <span class="dia-num">15</span>
-        <span class="dia-titulo">Presença executiva</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 16/index.html" data-dia="16">
-        <span class="dia-num">16</span>
-        <span class="dia-titulo">Autoridade — o que faz sua palavra pesar</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 17/index.html" data-dia="17">
-        <span class="dia-num">17</span>
-        <span class="dia-titulo">Redes de influência</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 18/index.html" data-dia="18">
-        <span class="dia-num">18</span>
-        <span class="dia-titulo">Persuasão — mover pessoas sem manipular</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 19/index.html" data-dia="19">
-        <span class="dia-num">19</span>
-        <span class="dia-titulo">Aprendizagem deliberada</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 20/index.html" data-dia="20">
-        <span class="dia-num">20</span>
-        <span class="dia-titulo">Energia e prioridades</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 21/index.html" data-dia="21">
-        <span class="dia-num">21</span>
-        <span class="dia-titulo">Estratégia → Execução (seu Plano de Execução)</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-    </div>
-  </section>
-  <section class="semana">
-    <div class="semana-header">
-      <div>
-        <div class="semana-eyebrow">Semana 4 · Dias 22–28</div>
-        <h2>Como isso vira rotina — e não mais uma lista abandonada?</h2>
-      </div>
-      <div class="entrega"><span>Entrega da semana</span>Compromisso de 90 dias + ritual</div>
-    </div>
-    <div class="dias-grid">
-      <a class="dia-card" href="Dia 22/index.html" data-dia="22">
-        <span class="dia-num">22</span>
-        <span class="dia-titulo">Instalar hábito e tracker</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 23/index.html" data-dia="23">
-        <span class="dia-num">23</span>
-        <span class="dia-titulo">Ambiente e fricção</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 24/index.html" data-dia="24">
-        <span class="dia-num">24</span>
-        <span class="dia-titulo">Sistema de manutenção</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 25/index.html" data-dia="25">
-        <span class="dia-num">25</span>
-        <span class="dia-titulo">Ciclo de revisão sustentável</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 26/index.html" data-dia="26">
-        <span class="dia-num">26</span>
-        <span class="dia-titulo">Rede de suporte pós-Intentia</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 27/index.html" data-dia="27">
-        <span class="dia-num">27</span>
-        <span class="dia-titulo">Próximo horizonte — os 90 dias que vêm</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-      <a class="dia-card" href="Dia 28/index.html" data-dia="28">
-        <span class="dia-num">28</span>
-        <span class="dia-titulo">Fechamento e celebração</span>
-        <span class="dia-check" aria-hidden="true">✓</span>
-      </a>
-    </div>
-  </section>
-</main>
-
-<div class="rodape-links">
-  <a href="jornada.html">Jornada (roadmap interativo)</a>
-  <a href="mapa-trilha.html">Mapa de status da trilha · uso interno</a>
+<div class="trilha-wrap">
+  <div id="trilha">
+    <svg id="caminho-svg" xmlns="http://www.w3.org/2000/svg">
+      <path id="trail-base" fill="none" stroke="#DAE6E1" stroke-width="9" stroke-linecap="round" stroke-dasharray="1 16"/>
+      <path id="trail-done" fill="none" stroke="#336B62" stroke-width="9" stroke-linecap="round"/>
+    </svg>
+  </div>
 </div>
+
+<div id="toast"></div>
+
+<details class="demo">
+  <summary>Modo demonstração</summary>
+  <div class="demo-card">
+    <b>Simular a jornada</b>
+    <p>Veja como a página fica com a trilha concluída até um certo dia. Não altera o que você já fez de verdade.</p>
+    <input type="range" id="sim-range" min="-1" max="28" step="1" value="-1">
+    <div class="val" id="sim-val">Sem simulação</div>
+    <div class="acoes">
+      <button class="aplicar" id="sim-aplicar">Aplicar</button>
+      <button class="limpar" id="sim-limpar">Limpar</button>
+    </div>
+  </div>
+</details>
 
 <footer>
   <p class="fq">"Movimento sem intenção é agitação. Movimento com intenção é avanço."</p>
-  <p>Plataforma Intentia · Trilha Capital de Carreira — página de entrada</p>
+  <p>Protótipo · Plataforma Intentia · Trilha Capital de Carreira · Jornada — desbloqueio dia a dia</p>
 </footer>
 
 <script>
-(function(){
-  /* mesma leitura de progresso do jornada.html:
-     localStorage 'intentia-progresso' (array de dias) + fallback sessionStorage 'intentia-diaN' */
-  var done = {};
-  try {
-    var raw = localStorage.getItem('intentia-progresso');
-    if (raw) JSON.parse(raw).forEach(function(n){ done[n]=true; });
-  } catch(e) {}
-  try {
-    for (var i=0;i<=28;i++) if (sessionStorage.getItem('intentia-dia'+i)) done[i]=true;
-  } catch(e) {}
+/* ============================================================
+   INTENTIA · JORNADA — roadmap interativo da Trilha Capital de Carreira
+   Estrutura: 28 dias · 4 semanas · 4 marcos.
+   Regra de desbloqueio: o Dia N abre quando a missão do Dia N−1 foi
+   registrada (sessionStorage 'intentia-diaN' ou localStorage 'intentia-progresso').
+   Etapa 0 (travessia) está sempre aberto e à parte da contagem dos 28.
+   ============================================================ */
 
-  var total=28, feitos=0, proximo=null;
-  document.querySelectorAll('.dia-card').forEach(function(c){
-    var n=parseInt(c.getAttribute('data-dia'),10);
-    if (done[n]) { c.classList.add('feito'); if(n>=1) feitos++; }
-  });
-  for (var d=0; d<=28; d++) { if(!done[d]) { proximo=d; break; } }
-
-  var pct = Math.round((feitos/total)*100);
-  var fill=document.getElementById('barra-fill');
-  var txt=document.getElementById('progresso-txt');
-  var btn=document.getElementById('btn-continuar');
-  if (fill) setTimeout(function(){ fill.style.width=pct+'%'; }, 150);
-  if (feitos>0 && txt) txt.textContent = feitos+' de 28 missões concluídas · '+pct+'%';
-  if (btn) {
-    if (proximo===null) { btn.textContent='Rever o Dia 28 · trilha concluída'; btn.setAttribute('href','Dia 28/index.html'); }
-    else if (proximo>0) { btn.textContent='Continuar do Dia '+proximo; btn.setAttribute('href','Dia '+proximo+'/index.html'); }
+/* Fallback do Intentia.concluidos — reúne quem já concluiu missão */
+window.Intentia = window.Intentia || {
+  concluidos: function(){
+    var done = {};
+    /* localStorage.intentia-progresso pode guardar um array com [0..28] */
+    try{
+      var raw = localStorage.getItem('intentia-progresso');
+      if(raw){
+        var arr = JSON.parse(raw);
+        if(Array.isArray(arr)){ arr.forEach(function(n){ if(typeof n==='number' && n>=0 && n<=28) done[n]=true; }); }
+      }
+    }catch(e){}
+    /* sessionStorage guarda o resultado de cada missão em 'intentia-diaN' */
+    try{
+      for(var i=0;i<=28;i++){
+        if(sessionStorage.getItem('intentia-dia'+i)) done[i]=true;
+      }
+    }catch(e){}
+    return Object.keys(done).map(function(k){ return parseInt(k,10); });
   }
-})();
-</script>
+};
 
+var DIAS=[
+  {n:0, t:"Bem-vindo à travessia", href:"Dia 0/index.html"},
+  {n:1, t:"Os seis ativos do seu Capital de Carreira", href:"Dia 1/index.html"},
+  {n:2, t:"Sua trajetória conta", href:"Dia 2/index.html"},
+  {n:3, t:"O que você gerou — e dá para provar", href:"Dia 3/index.html"},
+  {n:4, t:"A reputação que trabalha por você", href:"Dia 4/index.html"},
+  {n:5, t:"A rede que trabalha por você", href:"Dia 5/index.html"},
+  {n:6, t:"A cadeia A·C·I — do que você sabe ao que sua palavra move", href:"Dia 6/index.html"},
+  {n:7, t:"Valores + Retrato de Capital de Carreira", href:"Dia 7/index.html", marco:"Retrato", ent:"Retrato + Valores"},
+  {n:8, t:"Futuros possíveis — três versões de você", href:"Dia 8/index.html"},
+  {n:9, t:"Carreira não linear", href:"Dia 9/index.html"},
+  {n:10,t:"Framework de decisão", href:"Dia 10/index.html"},
+  {n:11,t:"Armadilhas da decisão", href:"Dia 11/index.html"},
+  {n:12,t:"Propósito construído", href:"Dia 12/index.html"},
+  {n:13,t:"Essencial — o que fica quando você tira o resto", href:"Dia 13/index.html"},
+  {n:14,t:"Marca + Direção Escolhida", href:"Dia 14/index.html", marco:"Direção", ent:"Direção Escolhida + Marca"},
+  {n:15,t:"Presença executiva", href:"Dia 15/index.html"},
+  {n:16,t:"Autoridade — o que faz sua palavra pesar", href:"Dia 16/index.html"},
+  {n:17,t:"Redes de influência", href:"Dia 17/index.html"},
+  {n:18,t:"Persuasão — mover pessoas sem manipular", href:"Dia 18/index.html"},
+  {n:19,t:"Aprendizagem deliberada", href:"Dia 19/index.html"},
+  {n:20,t:"Energia e prioridades", href:"Dia 20/index.html"},
+  {n:21,t:"Estratégia → Execução (seu Plano de Execução)", href:"Dia 21/index.html", marco:"Plano", ent:"Plano de Execução · seis movimentos"},
+  {n:22,t:"Instalar hábito e tracker", href:"Dia 22/index.html"},
+  {n:23,t:"Ambiente e fricção", href:"Dia 23/index.html"},
+  {n:24,t:"Sistema de manutenção", href:"Dia 24/index.html"},
+  {n:25,t:"Ciclo de revisão sustentável", href:"Dia 25/index.html"},
+  {n:26,t:"Rede de suporte pós-Intentia", href:"Dia 26/index.html"},
+  {n:27,t:"Próximo horizonte — os 90 dias que vêm", href:"Dia 27/index.html"},
+  {n:28,t:"Fechamento e celebração", href:"Dia 28/index.html", marco:"Fechamento", ent:"Compromisso de 90 dias + ritual instalado"}
+];
+
+var BLOCOS=[
+  {antes:0, pe:"Travessia · Etapa 0", h:"Antes do primeiro passo — à parte dos 28 dias", de:0, ate:0, ent:null},
+  {antes:1, pe:"Semana 1 · Etapas 1–7", h:"Onde eu realmente estou — e o que já construí sem perceber?", de:1, ate:7, ent:"Retrato + Valores"},
+  {antes:8, pe:"Semana 2 · Etapas 8–14", h:"Quem eu quero me tornar — e para onde faz sentido eu ir?", de:8, ate:14, ent:"Direção Escolhida + Marca"},
+  {antes:15,pe:"Semana 3 · Etapas 15–21", h:"Como eu chego lá — presença, autoridade, redes, aprendizado, energia.", de:15, ate:21, ent:"Plano de Execução · v1"},
+  {antes:22,pe:"Semana 4 · Etapas 22–28", h:"Como isso vira rotina — e não mais uma lista abandonada?", de:22, ate:28, ent:"Compromisso de 90 dias + ritual"}
+];
+
+var MARCOS=[
+  {dia:7,  nome:"Retrato",     ini:"R", flow:"Dia 7/index.html"},
+  {dia:14, nome:"Direção",     ini:"D", flow:"Dia 14/index.html"},
+  {dia:21, nome:"Plano",       ini:"P", flow:"Dia 21/index.html"},
+  {dia:28, nome:"Fechamento",  ini:"F", flow:"Dia 28/index.html"}
+];
+
+var SIM_KEY='intentia-jornada-sim', DATAS_KEY='intentia-jornada-datas';
+
+function getSim(){ try{ var v=localStorage.getItem(SIM_KEY); return v===null?null:parseInt(v,10); }catch(e){ return null; } }
+function setSim(v){ try{ if(v===null) localStorage.removeItem(SIM_KEY); else localStorage.setItem(SIM_KEY,String(v)); }catch(e){} }
+
+/* conjunto efetivo de dias concluídos = reais ∪ simulados */
+function feitos(){
+  var reais=(typeof Intentia!=='undefined')?Intentia.concluidos():[];
+  var s={}; reais.forEach(function(d){ s[d]=true; });
+  var sim=getSim();
+  if(sim!==null){ for(var i=0;i<=sim;i++) s[i]=true; }
+  return s;
+}
+function feito(n,S){ return !!S[n]; }
+function desbloqueado(n,S){ return n===0 || feito(n-1,S); }
+
+/* registra a data em que cada conclusão real foi observada (para a constância) */
+function registrarDatas(){
+  try{
+    var reais=(typeof Intentia!=='undefined')?Intentia.concluidos():[];
+    var m=JSON.parse(localStorage.getItem(DATAS_KEY)||'{}');
+    var hoje=new Date(); hoje=hoje.getFullYear()+'-'+String(hoje.getMonth()+1).padStart(2,'0')+'-'+String(hoje.getDate()).padStart(2,'0');
+    var mudou=false;
+    reais.forEach(function(d){ if(!m[d]){ m[d]=hoje; mudou=true; } });
+    if(mudou) localStorage.setItem(DATAS_KEY, JSON.stringify(m));
+    return m;
+  }catch(e){ return {}; }
+}
+
+/* sequência de dias de calendário consecutivos com pelo menos uma missão concluída,
+   terminando hoje ou ontem — sem punição visual por pausa */
+function sequencia(){
+  var m=registrarDatas();
+  var dias={}; Object.keys(m).forEach(function(k){ dias[m[k]]=true; });
+  var lista=Object.keys(dias).sort();
+  if(!lista.length) return 0;
+  function d2t(s){ var p=s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]).getTime(); }
+  var um=86400000, hoje=new Date(); hoje=new Date(hoje.getFullYear(),hoje.getMonth(),hoje.getDate()).getTime();
+  var ultimo=d2t(lista[lista.length-1]);
+  if(hoje-ultimo>um) return 0;
+  var seq=1, i=lista.length-1;
+  while(i>0 && d2t(lista[i])-d2t(lista[i-1])===um){ seq++; i--; }
+  return seq;
+}
+
+/* ---------- render ---------- */
+var trilha=document.getElementById('trilha');
+var svg=document.getElementById('caminho-svg');
+
+function render(){
+  var S=feitos();
+  var sim=getSim();
+  var totalTrilha=DIAS.filter(function(d){return d.n>=1 && feito(d.n,S);}).length;
+  var totalComPrep=totalTrilha+(feito(0,S)?1:0);
+  var pct=Math.round(100*totalTrilha/28);
+
+  /* dia atual = primeiro não concluído que está desbloqueado */
+  var atual=null;
+  for(var i=0;i<DIAS.length;i++){ if(!feito(i,S) && desbloqueado(i,S)){ atual=i; break; } }
+  var completo=(atual===null);
+
+  /* painel */
+  document.getElementById('pct').textContent=pct+'%';
+  document.getElementById('barra-i').style.width=pct+'%';
+  document.getElementById('t-dias').textContent=totalTrilha+' de 28';
+  document.getElementById('t-dias-n').textContent='Etapa 0 · travessia à parte — '+(feito(0,S)?'concluída ✓':'pendente');
+
+  var seqEl=document.getElementById('t-seq'), seqN=document.getElementById('t-seq-n');
+  if(sim!==null){
+    seqEl.textContent=totalComPrep+(totalComPrep===1?' dia':' dias');
+    seqN.textContent='sequência simulada (modo demonstração)';
+  }else{
+    var sq=sequencia();
+    if(totalComPrep===0){ seqEl.textContent='—'; seqN.textContent='sua sequência começa na primeira missão'; }
+    else if(sq===0){ seqEl.textContent='em pausa'; seqN.textContent='retome hoje — a trilha continua de onde você parou'; }
+    else{ seqEl.textContent=sq+(sq===1?' dia':' dias seguidos'); seqN.textContent='constância vence intensidade'; }
+  }
+
+  var tM=document.getElementById('t-marco'), tMn=document.getElementById('t-marco-n');
+  var prox=null;
+  for(var j=0;j<MARCOS.length;j++){ if(!feito(MARCOS[j].dia,S)){ prox=MARCOS[j]; break; } }
+  if(completo){ tM.textContent='Trilha concluída'; tMn.textContent='os quatro selos são seus'; }
+  else if(prox){
+    tM.textContent=prox.nome+' · Etapa '+prox.dia;
+    var falta=prox.dia-(atual===null?28:atual);
+    tMn.textContent=(falta<=0)?'é hoje — boa construção':(falta===1?'falta 1 dia':'faltam '+falta+' dias');
+  }
+
+  /* selos */
+  var selos=document.getElementById('selos'); selos.innerHTML='';
+  MARCOS.forEach(function(mc){
+    var ganho=feito(mc.dia,S);
+    var el=document.createElement(ganho?'a':'div');
+    el.className='selo'+(ganho?' ganho':'');
+    if(ganho) el.href=mc.flow;
+    el.innerHTML='<span class="medalha">'+mc.ini+'</span><span class="nome">'+mc.nome+'</span><span class="dia">Etapa '+mc.dia+'</span>';
+    selos.appendChild(el);
+  });
+
+  /* peças do retrato — Etapas 1..6 → uma peça por dia */
+  var slots=document.getElementById('pecas-slots'); slots.innerHTML='';
+  var nPecas=0;
+  for(var p=1;p<=6;p++){
+    var tem=feito(p,S); if(tem) nPecas++;
+    var pe=document.createElement('span'); pe.className='peca'+(tem?' tem':''); pe.textContent=p;
+    slots.appendChild(pe);
+  }
+  var box=document.getElementById('pecas-box'), msg=document.getElementById('pecas-msg');
+  if(feito(7,S)){ box.classList.add('completa'); msg.textContent='Retrato montado — as seis peças viraram o seu espelho na Etapa 7, com valores por cima.'; }
+  else{
+    box.classList.remove('completa');
+    msg.textContent=(nPecas===0)?'As missões das Etapas 1–6 geram as seis peças que montam o seu Retrato na Etapa 7.':(nPecas+' de 6 peças coletadas — cada missão da primeira semana gera uma.');
+  }
+
+  /* aviso de simulação */
+  var av=document.getElementById('sim-aviso');
+  if(sim!==null){ av.classList.add('on'); document.getElementById('sim-aviso-txt').textContent='Modo demonstração ativo — você está vendo a jornada como se estivesse concluída até a Etapa '+sim+'. Use "Limpar" para voltar ao seu estado real.'; }
+  else av.classList.remove('on');
+
+  desenharTrilha(S, atual, completo);
+}
+
+/* ---------- desenho do caminho ---------- */
+function desenharTrilha(S, atual, completo){
+  Array.prototype.slice.call(trilha.querySelectorAll('.no,.rotulo,.placa,.voce-aqui,.chegada')).forEach(function(e){ e.remove(); });
+
+  var w=trilha.clientWidth;
+  var cx=w/2, amp=Math.min(w*0.26, 190);
+  var passo=104, y=30, fase=0;
+  var pontos=[];
+
+  var frag=document.createDocumentFragment();
+
+  DIAS.forEach(function(d,i){
+    /* placa de bloco antes deste dia? */
+    var bl=null;
+    for(var b=0;b<BLOCOS.length;b++){ if(BLOCOS[b].antes===d.n){ bl=BLOCOS[b]; break; } }
+    if(bl){
+      var placa=document.createElement('div');
+      placa.className='placa'; placa.style.top=y+'px';
+      var nb=0, tot=bl.ate-bl.de+1;
+      for(var k=bl.de;k<=bl.ate;k++) if(feito(k,S)) nb++;
+      var pctB=Math.round(100*nb/tot);
+      var rotProg=(bl.antes===0)
+        ? 'Travessia '+(nb>0?'concluída ✓':'pendente')+' — não conta nos 28 dias'
+        : nb+' de '+tot+' dias · '+pctB+'%';
+      placa.innerHTML='<div class="pe">'+bl.pe+'</div><h2>'+bl.h+'</h2>'
+        +'<div class="pb"><i style="width:'+pctB+'%"></i></div>'
+        +'<div class="pl"><span class="pd">'+rotProg+'</span>'
+        +(bl.ent?'<span class="ent">Entrega: '+bl.ent+'</span>':'')+'</div>';
+      frag.appendChild(placa);
+      y+=(bl.antes===0?135:190)+(w<640?40:0);
+    }
+
+    var x=cx+Math.sin(fase)*amp; fase+=0.82;
+    var isMarco=!!d.marco;
+    y+=isMarco?14:0;
+    pontos.push({x:x,y:y,dia:d.n});
+
+    var f=feito(d.n,S), atu=(d.n===atual), des=desbloqueado(d.n,S);
+    var cls='no '+(isMarco?'marco':'normal')+' '+(f?'feito':(atu?'atual':(des?'atual':'bloq')));
+    var el;
+    if(des){ el=document.createElement('a'); el.href=d.href; }
+    else{
+      el=document.createElement('div');
+      el.addEventListener('click', (function(n){ return function(){ toast('Conclua a missão da Etapa '+(n-1)+' para desbloquear a Etapa '+n+'.'); }; })(d.n));
+    }
+    el.className=cls;
+    el.style.left=x+'px'; el.style.top=y+'px';
+    el.innerHTML='<span class="circ">'+(isMarco?MARCOS.filter(function(m){return m.dia===d.n;})[0].ini:d.n)+'</span>'
+      +(f?'<span class="check">✓</span>':'');
+    el.setAttribute('aria-label','Etapa '+d.n+' — '+d.t+(f?' (concluído)':(des?' (disponível)':' (bloqueado)')));
+    frag.appendChild(el);
+
+    /* rótulo ao lado */
+    var r=document.createElement('div');
+    r.className='rotulo'+(des?'':' bloq-r')+(isMarco?' marco-r':'');
+    var ladoDireito=(x<=cx);
+    var raio=isMarco?33:24;
+    r.style.top=(y-16)+'px';
+    if(ladoDireito) r.style.left=(x+raio+14)+'px';
+    else{ r.style.right=(w-x+raio+14)+'px'; }
+    r.innerHTML='<span class="rd">'+(isMarco?'Marco · Etapa '+d.n:(d.n===0?'Etapa 0 · Travessia':'Etapa '+d.n))+'</span><span class="rt">'+d.t+'</span>'
+      +(isMarco?'<span class="entrega-tag">'+d.ent+'</span>':'')
+      +(des?'':'<span class="cadeado">🔒 conclua o Dia '+(d.n-1)+'</span>');
+    frag.appendChild(r);
+
+    /* "você está aqui" */
+    if(d.n===atual){
+      var va=document.createElement('div');
+      va.className='voce-aqui'; va.textContent='Você está aqui';
+      va.style.left=x+'px'; va.style.top=(y+raio+10)+'px';
+      frag.appendChild(va);
+      y+=26;
+    }
+    y+=passo+(isMarco?18:0);
+  });
+
+  /* chegada */
+  var cheg=document.createElement('div');
+  cheg.className='chegada'+(completo?' celebra':'');
+  cheg.style.top=(y-6)+'px';
+  cheg.innerHTML=completo
+    ? '<div class="band"><div class="bt">Trilha concluída. 🎉</div><p>Vinte e oito dias, quatro construções: Retrato + Valores, Direção Escolhida + Marca, Plano de Execução e o Compromisso de 90 dias — sustentado pelo ritual semanal.</p></div>'
+    : '<div class="band"><div class="bt">Etapa 28 · A chegada</div><p>No final da trilha: o seu Plano de Execução calibrado, o ritual semanal e o compromisso de 90 dias — construídos um dia por vez.</p></div>';
+  frag.appendChild(cheg);
+  var altura=y+120;
+
+  trilha.style.height=altura+'px';
+  trilha.appendChild(frag);
+
+  /* svg do caminho */
+  svg.setAttribute('width', w); svg.setAttribute('height', altura);
+  svg.setAttribute('viewBox','0 0 '+w+' '+altura);
+  var dAttr=suave(pontos);
+  var base=document.getElementById('trail-base'), done=document.getElementById('trail-done');
+  base.setAttribute('d', dAttr);
+
+  var ultimo=-1;
+  for(var i2=0;i2<DIAS.length;i2++){ if(feito(i2,S)) ultimo=i2; else break; }
+  if(ultimo>=1){
+    var len=base.getTotalLength();
+    var alvo=pontos[ultimo];
+    var melhor=0, mdist=1e12;
+    for(var s2=0;s2<=len;s2+=6){
+      var pt=base.getPointAtLength(s2);
+      var dx=pt.x-alvo.x, dy=pt.y-alvo.y, dd=dx*dx+dy*dy;
+      if(dd<mdist){ mdist=dd; melhor=s2; }
+    }
+    done.setAttribute('d', dAttr);
+    done.setAttribute('stroke-dasharray', melhor+' '+len);
+    done.style.display='';
+  }else{
+    done.style.display='none';
+  }
+}
+
+/* curva suave (catmull-rom → bézier) pelos pontos */
+function suave(p){
+  if(!p.length) return '';
+  var d='M '+p[0].x+' '+p[0].y;
+  for(var i=0;i<p.length-1;i++){
+    var p0=p[Math.max(0,i-1)], p1=p[i], p2=p[i+1], p3=p[Math.min(p.length-1,i+2)];
+    var c1x=p1.x+(p2.x-p0.x)/6, c1y=p1.y+(p2.y-p0.y)/6;
+    var c2x=p2.x-(p3.x-p1.x)/6, c2y=p2.y-(p3.y-p1.y)/6;
+    d+=' C '+c1x+' '+c1y+', '+c2x+' '+c2y+', '+p2.x+' '+p2.y;
+  }
+  return d;
+}
+
+/* ---------- toast ---------- */
+var toastTimer=null;
+function toast(msg){
+  var t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(function(){ t.classList.remove('show'); }, 2800);
+}
+
+/* ---------- modo demonstração ---------- */
+var range=document.getElementById('sim-range'), val=document.getElementById('sim-val');
+function refletirRange(){
+  var v=parseInt(range.value,10);
+  val.textContent=(v<0)?'Sem simulação':'Concluída até o Dia '+v;
+}
+range.addEventListener('input', refletirRange);
+document.getElementById('sim-aplicar').addEventListener('click', function(){
+  var v=parseInt(range.value,10);
+  setSim(v<0?null:v); render();
+  toast(v<0?'Simulação removida.':'Simulando a jornada concluída até o Dia '+v+'.');
+});
+document.getElementById('sim-limpar').addEventListener('click', function(){
+  setSim(null); range.value=-1; refletirRange(); render();
+  toast('Simulação removida — mostrando o seu estado real.');
+});
+(function(){ var s=getSim(); if(s!==null){ range.value=s; } refletirRange(); })();
+
+/* ---------- resize ---------- */
+var rTimer=null;
+window.addEventListener('resize', function(){ clearTimeout(rTimer); rTimer=setTimeout(render,150); });
+
+render();
+</script>
 </body>
 </html>
