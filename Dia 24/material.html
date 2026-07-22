@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 24 · Seu mapa de imunidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}.voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.6vw,42px);line-height:1.12;margin-bottom:14px;letter-spacing:-.01em}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:640px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  main{max-width:960px;margin:0 auto;padding:0 24px 40px}
+  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:16px 22px;margin:24px 0;display:flex;align-items:flex-start;gap:14px;font-size:13.5px;line-height:1.55}
+  .aviso-demo-icone{color:var(--coral);font-size:20px;flex-shrink:0;margin-top:2px}
+  .aviso-demo b{color:var(--verde-900)}.aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
+  .habito-topo{background:linear-gradient(135deg, var(--verde-900) 0%, #1d453f 100%);color:var(--creme);border-radius:16px;padding:28px 32px;margin:24px 0;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(39,87,80,.2)}
+  .habito-topo-label{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  .habito-topo h2{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;margin-bottom:8px;line-height:1.2}
+  .habito-topo-habito{font-family:var(--serif);font-size:17px;color:#fff;font-style:italic;font-weight:500}
+  .mapa-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:14px;margin:24px 0}
+  @media (max-width:900px){.mapa-grid{grid-template-columns:repeat(2, 1fr)}}
+  @media (max-width:520px){.mapa-grid{grid-template-columns:1fr}}
+  .mapa-col{background:#fff;border:1px solid var(--verde-100);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06);display:flex;flex-direction:column}
+  .mapa-col-header{padding:14px 18px 10px;color:#fff;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);text-align:center}
+  .mapa-col-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;font-family:var(--serif);font-size:16px;font-weight:600;margin-bottom:6px}
+  .mapa-col-nome{font-family:var(--serif);font-size:14.5px;font-weight:600;line-height:1.2}
+  .mapa-col-body{padding:16px 18px 20px;flex:1;font-size:13px;line-height:1.55;color:var(--tinta)}
+  .mapa-col-body.vazio{color:var(--tinta-suave);font-style:italic;font-size:12px}
+  .exp-box{background:#fff;border:1.5px solid var(--verde-700);border-radius:16px;padding:26px 30px;margin:24px 0;box-shadow:0 4px 16px rgba(39,87,80,.06)}
+  .exp-label{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+  .exp-box h2{font-family:var(--serif);font-size:22px;color:var(--verde-900);margin-bottom:14px;font-weight:600}
+  .exp-item{padding:14px 18px;background:var(--creme);border-radius:10px;margin-bottom:10px;border-left:3px solid var(--coral)}
+  .exp-item:last-child{margin-bottom:0}
+  .exp-item-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:5px}
+  .exp-item-txt{font-size:14.5px;color:var(--tinta);line-height:1.6}
+  .exp-item-txt.data{font-family:var(--serif);font-size:17px;color:var(--verde-900);font-weight:600}
+  .exp-item-txt.vazio{color:var(--tinta-suave);font-style:italic;font-size:13px}
+  .decisao-box{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:24px 0}
+  .decisao-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:8px}
+  .decisao-box h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:12px;font-weight:600}
+  .decisao-quadros{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+  @media (max-width:640px){.decisao-quadros{grid-template-columns:1fr}}
+  .decisao-quadro{background:#fff;border:1px solid var(--verde-100);border-radius:10px;padding:14px 16px;font-size:13.5px;line-height:1.5}
+  .decisao-quadro b{color:var(--verde-900);font-family:var(--serif);display:block;margin-bottom:6px;font-size:14.5px}
+  .fechamento{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 32px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .fechamento h2{font-family:var(--serif);font-size:22px;color:var(--verde-900);margin-bottom:12px;font-weight:600}
+  .fechamento p{font-size:15px;color:var(--tinta);line-height:1.65;margin-bottom:12px}
+  .fechamento p:last-child{margin-bottom:0}.fechamento b{color:var(--verde-900)}
+  .proximo{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:28px 30px;margin:24px 0;text-align:center;position:relative;overflow:hidden}
+  .proximo-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+  .proximo h3{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;margin-bottom:8px}
+  .proximo p{font-size:14.5px;color:#CFE0D6;margin-bottom:20px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
+  .proximo-cta{display:inline-flex;align-items:center;gap:12px;background:var(--coral);color:#fff;padding:14px 26px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:16px;font-weight:600;transition:transform .2s;box-shadow:0 6px 18px rgba(255,104,66,.32)}
+  .proximo-cta:hover{transform:translateY(-2px)}.proximo-cta svg{width:14px;height:14px;fill:currentColor}
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+  main p{text-align:justify;text-justify:inter-word;hyphens:auto}
+  main .fechamento, main .fechamento p, main .mapa-col-body, main .exp-item-txt, main .decisao-quadro{text-align:justify;text-justify:inter-word;hyphens:auto}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 24</a><span class="sep">›</span><span class="cur">Material</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html">Missão</a><a href="material.html" class="atual">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 23/index.html" title="Dia 23 (tecla ←)">←<span class="lbl"> Dia 23</span></a><a class="intnav-pill" href="../Dia 25/index.html" title="Dia 25 (tecla →)"><span class="lbl">Dia 25 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 24</a>
+    <div class="eyebrow">Material · Dia 24 · Semana 4 · Dia 3 de 7</div>
+    <h1>Seu <span class="grifo">mapa de imunidade</span> — 4 colunas + teste.</h1>
+    <p class="lede">O mapa de Kegan &amp; Lahey aplicado ao seu hábito 1: sabotagem observada, compromisso oculto nomeado, suposição escrita, experimento desenhado para testar. Data da revisão marcada.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+<main>
+  <div id="aviso-demo" class="aviso-demo" style="display:none">
+    <div class="aviso-demo-icone">◆</div>
+    <div><b>Você ainda não preencheu a missão do Dia 24.</b> Dados em <b>modo demonstrativo</b>. <a href="missao.html">Ir preencher →</a></div>
+  </div>
+
+  <div class="habito-topo">
+    <div class="habito-topo-label">O hábito que o mapa investiga</div>
+    <h2>Hábito 1</h2>
+    <div class="habito-topo-habito" id="habito-txt">—</div>
+  </div>
+
+  <div class="mapa-grid">
+    <div class="mapa-col">
+      <div class="mapa-col-header"><div class="mapa-col-num">1</div><div class="mapa-col-nome">Objetivo</div></div>
+      <div class="mapa-col-body" id="mapa-1">—</div>
+    </div>
+    <div class="mapa-col">
+      <div class="mapa-col-header"><div class="mapa-col-num">2</div><div class="mapa-col-nome">Comportamento contrário</div></div>
+      <div class="mapa-col-body" id="mapa-2">—</div>
+    </div>
+    <div class="mapa-col">
+      <div class="mapa-col-header"><div class="mapa-col-num">3</div><div class="mapa-col-nome">Compromisso oculto</div></div>
+      <div class="mapa-col-body" id="mapa-3">—</div>
+    </div>
+    <div class="mapa-col">
+      <div class="mapa-col-header"><div class="mapa-col-num">4</div><div class="mapa-col-nome">Suposição</div></div>
+      <div class="mapa-col-body" id="mapa-4">—</div>
+    </div>
+  </div>
+
+  <div class="exp-box">
+    <div class="exp-label">Experimento desenhado</div>
+    <h2>1 teste pequeno da suposição</h2>
+    <div class="exp-item">
+      <div class="exp-item-label">O experimento</div>
+      <div class="exp-item-txt" id="exp-txt">—</div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-item-label">Critério de resultado</div>
+      <div class="exp-item-txt" id="crit-txt">—</div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-item-label">Data de revisão</div>
+      <div class="exp-item-txt data" id="data-txt">—</div>
+    </div>
+  </div>
+
+  <div class="decisao-box">
+    <div class="decisao-label">Depois do teste</div>
+    <h3>Como interpretar o resultado — sem drama</h3>
+    <div class="decisao-quadros">
+      <div class="decisao-quadro">
+        <b>Se a suposição foi confirmada</b>
+        A proteção faz sentido no seu contexto atual. Isso é dado real — não sinal de falha. Ajuste: talvez o hábito 1 precise ser <em>outro</em>, mais alinhado à direção sem confrontar essa proteção. Não force.
+      </div>
+      <div class="decisao-quadro">
+        <b>Se a suposição não foi confirmada</b>
+        A proteção estava operando com informação antiga. Isso libera a mudança — mas suavemente. O próximo experimento é 1 tamanho maior (não 10x maior). Kegan &amp; Lahey: aposente a suposição com gratidão pelo serviço, siga.
+      </div>
+    </div>
+  </div>
+
+  <div class="fechamento">
+    <h2>Como sustentar essa investigação nas próximas semanas</h2>
+    <p><b>1 mapa por mês</b> é o suficiente. Kegan &amp; Lahey são explícitos: mapas de imunidade não são para uso semanal. Cada mapa exige tempo para os experimentos gerarem dado. Depois de 3-4 mapas ao longo de 3-4 meses, você começa a reconhecer padrões — várias sabotagens diferentes servem a algumas poucas proteções centrais.</p>
+    <p><b>Compartilhar o mapa (opcional) com pessoa de confiança.</b> Mentor, terapeuta, colega íntimo. Kegan: dizer em voz alta reduz o poder da suposição — o próprio ato de nomear diminui a força. Ouvinte não precisa "resolver" nada; só ouvir com respeito já muda a paisagem interna.</p>
+    <p><b>Cuidado com a auto-análise em espiral.</b> O mapa é ferramenta para gerar teste — não desculpa para analisar sem parar. Se você fica dias no mapa sem desenhar experimento, saiu do método. Volte à Coluna 4 (experimento) e siga.</p>
+  </div>
+
+  <div class="proximo">
+    <div class="proximo-eyebrow">Amanhã · Dia 25</div>
+    <h3>Ciclo de revisão sustentável — técnico vs adaptativo</h3>
+    <p>Heifetz &amp; Linsky: nem todo problema é da mesma natureza. Uns precisam de solução técnica (aplicar o que já se sabe); outros precisam de solução adaptativa (aprender algo novo sobre si). Como distinguir na revisão semanal — e por que.</p>
+    <a href="../Dia 25/index.html" class="proximo-cta">Ir para o Dia 25 <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></a>
+  </div>
+<!--intentia-dayend:start--><style>
+.intday{background:linear-gradient(135deg,#275750 0%,#1d453f 100%);color:#F5F7F3;border-radius:20px;
+  padding:34px 38px;margin:36px 0 8px;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif}
+.intday .intday-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7CA89E;margin-bottom:10px}
+.intday h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:22px;line-height:1.25;margin:0 0 10px;color:#F5F7F3}
+.intday p{font-size:14.5px;line-height:1.6;color:#CFE0D6;margin:0 0 20px;max-width:560px}
+.intday .intday-cta{display:inline-flex;align-items:center;gap:8px;background:#FF6842;color:#fff;text-decoration:none;
+  font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 10px 24px rgba(255,104,66,.3);transition:transform .2s,box-shadow .2s}
+.intday .intday-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,104,66,.4)}
+@media(max-width:600px){.intday{padding:26px 22px}.intday h3{font-size:19px}}
+</style><div class="intday"><div class="intday-eyebrow">A jornada continua</div><h3>Amanhã: Dia 25 — Ciclo de revisão sustentável.</h3><p>Você concluiu o Dia 24. Quando estiver pronto, dê o próximo passo da travessia.</p><a class="intday-cta" href="../Dia 25/index.html">Ir para o Dia 25 →</a></div><!--intentia-dayend:end-->
+</main>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Dia 24 · Mapa de imunidade</div></footer>
+
+<script>
+  function formatarData(iso) {
+    if (!iso) return '—';
+    try { const [ano, mes, dia] = iso.split('-'); const meses = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez']; return dia + ' ' + meses[parseInt(mes)-1] + ' ' + ano; } catch(e) { return iso; }
+  }
+  const DEMO = {
+    momentos:'segunda 07h — abri email antes do doc, sumiu 40 min; quarta 07h — mesma coisa; sexta — sentei mas fiquei relendo artigo alheio ao invés de escrever',
+    comportamento:'quando sento para escrever, abro Slack/email primeiro; passo 30-45 min lá; volto ao doc quando já é hora de sair',
+    compromisso:'proteger minha reputação de sólida — se eu publicar algo medíocre, alguém do banco pode ler e questionar minha competência técnica',
+    suposicao:'se eu publicar um artigo curto e imperfeito, então minha reputação técnica no banco cai — e minha estabilidade profissional é ameaçada',
+    experimento:'publicar 1 artigo de 400 palavras esta semana, no LinkedIn, marcado como "notas rápidas" — medir: quantas reações profissionais negativas surgiram vs. neutras/positivas',
+    criterio:'prova = 3+ reações negativas de pessoas relevantes do banco; não-prova = 0-1 reação negativa (ou zero comentários — silêncio profissional é dado)',
+    dataRevisao:'2026-07-28'
+  };
+  let habito = 'seu hábito 1 do Dia 22 (não preenchido — exemplo demonstrativo)';
+  try { const s = sessionStorage.getItem('intentia-dia22'); if (s) { const p = JSON.parse(s); const a = p.amanha || 'h1'; if (p[a]) habito = p[a]; } } catch(e){}
+  document.getElementById('habito-txt').textContent = habito;
+
+  const raw = sessionStorage.getItem('intentia-dia24');
+  let d, demo = false;
+  try { const p = raw ? JSON.parse(raw) : null; if (p && p.compromisso) d = p; else { d = DEMO; demo = true; } } catch(e){ d = DEMO; demo = true; }
+  if (demo) document.getElementById('aviso-demo').style.display = 'flex';
+
+  function setText(id, val) { const el = document.getElementById(id); if (!el) return; if (!val || !val.toString().trim()) { el.textContent = '—'; el.classList.add('vazio','vazia'); return; } el.textContent = val; el.classList.remove('vazio','vazia'); }
+  document.getElementById('mapa-1').textContent = habito;
+  setText('mapa-2', d.comportamento);
+  setText('mapa-3', d.compromisso);
+  setText('mapa-4', d.suposicao);
+  setText('exp-txt', d.experimento);
+  setText('crit-txt', d.criterio);
+  document.getElementById('data-txt').textContent = formatarData(d.dataRevisao);
+</script>
+</body>
+</html>

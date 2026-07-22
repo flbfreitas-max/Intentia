@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 12 · Missão — Três lentes de propósito</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.6;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:12px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  .missao-meta{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:22px;font-size:13px;color:#A9C6B8}
+  .missao-meta span{display:inline-flex;align-items:center;gap:6px}
+  .missao-meta svg{width:14px;height:14px;fill:currentColor}
+  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
+  .progresso{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:16px 22px;margin:24px 0;display:flex;align-items:center;gap:18px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .progresso-info{flex:1}
+  .progresso-titulo{font-size:13px;font-weight:600;color:var(--verde-900);margin-bottom:6px}
+  .progresso-bar{background:var(--verde-100);height:6px;border-radius:3px;overflow:hidden}
+  .progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}
+  .progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px;font-size:13.5px;line-height:1.55}
+  .aviso-demo-icone{color:var(--coral);font-size:18px;flex-shrink:0;margin-top:1px}
+  .aviso-demo b{color:var(--verde-900)}
+  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
+  .lembrete{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 20px;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
+  .lembrete b{color:var(--verde-900);font-weight:600}
+
+  .eu-etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
+  .eu-etapa-header{color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px}
+  .eu-etapa.continuacao .eu-etapa-header{background:linear-gradient(135deg, #336B62 0%, #275750 100%)}
+  .eu-etapa.adjacencia .eu-etapa-header{background:linear-gradient(135deg, #FF7A57 0%, #E85530 100%)}
+  .eu-etapa.reinvencao .eu-etapa-header{background:linear-gradient(135deg, #8B7BB8 0%, #5F4E8C 100%)}
+  .eu-etapa-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
+  .eu-etapa-titulo{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.2;margin-bottom:3px}
+  .eu-etapa-sub{font-size:13px;opacity:.92;font-style:italic}
+  .eu-etapa-corpo{padding:22px 28px 24px}
+  .eu-recap{background:var(--creme);border-radius:10px;padding:14px 18px;margin-bottom:18px;font-size:13.5px;line-height:1.55;color:var(--tinta-suave)}
+  .eu-recap-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:5px}
+  .eu-recap b{color:var(--verde-900);font-weight:500;font-family:var(--serif);font-size:14.5px;font-style:italic}
+
+  .lente-bloco{margin-bottom:18px;padding:14px 16px;background:var(--creme);border-radius:10px;border-left:3px solid var(--verde-500)}
+  .lente-bloco:last-child{margin-bottom:0}
+  .lente-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .lente-letra{width:28px;height:28px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:14px;flex-shrink:0}
+  .lente-nome{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--verde-900)}
+  .lente-desc{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-bottom:8px;line-height:1.4}
+  .lente-textarea{width:100%;padding:9px 12px;border:1.5px solid var(--verde-100);border-radius:6px;font-family:var(--sans);font-size:13.5px;color:var(--tinta);background:#fff;transition:border-color .2s;resize:vertical;min-height:52px;line-height:1.5;margin-bottom:8px}
+  .lente-textarea:focus{outline:none;border-color:var(--coral)}
+  .forca-opcoes{display:flex;gap:6px}
+  .forca-op{flex:1;background:#fff;border:1.5px solid var(--verde-100);border-radius:6px;padding:6px 4px;text-align:center;font-size:11.5px;font-weight:600;color:var(--tinta-suave);cursor:pointer;transition:all .15s;user-select:none}
+  .forca-op:hover{border-color:var(--verde-500)}
+  .forca-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
+
+  .placar-prop{background:linear-gradient(135deg, var(--verde-700) 0%, var(--verde-900) 100%);color:#fff;padding:12px 18px;border-radius:10px;margin-top:14px;text-align:center;font-family:var(--serif);font-weight:600}
+  .placar-prop .placar-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral-soft);margin-bottom:4px;font-family:var(--sans)}
+  .placar-prop .placar-num{font-size:18px;line-height:1.1;text-transform:uppercase;letter-spacing:.05em}
+
+  .final{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .final-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
+  .final-num{width:34px;height:34px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
+  .final-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
+  .final-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
+  .final-textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14.5px;color:var(--tinta);background:#fff;transition:border-color .2s;resize:vertical;min-height:70px;line-height:1.5;margin-top:8px}
+  .final-textarea:focus{outline:none;border-color:var(--coral)}
+  .dica{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-top:8px;padding-left:12px;border-left:2px solid var(--verde-500)}
+
+  .concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}
+  .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px}
+  .concluir p{font-size:14.5px;opacity:.92;margin-bottom:22px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
+  .btn-concluir{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--coral);padding:16px 30px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:17px;font-weight:600;border:none;cursor:pointer;transition:all .2s;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+  .btn-concluir:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+  .btn-concluir .icone{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .btn-concluir .icone svg{width:14px;height:14px;fill:currentColor}
+
+  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+<script>
+/* Persistência entre sessões (integração 21/07/2026)
+   Espelha as chaves intentia-* gravadas em sessionStorage para localStorage,
+   mantém o array localStorage.intentia-progresso (lido por jornada.html e pela capa)
+   e faz a leitura cair para localStorage quando a aba é nova. */
+(function(){
+  try{
+    var proto = Storage.prototype;
+    var _set = proto.setItem, _get = proto.getItem;
+    function marcaProgresso(k){
+      var m = /^intentia-dia(\d+)$/.exec(k);
+      if(!m) return;
+      try{
+        var arr = JSON.parse(_get.call(localStorage,'intentia-progresso') || '[]');
+        var n = parseInt(m[1],10);
+        if(arr.indexOf(n)===-1){ arr.push(n); arr.sort(function(a,b){return a-b}); _set.call(localStorage,'intentia-progresso', JSON.stringify(arr)); }
+      }catch(e){}
+    }
+    proto.setItem = function(k,v){
+      _set.call(this,k,v);
+      if(this===sessionStorage && /^intentia-/.test(k)){
+        try{ _set.call(localStorage,k,v); }catch(e){}
+        marcaProgresso(k);
+      }
+    };
+    proto.getItem = function(k){
+      var v = _get.call(this,k);
+      if(v===null && this===sessionStorage && /^intentia-/.test(k)){
+        try{ v = _get.call(localStorage,k); }catch(e){}
+      }
+      return v;
+    };
+  }catch(e){}
+})();
+</script>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 12</a><span class="sep">›</span><span class="cur">Missão</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html" class="atual">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 11/index.html" title="Dia 11 (tecla ←)">←<span class="lbl"> Dia 11</span></a><a class="intnav-pill" href="../Dia 13/index.html" title="Dia 13 (tecla →)"><span class="lbl">Dia 13 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 12</a>
+    <div class="eyebrow">Missão · Dia 12 · Semana 2</div>
+    <h1>Três lentes de <span class="grifo">propósito</span> em cada Eu.</h1>
+    <p class="lede">Legado (o que fica), Serviço (a quem serve), Vocação (o que chama). Uma frase + força (forte/médio/fraco) para cada lente, para cada Eu.</p>
+    <div class="missao-meta">
+      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 18 min</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
+    </div>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<main>
+  <div class="progresso">
+    <div class="progresso-info">
+      <div class="progresso-titulo">Seu preenchimento</div>
+      <div class="progresso-bar"><div class="progresso-fill" id="progresso-fill"></div></div>
+    </div>
+    <div class="progresso-num" id="progresso-num">0/4</div>
+  </div>
+
+  <div id="aviso-demo" class="aviso-demo" style="display:none">
+    <div class="aviso-demo-icone">◆</div>
+    <div><b>Preencha as missões anteriores primeiro.</b> Sem elas, este dia perde referência. <a href="../Dia 8/missao.html">Começar pelo Dia 8 →</a></div>
+  </div>
+
+  <div class="lembrete">
+    <b>Como responder:</b> uma frase por lente, mais uma marcação de força (Forte / Médio / Fraco). Não force lentes fortes onde elas não estão — o valor do exercício é a honestidade.
+  </div>
+
+  <!-- CONTINUAÇÃO -->
+  <section class="eu-etapa continuacao">
+    <div class="eu-etapa-header"><div class="eu-etapa-letra">C</div><div><div class="eu-etapa-titulo">Eu-Continuação</div><div class="eu-etapa-sub">"Continuo o que faço — mais aprofundado"</div></div></div>
+    <div class="eu-etapa-corpo">
+      <div class="eu-recap" id="recap-cont"><div class="eu-recap-label">Sua versão</div><b>—</b></div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">L</div><div class="lente-nome">Legado</div></div>
+        <div class="lente-desc">O que fica depois de você não estar mais nessa versão?</div>
+        <textarea id="cont-leg-txt" class="lente-textarea" placeholder="ex.: material publicado, alunos formados, uma nova prática que virou padrão em um lugar"></textarea>
+        <div class="forca-opcoes" data-eu="cont" data-lente="leg">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">S</div><div class="lente-nome">Serviço</div></div>
+        <div class="lente-desc">A quem essa versão serve concretamente? Nome do público, tipo de contribuição.</div>
+        <textarea id="cont-ser-txt" class="lente-textarea" placeholder="ex.: gestores não-técnicos que precisam interpretar dados; ~3-5 mil pessoas por ano via blog"></textarea>
+        <div class="forca-opcoes" data-eu="cont" data-lente="ser">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">V</div><div class="lente-nome">Vocação</div></div>
+        <div class="lente-desc">O que te chama nessa versão, para além de salário e status?</div>
+        <textarea id="cont-voc-txt" class="lente-textarea" placeholder="ex.: sempre gostei de traduzir complexo em simples; faria isso mesmo sem retorno financeiro"></textarea>
+        <div class="forca-opcoes" data-eu="cont" data-lente="voc">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="placar-prop"><div class="placar-label">Placar propósito · Continuação</div><div class="placar-num" id="placar-cont">—</div></div>
+    </div>
+  </section>
+
+  <!-- ADJACÊNCIA -->
+  <section class="eu-etapa adjacencia">
+    <div class="eu-etapa-header"><div class="eu-etapa-letra">A</div><div><div class="eu-etapa-titulo">Eu-Adjacência</div><div class="eu-etapa-sub">"Mudo de contexto mantendo minhas habilidades"</div></div></div>
+    <div class="eu-etapa-corpo">
+      <div class="eu-recap" id="recap-adj"><div class="eu-recap-label">Sua versão</div><b>—</b></div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">L</div><div class="lente-nome">Legado</div></div>
+        <div class="lente-desc">O que fica depois?</div>
+        <textarea id="adj-leg-txt" class="lente-textarea"></textarea>
+        <div class="forca-opcoes" data-eu="adj" data-lente="leg">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">S</div><div class="lente-nome">Serviço</div></div>
+        <div class="lente-desc">A quem serve concretamente?</div>
+        <textarea id="adj-ser-txt" class="lente-textarea"></textarea>
+        <div class="forca-opcoes" data-eu="adj" data-lente="ser">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">V</div><div class="lente-nome">Vocação</div></div>
+        <div class="lente-desc">O que chama, além de salário/status?</div>
+        <textarea id="adj-voc-txt" class="lente-textarea"></textarea>
+        <div class="forca-opcoes" data-eu="adj" data-lente="voc">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="placar-prop"><div class="placar-label">Placar propósito · Adjacência</div><div class="placar-num" id="placar-adj">—</div></div>
+    </div>
+  </section>
+
+  <!-- REINVENÇÃO -->
+  <section class="eu-etapa reinvencao">
+    <div class="eu-etapa-header"><div class="eu-etapa-letra">R</div><div><div class="eu-etapa-titulo">Eu-Reinvenção</div><div class="eu-etapa-sub">"Faço algo estruturalmente novo"</div></div></div>
+    <div class="eu-etapa-corpo">
+      <div class="eu-recap" id="recap-rei"><div class="eu-recap-label">Sua versão</div><b>—</b></div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">L</div><div class="lente-nome">Legado</div></div>
+        <div class="lente-desc">O que fica depois?</div>
+        <textarea id="rei-leg-txt" class="lente-textarea"></textarea>
+        <div class="forca-opcoes" data-eu="rei" data-lente="leg">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">S</div><div class="lente-nome">Serviço</div></div>
+        <div class="lente-desc">A quem serve?</div>
+        <textarea id="rei-ser-txt" class="lente-textarea"></textarea>
+        <div class="forca-opcoes" data-eu="rei" data-lente="ser">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">V</div><div class="lente-nome">Vocação</div></div>
+        <div class="lente-desc">O que chama?</div>
+        <textarea id="rei-voc-txt" class="lente-textarea"></textarea>
+        <div class="forca-opcoes" data-eu="rei" data-lente="voc">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="placar-prop"><div class="placar-label">Placar propósito · Reinvenção</div><div class="placar-num" id="placar-rei">—</div></div>
+    </div>
+  </section>
+
+  <!-- INSIGHT -->
+  <section class="final">
+    <div class="final-header">
+      <div class="final-num">✎</div>
+      <div>
+        <div class="final-titulo">Coincidiu com o placar do Dia 10?</div>
+        <div class="final-desc">A versão mais forte por propósito é a mesma que ganhou por critério? Se sim: convergência importante. Se não: sinal — a versão que perdeu por critério pode ser a que fica; a que ganhou pode virar deserção lenta.</div>
+      </div>
+    </div>
+    <textarea id="insight" class="final-textarea" placeholder="ex.: o Eu-Continuação ganhou nas duas leituras — critério e propósito. Convergência real."></textarea>
+    <p class="dica">Se você não sabe ainda, escreva "vou deixar amadurecer" e siga. A leitura ficará mais clara nos próximos 2 dias.</p>
+  </section>
+
+  <div class="concluir">
+    <h3>Terminou com as lentes?</h3>
+    <p>O material do Dia 12 vai mostrar os 2 placares lado a lado (critério vs propósito) e destacar onde eles convergem ou divergem.</p>
+    <a href="material.html" class="btn-concluir" id="btn-concluir">Ver Placar Propósito<span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span></a>
+  </div>
+</main>
+
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Dia 12 · Missão — Três lentes de propósito</div></footer>
+
+<script>
+  const forcas = { cont:{leg:'', ser:'', voc:''}, adj:{leg:'', ser:'', voc:''}, rei:{leg:'', ser:'', voc:''} };
+  const NOMES_FORCA = { forte:'Forte', medio:'Médio', fraco:'Fraco' };
+
+  document.querySelectorAll('.forca-opcoes').forEach(grid => {
+    const eu = grid.dataset.eu, lente = grid.dataset.lente;
+    grid.querySelectorAll('.forca-op').forEach(op => {
+      op.addEventListener('click', () => {
+        grid.querySelectorAll('.forca-op').forEach(x => x.classList.remove('selecionada'));
+        op.classList.add('selecionada');
+        forcas[eu][lente] = op.dataset.f;
+        atualizar();
+      });
+    });
+  });
+
+  function calcularPlacar(prefix) {
+    const f = forcas[prefix];
+    const val = {forte:3, medio:2, fraco:1};
+    const soma = (val[f.leg]||0) + (val[f.ser]||0) + (val[f.voc]||0);
+    if (soma === 0) return '—';
+    if (soma >= 8) return 'Alto';
+    if (soma >= 6) return 'Médio-alto';
+    if (soma >= 4) return 'Médio';
+    return 'Baixo';
+  }
+
+  function atualizar() {
+    ['cont','adj','rei'].forEach(p => {
+      document.getElementById('placar-'+p).textContent = calcularPlacar(p);
+    });
+    let pontos = 0;
+    ['cont','adj','rei'].forEach(p => {
+      if (forcas[p].leg && forcas[p].ser && forcas[p].voc) pontos++;
+    });
+    if (document.getElementById('insight').value.trim().length > 0) pontos++;
+    document.getElementById('progresso-num').textContent = pontos + '/4';
+    document.getElementById('progresso-fill').style.width = (pontos/4*100) + '%';
+  }
+
+  document.getElementById('insight').addEventListener('input', atualizar);
+
+  const DEMO = {
+    continuacao: { nome: 'A analista sênior de dados que virou referência em análise de decisão' },
+    adjacencia: { nome: 'A analista sênior que virou head de dados de uma fintech' },
+    reinvencao: { nome: 'A professora e autora sobre alfabetização de dados' }
+  };
+
+  function pega(k, fb) { try{const s=sessionStorage.getItem(k);if(s){const p=JSON.parse(s);if(p&&Object.keys(p).length>0)return p;}}catch(e){}return fb; }
+  const dia8 = pega('intentia-dia8', DEMO);
+  if (!sessionStorage.getItem('intentia-dia8')) document.getElementById('aviso-demo').style.display = 'flex';
+
+  ['continuacao','adjacencia','reinvencao'].forEach(tipo => {
+    const p = tipo === 'continuacao' ? 'cont' : (tipo === 'adjacencia' ? 'adj' : 'rei');
+    const el = document.querySelector('#recap-'+p+' b');
+    if (el) el.textContent = dia8[tipo] && dia8[tipo].nome ? dia8[tipo].nome : '(não preenchido)';
+  });
+
+  document.getElementById('btn-concluir').addEventListener('click', () => {
+    try {
+      sessionStorage.setItem('intentia-dia12', JSON.stringify({
+        dataConclusao: new Date().toISOString(),
+        continuacao: { legado:{forca:forcas.cont.leg, texto:document.getElementById('cont-leg-txt').value}, servico:{forca:forcas.cont.ser, texto:document.getElementById('cont-ser-txt').value}, vocacao:{forca:forcas.cont.voc, texto:document.getElementById('cont-voc-txt').value} },
+        adjacencia: { legado:{forca:forcas.adj.leg, texto:document.getElementById('adj-leg-txt').value}, servico:{forca:forcas.adj.ser, texto:document.getElementById('adj-ser-txt').value}, vocacao:{forca:forcas.adj.voc, texto:document.getElementById('adj-voc-txt').value} },
+        reinvencao: { legado:{forca:forcas.rei.leg, texto:document.getElementById('rei-leg-txt').value}, servico:{forca:forcas.rei.ser, texto:document.getElementById('rei-ser-txt').value}, vocacao:{forca:forcas.rei.voc, texto:document.getElementById('rei-voc-txt').value} },
+        insight: document.getElementById('insight').value
+      }));
+    } catch(e) {}
+  });
+
+  atualizar();
+</script>
+
+</body>
+</html>

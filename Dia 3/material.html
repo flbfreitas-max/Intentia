@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 3 · Meu Banco de Provas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--lilas:#7C6AC5;--lilas-soft:#EDE9F7;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:16px}
+  .voltar:hover{color:#fff}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .badge-material{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  .badge-material svg{width:14px;height:14px;fill:currentColor}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.5vw,44px);line-height:1.1;letter-spacing:-.015em;margin-bottom:12px}
+  header .lede{font-size:16.5px;color:#CFE0D6;max-width:640px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  .demo-banner{max-width:900px;margin:-32px auto 0;background:#fff;border:1px solid var(--verde-100);border-left:4px solid var(--lilas);border-radius:12px;padding:14px 20px;position:relative;z-index:2;box-shadow:0 10px 30px rgba(39,87,80,.10);font-size:13.5px;color:var(--tinta-suave);display:none}
+  .demo-banner.visivel{display:block}
+  .demo-banner b{color:var(--lilas)}
+  main{max-width:900px;margin:0 auto;padding:32px 24px}
+  .secao{margin-bottom:36px}
+  .secao-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .secao-num{width:28px;height:28px;background:var(--verde-900);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:13px}
+  .secao h2{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.15;color:var(--verde-900);letter-spacing:-.01em}
+  .secao-sub{font-size:14px;color:var(--tinta-suave);margin-bottom:20px;margin-left:40px;font-style:italic}
+  .destaque{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-radius:20px;padding:38px 40px;margin-bottom:32px;box-shadow:0 6px 24px rgba(39,87,80,.08);border:1px solid var(--verde-100);position:relative}
+  .destaque-aspas{position:absolute;top:14px;left:26px;font-family:var(--serif);font-size:100px;color:var(--verde-500);line-height:1;opacity:.28}
+  .destaque-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);margin-bottom:16px;position:relative}
+  .destaque-texto{font-family:var(--serif);font-size:clamp(20px,2.6vw,26px);font-weight:500;font-style:italic;line-height:1.35;color:var(--verde-900);padding-left:56px;padding-right:20px;position:relative}
+  .visibilidade-panel{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin-top:16px}
+  .vis-eyebrow{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--tinta-suave);margin-bottom:14px}
+  .vis-lista{display:flex;flex-direction:column;gap:10px}
+  .vis-item{display:grid;grid-template-columns:150px 1fr 40px;gap:12px;align-items:center;font-size:13.5px}
+  .vis-nome{color:var(--tinta);font-weight:500;text-transform:capitalize}
+  .vis-barra{height:10px;background:var(--verde-100);border-radius:5px;overflow:hidden}
+  .vis-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:5px}
+  .vis-count{font-family:var(--serif);font-weight:600;color:var(--verde-900);text-align:right;font-size:15px}
+  .vis-alerta{margin-top:14px;padding:12px 16px;background:var(--coral-soft);border-radius:8px;font-size:13px;color:var(--tinta);line-height:1.55}
+  .vis-alerta b{color:var(--coral)}
+  .provas-lista{display:flex;flex-direction:column;gap:16px}
+  .prova-card{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:22px 26px;box-shadow:0 3px 12px rgba(39,87,80,.05);position:relative;overflow:hidden}
+  .prova-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%)}
+  .prova-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .prova-num{width:36px;height:36px;background:linear-gradient(135deg, var(--verde-900) 0%, var(--verde-700) 100%);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:16px}
+  .prova-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);flex:1;line-height:1.2}
+  .prova-vis-badge{display:inline-flex;align-items:center;gap:4px;background:var(--verde-100);color:var(--verde-900);padding:4px 10px;border-radius:14px;font-size:11px;font-weight:600;text-transform:capitalize}
+  .prova-vis-badge.gaveta{background:var(--coral-soft);color:#8B3A2C}
+  .care-grid{display:grid;grid-template-columns:auto 1fr;gap:10px;margin-bottom:8px;align-items:start}
+  .care-marc{width:26px;height:26px;background:var(--coral);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:12px;margin-top:2px}
+  .care-txt{font-size:14px;line-height:1.5;color:var(--tinta)}
+  .care-txt.vazio{color:var(--tinta-suave);font-style:italic}
+  .proximos{background:linear-gradient(135deg, var(--verde-900) 0%, #1d453f 100%);color:var(--creme);border-radius:20px;padding:36px 40px;margin-top:36px}
+  .proximos-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  .proximos h3{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.2;margin-bottom:12px}
+  .proximos p{font-size:15px;color:#CFE0D6;margin-bottom:22px;max-width:520px;line-height:1.55}
+  .proximos-cta{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:16px 28px;border-radius:14px;text-decoration:none;font-family:var(--serif);font-size:17px;font-weight:600;box-shadow:0 8px 20px rgba(255,104,66,.35)}
+  .proximos-cta .icone{width:32px;height:32px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25)}
+  .proximos-cta .icone svg{width:14px;height:14px;fill:#fff}
+  .acoes-material{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px;padding-top:24px;border-top:1px dashed var(--verde-100)}
+  .acao-mat{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--verde-100);color:var(--verde-900);padding:10px 18px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans)}
+  .acao-mat:hover{border-color:var(--coral);color:var(--coral)}
+  .acao-mat svg{width:15px;height:15px;fill:currentColor}
+  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+
+  /* === TEXTO JUSTIFICADO (materiais) === */
+  main p{text-align:justify;text-justify:inter-word;hyphens:auto}
+  main .fechamento, main .fechamento p, main .movimento-conteudo, main .movimento-legenda, main .insight-conteudo, main .direcao-conteudo, main .direcao-recap-frase, main .campo-conteudo:not(.destaque), main .marca-item-conteudo, main .pergunta-topo-texto, main .perfil-legenda, main .dim-exemplo, main .lente-texto, main .mov-texto, main .comp-nota, main .acumulado-nota, main .fechamento-conteudo, main .eu-cena, main .eu-preco, main .campo-conteudo{text-align:justify;text-justify:inter-word;hyphens:auto}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 3</a><span class="sep">›</span><span class="cur">Material</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html">Missão</a><a href="material.html" class="atual">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 2/index.html" title="Dia 2 (tecla ←)">←<span class="lbl"> Dia 2</span></a><a class="intnav-pill" href="../Dia 4/index.html" title="Dia 4 (tecla →)"><span class="lbl">Dia 4 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 3</a>
+    <div class="badge-material"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Material do Dia 3 · Missão concluída</div>
+    <h1>Meu <span class="grifo">Banco de Provas</span>.</h1>
+    <p class="lede">Suas 3 provas no formato C·A·R·E — organizadas, com a distribuição de visibilidade e o dado que volta na sua estratégia de visibilidade do Bloco 3.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<div class="demo-banner" id="demo-banner">
+  <b>Prévia com dados de demonstração.</b> Exemplo usando o perfil da Camila. <a href="missao.html" style="color:var(--lilas);font-weight:700">Fazer a missão →</a>
+</div>
+
+<main>
+  <div class="destaque">
+    <span class="destaque-aspas">&ldquo;</span>
+    <div class="destaque-eyebrow">A prova que mais te orgulha</div>
+    <div class="destaque-texto" id="orgulho-texto"></div>
+  </div>
+
+  <section class="secao">
+    <div class="secao-header"><div class="secao-num">1</div><h2>Distribuição de visibilidade</h2></div>
+    <p class="secao-sub">Da gaveta ao mercado — o quanto do seu trabalho está sendo visto.</p>
+    <div class="visibilidade-panel">
+      <div class="vis-eyebrow">Quem sabe hoje das suas 5 provas</div>
+      <div class="vis-lista" id="vis-lista"></div>
+      <div class="vis-alerta" id="vis-alerta"></div>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="secao-header"><div class="secao-num">2</div><h2>O resultado que quase ninguém viu</h2></div>
+    <p class="secao-sub">Sua resposta volta como matéria-prima da estratégia de visibilidade (Bloco 3).</p>
+    <div class="destaque" style="margin-bottom:0">
+      <span class="destaque-aspas">&ldquo;</span>
+      <div class="destaque-eyebrow">Resultado invisível</div>
+      <div class="destaque-texto" id="invisivel-texto"></div>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="secao-header"><div class="secao-num">3</div><h2>Suas 3 provas completas</h2></div>
+    <p class="secao-sub">Cada uma no formato C·A·R·E, prontas para a conversa de avaliação, o currículo, a proposta.</p>
+    <div class="provas-lista" id="provas-lista"></div>
+  </section>
+
+  <div class="proximos">
+    <div class="proximos-eyebrow">A jornada continua</div>
+    <h3>Amanhã: Dia 4 — Como te leem.</h3>
+    <p>Depois dos resultados registrados, o Dia 4 vira o espelho para fora: sua reputação — o resumo que fazem de você quando você não está na sala.</p>
+    <a href="../Dia 4/index.html" class="proximos-cta">
+      Ir para o Dia 4
+      <span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
+    </a>
+  </div>
+
+  <div class="acoes-material">
+    <button class="acao-mat" onclick="window.print()"><svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg> Imprimir / PDF</button>
+    <a href="missao.html" class="acao-mat"><svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> Editar respostas</a>
+    <a href="index.html" class="acao-mat"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> Voltar ao Dia 3</a>
+  </div>
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 3 · Meu Banco de Provas</div>
+</footer>
+
+<script>
+  const DADOS_DEMO = {
+    provas: [
+      {titulo:'Painel de decisão semanal da diretoria', C:'Diretoria levava uma semana em troca de e-mails toda segunda para decidir alocação de recursos.', A:'Desenhei e implementei um painel com os 6 indicadores que sustentam a decisão, atualizado toda sexta.', R:'A reunião passou a fechar em 40 minutos toda segunda; nenhuma decisão precisou ser adiada por falta de dado nos últimos 8 meses.', E:'Painel em produção + ata das reuniões antes/depois.', vis:'minha liderança'},
+      {titulo:'Padronização de métricas cross-área', C:'Três áreas usavam definições diferentes de "cliente ativo" — os relatórios nunca batiam.', A:'Liderei um workshop com as três áreas e escrevi a definição única. Cada área validou.', R:'Os relatórios bateram pela primeira vez em 18 meses. As três áreas continuam usando a definição hoje, mesmo depois de mudanças de gestão.', E:'Documento de definições em uso + pessoas das três áreas que confirmam.', vis:'só eu'},
+      {titulo:'Reversão de churn de conta importante', C:'Um cliente estratégico anunciou que ia sair. A análise que eu fiz mostrou que o problema era decisão errada de escopo, não valor entregue.', A:'Fiz a análise, apresentei ao gerente da conta e para o cliente. Redesenhamos o escopo em 3 sessões.', R:'Cliente ficou. Renovou com 40% a mais no valor do contrato — porque o novo escopo entregava o que ele realmente precisava.', E:'Contrato assinado + e-mail do cliente reconhecendo a virada.', vis:'só eu'}
+    ],
+    orgulho: 'A prova que mais me orgulha é a nº 3 porque foi a única em que eu enxerguei antes o que ninguém tinha visto — e isso mudou uma decisão que já estava tomada.',
+    invisivel: 'A padronização de métricas cross-área. Três áreas usam toda semana e ninguém sabe que fui eu que puxei — nem meu chefe atual, porque foi antes dele.'
+  };
+
+  let dados, usandoDemo = false;
+  try {
+    const s = sessionStorage.getItem('intentia-dia3');
+    if (s) { dados = JSON.parse(s); if (!dados.provas || !dados.provas.length) { dados = DADOS_DEMO; usandoDemo = true; } }
+    else { dados = DADOS_DEMO; usandoDemo = true; }
+  } catch(e) { dados = DADOS_DEMO; usandoDemo = true; }
+  if (usandoDemo) document.getElementById('demo-banner').classList.add('visivel');
+
+  document.getElementById('orgulho-texto').textContent = dados.orgulho || 'Ainda não escrito.';
+  document.getElementById('invisivel-texto').textContent = dados.invisivel || 'Ainda não escrito.';
+
+  // Visibilidade
+  const OPS = ['só eu', 'meu time', 'minha liderança', 'além da área', 'fora da empresa'];
+  const cont = {};
+  OPS.forEach(o => cont[o] = 0);
+  dados.provas.forEach(p => { if (p.vis && cont.hasOwnProperty(p.vis)) cont[p.vis]++; });
+  const total = dados.provas.length;
+  const visLista = document.getElementById('vis-lista');
+  OPS.forEach(op => {
+    const c = cont[op];
+    const pct = (c / total) * 100;
+    const div = document.createElement('div');
+    div.className = 'vis-item';
+    div.innerHTML = `<div class="vis-nome">${op}</div><div class="vis-barra"><div class="vis-fill" style="width:${pct}%"></div></div><div class="vis-count">${c}/${total}</div>`;
+    visLista.appendChild(div);
+  });
+  const soEu = cont['só eu'];
+  const meuTime = cont['meu time'];
+  const alerta = document.getElementById('vis-alerta');
+  if (soEu + meuTime >= 3) {
+    alerta.innerHTML = `<b>${soEu + meuTime} de ${total} provas</b> estão em "só eu" ou "meu time" — capital parado, matéria-prima da sua estratégia de visibilidade no Bloco 3.`;
+  } else {
+    alerta.innerHTML = `Boa distribuição — suas provas circulam além do círculo imediato.`;
+  }
+
+  // Provas
+  const lista = document.getElementById('provas-lista');
+  dados.provas.forEach((p, i) => {
+    const el = document.createElement('div');
+    el.className = 'prova-card';
+    const visClass = (p.vis === 'só eu') ? ' gaveta' : '';
+    el.innerHTML = `
+      <div class="prova-header">
+        <div class="prova-num">${i+1}</div>
+        <div class="prova-titulo">${p.titulo || '(sem título)'}</div>
+        ${p.vis ? `<div class="prova-vis-badge${visClass}">${p.vis}</div>` : ''}
+      </div>
+      ${['C','A','R','E'].map(k => `<div class="care-grid"><div class="care-marc">${k}</div><div class="care-txt${p[k]?'':' vazio'}">${p[k] || 'Não preenchido'}</div></div>`).join('')}
+    `;
+    lista.appendChild(el);
+  });
+</script>
+
+</body>
+</html>

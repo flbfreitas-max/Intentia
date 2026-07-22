@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 18 · Playbook — 3 Pilares</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:14px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
+  .intro-caixa{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .intro-caixa h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .intro-caixa p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .intro-caixa p:last-child{margin-bottom:0}
+  .intro-caixa b{color:var(--verde-900)}
+  .pilar-secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06)}
+  .pilar-secao-header{padding:22px 28px 20px;color:#fff;display:flex;align-items:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%)}
+  .pilar-secao-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
+  .pilar-secao-titulo{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2}
+  .pilar-secao-sub{font-size:13px;opacity:.92;font-style:italic;margin-top:3px}
+  .pilar-secao-body{padding:22px 28px 26px}
+  .pilar-secao-body p{margin-bottom:14px;font-size:15px;line-height:1.7}
+  .pilar-secao-body p:last-child{margin-bottom:0}
+  .pilar-secao-body b{color:var(--verde-900)}
+  .subsec-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin:22px 0 10px;padding-top:18px;border-top:1px dashed var(--verde-100)}
+  .subsec-label:first-child{margin-top:0;padding-top:0;border-top:none}
+  .lista-check{list-style:none;padding:0;margin-top:8px}
+  .lista-check li{padding:8px 0 8px 26px;position:relative;font-size:14px;line-height:1.55;color:var(--tinta)}
+  .lista-check li::before{content:"→";position:absolute;left:0;top:8px;color:var(--coral);font-weight:700}
+  .lista-check li b{color:var(--verde-900)}
+  .cialdini-box{background:#F0F5F2;border-left:3px solid var(--verde-700);padding:14px 20px;border-radius:0 10px 10px 0;margin-top:12px;font-size:14px;line-height:1.6}
+  .cialdini-box b{color:var(--verde-900)}
+  .cialdini-titulo{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:6px}
+  .erro-caixa{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
+  .erro-caixa .erro-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .erro-caixa b{color:var(--verde-900)}
+  .etica-caixa{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:22px 26px;margin:28px 0 20px}
+  .etica-caixa h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .etica-caixa p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .etica-caixa p:last-child{margin-bottom:0}
+  .etica-caixa b{color:var(--verde-900)}
+  .aviso-final{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0 20px}
+  .aviso-final h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .aviso-final p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .aviso-final p:last-child{margin-bottom:0}
+  .aviso-final b{color:var(--verde-900)}
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 18</a><span class="sep">›</span><span class="cur">Playbook</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html" class="atual">Playbook</a><a href="missao.html">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 17/index.html" title="Dia 17 (tecla ←)">←<span class="lbl"> Dia 17</span></a><a class="intnav-pill" href="../Dia 19/index.html" title="Dia 19 (tecla →)"><span class="lbl">Dia 19 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 18</a>
+    <div class="eyebrow">Playbook · Dia 18</div>
+    <h1>Credibilidade, Prova, Ressonância — <span class="grifo">a fundo</span>.</h1>
+    <p class="lede">Os 3 pilares em profundidade: função de cada, como preparar bem, quais dos 6 princípios de Cialdini cada um cobre, e a fronteira ética entre persuasão e manipulação.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+<main>
+  <div class="intro-caixa">
+    <h2>Por que 3 pilares (não 6 princípios)</h2>
+    <p>Cialdini enumerou 6 princípios (reciprocidade, compromisso, prova social, autoridade, afinidade, escassez) porque queria <b>descrever fenômenos psicológicos observáveis</b>. Excelente para pesquisa. Ruim para preparação — 6 itens simultâneos viram checklist mecânica e induzem uso manipulativo.</p>
+    <p>Na Trilha, reduzimos para 3 pilares operacionais — cada um <b>cobrindo 2 princípios de Cialdini</b>. Credibilidade absorve autoridade + reciprocidade. Prova absorve prova social + escassez. Ressonância absorve afinidade + compromisso. A vantagem: fica <em>impossível</em> preparar um pilar bem sem servir também ao outro que a pessoa vai receber. É mecânica de preparação anti-manipulação por design.</p>
+  </div>
+
+  <section class="pilar-secao">
+    <div class="pilar-secao-header"><div class="pilar-secao-letra">C</div><div><div class="pilar-secao-titulo">Credibilidade</div><div class="pilar-secao-sub">"por que ouvir você agora?"</div></div></div>
+    <div class="pilar-secao-body">
+      <div class="subsec-label">O que faz</div>
+      <p>Credibilidade responde à pergunta silenciosa dos primeiros segundos: <b>por que dedicar atenção a este pedido específico, vindo desta pessoa específica, agora</b>? Sem credibilidade, os outros 2 pilares não sustentam nada — a pessoa nunca chega a considerar sua Prova ou sua Ressonância porque parou de te ler no primeiro parágrafo.</p>
+
+      <div class="cialdini-box"><div class="cialdini-titulo">Cobre em Cialdini</div><b>Autoridade</b> (você é alguém com credencial legítima no assunto) + <b>Reciprocidade</b> (você já entregou/contribuiu com algo, ainda que pequeno; existe relação prévia real). Autoridade sem Reciprocidade soa arrogância; Reciprocidade sem Autoridade soa amadorismo.</div>
+
+      <div class="subsec-label">Como preparar bem</div>
+      <ul class="lista-check">
+        <li><b>Ancore em capital específico</b> — "X anos em Y" com número, "cargo Z em empresa W" com nome. Vago (senior, especialista, referência) não é credibilidade.</li>
+        <li><b>Ancore em contribuição recente</b> — "publiquei/entreguei/apresentei Z há N tempo". Data explícita ativa reciprocidade indireta.</li>
+        <li><b>Ancore em contexto compartilhado</b> — "conversei com Fulano/participei do evento W". Se a pessoa reconhece o ponto de contato, credibilidade acelera.</li>
+        <li><b>Nunca comece com pedido</b> — sempre com ancoragem. O cérebro do leitor pergunta "por que ouvir você" antes de "o que você quer".</li>
+      </ul>
+
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>Credibilidade genérica.</b> "Sou profissional experiente" não é credibilidade — é ruído. Credibilidade real é <em>específica</em>: cargo, tempo, entrega recente, mensurável. Se sua frase de credibilidade cabe em qualquer profissional do território, ela não te distingue — e a pessoa pula para o próximo email.</p></div>
+    </div>
+  </section>
+
+  <section class="pilar-secao">
+    <div class="pilar-secao-header"><div class="pilar-secao-letra">P</div><div><div class="pilar-secao-titulo">Prova</div><div class="pilar-secao-sub">"o que sustenta o que você diz?"</div></div></div>
+    <div class="pilar-secao-body">
+      <div class="subsec-label">O que faz</div>
+      <p>Prova é <b>evidência tangível</b> que substitui a necessidade da outra pessoa "acreditar em você". Sem prova, sua credibilidade é declaração; com prova, vira fato verificável. Prova bem escolhida é o que faz o pedido soar <em>concreto</em> em vez de aspiracional — e reduz o custo cognitivo da decisão.</p>
+
+      <div class="cialdini-box"><div class="cialdini-titulo">Cobre em Cialdini</div><b>Prova Social</b> (outras pessoas já validaram; o que você faz não é solo) + <b>Escassez</b> (o que você tem/faz não é comum, é limitado no tempo ou no espaço). Prova Social sem Escassez soa "mais um"; Escassez sem Prova Social soa marketing.</div>
+
+      <div class="subsec-label">Como preparar bem</div>
+      <ul class="lista-check">
+        <li><b>Link para conteúdo próprio</b> — artigo, portfolio, gravação. <em>1 link forte é melhor que 5 fracos</em>.</li>
+        <li><b>Depoimento escrito ou métrica de resultado</b> — específico, atribuível, verificável. Nome + resultado + prazo.</li>
+        <li><b>Referência a projeto recente entregue</b> — nome do projeto, resultado mensurável, quando.</li>
+        <li><b>Menção a reconhecimento externo</b> — prêmio, convite, menção de terceiros. Ativa prova social sem exigir que você mesmo se elogie.</li>
+      </ul>
+
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>Prova exagerada soa insegurança.</b> Como se você precisasse convencer. Regra prática: 1-2 provas fortes valem mais que 5 fracas. Se você precisa citar 4 depoimentos, provavelmente nenhum é forte o suficiente sozinho — corte para o melhor e reforce-o em vez de acumular.</p></div>
+    </div>
+  </section>
+
+  <section class="pilar-secao">
+    <div class="pilar-secao-header"><div class="pilar-secao-letra">R</div><div><div class="pilar-secao-titulo">Ressonância</div><div class="pilar-secao-sub">"por que isso importa para o outro?"</div></div></div>
+    <div class="pilar-secao-body">
+      <div class="subsec-label">O que faz</div>
+      <p>Ressonância é <b>o pilar que separa persuasão de venda</b>. Sem ela, seu pedido é <em>sobre você</em> — o que você precisa, o que você quer, o que serve à sua direção. Com ela, o pedido vira algo que a pessoa <em>quer</em> conceder porque também serve a ela. Ressonância bem preparada faz o sim ficar disponível sem que você precise convencer — a própria pessoa constrói a razão de dizer sim.</p>
+
+      <div class="cialdini-box"><div class="cialdini-titulo">Cobre em Cialdini</div><b>Afinidade</b> (você conhece a pessoa, seu contexto, suas prioridades; existe base comum real) + <b>Compromisso</b> (você conecta o pedido a algo que a pessoa já valoriza/faz publicamente; ela não precisa mudar posição). Sem essas duas, o pedido tem que "vender"; com elas, ele "conecta".</div>
+
+      <div class="subsec-label">Como preparar bem</div>
+      <ul class="lista-check">
+        <li><b>Nomeie algo específico</b> que você pesquisou sobre a pessoa/organização: "vi que vocês estão focados em X" — com X real, não genérico.</li>
+        <li><b>Conecte seu pedido ao trabalho atual da pessoa</b>: "seu insight sobre Y faz muito sentido para o que eu proponho".</li>
+        <li><b>Reconheça o que a pessoa ganha ao dizer sim</b> — mesmo pequeno: tempo, informação, contato, aprendizagem, alinhamento com posição pública.</li>
+        <li><b>Seja explícito sobre o que está pedindo</b>: "20 min de conversa" &gt; "quando você tiver tempo". Concretude reduz risco percebido.</li>
+      </ul>
+
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>Ressonância genérica ("acompanho seu trabalho").</b> Isso não é ressonância — é adulação. Ressonância real cita <em>algo específico</em> que só vale para essa pessoa/contexto. Se sua frase de ressonância cabe em 100 outras pessoas do território, ela não é ressonância; é lista de contatos massa. E a pessoa <em>percebe</em>.</p></div>
+    </div>
+  </section>
+
+  <div class="etica-caixa">
+    <h3>A fronteira: persuasão ética × manipulação</h3>
+    <p>Cialdini foi explícito ao longo da carreira: os mesmos 6 princípios servem para persuasão ética <b>e</b> para manipulação. A diferença não está no mecanismo — está no <b>serviço mútuo</b>.</p>
+    <p><b>Persuasão ética:</b> a pessoa que diz sim ganha algo real (mesmo que seja só informação, aprendizagem, ou coerência com uma posição que ela já defende). Você pode explicar por que aquele sim serviu a ela sem embaraço, meses depois.</p>
+    <p><b>Manipulação:</b> a pessoa diz sim por um mecanismo psicológico ativado sem serviço mútuo real (escassez fabricada, prova social inventada, ressonância performática). Depois que a pessoa percebe, ela não confia mais em você — e você quebra a rede que passou 6 meses construindo.</p>
+    <p>O teste do Dia 18: se você não conseguiria justificar seu pedido com franqueza para a pessoa 6 meses depois, você está do lado errado da fronteira. Refaça.</p>
+  </div>
+
+  <div class="aviso-final">
+    <h3>A regra do Dia 18: preparar &gt; improvisar</h3>
+    <p>Conger foi enfático: profissionais competentes frequentemente <b>subestimam a preparação</b> porque acreditam que "vão descobrir na conversa". Não vão. A conversa amplifica o que você trouxe pronto e expõe o que você não preparou. 30 min de preparação (nomear os 3 pilares com concretude) mudam mais o resultado que 30 min "mais na conversa".</p>
+    <p>Meta prática: <b>preparar 1 pedido por semana</b> pelas próximas 8 semanas. Depois de 8 pedidos preparados, a mecânica dos 3 pilares vira automática — você começa a estruturar mensagens assim sem esforço consciente. Persuasão vira <em>parte da forma como você trabalha</em>, não evento especial.</p>
+    <p>Amanhã (Dia 19) você entra em <b>Aprendizagem deliberada</b> — como acelerar o quanto você aprende do território novo. Persuasão sem aprendizagem constante fica repetitiva; aprendizagem sem persuasão fica invisível.</p>
+  </div>
+</main>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Dia 18 · Playbook — 3 pilares da persuasão</div></footer>
+</body>
+</html>

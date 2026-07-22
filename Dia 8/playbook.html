@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 8 · Playbook — Continuação, Adjacência, Reinvenção</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--lilas:#8B7BB8;--lilas-suave:#E8E2F0;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:14px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+
+  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
+
+  .intro-caixa{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .intro-caixa h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .intro-caixa p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .intro-caixa p:last-child{margin-bottom:0}
+  .intro-caixa b{color:var(--verde-900)}
+
+  .tipo{background:#fff;border:1px solid var(--verde-100);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06)}
+  .tipo-header{padding:26px 30px 22px;color:#fff;display:flex;align-items:center;gap:16px;position:relative;overflow:hidden}
+  .tipo-header::after{content:"";position:absolute;right:-30px;bottom:-60px;width:160px;height:160px;background:rgba(255,255,255,.06);border-radius:50%}
+  .tipo.continuacao .tipo-header{background:linear-gradient(135deg, #336B62 0%, #275750 100%)}
+  .tipo.adjacencia .tipo-header{background:linear-gradient(135deg, #FF7A57 0%, #E85530 100%)}
+  .tipo.reinvencao .tipo-header{background:linear-gradient(135deg, #8B7BB8 0%, #5F4E8C 100%)}
+  .tipo-letra{width:52px;height:52px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:26px;font-weight:600;flex-shrink:0;position:relative;z-index:1}
+  .tipo-titulo{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1.15;position:relative;z-index:1;letter-spacing:-.005em}
+  .tipo-sub{font-size:13.5px;opacity:.92;font-style:italic;position:relative;z-index:1;margin-top:3px}
+  .tipo-body{padding:26px 30px 28px}
+  .tipo-body p{margin-bottom:14px;font-size:15px;line-height:1.7}
+  .tipo-body p:last-child{margin-bottom:0}
+  .tipo-body b{color:var(--verde-900)}
+
+  .subsec-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin:22px 0 10px;padding-top:18px;border-top:1px dashed var(--verde-100)}
+  .subsec-label:first-child{margin-top:0;padding-top:0;border-top:none}
+
+  .quando-lista{list-style:none;padding:0;margin-top:8px}
+  .quando-lista li{padding:10px 0 10px 30px;position:relative;font-size:14.5px;line-height:1.55;color:var(--tinta);border-bottom:1px dashed var(--verde-100)}
+  .quando-lista li:last-child{border-bottom:none}
+  .quando-lista li::before{content:"→";position:absolute;left:6px;top:10px;color:var(--coral);font-weight:700}
+  .quando-lista li b{color:var(--verde-900);font-weight:600}
+
+  .exemplo-real{background:var(--creme);border-left:3px solid var(--verde-700);border-radius:0 10px 10px 0;padding:16px 20px;margin-top:12px;font-size:14px;line-height:1.6}
+  .exemplo-real .exemplo-nome{display:inline-flex;align-items:center;gap:8px;font-family:var(--serif);font-weight:600;color:var(--verde-900);font-size:15px;margin-bottom:6px}
+  .exemplo-real .exemplo-avatar{width:26px;height:26px;border-radius:50%;background:var(--verde-700);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:13px;flex-shrink:0}
+  .exemplo-real .exemplo-avatar.rafael{background:var(--coral)}
+  .exemplo-real .exemplo-avatar.juliana{background:var(--verde-500)}
+  .exemplo-real p{margin:0;font-size:13.5px;color:var(--tinta)}
+
+  .erro-caixa{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
+  .erro-caixa .erro-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .erro-caixa b{color:var(--verde-900)}
+
+  .preco-caixa{background:var(--verde-900);color:var(--creme);padding:16px 20px;border-radius:10px;margin-top:14px;font-size:14px;line-height:1.55}
+  .preco-caixa .preco-label{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .preco-caixa b{color:#fff;font-weight:600}
+
+  .tabela-comparativa{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:26px 28px;margin:28px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .tabela-comparativa h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:6px;font-weight:600}
+  .tabela-comparativa .subt{font-size:13.5px;color:var(--tinta-suave);margin-bottom:18px;font-style:italic}
+  .tab-tabela{border-top:1px solid var(--verde-100)}
+  .tab-linha{display:grid;grid-template-columns:130px 1fr 1fr 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--verde-100);align-items:start;font-size:13px}
+  @media (max-width:640px){.tab-linha{grid-template-columns:1fr;gap:6px}.tab-linha .tab-celula::before{content:attr(data-label);display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-suave);margin-bottom:3px}}
+  .tab-titulo{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-900)}
+  .tab-celula{color:var(--tinta);line-height:1.5}
+  .tab-cabecalho{display:grid;grid-template-columns:130px 1fr 1fr 1fr;gap:14px;padding-bottom:14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+  @media (max-width:640px){.tab-cabecalho{display:none}}
+  .tab-cabecalho .cab-c{color:#275750}
+  .tab-cabecalho .cab-a{color:#E85530}
+  .tab-cabecalho .cab-r{color:#5F4E8C}
+
+  .aviso-final{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0 20px}
+  .aviso-final h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .aviso-final p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .aviso-final p:last-child{margin-bottom:0}
+  .aviso-final b{color:var(--verde-900)}
+
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 8</a><span class="sep">›</span><span class="cur">Playbook</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html" class="atual">Playbook</a><a href="missao.html">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 7/index.html" title="Dia 7 (tecla ←)">←<span class="lbl"> Dia 7</span></a><a class="intnav-pill" href="../Dia 9/index.html" title="Dia 9 (tecla →)"><span class="lbl">Dia 9 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 8</a>
+    <div class="eyebrow">Playbook · Dia 8</div>
+    <h1>Continuação, Adjacência, Reinvenção — <span class="grifo">a fundo</span>.</h1>
+    <p class="lede">A tipologia dos 3 Eus Possíveis é o instrumento central da Semana 2. Aqui você vê o que cada tipo é, quando ele costuma ser a rota certa, o erro clássico associado, e um exemplo dos profissionais de referência.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<main>
+
+  <div class="intro-caixa">
+    <h2>Por que 3 e não 2 ou 5</h2>
+    <p>Herminia Ibarra (INSEAD) mostrou, em pesquisa longitudinal com profissionais em transição, que <b>a mente humana em processo de decisão de carreira raramente lida bem com mais de 3 hipóteses simultâneas</b>. Duas viram falso binário ("ficar ou sair") — e falso binário fecha alternativas cedo demais. Cinco ou mais viram paralisia de análise.</p>
+    <p>Três é o número em que o cérebro consegue segurar tensão sem simplificar. E a tríade <b>Continuação–Adjacência–Reinvenção</b> cobre o espectro plausível de qualquer carreira: seguir onde está aprofundando, deslocar-se para um vizinho, ou saltar para algo estruturalmente novo.</p>
+    <p>Nenhuma delas é intrinsecamente melhor. O erro é escolher pela <b>preferência estética</b> — reinvenção soa mais interessante, continuação soa mais responsável, adjacência soa mais "equilibrada". A escolha certa é a que passa pelos filtros dos próximos 6 dias.</p>
+  </div>
+
+  <!-- CONTINUAÇÃO -->
+  <section class="tipo continuacao">
+    <div class="tipo-header">
+      <div class="tipo-letra">C</div>
+      <div>
+        <div class="tipo-titulo">Eu-Continuação</div>
+        <div class="tipo-sub">"Continuo o que faço — mais aprofundado, mais dono"</div>
+      </div>
+    </div>
+    <div class="tipo-body">
+
+      <div class="subsec-label">O que é</div>
+      <p>Continuação <b>não é ficar parado</b>. É seguir na mesma trajetória com <b>mais profundidade, mais autoria e mais expressão externa</b>. Você se torna referência no que já faz — muitas vezes por acúmulo de anos + intencionalidade sobre reputação. A carreira ganha musculatura vertical.</p>
+      <p>Sinais de que essa versão é robusta (não inércia disfarçada): você <b>já teria pensado em sair</b> se quisesse, tem <b>ideias concretas do próximo nível de mestria</b> na sua área, e o que te frustra hoje é o <b>ritmo da empresa</b>, não a área em si.</p>
+
+      <div class="subsec-label">Quando essa costuma ser a rota certa</div>
+      <ul class="quando-lista">
+        <li><b>Você está entre 5 e 12 anos de área</b> e ainda vê teto de aprendizagem à frente — não teto de tédio.</li>
+        <li><b>Sua área está passando por transformação interessante</b> (IA em análise, novo regulatório, novo modelo de negócio) e você pode ser o cabeça dessa transição no seu ambiente.</li>
+        <li><b>Sua reputação já está formada</b> e você quer capitalizar — virar a referência externa que hoje é só interna.</li>
+        <li><b>O preço da mudança é alto</b> e o retorno da continuação é claro (aumento de senioridade, dono de tema, público próprio).</li>
+      </ul>
+
+      <div class="exemplo-real">
+        <div class="exemplo-nome"><span class="exemplo-avatar">C</span>Camila — Analista sênior de dados em banco</div>
+        <p>Camila tem 8 anos de banco e olha para o próximo passo com curiosidade real, não peso. O que ela faz — análise de decisão com risco — está exatamente na fronteira do que IA está mudando. A rota de Continuação para ela é <b>virar a referência interna em "IA aplicada a análise de decisão"</b>, escrever publicamente sobre isso, e em 3-5 anos ser a pessoa que o mercado procura. Não sair — mas subir a escada com bandeira.</p>
+      </div>
+
+      <div class="erro-caixa">
+        <span class="erro-label">Erro clássico</span>
+        <p>Confundir Continuação com <b>inércia bem-vestida</b>. A pergunta-teste: "se eu tivesse total liberdade, escolheria continuar aqui, ou estaria escolhendo por medo de trocar?" Se a resposta é "por medo", não é Continuação — é evitação disfarçada.</p>
+      </div>
+
+      <div class="preco-caixa">
+        <span class="preco-label">O preço específico</span>
+        <p>O preço da Continuação é <b>oportunidade não-explorada</b> — o que você deixou de descobrir sobre si ao não trocar. E <b>vulnerabilidade à disrupção</b> — se a área encolher, você tem menos rede fora.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADJACÊNCIA -->
+  <section class="tipo adjacencia">
+    <div class="tipo-header">
+      <div class="tipo-letra">A</div>
+      <div>
+        <div class="tipo-titulo">Eu-Adjacência</div>
+        <div class="tipo-sub">"Mudo de contexto mantendo minhas habilidades"</div>
+      </div>
+    </div>
+    <div class="tipo-body">
+
+      <div class="subsec-label">O que é</div>
+      <p>Adjacência é <b>trocar de tabuleiro sem trocar de peça</b>. Suas habilidades centrais (análise, gestão de operação, design, escrita, engenharia, o que for) continuam sendo o motor — mas o contexto muda: setor, tamanho de empresa, tipo de organização, modelo de trabalho, ou tudo isso junto.</p>
+      <p>Adjacência costuma ser subestimada. Parece "meio caminho". Mas é frequentemente <b>a rota com melhor relação risco-retorno</b>: você mantém 70% do que sabe (redução de risco) enquanto ganha 30% de novidade (fonte de crescimento).</p>
+
+      <div class="subsec-label">Quando essa costuma ser a rota certa</div>
+      <ul class="quando-lista">
+        <li><b>O que te desgasta é o contexto, não o trabalho</b> — a política interna, o ritmo, o setor, o modelo, não a atividade em si.</li>
+        <li><b>Você tem habilidades transferíveis fortes</b> — o que você faz cria valor em vários setores, não só nesse.</li>
+        <li><b>Você quer aprender coisas novas, mas não recomeçar do zero</b> — quer aprender <em>em cima</em> do que já sabe.</li>
+        <li><b>Existe um setor/tipo de empresa em ascensão</b> onde sua habilidade é escassa (fintech precisa de gente de banco, startup precisa de gente de operação, agência precisa de gente de indústria).</li>
+      </ul>
+
+      <div class="exemplo-real">
+        <div class="exemplo-nome"><span class="exemplo-avatar rafael">R</span>Rafael — Coordenador de operações na indústria</div>
+        <p>Rafael tem 12 anos de operação industrial e está cansado do ritmo hierárquico. Suas habilidades (leitura de gargalos, coordenação de times operacionais, disciplina de indicadores) são <b>ouro para uma startup logística ou fintech em crescimento</b>. A rota de Adjacência para ele é virar Head de Operações de uma empresa de 80-150 pessoas — mantém o que sabe, muda drasticamente o contexto, ganha voz mais direta na estratégia.</p>
+      </div>
+
+      <div class="erro-caixa">
+        <span class="erro-label">Erro clássico</span>
+        <p>Pensar que Adjacência é <b>"a versão de compromisso"</b> — nem uma coisa nem outra. Isso te leva a escolher a Adjacência menos ambiciosa possível ("outra empresa parecida com essa"). Adjacência boa é <b>corajosa</b>: muda contexto com intenção estratégica, não por conforto.</p>
+      </div>
+
+      <div class="preco-caixa">
+        <span class="preco-label">O preço específico</span>
+        <p>O preço da Adjacência é <b>curva de aprendizagem sob pressão</b> — você precisa entregar valor rápido em ambiente novo. E <b>perda de rede/status construídos</b> — no novo lugar, você começa como "alguém que veio de fora", ainda que sênior.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REINVENÇÃO -->
+  <section class="tipo reinvencao">
+    <div class="tipo-header">
+      <div class="tipo-letra">R</div>
+      <div>
+        <div class="tipo-titulo">Eu-Reinvenção</div>
+        <div class="tipo-sub">"Faço algo estruturalmente novo — outra área, outro modelo"</div>
+      </div>
+    </div>
+    <div class="tipo-body">
+
+      <div class="subsec-label">O que é</div>
+      <p>Reinvenção é a <b>troca de peça E de tabuleiro</b>. Você muda a atividade central em si — sai de CLT para autônomo, de corporativo para empreendedorismo, de área técnica para área humana, de executor para professor/autor. A carreira anterior vira <em>combustível</em>, não continuação.</p>
+      <p>Reinvenção romântica é perigosa. Reinvenção sólida <b>tem plano de ponte</b>: você não pula de avião sem paraquedas. Testa por 6-18 meses em paralelo, valida demanda, constrói o mínimo de tração antes de soltar o que era.</p>
+
+      <div class="subsec-label">Quando essa costuma ser a rota certa</div>
+      <ul class="quando-lista">
+        <li><b>Existe uma vocação clara e persistente</b> por outra atividade que aparece há muito tempo, não é fase.</li>
+        <li><b>O custo de não tentar é maior que o custo de tentar</b> — você projeta arrependimento se não fizer.</li>
+        <li><b>Você tem reserva financeira ou pode ter</b> para atravessar 12-24 meses de renda mais baixa (o "vale").</li>
+        <li><b>A nova atividade tem demanda validável</b> — não é um "ninguém faz isso, por isso vou fazer" (que é red flag), mas "várias pessoas fazem isso e eu vejo um ângulo que falta".</li>
+      </ul>
+
+      <div class="exemplo-real">
+        <div class="exemplo-nome"><span class="exemplo-avatar juliana">J</span>Juliana — Designer autônoma há 2 anos (ex-CLT)</div>
+        <p>Juliana já <b>fez uma reinvenção</b> (saiu de agência para autônoma). A próxima que ela avalia é ainda mais estrutural: <b>virar autora e educadora sobre design de sistemas</b>. O sinal de que é sólida: ela já dá aulas informais desde 2019, tem um público inicial nas redes, tem 8 meses de reserva. O plano de ponte: continuar 60% dos clientes por 12 meses enquanto lança o primeiro curso pago. Se ele funcionar, reduz clientes gradualmente.</p>
+      </div>
+
+      <div class="erro-caixa">
+        <span class="erro-label">Erro clássico</span>
+        <p>Reinventar-se como <b>reação a um mau momento</b> (chefe tóxico, burnout, promoção perdida). Reinvenção reativa quase sempre é fuga vestida de coragem. A reinvenção sólida vem de um <b>puxão para</b>, não de um <b>empurrão de</b>.</p>
+      </div>
+
+      <div class="preco-caixa">
+        <span class="preco-label">O preço específico</span>
+        <p>O preço da Reinvenção é <b>o vale da travessia</b> — o tempo entre soltar o antigo e o novo dar retorno econômico e psicológico. Esse vale tem 12-36 meses tipicamente. Quem subestima esse tempo desiste no meio, com o pior de dois mundos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABELA COMPARATIVA -->
+  <div class="tabela-comparativa">
+    <h2>Bater o olho — os 3 lado a lado</h2>
+    <div class="subt">Mesma lente, três respostas. Serve para você localizar onde cada uma pesa mais.</div>
+    <div class="tab-cabecalho">
+      <div></div>
+      <div class="cab-c">Continuação</div>
+      <div class="cab-a">Adjacência</div>
+      <div class="cab-r">Reinvenção</div>
+    </div>
+    <div class="tab-tabela">
+      <div class="tab-linha">
+        <div class="tab-titulo">Muda o quê</div>
+        <div class="tab-celula" data-label="Continuação">Profundidade, autoria, expressão pública</div>
+        <div class="tab-celula" data-label="Adjacência">Contexto (setor, tamanho, modelo)</div>
+        <div class="tab-celula" data-label="Reinvenção">A atividade central em si</div>
+      </div>
+      <div class="tab-linha">
+        <div class="tab-titulo">Mantém o quê</div>
+        <div class="tab-celula" data-label="Continuação">Praticamente tudo — só sobe o degrau</div>
+        <div class="tab-celula" data-label="Adjacência">As habilidades centrais</div>
+        <div class="tab-celula" data-label="Reinvenção">A pessoa, os aprendizados, a rede — não a rota</div>
+      </div>
+      <div class="tab-linha">
+        <div class="tab-titulo">Preço central</div>
+        <div class="tab-celula" data-label="Continuação">Oportunidade não explorada</div>
+        <div class="tab-celula" data-label="Adjacência">Curva de aprendizagem sob pressão</div>
+        <div class="tab-celula" data-label="Reinvenção">O vale da travessia (12-36 meses)</div>
+      </div>
+      <div class="tab-linha">
+        <div class="tab-titulo">Retorno típico</div>
+        <div class="tab-celula" data-label="Continuação">Referência estabelecida, público próprio, previsibilidade</div>
+        <div class="tab-celula" data-label="Adjacência">Nova energia, aprendizagem rápida, salto de senioridade</div>
+        <div class="tab-celula" data-label="Reinvenção">Alinhamento profundo entre trabalho e quem você é</div>
+      </div>
+      <div class="tab-linha">
+        <div class="tab-titulo">Risco maior</div>
+        <div class="tab-celula" data-label="Continuação">Vulnerabilidade à disrupção do setor</div>
+        <div class="tab-celula" data-label="Adjacência">Não ser reconhecido "de fora" no novo lugar</div>
+        <div class="tab-celula" data-label="Reinvenção">Falta de plano de ponte → colapso econômico</div>
+      </div>
+      <div class="tab-linha">
+        <div class="tab-titulo">Horizonte típico</div>
+        <div class="tab-celula" data-label="Continuação">3-5 anos para virar referência</div>
+        <div class="tab-celula" data-label="Adjacência">12-24 meses para se estabelecer no novo</div>
+        <div class="tab-celula" data-label="Reinvenção">2-5 anos para dar retorno pleno</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="aviso-final">
+    <h3>O que você faz com isso agora</h3>
+    <p>Nenhum desses tipos é <b>a resposta</b>. São <b>lentes</b> para você olhar suas próprias três versões da missão do Dia 8 com mais precisão. Ao ler cada tipo aqui, veja se sua versão correspondente ganhou nitidez, dúvida ou reforço.</p>
+    <p>Nos próximos 6 dias, cada uma dessas três versões vai passar por: framework de decisão (Dia 10), armadilhas cognitivas (Dia 11), teste de propósito (Dia 12), filtro do essencial (Dia 13) e leitura de marca pessoal (Dia 14). No fim, uma vai sair mais forte — <b>ou uma combinação delas</b>, que também é resposta legítima.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 8 · Playbook — Continuação, Adjacência, Reinvenção</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 5 · Academia — Leituras aprofundadas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:820px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:16px}
+  .voltar:hover{color:#fff}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:12px}
+  header .lede{font-size:16.5px;color:#CFE0D6;max-width:600px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  main{max-width:820px;margin:0 auto;padding:36px 24px}
+  .leitura{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 32px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05);position:relative}
+  .leitura::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(to bottom, var(--coral) 0%, #FF7A57 100%);border-radius:16px 0 0 16px}
+  .leitura-meta{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .leitura-num{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:14px}
+  .leitura-tag{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--coral)}
+  .leitura h2{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--verde-900);line-height:1.2;margin-bottom:6px}
+  .leitura-autor{font-size:13px;color:var(--tinta-suave);font-style:italic;margin-bottom:16px}
+  .leitura-resumo{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:14px}
+  .leitura-resumo b{color:var(--verde-900);font-weight:600}
+  .leitura-pontos{background:var(--creme);border-radius:10px;padding:16px 20px;margin-top:14px}
+  .leitura-pontos h4{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+  .leitura-pontos ul{list-style:none;padding:0}
+  .leitura-pontos li{font-size:13.5px;line-height:1.55;padding-left:16px;position:relative;margin-bottom:8px}
+  .leitura-pontos li::before{content:'→';position:absolute;left:0;color:var(--coral);font-weight:700}
+  .leitura-pontos li:last-child{margin-bottom:0}
+  .leitura-acoes{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--verde-100)}
+  .btn-abrir{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;text-decoration:none;font-size:13.5px;font-weight:600;padding:10px 18px;border-radius:8px;transition:background .2s}
+  .btn-abrir:hover{background:#E85530}
+  .btn-abrir svg{width:14px;height:14px;fill:currentColor}
+  .btn-pdf{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--verde-900);border:1.5px solid var(--verde-100);text-decoration:none;font-size:13.5px;font-weight:600;padding:10px 18px;border-radius:8px;transition:all .2s}
+  .btn-pdf:hover{border-color:var(--verde-700);background:var(--verde-100)}
+  .btn-pdf svg{width:14px;height:14px;fill:currentColor}
+  .nota{background:var(--verde-100);border-radius:12px;padding:20px 24px;margin-top:32px;font-size:13.5px;color:var(--tinta-suave);line-height:1.6}
+  .nota b{color:var(--verde-900)}
+  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 5</a><span class="sep">›</span><span class="cur">Academia</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html" class="atual">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 4/index.html" title="Dia 4 (tecla ←)">←<span class="lbl"> Dia 4</span></a><a class="intnav-pill" href="../Dia 6/index.html" title="Dia 6 (tecla →)"><span class="lbl">Dia 6 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 5</a>
+    <div class="badge">Academia Intentia · Dia 5</div>
+    <h1>Rede que <span class="grifo">funciona</span> quando você precisa.</h1>
+    <p class="lede">Três leituras sobre a mecânica real de rede — diversidade horizontal, manutenção sem esforço, e conversas que passam do superficial. Resumos de três páginas cada; opcionais, e sempre disponíveis.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<main>
+
+  <div class="leitura">
+    <div class="leitura-meta">
+      <div class="leitura-num">1</div>
+      <div class="leitura-tag">Resumo · 3 páginas · Provocador</div>
+    </div>
+    <h2>Não faça rede só para cima</h2>
+    <div class="leitura-autor">Lopata (2026)</div>
+    <p class="leitura-resumo">Argumento contra o padrão dominante de "networking para o topo". Lopata mostra que <b>a rede horizontal — pares, contemporâneos, pessoas em estágios semelhantes ou adjacentes — rende mais no longo prazo</b> que a rede vertical. As indicações que mais mudam trajetória vêm de quem cresce junto com você, não de quem já chegou.</p>
+    <div class="leitura-pontos">
+      <h4>Três pontos principais</h4>
+      <ul>
+        <li>A rede vertical (para chefes, seniors, C-level) tem <b>alto custo e baixo retorno médio</b>: são pessoas ocupadas, respondem pouco, e quase nunca lembram de você quando surge oportunidade lateral.</li>
+        <li>A rede horizontal — <b>pares</b> — cresce junto com você: os pares de hoje viram os decisores de amanhã, e lembram de quem construiu junto.</li>
+        <li>O padrão observado em profissionais bem-sucedidos: <b>relações longas com poucos pares em contextos distintos</b>, cultivadas antes de qualquer necessidade.</li>
+      </ul>
+    </div>
+    <div class="leitura-acoes">
+      <a href="resumo-nao-faca-rede-so-para-cima-lopata-2026.html" class="btn-abrir">
+        <svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg>
+        Abrir resumo (HTML)
+      </a>
+      <a href="resumo-nao-faca-rede-so-para-cima-lopata-2026.pdf" class="btn-pdf">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9.5 11.5c0 .83-.67 1.5-1.5 1.5H7v2H5.5V9H8c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5H11V9h2c.83 0 1.5.67 1.5 1.5v3zm4-3H17v1h1.5V13H17v2h-1.5V9h3v1.5zM7 10.5h1v1H7zm5.5 0h1v3h-1z"/></svg>
+        Baixar PDF
+      </a>
+    </div>
+  </div>
+
+  <div class="leitura">
+    <div class="leitura-meta">
+      <div class="leitura-num">2</div>
+      <div class="leitura-tag">Resumo · 3 páginas · Método clássico</div>
+    </div>
+    <h2>Fazer a rede trabalhar por você</h2>
+    <div class="leitura-autor">Green (2010)</div>
+    <p class="leitura-resumo">Método clássico de manutenção de rede — <b>pequenas peças recorrentes, sem pedir nada</b> — que faz a rede lembrar de você quando surge oportunidade. Green argumenta que a maioria das pessoas erra por pensar em rede como "campanha em momento de necessidade", quando a mecânica real é "acumulação em momento de calma".</p>
+    <div class="leitura-pontos">
+      <h4>Três pontos principais</h4>
+      <ul>
+        <li>Cada nó da sua rede precisa de <b>tocaínhos periódicos</b> — uma mensagem, um artigo enviado, um comentário em post — para não hibernar. O intervalo típico: 2-4 vezes por ano por contato importante.</li>
+        <li>A economia da rede é <b>de dar antes de pedir</b>. Green nomeia isso de "conta corrente da rede": você deposita antes; saca quando precisa.</li>
+        <li>O erro mais comum é <b>o método reativo</b>: só ativa a rede quando está em transição. Quem faz isso descobre que a maior parte dos contatos já esfriou.</li>
+      </ul>
+    </div>
+    <div class="leitura-acoes">
+      <a href="resumo-fazer-a-rede-trabalhar-por-voce-green-2010.html" class="btn-abrir">
+        <svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg>
+        Abrir resumo (HTML)
+      </a>
+      <a href="resumo-fazer-a-rede-trabalhar-por-voce-green-2010.pdf" class="btn-pdf">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9.5 11.5c0 .83-.67 1.5-1.5 1.5H7v2H5.5V9H8c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5H11V9h2c.83 0 1.5.67 1.5 1.5v3zm4-3H17v1h1.5V13H17v2h-1.5V9h3v1.5zM7 10.5h1v1H7zm5.5 0h1v3h-1z"/></svg>
+        Baixar PDF
+      </a>
+    </div>
+  </div>
+
+  <div class="leitura">
+    <div class="leitura-meta">
+      <div class="leitura-num">3</div>
+      <div class="leitura-tag">Resumo · 3 páginas · Prático</div>
+    </div>
+    <h2>Do small talk ao deep talk</h2>
+    <div class="leitura-autor">Arscott (2022)</div>
+    <p class="leitura-resumo">Guia prático para <b>levar uma conversa profissional para além do superficial</b> sem forçar intimidade nem soar como interrogatório. Arscott mostra as três perguntas que mudam a temperatura de qualquer conversa — e por que a maioria das pessoas nunca chega a fazê-las, ficando presa no "e aí, tudo bem?".</p>
+    <div class="leitura-pontos">
+      <h4>Três pontos principais</h4>
+      <ul>
+        <li>Small talk existe para <b>calibrar o outro</b>, não para transmitir informação. Chegar rápido demais no substantivo assusta; ficar preso no small talk esvazia a relação.</li>
+        <li>A ponte para conversa profunda é uma pergunta <b>sobre processo, não sobre fato</b>: "como você chegou nessa decisão?" abre; "o que você faz?" fecha.</li>
+        <li>A profundidade se constrói por <b>escuta genuína + curiosidade específica</b> — não por revelação pessoal. Não é sobre virar amigo; é sobre parar de fingir que está tudo no piloto automático.</li>
+      </ul>
+    </div>
+    <div class="leitura-acoes">
+      <a href="resumo-do-small-talk-ao-deep-talk-arscott-2022.html" class="btn-abrir">
+        <svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg>
+        Abrir resumo (HTML)
+      </a>
+      <a href="resumo-do-small-talk-ao-deep-talk-arscott-2022.pdf" class="btn-pdf">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9.5 11.5c0 .83-.67 1.5-1.5 1.5H7v2H5.5V9H8c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5H11V9h2c.83 0 1.5.67 1.5 1.5v3zm4-3H17v1h1.5V13H17v2h-1.5V9h3v1.5zM7 10.5h1v1H7zm5.5 0h1v3h-1z"/></svg>
+        Baixar PDF
+      </a>
+    </div>
+  </div>
+
+  <div class="nota">
+    <b>Leitura opcional e para sempre disponível.</b> Os resumos aprofundam a mecânica de rede — mas a missão (o seu Mapa de Rede D·N·P + 1 ação de reativação para 7 dias) funciona sem eles. Volte quando quiser.
+  </div>
+
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 5 · Academia Intentia — Leituras aprofundadas</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 15 · Presença executiva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, 'Times New Roman', serif;--sans:'Hanken Grotesk', -apple-system, 'Segoe UI', sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.7;font-size:17px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+  header{background:var(--verde-900);color:var(--creme);padding:56px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
+  header .eyebrow{color:var(--verde-500);margin-bottom:14px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,46px);line-height:1.1;letter-spacing:-.01em;margin-bottom:14px}
+  header .lede{font-size:17px;color:#CFE0D6;max-width:560px}
+  .arc{position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border:2px solid rgba(255,255,255,.10);border-radius:50%}
+  .arc::after{content:"";position:absolute;top:24px;left:50%;width:20px;height:20px;border-radius:50%;background:var(--coral)}
+  nav.trilha{background:#fff;border-bottom:1px solid var(--verde-100);padding:18px 24px;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px rgba(39,87,80,.04)}
+  .nav-inner{max-width:820px;margin:0 auto;display:flex;gap:6px;justify-content:space-between;align-items:stretch;position:relative}
+  .nav-inner::before{content:"";position:absolute;top:22px;left:22px;right:22px;height:2px;background:var(--verde-100);z-index:0}
+  .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:var(--tinta-suave);position:relative;z-index:1;padding:0 4px;cursor:pointer;transition:color .2s;min-width:0}
+  .nav-num{width:44px;height:44px;border-radius:50%;background:#fff;border:2px solid var(--verde-100);color:var(--tinta-suave);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:17px;transition:all .25s ease;flex-shrink:0;box-shadow:0 0 0 4px #fff}
+  .nav-label{font-size:11.5px;font-weight:600;letter-spacing:.02em;text-align:center;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;transition:color .2s}
+  .nav-item:hover .nav-num{border-color:var(--coral);color:var(--coral);transform:scale(1.08)}
+  .nav-item.ativo .nav-num{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 0 0 4px #fff, 0 4px 14px rgba(255,104,66,.35)}
+  .nav-item.ativo{color:var(--verde-900)}
+  .nav-item.ativo .nav-label{color:var(--verde-900);font-weight:700}
+  @media (max-width:640px){.nav-label{display:none}.nav-inner::before{top:22px}.nav-num{width:40px;height:40px;font-size:16px}}
+  section.bloco[id]{scroll-margin-top:100px}
+  .onde-estamos{background:var(--verde-100);border-top:1px solid var(--verde-500);border-bottom:1px solid var(--verde-500);padding:18px 24px}
+  .oe-inner{max-width:720px;margin:0 auto}.oe-camada{margin-bottom:12px}.oe-camada:last-child{margin-bottom:0}
+  .oe-eyebrow{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--verde-700);margin-bottom:8px;text-align:center}
+  .oe-semanas{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
+  .oe-semana{background:#fff;border:1.5px solid var(--verde-500);color:var(--tinta-suave);font-size:12px;font-weight:600;padding:6px 12px;border-radius:16px;flex-shrink:0;line-height:1.2}
+  .oe-semana.feita{background:var(--verde-500);border-color:var(--verde-500);color:#fff}
+  .oe-semana.atual{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 3px 10px rgba(255,104,66,.28);font-weight:700}
+  .oe-semana .num{font-family:var(--serif);font-weight:600;margin-right:4px}
+  .oe-dias{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:center}
+  .oe-dia{width:26px;height:26px;border-radius:50%;background:#fff;border:1.5px solid var(--verde-500);color:var(--tinta-suave);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11.5px;font-weight:600;flex-shrink:0}
+  .oe-dia.feito{background:var(--verde-500);border-color:var(--verde-500);color:#fff}
+  .oe-dia.atual{background:var(--coral);border-color:var(--coral);color:#fff;transform:scale(1.15);box-shadow:0 3px 8px rgba(255,104,66,.3)}
+  .oe-dia-conector{width:12px;height:2px;background:var(--verde-500);opacity:.5;flex-shrink:0}
+  .oe-texto{font-size:13.5px;color:var(--tinta);line-height:1.55;text-align:center;margin:12px auto 0;max-width:600px;padding-top:10px;border-top:1px solid rgba(124,168,158,.35)}
+  .oe-texto b{color:var(--verde-900);font-weight:600}
+  .oe-tag-dia{display:inline-block;background:var(--coral);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 10px;border-radius:12px;margin:0 3px;vertical-align:1px}
+  main{max-width:720px;margin:0 auto;padding:0 24px}
+  .bloco{background:#fff;border-radius:16px;padding:36px 34px;margin:24px 0;box-shadow:0 4px 16px rgba(39,87,80,.06);border:1px solid var(--verde-100)}
+  .bloco-num{display:inline-flex;align-items:center;gap:10px;color:var(--coral);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
+  .bloco-num .n{background:var(--coral);color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:0}
+  .bloco h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.4vw,32px);line-height:1.15;color:var(--verde-900);margin-bottom:8px;letter-spacing:-.01em}
+  .bloco .subtitulo{font-size:15px;color:var(--tinta-suave);margin-bottom:24px;font-style:italic}
+  .bloco p{margin-bottom:14px}
+  .player{background:linear-gradient(135deg, var(--verde-900) 0%, #1d453f 100%);color:var(--creme);border-radius:18px;padding:28px 30px;margin-top:8px;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(39,87,80,.22)}
+  .player-topo{display:flex;align-items:center;gap:12px;margin-bottom:22px;position:relative}
+  .player-topo .eyebrow-audio{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral)}
+  .player-topo .eyebrow-audio::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--coral);margin-right:8px;vertical-align:2px;animation:pulso 2s infinite}
+  @keyframes pulso{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+  .player-tag{margin-left:auto;font-size:11px;font-weight:600;color:#A9C6B8;letter-spacing:.05em;background:rgba(255,255,255,.06);padding:4px 10px;border-radius:12px}
+  .player-titulo{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1.2;margin-bottom:6px;letter-spacing:-.01em}
+  .player-sub{font-size:13px;color:#A9C6B8;margin-bottom:22px}.player-sub b{color:#CFE0D6;font-weight:600}
+  .waveform{display:flex;align-items:center;gap:2.5px;height:44px;margin-bottom:14px;position:relative;padding:6px 0}
+  .waveform .bar{flex:1;background:rgba(255,255,255,.20);border-radius:2px;min-width:2px}
+  .player-tempo{display:flex;justify-content:space-between;font-size:12px;color:#A9C6B8;font-variant-numeric:tabular-nums;font-weight:600;margin-bottom:20px}
+  .player-controles{display:flex;align-items:center;justify-content:center;gap:22px}
+  .ctrl-btn{background:transparent;border:none;color:#CFE0D6;cursor:pointer;padding:8px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+  .ctrl-btn svg{width:22px;height:22px;fill:currentColor}
+  .ctrl-play{width:64px;height:64px;border-radius:50%;background:var(--coral);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(255,104,66,.42)}
+  .ctrl-play svg{width:24px;height:24px;fill:#fff;margin-left:3px}
+  .player-extras{display:flex;justify-content:space-between;align-items:center;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08)}
+  .velocidade{display:flex;gap:2px;background:rgba(255,255,255,.06);border-radius:20px;padding:3px}
+  .vel-btn{background:transparent;border:none;color:#A9C6B8;padding:5px 11px;border-radius:16px;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--sans)}
+  .vel-btn.ativa{background:rgba(255,255,255,.14);color:#fff}
+  .transcricao-btn{background:transparent;border:1px solid rgba(255,255,255,.18);color:#CFE0D6;padding:7px 14px;border-radius:20px;font-size:12.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:var(--sans);text-decoration:none}
+  .transcricao-btn svg{width:14px;height:14px;fill:currentColor}
+  .leva-lista{list-style:none;padding:0;margin-top:8px}
+  .leva-lista li{padding:16px 0 16px 44px;border-bottom:1px dashed var(--verde-100);position:relative}
+  .leva-lista li:last-child{border-bottom:none}
+  .leva-lista li::before{content:"";position:absolute;left:0;top:22px;width:28px;height:28px;background:var(--verde-100);border-radius:50%}
+  .leva-lista li::after{content:"";position:absolute;left:9px;top:29px;width:10px;height:6px;border-left:2.5px solid var(--verde-900);border-bottom:2.5px solid var(--verde-900);transform:rotate(-45deg)}
+  .leva-lista strong{color:var(--verde-900)}
+  .ponto{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);padding:24px 28px;border-radius:0 12px 12px 0;margin-top:8px}
+  .direcao-recap{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:18px 22px;margin-bottom:20px}
+  .direcao-recap-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .direcao-recap-frase{font-family:var(--serif);font-size:16px;font-weight:500;font-style:italic;color:var(--verde-900);line-height:1.4}
+  .direcao-recap small{font-size:12px;color:var(--tinta-suave);display:block;margin-top:6px;font-style:italic}
+  .definicao-eu{background:#fff;border:1.5px solid var(--verde-700);border-radius:12px;padding:18px 22px;margin:16px 0}
+  .definicao-eu-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+  .definicao-eu-texto{font-family:var(--serif);font-size:18px;line-height:1.45;color:var(--tinta);font-weight:500}
+  .definicao-eu-texto b{color:var(--verde-900);font-weight:600}
+  .teste-linha{background:var(--verde-900);color:var(--creme);padding:14px 20px;border-radius:10px;margin-top:12px;font-size:14.5px;line-height:1.5;text-align:center;font-family:var(--serif);font-style:italic}
+  .teste-linha b{color:#fff;font-weight:600;font-style:normal}
+  .conteudo-item{padding:18px 20px;background:var(--creme);border-radius:10px;margin-bottom:12px;border-left:3px solid var(--verde-500)}
+  .conteudo-item h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);margin-bottom:8px}
+  .conteudo-item h3 .marcador{font-family:var(--sans);font-size:11px;font-weight:700;color:#fff;background:var(--verde-700);padding:3px 8px;border-radius:4px;letter-spacing:.1em;margin-right:8px;vertical-align:2px}
+  .dim-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
+  @media (max-width:640px){.dim-grid{grid-template-columns:1fr}}
+  .dim-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
+  .dim-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
+  .dim-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
+  .dim-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
+  .dim-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
+  .dim-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
+  .dim-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
+  .dim-hint svg{width:12px;height:12px;fill:currentColor}
+  .modal-overlay{position:fixed;inset:0;background:rgba(32,51,47,.55);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s}
+  .modal-overlay.aberto{display:flex;opacity:1}
+  .modal-caixa{background:#fff;border-radius:20px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;transform:translateY(20px);transition:transform .3s ease}
+  .modal-overlay.aberto .modal-caixa{transform:translateY(0)}
+  .modal-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.9);border:1px solid var(--verde-100);width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;color:var(--verde-900)}
+  .modal-close:hover{background:var(--coral);border-color:var(--coral);color:#fff}
+  .modal-close svg{width:16px;height:16px;fill:currentColor}
+  .modal-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:32px 32px 26px;border-radius:20px 20px 0 0;display:flex;align-items:center;gap:16px}
+  .modal-icone{width:52px;height:52px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--serif);font-size:24px;font-weight:600}
+  .modal-titulo{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.15;letter-spacing:-.005em;margin-bottom:4px}
+  .modal-tagline{font-size:13.5px;font-style:italic;opacity:.92}
+  .modal-body{padding:28px 32px 32px}
+  .modal-secao{margin-bottom:22px}.modal-secao:last-child{margin-bottom:0}
+  .modal-secao-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+  .modal-secao p{font-size:15px;line-height:1.6;color:var(--tinta);margin:0}
+  .modal-exemplos{background:var(--creme);border-left:3px solid var(--verde-700);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:12px;font-size:13.5px;line-height:1.55}
+  .modal-exemplos-label{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-700);margin-bottom:6px}
+  .modal-exemplos ul{list-style:none;padding:0;margin:0}
+  .modal-exemplos li{padding:3px 0 3px 16px;position:relative}
+  .modal-exemplos li::before{content:"→";position:absolute;left:0;color:var(--coral);font-weight:700}
+  .modal-erro{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
+  .modal-erro b{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .personagens-intro{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--tinta-suave);margin:16px 0 10px;padding:11px 16px;background:var(--verde-100);border-radius:10px;border-left:3px solid var(--verde-700)}
+  .personagens-intro-icone{width:22px;height:22px;flex-shrink:0;color:var(--verde-700)}
+  .personagens-intro-icone svg{width:22px;height:22px;fill:currentColor}
+  .personagens-intro-texto{flex:1;line-height:1.45}
+  .personagens-intro b{color:var(--verde-900);font-weight:600}
+  .personagens-intro a{color:var(--verde-700);text-decoration:none;font-weight:600;border-bottom:1px dotted var(--verde-500)}
+  .caso{margin-top:14px;padding:16px 18px;background:#fff;border:1px solid var(--verde-100);border-radius:10px}
+  .caso-header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .caso-avatar{width:36px;height:36px;border-radius:50%;background:var(--verde-700);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:16px;flex-shrink:0}
+  .caso-avatar.rafael{background:var(--coral)}.caso-avatar.juliana{background:var(--verde-500)}
+  .caso-nome{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--verde-900)}
+  .caso-perfil{font-size:12px;color:var(--tinta-suave);font-weight:500}
+  .caso-tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--verde-100);color:var(--verde-900);padding:4px 9px;border-radius:6px;margin-left:auto}
+  .caso p{font-size:14.5px;line-height:1.55;color:var(--tinta);margin-bottom:0}
+  .caso p b{color:var(--verde-900)}
+  .bonus{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:32px 30px;margin:24px 0}
+  .bonus .bloco-num{color:var(--coral-soft)}.bonus .bloco-num .n{background:var(--coral)}
+  .bonus h2{color:#fff;font-family:var(--serif)}.bonus .subtitulo{color:#CFE0D6;font-style:italic}
+  .bonus p{color:#CFE0D6}
+  .leituras{display:grid;gap:14px;margin-top:20px}
+  .leitura{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 20px}
+  .leitura .tipo{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--coral-soft);margin-bottom:8px;display:block}
+  .leitura h4{font-family:var(--serif);font-size:18px;font-weight:600;color:#fff;margin-bottom:6px;line-height:1.3}
+  .leitura .meta-leitura{font-size:13px;color:#A9C6B8}
+  .link-academia{display:inline-block;margin-top:20px;color:var(--coral-soft);text-decoration:none;font-weight:600;font-size:14px;border-bottom:1px dotted var(--coral-soft);padding-bottom:2px}
+  .bonus-nota{margin-top:16px;font-size:12.5px;color:#A9C6B8;font-style:italic}
+  .missao-header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .missao-tempo{background:var(--coral);color:#fff;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;border-radius:20px}
+  .passos{counter-reset:passo;list-style:none;padding:0;margin-top:20px}
+  .passos li{counter-increment:passo;padding:16px 16px 16px 60px;position:relative;margin-bottom:10px;background:var(--creme);border-radius:10px;border-left:3px solid var(--coral)}
+  .passos li::before{content:counter(passo);position:absolute;left:16px;top:16px;width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--serif);font-size:16px}
+  .passos li strong{color:var(--verde-900);display:block;margin-bottom:4px;font-size:15px}
+  .passos li .tempo-passo{font-size:12px;font-weight:600;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-left:8px}
+  .passos li p{font-size:14.5px;color:var(--tinta-suave);margin-bottom:0;line-height:1.55}
+  .cta-missao{display:flex;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:22px 32px;border-radius:16px;margin-top:32px;text-decoration:none;font-family:var(--serif);font-size:20px;font-weight:600;box-shadow:0 10px 28px rgba(255,104,66,.32);transition:transform .25s ease}
+  .cta-missao:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,104,66,.42)}
+  .cta-missao .cta-icone{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .cta-missao .cta-icone svg{width:16px;height:16px;fill:#fff}
+  .cta-missao .cta-tempo{display:inline-block;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);color:#fff;padding:3px 10px;border-radius:12px;margin-right:10px;vertical-align:2px}
+  @media (max-width:560px){.cta-missao{padding:20px 22px;font-size:17px;gap:10px}.cta-missao .cta-tempo{display:none}}
+  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:13px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--verde-900);margin-bottom:6px}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><span class="cur">Dia 15</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html" class="atual">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 14/index.html" title="Dia 14 (tecla ←)">←<span class="lbl"> Dia 14</span></a><a class="intnav-pill" href="../Dia 16/index.html" title="Dia 16 (tecla →)"><span class="lbl">Dia 16 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+<header>
+  <div class="hero-inner">
+    <div class="eyebrow">Trilha Capital de Carreira · Bloco 1 · Dia 15 · Abre Semana 3</div>
+    <h1>Presença executiva — <span class="grifo">como a direção soa</span> antes de acontecer.</h1>
+    <p class="lede">Semana 3 abre. Você tem uma direção escolhida. Agora começam 7 capacidades que amplificam ela — e a primeira é a mais imediata: como você <em>se apresenta</em> quando fala dessa direção.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+<nav class="trilha">
+  <div class="nav-inner">
+    <a href="#audio" class="nav-item" data-target="audio"><span class="nav-num">1</span><span class="nav-label">Áudio</span></a>
+    <a href="#leva" class="nav-item" data-target="leva"><span class="nav-num">2</span><span class="nav-label">O que você leva</span></a>
+    <a href="#ponto" class="nav-item" data-target="ponto"><span class="nav-num">3</span><span class="nav-label">Ponto de partida</span></a>
+    <a href="#conteudo" class="nav-item" data-target="conteudo"><span class="nav-num">4</span><span class="nav-label">Conteúdo</span></a>
+    <a href="#bonus" class="nav-item" data-target="bonus"><span class="nav-num">5</span><span class="nav-label">Bônus</span></a>
+    <a href="#missao" class="nav-item" data-target="missao"><span class="nav-num">6</span><span class="nav-label">Missão</span></a>
+  </div>
+</nav>
+<div class="onde-estamos">
+  <div class="oe-inner">
+    <div class="oe-camada">
+      <div class="oe-eyebrow">Bloco Capital de Carreira · Semana 3 de 4 · Amplificar</div>
+      <div class="oe-semanas">
+        <span class="oe-semana feita"><span class="num">1</span>Mapear ativos ✓</span>
+        <span class="oe-semana feita"><span class="num">2</span>Escolher direção ✓</span>
+        <span class="oe-semana atual"><span class="num">3</span>Amplificar</span>
+        <span class="oe-semana"><span class="num">4</span>Instalar rotina</span>
+      </div>
+    </div>
+    <div class="oe-camada">
+      <div class="oe-eyebrow">Dia 1 de 7 nesta semana · Dia 15 na trilha</div>
+      <div class="oe-dias">
+        <span class="oe-dia atual">1</span><span class="oe-dia-conector"></span>
+        <span class="oe-dia">2</span><span class="oe-dia-conector"></span>
+        <span class="oe-dia">3</span><span class="oe-dia-conector"></span>
+        <span class="oe-dia">4</span><span class="oe-dia-conector"></span>
+        <span class="oe-dia">5</span><span class="oe-dia-conector"></span>
+        <span class="oe-dia">6</span><span class="oe-dia-conector"></span>
+        <span class="oe-dia">7</span>
+      </div>
+    </div>
+    <p class="oe-texto">
+      Semana 3 abre com <span class="oe-tag-dia">Presença</span>. Nos próximos 6 dias: autoridade, redes, persuasão, aprendizagem, energia, execução. Cada capacidade é trabalhada <b>vinculada à direção escolhida no Dia 14</b>.
+    </p>
+  </div>
+</div>
+
+<main>
+  <section class="bloco" id="audio">
+    <div class="bloco-num"><span class="n">1</span> O áudio do dia</div>
+    <h2>A ideia central, contada com calma.</h2>
+    <p class="subtitulo">Ouça antes de começar — 5 min.</p>
+    <div class="player">
+      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia · Abre Semana 3</span><span class="player-tag">Ep. 15 · Bloco 1 · Semana 3</span></div>
+      <div class="player-titulo">Presença: como a direção soa antes de acontecer</div>
+      <div class="player-sub">A ideia central do dia — contada pela <b>voz do Intentia</b>.</div>
+      <div class="waveform" id="waveform"></div>
+      <div class="player-tempo"><span>00:00</span><span>05:10</span></div>
+      <div class="player-controles">
+        <button class="ctrl-btn"><svg viewBox="0 0 24 24"><path d="M12.5 3v2.5c4.14 0 7.5 3.36 7.5 7.5s-3.36 7.5-7.5 7.5-7.5-3.36-7.5-7.5c0-1.4.39-2.7 1.06-3.83L4.32 7.86A9.955 9.955 0 003 13c0 5.24 4.26 9.5 9.5 9.5S22 18.24 22 13s-4.26-10-9.5-10z"/></svg></button>
+        <button class="ctrl-play" id="btn-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+        <button class="ctrl-btn"><svg viewBox="0 0 24 24"><path d="M18 13c0 3.31-2.69 6-6 6s-6-2.69-6-6 2.69-6 6-6v4l5-5-5-5v4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8h-2z"/></svg></button>
+      </div>
+      <div class="player-extras">
+        <div class="velocidade">
+          <button class="vel-btn" data-vel="0.75">0.75x</button>
+          <button class="vel-btn ativa" data-vel="1">1x</button>
+          <button class="vel-btn" data-vel="1.25">1.25x</button>
+          <button class="vel-btn" data-vel="1.5">1.5x</button>
+        </div>
+        <a class="transcricao-btn" href="audio.html"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg> Ler transcrição</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco" id="leva">
+    <div class="bloco-num"><span class="n">2</span> O que você leva de hoje</div>
+    <h2>Você termina o dia sendo capaz de…</h2>
+    <p class="subtitulo">Três capacidades no presente.</p>
+    <ul class="leva-lista">
+      <li><strong>Distinguir "presença" de "performance"</strong> — Antonakis mostra que carisma é aprendido, mas não é atuação. Presença sólida é <em>coerência entre o que você diz, como diz, e quem você é</em>. Performance é o oposto: dissonância entre camadas.</li>
+      <li><strong>Diagnosticar sua presença em 3 dimensões</strong> — Voz (como você fala e é ouvido), Gravitas (o peso silencioso da sua fala), Coerência (como o visual/postural confirma a mensagem). Hewlett mostra que os 3 pilares independentes movem juntos.</li>
+      <li><strong>Vincular presença à direção escolhida</strong> — presença sem direção clara vira ruído; direção sem presença vira aspiração privada. Hoje, cada dimensão de presença é avaliada <em>a serviço da direção do Dia 14</em>.</li>
+    </ul>
+  </section>
+
+  <section class="bloco" id="ponto">
+    <div class="bloco-num"><span class="n">3</span> O Ponto de Partida de Hoje</div>
+    <h2>A direção escolhida precisa ser <em>ouvida</em> antes de acontecer.</h2>
+    <p class="subtitulo">Hewlett (2024): "presença é o que faz outras pessoas te levarem a sério antes de terem evidência".</p>
+    <div class="ponto">
+
+      <div class="direcao-recap">
+        <div class="direcao-recap-label">Sua direção escolhida (Dia 14)</div>
+        <div class="direcao-recap-frase" id="direcao-recap-txt">—</div>
+        <small>Semana 3 amplifica essa direção. Não a substitui.</small>
+      </div>
+
+      <div class="definicao-eu">
+        <div class="definicao-eu-label">O que é "presença" nesta semana</div>
+        <div class="definicao-eu-texto"><b>Presença é a forma como sua direção chega ao mundo antes de você ter provas.</b> Não é carisma inato, não é performance de personagem — é <em>a coerência entre o que você diz, como você diz, e a autoridade calma de quem sabe onde está indo</em>. Presença fraca sabota direção forte; presença sólida faz direção fraca soar sólida (e essa é justamente a armadilha oposta que você tem que evitar).</div>
+      </div>
+
+      <p style="margin-top:18px"><b>John Antonakis (2012)</b> pesquisou carisma em contextos organizacionais e desmontou o mito de que é dom inato. Isolou 12 "táticas de liderança carismática" (CLTs) — comportamentos aprendíveis que aumentam mensuravelmente a percepção de presença. Metáforas, listas de três, contrastes, expressão facial coerente com conteúdo. Não é sobre fingir; é sobre <em>tirar do caminho os hábitos que enfraquecem</em>.</p>
+
+      <p><b>Sylvia Ann Hewlett (2024)</b> atualizou a pesquisa clássica sobre "executive presence" para o ambiente contemporâneo (híbrido, mais diverso, mais digital). Confirma os 3 pilares: <em>Gravitas</em> (o peso da fala), <em>Comunicação</em> (a clareza da mensagem), <em>Aparência</em> (a coerência visual e postural). Mas os pesos mudaram: hoje, gravitas responde por 67% da percepção — comunicação e aparência dividem o resto.</p>
+
+      <div class="teste-linha">
+        Teste rápido: se você <b>gravasse 30 segundos</b> falando sua história curta (Dia 14) — o que a gravação mostraria: alinhamento ou dissonância entre voz, presença e mensagem?
+      </div>
+
+      <p style="margin-top:18px"><b>Por que hoje o exercício é avaliar 3 dimensões?</b> Porque presença não se treina em bloco — se treina por camada. Voz, gravitas e coerência têm padrões diferentes de erro e melhoria. Uma pessoa com voz forte mas gravitas frágil parece <em>agitada</em>. Uma pessoa com gravitas forte mas voz baixa parece <em>invisível</em>. Uma pessoa com voz e gravitas ok mas coerência quebrada parece <em>desconfiável</em>. Diagnosticar por dimensão é o que permite ajuste específico.</p>
+    </div>
+  </section>
+
+  <section class="bloco" id="conteudo">
+    <div class="bloco-num"><span class="n">4</span> O conteúdo que direciona a sua missão de hoje</div>
+    <h2>Três dimensões de presença — clicáveis para o método.</h2>
+    <p class="subtitulo">10 min. Material de referência.</p>
+
+    <div class="personagens-intro">
+      <span class="personagens-intro-icone" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      </span>
+      <div class="personagens-intro-texto">
+        Os três profissionais de referência seguem com você: <b>Camila</b>, <b>Rafael</b> e <b>Juliana</b>. <a href="../Dia 0/personagens.html">Rever quem são →</a>
+      </div>
+    </div>
+
+    <div class="conteudo-item">
+      <h3><span class="marcador">01</span>Três dimensões de presença — Voz · Gravitas · Coerência</h3>
+      <p>Cada dimensão é aprendível e mede algo diferente. Toque em cada para o método e o exemplo aplicado à direção.</p>
+
+      <div class="dim-grid">
+        <div class="dim-card" data-modal="voz" role="button" tabindex="0">
+          <div class="dim-icone">V</div>
+          <div class="dim-nome">Voz</div>
+          <div class="dim-pergunta">"como você fala e é ouvido"</div>
+          <span class="dim-seta">›</span>
+        </div>
+        <div class="dim-card" data-modal="gravitas" role="button" tabindex="0">
+          <div class="dim-icone">G</div>
+          <div class="dim-nome">Gravitas</div>
+          <div class="dim-pergunta">"o peso silencioso da sua fala"</div>
+          <span class="dim-seta">›</span>
+        </div>
+        <div class="dim-card" data-modal="coerencia" role="button" tabindex="0">
+          <div class="dim-icone">C</div>
+          <div class="dim-nome">Coerência</div>
+          <div class="dim-pergunta">"como o visual confirma a mensagem"</div>
+          <span class="dim-seta">›</span>
+        </div>
+      </div>
+
+      <span class="dim-hint">
+        <svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>
+        Toque em cada dimensão para exemplos aplicados aos personagens.
+      </span>
+    </div>
+
+    <div class="conteudo-item">
+      <h3><span class="marcador">02</span>Presença aplicada à direção — leitura dos personagens</h3>
+
+      <div class="caso">
+        <div class="caso-header">
+          <div class="caso-avatar">C</div>
+          <div>
+            <div class="caso-nome">Camila · Continuação Paralela</div>
+            <div class="caso-perfil">Frase: análise de decisão com IA</div>
+          </div>
+          <span class="caso-tag">Voz frágil</span>
+        </div>
+        <p><b>Diagnóstico:</b> Camila tem gravitas alta (8 anos de banco, dados que fala por si), coerência ok (LinkedIn coerente com direção). <b>Gargalo: voz</b> — ela escreve bem, mas fala baixo em apresentações e enche de "acho que", "talvez". <b>Próximo passo:</b> gravar áudio de 60s do seu argumento central sobre IA em análise, ouvir de volta, retirar 5 hedges. Uma semana → recomeço da autoridade externa.</p>
+      </div>
+
+      <div class="caso">
+        <div class="caso-header">
+          <div class="caso-avatar rafael">R</div>
+          <div>
+            <div class="caso-nome">Rafael · Adjacência Iterativa</div>
+            <div class="caso-perfil">Frase: operações para escala digital</div>
+          </div>
+          <span class="caso-tag">Coerência frágil</span>
+        </div>
+        <p><b>Diagnóstico:</b> voz sólida (12 anos coordenando gente), gravitas média (ainda transitando entre setores, sem tribo consolidada). <b>Gargalo: coerência</b> — LinkedIn ainda mostra "coordenador industrial", currículo de 5 páginas de operações, sinal para fora ainda é do velho ele. <b>Próximo passo:</b> atualizar LinkedIn headline + about + primeira seção para a direção nova. Se um recrutador de fintech olhar hoje, precisa ver a versão nova primeiro.</p>
+      </div>
+
+      <div class="caso">
+        <div class="caso-header">
+          <div class="caso-avatar juliana">J</div>
+          <div>
+            <div class="caso-nome">Juliana · Reinvenção Paralela</div>
+            <div class="caso-perfil">Frase: design de sistemas para pequenos negócios</div>
+          </div>
+          <span class="caso-tag">Gravitas frágil</span>
+        </div>
+        <p><b>Diagnóstico:</b> voz alta (fala bem, vem de design ensinando clientes), coerência forte (portfolio online já mostra a direção). <b>Gargalo: gravitas</b> — Juliana ainda apresenta a direção como "estou tentando", "quem sabe funciona" — subtexto de dúvida que quebra o peso. <b>Próximo passo:</b> reescrever a bio pública sem uma única palavra de hedge. Se funciona: adotar como padrão de fala nas próximas 4 semanas.</p>
+      </div>
+    </div>
+
+    <div class="conteudo-item">
+      <h3><span class="marcador">03</span>A regra do Dia 15: uma dimensão de cada vez</h3>
+      <p>Se você identificou 3 gargalos, resista à tentação de atacar todos juntos. Presença sólida se instala por camada — uma dimensão trabalhada por 2-3 semanas gera efeito visível; três dimensões atacadas simultâneas geralmente não geram efeito nenhum. Escolha <b>a mais gargalo</b> e comece por ela.</p>
+    </div>
+  </section>
+
+  <section class="bonus bloco" id="bonus">
+    <div class="bloco-num"><span class="n">5</span> Seu bônus antes da missão</div>
+    <h2>Carisma se aprende. Presença executiva mudou.</h2>
+    <p class="subtitulo">Duas leituras que fundamentam as 3 dimensões.</p>
+    <div class="leituras">
+      <div class="leitura">
+        <span class="tipo">Resumo · 3 páginas</span>
+        <h4>Carisma se aprende</h4>
+        <p class="meta-leitura">Antonakis (2012) — pesquisa sistemática que isolou 12 táticas de liderança carismática aprendíveis. O mito do carisma inato desmontado com dados.</p>
+      </div>
+      <div class="leitura">
+        <span class="tipo">Resumo · 3 páginas</span>
+        <h4>Novas regras da presença executiva</h4>
+        <p class="meta-leitura">Hewlett (2024) — atualização dos 3 pilares (Gravitas, Comunicação, Aparência) para o ambiente híbrido e mais diverso. Gravitas subiu para 67% da percepção.</p>
+      </div>
+    </div>
+    <a href="academia.html" class="link-academia">Abrir os resumos na Academia Intentia →</a>
+    <p class="bonus-nota">Opcional. As leituras enriquecem o dia — mas a missão funciona sem elas.</p>
+  </section>
+
+  <section class="bloco" id="missao">
+    <div class="bloco-num"><span class="n">6</span> Missão do Dia</div>
+    <div class="missao-header">
+      <h2>Diagnóstico das 3 dimensões.</h2>
+      <span class="missao-tempo">15 min</span>
+    </div>
+    <p class="subtitulo">Avaliar Voz, Gravitas e Coerência (1-5 cada) vinculadas à direção do Dia 14. Escolher o gargalo. Definir 1 movimento pequeno esta semana.</p>
+
+    <ol class="passos">
+      <li><strong>Reler sua marca (Dia 14) <span class="tempo-passo">2 min</span></strong><p>Frase-síntese, história curta, prova social. O material do Dia 14. Cada dimensão será avaliada <em>a serviço dessa marca</em>.</p></li>
+      <li><strong>Avaliar Voz (1-5) <span class="tempo-passo">3 min</span></strong><p>Como você fala hoje sobre a direção? Voz + escrita + presença verbal. 1 = evito falar; 5 = fala fluente, sem hedges, sem receio.</p></li>
+      <li><strong>Avaliar Gravitas (1-5) <span class="tempo-passo">3 min</span></strong><p>Quanto peso sua fala tem sobre a direção? 1 = pessoas questionam constantemente; 5 = pessoas escutam antes de contestar.</p></li>
+      <li><strong>Avaliar Coerência (1-5) <span class="tempo-passo">3 min</span></strong><p>Seu visual e sinais externos batem com a direção? LinkedIn, e-mail, apresentações, roupa em contextos-chave. 1 = tudo ainda mostra a versão antiga; 5 = tudo alinhado com direção nova.</p></li>
+      <li><strong>Escolher gargalo + próximo passo <span class="tempo-passo">4 min</span></strong><p>Uma dimensão só (a mais gargalo). Um movimento pequeno, específico, executável esta semana. Sem plano grande — só primeiro degrau.</p></li>
+    </ol>
+
+    <a href="missao.html" class="cta-missao">
+      <span class="cta-texto"><span class="cta-tempo">15 min</span>Fazer a Missão</span>
+      <span class="cta-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
+    </a>
+  </section>
+
+<!-- Recursos do dia: navegação completa da pasta (integração) -->
+<section id="recursos-dia" aria-label="Recursos do dia" style="margin-top:34px">
+  <div style="display:inline-flex;align-items:center;gap:10px;color:#FF6842;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif">Explorar o dia completo</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+    <a href="material.html" style="display:block;background:#fff;border:1px solid #DAE6E1;border-radius:14px;padding:18px 20px;text-decoration:none;box-shadow:0 4px 14px rgba(39,87,80,.06)">
+      <div style="font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:17px;color:#275750;margin-bottom:6px">Material do dia <span style="color:#FF6842">&rarr;</span></div>
+      <div style="font-size:13px;color:#57706A;line-height:1.5;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif">O conteúdo de referência do dia em página própria — para ler com calma ou voltar durante a missão.</div>
+    </a>
+    <a href="playbook.html" style="display:block;background:#fff;border:1px solid #DAE6E1;border-radius:14px;padding:18px 20px;text-decoration:none;box-shadow:0 4px 14px rgba(39,87,80,.06)">
+      <div style="font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:17px;color:#275750;margin-bottom:6px">Playbook do dia <span style="color:#FF6842">&rarr;</span></div>
+      <div style="font-size:13px;color:#57706A;line-height:1.5;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif">O aprofundamento completo: casos dos profissionais de referência, calibragens e erros comuns.</div>
+    </a>
+    <a href="roteiro-ia.html" style="display:block;background:#F5F7F3;border:1px dashed #7CA89E;border-radius:14px;padding:18px 20px;text-decoration:none">
+      <div style="font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:17px;color:#275750;margin-bottom:6px">Roteiro da IA <span style="color:#FF6842">&rarr;</span></div>
+      <div style="font-size:13px;color:#57706A;line-height:1.5;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif"><span style="font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7C6AC5">Spec interno</span> &middot; como a IA conduz cada campo da missão deste dia.</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+  <div class="modal-caixa">
+    <button class="modal-close" id="modal-close" aria-label="Fechar">
+      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+    <div class="modal-header">
+      <div class="modal-icone" id="modal-icone"></div>
+      <div>
+        <div class="modal-titulo" id="modal-titulo"></div>
+        <div class="modal-tagline" id="modal-tagline"></div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-secao">
+        <div class="modal-secao-label">O que a dimensão mede</div>
+        <p id="modal-conceito"></p>
+      </div>
+      <div class="modal-secao">
+        <div class="modal-exemplos">
+          <div class="modal-exemplos-label">Sinais de que está frágil</div>
+          <ul id="modal-exemplos"></ul>
+        </div>
+        <div class="modal-erro"><b>Movimento pequeno para fortalecer</b><span id="modal-erro"></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Dia 15 · Presença executiva</div></footer>
+
+<script>
+  const DIM_DETALHE = {
+    voz: {
+      nome: 'Dimensão Voz',
+      tagline: 'como você fala e é ouvido',
+      icone: 'V',
+      conceito: 'Voz não é volume. É <b>a soma de: como você inicia uma frase, quanto hedge você usa ("acho", "talvez", "meio que"), a velocidade e o ritmo, onde você olha enquanto fala, e como você trata o silêncio</b>. Uma voz forte na direção escolhida tem: frases afirmativas, poucos hedges, pausas usadas como pontuação (não como hesitação), olhar direto quando defende a tese central.',
+      exemplos: ['Você começa muitas frases com "meio que", "eu acho que"', 'Sua fala acelera quando fica insegura sobre o assunto', 'Você evita silêncios — enche com "né?", "sabe?"', 'Em apresentações, você fala baixo especificamente na parte central da sua tese', 'Você pede desculpa antes de dizer algo que sabe'],
+      erro: '<b>Movimento pequeno:</b> grave 60 segundos falando sua história curta (Dia 14). Ouça de volta. Marque cada hedge e cada silêncio-nervoso. Regrave sem eles. A diferença você ouve — mesmo antes de outros ouvirem.'
+    },
+    gravitas: {
+      nome: 'Dimensão Gravitas',
+      tagline: 'o peso silencioso da sua fala',
+      icone: 'G',
+      conceito: 'Gravitas é <b>a percepção de peso e autoridade que você carrega antes de abrir a boca</b> — e que sua fala, quando começa, confirma. Hewlett (2024) mostra que gravitas hoje responde por 67% da percepção de presença executiva. É a soma de: postura calma sob pressão, capacidade de tomar posição, coragem para o silêncio pensativo, evitar defensividade quando questionado. Não se confunde com seriedade ou frieza — é <em>coerência interna visível externa</em>.',
+      exemplos: ['Você fica defensiva quando alguém contesta sua direção', 'Fala muito quando está insegura (tenta compensar com volume de palavras)', 'Aceita objeções por reflexo, sem processar se são procedentes', 'Fica agitada quando o assunto é sua direção — corpo tenso, gestos rápidos', 'Adiciona muitas ressalvas para "não parecer arrogante"'],
+      erro: '<b>Movimento pequeno:</b> reescreva sua história curta (Dia 14) <em>sem uma única palavra de hedge</em>. Zero "eu acho", zero "talvez", zero "quem sabe". Leia em voz alta. Se sentir arrogância, releia — provavelmente é só a novidade da fala firme. Adote como padrão em 3 conversas essa semana.'
+    },
+    coerencia: {
+      nome: 'Dimensão Coerência',
+      tagline: 'como o visual e os sinais externos confirmam a mensagem',
+      icone: 'C',
+      conceito: 'Coerência é <b>o alinhamento entre o que você diz sobre a direção e o que o mundo vê de você</b> — LinkedIn, e-mail assinatura, apresentações, foto, roupa em contextos-chave, materiais que você compartilha. Não é sobre reformular tudo hoje — é sobre eliminar as <em>contradições ativas</em> que fazem alguém pensar "isso não bate". Coerência quebrada custa muito mais que ausência de coerência: prova ativa contra a sua direção.',
+      exemplos: ['Seu LinkedIn ainda tem o headline do cargo antigo', 'Sua bio pública fala em "estou explorando", "estou tentando"', 'Sua foto profissional é de 5 anos atrás, quando você era outra pessoa', 'Você compartilha conteúdos que reforçam a direção antiga, não a nova', 'Ao apresentar-se em reunião nova, começa por currículo cronológico (versão antiga primeiro)'],
+      erro: '<b>Movimento pequeno:</b> atualizar 1 elemento visível esta semana. Sugestões priorizadas: (1) headline do LinkedIn, (2) "sobre" do LinkedIn (primeira frase), (3) assinatura de e-mail, (4) foto se for antiga. Um por semana até estar tudo alinhado. Um lugar de cada vez.'
+    }
+  };
+</script>
+
+<script>
+  (function(){
+    const items = document.querySelectorAll('.nav-item');
+    const secoes = Array.from(items).map(it => document.getElementById(it.dataset.target)).filter(Boolean);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if(entry.isIntersecting){ items.forEach(it => it.classList.toggle('ativo', it.dataset.target === entry.target.id)); } });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    secoes.forEach(s => observer.observe(s));
+    if(items[0]) items[0].classList.add('ativo');
+  })();
+  (function(){
+    const wf = document.getElementById('waveform');
+    if(!wf) return;
+    const alturas = [24,30,38,44,36,30,34,42,48,54,46,40,48,56,62,54,46,38,44,52,60,68,74,68,60,52,44,52,60,68,76,82,76,68,60,52,46,40,34,42,50,58,52,44,38,32,40,48,42,36,30,26,32,38,44,38,32,28,34,30,24,22,28,24];
+    alturas.forEach(h => { const bar = document.createElement('div'); bar.className = 'bar'; bar.style.height = h + '%'; wf.appendChild(bar); });
+  })();
+  (function(){
+    const btn = document.getElementById('btn-play');
+    if(!btn) return;
+    let tocando = false;
+    btn.addEventListener('click', () => { tocando = !tocando; btn.innerHTML = tocando ? '<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>' : '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; });
+  })();
+  (function(){
+    document.querySelectorAll('.vel-btn').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('.vel-btn').forEach(x => x.classList.remove('ativa')); b.classList.add('ativa'); }));
+  })();
+  (function(){
+    const overlay = document.getElementById('modal-overlay');
+    const btnClose = document.getElementById('modal-close');
+    if(!overlay) return;
+    window.abrirModal = function(id){
+      const d = DIM_DETALHE[id];
+      if(!d) return;
+      document.getElementById('modal-icone').textContent = d.icone;
+      document.getElementById('modal-titulo').textContent = d.nome;
+      document.getElementById('modal-tagline').textContent = d.tagline;
+      document.getElementById('modal-conceito').innerHTML = d.conceito;
+      document.getElementById('modal-exemplos').innerHTML = d.exemplos.map(e => `<li>${e}</li>`).join('');
+      document.getElementById('modal-erro').innerHTML = d.erro;
+      overlay.classList.add('aberto');
+      document.body.style.overflow = 'hidden';
+    };
+    function fechar(){ overlay.classList.remove('aberto'); document.body.style.overflow = ''; }
+    document.querySelectorAll('.dim-card[data-modal]').forEach(card => {
+      card.addEventListener('click', () => abrirModal(card.dataset.modal));
+      card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirModal(card.dataset.modal); } });
+    });
+    btnClose.addEventListener('click', fechar);
+    overlay.addEventListener('click', (e) => { if(e.target === overlay) fechar(); });
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && overlay.classList.contains('aberto')) fechar(); });
+  })();
+  // Puxa direção do Dia 14
+  (function(){
+    try {
+      const s = sessionStorage.getItem('intentia-dia14');
+      if (s) {
+        const p = JSON.parse(s);
+        if (p && p.escolhaFrase) {
+          document.getElementById('direcao-recap-txt').textContent = p.escolhaFrase;
+          return;
+        }
+      }
+    } catch(e){}
+    document.getElementById('direcao-recap-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo demonstrativo)';
+  })();
+</script>
+
+
+<script>
+/* Player real (integração 21/07/2026): toca o audio.mp3 da pasta do dia.
+   Voz provisória sintética — para trocar pela gravação final, basta substituir
+   o arquivo audio.mp3 (mesmo nome). Sem audio.mp3, o player fica ilustrativo. */
+(function(){
+  var audio = new Audio('audio.mp3');
+  var pronto = false;
+  function fmt(t){ t=Math.max(0,Math.round(t)); var m=Math.floor(t/60), s=t%60; return (m<10?'0':'')+m+':'+(s<10?'0':'')+s; }
+  function icone(tocando){
+    var b = document.getElementById('btn-play');
+    if(b) b.innerHTML = tocando
+      ? '<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>'
+      : '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+  }
+  audio.addEventListener('loadedmetadata', function(){
+    pronto = true;
+    var spans = document.querySelectorAll('.player-tempo span');
+    if(spans.length===2){ spans[0].textContent='00:00'; spans[1].textContent=fmt(audio.duration); }
+    var wf = document.getElementById('waveform');
+    if(wf){
+      var cur = wf.querySelector('.cursor-audio'); if(cur) cur.remove();
+      wf.querySelectorAll('.bar').forEach(function(b){ b.classList.remove('tocada'); });
+      wf.addEventListener('click', function(ev){
+        var r = wf.getBoundingClientRect();
+        audio.currentTime = ((ev.clientX - r.left)/r.width) * audio.duration;
+      });
+    }
+    var btn = document.getElementById('btn-play');
+    if(btn){
+      var novo = btn.cloneNode(true);
+      btn.parentNode.replaceChild(novo, btn);
+      novo.addEventListener('click', function(){ if(audio.paused){ audio.play(); } else { audio.pause(); } });
+    }
+    var ctrls = document.querySelectorAll('.player-controles .ctrl-btn');
+    if(ctrls.length>=2){
+      var v0=ctrls[0], v1=ctrls[ctrls.length-1];
+      var voltar = v0.cloneNode(true); v0.parentNode.replaceChild(voltar, v0);
+      var avancar = v1.cloneNode(true); v1.parentNode.replaceChild(avancar, v1);
+      voltar.addEventListener('click', function(){ audio.currentTime = Math.max(0, audio.currentTime-15); });
+      avancar.addEventListener('click', function(){ audio.currentTime = Math.min(audio.duration||0, audio.currentTime+15); });
+    }
+    document.querySelectorAll('.vel-btn').forEach(function(b){
+      b.addEventListener('click', function(){ audio.playbackRate = parseFloat(b.dataset.vel||b.getAttribute('data-vel')||'1'); });
+    });
+  });
+  audio.addEventListener('play', function(){ icone(true); });
+  audio.addEventListener('pause', function(){ icone(false); });
+  audio.addEventListener('ended', function(){ icone(false); });
+  audio.addEventListener('timeupdate', function(){
+    if(!pronto || !audio.duration) return;
+    var frac = audio.currentTime/audio.duration;
+    var spans = document.querySelectorAll('.player-tempo span');
+    if(spans.length===2) spans[0].textContent = fmt(audio.currentTime);
+    var wf = document.getElementById('waveform');
+    if(wf){ var bars = wf.querySelectorAll('.bar'); for(var i=0;i<bars.length;i++){ bars[i].classList.toggle('tocada', i/bars.length < frac); } }
+  });
+  audio.load();
+})();
+</script>
+</body>
+</html>

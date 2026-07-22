@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 1 · Minhas Primeiras Impressões</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+  :root{
+    --verde-900:#275750; --verde-700:#336B62; --verde-500:#7CA89E; --verde-100:#DAE6E1;
+    --areia:#EFF2EE; --coral:#FF6842; --coral-soft:#FFC0AB;
+    --tinta:#20332F; --tinta-suave:#57706A; --creme:#F5F7F3;
+    --lilas:#7C6AC5; --lilas-soft:#EDE9F7;
+    --serif:'Fraunces', Georgia, 'Times New Roman', serif;
+    --sans:'Hanken Grotesk', -apple-system, 'Segoe UI', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:16px;transition:color .2s}
+  .voltar:hover{color:#fff}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .badge-material{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  .badge-material svg{width:14px;height:14px;fill:currentColor}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.5vw,44px);line-height:1.1;letter-spacing:-.015em;margin-bottom:12px}
+  header .lede{font-size:16.5px;color:#CFE0D6;max-width:640px}
+  .meta-material{display:flex;gap:24px;margin-top:22px;font-size:12.5px;color:#A9C6B8;font-weight:600;flex-wrap:wrap}
+  .meta-material span{display:inline-flex;align-items:center;gap:6px}
+  .meta-material svg{width:14px;height:14px;fill:currentColor}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  .arc::after{content:"";position:absolute;top:28px;left:50%;width:22px;height:22px;border-radius:50%;background:var(--coral)}
+
+  .demo-banner{max-width:900px;margin:-32px auto 0;background:#fff;border:1px solid var(--verde-100);border-left:4px solid var(--lilas);border-radius:12px;padding:14px 20px;position:relative;z-index:2;box-shadow:0 10px 30px rgba(39,87,80,.10);font-size:13.5px;color:var(--tinta-suave);display:none}
+  .demo-banner.visivel{display:block}
+  .demo-banner b{color:var(--lilas);font-weight:700}
+
+  main{max-width:900px;margin:0 auto;padding:32px 24px}
+
+  .manchete-destaque{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-radius:20px;padding:38px 40px;margin-bottom:32px;box-shadow:0 6px 24px rgba(39,87,80,.08);border:1px solid var(--verde-100);position:relative;overflow:hidden}
+  .manchete-aspas{position:absolute;top:14px;left:26px;font-family:var(--serif);font-size:100px;color:var(--verde-500);line-height:1;opacity:.28;user-select:none;pointer-events:none}
+  .manchete-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);margin-bottom:16px;position:relative}
+  .manchete-texto{font-family:var(--serif);font-size:clamp(22px,3vw,30px);font-weight:500;font-style:italic;line-height:1.3;color:var(--verde-900);letter-spacing:-.005em;padding-left:56px;padding-right:20px;position:relative}
+  .manchete-rodape{font-size:12.5px;color:var(--tinta-suave);margin-top:20px;font-style:italic;padding-left:56px;position:relative}
+
+  .secao{margin-bottom:36px}
+  .secao-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .secao-num{width:28px;height:28px;background:var(--verde-900);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:13px;flex-shrink:0}
+  .secao h2{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.15;color:var(--verde-900);letter-spacing:-.01em}
+  .secao-sub{font-size:14px;color:var(--tinta-suave);margin-bottom:20px;margin-left:40px;font-style:italic}
+
+  .retrato-sensacoes{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  @media (max-width:640px){.retrato-sensacoes{grid-template-columns:1fr}}
+  .retrato-esquerda{border-right:1px solid var(--verde-100);padding-right:24px}
+  @media (max-width:640px){.retrato-esquerda{border-right:none;border-bottom:1px solid var(--verde-100);padding-right:0;padding-bottom:20px}}
+  .retrato-dominante-label{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--tinta-suave);margin-bottom:8px}
+  .retrato-dominante-valor{font-family:var(--serif);font-size:28px;font-weight:600;color:var(--coral);text-transform:capitalize;line-height:1.1}
+  .retrato-dominante-nota{font-size:12px;color:var(--tinta-suave);margin-top:6px;font-style:italic;max-width:180px}
+  .retrato-direita h4{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--verde-900);margin-bottom:10px}
+  .retrato-lista{display:flex;flex-direction:column;gap:8px}
+  .retrato-item{display:flex;align-items:center;gap:10px;font-size:13.5px}
+  .retrato-item-nome{width:130px;color:var(--tinta);font-weight:500;text-transform:capitalize;flex-shrink:0}
+  .retrato-item-barra{flex:1;height:10px;background:var(--verde-100);border-radius:5px;overflow:hidden;position:relative}
+  .retrato-item-fill{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:5px}
+  .retrato-item-count{font-family:var(--serif);font-weight:600;color:var(--verde-900);font-variant-numeric:tabular-nums;width:34px;text-align:right;font-size:14px}
+
+  .ativos-grid{display:grid;grid-template-columns:repeat(2, 1fr);gap:16px}
+  @media (max-width:720px){.ativos-grid{grid-template-columns:1fr}}
+  .ativo-card{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 26px;box-shadow:0 3px 12px rgba(39,87,80,.05);position:relative;overflow:hidden}
+  .ativo-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%)}
+  .ativo-card-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .ativo-card-icone{width:38px;height:38px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 8px rgba(255,104,66,.22)}
+  .ativo-card-icone svg{width:20px;height:20px;fill:currentColor}
+  .ativo-card-nome{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--verde-900);line-height:1.1}
+  .ativo-card-tag{font-size:12px;color:var(--tinta-suave);font-style:italic;margin-top:2px}
+  .ativo-card-campo{margin-bottom:14px}
+  .ativo-card-campo:last-child{margin-bottom:0}
+  .ativo-card-label{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-700);margin-bottom:5px}
+  .ativo-card-valor{font-size:14.5px;line-height:1.55;color:var(--tinta)}
+  .ativo-card-valor.vazio{color:var(--tinta-suave);font-style:italic}
+  .ativo-card-sensacao{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);padding:5px 12px;border-radius:16px;font-size:12.5px;font-weight:600;text-transform:capitalize;margin-top:2px;margin-right:6px}
+  .ativo-card-sensacao::before{content:'';width:6px;height:6px;background:var(--coral);border-radius:50%}
+  .ativo-card-sensacoes{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+
+  .intencoes-lista{display:flex;flex-direction:column;gap:14px}
+  .intencao-item{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:22px 26px;position:relative;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .intencao-num{position:absolute;top:14px;right:26px;font-family:var(--serif);font-size:60px;font-weight:600;color:var(--verde-100);line-height:1;user-select:none}
+  .intencao-pergunta{font-size:12.5px;font-weight:700;letter-spacing:.05em;color:var(--verde-700);margin-bottom:8px;padding-right:60px;text-transform:none;position:relative}
+  .intencao-resposta{font-family:var(--serif);font-size:17px;font-weight:400;line-height:1.5;color:var(--tinta);padding-right:60px;font-style:italic;position:relative}
+  .intencao-resposta.vazio{color:var(--tinta-suave)}
+
+  .proximos{background:linear-gradient(135deg, var(--verde-900) 0%, #1d453f 100%);color:var(--creme);border-radius:20px;padding:36px 40px;margin-top:36px;position:relative;overflow:hidden}
+  .proximos::before{content:'';position:absolute;right:-80px;bottom:-100px;width:280px;height:280px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  .proximos-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;position:relative;z-index:1}
+  .proximos h3{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.2;margin-bottom:12px;position:relative;z-index:1;letter-spacing:-.005em}
+  .proximos p{font-size:15px;color:#CFE0D6;margin-bottom:22px;max-width:520px;position:relative;z-index:1;line-height:1.55}
+  .proximos-cta{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:16px 28px;border-radius:14px;text-decoration:none;font-family:var(--serif);font-size:17px;font-weight:600;position:relative;z-index:1;transition:all .2s;box-shadow:0 8px 20px rgba(255,104,66,.35)}
+  .proximos-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(255,104,66,.45)}
+  .proximos-cta .icone{width:32px;height:32px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25)}
+  .proximos-cta .icone svg{width:14px;height:14px;fill:#fff}
+
+  .acoes-material{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px;padding-top:24px;border-top:1px dashed var(--verde-100)}
+  .acao-mat{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--verde-100);color:var(--verde-900);padding:10px 18px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;font-family:var(--sans)}
+  .acao-mat:hover{border-color:var(--coral);color:var(--coral)}
+  .acao-mat svg{width:15px;height:15px;fill:currentColor}
+
+  .transparencia{margin-top:24px;padding:18px 22px;background:var(--areia);border:1px dashed var(--verde-500);border-radius:10px;font-size:13px;color:var(--tinta-suave);line-height:1.55}
+  .transparencia b{color:var(--verde-900);font-weight:700}
+  .transparencia .icone-cadeado{display:inline-block;vertical-align:-2px;margin-right:4px}
+  .transparencia svg{width:14px;height:14px;fill:var(--verde-700)}
+
+  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+
+  @media print{
+    header, .proximos, .acoes-material, .demo-banner{display:none}
+    body{background:#fff}
+    .ativo-card, .intencao-item, .manchete-destaque, .retrato-sensacoes{box-shadow:none;break-inside:avoid}
+  }
+
+  /* ===== MODO PDF (aplicado durante a geração) — LAYOUT SIMPLIFICADO ===== */
+  body.gerando-pdf{background:#fff !important;color:var(--tinta) !important}
+  body.gerando-pdf header,
+  body.gerando-pdf .proximos,
+  body.gerando-pdf .acoes-material,
+  body.gerando-pdf .demo-banner,
+  body.gerando-pdf .transparencia,
+  body.gerando-pdf footer{display:none !important}
+  body.gerando-pdf .pdf-header{display:block !important}
+  body.gerando-pdf .pdf-footer{display:block !important}
+
+  /* Container principal: largura fixa para A4 vertical (170mm ≈ 640px a 96dpi, deixando margens) */
+  body.gerando-pdf{width:720px !important;max-width:720px !important;margin:0 auto !important;font-size:13px !important;line-height:1.55 !important}
+  body.gerando-pdf main{padding:0 !important;max-width:none !important;width:720px !important;margin:0 !important}
+
+  /* Grids viram colunas simples para não quebrar */
+  body.gerando-pdf .ativos-grid{display:block !important}
+  body.gerando-pdf .definidores-grid{display:block !important}
+  body.gerando-pdf .retrato-sensacoes{display:block !important}
+  body.gerando-pdf .retrato-esquerda{border-right:none !important;border-bottom:1px solid var(--verde-100) !important;padding-right:0 !important;padding-bottom:16px !important;margin-bottom:16px !important}
+
+  /* Cards: cada um em bloco separado, sem quebrar */
+  body.gerando-pdf .ativo-card,
+  body.gerando-pdf .intencao-item,
+  body.gerando-pdf .manchete-destaque,
+  body.gerando-pdf .retrato-sensacoes,
+  body.gerando-pdf .definidor-card{
+    box-shadow:none !important;
+    page-break-inside:avoid !important;
+    break-inside:avoid !important;
+    margin-bottom:12px !important;
+    padding:16px 18px !important;
+  }
+  body.gerando-pdf .ativo-card::before{display:none !important}
+  body.gerando-pdf .intencao-num{font-size:36px !important;top:8px !important;right:16px !important}
+  body.gerando-pdf .manchete-destaque{padding:24px 26px !important}
+  body.gerando-pdf .manchete-texto{font-size:19px !important;padding-left:36px !important;padding-right:0 !important}
+  body.gerando-pdf .manchete-aspas{font-size:60px !important;top:6px !important;left:14px !important}
+  body.gerando-pdf .manchete-rodape{padding-left:36px !important;font-size:11px !important}
+  body.gerando-pdf .manchete-eyebrow{padding-left:0 !important}
+  body.gerando-pdf .ativo-card-nome{font-size:16px !important}
+  body.gerando-pdf .ativo-card-tag{font-size:11px !important}
+  body.gerando-pdf .ativo-card-valor{font-size:13px !important;line-height:1.5 !important}
+  body.gerando-pdf .ativo-card-label{font-size:9.5px !important}
+  body.gerando-pdf .intencao-resposta{font-size:14px !important;line-height:1.45 !important;padding-right:60px !important}
+  body.gerando-pdf .intencao-pergunta{font-size:11px !important}
+  body.gerando-pdf .definidor-fato{font-size:14px !important}
+  body.gerando-pdf .definidor-construiu{font-size:13px !important}
+  body.gerando-pdf .retrato-dominante-valor{font-size:22px !important}
+  body.gerando-pdf .retrato-item-nome{width:110px !important;font-size:12px !important}
+
+  /* Seções: não quebrar título de conteúdo */
+  body.gerando-pdf .secao{page-break-inside:auto !important;margin-bottom:18px !important}
+  body.gerando-pdf .secao h2{font-size:20px !important}
+  body.gerando-pdf .secao-header{page-break-after:avoid !important;margin-bottom:8px !important}
+  body.gerando-pdf .secao-sub{font-size:12px !important;margin-bottom:12px !important}
+
+  /* Cabeçalho PDF — só aparece durante a geração */
+  .pdf-header{display:none;background:#275750;color:#fff;padding:22px 26px;border-radius:8px;margin-bottom:20px;page-break-after:avoid;position:relative;overflow:hidden}
+  .pdf-header::before{content:'';position:absolute;top:-30px;right:-30px;width:100px;height:100px;border:2px solid rgba(255,255,255,.08);border-radius:50%}
+  .pdf-header::after{content:'';position:absolute;right:22px;top:26px;width:10px;height:10px;background:#FF6842;border-radius:50%}
+  .pdf-header-marca{font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:-.01em;color:#fff;margin-bottom:4px;line-height:1.15}
+  .pdf-header-sub{font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#FF6842;margin-bottom:2px}
+  .pdf-header-info{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;font-size:11px;color:#A9C6B8}
+  .pdf-header-info b{color:#fff;font-weight:600}
+
+  /* Rodapé PDF */
+  .pdf-footer{display:none;margin-top:24px;padding-top:16px;border-top:1px solid #DAE6E1;text-align:center;page-break-inside:avoid}
+  .pdf-footer-assinatura{font-family:var(--serif);font-style:italic;font-size:13px;color:#275750;margin-bottom:4px}
+  .pdf-footer-meta{font-size:10px;color:#57706A;letter-spacing:.04em}
+
+  /* === TEXTO JUSTIFICADO (materiais) === */
+  main p{text-align:justify;text-justify:inter-word;hyphens:auto}
+  main .fechamento, main .fechamento p, main .movimento-conteudo, main .movimento-legenda, main .insight-conteudo, main .direcao-conteudo, main .direcao-recap-frase, main .campo-conteudo:not(.destaque), main .marca-item-conteudo, main .pergunta-topo-texto, main .perfil-legenda, main .dim-exemplo, main .lente-texto, main .mov-texto, main .comp-nota, main .acumulado-nota, main .fechamento-conteudo, main .eu-cena, main .eu-preco, main .campo-conteudo{text-align:justify;text-justify:inter-word;hyphens:auto}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 1</a><span class="sep">›</span><span class="cur">Material</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html">Missão</a><a href="material.html" class="atual">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 0/index.html" title="Dia 0 (tecla ←)">←<span class="lbl"> Dia 0</span></a><a class="intnav-pill" href="../Dia 2/index.html" title="Dia 2 (tecla →)"><span class="lbl">Dia 2 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar">
+      <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      Voltar para o Dia 1
+    </a>
+    <div class="badge-material">
+      <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      Material do Dia 1 · Missão concluída
+    </div>
+    <h1>Minhas Primeiras <span class="grifo">Impressões</span>.</h1>
+    <p class="lede">O extrato da sua primeira foto do Capital de Carreira — os 6 ativos, o padrão das sensações e a intenção que abriu a jornada. Este material volta no Dia 28.</p>
+    <div class="meta-material">
+      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg> <span id="meta-data">Concluído hoje</span></span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
+      <span><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Salvo no Retrato</span>
+    </div>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<div class="demo-banner" id="demo-banner">
+  <b>Prévia com dados de demonstração.</b> Você abriu este material sem completar a missão — o conteúdo abaixo mostra como ele fica preenchido, usando o perfil da Camila (profissional de referência). <a href="missao.html" style="color:var(--lilas);font-weight:700;text-decoration:none;margin-left:4px">Fazer a missão →</a>
+</div>
+
+<main>
+
+  <!-- CABEÇALHO PDF (só visível durante geração) -->
+  <div class="pdf-header">
+    <div class="pdf-header-sub">Intentia · Trilha Capital de Carreira</div>
+    <div class="pdf-header-marca">Minhas Primeiras Impressões</div>
+    <div class="pdf-header-info">
+      <span>Material do <b>Dia 1</b> · Bloco 1</span>
+      <span id="pdf-data">Gerado hoje</span>
+    </div>
+  </div>
+
+  <!-- MANCHETE -->
+  <div class="manchete-destaque">
+    <span class="manchete-aspas">&ldquo;</span>
+    <div class="manchete-eyebrow">Sua manchete de hoje</div>
+    <div class="manchete-texto" id="manchete-texto"></div>
+    <div class="manchete-rodape">Ela volta no Dia 28, ao lado da sua nova manchete — para você medir a distância.</div>
+  </div>
+
+  <!-- RETRATO DE SENSAÇÕES -->
+  <section class="secao">
+    <div class="secao-header">
+      <div class="secao-num">1</div>
+      <h2>O retrato das suas sensações</h2>
+    </div>
+    <p class="secao-sub">O padrão emocional que apareceu nos 6 ativos — o que se repete diz mais que o que pontua uma vez.</p>
+    <div class="retrato-sensacoes">
+      <div class="retrato-esquerda">
+        <div class="retrato-dominante-label">Sensação dominante</div>
+        <div class="retrato-dominante-valor" id="sensacao-dominante">—</div>
+        <div class="retrato-dominante-nota" id="sensacao-dominante-nota"></div>
+      </div>
+      <div class="retrato-direita">
+        <h4>Distribuição nos 6 ativos</h4>
+        <div class="retrato-lista" id="retrato-lista"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 ATIVOS -->
+  <section class="secao">
+    <div class="secao-header">
+      <div class="secao-num">2</div>
+      <h2>Os seis ativos, lado a lado</h2>
+    </div>
+    <p class="secao-sub">A foto panorâmica que abre a semana de mapeamento. Cada ativo terá o próprio dia de aprofundamento — este é o ponto de partida.</p>
+    <div class="ativos-grid" id="ativos-grid"></div>
+  </section>
+
+  <!-- INTENÇÃO INICIAL -->
+  <section class="secao">
+    <div class="secao-header">
+      <div class="secao-num">3</div>
+      <h2>Sua intenção inicial</h2>
+    </div>
+    <p class="secao-sub">Três respostas que você escreveu no primeiro dia. Ficam guardadas até o Dia 28 — sem edição, para você mesma comparar.</p>
+    <div class="intencoes-lista">
+      <div class="intencao-item">
+        <div class="intencao-num">1</div>
+        <div class="intencao-pergunta">O que mais me motivou a entrar no Intentia:</div>
+        <div class="intencao-resposta" id="int-motivacao"></div>
+      </div>
+      <div class="intencao-item">
+        <div class="intencao-num">2</div>
+        <div class="intencao-pergunta">Se o programa funcionar como espero, daqui a um ano estará diferente:</div>
+        <div class="intencao-resposta" id="int-umano"></div>
+      </div>
+      <div class="intencao-item">
+        <div class="intencao-num">3</div>
+        <div class="intencao-pergunta">Hoje, a maior pergunta que tenho sobre a minha carreira é:</div>
+        <div class="intencao-resposta" id="int-pergunta"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRÓXIMOS PASSOS -->
+  <div class="proximos">
+    <div class="proximos-eyebrow">A jornada continua</div>
+    <h3>Amanhã: Dia 2 — Sua trajetória conta.</h3>
+    <p>Depois de olhar para os 6 ativos, o Dia 2 mergulha na matéria-prima que alimenta todos eles: a sua trajetória. Você vai transformar memória em mapa — em 20 minutos.</p>
+    <a href="../Dia 2/index.html" class="proximos-cta">
+      Ir para o Dia 2
+      <span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
+    </a>
+  </div>
+
+  <!-- RODAPÉ PDF (só visível durante geração) -->
+  <div class="pdf-footer">
+    <div class="pdf-footer-assinatura">Do reagir ao conduzir.</div>
+    <div class="pdf-footer-meta">Intentia · Trilha Capital de Carreira · Dia 1 — Minhas Primeiras Impressões</div>
+  </div>
+
+  <!-- AÇÕES -->
+  <div class="acoes-material">
+    <button class="acao-mat" id="btn-salvar-pdf" onclick="salvarPDF()">
+      <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+      <span class="btn-texto">Salvar em PDF</span>
+    </button>
+    <a href="missao.html" class="acao-mat">
+      <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+      Editar respostas
+    </a>
+    <a href="index.html" class="acao-mat">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      Voltar ao Dia 1
+    </a>
+  </div>
+
+  <!-- TRANSPARÊNCIA -->
+  <div class="transparencia">
+    <span class="icone-cadeado"><svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg></span>
+    <b>O que acontece com o que você escreveu:</b> este material fica salvo no seu Retrato de Capital de Carreira. No <b>Dia 7</b>, ele se junta às outras seções da semana; no <b>Dia 28</b>, volta na retrospectiva final ao lado da nova foto. Ninguém além de você lê o conteúdo, e a plataforma nunca vai usá-lo para te rotular — só para te devolver, organizado, o que você mesma disse.
+  </div>
+
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 1 · Minhas Primeiras Impressões</div>
+</footer>
+
+<script>
+  // Dados de demonstração (perfil Camila) — usados quando não há dados da missão
+  const DADOS_DEMO = {
+    ativos: [
+      { id:'res', nome:'Resultados', tagline:'o que mudou porque você fez',
+        icone:'<path d="M9 17V7h2v10H9zm4 0V4h2v13h-2zm-8 0v-6h2v6H5zm12 0V9h2v8h-2z"/>',
+        onde:'Entrego bastante, mas quase tudo fica dentro do meu time. Sei que gerei melhorias no processo de onboarding, mas nunca registrei isso em lugar nenhum.',
+        cena:'Mês passado meu gestor citou uma melhoria minha numa reunião — e eu nem lembrava de ter feito.',
+        sensacao:'dúvida' },
+      { id:'rep', nome:'Reputação', tagline:'o que dizem na sua ausência',
+        icone:'<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>',
+        onde:'Acho que me veem como alguém confiável, que resolve. Mas desconfio que a palavra que usariam é "esforçada" — e não é assim que eu gostaria de ser resumida.',
+        cena:'Na última avaliação, o feedback foi todo sobre dedicação, nada sobre o tipo de problema que eu sei resolver.',
+        sensacao:'desconforto' },
+      { id:'rel', nome:'Relacionamentos', tagline:'quem sabe o que você faz bem',
+        icone:'<path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62.86-1.11 1.28-2.53 1.13-3.96C17.92 8.15 18.44 8 19 8M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20z"/>',
+        onde:'Tenho 900 conexões no LinkedIn e converso, de verdade, com 6 pessoas — todas do próprio time.',
+        cena:'Uma vaga interna abriu em outra área e ninguém de lá sabia que eu existia.',
+        sensacao:'ansiedade' },
+      { id:'apr', nome:'Aprendizagem', tagline:'o que domina e o que constrói',
+        icone:'<path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>',
+        onde:'Domino SQL e visualização — tenho provas de sobra. Mas o cargo que quero, de coordenação, exige algo que nunca pratiquei: traduzir análise para quem decide sem olhar planilha.',
+        cena:'Um curso de storytelling que comprei em outubro e ainda não abri.',
+        sensacao:'dúvida' },
+      { id:'cre', nome:'Credibilidade', tagline:'por que apostam em você antes',
+        icone:'<path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>',
+        onde:'Dentro do time, sou a referência óbvia: ninguém fecha um número sem eu validar. Fora do time, o crédito é do cargo ("a área de dados fez").',
+        cena:'Diretor pediu opinião do meu chefe sobre um projeto que eu que puxei do zero.',
+        sensacao:'frustração' },
+      { id:'inf', nome:'Influência', tagline:'onde a sua palavra pesa',
+        icone:'<path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>',
+        onde:'No meu time, as decisões sobre prazo passam por mim antes de fechar. Fora do time, quase nunca sou chamada — fico sabendo depois.',
+        cena:'Sugeri inverter a ordem de duas entregas na reunião de planejamento e o cronograma inteiro foi refeito a partir disso.',
+        sensacao:'curiosidade' }
+    ],
+    manchete: 'A analista que sustenta os números da diretoria começa a se perguntar para onde a própria carreira aponta.',
+    intencoes: {
+      motivacao: 'Sinto que estou parada há dois anos entregando o mesmo tipo de trabalho, mesmo tendo aprendido muito. Preciso de um método para escolher o próximo passo em vez de esperar ele acontecer.',
+      umAno: 'Quero ter clareza sobre a próxima função que faz sentido pra mim — e ter os passos concretos que me levam até ela, não apenas uma intenção vaga.',
+      maiorPergunta: 'Como transformar oito anos de bom desempenho em um caso convincente de que eu estou pronta para o próximo nível?'
+    }
+  };
+
+  // Carrega dados: sessionStorage se houver, senão demo
+  let dados;
+  let usandoDemo = false;
+  try {
+    const salvos = sessionStorage.getItem('intentia-dia1');
+    if(salvos){
+      const parsed = JSON.parse(salvos);
+      // Preenche gaps com demo (se algum ativo veio vazio)
+      dados = {
+        dataConclusao: parsed.dataConclusao,
+        ativos: DADOS_DEMO.ativos.map((demo, i) => {
+          const salvo = parsed.ativos[i] || {};
+          const sensacoesArr = (Array.isArray(salvo.sensacoes) && salvo.sensacoes.length)
+            ? salvo.sensacoes
+            : (salvo.sensacao ? [salvo.sensacao] : (demo.sensacoes || (demo.sensacao ? [demo.sensacao] : [])));
+          return {
+            ...demo,
+            onde: salvo.onde || demo.onde,
+            cena: salvo.cena || demo.cena,
+            sensacao: sensacoesArr[0] || demo.sensacao || '',
+            sensacoes: sensacoesArr
+          };
+        }),
+        manchete: parsed.manchete || DADOS_DEMO.manchete,
+        intencoes: {
+          motivacao: (parsed.intencoes && parsed.intencoes.motivacao) || DADOS_DEMO.intencoes.motivacao,
+          umAno: (parsed.intencoes && parsed.intencoes.umAno) || DADOS_DEMO.intencoes.umAno,
+          maiorPergunta: (parsed.intencoes && parsed.intencoes.maiorPergunta) || DADOS_DEMO.intencoes.maiorPergunta
+        }
+      };
+    } else {
+      dados = DADOS_DEMO;
+      usandoDemo = true;
+    }
+  } catch(err) {
+    dados = DADOS_DEMO;
+    usandoDemo = true;
+  }
+  if(usandoDemo){
+    document.getElementById('demo-banner').classList.add('visivel');
+  }
+
+  // Manchete
+  document.getElementById('manchete-texto').textContent = dados.manchete;
+
+  // Retrato de sensações (cada sensação selecionada num ativo entra uma vez na contagem)
+  const contagem = {};
+  dados.ativos.forEach(a => {
+    const lista = (a.sensacoes && a.sensacoes.length) ? a.sensacoes : (a.sensacao ? [a.sensacao] : []);
+    lista.forEach(s => { contagem[s] = (contagem[s] || 0) + 1; });
+  });
+  const ordenadas = Object.entries(contagem).sort((a,b) => b[1] - a[1]);
+  if(ordenadas.length){
+    const [nome, count] = ordenadas[0];
+    document.getElementById('sensacao-dominante').textContent = nome;
+    document.getElementById('sensacao-dominante-nota').textContent =
+      `Apareceu em ${count} dos 6 ativos${count >= 3 ? ' — vale prestar atenção nesse padrão.' : '.'}`;
+  }
+  const listaEl = document.getElementById('retrato-lista');
+  ordenadas.forEach(([nome, count]) => {
+    const pct = (count / 6) * 100;
+    const item = document.createElement('div');
+    item.className = 'retrato-item';
+    item.innerHTML = `
+      <div class="retrato-item-nome">${nome}</div>
+      <div class="retrato-item-barra"><div class="retrato-item-fill" style="width:${pct}%"></div></div>
+      <div class="retrato-item-count">${count}/6</div>
+    `;
+    listaEl.appendChild(item);
+  });
+
+  // 6 ativos
+  const grid = document.getElementById('ativos-grid');
+  dados.ativos.forEach(a => {
+    const card = document.createElement('div');
+    card.className = 'ativo-card';
+    card.innerHTML = `
+      <div class="ativo-card-header">
+        <div class="ativo-card-icone"><svg viewBox="0 0 24 24" fill="currentColor">${a.icone}</svg></div>
+        <div>
+          <div class="ativo-card-nome">${a.nome}</div>
+          <div class="ativo-card-tag">${a.tagline}</div>
+        </div>
+      </div>
+      <div class="ativo-card-campo">
+        <div class="ativo-card-label">Onde estou hoje</div>
+        <div class="ativo-card-valor ${!a.onde ? 'vazio' : ''}">${a.onde || 'Não preenchido'}</div>
+      </div>
+      <div class="ativo-card-campo">
+        <div class="ativo-card-label">Situação recente</div>
+        <div class="ativo-card-valor ${!a.cena ? 'vazio' : ''}">${a.cena || 'Não preenchido'}</div>
+      </div>
+      <div class="ativo-card-campo">
+        <div class="ativo-card-label">${(a.sensacoes && a.sensacoes.length > 1) ? 'Sensações' : 'Sensação'}</div>
+        ${(a.sensacoes && a.sensacoes.length)
+          ? `<div class="ativo-card-sensacoes">${a.sensacoes.map(s => `<span class="ativo-card-sensacao">${s}</span>`).join('')}</div>`
+          : (a.sensacao ? `<div class="ativo-card-sensacao">${a.sensacao}</div>` : '<div class="ativo-card-valor vazio">Não registrada</div>')}
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  // Intenções
+  const setResposta = (el, txt) => {
+    if(txt){
+      el.textContent = '"' + txt + '"';
+    } else {
+      el.textContent = 'Não preenchido';
+      el.classList.add('vazio');
+    }
+  };
+  setResposta(document.getElementById('int-motivacao'), dados.intencoes.motivacao);
+  setResposta(document.getElementById('int-umano'), dados.intencoes.umAno);
+  setResposta(document.getElementById('int-pergunta'), dados.intencoes.maiorPergunta);
+
+  // Data
+  if(dados.dataConclusao){
+    const d = new Date(dados.dataConclusao);
+    const fmt = d.toLocaleDateString('pt-BR', {day:'2-digit', month:'long', year:'numeric'});
+    document.getElementById('meta-data').textContent = 'Concluído em ' + fmt;
+  }
+
+  // Data no cabeçalho PDF
+  const hoje = new Date().toLocaleDateString('pt-BR', {day:'2-digit', month:'long', year:'numeric'});
+  document.getElementById('pdf-data').textContent = 'Gerado em ' + hoje;
+
+  // ============ GERAÇÃO DE PDF NATIVO (jsPDF) — LAYOUT EDITORIAL INTENTIA ============
+  async function salvarPDF() {
+    const btn = document.getElementById('btn-salvar-pdf');
+    const textoEl = btn.querySelector('.btn-texto');
+    const textoOriginal = textoEl.textContent;
+
+    function restaurar() {
+      btn.disabled = false;
+      btn.style.opacity = '';
+      btn.style.cursor = '';
+      textoEl.textContent = textoOriginal;
+    }
+
+    // Localiza a classe jsPDF (independe de como o CDN expõe)
+    const jsPDFClass = (window.jspdf && window.jspdf.jsPDF) || window.jsPDF;
+    if (!jsPDFClass) {
+      alert('Biblioteca de PDF não carregada. Verifique sua conexão de internet.');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.style.opacity = '.7';
+    btn.style.cursor = 'wait';
+    textoEl.textContent = 'Gerando PDF…';
+
+    try {
+      const doc = new jsPDFClass({ unit: 'mm', format: 'a4', orientation: 'portrait' });
+
+      // ===== DIMENSÕES A4 =====
+      const PL = 210, PA = 297;           // largura/altura A4
+      const MH = 22, MV = 24;             // margens editorial (ainda mais generosas)
+      const LU = PL - MH * 2;             // largura útil = 166mm
+      const LIMITE = PA - 26;             // limite antes do rodapé
+
+      // ===== PALETA INTENTIA =====
+      const C = {
+        verde900:  [39, 87, 80],    // #275750
+        verde700:  [51, 107, 98],   // #336B62
+        verde500:  [124, 168, 158], // #7CA89E
+        verde100:  [218, 230, 225], // #DAE6E1
+        coral:     [255, 104, 66],  // #FF6842
+        coralSoft: [255, 192, 171], // #FFC0AB
+        tinta:     [32, 51, 47],    // #20332F
+        tintaSuave:[87, 112, 106],  // #57706A
+        creme:     [245, 247, 243], // #F5F7F3
+        areia:     [239, 242, 238], // #EFF2EE - fundo da página
+        branco:    [255, 255, 255],
+        A9C6B8:    [169, 198, 184], // verde-claro no header
+        sombra:    [200, 210, 205]  // cor de sombra sutil dos cards
+      };
+
+      let y = 0;
+      let paginaAtual = 1;
+
+      // ===== HELPERS DE COR =====
+      const setFill = c => doc.setFillColor(c[0], c[1], c[2]);
+      const setDraw = c => doc.setDrawColor(c[0], c[1], c[2]);
+      const setText = c => doc.setTextColor(c[0], c[1], c[2]);
+
+      // ===== HELPER: PINTA FUNDO AREIA NA PÁGINA ATUAL =====
+      function pintarFundoAreia() {
+        setFill(C.areia);
+        doc.rect(0, 0, PL, PA, 'F');
+      }
+
+      // ===== HELPER: DESENHA CARD COM SOMBRA SUTIL =====
+      // Uma sombra deslocada 1mm abaixo/direita simula profundidade
+      function cardComSombra(x, y, w, h, r) {
+        // Camada de sombra (levemente deslocada, cor pálida)
+        setFill(C.sombra);
+        doc.roundedRect(x + 0.5, y + 1, w, h, r, r, 'F');
+        // Card branco em cima
+        setFill(C.branco);
+        setDraw(C.verde100);
+        doc.setLineWidth(0.2);
+        doc.roundedRect(x, y, w, h, r, r, 'FD');
+      }
+
+      // ===== HELPER DE PAGINAÇÃO =====
+      function novaPagina() {
+        doc.addPage();
+        paginaAtual++;
+        y = MV;
+        pintarFundoAreia();
+        // Pequena marca coral no topo direito de cada página (identidade visual)
+        setFill(C.coral);
+        doc.circle(PL - MH, MV - 10, 1.2, 'F');
+      }
+
+      function garantirEspaco(altura) {
+        if (y + altura > LIMITE) novaPagina();
+      }
+
+      // ===== FUNDO DA PRIMEIRA PÁGINA =====
+      pintarFundoAreia();
+
+      // ===== HERO / CAPA DA PÁGINA 1 (60mm de altura verde-escuro) =====
+      const HERO_ALT = 62;
+      setFill(C.verde900);
+      doc.rect(0, 0, PL, HERO_ALT, 'F');
+
+      // Arc decorativo (círculo grande sutil no canto direito)
+      setDraw([49, 97, 90]);
+      doc.setLineWidth(0.4);
+      doc.circle(PL + 10, HERO_ALT - 5, 45, 'S');
+      doc.setLineWidth(0.2);
+
+      // Ponto coral (marca da casa)
+      setFill(C.coral);
+      doc.circle(PL - 20, 14, 2.8, 'F');
+
+      // Wordmark INTENTIA
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(9);
+      setText(C.coral);
+      doc.text('INTENTIA', MH, 16, { charSpace: 0.8 });
+
+      // Linha fina coral abaixo do wordmark
+      setDraw(C.coral);
+      doc.setLineWidth(0.5);
+      doc.line(MH, 19, MH + 22, 19);
+
+      // Contexto do documento (breadcrumb)
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(8);
+      setText(C.A9C6B8);
+      doc.text('Trilha Capital de Carreira · Bloco 1 · Dia 1', MH, 25);
+
+      // TÍTULO PRINCIPAL — editorial grande
+      doc.setFont('times', 'bold');
+      doc.setFontSize(28);
+      setText(C.branco);
+      doc.text('Minhas Primeiras', MH, 40);
+      doc.text('Impressões.', MH, 51);
+
+      // Data e assinatura no rodapé do hero
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(8);
+      setText(C.A9C6B8);
+      const dataFmt = new Date().toLocaleDateString('pt-BR', {day:'2-digit', month:'long', year:'numeric'});
+      doc.text('Gerado em ' + dataFmt.toLowerCase(), MH, HERO_ALT - 5);
+      doc.text('Material da missão do dia', PL - MH, HERO_ALT - 5, { align: 'right' });
+
+      // ===== APÓS O HERO =====
+      y = HERO_ALT + 14;
+
+      // Nota introdutória curta em serif itálico (elegante)
+      doc.setFont('times', 'italic');
+      doc.setFontSize(11);
+      setText(C.tintaSuave);
+      const introTexto = 'O extrato da sua primeira foto de Capital de Carreira. Este material volta no Dia 28, ao lado da nova foto, para você medir a distância.';
+      const introLinhas = doc.splitTextToSize(introTexto, LU - 20);
+      doc.text(introLinhas, MH + 10, y);
+      // Marca lateral coral
+      setDraw(C.coral);
+      doc.setLineWidth(1.5);
+      doc.line(MH, y - 4, MH, y + introLinhas.length * 5 - 1);
+      y += introLinhas.length * 5 + 12;
+
+      // ===== HELPER: TÍTULO DE SEÇÃO EDITORIAL =====
+      function tituloSecao(numero, titulo, subtitulo) {
+        garantirEspaco(22);
+        // Número editorial (small caps coral)
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(9);
+        setText(C.coral);
+        doc.text('SEÇÃO ' + String(numero).padStart(2, '0'), MH, y, { charSpace: 0.8 });
+        // Rule coral fina
+        setDraw(C.coral);
+        doc.setLineWidth(0.6);
+        doc.line(MH, y + 2, MH + 20, y + 2);
+        y += 8;
+        // Título em serif grande
+        doc.setFont('times', 'bold');
+        doc.setFontSize(18);
+        setText(C.verde900);
+        const tituloLinhas = doc.splitTextToSize(titulo, LU);
+        doc.text(tituloLinhas, MH, y);
+        y += tituloLinhas.length * 7 + 2;
+        // Subtítulo em itálico
+        if (subtitulo) {
+          doc.setFont('times', 'italic');
+          doc.setFontSize(10);
+          setText(C.tintaSuave);
+          const subLinhas = doc.splitTextToSize(subtitulo, LU);
+          doc.text(subLinhas, MH, y);
+          y += subLinhas.length * 4.5 + 8;
+        } else {
+          y += 6;
+        }
+      }
+
+      // ===== MANCHETE — PULL QUOTE EDITORIAL =====
+      const mancheteTexto = dados.manchete || 'Sem manchete registrada.';
+      const padM = 16;  // padding interno da manchete (bem generoso)
+
+      doc.setFont('times', 'italic');
+      doc.setFontSize(16);
+      const mLinhas = doc.splitTextToSize(mancheteTexto, LU - padM * 2 - 12);
+      const mancheteBlocoAlt = padM + 6 + mLinhas.length * 7.5 + padM + 4;
+
+      garantirEspaco(mancheteBlocoAlt + 14);
+
+      // Fundo verde-100
+      setFill(C.verde100);
+      doc.roundedRect(MH, y, LU, mancheteBlocoAlt, 3, 3, 'F');
+      // Rule coral CURTA no topo esquerdo (identidade)
+      setFill(C.coral);
+      doc.rect(MH, y, 32, 1.2, 'F');
+
+      // Label em small caps
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(8);
+      setText(C.coral);
+      doc.text('SUA MANCHETE DE HOJE', MH + padM, y + padM - 4, { charSpace: 1 });
+
+      // Aspa GIGANTE decorativa (no início do texto, alinhada acima)
+      doc.setFont('times', 'bold');
+      doc.setFontSize(60);
+      setText(C.verde500);
+      doc.text('“', MH + padM - 4, y + padM + 22);
+
+      // O texto da manchete (indentado pra dar espaço à aspa)
+      doc.setFont('times', 'italic');
+      doc.setFontSize(16);
+      setText(C.verde900);
+      doc.text(mLinhas, MH + padM + 10, y + padM + 12);
+
+      // Legenda de rodapé
+      doc.setFont('helvetica', 'italic');
+      doc.setFontSize(8);
+      setText(C.tintaSuave);
+      doc.text('— volta no Dia 28 ao lado da nova manchete, para você medir a distância.', MH + padM + 10, y + mancheteBlocoAlt - 6);
+      y += mancheteBlocoAlt + 18;
+
+      // ===== SEÇÃO 1 — RETRATO DAS SENSAÇÕES =====
+      tituloSecao(1, 'O retrato das suas sensações.',
+        'O padrão emocional que apareceu nos 6 ativos — o que se repete diz mais que o que pontua uma vez.');
+
+      const contagem = {};
+      dados.ativos.forEach(a => {
+        const lista = (a.sensacoes && a.sensacoes.length) ? a.sensacoes : (a.sensacao ? [a.sensacao] : []);
+        lista.forEach(s => { contagem[s] = (contagem[s] || 0) + 1; });
+      });
+      const ordenadas = Object.entries(contagem).sort((a,b) => b[1] - a[1]);
+
+      if (ordenadas.length) {
+        const cardAlt = Math.max(58, 24 + ordenadas.length * 7);
+        garantirEspaco(cardAlt);
+
+        // Card com sombra
+        cardComSombra(MH, y, LU, cardAlt, 3);
+
+        // === Coluna esquerda: sensação dominante ===
+        const colEsqW = 70;
+        const pad = 12;  // padding interno mais generoso
+
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(7.5);
+        setText(C.coral);
+        doc.text('DOMINANTE', MH + pad, y + pad + 2, { charSpace: 1 });
+
+        doc.setFont('times', 'bold');
+        doc.setFontSize(26);
+        setText(C.verde900);
+        const domNome = ordenadas[0][0].charAt(0).toUpperCase() + ordenadas[0][0].slice(1);
+        doc.text(domNome, MH + pad, y + pad + 16);
+
+        doc.setFont('times', 'italic');
+        doc.setFontSize(9);
+        setText(C.tintaSuave);
+        const domNota = `Apareceu em ${ordenadas[0][1]} dos 6 ativos${ordenadas[0][1] >= 3 ? '. Vale prestar atenção nesse padrão.' : '.'}`;
+        const domLinhas = doc.splitTextToSize(domNota, colEsqW - pad - 4);
+        doc.text(domLinhas, MH + pad, y + pad + 25);
+
+        // Divisor vertical mais elegante
+        setDraw(C.verde100);
+        doc.setLineWidth(0.3);
+        doc.line(MH + colEsqW, y + pad, MH + colEsqW, y + cardAlt - pad);
+
+        // === Coluna direita: distribuição em barras ===
+        const colDirX = MH + colEsqW + pad;
+        const colDirW = LU - colEsqW - pad * 2;
+
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(7.5);
+        setText(C.coral);
+        doc.text('DISTRIBUIÇÃO NOS 6 ATIVOS', colDirX, y + pad + 2, { charSpace: 1 });
+
+        let distY = y + pad + 12;
+        ordenadas.forEach(([nome, count]) => {
+          const nomeCap = nome.charAt(0).toUpperCase() + nome.slice(1);
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(9);
+          setText(C.tinta);
+          doc.text(nomeCap, colDirX, distY);
+          // Barra
+          const barraX = colDirX + 34;
+          const barraLarg = colDirW - 46;
+          setFill(C.verde100);
+          doc.roundedRect(barraX, distY - 2.4, barraLarg, 2.6, 1.3, 1.3, 'F');
+          setFill(C.coral);
+          doc.roundedRect(barraX, distY - 2.4, barraLarg * (count/6), 2.6, 1.3, 1.3, 'F');
+          // Count
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(8);
+          setText(C.verde900);
+          doc.text(`${count}/6`, colDirX + colDirW, distY, { align: 'right' });
+          distY += 7;
+        });
+        y += cardAlt + 18;
+      }
+
+      // ===== SEÇÃO 2 — OS 6 ATIVOS =====
+      tituloSecao(2, 'Os seis ativos, lado a lado.',
+        'A foto panorâmica que abre a semana de mapeamento. Cada ativo terá o próprio dia de aprofundamento.');
+
+      const padCard = 12;   // padding interno generoso
+      const larguraTexto = LU - padCard * 2;
+
+      dados.ativos.forEach((ativo, idx) => {
+        const ondeText = ativo.onde || 'Não preenchido';
+        const cenaText = ativo.cena || 'Não preenchido';
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(9.5);
+        const ondeLinhas = doc.splitTextToSize(ondeText, larguraTexto);
+        const cenaLinhas = doc.splitTextToSize(cenaText, larguraTexto);
+
+        // Altura do card com padding generoso
+        //   padTop + nome(15) + gap + onde_label + gap + onde_text + divisor + situação_label + gap + situação_text + padBottom
+        const cardAlt = padCard + 10 + 12 + 5 + ondeLinhas.length * 4.5 + 8 + 5 + cenaLinhas.length * 4.5 + padCard;
+
+        garantirEspaco(cardAlt + 7);
+
+        // Card com sombra
+        cardComSombra(MH, y, LU, cardAlt, 3);
+
+        // Barra coral vertical à esquerda (identidade)
+        setFill(C.coral);
+        doc.rect(MH, y, 1.8, cardAlt, 'F');
+
+        // === CABEÇALHO DO CARD ===
+        // "ATIVO 01" em small caps coral (canto superior esquerdo)
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(7.5);
+        setText(C.coral);
+        doc.text('ATIVO ' + String(idx + 1).padStart(2, '0'), MH + padCard, y + padCard, { charSpace: 1 });
+
+        // Sensações em pills no canto superior direito (uma ou mais)
+        const sensList = (ativo.sensacoes && ativo.sensacoes.length)
+          ? ativo.sensacoes
+          : (ativo.sensacao ? [ativo.sensacao] : []);
+        if (sensList.length) {
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(8);
+          // Layout right-aligned: desenha da direita para a esquerda
+          let pillCursorX = MH + LU - padCard;
+          const pillY = y + padCard - 4;
+          const gap = 3;
+          // Pré-calcula larguras
+          const pills = sensList.map(s => {
+            const cap = s.charAt(0).toUpperCase() + s.slice(1);
+            return { cap, w: doc.getTextWidth(cap) + 12 };
+          });
+          // Desenha da direita para a esquerda
+          for (let i = pills.length - 1; i >= 0; i--) {
+            const p = pills[i];
+            const pillX = pillCursorX - p.w;
+            setFill(C.verde100);
+            doc.roundedRect(pillX, pillY, p.w, 6, 3, 3, 'F');
+            setFill(C.coral);
+            doc.circle(pillX + 4, pillY + 3, 0.9, 'F');
+            setText(C.verde900);
+            doc.text(p.cap, pillX + 7, pillY + 4);
+            pillCursorX = pillX - gap;
+          }
+        }
+
+        // Nome do ativo (serif bold grande)
+        doc.setFont('times', 'bold');
+        doc.setFontSize(16);
+        setText(C.verde900);
+        doc.text(ativo.nome, MH + padCard, y + padCard + 9);
+
+        // Tagline em serif itálico embaixo do nome
+        doc.setFont('times', 'italic');
+        doc.setFontSize(10);
+        setText(C.tintaSuave);
+        doc.text(ativo.tagline, MH + padCard, y + padCard + 15);
+
+        // Divisor sutil separando cabeçalho do conteúdo
+        setDraw(C.verde100);
+        doc.setLineWidth(0.3);
+        doc.line(MH + padCard, y + padCard + 20, MH + LU - padCard, y + padCard + 20);
+
+        let cy = y + padCard + 26;
+
+        // === ONDE ESTOU HOJE ===
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(7);
+        setText(C.coral);
+        doc.text('ONDE ESTOU HOJE', MH + padCard, cy, { charSpace: 1 });
+        cy += 5;
+        doc.setFont('helvetica', ativo.onde ? 'normal' : 'italic');
+        doc.setFontSize(9.5);
+        setText(ativo.onde ? C.tinta : C.tintaSuave);
+        doc.text(ondeLinhas, MH + padCard, cy);
+        cy += ondeLinhas.length * 4.5 + 8;
+
+        // === SITUAÇÃO RECENTE ===
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(7);
+        setText(C.coral);
+        doc.text('SITUAÇÃO RECENTE QUE ILUSTRA', MH + padCard, cy, { charSpace: 1 });
+        cy += 5;
+        doc.setFont('helvetica', ativo.cena ? 'normal' : 'italic');
+        doc.setFontSize(9.5);
+        setText(ativo.cena ? C.tinta : C.tintaSuave);
+        doc.text(cenaLinhas, MH + padCard, cy);
+
+        y += cardAlt + 7;
+      });
+
+      y += 8;
+
+      // ===== SEÇÃO 3 — INTENÇÃO INICIAL =====
+      tituloSecao(3, 'Sua intenção inicial.',
+        'Três respostas que você escreveu no primeiro dia. Ficam guardadas até o Dia 28 — sem edição, para você mesma comparar.');
+
+      const perguntas = [
+        { num: '1', label: 'O que mais me motivou a entrar no Intentia', resp: dados.intencoes && dados.intencoes.motivacao },
+        { num: '2', label: 'Se o programa funcionar como espero, daqui a um ano estará diferente', resp: dados.intencoes && dados.intencoes.umAno },
+        { num: '3', label: 'Hoje, a maior pergunta que tenho sobre a minha carreira', resp: dados.intencoes && dados.intencoes.maiorPergunta }
+      ];
+
+      perguntas.forEach(p => {
+        const respText = p.resp || 'Não preenchido';
+        const padInt = 14;   // padding interno generoso
+        const colNumeroW = 32;  // largura reservada para o número gigante
+        const larguraResp = LU - colNumeroW - padInt * 2;
+
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(9);
+        const perguntaLinhas = doc.splitTextToSize(p.label, larguraResp);
+        doc.setFont('times', p.resp ? 'italic' : 'normal');
+        doc.setFontSize(11.5);
+        const respLinhas = doc.splitTextToSize(respText, larguraResp);
+
+        const cardAlt = padInt + 5 + perguntaLinhas.length * 4 + 6 + respLinhas.length * 5.5 + padInt;
+
+        garantirEspaco(cardAlt + 6);
+
+        // Card com sombra
+        cardComSombra(MH, y, LU, cardAlt, 3);
+
+        // Número decorativo GIGANTE em verde-100 (fica no meio vertical da coluna esquerda)
+        doc.setFont('times', 'bold');
+        doc.setFontSize(56);
+        setText(C.verde100);
+        doc.text(p.num, MH + padInt, y + cardAlt / 2 + 8);
+
+        // Divisor vertical sutil entre número e conteúdo
+        setDraw(C.verde100);
+        doc.setLineWidth(0.3);
+        doc.line(MH + colNumeroW, y + padInt, MH + colNumeroW, y + cardAlt - padInt);
+
+        // Label PERGUNTA em small caps coral
+        const colContX = MH + colNumeroW + padInt;
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(7.5);
+        setText(C.coral);
+        doc.text('PERGUNTA ' + p.num, colContX, y + padInt, { charSpace: 1 });
+
+        // Texto da pergunta
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(9);
+        setText(C.verde700);
+        doc.text(perguntaLinhas, colContX, y + padInt + 5);
+
+        // Resposta em serif itálico
+        doc.setFont('times', p.resp ? 'italic' : 'normal');
+        doc.setFontSize(11.5);
+        setText(p.resp ? C.tinta : C.tintaSuave);
+        doc.text(respLinhas, colContX, y + padInt + 5 + perguntaLinhas.length * 4 + 6);
+
+        y += cardAlt + 6;
+      });
+
+      // ===== BLOCO DE TRANSPARÊNCIA (fim) =====
+      y += 8;
+      // Se não couber, nova página
+      const transpText = 'Este material fica salvo no seu Retrato de Capital de Carreira. No Dia 7, ele se junta às outras seções da semana; no Dia 28, volta na retrospectiva final ao lado da nova foto. Ninguém além de você lê o conteúdo.';
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9);
+      const transpLinhas = doc.splitTextToSize(transpText, LU - 16);
+      const transpAlt = 12 + transpLinhas.length * 4.5;
+
+      garantirEspaco(transpAlt + 8);
+
+      // Bloco verde escuro discreto (o "seu contrato")
+      setFill(C.verde900);
+      doc.roundedRect(MH, y, LU, transpAlt, 2, 2, 'F');
+      // Small coral rule à esquerda
+      setFill(C.coral);
+      doc.rect(MH, y, 1.5, transpAlt, 'F');
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(7.5);
+      setText(C.coral);
+      doc.text('O QUE ACONTECE COM O QUE VOCÊ ESCREVEU', MH + 7, y + 8, { charSpace: 0.8 });
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9);
+      setText(C.A9C6B8);
+      doc.text(transpLinhas, MH + 7, y + 14);
+      y += transpAlt + 8;
+
+      // ===== RODAPÉS DE TODAS AS PÁGINAS (com "Do reagir ao conduzir." e numeração) =====
+      const totalPaginas = doc.getNumberOfPages();
+      for (let i = 1; i <= totalPaginas; i++) {
+        doc.setPage(i);
+
+        // Linha divisória fina
+        setDraw(C.verde100);
+        doc.setLineWidth(0.3);
+        doc.line(MH, PA - 15, PL - MH, PA - 15);
+
+        // Ponto coral pequeno (identidade)
+        setFill(C.coral);
+        doc.circle(PL / 2, PA - 10, 0.7, 'F');
+
+        // Assinatura serif itálica centralizada
+        doc.setFont('times', 'italic');
+        doc.setFontSize(9);
+        setText(C.verde900);
+        doc.text('Do reagir ao conduzir.', PL / 2, PA - 6, { align: 'center' });
+
+        // Meta pequeno nas laterais
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(7.5);
+        setText(C.tintaSuave);
+        doc.text('Intentia · Dia 1', MH, PA - 6);
+        doc.text(`${i} / ${totalPaginas}`, PL - MH, PA - 6, { align: 'right' });
+      }
+
+      // ===== SALVAR =====
+      doc.save('intentia-dia1-minhas-primeiras-impressoes.pdf');
+
+      textoEl.textContent = '✓ PDF salvo';
+      setTimeout(restaurar, 1600);
+
+    } catch (err) {
+      console.error('Erro ao gerar PDF:', err);
+      restaurar();
+      alert('Erro ao gerar PDF: ' + (err.message || 'desconhecido') + '. Veja o console para detalhes.');
+    }
+  }
+</script>
+
+</body>
+</html>

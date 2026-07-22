@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 11 · Missão — Refazer com antídoto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.6;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:12px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  .missao-meta{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:22px;font-size:13px;color:#A9C6B8}
+  .missao-meta span{display:inline-flex;align-items:center;gap:6px}
+  .missao-meta svg{width:14px;height:14px;fill:currentColor}
+  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
+  .progresso{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:16px 22px;margin:24px 0;display:flex;align-items:center;gap:18px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .progresso-info{flex:1}
+  .progresso-titulo{font-size:13px;font-weight:600;color:var(--verde-900);margin-bottom:6px}
+  .progresso-bar{background:var(--verde-100);height:6px;border-radius:3px;overflow:hidden}
+  .progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}
+  .progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px;font-size:13.5px;line-height:1.55}
+  .aviso-demo-icone{color:var(--coral);font-size:18px;flex-shrink:0;margin-top:1px}
+  .aviso-demo b{color:var(--verde-900)}
+  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
+  .lembrete{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 20px;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
+  .lembrete b{color:var(--verde-900);font-weight:600}
+
+  .antidoto{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
+  .antidoto-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px}
+  .antidoto-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
+  .antidoto-titulo{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.2;margin-bottom:3px}
+  .antidoto-sub{font-size:13px;opacity:.92;font-style:italic}
+  .antidoto-corpo{padding:22px 28px 24px}
+  .antidoto-pergunta{background:var(--creme);border-left:3px solid var(--verde-700);padding:14px 18px;border-radius:0 8px 8px 0;font-family:var(--serif);font-size:15.5px;font-style:italic;color:var(--verde-900);margin-bottom:18px}
+
+  .checagem-eus{display:grid;gap:12px}
+  @media (min-width:600px){.checagem-eus{grid-template-columns:1fr 1fr 1fr}}
+  .checagem-eu{background:var(--creme);padding:14px;border-radius:10px;border-top:3px solid var(--verde-500)}
+  .checagem-eu.continuacao{border-top-color:#336B62}
+  .checagem-eu.adjacencia{border-top-color:#E85530}
+  .checagem-eu.reinvencao{border-top-color:#5F4E8C}
+  .checagem-nome{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--verde-900);margin-bottom:8px}
+  .checagem-opcoes{display:flex;gap:6px;margin-bottom:8px}
+  .checagem-op{flex:1;background:#fff;border:1.5px solid var(--verde-100);border-radius:8px;padding:6px 8px;text-align:center;font-size:11.5px;font-weight:600;color:var(--tinta-suave);cursor:pointer;transition:all .15s;user-select:none;line-height:1.2}
+  .checagem-op:hover{border-color:var(--verde-500)}
+  .checagem-op.sim{}
+  .checagem-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
+  .checagem-textarea{width:100%;padding:8px 10px;border:1.5px solid var(--verde-100);border-radius:6px;font-family:var(--sans);font-size:12.5px;color:var(--tinta);background:#fff;resize:vertical;min-height:44px;line-height:1.45}
+  .checagem-textarea:focus{outline:none;border-color:var(--coral)}
+
+  .maximizador{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .maximizador-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px}
+  .maximizador-num{width:34px;height:34px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
+  .maximizador-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
+  .maximizador-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
+  .max-radio{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+  @media (max-width:500px){.max-radio{grid-template-columns:1fr}}
+  .max-op{background:#fff;border:1.5px solid var(--verde-100);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all .2s;user-select:none}
+  .max-op:hover{border-color:var(--verde-500)}
+  .max-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
+  .max-op b{font-family:var(--serif);display:block;margin-bottom:3px;font-size:14.5px}
+  .max-op span{font-size:12px}
+
+  .final{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .final-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
+  .final-num{width:34px;height:34px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
+  .final-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
+  .final-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
+  .final-textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14.5px;color:var(--tinta);background:#fff;transition:border-color .2s;resize:vertical;min-height:70px;line-height:1.5;margin-top:8px}
+  .final-textarea:focus{outline:none;border-color:var(--coral)}
+  .dica{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-top:8px;padding-left:12px;border-left:2px solid var(--verde-500)}
+
+  .concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}
+  .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px}
+  .concluir p{font-size:14.5px;opacity:.92;margin-bottom:22px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
+  .btn-concluir{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--coral);padding:16px 30px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:17px;font-weight:600;border:none;cursor:pointer;transition:all .2s;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+  .btn-concluir:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+  .btn-concluir .icone{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .btn-concluir .icone svg{width:14px;height:14px;fill:currentColor}
+
+  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+<script>
+/* Persistência entre sessões (integração 21/07/2026)
+   Espelha as chaves intentia-* gravadas em sessionStorage para localStorage,
+   mantém o array localStorage.intentia-progresso (lido por jornada.html e pela capa)
+   e faz a leitura cair para localStorage quando a aba é nova. */
+(function(){
+  try{
+    var proto = Storage.prototype;
+    var _set = proto.setItem, _get = proto.getItem;
+    function marcaProgresso(k){
+      var m = /^intentia-dia(\d+)$/.exec(k);
+      if(!m) return;
+      try{
+        var arr = JSON.parse(_get.call(localStorage,'intentia-progresso') || '[]');
+        var n = parseInt(m[1],10);
+        if(arr.indexOf(n)===-1){ arr.push(n); arr.sort(function(a,b){return a-b}); _set.call(localStorage,'intentia-progresso', JSON.stringify(arr)); }
+      }catch(e){}
+    }
+    proto.setItem = function(k,v){
+      _set.call(this,k,v);
+      if(this===sessionStorage && /^intentia-/.test(k)){
+        try{ _set.call(localStorage,k,v); }catch(e){}
+        marcaProgresso(k);
+      }
+    };
+    proto.getItem = function(k){
+      var v = _get.call(this,k);
+      if(v===null && this===sessionStorage && /^intentia-/.test(k)){
+        try{ v = _get.call(localStorage,k); }catch(e){}
+      }
+      return v;
+    };
+  }catch(e){}
+})();
+</script>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 11</a><span class="sep">›</span><span class="cur">Missão</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html" class="atual">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 10/index.html" title="Dia 10 (tecla ←)">←<span class="lbl"> Dia 10</span></a><a class="intnav-pill" href="../Dia 12/index.html" title="Dia 12 (tecla →)"><span class="lbl">Dia 12 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 11</a>
+    <div class="eyebrow">Missão · Dia 11 · Semana 2</div>
+    <h1>Refazer o placar com <span class="grifo">antídoto</span>.</h1>
+    <p class="lede">Três perguntas — uma por armadilha — aplicadas aos 3 Eus. Ver se alguma nota do Dia 10 muda quando o viés é neutralizado.</p>
+    <div class="missao-meta">
+      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 15 min</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
+    </div>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<main>
+  <div class="progresso">
+    <div class="progresso-info">
+      <div class="progresso-titulo">Seu preenchimento</div>
+      <div class="progresso-bar"><div class="progresso-fill" id="progresso-fill"></div></div>
+    </div>
+    <div class="progresso-num" id="progresso-num">0/5</div>
+  </div>
+
+  <div id="aviso-demo" class="aviso-demo" style="display:none">
+    <div class="aviso-demo-icone">◆</div>
+    <div><b>Você ainda não preencheu as missões anteriores.</b> Os "recaps" estão em modo demonstrativo. <a href="../Dia 10/missao.html">Ir para o Dia 10 →</a></div>
+  </div>
+
+  <div class="lembrete">
+    <b>Como responder:</b> para cada antídoto, marque em cada Eu se a resposta é <b>Sim</b> (a nota estava alta pela armadilha) ou <b>Não</b> (a nota se mantém). Onde marcar Sim, anote 1 frase do que muda.
+  </div>
+
+  <!-- ANCORAGEM -->
+  <section class="antidoto">
+    <div class="antidoto-header">
+      <div class="antidoto-letra">A</div>
+      <div>
+        <div class="antidoto-titulo">Antídoto: Ancoragem</div>
+        <div class="antidoto-sub">"a primeira opção pesa demais na comparação"</div>
+      </div>
+    </div>
+    <div class="antidoto-corpo">
+      <div class="antidoto-pergunta">"Se eu tivesse imaginado esse Eu <em>primeiro</em>, ele ficaria melhor colocado no placar?"</div>
+      <div class="checagem-eus">
+        <div class="checagem-eu continuacao">
+          <div class="checagem-nome">Eu-Continuação</div>
+          <div class="checagem-opcoes" data-eu="cont" data-arm="anc">
+            <div class="checagem-op sim" data-r="sim">Sim, mudaria</div>
+            <div class="checagem-op" data-r="nao">Não, se mantém</div>
+          </div>
+          <textarea id="cont-anc-nota" class="checagem-textarea" placeholder="Se marcou Sim, o que muda?"></textarea>
+        </div>
+        <div class="checagem-eu adjacencia">
+          <div class="checagem-nome">Eu-Adjacência</div>
+          <div class="checagem-opcoes" data-eu="adj" data-arm="anc">
+            <div class="checagem-op sim" data-r="sim">Sim, mudaria</div>
+            <div class="checagem-op" data-r="nao">Não, se mantém</div>
+          </div>
+          <textarea id="adj-anc-nota" class="checagem-textarea"></textarea>
+        </div>
+        <div class="checagem-eu reinvencao">
+          <div class="checagem-nome">Eu-Reinvenção</div>
+          <div class="checagem-opcoes" data-eu="rei" data-arm="anc">
+            <div class="checagem-op sim" data-r="sim">Sim, mudaria</div>
+            <div class="checagem-op" data-r="nao">Não, se mantém</div>
+          </div>
+          <textarea id="rei-anc-nota" class="checagem-textarea"></textarea>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTO AFUNDADO -->
+  <section class="antidoto">
+    <div class="antidoto-header">
+      <div class="antidoto-letra">C</div>
+      <div>
+        <div class="antidoto-titulo">Antídoto: Custo Afundado</div>
+        <div class="antidoto-sub">"o que já investi trava minha decisão futura"</div>
+      </div>
+    </div>
+    <div class="antidoto-corpo">
+      <div class="antidoto-pergunta">"Se eu estivesse decidindo <em>pela primeira vez</em>, sem histórico, ainda daria essa nota a esse Eu?"</div>
+      <div class="checagem-eus">
+        <div class="checagem-eu continuacao">
+          <div class="checagem-nome">Eu-Continuação</div>
+          <div class="checagem-opcoes" data-eu="cont" data-arm="cus">
+            <div class="checagem-op sim" data-r="sim">Não, daria outra</div>
+            <div class="checagem-op" data-r="nao">Sim, mantém</div>
+          </div>
+          <textarea id="cont-cus-nota" class="checagem-textarea" placeholder="Se marcou Não, o que muda?"></textarea>
+        </div>
+        <div class="checagem-eu adjacencia">
+          <div class="checagem-nome">Eu-Adjacência</div>
+          <div class="checagem-opcoes" data-eu="adj" data-arm="cus">
+            <div class="checagem-op sim" data-r="sim">Não, daria outra</div>
+            <div class="checagem-op" data-r="nao">Sim, mantém</div>
+          </div>
+          <textarea id="adj-cus-nota" class="checagem-textarea"></textarea>
+        </div>
+        <div class="checagem-eu reinvencao">
+          <div class="checagem-nome">Eu-Reinvenção</div>
+          <div class="checagem-opcoes" data-eu="rei" data-arm="cus">
+            <div class="checagem-op sim" data-r="sim">Não, daria outra</div>
+            <div class="checagem-op" data-r="nao">Sim, mantém</div>
+          </div>
+          <textarea id="rei-cus-nota" class="checagem-textarea"></textarea>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATUS QUO -->
+  <section class="antidoto">
+    <div class="antidoto-header">
+      <div class="antidoto-letra">S</div>
+      <div>
+        <div class="antidoto-titulo">Antídoto: Status Quo</div>
+        <div class="antidoto-sub">"o conhecido pesa mais que o desconhecido, sempre"</div>
+      </div>
+    </div>
+    <div class="antidoto-corpo">
+      <div class="antidoto-pergunta">"Se eu <em>já estivesse vivendo</em> esse Eu, escolheria voltar para minha situação atual?"</div>
+      <div class="checagem-eus">
+        <div class="checagem-eu continuacao">
+          <div class="checagem-nome">Eu-Continuação</div>
+          <div class="checagem-opcoes" data-eu="cont" data-arm="sta">
+            <div class="checagem-op sim" data-r="sim">Não voltaria</div>
+            <div class="checagem-op" data-r="nao">Voltaria sim</div>
+          </div>
+          <textarea id="cont-sta-nota" class="checagem-textarea" placeholder="Se marcou Não voltaria, o que muda?"></textarea>
+        </div>
+        <div class="checagem-eu adjacencia">
+          <div class="checagem-nome">Eu-Adjacência</div>
+          <div class="checagem-opcoes" data-eu="adj" data-arm="sta">
+            <div class="checagem-op sim" data-r="sim">Não voltaria</div>
+            <div class="checagem-op" data-r="nao">Voltaria sim</div>
+          </div>
+          <textarea id="adj-sta-nota" class="checagem-textarea"></textarea>
+        </div>
+        <div class="checagem-eu reinvencao">
+          <div class="checagem-nome">Eu-Reinvenção</div>
+          <div class="checagem-opcoes" data-eu="rei" data-arm="sta">
+            <div class="checagem-op sim" data-r="sim">Não voltaria</div>
+            <div class="checagem-op" data-r="nao">Voltaria sim</div>
+          </div>
+          <textarea id="rei-sta-nota" class="checagem-textarea"></textarea>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAXIMIZADOR OU BOM-O-SUFICIENTE -->
+  <section class="maximizador">
+    <div class="maximizador-header">
+      <div class="maximizador-num">?</div>
+      <div>
+        <div class="maximizador-titulo">Você é maximizador ou bom-o-suficiente?</div>
+        <div class="maximizador-desc">Não existe resposta certa — mas existe padrão. Parker mostra que <b>a mentalidade que você aplica à decisão</b> muda tanto o resultado quanto a satisfação com ele.</div>
+      </div>
+    </div>
+    <div class="max-radio" data-eu="perfil">
+      <div class="max-op" data-r="max"><b>Maximizador</b><span>Quero comparar tudo até encontrar a melhor opção; adio até ter certeza.</span></div>
+      <div class="max-op" data-r="bom"><b>Bom-o-suficiente</b><span>Se passa nos critérios mínimos, escolho e sigo — comparação infinita me esgota.</span></div>
+    </div>
+  </section>
+
+  <!-- INSIGHT FINAL -->
+  <section class="final">
+    <div class="final-header">
+      <div class="final-num">✎</div>
+      <div>
+        <div class="final-titulo">Qual armadilha te afetou mais?</div>
+        <div class="final-desc">A que gerou mais "Sim" no exercício. Ou a que gerou o "Sim" mais desconfortável. Anote — vai voltar amanhã com o teste de propósito.</div>
+      </div>
+    </div>
+    <textarea id="insight" class="final-textarea" placeholder="ex.: Status Quo apareceu forte no Eu-Reinvenção; percebi que estava inflando o custo da mudança e minimizando o custo de permanecer"></textarea>
+    <p class="dica">Se nenhuma armadilha te afetou, escreva "nenhuma me tocou hoje" — e siga. Nem todo dia gera revisão.</p>
+  </section>
+
+  <div class="concluir">
+    <h3>Terminou com os antídotos?</h3>
+    <p>O material do Dia 11 vai mostrar sua "leitura corrigida" — quais Eus tiveram nota inflada por viés e como o mapa fica sem essas distorções.</p>
+    <a href="material.html" class="btn-concluir" id="btn-concluir">
+      Ver Leitura Corrigida
+      <span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 11 · Missão — Refazer com antídoto</div>
+</footer>
+
+<script>
+  const respostas = { cont:{anc:'', cus:'', sta:''}, adj:{anc:'', cus:'', sta:''}, rei:{anc:'', cus:'', sta:''}, perfil:'' };
+
+  document.querySelectorAll('.checagem-opcoes').forEach(grid => {
+    const eu = grid.dataset.eu, arm = grid.dataset.arm;
+    grid.querySelectorAll('.checagem-op').forEach(op => {
+      op.addEventListener('click', () => {
+        grid.querySelectorAll('.checagem-op').forEach(x => x.classList.remove('selecionada'));
+        op.classList.add('selecionada');
+        respostas[eu][arm] = op.dataset.r;
+        atualizarProgresso();
+      });
+    });
+  });
+
+  document.querySelectorAll('.max-radio .max-op').forEach(op => {
+    op.addEventListener('click', () => {
+      document.querySelectorAll('.max-radio .max-op').forEach(x => x.classList.remove('selecionada'));
+      op.classList.add('selecionada');
+      respostas.perfil = op.dataset.r;
+      atualizarProgresso();
+    });
+  });
+
+  function atualizarProgresso() {
+    let pontos = 0;
+    // 3 armadilhas x 3 eus = 9 respostas possíveis, mas contamos como 3 pontos (1 por armadilha completa)
+    ['anc','cus','sta'].forEach(arm => {
+      const preenchidos = ['cont','adj','rei'].filter(eu => respostas[eu][arm]).length;
+      if (preenchidos === 3) pontos++;
+    });
+    if (respostas.perfil) pontos++;
+    if (document.getElementById('insight').value.trim().length > 0) pontos++;
+    document.getElementById('progresso-num').textContent = pontos + '/5';
+    document.getElementById('progresso-fill').style.width = (pontos/5*100) + '%';
+  }
+
+  document.getElementById('insight').addEventListener('input', atualizarProgresso);
+
+  // Puxar dias anteriores
+  function pega(key) {
+    try {
+      const s = sessionStorage.getItem(key);
+      if (s) return JSON.parse(s);
+    } catch(e) {}
+    return null;
+  }
+
+  const dia10 = pega('intentia-dia10');
+  const dia8 = pega('intentia-dia8');
+  if (!dia8 || !dia10) document.getElementById('aviso-demo').style.display = 'flex';
+
+  document.getElementById('btn-concluir').addEventListener('click', () => {
+    try {
+      sessionStorage.setItem('intentia-dia11', JSON.stringify({
+        dataConclusao: new Date().toISOString(),
+        continuacao: {
+          ancoragem: {resposta: respostas.cont.anc, nota: document.getElementById('cont-anc-nota').value},
+          custo: {resposta: respostas.cont.cus, nota: document.getElementById('cont-cus-nota').value},
+          statusquo: {resposta: respostas.cont.sta, nota: document.getElementById('cont-sta-nota').value}
+        },
+        adjacencia: {
+          ancoragem: {resposta: respostas.adj.anc, nota: document.getElementById('adj-anc-nota').value},
+          custo: {resposta: respostas.adj.cus, nota: document.getElementById('adj-cus-nota').value},
+          statusquo: {resposta: respostas.adj.sta, nota: document.getElementById('adj-sta-nota').value}
+        },
+        reinvencao: {
+          ancoragem: {resposta: respostas.rei.anc, nota: document.getElementById('rei-anc-nota').value},
+          custo: {resposta: respostas.rei.cus, nota: document.getElementById('rei-cus-nota').value},
+          statusquo: {resposta: respostas.rei.sta, nota: document.getElementById('rei-sta-nota').value}
+        },
+        perfilDecisao: respostas.perfil,
+        insight: document.getElementById('insight').value
+      }));
+    } catch(e) {}
+  });
+
+  atualizarProgresso();
+</script>
+
+</body>
+</html>

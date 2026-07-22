@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 7 · Playbook — Valores centrais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.7;font-size:17px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 56px}
+  .hero-inner{max-width:760px;margin:0 auto}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:14px}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .badge-aprofundamento{display:inline-flex;align-items:center;gap:8px;background:rgba(255,104,66,.18);color:var(--coral-soft);border:1px solid rgba(255,104,66,.35);padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.15;letter-spacing:-.01em;margin-bottom:12px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  main{max-width:760px;margin:0 auto;padding:36px 24px}
+  section{margin-bottom:36px}
+  section h2{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--verde-900);margin-bottom:16px;letter-spacing:-.005em}
+  section p{margin-bottom:14px}
+  section blockquote{background:var(--verde-100);border-left:4px solid var(--verde-700);padding:18px 22px;font-family:var(--serif);font-size:19px;line-height:1.4;color:var(--verde-900);font-style:italic;margin:16px 0;border-radius:0 10px 10px 0}
+  .dim{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 26px;margin-bottom:16px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .dim-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+  .dim-ico{width:44px;height:44px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;font-weight:600;flex-shrink:0}
+  .dim-head h3{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--verde-900);line-height:1.2}
+  .def{font-size:15px;color:var(--tinta-suave);font-style:italic;margin-bottom:12px}
+  .dim h4{font-size:11.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--coral);margin-top:14px;margin-bottom:8px}
+  .gatilhos{list-style:none;padding:0}
+  .gatilhos li{padding:6px 0 6px 22px;position:relative;font-size:14.5px;line-height:1.55}
+  .gatilhos li::before{content:"→";position:absolute;left:0;color:var(--coral);font-weight:700}
+  .protocolo{background:var(--creme);border-left:3px solid var(--verde-700);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:10px;font-size:14px;line-height:1.6}
+  .protocolo b{color:var(--verde-900)}
+  .protocolo ol{padding-left:20px;margin-top:6px}
+  .protocolo ol li{margin-bottom:4px}
+  .cuidado{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:10px;font-size:14px;line-height:1.55}
+  .cuidado b{color:var(--verde-900);display:block;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+  .prox{text-align:center;font-size:14px;color:var(--tinta-suave);margin-top:32px;padding:20px;background:#fff;border:1px dashed var(--verde-500);border-radius:12px}
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 7</a><span class="sep">›</span><span class="cur">Playbook</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html" class="atual">Playbook</a><a href="missao.html">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 6/index.html" title="Dia 6 (tecla ←)">←<span class="lbl"> Dia 6</span></a><a class="intnav-pill" href="../Dia 8/index.html" title="Dia 8 (tecla →)"><span class="lbl">Dia 8 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 7</a>
+    <span class="badge-aprofundamento">Playbook · Aprofundamento do Dia 7</span>
+    <div class="eyebrow">Trilha Capital de Carreira · Bloco 1 · Dia 7</div>
+    <h1>Valores centrais, <span class="grifo">em profundidade</span>.</h1>
+    <p class="lede">O que separa valor central de preferência ou aspiração, os três tipos que compõem uma boa lista, e o protocolo para descobrir os valores que já operam nas suas decisões — antes de você nomeá-los.</p>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <div class="eyebrow">O ponto de partida</div>
+    <h2>Valor central × valor declarado × preferência</h2>
+    <p>Três palavras que se cruzam, mas descrevem coisas diferentes — e não distinguir as três é a origem da maioria das "listas de valores" que não servem para nada.</p>
+    <p><strong>Preferência</strong> é o que você gosta — chocolate, livro na cama, café pela manhã. Não custa nada segui-la. Pode virar valor um dia, mas por si não é.</p>
+    <p><strong>Valor declarado</strong> é o que você diz que valoriza — em bio, apresentação, entrevista. É aspiracional. Nem sempre bate com o que você faz quando ninguém está olhando.</p>
+    <p><strong>Valor central</strong> é o que aparece nas suas decisões difíceis — mesmo quando você não sabe nomeá-lo. É o critério que efetivamente veta ou aprova escolha. Passou pelo teste do custo.</p>
+    <blockquote>Um valor central sempre custou algo. Se você não lembra do custo, é declaração — não valor.</blockquote>
+    <p>Neste playbook, quando falamos de "valores" queremos dizer os centrais. Os declarados podem estar iguais ou muito diferentes — a semana serve, entre outras coisas, para reduzir essa distância.</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">Os três tipos</div>
+    <h2>Abordagem, Contribuição, Contorno</h2>
+    <p>Uma boa lista de valores centrais (3-5) tende a ter representantes dos três tipos. Uma lista só de "abordagem" fica técnica; só de "contribuição" fica aspiracional; só de "contorno" fica defensiva.</p>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">A</div><h3>Valor de Abordagem</h3></div>
+      <p class="def">Como você faz — sempre.</p>
+      <h4>Sinais de saúde</h4>
+      <ul class="gatilhos">
+        <li>É específico o suficiente para levar a decisões diferentes. "Excelência" não vale — o que é "excelência" no seu contexto?</li>
+        <li>Aparece independente do tema ou projeto. É a assinatura que vai junto.</li>
+        <li>Tem versão negativa clara: "não faço X sem Y".</li>
+      </ul>
+      <h4>Cuidado ético</h4>
+      <p style="font-size:14px;color:var(--tinta-suave);line-height:1.55">Cuidado com "abordagem" que na verdade é <em>obsessão disfarçada</em>. Perfeccionismo vestido de rigor. Controle vestido de organização. A pergunta: essa abordagem me serve ou me governa?</p>
+    </div>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">C</div><h3>Valor de Contribuição</h3></div>
+      <p class="def">O que você quer entregar ao mundo.</p>
+      <h4>Sinais de saúde</h4>
+      <ul class="gatilhos">
+        <li>Descreve o <em>efeito</em>, não a posição. Não depende de cargo específico para ser entregue.</li>
+        <li>Você reconhece momentos concretos em que buscou entregar isso — mesmo em contexto que não pedia.</li>
+        <li>Tem escala: pode se manifestar num projeto pequeno e num programa grande.</li>
+      </ul>
+      <h4>Cuidado ético</h4>
+      <p style="font-size:14px;color:var(--tinta-suave);line-height:1.55">Cuidado com contribuição vestida de <em>ambição</em>. "Ser referência do setor" pode ser contribuição legítima ou pura vaidade — a diferença é se o efeito no mundo é o que importa, ou se é o reconhecimento.</p>
+    </div>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">C</div><h3>Valor de Contorno</h3></div>
+      <p class="def">O que você não aceita.</p>
+      <h4>Sinais de saúde</h4>
+      <ul class="gatilhos">
+        <li>Você já disse não recente por conta desse valor — e o não teve custo real (financeiro, de relação, de tempo).</li>
+        <li>É defensável em conversa: você consegue explicar sem apelo emocional por que veta.</li>
+        <li>Tem exceção nomeada. Rigidez sem exceção vira ideologia; contorno saudável tem "eu não faço X, exceto quando Y".</li>
+      </ul>
+      <h4>Cuidado ético</h4>
+      <p style="font-size:14px;color:var(--tinta-suave);line-height:1.55">Cuidado com contorno que virou <em>desculpa</em>. "Não faço reunião sem pauta" pode ser valor real ou preguiça bem embalada. Teste: você criaria uma pauta em 5 minutos se a conversa exigisse? Se sim, o contorno é preguiça disfarçada.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Protocolo</div>
+    <h2>Como descobrir seus valores centrais (30 min)</h2>
+    <div class="protocolo">
+      <b>Passo 1 — Olhar decisões, não intenções (10 min)</b>
+      <ol>
+        <li>Liste as <b>3 decisões mais difíceis</b> profissionais dos últimos 12 meses.</li>
+        <li>Para cada, escreva em uma frase o que efetivamente decidiu — o critério que operou.</li>
+        <li>Repare em quais palavras se repetem. Elas são candidatos fortes a valor central.</li>
+      </ol>
+    </div>
+    <div class="protocolo" style="margin-top:10px">
+      <b>Passo 2 — Aplicar o teste do custo (10 min)</b>
+      <ol>
+        <li>Para cada candidato: consigo lembrar de uma situação em que ele me fez perder algo (dinheiro, oportunidade, relação, tempo)?</li>
+        <li>Se sim → valor central. Se não → preferência disfarçada.</li>
+      </ol>
+    </div>
+    <div class="protocolo" style="margin-top:10px">
+      <b>Passo 3 — Balancear entre os três tipos (10 min)</b>
+      <ol>
+        <li>Sua lista tem representante de <b>Abordagem</b> (como você faz)?</li>
+        <li>Tem representante de <b>Contribuição</b> (o que entrega)?</li>
+        <li>Tem representante de <b>Contorno</b> (o que recusa)?</li>
+        <li>Se falta um dos três, provavelmente algum ainda não foi nomeado — vale procurar.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Cuidados éticos</div>
+    <h2>Valores sem virar liturgia</h2>
+    <div class="cuidado"><b>Valores mudam</b>Valor central hoje pode não ser daqui a 5 anos. Não é sinal de fraqueza — é sinal de que você está prestando atenção. Revisite anualmente.</div>
+    <div class="cuidado"><b>Valores em conflito</b>Toda pessoa tem 2-3 valores que às vezes brigam entre si (ex.: "franqueza" vs. "cuidado com o outro"). O trabalho é <em>hierarquizar por contexto</em>, não fingir que não brigam.</div>
+    <div class="cuidado"><b>Valores não são desculpa</b>"É meu valor" não pode virar escudo para não escutar crítica. Se um valor seu está fazendo dano a terceiros, ele merece ser revisto — não defendido.</div>
+  </section>
+
+  
+  <section>
+    <div class="eyebrow">Os profissionais de referência</div>
+    <h2>Três valores em operação — Camila, Rafael e Juliana</h2>
+    <p>Os três casos abaixo mostram o teste do custo funcionando na prática — um exemplo de cada tipo de valor.</p>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">C</div><h3>Camila · valor de Abordagem</h3></div>
+      <p class="def">"Não afirmo o que o dado não sustenta."</p>
+      <p style="font-size:14.5px;line-height:1.6">Na primeira lista, Camila escreveu "excelência" — e o teste do custo reprovou: ela não lembrava de nenhuma decisão em que "excelência" tivesse custado algo. Olhando as decisões difíceis do ano, o critério real apareceu: ela havia <strong>segurado uma análise por três dias</strong>, com o diretor cobrando, porque o número não fechava — e preferiu entregar tarde e certo a entregar rápido e frágil. Custou o desconforto da cobrança; sustentou a reputação que hoje trabalha por ela. O valor central não era "excelência" — era <em>não afirmar o que o dado não sustenta</em>. Específico, com versão negativa clara, e pago com custo real.</p>
+      <h4>O que aprender do caso</h4>
+      <ul class="gatilhos">
+        <li>O valor central quase sempre é mais <em>estreito</em> e mais <em>operacional</em> do que a palavra bonita da primeira lista.</li>
+        <li>A versão negativa ("não faço X sem Y") é o que o torna utilizável em decisão.</li>
+      </ul>
+    </div>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">R</div><h3>Rafael · valor de Contorno</h3></div>
+      <p class="def">"Não aceito urgência fabricada."</p>
+      <p style="font-size:14.5px;line-height:1.6">Rafael vive apagando incêndio — e por muito tempo achou que "disponibilidade" era um valor seu. O teste do custo virou o jogo ao contrário: as decisões de que ele mais se orgulhava no ano foram as duas em que <strong>disse não</strong> a uma "urgência" que não era urgência — e usou o tempo para resolver a causa do problema, não o sintoma. Um dos nãos custou uma conversa dura com um par. O valor de contorno dele ficou assim: <em>não aceito urgência fabricada — exceto quando o cliente final é o afetado</em>. Com exceção nomeada, para não virar ideologia.</p>
+      <h4>O que aprender do caso</h4>
+      <ul class="gatilhos">
+        <li>Às vezes o valor central aparece nos <em>nãos</em>, não nos sins — e é isso que o distingue de uma preferência.</li>
+        <li>Contorno saudável carrega a própria exceção; é isso que o torna defensável em conversa.</li>
+      </ul>
+    </div>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">J</div><h3>Juliana · valor de Contribuição</h3></div>
+      <p class="def">"Design que muda uma decisão de negócio — não que decora uma entrega."</p>
+      <p style="font-size:14.5px;line-height:1.6">Juliana recusou, no meio do ano, o maior orçamento que já tinha recebido — um projeto grande, mas em que o design seria puramente cosmético, sem acesso ao problema real do cliente. Na época pareceu "instinto"; no teste do custo, virou dado: o critério que operou foi <em>só aceito trabalho em que o design participa da decisão de negócio</em>. Custou dinheiro de verdade — e é exatamente por isso que é valor central, não aspiração. Repare que a contribuição dela descreve o <strong>efeito</strong> (mudar a decisão), não a posição: cabe num projeto pequeno e num programa grande.</p>
+      <h4>O que aprender do caso</h4>
+      <ul class="gatilhos">
+        <li>Contribuição legítima sobrevive à troca de cargo, de cliente e de formato.</li>
+        <li>Se o valor nunca custou uma oportunidade, desconfie: pode ser ambição bem embalada.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Fechando a semana</div>
+    <h2>Dos valores ao Retrato</h2>
+    <p>O Dia 7 fecha a Semana 1, e os valores são a última peça por um motivo: <strong>eles são o filtro de tudo o que vem depois</strong>. A semana inteira olhou para trás — trajetória, provas, reputação, rede, cadeia A·C·I. Os valores dizem o que, disso tudo, vale a pena amplificar.</p>
+    <p>Três encaixes concretos:</p>
+    <ul class="gatilhos">
+      <li><strong>No Retrato</strong> — os 3-5 valores entram ao lado dos seis ativos como o "critério de leitura" do material: um ativo forte que contradiz um valor central é um alerta, não um trunfo.</li>
+      <li><strong>Na manchete revisada</strong> — a distância entre a manchete do Dia 1 e a de hoje é o resumo da semana. Se a nova manchete não passa no teste dos seus valores, ela ainda é declaração, não direção.</li>
+      <li><strong>Na Semana 2</strong> — quando os Dias 10 e 11 pedirem critérios para decidir entre futuros possíveis, os valores centrais são a primeira linha do framework. Decisão que ignora valor central cobra juros depois.</li>
+    </ul>
+    <blockquote>A Semana 1 termina quando você consegue dizer: é isto que eu tenho, é assim que eu decido.</blockquote>
+  </section>
+
+  <div class="prox">Próximo passo: Missão do Dia 7 — Valores + Manchete revisada + Retrato final (20 min)</div>
+
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 7 · Playbook — Valores centrais</div>
+</footer>
+
+</body>
+</html>

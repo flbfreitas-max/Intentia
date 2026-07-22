@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 4 · Meu Diagnóstico de Reputação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--lilas:#8B7BB8;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:820px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:16px}
+  .voltar:hover{color:#fff}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:12px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  main{max-width:820px;margin:0 auto;padding:0 24px 40px}
+
+  .demo-banner{max-width:820px;margin:-20px auto 0;background:#F5F1FA;border:1px solid #DFD1F0;border-left:4px solid var(--lilas);border-radius:10px;padding:14px 20px;position:relative;z-index:2;box-shadow:0 6px 18px rgba(139,123,184,.15);font-size:13.5px;color:var(--tinta-suave);display:none}
+  .demo-banner.visivel{display:block}
+  .demo-banner b{color:var(--verde-900);font-weight:700}
+
+  .secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:32px 34px;margin:24px 0;box-shadow:0 4px 16px rgba(39,87,80,.06)}
+  .secao-header{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+  .secao-num{width:36px;height:36px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:16px}
+  .secao h2{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--verde-900);line-height:1.2;letter-spacing:-.005em}
+  .secao-sub{font-size:14px;color:var(--tinta-suave);font-style:italic;margin-top:-14px;margin-bottom:20px;padding-left:50px}
+
+  .palavras-retrato{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+  @media (max-width:640px){.palavras-retrato{grid-template-columns:1fr}}
+  .palavras-col{background:var(--creme);border-radius:12px;padding:20px 22px}
+  .palavras-col.desejada{background:linear-gradient(135deg, var(--verde-100) 0%, #EAF2EC 100%);border:1px solid var(--verde-500)}
+  .palavras-col-label{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--coral);margin-bottom:12px}
+  .palavras-col.desejada .palavras-col-label{color:var(--verde-700)}
+  .palavras-lista{display:flex;flex-direction:column;gap:8px}
+  .palavra-pill{background:#fff;border:1.5px solid var(--verde-100);border-radius:8px;padding:10px 14px;font-family:var(--serif);font-size:17px;font-weight:500;color:var(--verde-900);text-align:center}
+  .palavras-col.desejada .palavra-pill{border-color:var(--verde-500);background:#fff}
+
+  .gap-nota{background:var(--verde-900);color:var(--creme);padding:16px 20px;border-radius:10px;margin-top:16px;font-size:14.5px;line-height:1.55;font-style:italic;font-family:var(--serif)}
+  .gap-nota b{color:#fff;font-style:normal;font-weight:600}
+
+  .dim-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px}
+  @media (max-width:640px){.dim-grid{grid-template-columns:1fr}}
+  .dim-card{background:#fff;border:1.5px solid var(--verde-100);border-radius:10px;padding:16px 18px;text-align:center}
+  .dim-card.travada{border-color:var(--coral);background:#FFF8F5}
+  .dim-card-nome{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--verde-900);margin-bottom:6px}
+  .dim-card-status{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--verde-500)}
+  .dim-card.travada .dim-card-status{color:var(--coral)}
+  .dim-card-pergunta{font-size:12.5px;color:var(--tinta-suave);margin-top:6px;line-height:1.4}
+
+  .pessoa-item{background:var(--creme);border-radius:10px;padding:14px 16px;margin-bottom:10px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+  .pessoa-item-num{width:28px;height:28px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:13px;flex-shrink:0}
+  .pessoa-item-nome{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--verde-900);margin-bottom:2px}
+  .pessoa-item-papel{font-size:13px;color:var(--tinta-suave);margin-bottom:4px}
+  .pessoa-item-contexto{font-size:13px;color:var(--tinta);font-style:italic}
+  .pessoa-item-vazio .pessoa-item-nome{color:var(--tinta-suave);font-style:italic}
+
+  .acao-destaque{background:linear-gradient(135deg, var(--coral) 0%, #FF7A57 100%);color:#fff;padding:24px 28px;border-radius:14px;margin-top:12px;position:relative}
+  .acao-destaque-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:10px}
+  .acao-destaque-texto{font-family:var(--serif);font-size:20px;font-weight:500;line-height:1.35;font-style:italic}
+  .acao-destaque-prazo{margin-top:12px;font-size:12.5px;color:rgba(255,255,255,.85);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+
+  .voltar-dia{text-align:center;margin-top:40px}
+  .voltar-dia a{display:inline-flex;align-items:center;gap:8px;color:var(--verde-700);text-decoration:none;font-weight:600;font-size:14px;border-bottom:1px dotted var(--verde-500);padding-bottom:2px}
+  .voltar-dia a:hover{color:var(--coral);border-bottom-color:var(--coral)}
+  .voltar-dia svg{width:14px;height:14px;fill:currentColor}
+
+  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+
+  /* === TEXTO JUSTIFICADO (materiais) === */
+  main p{text-align:justify;text-justify:inter-word;hyphens:auto}
+  main .fechamento, main .fechamento p, main .movimento-conteudo, main .movimento-legenda, main .insight-conteudo, main .direcao-conteudo, main .direcao-recap-frase, main .campo-conteudo:not(.destaque), main .marca-item-conteudo, main .pergunta-topo-texto, main .perfil-legenda, main .dim-exemplo, main .lente-texto, main .mov-texto, main .comp-nota, main .acumulado-nota, main .fechamento-conteudo, main .eu-cena, main .eu-preco, main .campo-conteudo{text-align:justify;text-justify:inter-word;hyphens:auto}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 4</a><span class="sep">›</span><span class="cur">Material</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html">Missão</a><a href="material.html" class="atual">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 3/index.html" title="Dia 3 (tecla ←)">←<span class="lbl"> Dia 3</span></a><a class="intnav-pill" href="../Dia 5/index.html" title="Dia 5 (tecla →)"><span class="lbl">Dia 5 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 4</a>
+    <div class="eyebrow">Material · Dia 4</div>
+    <h1>Meu Diagnóstico de <span class="grifo">Reputação</span>.</h1>
+    <p class="lede">Foto do que dizem hoje, direção do que você quer, e uma ação concreta para os próximos 7 dias.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<div class="demo-banner" id="demo-banner">
+  <b>Prévia com dados de demonstração.</b> Você abriu este material sem completar a missão — o conteúdo abaixo mostra como ele fica preenchido, usando o perfil da Camila (profissional de referência). <a href="missao.html" style="color:var(--lilas);font-weight:700;text-decoration:none;margin-left:4px">Fazer a missão →</a>
+</div>
+
+<main>
+
+  <section class="secao">
+    <div class="secao-header"><div class="secao-num">1</div><h2>Suas palavras — atual × desejada</h2></div>
+    <p class="secao-sub">O gap entre as duas colunas é o mapa da sua migração de reputação.</p>
+    <div class="palavras-retrato">
+      <div class="palavras-col atual">
+        <div class="palavras-col-label">Como você é vista hoje</div>
+        <div class="palavras-lista" id="palavras-atuais"></div>
+      </div>
+      <div class="palavras-col desejada">
+        <div class="palavras-col-label">Como você quer ser vista</div>
+        <div class="palavras-lista" id="palavras-desejadas"></div>
+      </div>
+    </div>
+    <div class="gap-nota" id="gap-nota"></div>
+  </section>
+
+  <section class="secao">
+    <div class="secao-header"><div class="secao-num">2</div><h2>Onde a sua reputação trava</h2></div>
+    <p class="secao-sub">As três dimensões N·C·C — marcadas as travadas.</p>
+    <div class="dim-grid" id="dim-grid"></div>
+  </section>
+
+  <section class="secao">
+    <div class="secao-header"><div class="secao-num">3</div><h2>3 pessoas-chave da sua nova narrativa</h2></div>
+    <p class="secao-sub">Quem precisa ouvir você — e onde.</p>
+    <div id="pessoas-lista"></div>
+  </section>
+
+  <section class="secao">
+    <div class="secao-header"><div class="secao-num">4</div><h2>Sua ação de reputação para os próximos 7 dias</h2></div>
+    <div class="acao-destaque">
+      <div class="acao-destaque-label">Ação da semana</div>
+      <div class="acao-destaque-texto" id="acao-texto"></div>
+      <div class="acao-destaque-prazo">7 dias · Uma pessoa nova</div>
+    </div>
+  </section>
+
+  <div class="voltar-dia">
+    <a href="index.html">
+      <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      Voltar ao índice do Dia 4
+    </a>
+  </div>
+
+<!--intentia-dayend:start--><style>
+.intday{background:linear-gradient(135deg,#275750 0%,#1d453f 100%);color:#F5F7F3;border-radius:20px;
+  padding:34px 38px;margin:36px 0 8px;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif}
+.intday .intday-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7CA89E;margin-bottom:10px}
+.intday h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:22px;line-height:1.25;margin:0 0 10px;color:#F5F7F3}
+.intday p{font-size:14.5px;line-height:1.6;color:#CFE0D6;margin:0 0 20px;max-width:560px}
+.intday .intday-cta{display:inline-flex;align-items:center;gap:8px;background:#FF6842;color:#fff;text-decoration:none;
+  font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 10px 24px rgba(255,104,66,.3);transition:transform .2s,box-shadow .2s}
+.intday .intday-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,104,66,.4)}
+@media(max-width:600px){.intday{padding:26px 22px}.intday h3{font-size:19px}}
+</style><div class="intday"><div class="intday-eyebrow">A jornada continua</div><h3>Amanhã: Dia 5 — A rede que trabalha por você.</h3><p>Você concluiu o Dia 4. Quando estiver pronto, dê o próximo passo da travessia.</p><a class="intday-cta" href="../Dia 5/index.html">Ir para o Dia 5 →</a></div><!--intentia-dayend:end-->
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 4 · Meu Diagnóstico de Reputação</div>
+</footer>
+
+<script>
+  const DADOS_DEMO = {
+    palavrasAtuais: ['prestativa', 'dedicada', 'confiável'],
+    palavrasDesejadas: ['estratégica', 'referência em análise de decisão', 'a que traz clareza'],
+    dimensoesTravadas: ['nomeacao', 'circulacao'],
+    pessoas: [
+      {nome:'Marina (chefe direta)', papel:'Gerente de dados', contexto:'1:1 semanal · próxima quarta'},
+      {nome:'Ricardo (diretor de área adjacente)', papel:'Diretor de operações', contexto:'Reunião de projeto conjunto em 15 dias'},
+      {nome:'Comunidade Analytics BR', papel:'Grupo online de analistas', contexto:'Fórum ativo — postar semana que vem'}
+    ],
+    acao: 'Vou pedir a três colegas de áreas diferentes, um por dia, que descrevam em uma frase qual é o problema que eu mais resolvo. Depois comparo com a minha própria frase.'
+  };
+
+  const DIM_INFO = {
+    nomeacao: {nome:'Nomeação', pergunta:'A frase clara do que você resolve'},
+    circulacao: {nome:'Circulação', pergunta:'Onde essa frase é dita'},
+    confirmacao: {nome:'Confirmação', pergunta:'Quem sustenta a frase'}
+  };
+
+  let dados, usandoDemo = false;
+  try {
+    const s = sessionStorage.getItem('intentia-dia4');
+    if (s) {
+      const parsed = JSON.parse(s);
+      // Preenche gaps com demo
+      dados = {
+        palavrasAtuais: (parsed.palavrasAtuais || []).map((p,i) => p.trim() || DADOS_DEMO.palavrasAtuais[i]),
+        palavrasDesejadas: (parsed.palavrasDesejadas || []).map((p,i) => p.trim() || DADOS_DEMO.palavrasDesejadas[i]),
+        dimensoesTravadas: (parsed.dimensoesTravadas && parsed.dimensoesTravadas.length) ? parsed.dimensoesTravadas : DADOS_DEMO.dimensoesTravadas,
+        pessoas: (parsed.pessoas || DADOS_DEMO.pessoas).map((p,i) => ({
+          nome: (p.nome || '').trim() || (DADOS_DEMO.pessoas[i] ? DADOS_DEMO.pessoas[i].nome : ''),
+          papel: (p.papel || '').trim() || (DADOS_DEMO.pessoas[i] ? DADOS_DEMO.pessoas[i].papel : ''),
+          contexto: (p.contexto || '').trim() || (DADOS_DEMO.pessoas[i] ? DADOS_DEMO.pessoas[i].contexto : '')
+        })),
+        acao: (parsed.acao || '').trim() || DADOS_DEMO.acao
+      };
+    } else {
+      dados = DADOS_DEMO; usandoDemo = true;
+    }
+  } catch(e) { dados = DADOS_DEMO; usandoDemo = true; }
+
+  if (usandoDemo) document.getElementById('demo-banner').classList.add('visivel');
+
+  // Palavras atuais e desejadas
+  const at = document.getElementById('palavras-atuais');
+  dados.palavrasAtuais.forEach(p => {
+    const el = document.createElement('div'); el.className = 'palavra-pill'; el.textContent = p; at.appendChild(el);
+  });
+  const de = document.getElementById('palavras-desejadas');
+  dados.palavrasDesejadas.forEach(p => {
+    const el = document.createElement('div'); el.className = 'palavra-pill'; el.textContent = p; de.appendChild(el);
+  });
+
+  // Gap
+  const gapEl = document.getElementById('gap-nota');
+  gapEl.innerHTML = `<b>Leitura do gap:</b> as palavras atuais tendem a descrever <em>como você trabalha</em> (esforço, disponibilidade, confiança); as desejadas descrevem <em>o que você resolve</em> (contribuição específica, tema de referência). Migrar de uma coluna para a outra é o trabalho de nomeação — e é o que essa semana vai começar a fazer.`;
+
+  // Dimensões
+  const dimEl = document.getElementById('dim-grid');
+  ['nomeacao','circulacao','confirmacao'].forEach(k => {
+    const info = DIM_INFO[k];
+    const travada = dados.dimensoesTravadas.includes(k);
+    const div = document.createElement('div');
+    div.className = 'dim-card' + (travada ? ' travada' : '');
+    div.innerHTML = `<div class="dim-card-nome">${info.nome}</div><div class="dim-card-status">${travada ? '⚠ Onde você trava' : '✓ Não travada'}</div><div class="dim-card-pergunta">${info.pergunta}</div>`;
+    dimEl.appendChild(div);
+  });
+
+  // Pessoas
+  const pl = document.getElementById('pessoas-lista');
+  dados.pessoas.forEach((p, idx) => {
+    const div = document.createElement('div');
+    const vazia = !p.nome && !p.papel && !p.contexto;
+    div.className = 'pessoa-item' + (vazia ? ' pessoa-item-vazio' : '');
+    div.innerHTML = `<div class="pessoa-item-num">${idx+1}</div><div><div class="pessoa-item-nome">${p.nome || 'Não preenchida'}</div><div class="pessoa-item-papel">${p.papel || ''}</div><div class="pessoa-item-contexto">${p.contexto || ''}</div></div>`;
+    pl.appendChild(div);
+  });
+
+  // Ação
+  document.getElementById('acao-texto').textContent = dados.acao;
+</script>
+
+</body>
+</html>

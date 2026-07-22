@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 22 · Seu tracker de hábitos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.6vw,42px);line-height:1.12;margin-bottom:14px;letter-spacing:-.01em}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:640px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  main{max-width:960px;margin:0 auto;padding:0 24px 40px}
+  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:16px 22px;margin:24px 0;display:flex;align-items:flex-start;gap:14px;font-size:13.5px;line-height:1.55}
+  .aviso-demo-icone{color:var(--coral);font-size:20px;flex-shrink:0;margin-top:2px}
+  .aviso-demo b{color:var(--verde-900)}
+  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
+  .amanha-topo{background:linear-gradient(135deg, var(--verde-900) 0%, #1d453f 100%);color:var(--creme);border-radius:16px;padding:28px 32px;margin:24px 0;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(39,87,80,.2)}
+  .amanha-label{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  .amanha-topo h2{font-family:var(--serif);font-size:26px;font-weight:600;color:#fff;margin-bottom:10px;line-height:1.2}
+  .amanha-habito{font-family:var(--serif);font-size:19px;color:#fff;font-style:italic;font-weight:500;margin-bottom:10px}
+  .amanha-gatilho{font-size:14.5px;color:#CFE0D6;line-height:1.55}
+  .amanha-gatilho b{color:#fff}
+  .tracker-caixa{background:#fff;border:1.5px solid var(--verde-700);border-radius:16px;padding:28px 30px;margin:24px 0;box-shadow:0 4px 16px rgba(39,87,80,.06)}
+  .tracker-label{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+  .tracker-caixa h2{font-family:var(--serif);font-size:22px;color:var(--verde-900);margin-bottom:16px;font-weight:600}
+  .tracker-tabela{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}
+  .tracker-tabela th{background:var(--verde-100);color:var(--verde-900);font-family:var(--serif);font-weight:600;padding:12px 10px;text-align:center;font-size:14px;border:1px solid #fff}
+  .tracker-tabela th:first-child{text-align:left;background:var(--verde-500);color:#fff;width:34%}
+  .tracker-tabela td{background:#fff;border:1px solid var(--verde-100);padding:14px 10px;text-align:center;color:var(--tinta);vertical-align:middle;font-size:14px;font-weight:600;color:var(--verde-900)}
+  .tracker-tabela td:first-child{text-align:left;font-family:var(--serif);font-size:14.5px;font-weight:500;color:var(--tinta);font-style:italic}
+  .tracker-tabela td.slot{background:var(--creme);color:var(--tinta-suave);font-family:var(--serif);font-weight:600}
+  .tracker-tabela td.hoje{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:2px solid var(--coral);color:var(--coral)}
+  .tracker-nota{font-size:12.5px;color:var(--tinta-suave);margin-top:12px;font-style:italic;line-height:1.55}
+  .habitos-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:18px;margin:24px 0}
+  @media (max-width:820px){.habitos-grid{grid-template-columns:1fr}}
+  .habito-col{background:#fff;border:1px solid var(--verde-100);border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06);display:flex;flex-direction:column}
+  .habito-col.destaque{border:2px solid var(--coral);box-shadow:0 10px 28px rgba(255,104,66,.14)}
+  .habito-col-header{padding:22px 22px 18px;color:#fff;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);text-align:center}
+  .habito-col-num{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:10px}
+  .habito-col-inicio{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.9;margin-bottom:4px}
+  .habito-col-nome{font-family:var(--serif);font-size:17px;font-weight:600;line-height:1.2}
+  .habito-col-body{padding:22px;flex:1;display:flex;flex-direction:column;gap:14px}
+  .habito-secao-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:4px}
+  .habito-conteudo{font-size:13.5px;line-height:1.55;color:var(--tinta)}
+  .habito-conteudo.vazio{color:var(--tinta-suave);font-style:italic;font-size:12.5px}
+  .cronograma-box{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:22px 28px;margin:24px 0}
+  .cronograma-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:8px}
+  .cronograma-box h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:12px;font-weight:600}
+  .cronograma-linha{padding:10px 14px;background:#fff;border-radius:8px;margin-bottom:8px;display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.5}
+  .cronograma-linha:last-child{margin-bottom:0}
+  .cronograma-linha .semana-tag{background:var(--verde-700);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:10px;letter-spacing:.05em;flex-shrink:0}
+  .cronograma-linha b{color:var(--verde-900);font-family:var(--serif)}
+  .fechamento{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 32px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .fechamento h2{font-family:var(--serif);font-size:22px;color:var(--verde-900);margin-bottom:12px;font-weight:600}
+  .fechamento p{font-size:15px;color:var(--tinta);line-height:1.65;margin-bottom:12px}
+  .fechamento p:last-child{margin-bottom:0}
+  .fechamento b{color:var(--verde-900)}
+  .proximo{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:28px 30px;margin:24px 0;text-align:center;position:relative;overflow:hidden}
+  .proximo-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+  .proximo h3{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;margin-bottom:8px}
+  .proximo p{font-size:14.5px;color:#CFE0D6;margin-bottom:20px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
+  .proximo-cta{display:inline-flex;align-items:center;gap:12px;background:var(--coral);color:#fff;padding:14px 26px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:16px;font-weight:600;transition:transform .2s;box-shadow:0 6px 18px rgba(255,104,66,.32)}
+  .proximo-cta:hover{transform:translateY(-2px)}
+  .proximo-cta svg{width:14px;height:14px;fill:currentColor}
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+
+  /* === TEXTO JUSTIFICADO (materiais) === */
+  main p{text-align:justify;text-justify:inter-word;hyphens:auto}
+  main .fechamento, main .fechamento p, main .amanha-habito, main .amanha-gatilho, main .habito-conteudo, main .tracker-nota, main .cronograma-linha{text-align:justify;text-justify:inter-word;hyphens:auto}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 22</a><span class="sep">›</span><span class="cur">Material</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html">Missão</a><a href="material.html" class="atual">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 21/index.html" title="Dia 21 (tecla ←)">←<span class="lbl"> Dia 21</span></a><a class="intnav-pill" href="../Dia 23/index.html" title="Dia 23 (tecla →)"><span class="lbl">Dia 23 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 22</a>
+    <div class="eyebrow">Material · Dia 22 · Semana 4 · Dia 1 de 7</div>
+    <h1>Seu <span class="grifo">tracker</span> — 7 dias, 1 hábito começa amanhã.</h1>
+    <p class="lede">Os 3 hábitos desenhados, o que começa amanhã destacado, o mini-tracker visual dos próximos 7 dias, e o cronograma de instalação dos hábitos 2 e 3.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+<main>
+  <div id="aviso-demo" class="aviso-demo" style="display:none">
+    <div class="aviso-demo-icone">◆</div>
+    <div><b>Você ainda não preencheu a missão do Dia 22.</b> Dados em <b>modo demonstrativo</b>. <a href="missao.html">Ir preencher →</a></div>
+  </div>
+
+  <div class="amanha-topo">
+    <div class="amanha-label">Começa amanhã</div>
+    <h2 id="amanha-titulo">Seu hábito 1 do ciclo</h2>
+    <div class="amanha-habito" id="amanha-habito-txt">—</div>
+    <div class="amanha-gatilho"><b>Gatilho:</b> <span id="amanha-gatilho-txt">—</span></div>
+  </div>
+
+  <div class="tracker-caixa">
+    <div class="tracker-label">Tracker · próxima semana</div>
+    <h2>Marque X quando fizer. Espaço em branco = não fez.</h2>
+    <table class="tracker-tabela">
+      <thead>
+        <tr>
+          <th>Hábito</th>
+          <th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th><th>Dom</th>
+        </tr>
+      </thead>
+      <tbody id="tracker-tbody">
+        <tr>
+          <td id="h1-nome">Hábito 1 — <em>começa amanhã</em></td>
+          <td class="slot">·</td><td class="slot">·</td><td class="slot">·</td><td class="slot">·</td><td class="slot">·</td><td class="slot">·</td><td class="slot">·</td>
+        </tr>
+        <tr>
+          <td id="h2-nome">Hábito 2 — <em>começa Semana 2</em></td>
+          <td colspan="7" style="background:#F0F5F2;color:var(--tinta-suave);font-style:italic;font-size:13px;padding:14px">aguarda semana 2 · instalar depois que Hábito 1 estiver estabelecido</td>
+        </tr>
+        <tr>
+          <td id="h3-nome">Hábito 3 — <em>começa Semana 3</em></td>
+          <td colspan="7" style="background:#F0F5F2;color:var(--tinta-suave);font-style:italic;font-size:13px;padding:14px">aguarda semana 3 · sequência: 1 → 2 → 3, com ~10-14 dias entre cada</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="tracker-nota">Imprima esta tabela ou copie para caderno físico. Clear: tracker visível &gt; tracker digital escondido. Meta da semana: 5 X em 7 dias.</p>
+  </div>
+
+  <div class="habitos-grid">
+    <div class="habito-col" id="h1-col">
+      <div class="habito-col-header"><div class="habito-col-num">1</div><div class="habito-col-inicio" id="h1-inicio">semana 1</div><div class="habito-col-nome">Hábito 1</div></div>
+      <div class="habito-col-body">
+        <div>
+          <div class="habito-secao-label">Comportamento</div>
+          <div class="habito-conteudo" id="h1-txt">—</div>
+        </div>
+        <div>
+          <div class="habito-secao-label">Gatilho</div>
+          <div class="habito-conteudo" id="g1-txt">—</div>
+        </div>
+      </div>
+    </div>
+    <div class="habito-col" id="h2-col">
+      <div class="habito-col-header"><div class="habito-col-num">2</div><div class="habito-col-inicio" id="h2-inicio">semana 2</div><div class="habito-col-nome">Hábito 2</div></div>
+      <div class="habito-col-body">
+        <div>
+          <div class="habito-secao-label">Comportamento</div>
+          <div class="habito-conteudo" id="h2-txt">—</div>
+        </div>
+        <div>
+          <div class="habito-secao-label">Gatilho</div>
+          <div class="habito-conteudo" id="g2-txt">—</div>
+        </div>
+      </div>
+    </div>
+    <div class="habito-col" id="h3-col">
+      <div class="habito-col-header"><div class="habito-col-num">3</div><div class="habito-col-inicio" id="h3-inicio">semana 3</div><div class="habito-col-nome">Hábito 3</div></div>
+      <div class="habito-col-body">
+        <div>
+          <div class="habito-secao-label">Comportamento</div>
+          <div class="habito-conteudo" id="h3-txt">—</div>
+        </div>
+        <div>
+          <div class="habito-secao-label">Gatilho</div>
+          <div class="habito-conteudo" id="g3-txt">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cronograma-box">
+    <div class="cronograma-label">Cronograma de instalação</div>
+    <h3>Um hábito começa a cada ~10-14 dias</h3>
+    <div class="cronograma-linha"><span class="semana-tag">Sem. 1</span><span>Começa amanhã: <b id="crono-h1">Hábito 1</b> · foco absoluto nele até virar rotina</span></div>
+    <div class="cronograma-linha"><span class="semana-tag">Sem. 2</span><span>Adicionar: <b id="crono-h2">Hábito 2</b> · Hábito 1 já deve estar 5+ X por semana</span></div>
+    <div class="cronograma-linha"><span class="semana-tag">Sem. 3</span><span>Adicionar: <b id="crono-h3">Hábito 3</b> · os outros 2 já rodando</span></div>
+    <div class="cronograma-linha"><span class="semana-tag">Sem. 4-6</span><span>Manter os 3 · reavaliar tamanho (aumentar se ficou fácil, reduzir se ficou pesado)</span></div>
+  </div>
+
+  <div class="fechamento">
+    <h2>O que fazer nas próximas 24h</h2>
+    <p><b>Prepare o ambiente hoje ainda</b> — Clear: o ambiente resolve mais que a força de vontade. Se o hábito é escrever, deixe o laptop aberto no doc certo na mesa amanhã. Se é celular fora do quarto, coloque o carregador na sala hoje. A fricção do ambiente é o que <em>mais</em> mata hábitos na 1ª semana.</p>
+    <p><b>Amanhã: só faça o gatilho + o hábito + o X + a recompensa.</b> Não julgue como saiu. Não meça qualidade. Só a série. Duhigg: o cérebro consolida o loop pela repetição — não pela intensidade. 5 dias medianos &gt; 2 dias excelentes.</p>
+    <p><b>Reveja aqui todo domingo.</b> 30 segundos para conferir quantos X — sem julgamento. Se 5+, mantenha. Se 3-4, ajuste o hábito (menor, gatilho mais robusto). Se 0-2, o desenho está errado — refaça, não force.</p>
+  </div>
+
+  <div class="proximo">
+    <div class="proximo-eyebrow">Amanhã · Dia 23</div>
+    <h3>Ambiente e fricção — o que muda o comportamento sem esforço</h3>
+    <p>Depois do hábito desenhado, o ambiente. Como reduzir fricção do bom e aumentar do ruim — para que o ambiente faça 60% do trabalho e a força de vontade só os 40%.</p>
+    <a href="../Dia 23/index.html" class="proximo-cta">Ir para o Dia 23 <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></a>
+  </div>
+<!--intentia-dayend:start--><style>
+.intday{background:linear-gradient(135deg,#275750 0%,#1d453f 100%);color:#F5F7F3;border-radius:20px;
+  padding:34px 38px;margin:36px 0 8px;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif}
+.intday .intday-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7CA89E;margin-bottom:10px}
+.intday h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:22px;line-height:1.25;margin:0 0 10px;color:#F5F7F3}
+.intday p{font-size:14.5px;line-height:1.6;color:#CFE0D6;margin:0 0 20px;max-width:560px}
+.intday .intday-cta{display:inline-flex;align-items:center;gap:8px;background:#FF6842;color:#fff;text-decoration:none;
+  font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 10px 24px rgba(255,104,66,.3);transition:transform .2s,box-shadow .2s}
+.intday .intday-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,104,66,.4)}
+@media(max-width:600px){.intday{padding:26px 22px}.intday h3{font-size:19px}}
+</style><div class="intday"><div class="intday-eyebrow">A jornada continua</div><h3>Amanhã: Dia 23 — Ambiente e fricção.</h3><p>Você concluiu o Dia 22. Quando estiver pronto, dê o próximo passo da travessia.</p><a class="intday-cta" href="../Dia 23/index.html">Ir para o Dia 23 →</a></div><!--intentia-dayend:end-->
+</main>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Dia 22 · Tracker de hábitos</div></footer>
+
+<script>
+  const DEMO = {
+    h1:'20 min de escrita todo dia útil — não o artigo inteiro, só 20 min contínuos',
+    g1:'depois de preparar o café da manhã, sento com o laptop na mesa e escrevo 20 min sem abrir email',
+    h2:'sábado 09h-09h45 — preparar 1 pedido específico da direção usando os 3 pilares C·P·R',
+    g2:'depois do café de sábado, sento com o caderno na varanda — antes de sair de casa',
+    h3:'celular fora do quarto todo dia às 22h30 — sem exceção',
+    g3:'depois de escovar dente à noite, deixo o celular carregando na sala',
+    tracker:'caderno físico ao lado do laptop, com tabela 3 colunas × 7 linhas — X ou nada',
+    recompensa:'depois de marcar X, tomo um café bom, olho a série crescendo por 10 s, respiro',
+    amanha:'h1'
+  };
+  const raw = sessionStorage.getItem('intentia-dia22');
+  let d, demo = false;
+  try { const p = raw ? JSON.parse(raw) : null; if (p && p.h1) d = p; else { d = DEMO; demo = true; } } catch(e){ d = DEMO; demo = true; }
+  if (demo) document.getElementById('aviso-demo').style.display = 'flex';
+
+  function setText(id, val) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (!val || !val.toString().trim()) { el.textContent = '—'; el.classList.add('vazio','vazia'); return; }
+    el.textContent = val;
+    el.classList.remove('vazio','vazia');
+  }
+  setText('h1-txt', d.h1); setText('g1-txt', d.g1);
+  setText('h2-txt', d.h2); setText('g2-txt', d.g2);
+  setText('h3-txt', d.h3); setText('g3-txt', d.g3);
+
+  const NOMES_HAB = {h1: 'Hábito 1', h2: 'Hábito 2', h3: 'Hábito 3'};
+  const CRONO = {h1: 'semana 1', h2: 'semana 2', h3: 'semana 3'};
+  const amanha = d.amanha || 'h1';
+
+  // Reordenar cronograma pela escolha do "começa amanhã"
+  document.getElementById('crono-h1').textContent = NOMES_HAB[amanha];
+  const restantes = ['h1','h2','h3'].filter(k => k !== amanha);
+  document.getElementById('crono-h2').textContent = NOMES_HAB[restantes[0]];
+  document.getElementById('crono-h3').textContent = NOMES_HAB[restantes[1]];
+
+  // Destacar o hábito que começa amanhã
+  document.getElementById(amanha+'-col').classList.add('destaque');
+  document.getElementById(amanha+'-inicio').textContent = 'começa amanhã';
+  restantes.forEach((k, i) => {
+    document.getElementById(k+'-inicio').textContent = (i === 0 ? 'semana 2' : 'semana 3');
+  });
+
+  // Amanhã destaque
+  const amanhaHabito = d[amanha];
+  const amanhaGatilho = d['g' + amanha.charAt(1)];
+  document.getElementById('amanha-titulo').textContent = 'Seu ' + NOMES_HAB[amanha].toLowerCase() + ' começa amanhã';
+  setText('amanha-habito-txt', amanhaHabito);
+  setText('amanha-gatilho-txt', amanhaGatilho);
+</script>
+</body>
+</html>

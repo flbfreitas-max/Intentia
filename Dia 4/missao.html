@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 4 · Missão — Seu Diagnóstico de Reputação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--lilas:#8B7BB8;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.6;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:16px}
+  .voltar:hover{color:#fff}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:12px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  .missao-meta{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:22px;font-size:13px;color:#A9C6B8}
+  .missao-meta span{display:inline-flex;align-items:center;gap:6px}
+  .missao-meta svg{width:14px;height:14px;fill:currentColor}
+  main{max-width:720px;margin:0 auto;padding:0 24px}
+  .progresso{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:16px 22px;margin:24px 0;display:flex;align-items:center;gap:18px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .progresso-info{flex:1}
+  .progresso-titulo{font-size:13px;font-weight:600;color:var(--verde-900);margin-bottom:6px}
+  .progresso-bar{background:var(--verde-100);height:6px;border-radius:3px;overflow:hidden}
+  .progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}
+  .progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  .etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 30px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .etapa-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
+  .etapa-num{width:34px;height:34px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
+  .etapa-titulo{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
+  .etapa-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
+  .etapa-desc b{color:var(--verde-900)}
+
+  label{display:block;font-size:13px;font-weight:600;color:var(--verde-700);margin-bottom:6px;letter-spacing:.02em}
+  input[type=text],textarea,select{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:15px;color:var(--tinta);background:#fff;transition:border-color .2s;font-weight:500}
+  input[type=text]:focus,textarea:focus,select:focus{outline:none;border-color:var(--coral)}
+  textarea{resize:vertical;min-height:70px;line-height:1.5}
+  .palavras-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px}
+  @media (max-width:520px){.palavras-grid{grid-template-columns:1fr}}
+  .palavra-input{position:relative}
+  .palavra-input .indice{position:absolute;left:12px;top:12px;color:var(--verde-500);font-size:11px;font-weight:700;letter-spacing:.1em}
+  .palavra-input input{padding-left:34px;font-family:var(--serif);font-weight:500;font-size:16px}
+
+  .ncc-diag{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px}
+  @media (max-width:560px){.ncc-diag{grid-template-columns:1fr}}
+  .ncc-diag-card{background:#fff;border:1.5px solid var(--verde-100);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all .15s;text-align:center;user-select:none}
+  .ncc-diag-card:hover{border-color:var(--verde-500)}
+  .ncc-diag-card.selected{background:var(--coral);border-color:var(--coral);color:#fff}
+  .ncc-diag-card.selected .ncc-diag-nome,.ncc-diag-card.selected .ncc-diag-pergunta{color:#fff}
+  .ncc-diag-nome{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--verde-900);margin-bottom:4px}
+  .ncc-diag-pergunta{font-size:12px;color:var(--tinta-suave);line-height:1.4}
+  .ncc-diag-nota{font-size:12px;color:var(--tinta-suave);font-style:italic;margin-top:8px;text-align:center}
+
+  .pessoa-card{background:var(--creme);border-radius:10px;padding:14px 16px;margin-bottom:10px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+  .pessoa-num{width:28px;height:28px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:13px;flex-shrink:0}
+  .pessoa-campos{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  @media (max-width:520px){.pessoa-campos{grid-template-columns:1fr}}
+  .pessoa-campos input{padding:8px 12px;font-size:14px}
+  .pessoa-campos input::placeholder{color:var(--tinta-suave)}
+
+  .ai-btn{background:linear-gradient(135deg, #A594D1 0%, var(--lilas) 100%);color:#fff;border:none;padding:7px 14px;border-radius:20px;font-family:var(--sans);font-size:12px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-top:8px;transition:transform .15s}
+  .ai-btn:hover{transform:translateY(-1px)}
+  .ai-btn svg{width:12px;height:12px;fill:currentColor}
+  .ai-sugestao{background:#F5F1FA;border:1px solid #DFD1F0;border-left:3px solid var(--lilas);border-radius:8px;padding:12px 14px;margin-top:8px;font-size:13.5px;color:var(--tinta);line-height:1.5;display:none;animation:slideDown .3s}
+  .ai-sugestao.visivel{display:block}
+  .ai-sugestao-header{font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--lilas);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .ai-sugestao-header svg{width:12px;height:12px;fill:currentColor}
+  .ai-sugestao-acoes{margin-top:8px;display:flex;gap:8px}
+  .ai-sugestao-acoes button{background:#fff;color:var(--verde-900);border:1px solid var(--verde-100);padding:5px 12px;border-radius:6px;font-family:var(--sans);font-size:12px;font-weight:600;cursor:pointer}
+  .ai-sugestao-acoes button:hover{border-color:var(--verde-700)}
+  @keyframes slideDown{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+
+  .dica{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-top:8px;padding-left:12px;border-left:2px solid var(--verde-500)}
+
+  .concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}
+  .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px;letter-spacing:-.005em}
+  .concluir p{font-size:14.5px;opacity:.92;margin-bottom:22px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
+  .btn-concluir{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--coral);padding:16px 30px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:17px;font-weight:600;border:none;cursor:pointer;transition:all .2s;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+  .btn-concluir:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+  .btn-concluir .icone{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .btn-concluir .icone svg{width:14px;height:14px;fill:currentColor}
+
+  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+<script>
+/* Persistência entre sessões (integração 21/07/2026)
+   Espelha as chaves intentia-* gravadas em sessionStorage para localStorage,
+   mantém o array localStorage.intentia-progresso (lido por jornada.html e pela capa)
+   e faz a leitura cair para localStorage quando a aba é nova. */
+(function(){
+  try{
+    var proto = Storage.prototype;
+    var _set = proto.setItem, _get = proto.getItem;
+    function marcaProgresso(k){
+      var m = /^intentia-dia(\d+)$/.exec(k);
+      if(!m) return;
+      try{
+        var arr = JSON.parse(_get.call(localStorage,'intentia-progresso') || '[]');
+        var n = parseInt(m[1],10);
+        if(arr.indexOf(n)===-1){ arr.push(n); arr.sort(function(a,b){return a-b}); _set.call(localStorage,'intentia-progresso', JSON.stringify(arr)); }
+      }catch(e){}
+    }
+    proto.setItem = function(k,v){
+      _set.call(this,k,v);
+      if(this===sessionStorage && /^intentia-/.test(k)){
+        try{ _set.call(localStorage,k,v); }catch(e){}
+        marcaProgresso(k);
+      }
+    };
+    proto.getItem = function(k){
+      var v = _get.call(this,k);
+      if(v===null && this===sessionStorage && /^intentia-/.test(k)){
+        try{ v = _get.call(localStorage,k); }catch(e){}
+      }
+      return v;
+    };
+  }catch(e){}
+})();
+</script>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 4</a><span class="sep">›</span><span class="cur">Missão</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html" class="atual">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 3/index.html" title="Dia 3 (tecla ←)">←<span class="lbl"> Dia 3</span></a><a class="intnav-pill" href="../Dia 5/index.html" title="Dia 5 (tecla →)"><span class="lbl">Dia 5 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 4</a>
+    <div class="eyebrow">Missão · Dia 4</div>
+    <h1>Seu Diagnóstico de <span class="grifo">Reputação</span>.</h1>
+    <p class="lede">Uma foto honesta do que dizem de você hoje e onde você quer chegar — mais uma ação concreta para os próximos 7 dias. Poucas palavras bastam; a IA ajuda a polir.</p>
+    <div class="missao-meta">
+      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 20 min</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg> IA que ajuda</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
+    </div>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<main>
+  <div class="progresso">
+    <div class="progresso-info">
+      <div class="progresso-titulo">Seu preenchimento</div>
+      <div class="progresso-bar"><div class="progresso-fill" id="progresso-fill"></div></div>
+    </div>
+    <div class="progresso-num" id="progresso-num">0/5</div>
+  </div>
+
+  <!-- ETAPA 1: PALAVRAS ATUAIS -->
+  <section class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num">1</div>
+      <div>
+        <div class="etapa-titulo">3 palavras da sua reputação atual</div>
+        <div class="etapa-desc">Se três colegas descrevessem você em uma palavra cada, quais seriam? <b>Primeira resposta, sem editar.</b></div>
+      </div>
+    </div>
+    <div class="palavras-grid">
+      <div class="palavra-input"><span class="indice">01</span><input type="text" id="atual-1" placeholder="ex.: prestativa"></div>
+      <div class="palavra-input"><span class="indice">02</span><input type="text" id="atual-2" placeholder="ex.: dedicada"></div>
+      <div class="palavra-input"><span class="indice">03</span><input type="text" id="atual-3" placeholder="ex.: confiável"></div>
+    </div>
+    <p class="dica">Foco em como você é percebida hoje, não em como quer ser vista. Adjetivos vagos ("boa profissional") são dado — mostram que a nomeação está difusa.</p>
+  </section>
+
+  <!-- ETAPA 2: PALAVRAS DESEJADAS -->
+  <section class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num">2</div>
+      <div>
+        <div class="etapa-titulo">3 palavras da sua reputação desejada</div>
+        <div class="etapa-desc">Em 12 meses, se três colegas descrevessem você em uma palavra cada, o que você <b>quer</b> que apareça? Sem inflacionar, sem se apagar.</div>
+      </div>
+    </div>
+    <div class="palavras-grid">
+      <div class="palavra-input"><span class="indice">01</span><input type="text" id="desejada-1" placeholder="ex.: estratégica"></div>
+      <div class="palavra-input"><span class="indice">02</span><input type="text" id="desejada-2" placeholder="ex.: definitiva em análise"></div>
+      <div class="palavra-input"><span class="indice">03</span><input type="text" id="desejada-3" placeholder="ex.: referência em dados"></div>
+    </div>
+    <button class="ai-btn" data-ai="gap"><svg viewBox="0 0 24 24"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg> Analisar o gap</button>
+    <div class="ai-sugestao" id="ai-gap">
+      <div class="ai-sugestao-header"><svg viewBox="0 0 24 24"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg> Análise da IA</div>
+      <span id="ai-gap-texto"></span>
+    </div>
+  </section>
+
+  <!-- ETAPA 3: DIAGNÓSTICO NCC -->
+  <section class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num">3</div>
+      <div>
+        <div class="etapa-titulo">Em qual dimensão N·C·C você trava?</div>
+        <div class="etapa-desc">Nomeação (falta a frase clara?), Circulação (a frase não sai do seu círculo?) ou Confirmação (falta gente que sustenta)? Pode marcar mais de uma se for o caso.</div>
+      </div>
+    </div>
+    <div class="ncc-diag">
+      <div class="ncc-diag-card" data-dim="nomeacao">
+        <div class="ncc-diag-nome">Nomeação</div>
+        <div class="ncc-diag-pergunta">Falta uma frase clara do que resolvo</div>
+      </div>
+      <div class="ncc-diag-card" data-dim="circulacao">
+        <div class="ncc-diag-nome">Circulação</div>
+        <div class="ncc-diag-pergunta">A frase existe mas não sai do meu círculo</div>
+      </div>
+      <div class="ncc-diag-card" data-dim="confirmacao">
+        <div class="ncc-diag-nome">Confirmação</div>
+        <div class="ncc-diag-pergunta">Falta quem sustente além de mim</div>
+      </div>
+    </div>
+    <p class="ncc-diag-nota">Toque em quantas se encaixarem — se marcar as três, é o momento de escolher UMA para começar.</p>
+  </section>
+
+  <!-- ETAPA 4: 3 PESSOAS-CHAVE -->
+  <section class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num">4</div>
+      <div>
+        <div class="etapa-titulo">3 pessoas-chave que precisam ouvir a nova narrativa</div>
+        <div class="etapa-desc">Não precisam ser do topo — precisam <b>falar com quem decide sobre você</b>: chefes, clientes, pares, comunidade. Nome, cargo/relação, e contexto de encontro.</div>
+      </div>
+    </div>
+    <div id="pessoas-lista"></div>
+  </section>
+
+  <!-- ETAPA 5: AÇÃO 7 DIAS -->
+  <section class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num">5</div>
+      <div>
+        <div class="etapa-titulo">Uma ação concreta para os próximos 7 dias</div>
+        <div class="etapa-desc">Cabe em 30 minutos. Chega em pelo menos <b>uma pessoa nova</b>. Sem campanha, sem projeto — só a ação.</div>
+      </div>
+    </div>
+    <label for="acao">Sua ação de reputação para esta semana</label>
+    <textarea id="acao" placeholder="ex.: Vou pedir a três colegas, um por dia, que me digam em uma frase o que eu resolvo — depois comparo com a minha frase."></textarea>
+    <button class="ai-btn" data-ai="acao"><svg viewBox="0 0 24 24"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg> Refinar a ação</button>
+    <div class="ai-sugestao" id="ai-acao">
+      <div class="ai-sugestao-header"><svg viewBox="0 0 24 24"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg> Sugestão de refino</div>
+      <span id="ai-acao-texto"></span>
+      <div class="ai-sugestao-acoes"><button onclick="usarSugestaoAcao()">Usar essa versão</button></div>
+    </div>
+    <p class="dica">Formato ideal: verbo + público + prazo. "Vou apresentar / o resultado X / para a área Y / na próxima terça." Se qualquer um desses três estiver faltando, a ação vira intenção.</p>
+  </section>
+
+  <div class="concluir">
+    <h3>Terminou o diagnóstico?</h3>
+    <p>Ao concluir, o material do Dia 4 é gerado: seu diagnóstico N·C·C, o gap entre a reputação atual e a desejada, e o plano de ação para 7 dias.</p>
+    <a href="material.html" class="btn-concluir" id="btn-concluir">
+      Ver Meu Diagnóstico de Reputação
+      <span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 4 · Missão — Seu Diagnóstico de Reputação</div>
+</footer>
+
+<script>
+  let pessoas = [];
+  for (let i = 0; i < 3; i++) pessoas.push({nome:'', papel:'', contexto:''});
+  let dimensoes = new Set();
+
+  function renderPessoas() {
+    const lista = document.getElementById('pessoas-lista');
+    lista.innerHTML = '';
+    pessoas.forEach((p, idx) => {
+      const div = document.createElement('div');
+      div.className = 'pessoa-card';
+      div.innerHTML = `
+        <div class="pessoa-num">${idx+1}</div>
+        <div class="pessoa-campos">
+          <input type="text" placeholder="Nome" value="${p.nome}" data-field="nome">
+          <input type="text" placeholder="Cargo ou relação" value="${p.papel}" data-field="papel">
+          <input type="text" placeholder="Contexto de encontro (ex.: reunião semanal)" value="${p.contexto}" data-field="contexto" style="grid-column:1 / -1">
+        </div>
+      `;
+      div.querySelectorAll('input').forEach(inp => {
+        inp.addEventListener('input', e => {
+          p[e.target.dataset.field] = e.target.value;
+          atualizarProgresso();
+        });
+      });
+      lista.appendChild(div);
+    });
+  }
+
+  function atualizarProgresso() {
+    const palavrasAtualOk = ['atual-1','atual-2','atual-3'].every(id => document.getElementById(id).value.trim());
+    const palavrasDesejadaOk = ['desejada-1','desejada-2','desejada-3'].every(id => document.getElementById(id).value.trim());
+    const nccOk = dimensoes.size > 0;
+    const pessoasOk = pessoas.filter(p => p.nome.trim() && p.papel.trim()).length >= 2;
+    const acaoOk = document.getElementById('acao').value.trim().length > 0;
+    const pontos = (palavrasAtualOk?1:0) + (palavrasDesejadaOk?1:0) + (nccOk?1:0) + (pessoasOk?1:0) + (acaoOk?1:0);
+    document.getElementById('progresso-num').textContent = pontos + '/5';
+    document.getElementById('progresso-fill').style.width = (pontos/5*100) + '%';
+  }
+
+  // NCC diagnóstico — múltipla seleção
+  document.querySelectorAll('.ncc-diag-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const dim = card.dataset.dim;
+      if (dimensoes.has(dim)) { dimensoes.delete(dim); card.classList.remove('selected'); }
+      else { dimensoes.add(dim); card.classList.add('selected'); }
+      atualizarProgresso();
+    });
+  });
+
+  // Inputs de palavras
+  ['atual-1','atual-2','atual-3','desejada-1','desejada-2','desejada-3','acao'].forEach(id => {
+    document.getElementById(id).addEventListener('input', atualizarProgresso);
+  });
+
+  // AI helper: análise de gap
+  document.querySelector('[data-ai="gap"]').addEventListener('click', () => {
+    const atuais = [document.getElementById('atual-1').value.trim(),document.getElementById('atual-2').value.trim(),document.getElementById('atual-3').value.trim()].filter(Boolean);
+    const desejadas = [document.getElementById('desejada-1').value.trim(),document.getElementById('desejada-2').value.trim(),document.getElementById('desejada-3').value.trim()].filter(Boolean);
+    if (atuais.length < 3 || desejadas.length < 3) return;
+    const box = document.getElementById('ai-gap');
+    setTimeout(() => {
+      const analise = `Sua reputação atual gira em torno de <b>${atuais.join(', ')}</b>. Você quer chegar em <b>${desejadas.join(', ')}</b>. O padrão observado é que as atuais descrevem <em>como você trabalha</em> — as desejadas descrevem <em>o que você resolve</em>. É a diferença entre reputação de esforço e reputação de contribuição específica. A ponte entre uma e outra é a Nomeação: precisar da frase curta que descreva a segunda coluna.`;
+      document.getElementById('ai-gap-texto').innerHTML = analise;
+      box.classList.add('visivel');
+    }, 500);
+  });
+
+  // AI helper: refino de ação
+  document.querySelector('[data-ai="acao"]').addEventListener('click', () => {
+    const val = document.getElementById('acao').value.trim();
+    if (!val) return;
+    setTimeout(() => {
+      const primeiraFrase = val.split(/[.!?]/)[0].trim();
+      const refinado = `${primeiraFrase.charAt(0).toUpperCase() + primeiraFrase.slice(1)}${val.match(/[.!?]$/) ? '' : '.'} Isso já é uma ação de reputação legítima — verbo claro, público específico, prazo curto. Uma variação para considerar: começar pela pessoa que menos te conhece bem, para o retorno ser mais honesto.`;
+      document.getElementById('ai-acao-texto').textContent = refinado;
+      document.getElementById('ai-acao').classList.add('visivel');
+    }, 500);
+  });
+
+  function usarSugestaoAcao() {
+    document.getElementById('acao').value = document.getElementById('ai-acao-texto').textContent;
+    document.getElementById('ai-acao').classList.remove('visivel');
+    atualizarProgresso();
+  }
+
+  // Salvar ao concluir
+  document.getElementById('btn-concluir').addEventListener('click', () => {
+    try {
+      sessionStorage.setItem('intentia-dia4', JSON.stringify({
+        dataConclusao: new Date().toISOString(),
+        palavrasAtuais: ['atual-1','atual-2','atual-3'].map(id => document.getElementById(id).value),
+        palavrasDesejadas: ['desejada-1','desejada-2','desejada-3'].map(id => document.getElementById(id).value),
+        dimensoesTravadas: Array.from(dimensoes),
+        pessoas: pessoas,
+        acao: document.getElementById('acao').value
+      }));
+    } catch(e) {}
+  });
+
+  renderPessoas();
+  atualizarProgresso();
+</script>
+
+</body>
+</html>

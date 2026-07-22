@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 12 · Placar Propósito</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.6vw,42px);line-height:1.12;margin-bottom:14px;letter-spacing:-.01em}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:640px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  main{max-width:960px;margin:0 auto;padding:0 24px 40px}
+  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:16px 22px;margin:24px 0;display:flex;align-items:flex-start;gap:14px;font-size:13.5px;line-height:1.55}
+  .aviso-demo-icone{color:var(--coral);font-size:20px;flex-shrink:0;margin-top:2px}
+  .aviso-demo b{color:var(--verde-900)}
+  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
+
+  /* Comparativo destaque no topo */
+  .comparativo-topo{background:linear-gradient(135deg, var(--verde-900) 0%, #1d453f 100%);color:var(--creme);border-radius:16px;padding:28px 32px;margin:24px 0;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(39,87,80,.2)}
+  .comparativo-label{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  .comparativo-titulo{font-family:var(--serif);font-size:24px;font-weight:600;color:#fff;margin-bottom:16px;line-height:1.25}
+  .comp-lista{display:flex;flex-direction:column;gap:10px}
+  .comp-item{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px;padding:12px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:10px;align-items:center;font-size:13px}
+  @media (max-width:640px){.comp-item{grid-template-columns:1fr;gap:6px}.comp-lado::before{content:attr(data-label);display:block;font-size:10px;color:#A9C6B8;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:2px}}
+  .comp-nome{font-family:var(--serif);color:#fff;font-size:14px;font-weight:600}
+  .comp-lado{font-size:12.5px;color:#CFE0D6}
+  .comp-badge{display:inline-block;background:rgba(255,104,66,.2);border:1px solid rgba(255,104,66,.4);color:#fff;padding:2px 8px;border-radius:8px;font-size:11.5px;font-weight:600;margin-left:6px}
+  .comp-item.divergente{background:rgba(255,104,66,.08);border-color:rgba(255,104,66,.25)}
+  .comp-nota{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.10);font-size:13px;color:#CFE0D6;line-height:1.55;font-style:italic}
+  .comp-nota b{color:#fff;font-weight:600;font-style:normal}
+
+  /* Grid de 3 Eus com lentes */
+  .prop-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:18px;margin:24px 0}
+  @media (max-width:820px){.prop-grid{grid-template-columns:1fr}}
+  .prop-col{background:#fff;border:1px solid var(--verde-100);border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06);display:flex;flex-direction:column}
+  .prop-col-header{padding:22px 22px 18px;color:#fff}
+  .prop-col.continuacao .prop-col-header{background:linear-gradient(135deg, #336B62 0%, #275750 100%)}
+  .prop-col.adjacencia .prop-col-header{background:linear-gradient(135deg, #FF7A57 0%, #E85530 100%)}
+  .prop-col.reinvencao .prop-col-header{background:linear-gradient(135deg, #8B7BB8 0%, #5F4E8C 100%)}
+  .prop-col-letra{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;font-family:var(--serif);font-size:18px;font-weight:600;margin-bottom:10px}
+  .prop-col-tipo{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.85;margin-bottom:4px}
+  .prop-col-nome{font-family:var(--serif);font-size:15px;font-weight:500;font-style:italic;line-height:1.3;opacity:.95}
+  .prop-col-body{padding:22px;flex:1}
+
+  .prop-placar{text-align:center;margin-bottom:18px;padding:12px 16px;background:var(--creme);border-radius:10px}
+  .prop-placar-num{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--coral);line-height:1}
+  .prop-placar-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-suave);margin-top:4px}
+
+  .lente-linha{margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed var(--verde-100)}
+  .lente-linha:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .lente-header-linha{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .lente-letra-linha{width:24px;height:24px;background:var(--verde-100);color:var(--verde-700);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:12px}
+  .lente-nome-linha{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--verde-900);flex:1}
+  .forca-tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;letter-spacing:.05em;text-transform:uppercase}
+  .forca-tag.forte{background:var(--coral);color:#fff}
+  .forca-tag.medio{background:var(--verde-500);color:#fff}
+  .forca-tag.fraco{background:var(--verde-100);color:var(--tinta-suave)}
+  .forca-tag.vazio{background:transparent;color:var(--tinta-suave);border:1px dashed var(--verde-100)}
+  .lente-texto{font-size:12.5px;color:var(--tinta);line-height:1.5;font-style:italic}
+  .vazia{color:var(--tinta-suave)}
+
+  /* Insight */
+  .insight-topo{background:linear-gradient(135deg, #fff 0%, #FFF8F5 100%);border:1.5px solid var(--coral-soft);border-radius:16px;padding:28px 32px;margin:24px 0;position:relative;box-shadow:0 6px 22px rgba(255,104,66,.08)}
+  .insight-topo::before{content:"";position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(to bottom, var(--coral) 0%, #FF7A57 100%);border-radius:16px 0 0 16px}
+  .badge-novo{display:inline-flex;align-items:center;gap:5px;background:var(--coral);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 11px;border-radius:14px;margin-bottom:12px}
+  .badge-novo::before{content:"◆"}
+  .insight-topo h2{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--verde-900);margin-bottom:10px}
+  .insight-topo .insight-conteudo{font-family:var(--serif);font-size:18px;line-height:1.45;color:var(--tinta);font-weight:500;font-style:italic}
+
+  .fechamento{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 32px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .fechamento h2{font-family:var(--serif);font-size:22px;color:var(--verde-900);margin-bottom:12px;font-weight:600}
+  .fechamento p{font-size:15px;color:var(--tinta);line-height:1.65;margin-bottom:12px}
+  .fechamento p:last-child{margin-bottom:0}
+  .fechamento b{color:var(--verde-900)}
+
+  .proximo{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:28px 30px;margin:24px 0;text-align:center;position:relative;overflow:hidden}
+  .proximo-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+  .proximo h3{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;margin-bottom:8px}
+  .proximo p{font-size:14.5px;color:#CFE0D6;margin-bottom:20px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
+  .proximo-cta{display:inline-flex;align-items:center;gap:12px;background:var(--coral);color:#fff;padding:14px 26px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:16px;font-weight:600;transition:transform .2s;box-shadow:0 6px 18px rgba(255,104,66,.32)}
+  .proximo-cta:hover{transform:translateY(-2px)}
+  .proximo-cta svg{width:14px;height:14px;fill:currentColor}
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+
+  /* === TEXTO JUSTIFICADO (materiais) === */
+  main p{text-align:justify;text-justify:inter-word;hyphens:auto}
+  main .fechamento, main .fechamento p, main .movimento-conteudo, main .movimento-legenda, main .insight-conteudo, main .direcao-conteudo, main .direcao-recap-frase, main .campo-conteudo:not(.destaque), main .marca-item-conteudo, main .pergunta-topo-texto, main .perfil-legenda, main .dim-exemplo, main .lente-texto, main .mov-texto, main .comp-nota, main .acumulado-nota, main .fechamento-conteudo, main .eu-cena, main .eu-preco, main .campo-conteudo{text-align:justify;text-justify:inter-word;hyphens:auto}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 12</a><span class="sep">›</span><span class="cur">Material</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html">Missão</a><a href="material.html" class="atual">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 11/index.html" title="Dia 11 (tecla ←)">←<span class="lbl"> Dia 11</span></a><a class="intnav-pill" href="../Dia 13/index.html" title="Dia 13 (tecla →)"><span class="lbl">Dia 13 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 12</a>
+    <div class="eyebrow">Material · Dia 12 · Semana 2 · Dia 5 de 7</div>
+    <h1>Placar <span class="grifo">Propósito</span> — os 3 Eus vistos por Legado, Serviço, Vocação.</h1>
+    <p class="lede">Compare com o placar por critério (Dia 10). Coincidência: convergência forte. Divergência: sinal importante — o critério e o sentido nem sempre apontam para a mesma versão.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<main>
+  <div id="aviso-demo" class="aviso-demo" style="display:none">
+    <div class="aviso-demo-icone">◆</div>
+    <div><b>Você ainda não preencheu a missão do Dia 12.</b> Os dados abaixo estão em <b>modo demonstrativo</b>. <a href="missao.html">Ir preencher agora →</a></div>
+  </div>
+
+  <!-- COMPARATIVO NO TOPO -->
+  <div class="comparativo-topo">
+    <div class="comparativo-label">Critério (Dia 10) × Propósito (Dia 12)</div>
+    <div class="comparativo-titulo">Onde eles convergem, onde eles divergem</div>
+    <div class="comp-lista" id="comp-lista"></div>
+    <div class="comp-nota" id="comp-nota">Preencha as missões para ver as duas leituras aqui.</div>
+  </div>
+
+  <div class="prop-grid">
+    <div class="prop-col continuacao">
+      <div class="prop-col-header">
+        <div class="prop-col-letra">C</div>
+        <div class="prop-col-tipo">Eu · Continuação</div>
+        <div class="prop-col-nome" id="cont-nome">—</div>
+      </div>
+      <div class="prop-col-body">
+        <div class="prop-placar"><div class="prop-placar-num" id="cont-placar">—</div><div class="prop-placar-label">Placar propósito</div></div>
+        <div class="lente-linha" id="cont-leg-linha">
+          <div class="lente-header-linha"><div class="lente-letra-linha">L</div><div class="lente-nome-linha">Legado</div><span class="forca-tag vazio" id="cont-leg-tag">—</span></div>
+          <div class="lente-texto vazia" id="cont-leg-txt">—</div>
+        </div>
+        <div class="lente-linha" id="cont-ser-linha">
+          <div class="lente-header-linha"><div class="lente-letra-linha">S</div><div class="lente-nome-linha">Serviço</div><span class="forca-tag vazio" id="cont-ser-tag">—</span></div>
+          <div class="lente-texto vazia" id="cont-ser-txt">—</div>
+        </div>
+        <div class="lente-linha" id="cont-voc-linha">
+          <div class="lente-header-linha"><div class="lente-letra-linha">V</div><div class="lente-nome-linha">Vocação</div><span class="forca-tag vazio" id="cont-voc-tag">—</span></div>
+          <div class="lente-texto vazia" id="cont-voc-txt">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-col adjacencia">
+      <div class="prop-col-header">
+        <div class="prop-col-letra">A</div>
+        <div class="prop-col-tipo">Eu · Adjacência</div>
+        <div class="prop-col-nome" id="adj-nome">—</div>
+      </div>
+      <div class="prop-col-body">
+        <div class="prop-placar"><div class="prop-placar-num" id="adj-placar">—</div><div class="prop-placar-label">Placar propósito</div></div>
+        <div class="lente-linha">
+          <div class="lente-header-linha"><div class="lente-letra-linha">L</div><div class="lente-nome-linha">Legado</div><span class="forca-tag vazio" id="adj-leg-tag">—</span></div>
+          <div class="lente-texto vazia" id="adj-leg-txt">—</div>
+        </div>
+        <div class="lente-linha">
+          <div class="lente-header-linha"><div class="lente-letra-linha">S</div><div class="lente-nome-linha">Serviço</div><span class="forca-tag vazio" id="adj-ser-tag">—</span></div>
+          <div class="lente-texto vazia" id="adj-ser-txt">—</div>
+        </div>
+        <div class="lente-linha">
+          <div class="lente-header-linha"><div class="lente-letra-linha">V</div><div class="lente-nome-linha">Vocação</div><span class="forca-tag vazio" id="adj-voc-tag">—</span></div>
+          <div class="lente-texto vazia" id="adj-voc-txt">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-col reinvencao">
+      <div class="prop-col-header">
+        <div class="prop-col-letra">R</div>
+        <div class="prop-col-tipo">Eu · Reinvenção</div>
+        <div class="prop-col-nome" id="rei-nome">—</div>
+      </div>
+      <div class="prop-col-body">
+        <div class="prop-placar"><div class="prop-placar-num" id="rei-placar">—</div><div class="prop-placar-label">Placar propósito</div></div>
+        <div class="lente-linha">
+          <div class="lente-header-linha"><div class="lente-letra-linha">L</div><div class="lente-nome-linha">Legado</div><span class="forca-tag vazio" id="rei-leg-tag">—</span></div>
+          <div class="lente-texto vazia" id="rei-leg-txt">—</div>
+        </div>
+        <div class="lente-linha">
+          <div class="lente-header-linha"><div class="lente-letra-linha">S</div><div class="lente-nome-linha">Serviço</div><span class="forca-tag vazio" id="rei-ser-tag">—</span></div>
+          <div class="lente-texto vazia" id="rei-ser-txt">—</div>
+        </div>
+        <div class="lente-linha">
+          <div class="lente-header-linha"><div class="lente-letra-linha">V</div><div class="lente-nome-linha">Vocação</div><span class="forca-tag vazio" id="rei-voc-tag">—</span></div>
+          <div class="lente-texto vazia" id="rei-voc-txt">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-topo">
+    <div class="badge-novo">Insight do Dia 12</div>
+    <h2>O que aparece quando você compara os 2 placares</h2>
+    <div class="insight-conteudo" id="insight-texto">—</div>
+  </div>
+
+  <div class="fechamento">
+    <h2>Como ler as convergências e divergências</h2>
+    <p><b>Convergência forte</b> (mesma versão ganha por critério E propósito): você tem uma versão que <em>é sustentável estruturalmente e alimenta sentido</em>. Amanhã e depois vão só refinar essa escolha.</p>
+    <p><b>Divergência clara</b> (versões diferentes ganham): sinal importantíssimo. A versão que ganhou por critério pode virar <em>deserção lenta</em> (você fica anos, mas sem alma); a que ganhou por propósito pode virar <em>ruptura precipitada</em> se atravessada sem preparo. A convergência do Dia 14 vai combinar as duas.</p>
+    <p><b>Placar propósito baixo em todas as versões</b>: sinal que as 3 versões geradas no Dia 8 <em>não passaram pelo filtro do que importa</em> para você. Pode ser hora de reabrir e gerar uma quarta versão — ou de reconhecer que sua vocação atual pede continuidade, não novidade.</p>
+  </div>
+
+  <div class="proximo">
+    <div class="proximo-eyebrow">Amanhã · Dia 13</div>
+    <h3>O essencial — o que subtrair</h3>
+    <p>McKeown e Strack: pensamento estratégico é sobre <b>o que não fazer</b>. Amanhã cada Eu passa pelo teste do essencial — o que precisa ser subtraído para essa versão caber na sua vida.</p>
+    <a href="../Dia 13/index.html" class="proximo-cta">Ir para o Dia 13 <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></a>
+  </div>
+<!--intentia-dayend:start--><style>
+.intday{background:linear-gradient(135deg,#275750 0%,#1d453f 100%);color:#F5F7F3;border-radius:20px;
+  padding:34px 38px;margin:36px 0 8px;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif}
+.intday .intday-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7CA89E;margin-bottom:10px}
+.intday h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:22px;line-height:1.25;margin:0 0 10px;color:#F5F7F3}
+.intday p{font-size:14.5px;line-height:1.6;color:#CFE0D6;margin:0 0 20px;max-width:560px}
+.intday .intday-cta{display:inline-flex;align-items:center;gap:8px;background:#FF6842;color:#fff;text-decoration:none;
+  font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 10px 24px rgba(255,104,66,.3);transition:transform .2s,box-shadow .2s}
+.intday .intday-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,104,66,.4)}
+@media(max-width:600px){.intday{padding:26px 22px}.intday h3{font-size:19px}}
+</style><div class="intday"><div class="intday-eyebrow">A jornada continua</div><h3>Amanhã: Dia 13 — Essencial — o que fica quando você tira o resto.</h3><p>Você concluiu o Dia 12. Quando estiver pronto, dê o próximo passo da travessia.</p><a class="intday-cta" href="../Dia 13/index.html">Ir para o Dia 13 →</a></div><!--intentia-dayend:end-->
+</main>
+
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Dia 12 · Placar Propósito</div></footer>
+
+<script>
+  const NOMES_EU = { continuacao: 'Eu-Continuação', adjacencia: 'Eu-Adjacência', reinvencao: 'Eu-Reinvenção' };
+  const NOMES_FORCA = { forte:'Forte', medio:'Médio', fraco:'Fraco' };
+
+  const DEMO_DIA8 = {
+    continuacao: { nome: 'A analista sênior que virou referência em análise de decisão' },
+    adjacencia: { nome: 'A analista sênior que virou head de dados de fintech' },
+    reinvencao: { nome: 'A professora e autora sobre alfabetização de dados' }
+  };
+  const DEMO_DIA10 = {
+    continuacao: { notas: {aloc:4, rev:5, ret:3} },
+    adjacencia: { notas: {aloc:2, rev:3, ret:4} },
+    reinvencao: { notas: {aloc:3, rev:2, ret:2} }
+  };
+  const DEMO_DIA12 = {
+    continuacao: { legado:{forca:'forte', texto:'blog, aulas, alunos formados'}, servico:{forca:'forte', texto:'gestores não-técnicos que precisam interpretar dados'}, vocacao:{forca:'forte', texto:'sempre gostei de traduzir complexo em simples'} },
+    adjacencia: { legado:{forca:'medio', texto:'sistemas e times construídos, menos autoral'}, servico:{forca:'forte', texto:'clientes da fintech e time interno'}, vocacao:{forca:'fraco', texto:'parte da atração é escapar da indústria, não ir para fintech'} },
+    reinvencao: { legado:{forca:'forte', texto:'cursos, livros, alunos formados'}, servico:{forca:'forte', texto:'pequenos empreendedores criativos'}, vocacao:{forca:'forte', texto:'sempre ensinei informalmente, sempre traduzi para clientes'} },
+    insight: 'Reinvenção subiu no propósito o quanto perdeu no critério — sinal forte. Vale considerar seriamente.'
+  };
+
+  function pega(k, fb) { try{const s=sessionStorage.getItem(k);if(s){const p=JSON.parse(s);if(p&&Object.keys(p).length>0)return p;}}catch(e){}return fb; }
+
+  const dia8 = pega('intentia-dia8', DEMO_DIA8);
+  const dia10 = pega('intentia-dia10', DEMO_DIA10);
+  const dia12raw = sessionStorage.getItem('intentia-dia12');
+  let dia12, demo12 = false;
+  try {
+    const p = dia12raw ? JSON.parse(dia12raw) : null;
+    if (p && p.continuacao && p.continuacao.legado && p.continuacao.legado.forca) dia12 = p;
+    else { dia12 = DEMO_DIA12; demo12 = true; }
+  } catch(e){ dia12 = DEMO_DIA12; demo12 = true; }
+  if (demo12) document.getElementById('aviso-demo').style.display = 'flex';
+
+  function setText(id, val) { const el = document.getElementById(id); if (!el) return; if (!val || !val.toString().trim()) { el.textContent = '—'; el.classList.add('vazia'); } else { el.textContent = val; el.classList.remove('vazia'); } }
+
+  function calcularPlacar(dados) {
+    const val = {forte:3, medio:2, fraco:1};
+    const soma = (val[dados.legado?.forca]||0) + (val[dados.servico?.forca]||0) + (val[dados.vocacao?.forca]||0);
+    if (soma === 0) return {label:'—', num:0};
+    if (soma >= 8) return {label:'Alto', num:soma};
+    if (soma >= 6) return {label:'Médio-alto', num:soma};
+    if (soma >= 4) return {label:'Médio', num:soma};
+    return {label:'Baixo', num:soma};
+  }
+
+  const placares = {};
+  ['continuacao','adjacencia','reinvencao'].forEach(tipo => {
+    const prefix = tipo === 'continuacao' ? 'cont' : (tipo === 'adjacencia' ? 'adj' : 'rei');
+    setText(prefix + '-nome', dia8[tipo] ? dia8[tipo].nome : null);
+    const dados = dia12[tipo] || {};
+    const placar = calcularPlacar(dados);
+    placares[tipo] = placar;
+    document.getElementById(prefix+'-placar').textContent = placar.label;
+    ['legado','servico','vocacao'].forEach(lente => {
+      const short = lente === 'legado' ? 'leg' : (lente === 'servico' ? 'ser' : 'voc');
+      const d = dados[lente] || {};
+      const tag = document.getElementById(prefix+'-'+short+'-tag');
+      if (tag) {
+        if (d.forca) { tag.className = 'forca-tag ' + d.forca; tag.textContent = NOMES_FORCA[d.forca]; }
+      }
+      setText(prefix+'-'+short+'-txt', d.texto);
+    });
+  });
+
+  // Comparativo
+  const criterioTot = {};
+  ['continuacao','adjacencia','reinvencao'].forEach(t => {
+    const n = (dia10[t] && dia10[t].notas) || {};
+    criterioTot[t] = (n.aloc||0) + (n.rev||0) + (n.ret||0);
+  });
+  const rankCriterio = ['continuacao','adjacencia','reinvencao'].sort((a,b) => criterioTot[b] - criterioTot[a]);
+  const rankProposito = ['continuacao','adjacencia','reinvencao'].sort((a,b) => placares[b].num - placares[a].num);
+
+  const compLista = document.getElementById('comp-lista');
+  ['continuacao','adjacencia','reinvencao'].forEach(t => {
+    const posCrit = rankCriterio.indexOf(t) + 1;
+    const posProp = rankProposito.indexOf(t) + 1;
+    const divergente = posCrit !== posProp;
+    const item = document.createElement('div');
+    item.className = 'comp-item' + (divergente ? ' divergente' : '');
+    item.innerHTML = `<div class="comp-nome">${NOMES_EU[t]}</div><div class="comp-lado" data-label="Critério">Placar ${criterioTot[t] || '—'}/15 <span class="comp-badge">${posCrit}º</span></div><div class="comp-lado" data-label="Propósito">${placares[t].label} <span class="comp-badge">${posProp}º</span></div>`;
+    compLista.appendChild(item);
+  });
+
+  // Nota
+  const igual = rankCriterio[0] === rankProposito[0];
+  const nota = document.getElementById('comp-nota');
+  if (igual) nota.innerHTML = `<b>${NOMES_EU[rankCriterio[0]]}</b> ganha nos dois placares — <b>convergência forte</b>. Amanhã o exercício do essencial vai refinar essa escolha.`;
+  else nota.innerHTML = `Ganharam versões <b>diferentes</b> — <b>${NOMES_EU[rankCriterio[0]]}</b> por critério, <b>${NOMES_EU[rankProposito[0]]}</b> por propósito. Divergência é sinal, não erro. Vale reler amanhã com o filtro do essencial.`;
+
+  setText('insight-texto', dia12.insight || '(sem insight registrado)');
+</script>
+
+</body>
+</html>

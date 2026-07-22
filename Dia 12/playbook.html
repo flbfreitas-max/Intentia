@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 12 · Playbook — Propósito construído</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:14px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
+  .intro-caixa{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .intro-caixa h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .intro-caixa p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .intro-caixa p:last-child{margin-bottom:0}
+  .intro-caixa b{color:var(--verde-900)}
+
+  .lente-secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06)}
+  .lente-secao-header{padding:22px 28px 20px;color:#fff;display:flex;align-items:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%)}
+  .lente-secao-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
+  .lente-secao-titulo{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2}
+  .lente-secao-sub{font-size:13px;opacity:.92;font-style:italic;margin-top:3px}
+  .lente-secao-body{padding:22px 28px 26px}
+  .lente-secao-body p{margin-bottom:14px;font-size:15px;line-height:1.7}
+  .lente-secao-body p:last-child{margin-bottom:0}
+  .lente-secao-body b{color:var(--verde-900)}
+  .subsec-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin:22px 0 10px;padding-top:18px;border-top:1px dashed var(--verde-100)}
+  .subsec-label:first-child{margin-top:0;padding-top:0;border-top:none}
+  .caixa-perguntas{background:var(--creme);border-left:3px solid var(--verde-700);border-radius:0 10px 10px 0;padding:14px 20px;margin-top:12px;font-size:14px;line-height:1.6}
+  .caixa-perguntas ul{list-style:none;padding:0;margin:0}
+  .caixa-perguntas li{padding:5px 0 5px 16px;position:relative}
+  .caixa-perguntas li::before{content:"→";position:absolute;left:0;color:var(--coral);font-weight:700}
+  .caixa-perguntas li em{color:var(--verde-900);font-weight:500;font-family:var(--serif);font-style:italic}
+  .erro-caixa{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
+  .erro-caixa .erro-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .erro-caixa b{color:var(--verde-900)}
+
+  .aviso-final{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0 20px}
+  .aviso-final h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .aviso-final p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .aviso-final p:last-child{margin-bottom:0}
+  .aviso-final b{color:var(--verde-900)}
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 12</a><span class="sep">›</span><span class="cur">Playbook</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html" class="atual">Playbook</a><a href="missao.html">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 11/index.html" title="Dia 11 (tecla ←)">←<span class="lbl"> Dia 11</span></a><a class="intnav-pill" href="../Dia 13/index.html" title="Dia 13 (tecla →)"><span class="lbl">Dia 13 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 12</a>
+    <div class="eyebrow">Playbook · Dia 12</div>
+    <h1>Legado, Serviço, Vocação — <span class="grifo">a fundo</span>.</h1>
+    <p class="lede">As três lentes decompõem o que "propósito" significa em partes operacionais. Cada uma pergunta algo específico e verificável; cada uma tem um erro clássico que engana quem não conhece.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<main>
+  <div class="intro-caixa">
+    <h2>Propósito não é encontrado — mas também não é inventado</h2>
+    <p>O erro do "propósito encontrado" é <b>esperar epifania</b>. O erro oposto — "propósito inventado" — é imaginar que basta decidir. Nenhum dos dois se sustenta. Propósito é <em>construído</em>: emerge do encadeamento de escolhas repetidas ao longo do tempo, cada uma feita com atenção a algo que serve.</p>
+    <p>As 3 lentes de hoje são <b>diagnóstico do propósito em construção</b>. Elas não perguntam "qual seu propósito?" (pergunta grande, quase impossível de responder). Perguntam três coisas menores e verificáveis: <em>o que fica</em>, <em>a quem serve</em>, <em>o que chama</em>. Se essas três se alinham numa versão, o propósito está sendo construído. Se não se alinham, algum ajuste é necessário.</p>
+  </div>
+
+  <section class="lente-secao">
+    <div class="lente-secao-header"><div class="lente-secao-letra">L</div><div><div class="lente-secao-titulo">Lente Legado</div><div class="lente-secao-sub">"o que fica depois de você não estar mais nessa versão"</div></div></div>
+    <div class="lente-secao-body">
+      <div class="subsec-label">O que ela mede</div>
+      <p>Legado não é fama, tamanho ou reconhecimento imediato. É <b>durabilidade</b>: o que dessa versão continua a fazer efeito no mundo depois que você mudar ou parar. Pode ser material (livros, cursos, produtos, código), sistema (empresa/time/processo funcionando sem você), pessoas (alunos, mentorados), ou cultura (uma prática nova que outros adotam).</p>
+      <p>A pergunta operacional: se você viver essa versão por 5-15 anos e depois soltar, <b>o que resta impresso</b>?</p>
+
+      <div class="subsec-label">Perguntas que ativam a lente</div>
+      <div class="caixa-perguntas">
+        <ul>
+          <li><em>O que sobra dessa versão quando eu me aposentar dela?</em></li>
+          <li><em>Nomear 3 pessoas concretas cuja trajetória mudou por causa dessa versão minha.</em></li>
+          <li><em>Se eu escrevesse um obituário profissional de 5 linhas — o que essa versão contribui para ele?</em></li>
+          <li><em>A qual conversa/discussão eu adicionei algo que ficou registrado?</em></li>
+        </ul>
+      </div>
+
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p>Confundir Legado com <em>fama ou impacto grande</em>. Um professor que forma 200 alunos ao longo de 30 anos tem legado maior que um influencer com 50 mil seguidores que somem em 5 anos. <b>Legado mede-se pela durabilidade, não pela amplitude imediata.</b></p></div>
+    </div>
+  </section>
+
+  <section class="lente-secao">
+    <div class="lente-secao-header"><div class="lente-secao-letra">S</div><div><div class="lente-secao-titulo">Lente Serviço</div><div class="lente-secao-sub">"a quem essa versão serve concretamente"</div></div></div>
+    <div class="lente-secao-body">
+      <div class="subsec-label">O que ela mede</div>
+      <p>A dimensão mais imediata do propósito. Não pergunta o que fica em 20 anos — pergunta a quem você serve <em>na próxima segunda</em>. Nome (ou tipo) do público, número aproximado, dor específica que você alivia.</p>
+      <p>A pergunta operacional: quando essa versão está funcionando bem, <b>quem está sendo servido</b> e como?</p>
+
+      <div class="subsec-label">Perguntas que ativam a lente</div>
+      <div class="caixa-perguntas">
+        <ul>
+          <li><em>Se eu descrevesse meu cliente/beneficiário ideal em 2 linhas, quem é?</em></li>
+          <li><em>Quantas pessoas essa versão de mim atende por ano? Por semana?</em></li>
+          <li><em>Qual dor específica dessas pessoas eu alivio?</em></li>
+          <li><em>Se eu perguntasse a 3 dessas pessoas o que mudou porque eu existo, o que elas diriam?</em></li>
+        </ul>
+      </div>
+
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p>Serviço "abstrato" (servir "as pessoas", "a sociedade", "o mundo") = quase sempre serviço fraco. Toda versão sólida em Serviço tem <b>público nomeado</b> — um segmento reconhecível cuja necessidade específica você atende. Sem público nomeado, a versão vira gesto vazio.</p></div>
+    </div>
+  </section>
+
+  <section class="lente-secao">
+    <div class="lente-secao-header"><div class="lente-secao-letra">V</div><div><div class="lente-secao-titulo">Lente Vocação</div><div class="lente-secao-sub">"o que chama, para além de salário e status"</div></div></div>
+    <div class="lente-secao-body">
+      <div class="subsec-label">O que ela mede</div>
+      <p>A força interna que sobra <em>depois</em> que a força externa é subtraída. Uma versão com salário alto e reconhecimento pode ter vocação zero (você faz pelo salário). Uma versão sem salário pode ter vocação enorme (você faz de graça se pudesse). A pergunta operacional: retirando salário, retirando reconhecimento, <b>o que ainda te chama para essa versão</b>?</p>
+
+      <div class="subsec-label">Perguntas que ativam a lente</div>
+      <div class="caixa-perguntas">
+        <ul>
+          <li><em>Se essa versão pagasse metade do que eu ganho hoje, eu ainda escolheria?</em></li>
+          <li><em>Qual parte dessa versão eu faria mesmo sem que ninguém soubesse (sem status)?</em></li>
+          <li><em>O que dessa versão eu quero mesmo, não porque "faz sentido" para outros?</em></li>
+          <li><em>Ao imaginar essa versão, meu corpo abre ou fecha? Alivia ou pesa?</em></li>
+        </ul>
+      </div>
+
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p>Confundir vocação com <em>paixão fácil ou entusiasmo passageiro</em>. Vocação sólida é <b>chamado persistente</b> — algo que continua chamando mesmo depois que a novidade passou, mesmo nos dias difíceis. Se você só sente vocação quando as coisas vão bem, é entusiasmo — não vocação.</p></div>
+    </div>
+  </section>
+
+  <div class="aviso-final">
+    <h3>Como usar essas 3 lentes daqui em diante</h3>
+    <p>As lentes de propósito <b>não substituem</b> os filtros de decisão (Dia 10). Elas complementam. Uma versão pode passar os 3 filtros com nota alta e falhar em propósito — nesse caso, provavelmente vira sustentabilidade sem alma; escolha racional que vira deserção lenta em 3-5 anos.</p>
+    <p>Uma versão pode reprovar em critério e passar forte em propósito — nesse caso, é <em>preciso construir plano de ponte</em> que resolva a fragilidade estrutural sem perder o que dá sentido. É frequentemente a escolha certa, só exige mais preparo antes de atravessar.</p>
+    <p>Amanhã (Dia 13) o filtro do essencial vai perguntar: <em>o que você precisa subtrair</em> para essa versão caber na sua vida? Muitas vezes o problema não é escolher entre versões — é reconhecer que <b>a versão certa exige tirar coisas</b>, não só adicionar.</p>
+  </div>
+</main>
+
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Dia 12 · Playbook — Propósito construído</div></footer>
+</body>
+</html>

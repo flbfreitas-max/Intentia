@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 6 · Playbook — A cadeia A·C·I</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.7;font-size:17px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 56px;position:relative}
+  .hero-inner{max-width:760px;margin:0 auto}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:14px}
+  .voltar:hover{color:#fff}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .badge-aprofundamento{display:inline-flex;align-items:center;gap:8px;background:rgba(255,104,66,.18);color:var(--coral-soft);border:1px solid rgba(255,104,66,.35);padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.15;letter-spacing:-.01em;margin-bottom:12px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  main{max-width:760px;margin:0 auto;padding:36px 24px}
+  section{margin-bottom:36px}
+  section h2{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--verde-900);margin-bottom:16px;letter-spacing:-.005em}
+  section p{margin-bottom:14px}
+  section blockquote{background:var(--verde-100);border-left:4px solid var(--verde-700);padding:18px 22px;font-family:var(--serif);font-size:19px;line-height:1.4;color:var(--verde-900);font-style:italic;margin:16px 0;border-radius:0 10px 10px 0}
+  .dim{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 26px;margin-bottom:16px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .dim-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+  .dim-ico{width:44px;height:44px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;font-weight:600;flex-shrink:0}
+  .dim-head h3{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--verde-900);line-height:1.2}
+  .def{font-size:15px;color:var(--tinta-suave);font-style:italic;margin-bottom:12px}
+  .dim h4{font-size:11.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--coral);margin-top:14px;margin-bottom:8px}
+  .gatilhos{list-style:none;padding:0}
+  .gatilhos li{padding:6px 0 6px 22px;position:relative;font-size:14.5px;line-height:1.55}
+  .gatilhos li::before{content:"→";position:absolute;left:0;color:var(--coral);font-weight:700}
+  .caso{background:var(--creme);border-radius:10px;padding:14px 18px;font-size:14px;line-height:1.55;margin-top:10px}
+  .caso .quem{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--verde-700);display:block;margin-bottom:6px}
+  .caso.c2 .quem{color:var(--coral)}
+  .caso.c3 .quem{color:var(--verde-500)}
+  .caso b{color:var(--verde-900)}
+  .prox{text-align:center;font-size:14px;color:var(--tinta-suave);margin-top:32px;padding:20px;background:#fff;border:1px dashed var(--verde-500);border-radius:12px}
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 6</a><span class="sep">›</span><span class="cur">Playbook</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html" class="atual">Playbook</a><a href="missao.html">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 5/index.html" title="Dia 5 (tecla ←)">←<span class="lbl"> Dia 5</span></a><a class="intnav-pill" href="../Dia 7/index.html" title="Dia 7 (tecla →)"><span class="lbl">Dia 7 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 6</a>
+    <span class="badge-aprofundamento">Playbook · Aprofundamento do Dia 6</span>
+    <div class="eyebrow">Trilha Capital de Carreira · Bloco 1 · Dia 6</div>
+    <h1>A cadeia A·C·I, <span class="grifo">em profundidade</span>.</h1>
+    <p class="lede">Por que Aprendizagem, Credibilidade e Influência funcionam como cadeia, os três padrões de trava mais comuns, e um repertório de ações que tocam mais de um elo ao mesmo tempo.</p>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <div class="eyebrow">O ponto de partida</div>
+    <h2>A cadeia: por que tratamos juntos</h2>
+    <p>Aprendizagem, Credibilidade e Influência aparecem em muitas listas de "ativos de carreira", quase sempre <strong>como coisas separadas</strong>. Aqui não. Neste playbook, os três são <strong>elos de uma mesma cadeia</strong> — e a saúde da sua carreira depende menos da força de cada elo isoladamente e mais da <em>continuidade</em> entre eles.</p>
+    <p>O elo 1 (Aprendizagem) é o que você constrói dentro. O elo 2 (Credibilidade) é o que os outros associam a você. O elo 3 (Influência) é o que acontece quando você fala. <strong>A cadeia funciona quando o que você aprende chega à cabeça dos outros como referência específica; quando essa referência ganha peso; e quando o peso vira ação.</strong> Quebre qualquer elo e o resto perde sentido.</p>
+    <blockquote>A pergunta central: onde está a solda mais fraca da sua cadeia?</blockquote>
+  </section>
+
+  <section>
+    <div class="eyebrow">Os elos, por dentro</div>
+    <h2>Cada elo, em profundidade</h2>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">A</div><h3>Aprendizagem</h3></div>
+      <p class="def">O repertório real de habilidades e conhecimentos que você aciona — mais o que constrói para o próximo ciclo.</p>
+      <h4>Sinais de saúde</h4>
+      <ul class="gatilhos">
+        <li>Você consegue nomear 3-5 domínios específicos que sustentam seu trabalho hoje.</li>
+        <li>Existem 1-2 áreas em que você está deliberadamente construindo repertório — com prática recorrente e leitura direcionada, não só consumo passivo.</li>
+        <li>Você tem prática de <em>desaprendizagem</em>: reconhece quando algo que dominava virou obstáculo em vez de vantagem.</li>
+      </ul>
+      <h4>Cuidado ético</h4>
+      <p style="font-size:14px;color:var(--tinta-suave);line-height:1.55">Aprendizagem não é acumulação. Cursos e leituras que passam pelos olhos sem virar prática não contam — são consumo. O critério é: <em>o que fica quando você tenta aplicar?</em></p>
+    </div>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">C</div><h3>Credibilidade</h3></div>
+      <p class="def">A razão pela qual alguém aposta em você antes de você ter prova.</p>
+      <h4>Sinais de saúde</h4>
+      <ul class="gatilhos">
+        <li>Existem tipos específicos de projeto para os quais você é convidado sem competir por vaga.</li>
+        <li>Você já teve pelo menos uma oportunidade em que alguém apostou em você <em>antes</em> de ver portfólio, entrevista formal ou apresentação.</li>
+        <li>Existem 2-3 "padrinhos de credibilidade" — pessoas sênior que validam você em contextos que a sua palavra ainda não alcança.</li>
+      </ul>
+      <h4>Cuidado ético</h4>
+      <p style="font-size:14px;color:var(--tinta-suave);line-height:1.55">Credibilidade não é o mesmo que fama. Ela é <em>local</em> ao tipo de problema — você pode ter credibilidade alta em "análise de cohort" e nenhuma em "estratégia de produto". Confundir os dois gera opinião fora do escopo, que a longo prazo <em>reduz</em> credibilidade.</p>
+    </div>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">I</div><h3>Influência</h3></div>
+      <p class="def">Quando você fala sobre o seu tema, quantas pessoas <em>agem</em> em cima?</p>
+      <h4>Sinais de saúde</h4>
+      <ul class="gatilhos">
+        <li>Existem exemplos concretos de decisões, projetos ou práticas que mudaram porque você falou sobre elas.</li>
+        <li>Sua palavra tem peso em <em>pelo menos dois círculos distintos</em> — dentro do time e além dele.</li>
+        <li>Sua influência não depende só do canal (o post que viralizou); acontece também na conversa individual, na reunião estratégica, no e-mail que muda diretriz.</li>
+      </ul>
+      <h4>Cuidado ético</h4>
+      <p style="font-size:14px;color:var(--tinta-suave);line-height:1.55">Influência sem retorno para aprendizagem vira palanque raso. Se você fala sobre um tema e não continua aprofundando, a credibilidade que sustenta a influência começa a desgastar — outros percebem antes de você.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Padrões de trava</div>
+    <h2>Os três padrões de cadeia quebrada</h2>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">1</div><h3>A → C quebra: aprendo, mas não colho credibilidade</h3></div>
+      <p>Você aprende muito — cursos, leituras, prática. Mas o conhecimento fica dentro. Quando alguém precisa de "a pessoa do assunto X", você não é lembrada. Aprendizagem sem visibilidade específica.</p>
+      <h4>Onde agir</h4>
+      <ul class="gatilhos">
+        <li>Publicar (interno ou externo) sobre o tema que você domina — 1 texto curto vale mais que 5 rascunhos.</li>
+        <li>Apresentar estudo próprio internamente, mesmo sem convite formal — proponha, ofereça.</li>
+        <li>Pedir feedback específico ancorado no seu tema. "O que você achou do jeito que abordei a análise da cohort?" ancora sua nomeação na cabeça do outro.</li>
+      </ul>
+      <div class="caso"><span class="quem">Camila · Analista</span>Domínio técnico alto, mas quando o gerente precisava de "alguém para tirar dúvida sobre X", não pensava nela. Aprendizagem visível para si, invisível para os outros. Ação: apresentou um estudo próprio de cohort para o time e para uma pessoa de produto — em três meses virou primeira referência para esse tipo de análise.</div>
+    </div>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">2</div><h3>C → I quebra: tenho credibilidade local, mas não vira influência</h3></div>
+      <p>Dentro do seu círculo (time, área, departamento), você é reconhecida — a credibilidade é sólida. Mas essa credibilidade não circula. Em decisões estratégicas maiores, seu nome não aparece. Você é <em>estrela local</em> que a empresa inteira desconhece.</p>
+      <h4>Onde agir</h4>
+      <ul class="gatilhos">
+        <li>Subir a apresentação um nível: onde você fala hoje para 5 pessoas, encontre um canal para falar para 20 — reunião de área, comitê, evento interno.</li>
+        <li>Aliança com padrinho de credibilidade: alguém sênior que já circula em contextos que você não alcança e pode citar você em conversas de que você não participa.</li>
+        <li>Publicação externa cross-função: um texto que interesse duas áreas atrai gente nova de contextos que você não alcançava.</li>
+      </ul>
+      <div class="caso c2"><span class="quem">Rafael · Coordenador</span>Reconhecimento sólido dentro da fábrica (é o cara que resolve). Diretoria não sabia. Vaga estratégica abriu, contrataram consultor externo. Ação: apresentou um caso de sucesso próprio para o comitê da diretoria (via convite do gerente-padrinho) — três meses depois foi convocado para força-tarefa estratégica.</div>
+    </div>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">3</div><h3>I sem retorno para A: falo muito, sistematizo pouco</h3></div>
+      <p>Você tem influência real — o que você diz sobre o seu tema circula, é citado, cria conversa. Mas você virou "voz autoritativa" antes de sistematizar o próprio aprendizado. A cadeia funciona indo — mas <em>não fecha o ciclo de volta</em>: a influência não está alimentando aprendizagem estruturada. O risco no médio prazo: virar guru raso, com credibilidade que corrói.</p>
+      <h4>Onde agir</h4>
+      <ul class="gatilhos">
+        <li>Instituir ritual de aprendizagem sistemática: 1 hora por semana de leitura ativa, com anotação e revisão.</li>
+        <li>Publicar em formato longo (não só posts curtos): escrever um artigo por mês obriga aprofundamento.</li>
+        <li>Buscar mentoria — não para aparecer mais, mas para receber crítica calibrada. Vulnerabilidade dosada estanca a corrosão.</li>
+      </ul>
+      <div class="caso c3"><span class="quem">Juliana · Autônoma</span>Influência real na comunidade de design (posts citados, indicações vêm por conta própria). Mas percebia que estava repetindo os mesmos argumentos há dois anos. Ação: começou a escrever um ensaio mensal (formato longo) e a se colocar em programa de mentoria com uma designer sênior — em seis meses, o repertório voltou a crescer.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Ações que tocam mais de um elo</div>
+    <h2>Repertório de ações "de estirão"</h2>
+    <p>Uma ação de estirão é aquela que <strong>toca dois ou três elos ao mesmo tempo</strong>. Rende mais que ações que trabalham um elo por vez, e é o formato ideal para semanas em que você tem pouco tempo para se dedicar a "desenvolvimento de carreira".</p>
+    <ul class="gatilhos" style="margin-top:12px">
+      <li><b>Publicar 1 texto curto sobre um aprendizado recente</b> — sistematiza (A), gera credibilidade documentada (C), cria janela de influência quando circula (I).</li>
+      <li><b>Apresentar um estudo próprio internamente</b> — obriga sistematizar (A), ancora credibilidade em quem estava na sala (C), abre porta para novos convites (I).</li>
+      <li><b>Responder publicamente a 3 perguntas sobre o seu tema</b> — cada resposta é micro-aprendizagem estruturada (A), acumula referências específicas (C), rende cada vez que alguém vê (I).</li>
+      <li><b>Iniciar 1 relação de mentoria</b> (dando ou recebendo) — mentor aprende ensinando (A) e ganha credibilidade pública (C); mentorado ganha padrinho de credibilidade que pode virar canal de influência (I).</li>
+      <li><b>Fazer 1 análise pública de um caso do seu setor</b> — obriga estudo (A), demonstra domínio específico (C), quem vê agrega você ao mapa mental (I).</li>
+    </ul>
+  </section>
+
+  <div class="prox">Próximo passo: Missão do Dia 6 — Sua leitura da Cadeia A·C·I (15 min)</div>
+
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 6 · Playbook — A cadeia A·C·I</div>
+</footer>
+
+</body>
+</html>

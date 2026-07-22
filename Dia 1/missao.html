@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 1 · Missão — Foto Inicial do Capital de Carreira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde-900:#275750; --verde-700:#336B62; --verde-500:#7CA89E; --verde-100:#DAE6E1;
+    --areia:#EFF2EE; --coral:#FF6842; --coral-soft:#FFC0AB;
+    --tinta:#20332F; --tinta-suave:#57706A; --creme:#F5F7F3;
+    --lilas:#7C6AC5; --lilas-soft:#EDE9F7;
+    --serif:'Fraunces', Georgia, 'Times New Roman', serif;
+    --sans:'Hanken Grotesk', -apple-system, 'Segoe UI', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+
+  header{background:var(--verde-900);color:var(--creme);padding:44px 24px 40px;position:relative;overflow:hidden}
+  .hero-inner{max-width:780px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:16px;transition:color .2s}
+  .voltar:hover{color:#fff}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,4vw,36px);line-height:1.15;letter-spacing:-.01em;margin-bottom:10px}
+  header .lede{font-size:15px;color:#CFE0D6;max-width:600px}
+  .missao-meta{display:flex;gap:20px;margin-top:20px;font-size:12.5px;color:#A9C6B8;font-weight:600;flex-wrap:wrap}
+  .missao-meta span{display:inline-flex;align-items:center;gap:6px}
+  .missao-meta svg{width:14px;height:14px;fill:currentColor}
+  .arc{position:absolute;right:-120px;bottom:-160px;width:380px;height:380px;border:2px solid rgba(255,255,255,.08);border-radius:50%}
+
+  main{max-width:780px;margin:0 auto;padding:24px}
+
+  .progresso{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:18px 22px;margin-bottom:24px;display:flex;align-items:center;gap:16px;box-shadow:0 2px 10px rgba(39,87,80,.05);position:sticky;top:12px;z-index:10}
+  .progresso-info{flex:1}
+  .progresso-titulo{font-size:13px;font-weight:700;color:var(--verde-900);letter-spacing:.02em;margin-bottom:6px}
+  .progresso-bar{height:6px;background:var(--verde-100);border-radius:3px;overflow:hidden}
+  .progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}
+  .progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  .etapa{background:#fff;border-radius:16px;padding:32px 30px;margin-bottom:20px;box-shadow:0 4px 16px rgba(39,87,80,.06);border:1px solid var(--verde-100)}
+  .etapa-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+  .etapa-num{width:38px;height:38px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:17px;flex-shrink:0;box-shadow:0 4px 10px rgba(255,104,66,.25)}
+  .etapa-info{flex:1}
+  .etapa-titulo{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--verde-900);line-height:1.2;margin-bottom:4px;letter-spacing:-.01em}
+  .etapa-desc{font-size:14px;color:var(--tinta-suave);line-height:1.55}
+
+  .ativo-lista{display:flex;flex-direction:column;gap:16px}
+  .ativo-item{border:1.5px solid var(--verde-100);border-radius:12px;padding:20px 22px;background:var(--creme);transition:border-color .2s}
+  .ativo-item:focus-within{border-color:var(--coral)}
+  .ativo-item-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .ativo-icone{width:36px;height:36px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 8px rgba(255,104,66,.22)}
+  .ativo-icone svg{width:20px;height:20px;fill:currentColor}
+  .ativo-nome{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900)}
+  .ativo-tagline{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-top:2px}
+
+  .campo{margin-bottom:14px}
+  .campo:last-child{margin-bottom:0}
+  .campo label{display:block;font-size:12px;font-weight:700;color:var(--verde-900);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+  .campo textarea, .campo input[type="text"]{width:100%;border:1.5px solid var(--verde-100);border-radius:8px;padding:11px 14px;font-family:var(--sans);font-size:14.5px;color:var(--tinta);background:#fff;resize:vertical;line-height:1.5;transition:border-color .2s}
+  .campo textarea:focus, .campo input[type="text"]:focus{outline:none;border-color:var(--coral)}
+  .campo textarea{min-height:60px}
+
+  /* ===== AI HELPER ===== */
+  .ai-container{position:relative}
+  .ai-btn{display:inline-flex;align-items:center;gap:6px;margin-top:8px;background:linear-gradient(135deg, var(--lilas) 0%, #6B58B0 100%);color:#fff;border:none;padding:6px 12px 6px 8px;border-radius:16px;font-family:var(--sans);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(124,106,197,.25);letter-spacing:.01em}
+  .ai-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(124,106,197,.35)}
+  .ai-btn:disabled{opacity:.6;cursor:wait}
+  .ai-btn .sparkle{width:14px;height:14px}
+  .ai-btn.especial{background:linear-gradient(135deg, var(--coral) 0%, #E85530 100%);box-shadow:0 2px 8px rgba(255,104,66,.3)}
+  .ai-btn.especial:hover{box-shadow:0 4px 12px rgba(255,104,66,.4)}
+
+  .ai-sugestao{margin-top:12px;background:var(--lilas-soft);border:1.5px solid var(--lilas);border-radius:10px;padding:14px 16px;display:none;animation:slideDown .3s ease}
+  .ai-sugestao.visivel{display:block}
+  .ai-sugestao.especial{background:linear-gradient(135deg, #FFF5F0 0%, #FFE8DE 100%);border-color:var(--coral)}
+  .ai-sugestao-header{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--lilas);margin-bottom:8px}
+  .ai-sugestao.especial .ai-sugestao-header{color:var(--coral)}
+  .ai-sugestao-header svg{width:12px;height:12px;fill:currentColor}
+  .ai-sugestao-texto{font-size:14.5px;line-height:1.55;color:var(--tinta);margin-bottom:10px}
+  .ai-sugestao.especial .ai-sugestao-texto{font-family:var(--serif);font-size:18px;font-weight:500;font-style:italic;line-height:1.4}
+  .ai-sugestao-acoes{display:flex;gap:8px}
+  .ai-acao{padding:6px 12px;border-radius:6px;font-size:12.5px;font-weight:600;cursor:pointer;border:none;transition:all .15s;font-family:var(--sans)}
+  .ai-acao.usar{background:var(--lilas);color:#fff}
+  .ai-acao.usar:hover{background:#6B58B0}
+  .ai-sugestao.especial .ai-acao.usar{background:var(--coral)}
+  .ai-sugestao.especial .ai-acao.usar:hover{background:#E85530}
+  .ai-acao.descartar{background:transparent;color:var(--tinta-suave);border:1px solid var(--verde-100)}
+  .ai-acao.descartar:hover{background:var(--areia);color:var(--tinta)}
+  .ai-acao.regerar{background:transparent;color:var(--lilas);border:1px solid var(--lilas)}
+  .ai-acao.regerar:hover{background:var(--lilas-soft)}
+  .ai-sugestao.especial .ai-acao.regerar{color:var(--coral);border-color:var(--coral)}
+
+  .ai-loader{display:none;align-items:center;gap:8px;margin-top:12px;padding:14px 16px;background:var(--lilas-soft);border-radius:10px;font-size:13px;color:var(--lilas);font-weight:600}
+  .ai-loader.visivel{display:flex}
+  .ai-loader .dots{display:inline-flex;gap:3px}
+  .ai-loader .dots span{width:6px;height:6px;background:var(--lilas);border-radius:50%;animation:pulseDot 1.4s infinite}
+  .ai-loader .dots span:nth-child(2){animation-delay:.2s}
+  .ai-loader .dots span:nth-child(3){animation-delay:.4s}
+  @keyframes pulseDot{0%,60%,100%{opacity:.3;transform:scale(.8)}30%{opacity:1;transform:scale(1)}}
+  @keyframes slideDown{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+
+  /* ===== SENSAÇÕES (30) ===== */
+  .sensacao-header{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+  .sensacao-contador{font-size:11.5px;color:var(--tinta-suave);font-style:italic}
+  .sensacao-busca{position:relative;margin-top:4px;margin-bottom:8px}
+  .sensacao-busca input{width:100%;border:1.5px solid var(--verde-100);border-radius:8px;padding:9px 12px 9px 40px;font-family:var(--sans);font-size:13px;background:#fff;transition:border-color .2s;line-height:1.3}
+  .sensacao-busca input:focus{outline:none;border-color:var(--coral)}
+  .sensacao-busca svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:14px;height:14px;fill:var(--tinta-suave);pointer-events:none;flex-shrink:0}
+  .sensacao-grupo{display:flex;flex-wrap:wrap;gap:6px}
+  .sensacao-chip{display:inline-flex;align-items:center;padding:6px 12px;background:#fff;border:1.5px solid var(--verde-100);border-radius:20px;font-size:12.5px;font-weight:600;color:var(--tinta-suave);cursor:pointer;transition:all .15s;user-select:none}
+  .sensacao-chip:hover{border-color:var(--verde-500)}
+  .sensacao-chip.selected{background:var(--coral);border-color:var(--coral);color:#fff}
+  .sensacao-chip.hidden{display:none}
+
+  .campo-grande textarea{min-height:80px;font-family:var(--serif);font-size:18px;font-weight:500;font-style:italic;line-height:1.4}
+  .dica{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-top:8px;padding-left:12px;border-left:2px solid var(--verde-500)}
+
+  .concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}
+  .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px;letter-spacing:-.005em}
+  .concluir p{font-size:14.5px;opacity:.92;margin-bottom:22px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
+  .btn-concluir{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--coral);padding:16px 30px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:17px;font-weight:600;border:none;cursor:pointer;transition:all .2s;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+  .btn-concluir:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+  .btn-concluir .icone{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .btn-concluir .icone svg{width:14px;height:14px;fill:currentColor}
+
+  .autosave{font-size:12px;color:var(--tinta-suave);text-align:center;margin-top:16px;font-style:italic}
+  .autosave::before{content:"";display:inline-block;width:8px;height:8px;background:var(--verde-500);border-radius:50%;margin-right:6px;vertical-align:1px;animation:pulso 2s infinite}
+  @keyframes pulso{0%,100%{opacity:1}50%{opacity:.4}}
+
+  footer{text-align:center;padding:30px 24px 50px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+
+  @media (max-width:560px){
+    header{padding:32px 20px 32px}
+    .etapa{padding:24px 20px}
+    .ativo-item{padding:18px 18px}
+    main{padding:20px 16px}
+  }
+</style>
+<script>
+/* Persistência entre sessões (integração 21/07/2026)
+   Espelha as chaves intentia-* gravadas em sessionStorage para localStorage,
+   mantém o array localStorage.intentia-progresso (lido por jornada.html e pela capa)
+   e faz a leitura cair para localStorage quando a aba é nova. */
+(function(){
+  try{
+    var proto = Storage.prototype;
+    var _set = proto.setItem, _get = proto.getItem;
+    function marcaProgresso(k){
+      var m = /^intentia-dia(\d+)$/.exec(k);
+      if(!m) return;
+      try{
+        var arr = JSON.parse(_get.call(localStorage,'intentia-progresso') || '[]');
+        var n = parseInt(m[1],10);
+        if(arr.indexOf(n)===-1){ arr.push(n); arr.sort(function(a,b){return a-b}); _set.call(localStorage,'intentia-progresso', JSON.stringify(arr)); }
+      }catch(e){}
+    }
+    proto.setItem = function(k,v){
+      _set.call(this,k,v);
+      if(this===sessionStorage && /^intentia-/.test(k)){
+        try{ _set.call(localStorage,k,v); }catch(e){}
+        marcaProgresso(k);
+      }
+    };
+    proto.getItem = function(k){
+      var v = _get.call(this,k);
+      if(v===null && this===sessionStorage && /^intentia-/.test(k)){
+        try{ v = _get.call(localStorage,k); }catch(e){}
+      }
+      return v;
+    };
+  }catch(e){}
+})();
+</script>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 1</a><span class="sep">›</span><span class="cur">Missão</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html" class="atual">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 0/index.html" title="Dia 0 (tecla ←)">←<span class="lbl"> Dia 0</span></a><a class="intnav-pill" href="../Dia 2/index.html" title="Dia 2 (tecla →)"><span class="lbl">Dia 2 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar">
+      <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      Voltar para o Dia 1
+    </a>
+    <div class="eyebrow">Missão · Dia 1</div>
+    <h1>Sua primeira <span class="grifo">foto</span>.</h1>
+    <p class="lede">Percorra os 6 ativos, escreva a manchete de hoje e registre a intenção que te trouxe até aqui. Poucas palavras bastam — a IA da Intentia te ajuda a polir.</p>
+    <div class="missao-meta">
+      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 15 min</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> IA que ajuda a escrever</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
+    </div>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<main>
+
+  <div class="progresso">
+    <div class="progresso-info">
+      <div class="progresso-titulo">Seu preenchimento</div>
+      <div class="progresso-bar"><div class="progresso-fill" id="progresso-fill"></div></div>
+    </div>
+    <div class="progresso-num" id="progresso-num">0/8</div>
+  </div>
+
+  <section class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num">1</div>
+      <div class="etapa-info">
+        <div class="etapa-titulo">Percorra os 6 ativos</div>
+        <div class="etapa-desc">Para cada ativo: onde você está hoje, uma cena recente que ilustra, e a sensação. Escreva poucas palavras — o botão <b>Refinar com Intentia</b> polir o texto pra você.</div>
+      </div>
+    </div>
+
+    <div class="ativo-lista" id="ativos">
+      <!-- Ativos gerados via JS abaixo para evitar repetição -->
+    </div>
+  </section>
+
+  <section class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num">2</div>
+      <div class="etapa-info">
+        <div class="etapa-titulo">Escreva a manchete de hoje</div>
+        <div class="etapa-desc">Escreva do jeito que vier. O botão <b>Transformar em manchete</b> vai devolver em formato engajador, no tom da Intentia.</div>
+      </div>
+    </div>
+    <div class="campo campo-grande">
+      <label for="manchete">Se a minha carreira fosse uma manchete hoje, seria:</label>
+      <div class="ai-container">
+        <textarea id="manchete" data-ai="manchete" placeholder="Escreva do jeito que vier — pode ser tosco. A IA transforma."></textarea>
+        <button class="ai-btn especial" data-ai-btn="manchete">
+          <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2zM5 15l.8 2.2L8 18l-2.2.8L5 21l-.8-2.2L2 18l2.2-.8L5 15zm14-2l.8 2.2L22 16l-2.2.8L19 19l-.8-2.2L16 16l2.2-.8L19 13z"/></svg>
+          Transformar em manchete
+        </button>
+        <div class="ai-loader" data-ai-loader="manchete">
+          <div class="dots"><span></span><span></span><span></span></div>
+          Escrevendo a sua manchete…
+        </div>
+        <div class="ai-sugestao especial" data-ai-sugestao="manchete">
+          <div class="ai-sugestao-header">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg>
+            Sugestão de manchete
+          </div>
+          <div class="ai-sugestao-texto" data-ai-texto="manchete"></div>
+          <div class="ai-sugestao-acoes">
+            <button class="ai-acao usar" data-ai-usar="manchete">Usar essa</button>
+            <button class="ai-acao regerar" data-ai-regerar="manchete">Gerar outra</button>
+            <button class="ai-acao descartar" data-ai-descartar="manchete">Descartar</button>
+          </div>
+        </div>
+      </div>
+      <p class="dica">A manchete não precisa ser vendedora — precisa ser verdadeira. Ela volta no Dia 28.</p>
+    </div>
+  </section>
+
+  <section class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num">3</div>
+      <div class="etapa-info">
+        <div class="etapa-titulo">Registre a intenção inicial</div>
+        <div class="etapa-desc">Três perguntas rápidas. Não some — volta no fim do programa.</div>
+      </div>
+    </div>
+    <div class="campo">
+      <label for="int1">1 · O que mais me motivou a entrar no Intentia:</label>
+      <div class="ai-container">
+        <textarea id="int1" data-ai="int1" placeholder="Poucas palavras bastam."></textarea>
+        <button class="ai-btn" data-ai-btn="int1">
+          <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2zM5 15l.8 2.2L8 18l-2.2.8L5 21l-.8-2.2L2 18l2.2-.8L5 15z"/></svg>
+          Refinar com Intentia
+        </button>
+        <div class="ai-loader" data-ai-loader="int1"><div class="dots"><span></span><span></span><span></span></div> Refinando…</div>
+        <div class="ai-sugestao" data-ai-sugestao="int1">
+          <div class="ai-sugestao-header"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg> Sugestão</div>
+          <div class="ai-sugestao-texto" data-ai-texto="int1"></div>
+          <div class="ai-sugestao-acoes">
+            <button class="ai-acao usar" data-ai-usar="int1">Usar essa</button>
+            <button class="ai-acao regerar" data-ai-regerar="int1">Gerar outra</button>
+            <button class="ai-acao descartar" data-ai-descartar="int1">Descartar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="campo">
+      <label for="int2">2 · Se este programa funcionar como eu espero, daqui a um ano estará diferente na minha carreira:</label>
+      <div class="ai-container">
+        <textarea id="int2" data-ai="int2" placeholder="Poucas palavras bastam."></textarea>
+        <button class="ai-btn" data-ai-btn="int2">
+          <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2zM5 15l.8 2.2L8 18l-2.2.8L5 21l-.8-2.2L2 18l2.2-.8L5 15z"/></svg>
+          Refinar com Intentia
+        </button>
+        <div class="ai-loader" data-ai-loader="int2"><div class="dots"><span></span><span></span><span></span></div> Refinando…</div>
+        <div class="ai-sugestao" data-ai-sugestao="int2">
+          <div class="ai-sugestao-header"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg> Sugestão</div>
+          <div class="ai-sugestao-texto" data-ai-texto="int2"></div>
+          <div class="ai-sugestao-acoes">
+            <button class="ai-acao usar" data-ai-usar="int2">Usar essa</button>
+            <button class="ai-acao regerar" data-ai-regerar="int2">Gerar outra</button>
+            <button class="ai-acao descartar" data-ai-descartar="int2">Descartar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="campo">
+      <label for="int3">3 · Hoje, a maior pergunta que eu tenho sobre a minha carreira é:</label>
+      <div class="ai-container">
+        <textarea id="int3" data-ai="int3" placeholder="Poucas palavras bastam."></textarea>
+        <button class="ai-btn" data-ai-btn="int3">
+          <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2zM5 15l.8 2.2L8 18l-2.2.8L5 21l-.8-2.2L2 18l2.2-.8L5 15z"/></svg>
+          Refinar com Intentia
+        </button>
+        <div class="ai-loader" data-ai-loader="int3"><div class="dots"><span></span><span></span><span></span></div> Refinando…</div>
+        <div class="ai-sugestao" data-ai-sugestao="int3">
+          <div class="ai-sugestao-header"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg> Sugestão</div>
+          <div class="ai-sugestao-texto" data-ai-texto="int3"></div>
+          <div class="ai-sugestao-acoes">
+            <button class="ai-acao usar" data-ai-usar="int3">Usar essa</button>
+            <button class="ai-acao regerar" data-ai-regerar="int3">Gerar outra</button>
+            <button class="ai-acao descartar" data-ai-descartar="int3">Descartar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="concluir">
+    <h3>Terminou de preencher?</h3>
+    <p>Ao concluir, o material do Dia 1 é gerado: os 6 ativos lado a lado, o padrão das sensações e a manchete — organizados para você guardar e comparar com a foto do Dia 28.</p>
+    <a href="material.html" class="btn-concluir" id="btn-concluir">
+      Ver Minhas Primeiras Impressões
+      <span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
+    </a>
+  </div>
+  <p class="autosave">Suas respostas são salvas automaticamente. Ninguém além de você lê o que está aqui.</p>
+
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 1 · Missão — Foto Inicial do Capital de Carreira</div>
+</footer>
+
+<script>
+  // ============ CATÁLOGO DE SENSAÇÕES (30) ============
+  const SENSACOES = [
+    'orgulho','tranquilidade','dúvida','desconforto','indiferença',
+    'alívio','alegria','ansiedade','cansaço','curiosidade',
+    'entusiasmo','esperança','frustração','gratidão','inquietação',
+    'insegurança','inspiração','irritação','leveza','motivação',
+    'otimismo','pressão','realização','surpresa','urgência',
+    'vazio','coragem','ambição','confusão','clareza'
+  ];
+
+  // ============ DEFINIÇÃO DOS 6 ATIVOS ============
+  const ATIVOS = [
+    { id:'res', nome:'Resultados', tagline:'o que mudou porque você fez',
+      icone:'<path d="M9 17V7h2v10H9zm4 0V4h2v13h-2zm-8 0v-6h2v6H5zm12 0V9h2v8h-2z"/>',
+      p1:'Uma ou duas frases. Situação, não adjetivo.', p2:'Uma cena concreta das últimas semanas.' },
+    { id:'rep', nome:'Reputação', tagline:'o que dizem na sua ausência',
+      icone:'<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>',
+      p1:'Que padrão do seu trabalho é o mais visível?', p2:'Um elogio, uma descrição, algo que te disseram.' },
+    { id:'rel', nome:'Relacionamentos', tagline:'quem sabe o que você faz bem',
+      icone:'<path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62.86-1.11 1.28-2.53 1.13-3.96C17.92 8.15 18.44 8 19 8M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20z"/>',
+      p1:'Quantas pessoas relevantes sabem o que você faz hoje?', p2:'Uma conversa, um contato reativado, uma indicação.' },
+    { id:'apr', nome:'Aprendizagem', tagline:'o que domina e o que constrói',
+      icone:'<path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>',
+      p1:'O que domina, o que aprende agora, o que o próximo passo exige.', p2:'Algo que você aprendeu, um curso, um projeto novo.' },
+    { id:'cre', nome:'Credibilidade', tagline:'por que apostam em você antes',
+      icone:'<path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>',
+      p1:'"Quando alguém quer resolver ___, meu nome é lembrado."', p2:'Um convite, uma indicação, um pedido de opinião.' },
+    { id:'inf', nome:'Influência', tagline:'onde a sua palavra pesa',
+      icone:'<path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>',
+      p1:'De quais conversas você participa antes da decisão?', p2:'Um rumo que mudou depois que você falou.' },
+  ];
+
+  // ============ GERA HTML DOS 6 ATIVOS ============
+  function svgIcone(path){ return '<svg viewBox="0 0 24 24" fill="currentColor">' + path + '</svg>'; }
+  function svgSparkle(){ return '<svg class="sparkle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2zM5 15l.8 2.2L8 18l-2.2.8L5 21l-.8-2.2L2 18l2.2-.8L5 15z"/></svg>'; }
+  function svgCabecalhoSug(){ return '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg>'; }
+
+  function renderCampoAI(id, placeholder){
+    return `
+      <div class="ai-container">
+        <textarea id="${id}" data-ai="${id}" placeholder="${placeholder}"></textarea>
+        <button class="ai-btn" data-ai-btn="${id}">${svgSparkle()} Refinar com Intentia</button>
+        <div class="ai-loader" data-ai-loader="${id}"><div class="dots"><span></span><span></span><span></span></div> Refinando…</div>
+        <div class="ai-sugestao" data-ai-sugestao="${id}">
+          <div class="ai-sugestao-header">${svgCabecalhoSug()} Sugestão</div>
+          <div class="ai-sugestao-texto" data-ai-texto="${id}"></div>
+          <div class="ai-sugestao-acoes">
+            <button class="ai-acao usar" data-ai-usar="${id}">Usar essa</button>
+            <button class="ai-acao regerar" data-ai-regerar="${id}">Gerar outra</button>
+            <button class="ai-acao descartar" data-ai-descartar="${id}">Descartar</button>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function renderSensacoes(idPrefix){
+    const chips = SENSACOES.map(s => `<span class="sensacao-chip" data-val="${s}">${s}</span>`).join('');
+    return `
+      <div class="sensacao-header">
+        <label style="margin-bottom:0">Sensações</label>
+        <span class="sensacao-contador" data-contador="${idPrefix}">30 opções · escolha uma ou mais</span>
+      </div>
+      <div class="sensacao-busca">
+        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" placeholder="Buscar sensação…" data-busca="${idPrefix}">
+      </div>
+      <div class="sensacao-grupo" data-sensacao="${idPrefix}">${chips}</div>`;
+  }
+
+  const ativosContainer = document.getElementById('ativos');
+  ATIVOS.forEach(a => {
+    const html = `
+      <div class="ativo-item" data-ativo="${a.id}">
+        <div class="ativo-item-header">
+          <div class="ativo-icone">${svgIcone(a.icone)}</div>
+          <div>
+            <div class="ativo-nome">${a.nome}</div>
+            <div class="ativo-tagline">${a.tagline}</div>
+          </div>
+        </div>
+        <div class="campo"><label>Onde estou hoje</label>${renderCampoAI(a.id+'-onde', a.p1)}</div>
+        <div class="campo"><label>Situação recente que ilustra</label>${renderCampoAI(a.id+'-cena', a.p2)}</div>
+        <div class="campo">${renderSensacoes(a.id)}</div>
+      </div>`;
+    ativosContainer.insertAdjacentHTML('beforeend', html);
+  });
+
+  // ============ SENSAÇÕES: seleção múltipla + busca ============
+  function atualizarContadorSensacoes(grupo){
+    const id = grupo.dataset.sensacao;
+    const contador = document.querySelector(`[data-contador="${id}"]`);
+    if(!contador) return;
+    const n = grupo.querySelectorAll('.sensacao-chip.selected').length;
+    if(n === 0){
+      contador.textContent = '30 opções · escolha uma ou mais';
+      contador.style.color = '';
+      contador.style.fontStyle = 'italic';
+    } else {
+      contador.textContent = n === 1 ? '1 sensação selecionada' : `${n} sensações selecionadas`;
+      contador.style.color = 'var(--coral)';
+      contador.style.fontStyle = 'normal';
+    }
+  }
+  document.querySelectorAll('[data-sensacao]').forEach(grupo => {
+    grupo.querySelectorAll('.sensacao-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        chip.classList.toggle('selected');
+        atualizarContadorSensacoes(grupo);
+        atualizarProgresso();
+      });
+    });
+  });
+  document.querySelectorAll('[data-busca]').forEach(input => {
+    input.addEventListener('input', e => {
+      const alvo = e.target.dataset.busca;
+      const termo = e.target.value.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+      const grupo = document.querySelector(`[data-sensacao="${alvo}"]`);
+      grupo.querySelectorAll('.sensacao-chip').forEach(chip => {
+        const val = chip.dataset.val.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+        chip.classList.toggle('hidden', termo && !val.includes(termo));
+      });
+    });
+  });
+
+  // ============ AI HELPER (mockup) ============
+  // Sugestões pré-definidas por tipo — no produto real, chamada de IA
+  const SUGESTOES_GENERICAS = [
+    (t) => `${t.trim()} — e, olhando de fora, esse padrão diz mais sobre a minha forma de trabalhar do que sobre o resultado em si.`,
+    (t) => `Nos últimos meses, ${t.trim().toLowerCase()}. Ainda não sei se isso é sinal de constância ou de acomodação.`,
+    (t) => `${t.trim()}. O que me chama atenção é como isso reaparece em situações diferentes — pode ser a assinatura que eu estava procurando.`,
+  ];
+  const SUGESTOES_MANCHETE = [
+    (t) => `${t.charAt(0).toUpperCase() + t.slice(1).trim()} — e a próxima página começa a ser escrita agora.`,
+    (t) => `A profissional que ${t.trim().toLowerCase()} decide olhar para o que construiu antes de escolher o próximo passo.`,
+    (t) => `Depois de anos ${t.trim().toLowerCase()}, é hora de trocar o piloto automático por intenção.`,
+    (t) => `${t.trim()}: o capítulo silencioso que estava passando despercebido.`,
+  ];
+
+  let contadorRegerar = {};
+
+  document.querySelectorAll('[data-ai-btn]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.aiBtn;
+      const textarea = document.querySelector(`[data-ai="${id}"]`);
+      const texto = textarea.value.trim();
+      if(!texto){
+        textarea.focus();
+        textarea.style.borderColor = 'var(--coral)';
+        setTimeout(() => textarea.style.borderColor = '', 1200);
+        return;
+      }
+      gerarSugestao(id, texto);
+    });
+  });
+
+  document.querySelectorAll('[data-ai-regerar]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.aiRegerar;
+      const textarea = document.querySelector(`[data-ai="${id}"]`);
+      gerarSugestao(id, textarea.value.trim());
+    });
+  });
+
+  document.querySelectorAll('[data-ai-usar]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.aiUsar;
+      const sugestao = document.querySelector(`[data-ai-texto="${id}"]`).textContent;
+      const textarea = document.querySelector(`[data-ai="${id}"]`);
+      textarea.value = sugestao;
+      document.querySelector(`[data-ai-sugestao="${id}"]`).classList.remove('visivel');
+      atualizarProgresso();
+      textarea.dispatchEvent(new Event('input'));
+    });
+  });
+
+  document.querySelectorAll('[data-ai-descartar]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.aiDescartar;
+      document.querySelector(`[data-ai-sugestao="${id}"]`).classList.remove('visivel');
+    });
+  });
+
+  function gerarSugestao(id, texto){
+    const loader = document.querySelector(`[data-ai-loader="${id}"]`);
+    const sugestao = document.querySelector(`[data-ai-sugestao="${id}"]`);
+    const textoEl = document.querySelector(`[data-ai-texto="${id}"]`);
+    const btn = document.querySelector(`[data-ai-btn="${id}"]`);
+    sugestao.classList.remove('visivel');
+    loader.classList.add('visivel');
+    if(btn) btn.disabled = true;
+
+    setTimeout(() => {
+      const pool = id === 'manchete' ? SUGESTOES_MANCHETE : SUGESTOES_GENERICAS;
+      contadorRegerar[id] = (contadorRegerar[id] || 0) + 1;
+      const variacao = (contadorRegerar[id] - 1) % pool.length;
+      textoEl.textContent = pool[variacao](texto);
+      loader.classList.remove('visivel');
+      sugestao.classList.add('visivel');
+      if(btn) btn.disabled = false;
+    }, 900);
+  }
+
+  // ============ PROGRESSO ============
+  function atualizarProgresso(){
+    const ativos = document.querySelectorAll('[data-ativo]');
+    let ativosCompletos = 0;
+    ativos.forEach(ativo => {
+      const textareas = ativo.querySelectorAll('textarea');
+      const sensacoes = ativo.querySelectorAll('.sensacao-chip.selected');
+      const preenchidos = Array.from(textareas).every(t => t.value.trim().length > 0);
+      if(preenchidos && sensacoes.length > 0) ativosCompletos++;
+    });
+    const manchete = document.getElementById('manchete').value.trim().length > 0 ? 1 : 0;
+    const int1 = document.getElementById('int1').value.trim().length > 0;
+    const int2 = document.getElementById('int2').value.trim().length > 0;
+    const int3 = document.getElementById('int3').value.trim().length > 0;
+    const intencao = (int1 && int2 && int3) ? 1 : 0;
+    const total = ativosCompletos + manchete + intencao;
+    document.getElementById('progresso-num').textContent = total + '/8';
+    document.getElementById('progresso-fill').style.width = (total / 8 * 100) + '%';
+  }
+  document.querySelectorAll('textarea').forEach(el => el.addEventListener('input', atualizarProgresso));
+
+  // ============ SALVA DADOS AO CONCLUIR ============
+  document.getElementById('btn-concluir').addEventListener('click', (e) => {
+    const dados = {
+      dataConclusao: new Date().toISOString(),
+      ativos: ATIVOS.map(a => ({
+        id: a.id,
+        nome: a.nome,
+        tagline: a.tagline,
+        icone: a.icone,
+        onde: (document.getElementById(a.id+'-onde') || {}).value || '',
+        cena: (document.getElementById(a.id+'-cena') || {}).value || '',
+        sensacoes: Array.from(document.querySelectorAll(`[data-sensacao="${a.id}"] .sensacao-chip.selected`)).map(c => c.dataset.val),
+        sensacao: (document.querySelector(`[data-sensacao="${a.id}"] .sensacao-chip.selected`) || {}).dataset?.val || ''
+      })),
+      manchete: document.getElementById('manchete').value || '',
+      intencoes: {
+        motivacao: document.getElementById('int1').value || '',
+        umAno: document.getElementById('int2').value || '',
+        maiorPergunta: document.getElementById('int3').value || ''
+      }
+    };
+    try {
+      sessionStorage.setItem('intentia-dia1', JSON.stringify(dados));
+    } catch(err) {
+      // fallback: continua a navegação mesmo sem storage
+      console.log('SessionStorage indisponível, seguindo com dados de demonstração.');
+    }
+  });
+</script>
+
+</body>
+</html>

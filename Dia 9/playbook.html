@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 9 · Playbook — Linear, Paralela, Iterativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:14px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
+
+  .intro-caixa{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .intro-caixa h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .intro-caixa p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .intro-caixa p:last-child{margin-bottom:0}
+  .intro-caixa b{color:var(--verde-900)}
+
+  .tipo{background:#fff;border:1px solid var(--verde-100);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06)}
+  .tipo-header{padding:26px 30px 22px;color:#fff;display:flex;align-items:center;gap:16px;position:relative;overflow:hidden}
+  .tipo-header::after{content:"";position:absolute;right:-30px;bottom:-60px;width:160px;height:160px;background:rgba(255,255,255,.06);border-radius:50%}
+  .tipo.linear .tipo-header{background:linear-gradient(135deg, #336B62 0%, #275750 100%)}
+  .tipo.paralela .tipo-header{background:linear-gradient(135deg, #FF7A57 0%, #E85530 100%)}
+  .tipo.iterativa .tipo-header{background:linear-gradient(135deg, #8B7BB8 0%, #5F4E8C 100%)}
+  .tipo-letra{width:52px;height:52px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:26px;font-weight:600;flex-shrink:0;position:relative;z-index:1}
+  .tipo-titulo{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1.15;position:relative;z-index:1;letter-spacing:-.005em}
+  .tipo-sub{font-size:13.5px;opacity:.92;font-style:italic;position:relative;z-index:1;margin-top:3px}
+  .tipo-body{padding:26px 30px 28px}
+  .tipo-body p{margin-bottom:14px;font-size:15px;line-height:1.7}
+  .tipo-body p:last-child{margin-bottom:0}
+  .tipo-body b{color:var(--verde-900)}
+
+  .subsec-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin:22px 0 10px;padding-top:18px;border-top:1px dashed var(--verde-100)}
+  .subsec-label:first-child{margin-top:0;padding-top:0;border-top:none}
+
+  .quando-lista{list-style:none;padding:0;margin-top:8px}
+  .quando-lista li{padding:10px 0 10px 30px;position:relative;font-size:14.5px;line-height:1.55;color:var(--tinta);border-bottom:1px dashed var(--verde-100)}
+  .quando-lista li:last-child{border-bottom:none}
+  .quando-lista li::before{content:"→";position:absolute;left:6px;top:10px;color:var(--coral);font-weight:700}
+  .quando-lista li b{color:var(--verde-900);font-weight:600}
+
+  .erro-caixa{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
+  .erro-caixa .erro-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .erro-caixa b{color:var(--verde-900)}
+
+  .aviso-final{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0 20px}
+  .aviso-final h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .aviso-final p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .aviso-final p:last-child{margin-bottom:0}
+  .aviso-final b{color:var(--verde-900)}
+
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 9</a><span class="sep">›</span><span class="cur">Playbook</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html" class="atual">Playbook</a><a href="missao.html">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 8/index.html" title="Dia 8 (tecla ←)">←<span class="lbl"> Dia 8</span></a><a class="intnav-pill" href="../Dia 10/index.html" title="Dia 10 (tecla →)"><span class="lbl">Dia 10 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 9</a>
+    <div class="eyebrow">Playbook · Dia 9</div>
+    <h1>Linear, Paralela, Iterativa — <span class="grifo">a fundo</span>.</h1>
+    <p class="lede">Os três formatos de trajetória com maior profundidade — quando cada um funciona, quando ele falha, e o que o distingue dos outros no dia a dia real.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<main>
+
+  <div class="intro-caixa">
+    <h2>Formato ≠ direção</h2>
+    <p>Uma confusão comum: pensar que "escolher formato" é o mesmo que "escolher rota". Não é. <b>Direção é o alvo</b> — virar referência em análise de decisão, virar head de operações em fintech, virar autora sobre design de sistemas. <b>Formato é a arquitetura da travessia</b> — se você chega lá em linha reta, em paralelo com outra coisa, ou em movimentos alternados.</p>
+    <p>A mesma direção pode ser atravessada por qualquer um dos 3 formatos, e cada formato produz uma <em>versão diferente da mesma pessoa no destino</em>. A Camila-referência via Linear pura é uma; via Paralela é outra (mais autoral, mais externa, mais construída publicamente). Nenhuma é intrinsecamente melhor — mas as diferenças importam.</p>
+  </div>
+
+  <section class="tipo linear">
+    <div class="tipo-header">
+      <div class="tipo-letra">L</div>
+      <div>
+        <div class="tipo-titulo">Formato Linear</div>
+        <div class="tipo-sub">"uma direção única, movimentos claros de subida"</div>
+      </div>
+    </div>
+    <div class="tipo-body">
+      <div class="subsec-label">O que é (e o que não é)</div>
+      <p>Linear é a trajetória com <b>um alvo único e vertical</b>: mesma área, mesma cadeia hierárquica, progressão via degraus estabelecidos. É o modelo clássico da escada. Funciona bem em contextos onde a hierarquia é reconhecida (áreas reguladas, corporações grandes), onde os degraus geram retorno real (financeiro, escopo, autoridade), e onde a taxa de mudança do setor é baixa a moderada.</p>
+      <p>Linear <em>não é</em> "carreira sem ambição". Uma trajetória Linear bem executada exige: acumular reputação vertical, entregar resultados mensuráveis por degrau, construir capital político para o próximo salto, e frequentemente aceitar 3-5 anos por degrau em cargos médio-altos.</p>
+
+      <div class="subsec-label">Quando esse formato brilha</div>
+      <ul class="quando-lista">
+        <li><b>Áreas com hierarquia forte reconhecida</b> — direito, medicina, contabilidade, finanças tradicionais, engenharia.</li>
+        <li><b>Você tem clareza absoluta sobre o alvo vertical</b> e não vê valor em experimentação lateral.</li>
+        <li><b>Sua reputação é ativo principal</b> — em áreas onde "quem você é dentro dessa cadeia" importa mais que "onde mais você já esteve".</li>
+        <li><b>O setor paga bem por senioridade</b> — em contextos onde o degrau vertical se traduz proporcionalmente em compensação/escopo.</li>
+      </ul>
+
+      <div class="erro-caixa">
+        <span class="erro-label">Erro clássico</span>
+        <p>Assumir Linear por default sem checar se o setor ainda paga por escada. Em áreas de alta transformação (tech, digital, dados, comunicação, produto), a escada vertical frequentemente entrega menos valor real que 2 saltos laterais bem feitos — e as pessoas em Linear puro <b>ficam para trás</b> em skills e relevância mesmo subindo em cargo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tipo paralela">
+    <div class="tipo-header">
+      <div class="tipo-letra">P</div>
+      <div>
+        <div class="tipo-titulo">Formato Paralela</div>
+        <div class="tipo-sub">"duas ou mais trilhas ativas ao mesmo tempo"</div>
+      </div>
+    </div>
+    <div class="tipo-body">
+      <div class="subsec-label">O que é (e o que não é)</div>
+      <p>Paralela é a trajetória com <b>duas ou mais trilhas simultâneas, cada uma com ambição própria</b>. Sehgal usa o exemplo de executivos que mantêm um trabalho corporativo e uma segunda carreira artística/autoral/empreendedora com resultados esperados em ambos. As duas se fortalecem: a primeira dá estabilidade e reputação; a segunda dá aprendizagem, opcionalidade e um repertório que amplifica a primeira.</p>
+      <p>Paralela <em>não é</em> "hobby dos fins de semana". Um formato Paralelo real exige: horas dedicadas com regularidade (não sobras de energia), objetivos concretos para a segunda trilha (não "só para diversão"), e uma tese sobre como as duas conversam ("minha segunda carreira alimenta a primeira porque X").</p>
+
+      <div class="subsec-label">Quando esse formato brilha</div>
+      <ul class="quando-lista">
+        <li><b>Você tem carreira principal razoavelmente estável</b> — sem ela, Paralela vira duas fontes de estresse.</li>
+        <li><b>A segunda trilha tem sinergia com a primeira</b> — a segunda é possível <em>por causa</em> do que você faz na primeira, e vice-versa.</li>
+        <li><b>Você quer explorar sem cortar rede</b> — Paralela é a rota mais conservadora para testar uma reinvenção antes de comprometer-se.</li>
+        <li><b>Você tem alta energia e capacidade de gerir múltiplas frentes</b> — Paralela pede disciplina de calendário, foco em pouco por vez, alta capacidade de fechar loops rapidamente.</li>
+      </ul>
+
+      <div class="erro-caixa">
+        <span class="erro-label">Erro clássico</span>
+        <p>Confundir Paralela com "acumular projetos". Se a segunda trilha não tem <b>ambição definida</b> (público-alvo, resultado desejado, marco de sucesso), ela vira só distração da primeira. Paralela sem tese vira duas mediocridades no lugar de uma excelência.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tipo iterativa">
+    <div class="tipo-header">
+      <div class="tipo-letra">I</div>
+      <div>
+        <div class="tipo-titulo">Formato Iterativa</div>
+        <div class="tipo-sub">"movimentos laterais alternados com verticais"</div>
+      </div>
+    </div>
+    <div class="tipo-body">
+      <div class="subsec-label">O que é (e o que não é)</div>
+      <p>Iterativa é a trajetória em <b>ciclos de movimentos alternados</b>: sobe um degrau, move-se lateralmente (novo setor, novo cargo, novo tipo de empresa), sobe mais, move-se lateralmente de novo. Rinne usa a metáfora da parede de escalada: você escolhe apoios (skills, contextos, projetos) e sobe usando verticais e laterais alternados. Cada movimento lateral amplia repertório e cria opcionalidade futura.</p>
+      <p>Iterativa <em>não é</em> "zigue-zague sem tese". Cada movimento lateral em uma trajetória iterativa saudável tem <b>hipótese explícita</b>: "vou para esse setor porque preciso aprender X"; "vou para essa empresa porque preciso construir a habilidade Y"; "vou para esse cargo porque preciso testar Z". Sem tese, vira só instabilidade.</p>
+
+      <div class="subsec-label">Quando esse formato brilha</div>
+      <ul class="quando-lista">
+        <li><b>Você está em setor de alta transformação</b> — onde a habilidade que vale hoje pode não valer amanhã, e a rede de exposições importa mais que a cadeia vertical.</li>
+        <li><b>Você não tem clareza definitiva sobre o alvo vertical</b> — cada movimento lateral vai te aproximando (por eliminação e descoberta) do que você quer construir de verdade.</li>
+        <li><b>Você valoriza aprendizagem e amplitude</b> mais que status e velocidade.</li>
+        <li><b>Você tolera bem incerteza</b> — Iterativa exige entrar em contextos novos com regularidade, sem a segurança da hierarquia estabelecida.</li>
+      </ul>
+
+      <div class="erro-caixa">
+        <span class="erro-label">Erro clássico</span>
+        <p>Confundir Iterativa com "não saber o que quer". Iterativa saudável tem <b>tese explícita para cada movimento</b>. Sem tese, vira zigue-zague — a pessoa acumula empregos sem acumular capacidade, e no final de 10 anos tem 10 empregos e a competência de 3 anos.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="aviso-final">
+    <h3>O que fazer com isso agora</h3>
+    <p>Volte para o material do seu Dia 9 e verifique se cada Eu ganhou o <b>formato certo para a versão específica que você imaginou</b>. Um Eu-Reinvenção sem plano de ponte pede Paralela; se você marcou Linear, o preço vai ser alto. Um Eu-Adjacência com salto grande de contexto pede Iterativa; se você marcou Linear, a taxa de sucesso cai.</p>
+    <p>Nos próximos 5 dias, o formato marcado vai ser testado por: framework de decisão (Dia 10), armadilhas cognitivas (Dia 11), teste de propósito (Dia 12), filtro do essencial (Dia 13) e leitura de marca pessoal (Dia 14). Guarde o material — <b>reler amanhã com o framework de Christensen vai mudar como você lê hoje</b>.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 9 · Playbook — Linear, Paralela, Iterativa</div>
+</footer>
+
+</body>
+</html>

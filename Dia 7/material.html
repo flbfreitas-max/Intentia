@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 7 · Meu Retrato de Capital de Carreira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--lilas:#8B7BB8;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+
+  header{background:linear-gradient(135deg, var(--verde-900) 0%, #1a4642 100%);color:var(--creme);padding:60px 24px 68px;position:relative;overflow:hidden}
+  .hero-inner{max-width:820px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:16px}
+  .voltar:hover{color:#fff}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .badge-consolidacao{display:inline-flex;align-items:center;gap:8px;background:rgba(255,104,66,.22);color:var(--coral-soft);border:1px solid rgba(255,104,66,.4);padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,44px);line-height:1.1;letter-spacing:-.01em;margin-bottom:14px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:640px;margin-bottom:20px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  .arc::after{content:"";position:absolute;top:24px;left:50%;width:20px;height:20px;border-radius:50%;background:var(--coral)}
+
+  /* Sumário navegável */
+  .sumario{max-width:820px;margin:-32px auto 20px;background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:20px 24px;position:relative;z-index:2;box-shadow:0 10px 30px rgba(39,87,80,.10)}
+  .sumario-titulo{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);margin-bottom:12px}
+  .sumario-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));gap:8px}
+  .sumario-item{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--creme);border-radius:8px;text-decoration:none;color:var(--verde-900);font-size:12.5px;font-weight:600;transition:all .15s}
+  .sumario-item:hover{background:var(--verde-100);transform:translateX(2px)}
+  .sumario-item-num{width:22px;height:22px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11px;font-weight:600;flex-shrink:0}
+
+  .demo-banner{max-width:820px;margin:20px auto 0;background:#F5F1FA;border:1px solid #DFD1F0;border-left:4px solid var(--lilas);border-radius:10px;padding:14px 20px;font-size:13.5px;color:var(--tinta-suave);display:none}
+  .demo-banner.visivel{display:block}
+  .demo-banner b{color:var(--verde-900);font-weight:700}
+
+  main{max-width:820px;margin:0 auto;padding:0 24px 40px}
+
+  .secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:32px 34px;margin:24px 0;box-shadow:0 4px 16px rgba(39,87,80,.06);scroll-margin-top:20px;position:relative}
+  .secao-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;flex-wrap:wrap}
+  .secao-num{width:38px;height:38px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:17px;flex-shrink:0}
+  .secao h2{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--verde-900);line-height:1.2;letter-spacing:-.005em;flex:1}
+  .secao-sub{font-size:14px;color:var(--tinta-suave);font-style:italic;margin-top:-14px;margin-bottom:20px;padding-left:52px}
+  .secao-vazio{font-size:14px;color:var(--tinta-suave);font-style:italic;background:var(--creme);border-radius:8px;padding:16px;text-align:center}
+  .secao-vazio b{color:var(--verde-900)}
+
+  /* === Seções NOVAS do Dia 7 — dominam visualmente === */
+  .secao.novo{background:linear-gradient(135deg, #fff 0%, #FFF8F5 100%);border:1.5px solid var(--coral-soft);box-shadow:0 8px 32px rgba(255,104,66,.14);padding:36px 38px}
+  .secao.novo::before{content:"";position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(to bottom, var(--coral) 0%, #FF7A57 100%);border-radius:16px 0 0 16px}
+  .secao.novo .secao-num{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);width:44px;height:44px;font-size:19px;box-shadow:0 4px 14px rgba(255,104,66,.35)}
+  .secao.novo h2{font-size:26px}
+  .badge-novo{display:inline-flex;align-items:center;gap:5px;background:var(--coral);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 11px;border-radius:14px;box-shadow:0 3px 8px rgba(255,104,66,.28)}
+  .badge-novo::before{content:"◆"}
+
+  /* Divisor tipográfico entre "novo hoje" e "acumulado da semana" */
+  .divisor-bloco{display:flex;align-items:center;gap:16px;margin:36px 0 8px;padding:0 4px}
+  .divisor-bloco::before,.divisor-bloco::after{content:"";flex:1;height:1px;background:var(--verde-500);opacity:.35}
+  .divisor-bloco-texto{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--verde-700);white-space:nowrap;text-align:center}
+  .divisor-bloco-eyebrow{font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--coral);display:block;margin-bottom:2px}
+
+  /* Sumário — visual mais claro para novas vs agregadas */
+  .sumario-item.novo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);color:var(--coral);border:1px solid var(--coral-soft)}
+  .sumario-item.novo:hover{background:var(--coral);color:#fff}
+  .sumario-item.novo .sumario-item-num{background:var(--coral)}
+  .sumario-item.novo:hover .sumario-item-num{background:#fff;color:var(--coral)}
+
+  /* Manchete comparação */
+  .manchete-antes-depois{display:grid;grid-template-columns:1fr;gap:14px}
+  .manchete-caixa{padding:20px 24px;border-radius:12px;position:relative}
+  .manchete-antes{background:var(--creme);border-left:3px solid var(--verde-500)}
+  .manchete-depois{background:linear-gradient(135deg, var(--coral) 0%, #FF7A57 100%);color:#fff}
+  .manchete-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px}
+  .manchete-antes .manchete-label{color:var(--verde-700)}
+  .manchete-depois .manchete-label{color:rgba(255,255,255,.85)}
+  .manchete-texto{font-family:var(--serif);font-size:19px;line-height:1.4;font-weight:500;font-style:italic}
+  .manchete-antes .manchete-texto{color:var(--verde-900)}
+  .manchete-depois .manchete-texto{color:#fff}
+
+  /* Valores */
+  .valores-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:14px;margin-top:12px}
+  .valor-card{background:var(--creme);border-radius:12px;padding:18px 20px;border-top:3px solid var(--coral)}
+  .valor-nome{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--verde-900);margin-bottom:6px}
+  .valor-exemplo{font-size:13.5px;color:var(--tinta);line-height:1.55;font-style:italic}
+  .valor-exemplo::before{content:"\201C";color:var(--coral);font-size:24px;font-weight:700;line-height:0;vertical-align:-6px;margin-right:2px}
+
+  /* Ativos (Dia 1) */
+  .ativos-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:12px;margin-top:12px}
+  .ativo-card{background:var(--creme);border-radius:10px;padding:16px 18px}
+  .ativo-nome{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--verde-900);margin-bottom:8px;display:flex;align-items:center;justify-content:space-between}
+  .ativo-onde{font-size:13px;color:var(--tinta);line-height:1.5;margin-bottom:6px}
+  .ativo-sensacao{display:inline-block;background:var(--verde-100);color:var(--verde-900);padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;text-transform:capitalize}
+
+  /* Trajetória (Dia 2) */
+  .traj-padrao{background:var(--verde-900);color:var(--creme);padding:18px 22px;border-radius:10px;margin-bottom:14px;font-family:var(--serif);font-size:17px;line-height:1.4;font-style:italic}
+  .traj-padrao b{color:#fff;font-style:normal;font-weight:600}
+  .traj-count{display:grid;grid-template-columns:repeat(auto-fit, minmax(90px, 1fr));gap:8px;margin-top:12px}
+  .traj-tipo{background:var(--creme);border-radius:8px;padding:10px;text-align:center}
+  .traj-tipo-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);line-height:1}
+  .traj-tipo-nome{font-size:11px;color:var(--tinta-suave);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+
+  /* Provas (Dia 3) */
+  .prova-item{background:var(--creme);border-radius:10px;padding:16px 18px;margin-bottom:10px;border-left:3px solid var(--verde-700)}
+  .prova-titulo{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--verde-900);margin-bottom:10px}
+  .prova-care{display:grid;gap:6px;font-size:13px;line-height:1.5}
+  .prova-care-linha{display:grid;grid-template-columns:20px 1fr;gap:8px}
+  .prova-care-marc{font-family:var(--serif);font-weight:700;color:var(--coral);font-size:14px}
+  .prova-care-texto{color:var(--tinta)}
+  .prova-vis{margin-top:10px;font-size:11.5px;color:var(--tinta-suave);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+
+  /* Reputação (Dia 4) */
+  .rep-palavras{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+  @media (max-width:560px){.rep-palavras{grid-template-columns:1fr}}
+  .rep-col{background:var(--creme);border-radius:10px;padding:14px 16px}
+  .rep-col.desejada{background:var(--verde-100)}
+  .rep-col-label{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+  .rep-col.desejada .rep-col-label{color:var(--verde-700)}
+  .rep-palavra{font-family:var(--serif);font-size:15px;color:var(--verde-900);font-weight:500;padding:4px 0}
+  .rep-acao{background:linear-gradient(135deg, var(--coral) 0%, #FF7A57 100%);color:#fff;padding:14px 18px;border-radius:10px;margin-top:12px}
+  .rep-acao-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:6px}
+  .rep-acao-texto{font-family:var(--serif);font-size:15px;line-height:1.4;font-style:italic}
+
+  /* Rede (Dia 5) */
+  .rede-dist{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+  .rede-dist-item{display:grid;grid-template-columns:140px 1fr auto;gap:10px;align-items:center;font-size:13px}
+  @media (max-width:560px){.rede-dist-item{grid-template-columns:1fr auto}}
+  .rede-dist-nome{color:var(--verde-900);font-weight:500}
+  .rede-dist-barra{height:10px;background:var(--verde-100);border-radius:5px;position:relative;overflow:hidden}
+  .rede-dist-fill{position:absolute;top:0;left:0;bottom:0;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:5px}
+  .rede-dist-count{font-family:var(--serif);font-weight:600;color:var(--coral);font-size:14px}
+  .rede-msg{background:linear-gradient(135deg, var(--coral) 0%, #FF7A57 100%);color:#fff;padding:14px 18px;border-radius:10px;margin-top:12px}
+  .rede-msg-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:6px}
+  .rede-msg-alvo{font-family:var(--serif);font-size:14px;font-weight:600;margin-bottom:4px}
+  .rede-msg-texto{font-size:13px;font-style:italic;line-height:1.5;opacity:.95}
+
+  /* Cadeia ACI (Dia 6) */
+  .aci-mini{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}
+  @media (max-width:600px){.aci-mini{grid-template-columns:1fr}}
+  .aci-mini-card{background:var(--creme);border-radius:10px;padding:14px 16px;text-align:center;position:relative;border-top:3px solid var(--verde-500)}
+  .aci-mini-letra{display:inline-block;width:32px;height:32px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;line-height:32px;font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:8px}
+  .aci-mini-nome{font-family:var(--serif);font-size:14px;font-weight:600;color:var(--verde-900);margin-bottom:6px}
+  .aci-mini-info{font-size:12.5px;color:var(--tinta);line-height:1.4}
+  .aci-elo-quebrado{background:var(--verde-900);color:var(--creme);padding:14px 18px;border-radius:10px;font-size:14px;line-height:1.5}
+  .aci-elo-quebrado b{color:#fff;font-weight:600}
+
+  /* Intenção 3 semanas */
+  .intencao-card{background:linear-gradient(135deg, var(--coral) 0%, #FF7A57 100%);color:#fff;padding:26px 30px;border-radius:14px;margin-top:12px}
+  .intencao-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:12px}
+  .intencao-texto{font-family:var(--serif);font-size:22px;line-height:1.4;font-weight:500;font-style:italic;margin-bottom:16px}
+  .intencao-mapa{display:flex;align-items:center;justify-content:center;gap:12px;padding-top:16px;border-top:1px solid rgba(255,255,255,.2);margin-top:14px;flex-wrap:wrap}
+  .intencao-semana{background:rgba(255,255,255,.15);padding:8px 16px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.05em}
+  .intencao-semana.completa{background:rgba(255,255,255,.28);border:1px solid rgba(255,255,255,.4)}
+
+  /* Fechamento */
+  .fechamento{background:linear-gradient(135deg, var(--verde-900) 0%, #1a4642 100%);color:var(--creme);padding:36px 34px;border-radius:16px;margin-top:32px;text-align:center;position:relative;overflow:hidden}
+  .fechamento::before{content:"";position:absolute;top:-50%;right:-10%;width:280px;height:280px;background:radial-gradient(circle, rgba(255,104,66,.15) 0%, transparent 60%);pointer-events:none}
+  .fechamento-eyebrow{font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;position:relative}
+  .fechamento-eyebrow::before,.fechamento-eyebrow::after{content:"◆";margin:0 8px}
+  .fechamento-frase{font-family:var(--serif);font-size:22px;line-height:1.45;color:#fff;font-style:italic;margin-bottom:12px;position:relative}
+  .fechamento-assinatura{font-family:var(--serif);font-size:14px;color:#A9C6B8;font-style:italic;position:relative}
+
+  .voltar-dia{text-align:center;margin-top:32px}
+  .voltar-dia a{display:inline-flex;align-items:center;gap:8px;color:var(--verde-700);text-decoration:none;font-weight:600;font-size:14px;border-bottom:1px dotted var(--verde-500);padding-bottom:2px}
+  .voltar-dia svg{width:14px;height:14px;fill:currentColor}
+
+  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+
+  /* === TEXTO JUSTIFICADO (materiais) === */
+  main p{text-align:justify;text-justify:inter-word;hyphens:auto}
+  main .fechamento, main .fechamento p, main .movimento-conteudo, main .movimento-legenda, main .insight-conteudo, main .direcao-conteudo, main .direcao-recap-frase, main .campo-conteudo:not(.destaque), main .marca-item-conteudo, main .pergunta-topo-texto, main .perfil-legenda, main .dim-exemplo, main .lente-texto, main .mov-texto, main .comp-nota, main .acumulado-nota, main .fechamento-conteudo, main .eu-cena, main .eu-preco, main .campo-conteudo{text-align:justify;text-justify:inter-word;hyphens:auto}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 7</a><span class="sep">›</span><span class="cur">Material</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html">Missão</a><a href="material.html" class="atual">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 6/index.html" title="Dia 6 (tecla ←)">←<span class="lbl"> Dia 6</span></a><a class="intnav-pill" href="../Dia 8/index.html" title="Dia 8 (tecla →)"><span class="lbl">Dia 8 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 7</a>
+    <span class="badge-consolidacao">◆ Retrato final da semana 1 ◆</span>
+    <h1>Meu Retrato de <span class="grifo">Capital de Carreira</span>.</h1>
+    <p class="lede">Sete dias, sete peças — encontradas aqui num único material. Sua manchete revisada, seus valores centrais, e tudo que você construiu na semana: ativos, trajetória, provas, reputação, rede e cadeia A·C·I.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<div class="sumario">
+  <div class="sumario-titulo">Navegar pelo Retrato</div>
+  <div class="sumario-grid">
+    <a href="#manchete" class="sumario-item novo"><span class="sumario-item-num">M</span>Manchete revisada</a>
+    <a href="#valores" class="sumario-item novo"><span class="sumario-item-num">V</span>Valores centrais</a>
+    <a href="#intencao" class="sumario-item novo"><span class="sumario-item-num">→</span>Intenção 3 semanas</a>
+    <a href="#ativos" class="sumario-item"><span class="sumario-item-num">1</span>Ativos (Dia 1)</a>
+    <a href="#trajetoria" class="sumario-item"><span class="sumario-item-num">2</span>Trajetória (Dia 2)</a>
+    <a href="#provas" class="sumario-item"><span class="sumario-item-num">3</span>Provas (Dia 3)</a>
+    <a href="#reputacao" class="sumario-item"><span class="sumario-item-num">4</span>Reputação (Dia 4)</a>
+    <a href="#rede" class="sumario-item"><span class="sumario-item-num">5</span>Rede (Dia 5)</a>
+    <a href="#cadeia" class="sumario-item"><span class="sumario-item-num">6</span>Cadeia A·C·I (Dia 6)</a>
+  </div>
+</div>
+
+<div class="demo-banner" id="demo-banner">
+  <b>Prévia com dados de demonstração.</b> Você abriu este Retrato sem completar as missões dos 7 dias — o conteúdo abaixo mostra como ele fica preenchido usando o perfil da Camila. Complete os dias para ver o seu próprio.
+</div>
+
+<main>
+
+  <!-- ==================== BLOCO 1: O QUE EMERGIU HOJE ==================== -->
+  <div class="divisor-bloco">
+    <div class="divisor-bloco-texto">
+      <span class="divisor-bloco-eyebrow">◆ Bloco 1 · A sua reflexão de Dia 7 ◆</span>
+      O que emergiu hoje
+    </div>
+  </div>
+
+  <!-- MANCHETE (NOVA - DIA 7) -->
+  <section class="secao novo" id="manchete">
+    <div class="secao-header">
+      <div class="secao-num">M</div>
+      <h2>Sua manchete — revisada</h2>
+      <span class="badge-novo">Novo hoje</span>
+    </div>
+    <p class="secao-sub">A versão de hoje ao lado da versão do Dia 1 — a distância entre as duas é o dado da semana.</p>
+    <div class="manchete-antes-depois">
+      <div class="manchete-caixa manchete-depois">
+        <div class="manchete-label">Dia 7 — revisada</div>
+        <div class="manchete-texto" id="manchete-nova"></div>
+      </div>
+      <div class="manchete-caixa manchete-antes">
+        <div class="manchete-label">Dia 1 — original</div>
+        <div class="manchete-texto" id="manchete-antiga"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES (NOVA - DIA 7) -->
+  <section class="secao novo" id="valores">
+    <div class="secao-header">
+      <div class="secao-num">V</div>
+      <h2>Seus valores centrais</h2>
+      <span class="badge-novo">Novo hoje</span>
+    </div>
+    <p class="secao-sub">Os 3-5 valores que operam nas suas decisões difíceis — com o exemplo concreto de cada.</p>
+    <div class="valores-grid" id="valores-grid"></div>
+  </section>
+
+  <!-- INTENÇÃO 3 SEMANAS (NOVA - DIA 7) -->
+  <section class="secao novo" id="intencao">
+    <div class="secao-header">
+      <div class="secao-num">→</div>
+      <h2>Sua intenção para as próximas 3 semanas</h2>
+      <span class="badge-novo">Novo hoje</span>
+    </div>
+    <p class="secao-sub">Direção — não meta. O eixo que orienta os próximos 21 dias da trilha.</p>
+    <div class="intencao-card">
+      <div class="intencao-label">Direção · não meta</div>
+      <div class="intencao-texto" id="intencao-texto"></div>
+      <div class="intencao-mapa">
+        <span class="intencao-semana completa">Semana 1 ✓</span>
+        <span class="intencao-semana">Semana 2</span>
+        <span class="intencao-semana">Semana 3</span>
+        <span class="intencao-semana">Semana 4</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BLOCO 2: O QUE VOCÊ CONSTRUIU NA SEMANA ==================== -->
+  <div class="divisor-bloco">
+    <div class="divisor-bloco-texto">
+      <span class="divisor-bloco-eyebrow">Bloco 2 · Os seis materiais dos Dias 1 ao 6</span>
+      O que você construiu na semana
+    </div>
+  </div>
+
+  <!-- ATIVOS (DIA 1) -->
+  <section class="secao" id="ativos">
+    <div class="secao-header"><div class="secao-num">1</div><h2>Foto Inicial dos 6 ativos</h2></div>
+    <p class="secao-sub">A leitura panorâmica que você tirou no Dia 1.</p>
+    <div class="ativos-grid" id="ativos-grid"></div>
+  </section>
+
+  <!-- TRAJETÓRIA (DIA 2) -->
+  <section class="secao" id="trajetoria">
+    <div class="secao-header"><div class="secao-num">2</div><h2>Sua trajetória — o padrão que emerge</h2></div>
+    <p class="secao-sub">Os momentos formadores e o padrão nomeado.</p>
+    <div id="trajetoria-conteudo"></div>
+  </section>
+
+  <!-- PROVAS (DIA 3) -->
+  <section class="secao" id="provas">
+    <div class="secao-header"><div class="secao-num">3</div><h2>Suas 3 Provas Concretas</h2></div>
+    <p class="secao-sub">Trabalho entregue no formato C·A·R·E — o que aguenta verificação.</p>
+    <div id="provas-conteudo"></div>
+  </section>
+
+  <!-- REPUTAÇÃO (DIA 4) -->
+  <section class="secao" id="reputacao">
+    <div class="secao-header"><div class="secao-num">4</div><h2>Diagnóstico de Reputação</h2></div>
+    <p class="secao-sub">Palavras atual × desejada, e a ação de reputação para os próximos 7 dias.</p>
+    <div id="reputacao-conteudo"></div>
+  </section>
+
+  <!-- REDE (DIA 5) -->
+  <section class="secao" id="rede">
+    <div class="secao-header"><div class="secao-num">5</div><h2>Mapa de Rede</h2></div>
+    <p class="secao-sub">Diversidade da sua rede + mensagem de reativação.</p>
+    <div id="rede-conteudo"></div>
+  </section>
+
+  <!-- CADEIA ACI (DIA 6) -->
+  <section class="secao" id="cadeia">
+    <div class="secao-header"><div class="secao-num">6</div><h2>Cadeia A·C·I</h2></div>
+    <p class="secao-sub">Aprendizagem, Credibilidade, Influência — o elo travado + a ação de estirão.</p>
+    <div id="cadeia-conteudo"></div>
+  </section>
+
+  <div class="fechamento">
+    <div class="fechamento-eyebrow">Fim da semana 1</div>
+    <div class="fechamento-frase">Você começou a semana como quem <b>reage</b>. Termina como quem já sabe <b>conduzir</b> — porque tem material, tem direção e tem intenção.</div>
+    <div class="fechamento-assinatura">Do reagir ao conduzir.</div>
+  </div>
+
+  <div class="voltar-dia">
+    <a href="index.html"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar ao índice do Dia 7</a>
+  </div>
+
+<!--intentia-dayend:start--><style>
+.intday{background:linear-gradient(135deg,#275750 0%,#1d453f 100%);color:#F5F7F3;border-radius:20px;
+  padding:34px 38px;margin:36px 0 8px;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif}
+.intday .intday-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7CA89E;margin-bottom:10px}
+.intday h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:22px;line-height:1.25;margin:0 0 10px;color:#F5F7F3}
+.intday p{font-size:14.5px;line-height:1.6;color:#CFE0D6;margin:0 0 20px;max-width:560px}
+.intday .intday-cta{display:inline-flex;align-items:center;gap:8px;background:#FF6842;color:#fff;text-decoration:none;
+  font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 10px 24px rgba(255,104,66,.3);transition:transform .2s,box-shadow .2s}
+.intday .intday-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,104,66,.4)}
+@media(max-width:600px){.intday{padding:26px 22px}.intday h3{font-size:19px}}
+</style><div class="intday"><div class="intday-eyebrow">A jornada continua</div><h3>Amanhã: Dia 8 — Futuros possíveis — três versões de você.</h3><p>Você concluiu o Dia 7. Quando estiver pronto, dê o próximo passo da travessia.</p><a class="intday-cta" href="../Dia 8/index.html">Ir para o Dia 8 →</a></div><!--intentia-dayend:end-->
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 7 · Meu Retrato de Capital de Carreira — Semana 1</div>
+</footer>
+
+<script>
+  // ============ DADOS DE DEMONSTRAÇÃO ============
+  const DADOS_DEMO = {
+    dia1: {
+      manchete: 'Analista que faz o número virar decisão — mas ainda espera ser chamada em vez de puxar a conversa.',
+      ativos: [
+        {id:'res', nome:'Resultados', onde:'Faço muito, entrego no prazo — mas quase nada fica registrado além do meu próprio dashboard.', sensacoes:['dúvida']},
+        {id:'rep', nome:'Reputação', onde:'"Prestativa" é a palavra que ouço; queria ouvir "estratégica".', sensacoes:['desconforto']},
+        {id:'rel', nome:'Relacionamentos', onde:'Rede grande no LinkedIn, contato ativo com pouca gente.', sensacoes:['ansiedade']},
+        {id:'apr', nome:'Aprendizagem', onde:'Faço cursos por conta, mas não sistematizo o que aprendo.', sensacoes:['curiosidade']},
+        {id:'cre', nome:'Credibilidade', onde:'Dentro do meu time sou referência; fora não me conhecem.', sensacoes:['frustração']},
+        {id:'inf', nome:'Influência', onde:'Minha palavra pesa em 3-4 pessoas do time, ponto.', sensacoes:['dúvida']}
+      ]
+    },
+    dia2: {
+      momentos: [
+        {tipo:'V', ano:2015}, {tipo:'C', ano:2017}, {tipo:'P', ano:2019},
+        {tipo:'D', ano:2020}, {tipo:'V', ano:2021}, {tipo:'E', ano:2022},
+        {tipo:'C', ano:2023}, {tipo:'R', ano:2024}
+      ],
+      padrao: 'Trago clareza no meio do caos. Nas três maiores viradas, inclusive uma crise familiar, fui quem organizou a leitura.'
+    },
+    dia3: {
+      provas: [
+        {titulo:'Painel de decisão semanal', C:'Diretoria levava uma semana em troca de e-mails toda segunda.', A:'Desenhei painel com 6 indicadores.', R:'Reunião fecha em 40 min agora.', E:'Painel em produção + ata das reuniões.', vis:'minha liderança'},
+        {titulo:'Padronização de métricas cross-área', C:'Três áreas usavam definições diferentes.', A:'Liderei workshop e escrevi definição única.', R:'Relatórios bateram pela primeira vez em 18 meses.', E:'Documento em uso + pessoas das áreas.', vis:'só eu'},
+        {titulo:'Reversão de churn de conta importante', C:'Cliente estratégico ia sair.', A:'Análise que mostrou problema de escopo, redesenho.', R:'Cliente renovou com 40% a mais.', E:'Contrato + e-mail do cliente.', vis:'só eu'}
+      ]
+    },
+    dia4: {
+      palavrasAtuais: ['prestativa', 'dedicada', 'confiável'],
+      palavrasDesejadas: ['estratégica', 'referência em análise de decisão', 'traz clareza'],
+      dimensoesTravadas: ['nomeacao', 'circulacao'],
+      acao: 'Pedir a três colegas de áreas diferentes, um por dia, que descrevam em uma frase qual problema eu mais resolvo.'
+    },
+    dia5: {
+      contatos: [
+        {nome:'Marina', cat:'empresa-atual', nut:'3m', estrela:false},
+        {nome:'Bruno', cat:'empresa-atual', nut:'3m', estrela:false},
+        {nome:'Renata', cat:'ex-empresa', nut:'6m', estrela:true},
+        {nome:'Carlos', cat:'ex-empresa', nut:'12m', estrela:true},
+        {nome:'Patrícia', cat:'mesmo-setor', nut:'3m', estrela:false},
+        {nome:'Diego', cat:'mesmo-setor', nut:'6m', estrela:false},
+        {nome:'Luiza', cat:'mesmo-setor', nut:'mais', estrela:true},
+        {nome:'Eduardo', cat:'formacao', nut:'12m', estrela:false},
+        {nome:'Ricardo', cat:'comunidade', nut:'6m', estrela:true},
+        {nome:'Ana', cat:'setor-diferente', nut:'mais', estrela:false}
+      ],
+      pessoaAlvo: 'Renata Alves',
+      mensagem: 'Oi, Renata, tudo bem? Vi um artigo essa semana sobre reestruturação de times de dados e me lembrei da nossa conversa no fim do meu último ano na Beta. Vale um café rápido esse mês, sem agenda?'
+    },
+    dia6: {
+      aprendizagem: {domino:'Análise de dados de comportamento — cohorts, funil.', construo:'Leitura de negócios além do dado.'},
+      credibilidade: 'Alguém que precisa de número que sustenta decisão em reunião de comitê.',
+      influencia: {dentro:'~8 pessoas', fora:'2-3 pessoas da comunidade'},
+      eloQuebrado: 'c-i',
+      acao: 'Apresentar internamente na próxima quinta o estudo de cohort que fiz.'
+    },
+    dia7: {
+      valoresCentrais: [
+        {nome:'Rigor com dado', exemplo:'Recusei defender um número que não tinha checado duas vezes, mesmo pressionada pela liderança.'},
+        {nome:'Clareza no lugar da confusão', exemplo:'Fiquei 3 horas a mais no dia da apresentação para reescrever o resumo — o meu papel era simplificar, não parecer trabalhosa.'},
+        {nome:'Não decidir sem base', exemplo:'Adiei uma decisão de escopo de projeto por 2 semanas até ter dado suficiente — cliente reclamou, mas a decisão foi certa.'}
+      ],
+      mancheteAntiga: 'Analista que faz o número virar decisão — mas ainda espera ser chamada em vez de puxar a conversa.',
+      mancheteNova: 'Analista de dados que traz clareza no meio do caos — e agora começa a puxar a conversa que antes esperava.',
+      intencao3Semanas: 'Ativar a rede que mapeei e sair da nomeação difusa: uma apresentação por semana em contexto novo (área adjacente ou comunidade), com o meu tema específico.'
+    }
+  };
+
+  // ============ TENTA CARREGAR DO SESSIONSTORAGE ============
+  function pega(key, fallback) {
+    try { const s = sessionStorage.getItem(key); if (s) { const p = JSON.parse(s); if (p && Object.keys(p).length > 0) return p; } } catch(e) {}
+    return fallback;
+  }
+
+  const dia1 = pega('intentia-dia1', DADOS_DEMO.dia1);
+  const dia2 = pega('intentia-dia2', DADOS_DEMO.dia2);
+  const dia3 = pega('intentia-dia3', DADOS_DEMO.dia3);
+  const dia4 = pega('intentia-dia4', DADOS_DEMO.dia4);
+  const dia5 = pega('intentia-dia5', DADOS_DEMO.dia5);
+  const dia6 = pega('intentia-dia6', DADOS_DEMO.dia6);
+  const dia7 = pega('intentia-dia7', DADOS_DEMO.dia7);
+
+  // Detecta se está usando dados de demo (nenhum dos 7 dias no sessionStorage)
+  const usandoDemo = !sessionStorage.getItem('intentia-dia7') && !sessionStorage.getItem('intentia-dia1');
+  if (usandoDemo) document.getElementById('demo-banner').classList.add('visivel');
+
+  // ============ MANCHETE ============
+  document.getElementById('manchete-nova').textContent = '"' + (dia7.mancheteNova || 'Sua manchete revisada aparecerá aqui.') + '"';
+  document.getElementById('manchete-antiga').textContent = '"' + (dia7.mancheteAntiga || dia1.manchete || 'Sua manchete do Dia 1 aparecerá aqui.') + '"';
+
+  // ============ VALORES ============
+  const valoresGrid = document.getElementById('valores-grid');
+  if (dia7.valoresCentrais && dia7.valoresCentrais.length > 0) {
+    dia7.valoresCentrais.forEach(v => {
+      const div = document.createElement('div');
+      div.className = 'valor-card';
+      div.innerHTML = `<div class="valor-nome">${v.nome}</div>${v.exemplo ? `<div class="valor-exemplo">${v.exemplo}"</div>` : ''}`;
+      valoresGrid.appendChild(div);
+    });
+  } else {
+    valoresGrid.innerHTML = '<div class="secao-vazio">Complete a missão do Dia 7 para ver seus valores aqui.</div>';
+  }
+
+  // ============ ATIVOS (DIA 1) ============
+  const ativosGrid = document.getElementById('ativos-grid');
+  if (dia1.ativos && dia1.ativos.length > 0) {
+    dia1.ativos.forEach(a => {
+      const sensacoes = (a.sensacoes && a.sensacoes.length) ? a.sensacoes : (a.sensacao ? [a.sensacao] : []);
+      const sensHtml = sensacoes.length ? sensacoes.map(s => `<span class="ativo-sensacao">${s}</span>`).join(' ') : '';
+      const div = document.createElement('div');
+      div.className = 'ativo-card';
+      div.innerHTML = `<div class="ativo-nome">${a.nome}${sensHtml ? '' : ''}</div><div class="ativo-onde">${a.onde || 'Não preenchido'}</div>${sensHtml}`;
+      ativosGrid.appendChild(div);
+    });
+  } else {
+    ativosGrid.innerHTML = '<div class="secao-vazio">Complete o Dia 1 para ver seus 6 ativos aqui.</div>';
+  }
+
+  // ============ TRAJETÓRIA (DIA 2) ============
+  const trajetoriaEl = document.getElementById('trajetoria-conteudo');
+  if (dia2.padrao || (dia2.momentos && dia2.momentos.length)) {
+    const nomes = {V:'Virada',C:'Conquista',P:'Perda',D:'Decisão',E:'Encontro',R:'Ruptura'};
+    const contagem = {};
+    (dia2.momentos || []).forEach(m => { if (m.tipo) contagem[m.tipo] = (contagem[m.tipo]||0)+1; });
+    let html = '';
+    if (dia2.padrao) html += `<div class="traj-padrao">"${dia2.padrao}"</div>`;
+    if (Object.keys(contagem).length) {
+      html += '<div class="traj-count">';
+      ['V','C','P','D','E','R'].forEach(k => {
+        html += `<div class="traj-tipo"><div class="traj-tipo-num">${contagem[k]||0}</div><div class="traj-tipo-nome">${nomes[k]}</div></div>`;
+      });
+      html += '</div>';
+    }
+    trajetoriaEl.innerHTML = html;
+  } else {
+    trajetoriaEl.innerHTML = '<div class="secao-vazio">Complete o Dia 2 para ver sua trajetória aqui.</div>';
+  }
+
+  // ============ PROVAS (DIA 3) ============
+  const provasEl = document.getElementById('provas-conteudo');
+  if (dia3.provas && dia3.provas.length > 0) {
+    dia3.provas.forEach(p => {
+      if (!p.titulo && !p.C && !p.A) return;
+      const div = document.createElement('div');
+      div.className = 'prova-item';
+      div.innerHTML = `
+        <div class="prova-titulo">${p.titulo || 'Prova sem título'}</div>
+        <div class="prova-care">
+          ${p.C ? `<div class="prova-care-linha"><div class="prova-care-marc">C</div><div class="prova-care-texto">${p.C}</div></div>` : ''}
+          ${p.A ? `<div class="prova-care-linha"><div class="prova-care-marc">A</div><div class="prova-care-texto">${p.A}</div></div>` : ''}
+          ${p.R ? `<div class="prova-care-linha"><div class="prova-care-marc">R</div><div class="prova-care-texto">${p.R}</div></div>` : ''}
+          ${p.E ? `<div class="prova-care-linha"><div class="prova-care-marc">E</div><div class="prova-care-texto">${p.E}</div></div>` : ''}
+        </div>
+        ${p.vis ? `<div class="prova-vis">Visibilidade: ${p.vis}</div>` : ''}
+      `;
+      provasEl.appendChild(div);
+    });
+  } else {
+    provasEl.innerHTML = '<div class="secao-vazio">Complete o Dia 3 para ver suas 3 provas concretas aqui.</div>';
+  }
+
+  // ============ REPUTAÇÃO (DIA 4) ============
+  const reputacaoEl = document.getElementById('reputacao-conteudo');
+  if (dia4.palavrasAtuais && dia4.palavrasAtuais.length) {
+    const palavrasAtuais = dia4.palavrasAtuais.filter(p => p && p.trim());
+    const palavrasDesejadas = (dia4.palavrasDesejadas || []).filter(p => p && p.trim());
+    let html = '<div class="rep-palavras">';
+    html += '<div class="rep-col"><div class="rep-col-label">Vista hoje</div>' + palavrasAtuais.map(p => `<div class="rep-palavra">${p}</div>`).join('') + '</div>';
+    html += '<div class="rep-col desejada"><div class="rep-col-label">Vista em 12 meses</div>' + palavrasDesejadas.map(p => `<div class="rep-palavra">${p}</div>`).join('') + '</div>';
+    html += '</div>';
+    if (dia4.acao) html += `<div class="rep-acao"><div class="rep-acao-label">Ação de reputação · 7 dias</div><div class="rep-acao-texto">"${dia4.acao}"</div></div>`;
+    reputacaoEl.innerHTML = html;
+  } else {
+    reputacaoEl.innerHTML = '<div class="secao-vazio">Complete o Dia 4 para ver seu diagnóstico de reputação aqui.</div>';
+  }
+
+  // ============ REDE (DIA 5) ============
+  const redeEl = document.getElementById('rede-conteudo');
+  if (dia5.contatos && dia5.contatos.length > 0) {
+    const CAT_LABEL = {'empresa-atual':'Empresa atual','ex-empresa':'Ex-empresa','mesmo-setor':'Mesmo setor','setor-diferente':'Setor diferente','formacao':'Formação','comunidade':'Comunidade','pessoal':'Pessoal'};
+    const catCount = {};
+    dia5.contatos.forEach(c => { if (c.cat) catCount[c.cat] = (catCount[c.cat]||0)+1; });
+    const maxCat = Math.max(...Object.values(catCount), 1);
+    let html = '<div class="rede-dist">';
+    Object.entries(catCount).sort((a,b)=>b[1]-a[1]).forEach(([cat, count]) => {
+      html += `<div class="rede-dist-item"><div class="rede-dist-nome">${CAT_LABEL[cat] || cat}</div><div class="rede-dist-barra"><div class="rede-dist-fill" style="width:${(count/maxCat)*100}%"></div></div><div class="rede-dist-count">${count}</div></div>`;
+    });
+    html += '</div>';
+    if (dia5.pessoaAlvo && dia5.mensagem) {
+      html += `<div class="rede-msg"><div class="rede-msg-label">Mensagem de retomada · próximos 7 dias</div><div class="rede-msg-alvo">Para: ${dia5.pessoaAlvo}</div><div class="rede-msg-texto">"${dia5.mensagem}"</div></div>`;
+    }
+    redeEl.innerHTML = html;
+  } else {
+    redeEl.innerHTML = '<div class="secao-vazio">Complete o Dia 5 para ver seu mapa de rede aqui.</div>';
+  }
+
+  // ============ CADEIA ACI (DIA 6) ============
+  const cadeiaEl = document.getElementById('cadeia-conteudo');
+  if (dia6.aprendizagem) {
+    const ELO_INFO = {
+      'a-c': 'A → C: você aprende, mas não colhe credibilidade sobre isso.',
+      'c-i': 'C → I: credibilidade local que não vira influência além do círculo.',
+      'i-a': 'I sem retorno para A: fala muito, sistematiza pouco.'
+    };
+    let html = '<div class="aci-mini">';
+    html += `<div class="aci-mini-card"><span class="aci-mini-letra">A</span><div class="aci-mini-nome">Aprendizagem</div><div class="aci-mini-info"><b>Domino:</b> ${dia6.aprendizagem.domino || '—'}<br><b>Construo:</b> ${dia6.aprendizagem.construo || '—'}</div></div>`;
+    html += `<div class="aci-mini-card"><span class="aci-mini-letra">C</span><div class="aci-mini-nome">Credibilidade</div><div class="aci-mini-info">${dia6.credibilidade || '—'}</div></div>`;
+    html += `<div class="aci-mini-card"><span class="aci-mini-letra">I</span><div class="aci-mini-nome">Influência</div><div class="aci-mini-info"><b>Dentro:</b> ${dia6.influencia && dia6.influencia.dentro || '—'}<br><b>Fora:</b> ${dia6.influencia && dia6.influencia.fora || '—'}</div></div>`;
+    html += '</div>';
+    if (dia6.eloQuebrado && ELO_INFO[dia6.eloQuebrado]) {
+      html += `<div class="aci-elo-quebrado"><b>Elo travado:</b> ${ELO_INFO[dia6.eloQuebrado]}</div>`;
+    }
+    if (dia6.acao) {
+      html += `<div class="rep-acao" style="margin-top:12px"><div class="rep-acao-label">Ação de estirão · 7 dias</div><div class="rep-acao-texto">"${dia6.acao}"</div></div>`;
+    }
+    cadeiaEl.innerHTML = html;
+  } else {
+    cadeiaEl.innerHTML = '<div class="secao-vazio">Complete o Dia 6 para ver sua leitura da Cadeia A·C·I aqui.</div>';
+  }
+
+  // ============ INTENÇÃO ============
+  document.getElementById('intencao-texto').textContent = '"' + (dia7.intencao3Semanas || 'Sua intenção para as próximas 3 semanas aparecerá aqui.') + '"';
+</script>
+
+</body>
+</html>

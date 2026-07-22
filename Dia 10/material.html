@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 10 · Placar por Critério</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.6vw,42px);line-height:1.12;margin-bottom:14px;letter-spacing:-.01em}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:640px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  main{max-width:960px;margin:0 auto;padding:0 24px 40px}
+
+  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:16px 22px;margin:24px 0;display:flex;align-items:flex-start;gap:14px;font-size:13.5px;line-height:1.55}
+  .aviso-demo-icone{color:var(--coral);font-size:20px;flex-shrink:0;margin-top:2px}
+  .aviso-demo b{color:var(--verde-900)}
+  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
+
+  /* Ranking em destaque no topo */
+  .ranking-topo{background:linear-gradient(135deg, var(--verde-900) 0%, #1d453f 100%);color:var(--creme);border-radius:16px;padding:28px 32px;margin:24px 0;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(39,87,80,.2)}
+  .ranking-label{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  .ranking-lista{display:flex;flex-direction:column;gap:10px}
+  .ranking-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:10px;transition:background .2s}
+  .ranking-item.top{background:rgba(255,104,66,.12);border-color:rgba(255,104,66,.35)}
+  .ranking-posicao{width:32px;height:32px;background:rgba(255,255,255,.14);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:16px;flex-shrink:0}
+  .ranking-item.top .ranking-posicao{background:var(--coral)}
+  .ranking-info{flex:1;min-width:0}
+  .ranking-tipo{font-family:var(--serif);font-size:16px;font-weight:600;color:#fff;line-height:1.2}
+  .ranking-formato{font-size:12px;color:#A9C6B8}
+  .ranking-placar{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;text-align:right;font-variant-numeric:tabular-nums}
+  .ranking-placar small{font-size:12px;color:#A9C6B8;font-weight:400}
+  .ranking-nota{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.10);font-size:12.5px;color:#CFE0D6;font-style:italic;line-height:1.55}
+
+  /* Grid dos 3 Eus com radar */
+  .placar-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:18px;margin:24px 0}
+  @media (max-width:820px){.placar-grid{grid-template-columns:1fr}}
+  .placar-col{background:#fff;border:1px solid var(--verde-100);border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06);display:flex;flex-direction:column}
+  .placar-col-header{padding:22px 22px 18px;color:#fff}
+  .placar-col.continuacao .placar-col-header{background:linear-gradient(135deg, #336B62 0%, #275750 100%)}
+  .placar-col.adjacencia .placar-col-header{background:linear-gradient(135deg, #FF7A57 0%, #E85530 100%)}
+  .placar-col.reinvencao .placar-col-header{background:linear-gradient(135deg, #8B7BB8 0%, #5F4E8C 100%)}
+  .placar-col-letra{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;font-family:var(--serif);font-size:18px;font-weight:600;margin-bottom:10px}
+  .placar-col-tipo{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.85;margin-bottom:4px}
+  .placar-col-nome{font-family:var(--serif);font-size:15px;font-weight:500;font-style:italic;line-height:1.3;opacity:.95}
+  .placar-col-body{padding:22px;flex:1}
+
+  .placar-total{text-align:center;margin-bottom:20px}
+  .placar-total-num{font-family:var(--serif);font-size:44px;font-weight:600;color:var(--verde-900);line-height:1}
+  .placar-total-num small{font-size:20px;color:var(--tinta-suave);font-weight:400}
+  .placar-total-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--tinta-suave);margin-top:4px}
+
+  .notas-lista{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
+  .nota-linha{display:grid;grid-template-columns:60px 1fr 24px;gap:10px;align-items:center;font-size:13px}
+  .nota-nome{font-size:11.5px;font-weight:700;color:var(--verde-700);letter-spacing:.1em;text-transform:uppercase}
+  .nota-barra{background:var(--verde-100);height:8px;border-radius:4px;position:relative;overflow:hidden}
+  .nota-barra-fill{position:absolute;left:0;top:0;height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:4px;transition:width .5s ease}
+  .nota-valor{font-family:var(--serif);font-weight:600;color:var(--verde-900);text-align:center;font-size:14px}
+
+  .just-lista{border-top:1px dashed var(--verde-100);padding-top:12px;display:flex;flex-direction:column;gap:10px;font-size:12.5px;line-height:1.5;color:var(--tinta-suave)}
+  .just-item b{color:var(--verde-900);text-transform:uppercase;letter-spacing:.08em;font-size:10.5px;font-weight:700}
+  .vazio{color:var(--tinta-suave);font-style:italic;font-size:13px}
+
+  /* Insight */
+  .insight-topo{background:linear-gradient(135deg, #fff 0%, #FFF8F5 100%);border:1.5px solid var(--coral-soft);border-radius:16px;padding:28px 32px;margin:24px 0;position:relative;box-shadow:0 6px 22px rgba(255,104,66,.08)}
+  .insight-topo::before{content:"";position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(to bottom, var(--coral) 0%, #FF7A57 100%);border-radius:16px 0 0 16px}
+  .badge-novo{display:inline-flex;align-items:center;gap:5px;background:var(--coral);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 11px;border-radius:14px;margin-bottom:12px}
+  .badge-novo::before{content:"◆"}
+  .insight-topo h2{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--verde-900);margin-bottom:10px}
+  .insight-topo .insight-conteudo{font-family:var(--serif);font-size:18px;line-height:1.45;color:var(--tinta);font-weight:500;font-style:italic}
+
+  .fechamento{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 32px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .fechamento h2{font-family:var(--serif);font-size:22px;color:var(--verde-900);margin-bottom:12px;font-weight:600}
+  .fechamento p{font-size:15px;color:var(--tinta);line-height:1.65;margin-bottom:12px}
+  .fechamento p:last-child{margin-bottom:0}
+  .fechamento b{color:var(--verde-900)}
+
+  .proximo{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:28px 30px;margin:24px 0;text-align:center;position:relative;overflow:hidden}
+  .proximo-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;position:relative;z-index:1}
+  .proximo h3{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;margin-bottom:8px;position:relative;z-index:1}
+  .proximo p{font-size:14.5px;color:#CFE0D6;margin-bottom:20px;max-width:520px;margin-left:auto;margin-right:auto;position:relative;z-index:1;line-height:1.55}
+  .proximo-cta{display:inline-flex;align-items:center;gap:12px;background:var(--coral);color:#fff;padding:14px 26px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:16px;font-weight:600;position:relative;z-index:1;transition:transform .2s;box-shadow:0 6px 18px rgba(255,104,66,.32)}
+  .proximo-cta:hover{transform:translateY(-2px)}
+  .proximo-cta svg{width:14px;height:14px;fill:currentColor}
+
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+
+  /* === TEXTO JUSTIFICADO (materiais) === */
+  main p{text-align:justify;text-justify:inter-word;hyphens:auto}
+  main .fechamento, main .fechamento p, main .movimento-conteudo, main .movimento-legenda, main .insight-conteudo, main .direcao-conteudo, main .direcao-recap-frase, main .campo-conteudo:not(.destaque), main .marca-item-conteudo, main .pergunta-topo-texto, main .perfil-legenda, main .dim-exemplo, main .lente-texto, main .mov-texto, main .comp-nota, main .acumulado-nota, main .fechamento-conteudo, main .eu-cena, main .eu-preco, main .campo-conteudo{text-align:justify;text-justify:inter-word;hyphens:auto}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 10</a><span class="sep">›</span><span class="cur">Material</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html">Missão</a><a href="material.html" class="atual">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 9/index.html" title="Dia 9 (tecla ←)">←<span class="lbl"> Dia 9</span></a><a class="intnav-pill" href="../Dia 11/index.html" title="Dia 11 (tecla →)"><span class="lbl">Dia 11 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 10</a>
+    <div class="eyebrow">Material · Dia 10 · Semana 2 · Dia 3 de 7</div>
+    <h1>Placar dos 3 Eus por <span class="grifo">Critério</span>.</h1>
+    <p class="lede">Ranking topo é diagnóstico, não sentença. Uma versão pode ganhar por placar e perder por propósito (Dia 12); outra pode perder por placar e ganhar por marca (Dia 14). Aqui você tem a leitura por critério — pura.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<main>
+  <div id="aviso-demo" class="aviso-demo" style="display:none">
+    <div class="aviso-demo-icone">◆</div>
+    <div><b>Você ainda não preencheu a missão do Dia 10.</b> Os dados abaixo estão em <b>modo demonstrativo</b>. <a href="missao.html">Ir preencher agora →</a></div>
+  </div>
+
+  <!-- RANKING TOPO -->
+  <div class="ranking-topo">
+    <div class="ranking-label">Ranking por critério</div>
+    <div class="ranking-lista" id="ranking-lista"></div>
+    <div class="ranking-nota">O placar mais alto revela qual Eu tem <b>menos fragilidade estrutural</b> para acontecer. Isso ≠ ser a versão certa. É <em>ter menos obstáculos</em> — que pode ou não ser o critério que decide.</div>
+  </div>
+
+  <div class="placar-grid">
+    <div class="placar-col continuacao">
+      <div class="placar-col-header">
+        <div class="placar-col-letra">C</div>
+        <div class="placar-col-tipo">Eu · Continuação</div>
+        <div class="placar-col-nome" id="cont-nome">—</div>
+      </div>
+      <div class="placar-col-body">
+        <div class="placar-total"><div class="placar-total-num" id="cont-total">—<small>/15</small></div><div class="placar-total-label">Placar total</div></div>
+        <div class="notas-lista">
+          <div class="nota-linha"><div class="nota-nome">Aloc</div><div class="nota-barra"><div class="nota-barra-fill" id="cont-aloc-bar"></div></div><div class="nota-valor" id="cont-aloc-num">—</div></div>
+          <div class="nota-linha"><div class="nota-nome">Rev</div><div class="nota-barra"><div class="nota-barra-fill" id="cont-rev-bar"></div></div><div class="nota-valor" id="cont-rev-num">—</div></div>
+          <div class="nota-linha"><div class="nota-nome">Ret</div><div class="nota-barra"><div class="nota-barra-fill" id="cont-ret-bar"></div></div><div class="nota-valor" id="cont-ret-num">—</div></div>
+        </div>
+        <div class="just-lista">
+          <div class="just-item"><b>A:</b> <span id="cont-aloc-just">—</span></div>
+          <div class="just-item"><b>R:</b> <span id="cont-rev-just">—</span></div>
+          <div class="just-item"><b>T:</b> <span id="cont-ret-just">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="placar-col adjacencia">
+      <div class="placar-col-header">
+        <div class="placar-col-letra">A</div>
+        <div class="placar-col-tipo">Eu · Adjacência</div>
+        <div class="placar-col-nome" id="adj-nome">—</div>
+      </div>
+      <div class="placar-col-body">
+        <div class="placar-total"><div class="placar-total-num" id="adj-total">—<small>/15</small></div><div class="placar-total-label">Placar total</div></div>
+        <div class="notas-lista">
+          <div class="nota-linha"><div class="nota-nome">Aloc</div><div class="nota-barra"><div class="nota-barra-fill" id="adj-aloc-bar"></div></div><div class="nota-valor" id="adj-aloc-num">—</div></div>
+          <div class="nota-linha"><div class="nota-nome">Rev</div><div class="nota-barra"><div class="nota-barra-fill" id="adj-rev-bar"></div></div><div class="nota-valor" id="adj-rev-num">—</div></div>
+          <div class="nota-linha"><div class="nota-nome">Ret</div><div class="nota-barra"><div class="nota-barra-fill" id="adj-ret-bar"></div></div><div class="nota-valor" id="adj-ret-num">—</div></div>
+        </div>
+        <div class="just-lista">
+          <div class="just-item"><b>A:</b> <span id="adj-aloc-just">—</span></div>
+          <div class="just-item"><b>R:</b> <span id="adj-rev-just">—</span></div>
+          <div class="just-item"><b>T:</b> <span id="adj-ret-just">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="placar-col reinvencao">
+      <div class="placar-col-header">
+        <div class="placar-col-letra">R</div>
+        <div class="placar-col-tipo">Eu · Reinvenção</div>
+        <div class="placar-col-nome" id="rei-nome">—</div>
+      </div>
+      <div class="placar-col-body">
+        <div class="placar-total"><div class="placar-total-num" id="rei-total">—<small>/15</small></div><div class="placar-total-label">Placar total</div></div>
+        <div class="notas-lista">
+          <div class="nota-linha"><div class="nota-nome">Aloc</div><div class="nota-barra"><div class="nota-barra-fill" id="rei-aloc-bar"></div></div><div class="nota-valor" id="rei-aloc-num">—</div></div>
+          <div class="nota-linha"><div class="nota-nome">Rev</div><div class="nota-barra"><div class="nota-barra-fill" id="rei-rev-bar"></div></div><div class="nota-valor" id="rei-rev-num">—</div></div>
+          <div class="nota-linha"><div class="nota-nome">Ret</div><div class="nota-barra"><div class="nota-barra-fill" id="rei-ret-bar"></div></div><div class="nota-valor" id="rei-ret-num">—</div></div>
+        </div>
+        <div class="just-lista">
+          <div class="just-item"><b>A:</b> <span id="rei-aloc-just">—</span></div>
+          <div class="just-item"><b>R:</b> <span id="rei-rev-just">—</span></div>
+          <div class="just-item"><b>T:</b> <span id="rei-ret-just">—</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-topo">
+    <div class="badge-novo">Insight do Dia 10</div>
+    <h2>O que o placar revelou</h2>
+    <div class="insight-conteudo" id="insight-texto">—</div>
+  </div>
+
+  <div class="fechamento">
+    <h2>O que o critério esconde</h2>
+    <p>Se sua versão favorita ganhou por placar: bom sinal, mas não conclusivo — precisa passar por armadilhas (amanhã), propósito (Dia 12) e essencial (Dia 13).</p>
+    <p>Se sua versão favorita <b>perdeu por placar mas você segue ancorado nela</b>: isso é sinal importante. Pode ser (1) convicção real que sobre um critério não-capturado aqui, ou (2) armadilha cognitiva — amanhã você vai ver a diferença.</p>
+    <p>Se as 3 versões tiveram placar parecido: possivelmente você está avaliando pelo mesmo referencial subjetivo. O critério de reversibilidade em particular costuma variar drasticamente entre versões — se todas ficaram em 3, revise.</p>
+  </div>
+
+  <div class="proximo">
+    <div class="proximo-eyebrow">Amanhã · Dia 11</div>
+    <h3>Armadilhas cognitivas da decisão de carreira</h3>
+    <p>Hammond e Parker sobre as armadilhas escondidas (ancoragem, status quo, custo afundado) e o dilema maximizar-vs-suficiente. O placar de hoje vai ser relido por essa lente.</p>
+    <a href="../Dia 11/index.html" class="proximo-cta">Ir para o Dia 11 <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></a>
+  </div>
+<!--intentia-dayend:start--><style>
+.intday{background:linear-gradient(135deg,#275750 0%,#1d453f 100%);color:#F5F7F3;border-radius:20px;
+  padding:34px 38px;margin:36px 0 8px;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif}
+.intday .intday-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7CA89E;margin-bottom:10px}
+.intday h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:22px;line-height:1.25;margin:0 0 10px;color:#F5F7F3}
+.intday p{font-size:14.5px;line-height:1.6;color:#CFE0D6;margin:0 0 20px;max-width:560px}
+.intday .intday-cta{display:inline-flex;align-items:center;gap:8px;background:#FF6842;color:#fff;text-decoration:none;
+  font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 10px 24px rgba(255,104,66,.3);transition:transform .2s,box-shadow .2s}
+.intday .intday-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,104,66,.4)}
+@media(max-width:600px){.intday{padding:26px 22px}.intday h3{font-size:19px}}
+</style><div class="intday"><div class="intday-eyebrow">A jornada continua</div><h3>Amanhã: Dia 11 — Armadilhas da decisão.</h3><p>Você concluiu o Dia 10. Quando estiver pronto, dê o próximo passo da travessia.</p><a class="intday-cta" href="../Dia 11/index.html">Ir para o Dia 11 →</a></div><!--intentia-dayend:end-->
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 10 · Placar por Critério</div>
+</footer>
+
+<script>
+  const FMT_NOMES = { linear: 'Linear', paralela: 'Paralela', iterativa: 'Iterativa' };
+  const NOMES_EU = { continuacao: 'Eu-Continuação', adjacencia: 'Eu-Adjacência', reinvencao: 'Eu-Reinvenção' };
+
+  const DEMO_DIA8 = {
+    continuacao: { nome: 'A analista sênior de dados que virou referência interna e externa em análise de decisão' },
+    adjacencia: { nome: 'A analista sênior que virou head de dados de uma fintech em crescimento' },
+    reinvencao: { nome: 'A professora e autora sobre alfabetização de dados para gestores não-técnicos' }
+  };
+  const DEMO_DIA9 = { continuacao: {formato:'paralela'}, adjacencia: {formato:'iterativa'}, reinvencao: {formato:'paralela'} };
+  const DEMO_DIA10 = {
+    continuacao: { notas: {aloc:4, rev:5, ret:3}, justificativas: {aloc:'banco cobre a base, mas exige realocar 4-6h/semana', rev:'publicar em paralelo é totalmente reversível', ret:'12-18 meses para autoridade externa mínima'} },
+    adjacencia: { notas: {aloc:2, rev:3, ret:4}, justificativas: {aloc:'exige coffee chats e projeto lateral não alocados hoje', rev:'cargo-ponte razoavelmente reversível, mas sair da indústria tem custo de rede', ret:'6-12 meses para saber se o setor aceita a bagagem'} },
+    reinvencao: { notas: {aloc:3, rev:2, ret:2}, justificativas: {aloc:'dá para roubar 8h/semana dos projetos atuais', rev:'reconstruir base de clientes leva 6-12 meses se der errado', ret:'2-3 anos para renda do curso substituir a de projetos'} },
+    insight: 'o Eu-Reinvenção perde por placar mas eu ainda me sinto ancorada nele — ver amanhã se é convicção ou armadilha'
+  };
+
+  function pega(key, fallback) {
+    try {
+      const s = sessionStorage.getItem(key);
+      if (s) { const p = JSON.parse(s); if (p && Object.keys(p).length > 0) return p; }
+    } catch(e) {}
+    return fallback;
+  }
+
+  const dia8 = pega('intentia-dia8', DEMO_DIA8);
+  const dia9 = pega('intentia-dia9', DEMO_DIA9);
+  const dia10raw = sessionStorage.getItem('intentia-dia10');
+  let dia10, demo10 = false;
+  try {
+    const p = dia10raw ? JSON.parse(dia10raw) : null;
+    if (p && p.continuacao && p.continuacao.notas && p.continuacao.notas.aloc > 0) dia10 = p;
+    else { dia10 = DEMO_DIA10; demo10 = true; }
+  } catch(e) { dia10 = DEMO_DIA10; demo10 = true; }
+  if (demo10) document.getElementById('aviso-demo').style.display = 'flex';
+
+  function setText(id, val) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (!val || !val.toString().trim()) { el.textContent = '—'; el.classList.add('vazio'); }
+    else { el.textContent = val; el.classList.remove('vazio'); }
+  }
+
+  ['continuacao','adjacencia','reinvencao'].forEach(tipo => {
+    const prefix = tipo === 'continuacao' ? 'cont' : (tipo === 'adjacencia' ? 'adj' : 'rei');
+    setText(prefix + '-nome', dia8[tipo] ? dia8[tipo].nome : null);
+    const notas = (dia10[tipo] && dia10[tipo].notas) || {aloc:0, rev:0, ret:0};
+    const just = (dia10[tipo] && dia10[tipo].justificativas) || {};
+    const total = notas.aloc + notas.rev + notas.ret;
+    const totalEl = document.getElementById(prefix+'-total');
+    if (totalEl) totalEl.innerHTML = (total || '—') + '<small>/15</small>';
+    ['aloc','rev','ret'].forEach(f => {
+      const bar = document.getElementById(prefix+'-'+f+'-bar');
+      const num = document.getElementById(prefix+'-'+f+'-num');
+      if (bar) bar.style.width = (notas[f] / 5 * 100) + '%';
+      if (num) num.textContent = notas[f] || '—';
+      setText(prefix+'-'+f+'-just', just[f]);
+    });
+  });
+
+  // Ranking
+  const rankings = ['continuacao','adjacencia','reinvencao'].map(tipo => {
+    const notas = (dia10[tipo] && dia10[tipo].notas) || {aloc:0, rev:0, ret:0};
+    const total = notas.aloc + notas.rev + notas.ret;
+    const fmt = (dia9[tipo] && dia9[tipo].formato) ? FMT_NOMES[dia9[tipo].formato] : '—';
+    return { tipo, total, fmt };
+  }).sort((a, b) => b.total - a.total);
+
+  const lista = document.getElementById('ranking-lista');
+  rankings.forEach((r, i) => {
+    const item = document.createElement('div');
+    item.className = 'ranking-item' + (i === 0 && r.total > 0 ? ' top' : '');
+    item.innerHTML = `<div class="ranking-posicao">${i+1}º</div><div class="ranking-info"><div class="ranking-tipo">${NOMES_EU[r.tipo]}</div><div class="ranking-formato">Formato: ${r.fmt}</div></div><div class="ranking-placar">${r.total || '—'} <small>/15</small></div>`;
+    lista.appendChild(item);
+  });
+
+  setText('insight-texto', dia10.insight || '(sem insight registrado)');
+</script>
+
+</body>
+</html>

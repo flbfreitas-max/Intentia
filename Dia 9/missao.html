@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 9 · Missão — Cada Eu, um Formato</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.6;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:12px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  .missao-meta{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:22px;font-size:13px;color:#A9C6B8}
+  .missao-meta span{display:inline-flex;align-items:center;gap:6px}
+  .missao-meta svg{width:14px;height:14px;fill:currentColor}
+  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
+  .progresso{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:16px 22px;margin:24px 0;display:flex;align-items:center;gap:18px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .progresso-info{flex:1}
+  .progresso-titulo{font-size:13px;font-weight:600;color:var(--verde-900);margin-bottom:6px}
+  .progresso-bar{background:var(--verde-100);height:6px;border-radius:3px;overflow:hidden}
+  .progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}
+  .progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px;font-size:13.5px;line-height:1.55}
+  .aviso-demo-icone{color:var(--coral);font-size:18px;flex-shrink:0;margin-top:1px}
+  .aviso-demo b{color:var(--verde-900)}
+  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
+
+  .lembrete{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 20px;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
+  .lembrete b{color:var(--verde-900);font-weight:600}
+
+  /* Etapa do Eu — cabeçalho e conteúdo */
+  .eu-etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
+  .eu-etapa-header{color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px}
+  .eu-etapa.continuacao .eu-etapa-header{background:linear-gradient(135deg, #336B62 0%, #275750 100%)}
+  .eu-etapa.adjacencia .eu-etapa-header{background:linear-gradient(135deg, #FF7A57 0%, #E85530 100%)}
+  .eu-etapa.reinvencao .eu-etapa-header{background:linear-gradient(135deg, #8B7BB8 0%, #5F4E8C 100%)}
+  .eu-etapa-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
+  .eu-etapa-titulo{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.2;margin-bottom:3px}
+  .eu-etapa-sub{font-size:13px;opacity:.92;font-style:italic}
+  .eu-etapa-corpo{padding:22px 28px 24px}
+  .eu-recap{background:var(--creme);border-radius:10px;padding:14px 18px;margin-bottom:18px;font-size:13.5px;line-height:1.55;color:var(--tinta-suave)}
+  .eu-recap-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:5px}
+  .eu-recap b{color:var(--verde-900);font-weight:500;font-style:italic;font-family:var(--serif);font-size:14.5px}
+
+  label{display:block;font-size:12.5px;font-weight:600;color:var(--verde-700);margin-bottom:8px;letter-spacing:.02em;text-transform:uppercase}
+  label small{color:var(--tinta-suave);font-weight:500;text-transform:none;letter-spacing:0;font-size:12px;margin-left:6px;font-style:italic}
+
+  .fmt-radio{display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;margin-top:6px}
+  @media (max-width:520px){.fmt-radio{grid-template-columns:1fr}}
+  .fmt-op{background:#fff;border:1.5px solid var(--verde-100);border-radius:10px;padding:12px 14px;cursor:pointer;transition:all .2s;user-select:none;text-align:center}
+  .fmt-op:hover{border-color:var(--verde-500)}
+  .fmt-op.selecionado{background:var(--coral);border-color:var(--coral);color:#fff}
+  .fmt-op-letra{font-family:var(--serif);font-size:20px;font-weight:600;margin-bottom:2px}
+  .fmt-op-nome{font-size:12px;font-weight:600}
+
+  .campo-textarea{margin-top:16px}
+  textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14.5px;color:var(--tinta);background:#fff;transition:border-color .2s;resize:vertical;min-height:60px;line-height:1.5}
+  textarea:focus{outline:none;border-color:var(--coral)}
+
+  /* Preferência de formato */
+  .preferencia{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .preferencia-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
+  .preferencia-num{width:34px;height:34px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
+  .preferencia-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
+  .preferencia-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
+  .preferencia-desc b{color:var(--verde-900)}
+  .preferencia-campos{display:grid;gap:16px;margin-top:14px}
+  @media (min-width:600px){.preferencia-campos{grid-template-columns:1fr 1fr}}
+  .preferencia-campo label{margin-bottom:6px}
+
+  /* Insight final */
+  .insight-final{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .insight-final-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
+  .insight-final-num{width:34px;height:34px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
+  .insight-final-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
+  .insight-final-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
+  .dica{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-top:8px;padding-left:12px;border-left:2px solid var(--verde-500)}
+
+  .concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}
+  .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px}
+  .concluir p{font-size:14.5px;opacity:.92;margin-bottom:22px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
+  .btn-concluir{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--coral);padding:16px 30px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:17px;font-weight:600;border:none;cursor:pointer;transition:all .2s;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+  .btn-concluir:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+  .btn-concluir .icone{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .btn-concluir .icone svg{width:14px;height:14px;fill:currentColor}
+
+  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+<script>
+/* Persistência entre sessões (integração 21/07/2026)
+   Espelha as chaves intentia-* gravadas em sessionStorage para localStorage,
+   mantém o array localStorage.intentia-progresso (lido por jornada.html e pela capa)
+   e faz a leitura cair para localStorage quando a aba é nova. */
+(function(){
+  try{
+    var proto = Storage.prototype;
+    var _set = proto.setItem, _get = proto.getItem;
+    function marcaProgresso(k){
+      var m = /^intentia-dia(\d+)$/.exec(k);
+      if(!m) return;
+      try{
+        var arr = JSON.parse(_get.call(localStorage,'intentia-progresso') || '[]');
+        var n = parseInt(m[1],10);
+        if(arr.indexOf(n)===-1){ arr.push(n); arr.sort(function(a,b){return a-b}); _set.call(localStorage,'intentia-progresso', JSON.stringify(arr)); }
+      }catch(e){}
+    }
+    proto.setItem = function(k,v){
+      _set.call(this,k,v);
+      if(this===sessionStorage && /^intentia-/.test(k)){
+        try{ _set.call(localStorage,k,v); }catch(e){}
+        marcaProgresso(k);
+      }
+    };
+    proto.getItem = function(k){
+      var v = _get.call(this,k);
+      if(v===null && this===sessionStorage && /^intentia-/.test(k)){
+        try{ v = _get.call(localStorage,k); }catch(e){}
+      }
+      return v;
+    };
+  }catch(e){}
+})();
+</script>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 9</a><span class="sep">›</span><span class="cur">Missão</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html" class="atual">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 8/index.html" title="Dia 8 (tecla ←)">←<span class="lbl"> Dia 8</span></a><a class="intnav-pill" href="../Dia 10/index.html" title="Dia 10 (tecla →)"><span class="lbl">Dia 10 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 9</a>
+    <div class="eyebrow">Missão · Dia 9 · Semana 2</div>
+    <h1>Cada Eu, um <span class="grifo">Formato</span>.</h1>
+    <p class="lede">Pegar seus 3 Eus Possíveis do Dia 8 e taggear cada um com o formato mais provável — Linear, Paralela ou Iterativa. Ver o padrão que emerge.</p>
+    <div class="missao-meta">
+      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 15 min</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
+    </div>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<main>
+  <div class="progresso">
+    <div class="progresso-info">
+      <div class="progresso-titulo">Seu preenchimento</div>
+      <div class="progresso-bar"><div class="progresso-fill" id="progresso-fill"></div></div>
+    </div>
+    <div class="progresso-num" id="progresso-num">0/5</div>
+  </div>
+
+  <div id="aviso-demo" class="aviso-demo" style="display:none">
+    <div class="aviso-demo-icone">◆</div>
+    <div>
+      <b>Você ainda não preencheu a missão do Dia 8.</b> Os "recaps" abaixo estão com <b>exemplo demonstrativo</b>. <a href="../Dia 8/missao.html">Ir preencher o Dia 8 →</a>
+    </div>
+  </div>
+
+  <div class="lembrete">
+    <b>Regra da Semana 2 (continua valendo):</b> ainda estamos <b>gerando</b>, não escolhendo. Hoje o exercício é enriquecer as 3 versões com o formato — não convergir para uma.
+  </div>
+
+  <!-- EU CONTINUAÇÃO -->
+  <section class="eu-etapa continuacao">
+    <div class="eu-etapa-header">
+      <div class="eu-etapa-letra">C</div>
+      <div>
+        <div class="eu-etapa-titulo">Eu-Continuação</div>
+        <div class="eu-etapa-sub">"Continuo o que faço — mais aprofundado, mais dono"</div>
+      </div>
+    </div>
+    <div class="eu-etapa-corpo">
+      <div class="eu-recap" id="recap-cont">
+        <div class="eu-recap-label">Sua versão do Dia 8</div>
+        <b>—</b>
+      </div>
+
+      <label>Qual formato essa versão precisa? <small>escolha uma</small></label>
+      <div class="fmt-radio" data-eu="cont">
+        <div class="fmt-op" data-fmt="linear"><div class="fmt-op-letra">L</div><div class="fmt-op-nome">Linear</div></div>
+        <div class="fmt-op" data-fmt="paralela"><div class="fmt-op-letra">P</div><div class="fmt-op-nome">Paralela</div></div>
+        <div class="fmt-op" data-fmt="iterativa"><div class="fmt-op-letra">I</div><div class="fmt-op-nome">Iterativa</div></div>
+      </div>
+
+      <div class="campo-textarea">
+        <label>Por quê? <small>uma frase</small></label>
+        <textarea id="cont-justif" placeholder="ex.: virar referência exige presença externa; sem trilha paralela, fico só com título interno"></textarea>
+      </div>
+
+      <div class="campo-textarea">
+        <label>Próximo passo mínimo, esta semana <small>concreto</small></label>
+        <textarea id="cont-passo" placeholder="ex.: escrever e publicar o primeiro post sobre analytics de decisão até domingo"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- EU ADJACÊNCIA -->
+  <section class="eu-etapa adjacencia">
+    <div class="eu-etapa-header">
+      <div class="eu-etapa-letra">A</div>
+      <div>
+        <div class="eu-etapa-titulo">Eu-Adjacência</div>
+        <div class="eu-etapa-sub">"Mudo de contexto mantendo minhas habilidades"</div>
+      </div>
+    </div>
+    <div class="eu-etapa-corpo">
+      <div class="eu-recap" id="recap-adj">
+        <div class="eu-recap-label">Sua versão do Dia 8</div>
+        <b>—</b>
+      </div>
+
+      <label>Qual formato essa versão precisa?</label>
+      <div class="fmt-radio" data-eu="adj">
+        <div class="fmt-op" data-fmt="linear"><div class="fmt-op-letra">L</div><div class="fmt-op-nome">Linear</div></div>
+        <div class="fmt-op" data-fmt="paralela"><div class="fmt-op-letra">P</div><div class="fmt-op-nome">Paralela</div></div>
+        <div class="fmt-op" data-fmt="iterativa"><div class="fmt-op-letra">I</div><div class="fmt-op-nome">Iterativa</div></div>
+      </div>
+
+      <div class="campo-textarea">
+        <label>Por quê?</label>
+        <textarea id="adj-justif" placeholder="ex.: pular direto de indústria para head de fintech é salto grande; melhor um cargo-ponte"></textarea>
+      </div>
+
+      <div class="campo-textarea">
+        <label>Próximo passo mínimo, esta semana</label>
+        <textarea id="adj-passo" placeholder="ex.: marcar coffee chat com 2 pessoas do setor-alvo até sábado"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- EU REINVENÇÃO -->
+  <section class="eu-etapa reinvencao">
+    <div class="eu-etapa-header">
+      <div class="eu-etapa-letra">R</div>
+      <div>
+        <div class="eu-etapa-titulo">Eu-Reinvenção</div>
+        <div class="eu-etapa-sub">"Faço algo estruturalmente novo — outra área, outro modelo"</div>
+      </div>
+    </div>
+    <div class="eu-etapa-corpo">
+      <div class="eu-recap" id="recap-rei">
+        <div class="eu-recap-label">Sua versão do Dia 8</div>
+        <b>—</b>
+      </div>
+
+      <label>Qual formato essa versão precisa?</label>
+      <div class="fmt-radio" data-eu="rei">
+        <div class="fmt-op" data-fmt="linear"><div class="fmt-op-letra">L</div><div class="fmt-op-nome">Linear</div></div>
+        <div class="fmt-op" data-fmt="paralela"><div class="fmt-op-letra">P</div><div class="fmt-op-nome">Paralela</div></div>
+        <div class="fmt-op" data-fmt="iterativa"><div class="fmt-op-letra">I</div><div class="fmt-op-nome">Iterativa</div></div>
+      </div>
+
+      <div class="campo-textarea">
+        <label>Por quê?</label>
+        <textarea id="rei-justif" placeholder="ex.: reinvenção sem plano de ponte quebra financeiramente — precisa ser paralela por 12-18 meses"></textarea>
+      </div>
+
+      <div class="campo-textarea">
+        <label>Próximo passo mínimo, esta semana</label>
+        <textarea id="rei-passo" placeholder="ex.: rascunhar o programa da turma piloto (8 aulas) até quarta"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREFERÊNCIA -->
+  <section class="preferencia">
+    <div class="preferencia-header">
+      <div class="preferencia-num">?</div>
+      <div>
+        <div class="preferencia-titulo">Sua zona de conforto de formato</div>
+        <div class="preferencia-desc">Isso <b>não</b> é sobre qual formato é o certo. É sobre reconhecer sua tendência natural — para não escolher sempre pelo mesmo lugar.</div>
+      </div>
+    </div>
+    <div class="preferencia-campos">
+      <div class="preferencia-campo">
+        <label>Qual formato mais te atrai?</label>
+        <div class="fmt-radio" data-eu="pref" data-single="true">
+          <div class="fmt-op" data-fmt="linear"><div class="fmt-op-letra">L</div><div class="fmt-op-nome">Linear</div></div>
+          <div class="fmt-op" data-fmt="paralela"><div class="fmt-op-letra">P</div><div class="fmt-op-nome">Paralela</div></div>
+          <div class="fmt-op" data-fmt="iterativa"><div class="fmt-op-letra">I</div><div class="fmt-op-nome">Iterativa</div></div>
+        </div>
+      </div>
+      <div class="preferencia-campo">
+        <label>Qual você mais evita?</label>
+        <div class="fmt-radio" data-eu="evita" data-single="true">
+          <div class="fmt-op" data-fmt="linear"><div class="fmt-op-letra">L</div><div class="fmt-op-nome">Linear</div></div>
+          <div class="fmt-op" data-fmt="paralela"><div class="fmt-op-letra">P</div><div class="fmt-op-nome">Paralela</div></div>
+          <div class="fmt-op" data-fmt="iterativa"><div class="fmt-op-letra">I</div><div class="fmt-op-nome">Iterativa</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHT FINAL -->
+  <section class="insight-final">
+    <div class="insight-final-header">
+      <div class="insight-final-num">✎</div>
+      <div>
+        <div class="insight-final-titulo">Um insight que apareceu</div>
+        <div class="insight-final-desc">Alguma versão ficou mais forte ou mais fraca com o formato aplicado? Alguma versão nova insinuou-se? Anote — vai voltar amanhã.</div>
+      </div>
+    </div>
+    <textarea id="insight" placeholder="ex.: o Eu-Reinvenção parece mais viável em Paralela — não como escolha entre 'tudo ou nada'"></textarea>
+    <p class="dica">Se nenhum insight apareceu, escreva "nada apareceu ainda" — e siga. Nem todo dia gera revelação; alguns só consolidam.</p>
+  </section>
+
+  <div class="concluir">
+    <h3>Terminou de mapear os formatos?</h3>
+    <p>Ao concluir, o material do Dia 9 é gerado: seus 3 Eus com formato + próximo passo + seu perfil de preferência.</p>
+    <a href="material.html" class="btn-concluir" id="btn-concluir">
+      Ver Minhas Trajetórias
+      <span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 9 · Missão — Cada Eu, um Formato</div>
+</footer>
+
+<script>
+  const formatos = {cont:'', adj:'', rei:'', pref:'', evita:''};
+
+  document.querySelectorAll('.fmt-radio').forEach(grid => {
+    const eu = grid.dataset.eu;
+    grid.querySelectorAll('.fmt-op').forEach(op => {
+      op.addEventListener('click', () => {
+        grid.querySelectorAll('.fmt-op').forEach(x => x.classList.remove('selecionado'));
+        op.classList.add('selecionado');
+        formatos[eu] = op.dataset.fmt;
+        atualizarProgresso();
+      });
+    });
+  });
+
+  function atualizarProgresso() {
+    let pontos = 0;
+    // 3 Eus com formato preenchido
+    ['cont','adj','rei'].forEach(prefix => {
+      if (formatos[prefix]) pontos++;
+    });
+    // Preferência (1 ponto se ambas preenchidas)
+    if (formatos.pref && formatos.evita) pontos++;
+    // Insight
+    if (document.getElementById('insight').value.trim().length > 0) pontos++;
+    document.getElementById('progresso-num').textContent = pontos + '/5';
+    document.getElementById('progresso-fill').style.width = (pontos/5*100) + '%';
+  }
+
+  ['cont-justif','cont-passo','adj-justif','adj-passo','rei-justif','rei-passo','insight'].forEach(id => {
+    document.getElementById(id).addEventListener('input', atualizarProgresso);
+  });
+
+  // Puxar recap do Dia 8
+  const DEMO_DIA8 = {
+    continuacao: { nome: 'A analista sênior de dados que virou referência interna e externa em análise de decisão' },
+    adjacencia: { nome: 'A analista sênior que virou head de dados de uma fintech em crescimento' },
+    reinvencao: { nome: 'A professora e autora sobre alfabetização de dados para gestores não-técnicos' }
+  };
+
+  function pegaDia8() {
+    try {
+      const s = sessionStorage.getItem('intentia-dia8');
+      if (s) {
+        const p = JSON.parse(s);
+        if (p && p.continuacao && p.continuacao.nome && p.continuacao.nome.trim().length > 0) {
+          return { dados: p, demo: false };
+        }
+      }
+    } catch(e) {}
+    return { dados: DEMO_DIA8, demo: true };
+  }
+
+  const { dados: dia8, demo } = pegaDia8();
+  if (demo) document.getElementById('aviso-demo').style.display = 'flex';
+
+  ['continuacao','adjacencia','reinvencao'].forEach(tipo => {
+    const prefix = tipo === 'continuacao' ? 'cont' : (tipo === 'adjacencia' ? 'adj' : 'rei');
+    const el = document.querySelector('#recap-'+prefix+' b');
+    if (el) {
+      const nome = (dia8[tipo] && dia8[tipo].nome) ? dia8[tipo].nome : '(não preenchido)';
+      el.textContent = nome;
+    }
+  });
+
+  document.getElementById('btn-concluir').addEventListener('click', () => {
+    try {
+      sessionStorage.setItem('intentia-dia9', JSON.stringify({
+        dataConclusao: new Date().toISOString(),
+        continuacao: {
+          formato: formatos.cont,
+          justificativa: document.getElementById('cont-justif').value,
+          proximoPasso: document.getElementById('cont-passo').value
+        },
+        adjacencia: {
+          formato: formatos.adj,
+          justificativa: document.getElementById('adj-justif').value,
+          proximoPasso: document.getElementById('adj-passo').value
+        },
+        reinvencao: {
+          formato: formatos.rei,
+          justificativa: document.getElementById('rei-justif').value,
+          proximoPasso: document.getElementById('rei-passo').value
+        },
+        preferencia: formatos.pref,
+        evita: formatos.evita,
+        insight: document.getElementById('insight').value
+      }));
+    } catch(e) {}
+  });
+
+  atualizarProgresso();
+</script>
+
+</body>
+</html>

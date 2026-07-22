@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 4 · Playbook — Reputação profissional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.7;font-size:17px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 56px;position:relative;overflow:hidden}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:14px}
+  .voltar:hover{color:#fff}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .badge-aprofundamento{display:inline-flex;align-items:center;gap:8px;background:rgba(255,104,66,.18);color:var(--coral-soft);border:1px solid rgba(255,104,66,.35);padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px}
+  .badge-aprofundamento svg{width:12px;height:12px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.15;letter-spacing:-.01em;margin-bottom:12px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px;margin-bottom:14px}
+  .relacao-index{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-left:3px solid var(--coral);border-radius:0 8px 8px 0;padding:14px 18px;margin-top:14px;font-size:13.5px;color:#CFE0D6;line-height:1.5}
+  .relacao-index b{color:#fff}
+  .relacao-index a{color:var(--coral-soft);text-decoration:none;font-weight:600;border-bottom:1px dotted var(--coral-soft)}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  .meta{display:flex;gap:20px;font-size:12.5px;color:#A9C6B8;margin-top:14px}
+  .meta span{display:inline-flex;align-items:center;gap:5px}
+
+  nav{background:#fff;border-bottom:1px solid var(--verde-100);position:sticky;top:0;z-index:10;padding:14px 24px;box-shadow:0 2px 12px rgba(39,87,80,.04)}
+  .chips{max-width:820px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+  .chips a{color:var(--verde-700);text-decoration:none;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:20px;border:1px solid var(--verde-100);transition:all .2s}
+  .chips a:hover{background:var(--verde-100);border-color:var(--verde-700)}
+
+  main{max-width:760px;margin:0 auto;padding:36px 24px}
+  section{margin-bottom:36px}
+  section h2{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--verde-900);margin-bottom:16px;letter-spacing:-.005em}
+  section p{margin-bottom:14px}
+  section p:last-child{margin-bottom:0}
+  section .eyebrow{color:var(--coral);margin-bottom:10px}
+  section blockquote{background:var(--verde-100);border-left:4px solid var(--verde-700);padding:18px 22px;font-family:var(--serif);font-size:19px;line-height:1.4;color:var(--verde-900);font-style:italic;margin:16px 0;border-radius:0 10px 10px 0}
+
+  .dim{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 26px;margin-bottom:16px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .dim-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+  .dim-ico{width:44px;height:44px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;font-weight:600;flex-shrink:0}
+  .dim-head h3{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--verde-900);line-height:1.2;margin-bottom:0}
+  .def{font-size:15px;color:var(--tinta-suave);font-style:italic;margin-bottom:12px}
+  .dim h4{font-size:11.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--coral);margin-top:14px;margin-bottom:8px}
+  .gatilhos{list-style:none;padding:0}
+  .gatilhos li{padding:6px 0 6px 22px;position:relative;font-size:14.5px;line-height:1.55}
+  .gatilhos li::before{content:"→";position:absolute;left:0;color:var(--coral);font-weight:700}
+  .caso{background:var(--creme);border-radius:10px;padding:14px 18px;font-size:14px;line-height:1.55;margin-top:10px}
+  .caso .quem{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--verde-700);display:block;margin-bottom:6px}
+  .caso.c1 .quem{color:var(--verde-700)}
+  .caso.c2 .quem{color:var(--coral)}
+  .caso.c3 .quem{color:var(--verde-500)}
+  .caso b{color:var(--verde-900)}
+
+  .protocolo{background:var(--creme);border-left:3px solid var(--verde-700);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:10px;font-size:14px;line-height:1.6}
+  .protocolo b{color:var(--verde-900)}
+  .protocolo ol{padding-left:20px;margin-top:6px}
+  .protocolo ol li{margin-bottom:4px}
+
+  .cuidado{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:10px;font-size:14px;line-height:1.55}
+  .cuidado b{color:var(--verde-900);display:block;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+
+  .prox{text-align:center;font-size:14px;color:var(--tinta-suave);margin-top:32px;padding:20px;background:#fff;border:1px dashed var(--verde-500);border-radius:12px}
+
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 4</a><span class="sep">›</span><span class="cur">Playbook</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html" class="atual">Playbook</a><a href="missao.html">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 3/index.html" title="Dia 3 (tecla ←)">←<span class="lbl"> Dia 3</span></a><a class="intnav-pill" href="../Dia 5/index.html" title="Dia 5 (tecla →)"><span class="lbl">Dia 5 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar">
+      <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      Voltar para o Dia 4
+    </a>
+    <span class="badge-aprofundamento">
+      <svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1z"/></svg>
+      Playbook · Aprofundamento do Dia 4
+    </span>
+    <div class="eyebrow">Trilha Capital de Carreira · Bloco 1 · Dia 4</div>
+    <h1>Reputação, <span class="grifo">em profundidade</span>.</h1>
+    <p class="lede">O que a reputação é (e o que não é), as três dimensões N·C·C com protocolo de diagnóstico, e o repertório de ações — o material para quem quer construir reputação com intenção.</p>
+    <div class="relacao-index">
+      <b>Como este material se relaciona com o Dia 4:</b> o índice do dia trouxe o essencial para o diagnóstico. Este playbook é o <b>aprofundamento opcional</b> — para quem quer entender cada dimensão por dentro. <a href="index.html">Voltar ao índice do dia →</a>
+    </div>
+    <div class="meta"><span>Leitura de 12–15 min · opcional</span><span>Complementa o índice do Dia 4</span></div>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<nav>
+  <div class="chips">
+    <a href="#conceito">O conceito</a>
+    <a href="#dimensoes">As 3 dimensões N·C·C</a>
+    <a href="#acoes">Repertório de ações</a>
+    <a href="#cuidados">Cuidados éticos</a>
+  </div>
+</nav>
+
+<main>
+
+  <section id="conceito">
+    <div class="eyebrow">O ponto de partida</div>
+    <h2>O que é reputação — e o que não é</h2>
+    <p>Reputação profissional é <strong>o conjunto de frases que ficam na cabeça dos outros quando você não está na sala</strong>. Não é o que você diz sobre si, nem o pacote gráfico da sua bio no LinkedIn. É o resumo mental que outra pessoa carrega e usa quando o seu nome aparece — na decisão de indicação, no convite para o projeto, na conversa de sucessão.</p>
+    <p>Reputação e autopromoção se relacionam, mas não são a mesma coisa. <strong>Autopromoção é o que você comunica</strong>; reputação é <strong>o que fica</strong>. Você pode comunicar muito e não fixar nada — se a comunicação for genérica ou o público for errado. Pode comunicar pouco e ter reputação forte — se cada peça for específica e chegar em quem importa.</p>
+    <blockquote>O trabalho não fala por si. Fala por quem carrega a sua nomeação.</blockquote>
+    <p>Nesta trilha, tratamos reputação como <strong>ativo</strong>: pode ser mapeado (você consegue nomear onde está hoje), construído com intenção (cada peça alimenta uma dimensão específica), rende ao longo do tempo (uma vez estabelecida, aparece em conversas de que você nem participa). E, como todo ativo, deprecia se ignorada — reputação não cuidada é reescrita pelos outros, quase sempre para menos.</p>
+  </section>
+
+  <section id="dimensoes">
+    <div class="eyebrow">O conceito, dimensão por dimensão</div>
+    <h2>As três dimensões da reputação (N·C·C)</h2>
+    <p>Toda reputação tem três camadas. Diagnosticar em qual você trava é meio caminho para saber onde agir.</p>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">N</div><h3>Nomeação</h3></div>
+      <p class="def">A frase curta que descreve o problema específico que você resolve.</p>
+      <h4>Perguntas de diagnóstico</h4>
+      <ul class="gatilhos">
+        <li>Se eu pedir a três colegas para me descreverem em uma frase, elas usariam o mesmo verbo?</li>
+        <li>Existe uma pergunta que só chega a mim? Um tipo de problema para o qual sempre me procuram?</li>
+        <li>Meu cargo formal descreve o que faço — ou apaga?</li>
+      </ul>
+      <h4>Protocolo de fortalecimento</h4>
+      <div class="protocolo">
+        <b>Passo a passo (30 min):</b>
+        <ol>
+          <li>Pergunte a 3 pessoas: "Se você tivesse que me descrever para um estranho em uma frase, o que diria?"</li>
+          <li>Anote as três respostas literalmente. Não corrija.</li>
+          <li>Compare com a sua própria frase. Onde bate, você tem nomeação; onde diverge, é onde precisa insistir.</li>
+        </ol>
+      </div>
+      <h4>Caso</h4>
+      <div class="caso c1"><span class="quem">Camila · Analista</span>Perguntou a três colegas o que ela faz. As respostas: <em>"ela ajuda em tudo"</em>, <em>"é prestativa"</em>, <em>"resolve o que aparece"</em>. Nenhuma citava dados, análise, ou decisão. A frase dela era <em>"a pessoa que traz clareza numérica para decisões"</em>. Diagnóstico: nomeação existente na cabeça dela, ausente na cabeça dos outros. Onde agir: repetir a frase específica em contextos onde a diferença apareceria.</div>
+    </div>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">C</div><h3>Circulação</h3></div>
+      <p class="def">Os contextos onde a sua nomeação é dita — especialmente aqueles onde decisões sobre você acontecem.</p>
+      <h4>Perguntas de diagnóstico</h4>
+      <ul class="gatilhos">
+        <li>Em quantos círculos distintos a minha nomeação já foi ouvida? Time, área, empresa, mercado.</li>
+        <li>Existem conversas sobre projetos ou oportunidades das quais eu deveria aparecer — e não apareço?</li>
+        <li>Quando alguém me indica, indica para o quê?</li>
+      </ul>
+      <h4>Protocolo de fortalecimento</h4>
+      <div class="protocolo">
+        <b>Mapeie os círculos:</b>
+        <ol>
+          <li>Faça três círculos concêntricos: time, área, empresa/mercado.</li>
+          <li>Em cada um, escreva os nomes que sabem exatamente o que você resolve — e os que sabem só o cargo.</li>
+          <li>Para cada nome do segundo grupo, uma ação: apresentação, pedido de feedback específico, envio de material.</li>
+        </ol>
+      </div>
+      <h4>Caso</h4>
+      <div class="caso c2"><span class="quem">Rafael · Coordenador</span>Nomeação clara dentro do time (<em>"o cara que redesenha processos travados"</em>), mas a diretoria da fábrica não fazia ideia. Quando abriu vaga de melhoria estratégica para a empresa inteira, contrataram um consultor externo. Diagnóstico: circulação limitada ao time. Onde agir: subir uma prova formatada para a diretoria pelo menos uma vez por trimestre.</div>
+    </div>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">C</div><h3>Confirmação</h3></div>
+      <p class="def">As pessoas que sustentam a sua nomeação sem você precisar pedir.</p>
+      <h4>Perguntas de diagnóstico</h4>
+      <ul class="gatilhos">
+        <li>Se um cliente/gestor perguntar a alguém "vale trabalhar com essa pessoa?", quem responde por mim — e o quê?</li>
+        <li>Tenho pessoas de fora do meu círculo imediato que confirmam? Ou só a chefia direta?</li>
+        <li>Existem depoimentos escritos, avaliações citáveis, recomendações públicas?</li>
+      </ul>
+      <h4>Protocolo de fortalecimento</h4>
+      <div class="protocolo">
+        <b>Construa a lista de confirmadores:</b>
+        <ol>
+          <li>Liste 5-8 pessoas de contextos distintos que já viram você entregar.</li>
+          <li>Para cada uma: você tem um material que ela poderia citar? (depoimento, avaliação, texto).</li>
+          <li>Onde faltar, um pedido explícito — <em>"você poderia escrever uma linha sobre X projeto que fizemos juntos?"</em>.</li>
+        </ol>
+      </div>
+      <h4>Caso</h4>
+      <div class="caso c3"><span class="quem">Juliana · Autônoma</span>Nomeação forte (<em>"designer que reposiciona marca"</em>) e circulação boa (LinkedIn, eventos). Mas os confirmadores eram só ex-clientes. Quando um lead novo pesquisou <em>"vale contratar a Juliana?"</em>, nenhum outro designer, nenhuma referência de mercado apareceu. Diagnóstico: confirmação estreita. Onde agir: cultivar 2-3 relações com pares reconhecidos do setor.</div>
+    </div>
+  </section>
+
+  <section id="acoes">
+    <div class="eyebrow">Ferramentas</div>
+    <h2>Repertório de ações de reputação — por dimensão</h2>
+    <p>Uma reputação se constrói por acumulação — pequenas peças, repetidas, direcionadas. Este é o repertório para você escolher a próxima peça.</p>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">N</div><h3>Ações que fortalecem a Nomeação</h3></div>
+      <ul class="gatilhos">
+        <li><b>Pedido de feedback específico:</b> "O que você acha que eu resolvo melhor?" — 3 pessoas, uma pergunta.</li>
+        <li><b>Uma-frase-de-bio:</b> reescreva a sua descrição profissional (LinkedIn, e-mail, apresentação) começando por <em>o problema que você resolve</em>, não pelo cargo.</li>
+        <li><b>Post/apresentação temática:</b> escolha um tema específico da sua nomeação e escreva 3 posts ou uma apresentação curta sobre ele. Repetição fixa nomeação.</li>
+      </ul>
+    </div>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">C</div><h3>Ações que fortalecem a Circulação</h3></div>
+      <ul class="gatilhos">
+        <li><b>Um-nível-acima:</b> apresentar um resultado seu para o público um nível acima do usual (chefe do chefe, área adjacente).</li>
+        <li><b>Convite-para-projeto:</b> se colocar visivelmente em projeto além do escopo formal — ainda que como apoio.</li>
+        <li><b>Contribuição-em-decisão:</b> aparecer com dado, análise ou opinião em reuniões estratégicas de que você normalmente é ouvinte.</li>
+      </ul>
+    </div>
+
+    <div class="dim">
+      <div class="dim-head"><div class="dim-ico">C</div><h3>Ações que fortalecem a Confirmação</h3></div>
+      <ul class="gatilhos">
+        <li><b>Pedido explícito de depoimento:</b> ao final de um projeto bem-sucedido, pedir uma linha por escrito de quem apostou.</li>
+        <li><b>Recomendação recíproca:</b> escrever recomendação para alguém que trabalha bem com você — muitas retribuem.</li>
+        <li><b>Relação cross-círculo:</b> cultivar 2-3 relações com pessoas de fora do seu contexto imediato (mesma área/setor, outros clientes, comunidade).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cuidados">
+    <div class="eyebrow">Cuidados éticos</div>
+    <h2>Reputação sem virar autopromoção</h2>
+    <p>Existe uma linha entre construir reputação e virar a-pessoa-que-vive-postando. Três cuidados que a diferença tende a respeitar:</p>
+    <div class="cuidado"><b>Frequência × substância</b>Peça pequena e específica bate frequência alta de mensagem genérica. Uma boa apresentação para o C-level circula mais que 30 posts no LinkedIn — e desgasta muito menos a reputação.</div>
+    <div class="cuidado"><b>Público certo × maior público</b>Reputação move quando chega em quem decide. Se a peça viraliza mas não atinge nenhuma pessoa relevante para a sua carreira, ela alimentou marca pessoal — não reputação.</div>
+    <div class="cuidado"><b>Contribuição × auto-referência</b>Toda peça que ancora reputação sem virar promoção compartilha <em>algo útil para o outro</em>: um aprendizado, um dado, um resumo. A auto-referência aparece de forma orgânica, não como conteúdo principal.</div>
+  </section>
+
+  <div class="prox">Próximo passo: Missão do Dia 4 — Seu Diagnóstico de Reputação (20 min)</div>
+
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 4 · Playbook — Reputação profissional</div>
+</footer>
+
+</body>
+</html>

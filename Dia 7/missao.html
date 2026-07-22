@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 7 · Missão — Valores + Manchete revisada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--lilas:#8B7BB8;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.6;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:16px}
+  .voltar:hover{color:#fff}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:12px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  .missao-meta{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:22px;font-size:13px;color:#A9C6B8}
+  .missao-meta span{display:inline-flex;align-items:center;gap:6px}
+  .missao-meta svg{width:14px;height:14px;fill:currentColor}
+  main{max-width:720px;margin:0 auto;padding:0 24px}
+  .progresso{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:16px 22px;margin:24px 0;display:flex;align-items:center;gap:18px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .progresso-info{flex:1}
+  .progresso-titulo{font-size:13px;font-weight:600;color:var(--verde-900);margin-bottom:6px}
+  .progresso-bar{background:var(--verde-100);height:6px;border-radius:3px;overflow:hidden}
+  .progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}
+  .progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  .etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 30px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .etapa-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
+  .etapa-num{width:34px;height:34px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
+  .etapa-titulo{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
+  .etapa-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
+  .etapa-desc b{color:var(--verde-900)}
+
+  label{display:block;font-size:13px;font-weight:600;color:var(--verde-700);margin-bottom:6px;letter-spacing:.02em}
+  input[type=text],textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:15px;color:var(--tinta);background:#fff;transition:border-color .2s;font-weight:500}
+  input[type=text]:focus,textarea:focus{outline:none;border-color:var(--coral)}
+  textarea{resize:vertical;min-height:70px;line-height:1.5}
+
+  .candidato-linha{background:var(--creme);border-radius:8px;padding:10px 14px;margin-bottom:8px;display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center}
+  .candidato-num{width:26px;height:26px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:13px;flex-shrink:0}
+  .candidato-check{cursor:pointer;font-size:22px;color:var(--verde-500);user-select:none;transition:transform .15s}
+  .candidato-check:hover{transform:scale(1.15)}
+  .candidato-check.marcado{color:var(--coral)}
+  .btn-add{background:transparent;border:2px dashed var(--verde-500);color:var(--verde-700);padding:12px 20px;border-radius:10px;font-family:var(--sans);font-size:13.5px;font-weight:600;cursor:pointer;width:100%;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px}
+  .btn-add:hover{background:var(--verde-100);color:var(--verde-900);border-color:var(--verde-700)}
+  .btn-add svg{width:16px;height:16px;fill:currentColor}
+
+  .valor-final{background:var(--creme);border-radius:10px;padding:16px 18px;margin-bottom:10px}
+  .valor-final-nome{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--verde-900);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+  .valor-final-tag{background:var(--coral);color:#fff;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:6px}
+  .valor-final textarea{background:#fff;font-size:14px;min-height:60px}
+
+  .manchete-comparacao{background:var(--verde-100);border-radius:10px;padding:14px 18px;margin-bottom:14px;border-left:3px solid var(--verde-700)}
+  .manchete-comparacao-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-700);margin-bottom:6px}
+  .manchete-comparacao-texto{font-family:var(--serif);font-size:15px;color:var(--tinta);line-height:1.5;font-style:italic}
+  .manchete-nova{font-family:var(--serif);min-height:90px;font-size:17px;font-weight:500}
+
+  .dica{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-top:8px;padding-left:12px;border-left:2px solid var(--verde-500)}
+
+  .concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}
+  .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px;letter-spacing:-.005em}
+  .concluir p{font-size:14.5px;opacity:.92;margin-bottom:22px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
+  .btn-concluir{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--coral);padding:16px 30px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:17px;font-weight:600;border:none;cursor:pointer;transition:all .2s;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+  .btn-concluir:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+  .btn-concluir .icone{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .btn-concluir .icone svg{width:14px;height:14px;fill:currentColor}
+
+  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+<script>
+/* Persistência entre sessões (integração 21/07/2026)
+   Espelha as chaves intentia-* gravadas em sessionStorage para localStorage,
+   mantém o array localStorage.intentia-progresso (lido por jornada.html e pela capa)
+   e faz a leitura cair para localStorage quando a aba é nova. */
+(function(){
+  try{
+    var proto = Storage.prototype;
+    var _set = proto.setItem, _get = proto.getItem;
+    function marcaProgresso(k){
+      var m = /^intentia-dia(\d+)$/.exec(k);
+      if(!m) return;
+      try{
+        var arr = JSON.parse(_get.call(localStorage,'intentia-progresso') || '[]');
+        var n = parseInt(m[1],10);
+        if(arr.indexOf(n)===-1){ arr.push(n); arr.sort(function(a,b){return a-b}); _set.call(localStorage,'intentia-progresso', JSON.stringify(arr)); }
+      }catch(e){}
+    }
+    proto.setItem = function(k,v){
+      _set.call(this,k,v);
+      if(this===sessionStorage && /^intentia-/.test(k)){
+        try{ _set.call(localStorage,k,v); }catch(e){}
+        marcaProgresso(k);
+      }
+    };
+    proto.getItem = function(k){
+      var v = _get.call(this,k);
+      if(v===null && this===sessionStorage && /^intentia-/.test(k)){
+        try{ v = _get.call(localStorage,k); }catch(e){}
+      }
+      return v;
+    };
+  }catch(e){}
+})();
+</script>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 7</a><span class="sep">›</span><span class="cur">Missão</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html" class="atual">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 6/index.html" title="Dia 6 (tecla ←)">←<span class="lbl"> Dia 6</span></a><a class="intnav-pill" href="../Dia 8/index.html" title="Dia 8 (tecla →)"><span class="lbl">Dia 8 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 7</a>
+    <div class="eyebrow">Missão · Dia 7 · Consolidação</div>
+    <h1>Seus <span class="grifo">valores</span> + a manchete revisada.</h1>
+    <p class="lede">Cinco passos: valores candidatos, filtragem pelo teste do custo, exemplos concretos, manchete reescrita, e intenção para as próximas 3 semanas. Ao final, seu Retrato de Capital de Carreira será gerado.</p>
+    <div class="missao-meta">
+      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 20 min</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
+    </div>
+  </div>
+  <div class="arc"></div>
+</header>
+
+<main>
+  <div class="progresso">
+    <div class="progresso-info">
+      <div class="progresso-titulo">Seu preenchimento</div>
+      <div class="progresso-bar"><div class="progresso-fill" id="progresso-fill"></div></div>
+    </div>
+    <div class="progresso-num" id="progresso-num">0/5</div>
+  </div>
+
+  <!-- ETAPA 1: CANDIDATOS -->
+  <section class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num">1</div>
+      <div>
+        <div class="etapa-titulo">Liste 5-8 candidatos a valor central</div>
+        <div class="etapa-desc">Uma palavra ou frase curta por linha. Sem filtro — escreva tudo que vier.</div>
+      </div>
+    </div>
+    <div id="candidatos-lista"></div>
+    <button class="btn-add" id="btn-add-candidato">
+      <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+      Adicionar candidato
+    </button>
+  </section>
+
+  <!-- ETAPA 2: FILTRAGEM -->
+  <section class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num">2</div>
+      <div>
+        <div class="etapa-titulo">Filtre para 3-5 usando o teste do custo</div>
+        <div class="etapa-desc">Toque na estrela para marcar os que <b>já te custaram algo</b> nos últimos 12 meses. Se você não lembra de custo, provavelmente é preferência, não valor central.</div>
+      </div>
+    </div>
+    <p class="dica">Volte à etapa 1 e clique na estrela ao lado de cada candidato para marcar como valor central. Marque de 3 a 5.</p>
+  </section>
+
+  <!-- ETAPA 3: EXEMPLO POR VALOR -->
+  <section class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num">3</div>
+      <div>
+        <div class="etapa-titulo">Para cada valor marcado, uma decisão concreta recente</div>
+        <div class="etapa-desc">Uma linha por valor. A decisão dos últimos 12 meses em que ele apareceu operando — não invente.</div>
+      </div>
+    </div>
+    <div id="exemplos-lista"><p style="color:var(--tinta-suave);font-size:13.5px;text-align:center;padding:20px;background:var(--creme);border-radius:8px">Marque valores centrais na Etapa 1 primeiro (com ★).</p></div>
+  </section>
+
+  <!-- ETAPA 4: MANCHETE REVISADA -->
+  <section class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num">4</div>
+      <div>
+        <div class="etapa-titulo">Reescreva a sua manchete</div>
+        <div class="etapa-desc">A manchete que você escreveu no Dia 1 aparece abaixo. Reescreva agora com o que aprendeu na semana — pode ser parecida ou muito diferente. As duas leituras são dado.</div>
+      </div>
+    </div>
+    <div class="manchete-comparacao">
+      <div class="manchete-comparacao-label">Sua manchete no Dia 1</div>
+      <div class="manchete-comparacao-texto" id="manchete-antiga">Carregando…</div>
+    </div>
+    <label for="manchete-nova">Sua manchete no Dia 7 · versão revisada</label>
+    <textarea id="manchete-nova" class="manchete-nova" placeholder='"Se a minha carreira fosse uma manchete hoje, seria: ___" — reescreva com o que você aprendeu.'></textarea>
+  </section>
+
+  <!-- ETAPA 5: INTENÇÃO 3 SEMANAS -->
+  <section class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num">5</div>
+      <div>
+        <div class="etapa-titulo">Intenção estratégica para as próximas 3 semanas</div>
+        <div class="etapa-desc">Uma frase de ação — direção, não meta. "Continuar aprofundando" não vale; "focar em ativar a rede que mapeei" vale.</div>
+      </div>
+    </div>
+    <label for="intencao">Sua intenção para as semanas 2, 3 e 4 da trilha</label>
+    <textarea id="intencao" placeholder="ex.: focar em circular a minha nomeação para áreas adjacentes — pelo menos uma apresentação por semana em contexto que já validei ativo dentro do meu círculo."></textarea>
+  </section>
+
+  <div class="concluir">
+    <h3>Terminou a missão da semana 1?</h3>
+    <p>Ao concluir, o seu Retrato de Capital de Carreira é gerado — com tudo o que você construiu nesses 7 dias, organizado num único material navegável.</p>
+    <a href="material.html" class="btn-concluir" id="btn-concluir">
+      Ver Meu Retrato de Capital de Carreira
+      <span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="assinatura">Do reagir ao conduzir.</div>
+  <div>Dia 7 · Missão — Valores + Manchete revisada</div>
+</footer>
+
+<script>
+  // Puxa manchete do Dia 1
+  let mancheteAntiga = 'Não foi possível carregar a manchete do Dia 1 — se você quiser, escreva de memória o que lembra.';
+  try {
+    const dia1 = JSON.parse(sessionStorage.getItem('intentia-dia1') || '{}');
+    if (dia1.manchete && dia1.manchete.trim()) mancheteAntiga = dia1.manchete;
+  } catch(e) {}
+  document.getElementById('manchete-antiga').textContent = mancheteAntiga;
+
+  let candidatos = [];
+  for (let i = 0; i < 6; i++) candidatos.push({nome:'', central:false, exemplo:''});
+
+  function renderCandidatos() {
+    const lista = document.getElementById('candidatos-lista');
+    lista.innerHTML = '';
+    candidatos.forEach((c, idx) => {
+      const div = document.createElement('div');
+      div.className = 'candidato-linha';
+      div.innerHTML = `
+        <div class="candidato-num">${idx+1}</div>
+        <input type="text" placeholder="ex.: rigor com dado, autoria, simplicidade" value="${c.nome}">
+        <span class="candidato-check ${c.central ? 'marcado' : ''}">${c.central ? '★' : '☆'}</span>
+      `;
+      div.querySelector('input').addEventListener('input', e => {
+        c.nome = e.target.value;
+        renderExemplos();
+        atualizarProgresso();
+      });
+      div.querySelector('.candidato-check').addEventListener('click', () => {
+        const centraisAtuais = candidatos.filter(x => x.central).length;
+        if (!c.central && centraisAtuais >= 5) return; // teto de 5
+        c.central = !c.central;
+        renderCandidatos();
+        renderExemplos();
+        atualizarProgresso();
+      });
+      lista.appendChild(div);
+    });
+  }
+
+  function renderExemplos() {
+    const lista = document.getElementById('exemplos-lista');
+    const centrais = candidatos.filter(c => c.central && c.nome.trim());
+    if (centrais.length === 0) {
+      lista.innerHTML = '<p style="color:var(--tinta-suave);font-size:13.5px;text-align:center;padding:20px;background:var(--creme);border-radius:8px">Marque valores centrais na Etapa 1 primeiro (com ★).</p>';
+      return;
+    }
+    lista.innerHTML = '';
+    centrais.forEach((c, idx) => {
+      const div = document.createElement('div');
+      div.className = 'valor-final';
+      div.innerHTML = `
+        <div class="valor-final-nome"><span class="valor-final-tag">${idx+1}</span> ${c.nome}</div>
+        <textarea placeholder="A decisão recente em que esse valor apareceu operando…">${c.exemplo}</textarea>
+      `;
+      div.querySelector('textarea').addEventListener('input', e => {
+        c.exemplo = e.target.value;
+        atualizarProgresso();
+      });
+      lista.appendChild(div);
+    });
+  }
+
+  document.getElementById('btn-add-candidato').addEventListener('click', () => {
+    if (candidatos.length >= 8) return;
+    candidatos.push({nome:'', central:false, exemplo:''});
+    renderCandidatos();
+    atualizarProgresso();
+  });
+
+  function atualizarProgresso() {
+    const preenchidos = candidatos.filter(c => c.nome.trim()).length;
+    const centrais = candidatos.filter(c => c.central).length;
+    const exemplosOk = candidatos.filter(c => c.central && c.exemplo.trim()).length;
+    const candidatosOk = preenchidos >= 5 ? 1 : 0;
+    const filtroOk = (centrais >= 3 && centrais <= 5) ? 1 : 0;
+    const exemplosCompletos = exemplosOk === centrais && centrais >= 3 ? 1 : 0;
+    const mancheteOk = document.getElementById('manchete-nova').value.trim().length > 0 ? 1 : 0;
+    const intencaoOk = document.getElementById('intencao').value.trim().length > 0 ? 1 : 0;
+    const pontos = candidatosOk + filtroOk + exemplosCompletos + mancheteOk + intencaoOk;
+    document.getElementById('progresso-num').textContent = pontos + '/5';
+    document.getElementById('progresso-fill').style.width = (pontos/5*100) + '%';
+  }
+
+  ['manchete-nova','intencao'].forEach(id => document.getElementById(id).addEventListener('input', atualizarProgresso));
+
+  document.getElementById('btn-concluir').addEventListener('click', () => {
+    try {
+      const valoresCentrais = candidatos.filter(c => c.central && c.nome.trim()).map(c => ({nome: c.nome, exemplo: c.exemplo}));
+      sessionStorage.setItem('intentia-dia7', JSON.stringify({
+        dataConclusao: new Date().toISOString(),
+        valoresCentrais: valoresCentrais,
+        mancheteAntiga: mancheteAntiga,
+        mancheteNova: document.getElementById('manchete-nova').value,
+        intencao3Semanas: document.getElementById('intencao').value
+      }));
+    } catch(e) {}
+  });
+
+  renderCandidatos();
+  renderExemplos();
+  atualizarProgresso();
+</script>
+
+</body>
+</html>

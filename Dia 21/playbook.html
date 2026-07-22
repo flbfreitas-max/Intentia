@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 21 · Playbook — E·A·R</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:14px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
+  .intro-caixa{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .intro-caixa h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .intro-caixa p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .intro-caixa p:last-child{margin-bottom:0}
+  .intro-caixa b{color:var(--verde-900)}
+  .ear-secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06)}
+  .ear-secao-header{padding:22px 28px 20px;color:#fff;display:flex;align-items:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%)}
+  .ear-secao-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
+  .ear-secao-titulo{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2}
+  .ear-secao-sub{font-size:13px;opacity:.92;font-style:italic;margin-top:3px}
+  .ear-secao-body{padding:22px 28px 26px}
+  .ear-secao-body p{margin-bottom:14px;font-size:15px;line-height:1.7}
+  .ear-secao-body p:last-child{margin-bottom:0}
+  .ear-secao-body b{color:var(--verde-900)}
+  .subsec-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin:22px 0 10px;padding-top:18px;border-top:1px dashed var(--verde-100)}
+  .subsec-label:first-child{margin-top:0;padding-top:0;border-top:none}
+  .lista-check{list-style:none;padding:0;margin-top:8px}
+  .lista-check li{padding:8px 0 8px 26px;position:relative;font-size:14px;line-height:1.55;color:var(--tinta)}
+  .lista-check li::before{content:"→";position:absolute;left:0;top:8px;color:var(--coral);font-weight:700}
+  .lista-check li b{color:var(--verde-900)}
+  .autor-box{background:#F0F5F2;border-left:3px solid var(--verde-700);padding:14px 20px;border-radius:0 10px 10px 0;margin-top:12px;font-size:14px;line-height:1.6}
+  .autor-box b{color:var(--verde-900)}
+  .autor-titulo{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:6px}
+  .erro-caixa{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
+  .erro-caixa .erro-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .erro-caixa b{color:var(--verde-900)}
+  .fechamento-semana{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:14px;padding:24px 28px;margin:28px 0 20px}
+  .fechamento-semana h3{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:12px;font-weight:600}
+  .fechamento-semana p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .fechamento-semana p:last-child{margin-bottom:0}
+  .fechamento-semana b{color:var(--verde-900)}
+  .aviso-final{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0 20px}
+  .aviso-final h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .aviso-final p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .aviso-final p:last-child{margin-bottom:0}
+  .aviso-final b{color:var(--verde-900)}
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 21</a><span class="sep">›</span><span class="cur">Playbook</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html" class="atual">Playbook</a><a href="missao.html">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 20/index.html" title="Dia 20 (tecla ←)">←<span class="lbl"> Dia 20</span></a><a class="intnav-pill" href="../Dia 22/index.html" title="Dia 22 (tecla →)"><span class="lbl">Dia 22 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 21</a>
+    <div class="eyebrow">Playbook · Dia 21 · fim da Semana 3</div>
+    <h1>Escolher, Agir, Rever — <span class="grifo">a fundo</span>.</h1>
+    <p class="lede">Os 3 elementos da execução em profundidade: por que "escolher" é o mais desconfortável (Mankins & Steele), por que "agir" precisa de coordenação horizontal (Sull), e por que "rever" é o compromisso mais importante do plano.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+<main>
+  <div class="intro-caixa">
+    <h2>Por que o gap de execução é padrão, não exceção</h2>
+    <p>Mankins & Steele encontraram uma estatística que reorganiza a conversa: <b>63% é a média do valor entregue</b> em relação ao prometido pelas estratégias empresariais. Os 37% perdidos não vêm de estratégias ruins — vêm de <em>execução parcial</em>. Recursos mal distribuídos, iniciativas em excesso, revisão insistemática, comunicação vaga entre o que foi decidido e quem executa. Esses padrões são reproduzíveis — e evitáveis quando reconhecidos.</p>
+    <p>Aplicado a carreira individual: <b>o gap frequentemente é maior</b>. Sem estruturas empresariais para manter a execução (revisão trimestral obrigatória, dashboards, cobrança de pares), profissionais individuais executam entre 40% e 70% do que decidem — dependendo mais do desenho do plano que da força de vontade. Dia 21 é sobre projetar o plano para executar bem, não sobre "querer mais".</p>
+  </div>
+
+  <section class="ear-secao">
+    <div class="ear-secao-header"><div class="ear-secao-letra">E</div><div><div class="ear-secao-titulo">Escolher</div><div class="ear-secao-sub">redução da lista de possíveis à lista de compromissos</div></div></div>
+    <div class="ear-secao-body">
+      <div class="subsec-label">O que faz</div>
+      <p>Escolher é <b>o momento mais desconfortável do plano</b> — porque exige dizer não. Mankins & Steele identificaram, entre as 7 causas do gap de execução, a mais persistente: <em>iniciativas em excesso, cada uma subrecursada</em>. Em empresas, isso vira 15 projetos estratégicos concorrentes; em carreira individual, vira 6-10 movimentos simultâneos que competem por bloco protegido, energia e atenção. Nenhum vira infraestrutura porque cada um vive na periferia.</p>
+
+      <div class="autor-box"><div class="autor-titulo">A conta de Mankins & Steele</div><b>3 movimentos totalmente recursados sobrevivem</b>. 6 movimentos meio-feitos morrem em 4-6 semanas. A diferença é aritmética: sua semana tem finitas horas de foco protegido; se você espalha essas horas em 6 movimentos, cada um recebe fatia insuficiente para virar rotina.</div>
+
+      <div class="subsec-label">Como escolher bem</div>
+      <ul class="lista-check">
+        <li><b>3 movimentos, não 6</b> — a Semana 3 amplificou 6 capacidades; escolher 3 é <em>usar as outras 3 no ritmo natural</em>, sem competir</li>
+        <li><b>Ligados à direção do Dia 14</b> — não ligados à urgência da semana ou à pressão social</li>
+        <li><b>Recorte específico</b> — "publicar 1 artigo/semana" &gt; "escrever mais"</li>
+        <li><b>O que <em>não</em> vai acontecer</b> nas próximas 4 semanas — escrito, específico, revisitável</li>
+      </ul>
+
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>"Aproveitar tudo".</b> A tentação de escolher os 6 movimentos (um por dia da Semana 3) parece maximizar o retorno da trilha. Não maximiza — mata todos. As 3 capacidades <em>não escolhidas</em> continuam existindo (você continua tendo rede, presença, energia); só não competem pelo bloco protegido. Elas ganham espaço quando algum dos 3 vira automático (~4-6 semanas), no próximo ciclo.</p></div>
+    </div>
+  </section>
+
+  <section class="ear-secao">
+    <div class="ear-secao-header"><div class="ear-secao-letra">A</div><div><div class="ear-secao-titulo">Agir</div><div class="ear-secao-sub">movimento próximo, específico, adaptável</div></div></div>
+    <div class="ear-secao-body">
+      <div class="subsec-label">O que faz</div>
+      <p>Agir é o que <b>acontece na semana concreta</b>. Sem esse elemento, os 3 movimentos escolhidos ficam como boa intenção. Sull descobriu algo importante aqui: o gap não é "esforço" — é <em>coordenação com o mundo real</em>. Seus movimentos executam melhor quando você desenha para <em>adaptação</em>, não para o mundo ideal em que tudo sai como planejado.</p>
+
+      <div class="autor-box"><div class="autor-titulo">O confiança gap de Sull</div>84% dos gerentes confiam nas promessas dos pares; apenas 9% confiam de fato quando o prazo aperta. Tradução para carreira individual: você confia na sua própria promessa de "vou começar segunda" muito mais do que deveria — a execução real fica em ~40-70%. Solução: <b>desenho, não vontade</b>.</div>
+
+      <div class="subsec-label">Como agir bem</div>
+      <ul class="lista-check">
+        <li><b>Cada movimento tem nome, frequência, dia e hora</b> — não "quando der"</li>
+        <li><b>Primeiro passo em &lt; 7 dias</b> de hoje — se o começo é daqui a 3 semanas, o movimento não começa</li>
+        <li><b>Ligação horizontal explícita (Sull)</b> — se depende de outro, quem é, e o que você faz se ele atrasar</li>
+        <li><b>1 métrica de "feito" simples</b> — publicou/enviou/gravou. Binário, não subjetivo</li>
+      </ul>
+
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>Agir em modo "vou tentar mais".</b> Isso é vontade, não ação. Se o movimento depende de resposta de outros (mentor, cliente, colega, plataforma), você tem <em>plano B</em> para atraso? Se depende de "estar inspirado", como sustenta em dia difícil? Sull: os planos que executam são os que <em>antecipam a fricção</em> — não os que assumem que ela não vai aparecer.</p></div>
+    </div>
+  </section>
+
+  <section class="ear-secao">
+    <div class="ear-secao-header"><div class="ear-secao-letra">R</div><div><div class="ear-secao-titulo">Rever</div><div class="ear-secao-sub">o compromisso mais importante do plano</div></div></div>
+    <div class="ear-secao-body">
+      <div class="subsec-label">O que faz</div>
+      <p>Rever é <b>o mecanismo que impede o plano de morrer no dia 18</b>. Todo plano começa bem. Todo plano encontra fricção na semana 3-4. Sem revisão marcada com cadência, a fricção vence — os movimentos silenciosamente cedem para o urgente e você "esquece" o plano. Sull descobriu que <em>as organizações que executam bem revisam com cadência protegida</em> — não "quando surge tempo". Em carreira: 15-30 min a cada 1-2 semanas com 3 perguntas fixas é o que separa plano que dura de plano que morre.</p>
+
+      <div class="autor-box"><div class="autor-titulo">Por que 3 perguntas fixas</div>Perguntas variáveis viram <em>ruminação</em> — você "revisa" tudo, ajusta nada. 3 perguntas fixas repetidas em toda revisão forçam <b>decisão concreta</b> no fim: manter, ajustar ou cortar cada movimento. Se você sai da revisão sem decisão registrada, não foi revisão — foi conversa.</div>
+
+      <div class="subsec-label">Como rever bem</div>
+      <ul class="lista-check">
+        <li><b>Data + horário + local + duração</b> — no calendário agora, não "eu vou marcar"</li>
+        <li><b>3 perguntas fixas</b>: (1) qual movimento aconteceu como planejado? (2) qual não aconteceu, por quê? (3) o que ajusto para as próximas 2 semanas?</li>
+        <li><b>Sozinho ou com par de confiança</b> — o segundo formato tem mais compromisso, o primeiro mais reflexão. Ambos valem</li>
+        <li><b>Registrar a decisão</b> — 3 linhas escritas ao fim de cada revisão. Sem registro, a próxima revisão perde a memória da anterior</li>
+      </ul>
+
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>Adiar a primeira revisão porque "não fiz muito ainda".</b> Esse é o momento exato em que a revisão mais importa — porque revela por que o plano não está executando. Adiar revisão é adiar o ajuste; sem ajuste, a próxima semana tem mais fricção acumulada, não menos. Revisão não é auditoria de esforço; é <em>ajuste do desenho</em>. Vá mesmo quando parece que "não vale a pena".</p></div>
+    </div>
+  </section>
+
+  <div class="fechamento-semana">
+    <h3>Fim da Semana 3 — o que você amplificou</h3>
+    <p>Em 7 dias você trabalhou <b>6 capacidades interligadas</b>: presença (V·G·C), autoridade (D·V·R), rede (O·P·E), persuasão (C·P·R), aprendizagem (D·F·A) e energia (E·F·R). Hoje consolidou em <b>3 movimentos + cadência de revisão</b>.</p>
+    <p>É muito material para 7 dias. Sente-se disso: você <em>não</em> vai executar tudo. Mankins & Steele: no ambiente empresarial, 37% se perde em média; em carreira individual, a expectativa realista é executar 50-70% dos 3 movimentos escolhidos. Isso <em>já</em> é muito — e é o que sustenta.</p>
+    <p>A Semana 4 (que começa amanhã) é sobre <b>transformar esse plano em rotina</b>. Instalar tracker pessoal, desenhar manutenção pós-Intentia, celebrar o que foi construído. 7 dias para fechar bem.</p>
+  </div>
+
+  <div class="aviso-final">
+    <h3>A regra do Dia 21: plano executável &gt; plano perfeito</h3>
+    <p>O plano executável tem 3 características que o plano perfeito não tem: (1) <b>menos itens</b> que você acha que dá — sempre; (2) <b>fricção antecipada</b> — o que cede, o que sinaliza saída, plano B para dependências; (3) <b>revisão marcada</b> com data e formato, não "vou marcar depois".</p>
+    <p>Plano perfeito impressiona no papel e morre no dia 21. Plano executável desagrada no papel (parece "pouco") e sobrevive 4 semanas — e depois vira infraestrutura. Escolha o segundo. Sempre.</p>
+    <p>Amanhã: Semana 4 — Instalar rotina. É a semana onde o Intentia vira <b>a maneira como você trabalha</b>, não mais evento diário.</p>
+  </div>
+</main>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Dia 21 · Playbook — Estratégia → Execução</div></footer>
+</body>
+</html>

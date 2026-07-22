@@ -1,0 +1,21 @@
+ROTEIROS PARA GRAVAÇÃO — Trilha Capital de Carreira
+====================================================
+
+Esta pasta tem o texto limpo de narração de cada um dos 29 áudios
+(dia-00.txt a dia-28.txt), sem marcações de leitura nem indicações
+técnicas — pronto para colar em um serviço de TTS profissional
+(ElevenLabs, OpenAI TTS, Azure etc.) ou entregar a um locutor.
+
+Depois de gerar cada áudio:
+1. Exporte como MP3.
+2. Renomeie para audio.mp3.
+3. Substitua o arquivo "Dia N/audio.mp3" na pasta Trilha Nova Estrutura.
+
+Os players (no index.html e no audio.html de cada dia) tocam o que
+estiver em audio.mp3 — nenhuma outra mudança é necessária.
+
+Os arquivos audio.mp3 atuais são placeholders com voz sintética
+(MBROLA br1), gerados em 21/07/2026 só para o fluxo funcionar.
+
+Durações-alvo: Dia 0 ≈ 1min30 · Dia 8 ≈ 12 min · Dia 14 ≈ 6-7 min ·
+Dia 28 ≈ 4-5 min (mais lento, com pausas) · demais ≈ 5-6 min.

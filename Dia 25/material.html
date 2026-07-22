@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Intentia · Dia 25 · Template de revisão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}.voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.6vw,42px);line-height:1.12;margin-bottom:14px;letter-spacing:-.01em}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:640px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  main{max-width:960px;margin:0 auto;padding:0 24px 40px}
+  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:16px 22px;margin:24px 0;display:flex;align-items:flex-start;gap:14px;font-size:13.5px;line-height:1.55}
+  .aviso-demo-icone{color:var(--coral);font-size:20px;flex-shrink:0;margin-top:2px}
+  .aviso-demo b{color:var(--verde-900)}.aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
+  .topo{background:linear-gradient(135deg, var(--verde-900) 0%, #1d453f 100%);color:var(--creme);border-radius:16px;padding:28px 32px;margin:24px 0;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(39,87,80,.2)}
+  .topo-label{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  .topo h2{font-family:var(--serif);font-size:24px;font-weight:600;color:#fff;margin-bottom:16px;line-height:1.2}
+  .cadencia-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:14px}
+  @media (max-width:640px){.cadencia-grid{grid-template-columns:1fr}}
+  .cadencia-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:10px;padding:14px 16px;text-align:center}
+  .cadencia-item-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#A9C6B8;margin-bottom:6px}
+  .cadencia-item-valor{font-family:var(--serif);font-size:16px;color:#fff;font-weight:500}
+  .template-box{background:#fff;border:1.5px solid var(--verde-700);border-radius:16px;padding:28px 32px;margin:24px 0;box-shadow:0 4px 16px rgba(39,87,80,.06)}
+  .template-label{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+  .template-box h2{font-family:var(--serif);font-size:22px;color:var(--verde-900);margin-bottom:14px;font-weight:600}
+  .template-perguntas{background:var(--creme);border-left:4px solid var(--coral);border-radius:0 12px 12px 0;padding:20px 24px;font-family:var(--serif);font-size:15.5px;line-height:1.7;color:var(--tinta);white-space:pre-wrap}
+  .template-perguntas.vazio{color:var(--tinta-suave);font-size:14px;font-style:italic}
+  .template-nota{font-size:12.5px;color:var(--tinta-suave);margin-top:12px;font-style:italic}
+  .sinal-box{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:6px solid var(--coral);border-radius:0 14px 14px 0;padding:22px 28px;margin:24px 0}
+  .sinal-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+  .sinal-box h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .sinal-txt{font-size:14.5px;color:var(--tinta);line-height:1.6}
+  .sinal-txt.vazio{color:var(--tinta-suave);font-style:italic;font-size:13px}
+  .duplo-info{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+  @media (max-width:640px){.duplo-info{grid-template-columns:1fr}}
+  .duplo-info-item{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:18px 22px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .duplo-info-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:6px}
+  .duplo-info-titulo{font-family:var(--serif);font-size:16px;color:var(--verde-900);margin-bottom:8px;font-weight:600}
+  .duplo-info-txt{font-size:13.5px;color:var(--tinta);line-height:1.6}
+  .duplo-info-txt.vazio{color:var(--tinta-suave);font-style:italic;font-size:12.5px}
+  .fechamento{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 32px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .fechamento h2{font-family:var(--serif);font-size:22px;color:var(--verde-900);margin-bottom:12px;font-weight:600}
+  .fechamento p{font-size:15px;color:var(--tinta);line-height:1.65;margin-bottom:12px}
+  .fechamento p:last-child{margin-bottom:0}.fechamento b{color:var(--verde-900)}
+  .proximo{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:28px 30px;margin:24px 0;text-align:center;position:relative;overflow:hidden}
+  .proximo-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+  .proximo h3{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;margin-bottom:8px}
+  .proximo p{font-size:14.5px;color:#CFE0D6;margin-bottom:20px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
+  .proximo-cta{display:inline-flex;align-items:center;gap:12px;background:var(--coral);color:#fff;padding:14px 26px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:16px;font-weight:600;transition:transform .2s;box-shadow:0 6px 18px rgba(255,104,66,.32)}
+  .proximo-cta:hover{transform:translateY(-2px)}.proximo-cta svg{width:14px;height:14px;fill:currentColor}
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+  main p{text-align:justify;text-justify:inter-word;hyphens:auto}
+  main .fechamento, main .fechamento p, main .template-perguntas, main .sinal-txt, main .duplo-info-txt{text-align:justify;text-justify:inter-word;hyphens:auto}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 25</a><span class="sep">›</span><span class="cur">Material</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html">Missão</a><a href="material.html" class="atual">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 24/index.html" title="Dia 24 (tecla ←)">←<span class="lbl"> Dia 24</span></a><a class="intnav-pill" href="../Dia 26/index.html" title="Dia 26 (tecla →)"><span class="lbl">Dia 26 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+<header><div class="hero-inner">
+  <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 25</a>
+  <div class="eyebrow">Material · Dia 25 · Semana 4 · Dia 4 de 7</div>
+  <h1>Seu <span class="grifo">template</span> de revisão semanal.</h1>
+  <p class="lede">A cadência confirmada, as 3 perguntas fixas em formato pronto para imprimir/copiar, o sinal para pedir apoio nomeado, e onde você registra semana após semana.</p>
+</div><div class="arc"></div></header>
+<main>
+  <div id="aviso-demo" class="aviso-demo" style="display:none">
+    <div class="aviso-demo-icone">◆</div>
+    <div><b>Você ainda não preencheu a missão do Dia 25.</b> Dados em <b>modo demonstrativo</b>. <a href="missao.html">Ir preencher →</a></div>
+  </div>
+
+  <div class="topo">
+    <div class="topo-label">Cadência confirmada</div>
+    <h2>Toda semana, sempre igual</h2>
+    <div class="cadencia-grid">
+      <div class="cadencia-item"><div class="cadencia-item-label">Dia</div><div class="cadencia-item-valor" id="dia-txt">—</div></div>
+      <div class="cadencia-item"><div class="cadencia-item-label">Horário</div><div class="cadencia-item-valor" id="horario-txt">—</div></div>
+      <div class="cadencia-item"><div class="cadencia-item-label">Local + formato</div><div class="cadencia-item-valor" id="local-txt">—</div></div>
+    </div>
+  </div>
+
+  <div class="template-box">
+    <div class="template-label">As 3 perguntas fixas</div>
+    <h2>Copie ou imprima — fica visível toda semana</h2>
+    <div class="template-perguntas" id="perguntas-txt">—</div>
+    <p class="template-nota">Heifetz: as perguntas <em>fixas repetidas</em> produzem aprendizado. Não mude a estrutura a cada revisão — muito menos "improvise" na hora. Fixidade da forma libera atenção para o conteúdo.</p>
+  </div>
+
+  <div class="sinal-box">
+    <div class="sinal-label">Sinal para adaptativo profundo</div>
+    <h3>Quando pedir apoio externo</h3>
+    <div class="sinal-txt" id="sinal-txt">—</div>
+  </div>
+
+  <div class="duplo-info">
+    <div class="duplo-info-item">
+      <div class="duplo-info-label">Onde registra</div>
+      <div class="duplo-info-titulo">Local do registro</div>
+      <div class="duplo-info-txt" id="registro-txt">—</div>
+    </div>
+    <div class="duplo-info-item">
+      <div class="duplo-info-label">Primeira revisão</div>
+      <div class="duplo-info-titulo">Data marcada</div>
+      <div class="duplo-info-txt" id="data-txt">—</div>
+    </div>
+  </div>
+
+  <div class="fechamento">
+    <h2>Como usar isso nas próximas semanas</h2>
+    <p><b>Marque as próximas 4 revisões no calendário agora.</b> Recorrente semanal, mesmo dia, mesmo horário. Se não estão marcadas, a rotina não começa — é o padrão observado repetidamente em quem quer instalar cadência de revisão.</p>
+    <p><b>Se você chegar na revisão e não tiver muito a dizer</b> ("semana correu normal"), <em>faça a revisão mesmo assim</em>. Heifetz: revisões curtas em semanas "normais" mantêm o músculo — sem elas, quando a semana difícil chegar, você não terá o hábito para ancorar.</p>
+    <p><b>Depois de 4-8 semanas com revisão consistente</b>, você começa a reconhecer padrões maiores — várias sabotagens diferentes servem a algumas poucas proteções centrais. Aí o Dia 24 (mapa de imunidade) vira útil novamente, com material real coletado.</p>
+  </div>
+
+  <div class="proximo">
+    <div class="proximo-eyebrow">Amanhã · Dia 26</div>
+    <h3>Rede de suporte pós-Intentia</h3>
+    <p>Ibarra revisitada: quem você mantém ativo nas 3 redes (Operacional, Pessoal, Estratégica) depois que a trilha termina. Accountability humano — 1 pessoa nomeada para os próximos 3 meses. Nenhum sistema pessoal sobrevive isolado.</p>
+    <a href="../Dia 26/index.html" class="proximo-cta">Ir para o Dia 26 <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></a>
+  </div>
+<!--intentia-dayend:start--><style>
+.intday{background:linear-gradient(135deg,#275750 0%,#1d453f 100%);color:#F5F7F3;border-radius:20px;
+  padding:34px 38px;margin:36px 0 8px;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif}
+.intday .intday-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7CA89E;margin-bottom:10px}
+.intday h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:22px;line-height:1.25;margin:0 0 10px;color:#F5F7F3}
+.intday p{font-size:14.5px;line-height:1.6;color:#CFE0D6;margin:0 0 20px;max-width:560px}
+.intday .intday-cta{display:inline-flex;align-items:center;gap:8px;background:#FF6842;color:#fff;text-decoration:none;
+  font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 10px 24px rgba(255,104,66,.3);transition:transform .2s,box-shadow .2s}
+.intday .intday-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,104,66,.4)}
+@media(max-width:600px){.intday{padding:26px 22px}.intday h3{font-size:19px}}
+</style><div class="intday"><div class="intday-eyebrow">A jornada continua</div><h3>Amanhã: Dia 26 — Rede de suporte pós-Intentia.</h3><p>Você concluiu o Dia 25. Quando estiver pronto, dê o próximo passo da travessia.</p><a class="intday-cta" href="../Dia 26/index.html">Ir para o Dia 26 →</a></div><!--intentia-dayend:end-->
+</main>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Dia 25 · Template de revisão</div></footer>
+
+<script>
+  function formatarData(iso) { if (!iso) return '—'; try { const [ano, mes, dia] = iso.split('-'); const meses = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez']; return dia + ' ' + meses[parseInt(mes)-1] + ' ' + ano; } catch(e) { return iso; } }
+  const DEMO = {
+    diaSemana:'todo sábado',
+    horario:'10h-10h15',
+    local:'café da esquina, sozinha, com caderno físico e caneta',
+    perguntas:'1) O que aconteceu vs. o planejado nesta semana?\n2) O que não aconteceu é técnico (novo método) ou adaptativo (novo aprendizado)?\n3) Qual é a ação da próxima semana para cada?',
+    sinalApoio:'se o mesmo padrão de sabotagem se repete por 4 semanas seguidas, marco 1 sessão com o meu coach informal (Beatriz — ex-chefe/mentora) para conversar sobre o padrão',
+    registro:'caderno físico da mesa — última página reservada para revisões (3-5 linhas por semana)',
+    dataPrimeira:'2026-07-25'
+  };
+  const raw = sessionStorage.getItem('intentia-dia25');
+  let d, demo = false;
+  try { const p = raw ? JSON.parse(raw) : null; if (p && p.perguntas) d = p; else { d = DEMO; demo = true; } } catch(e){ d = DEMO; demo = true; }
+  if (demo) document.getElementById('aviso-demo').style.display = 'flex';
+
+  function setText(id, val) { const el = document.getElementById(id); if (!el) return; if (!val || !val.toString().trim()) { el.textContent = '—'; el.classList.add('vazio','vazia'); return; } el.textContent = val; el.classList.remove('vazio','vazia'); }
+  setText('dia-txt', d.diaSemana);
+  setText('horario-txt', d.horario);
+  setText('local-txt', d.local);
+  setText('perguntas-txt', d.perguntas);
+  setText('sinal-txt', d.sinalApoio);
+  setText('registro-txt', d.registro);
+  document.getElementById('data-txt').textContent = formatarData(d.dataPrimeira);
+</script>
+</body>
+</html>

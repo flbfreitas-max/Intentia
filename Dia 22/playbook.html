@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentia · Dia 22 · Playbook — H·G·R</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
+  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
+  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:14px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
+  .intro-caixa{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .intro-caixa h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .intro-caixa p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .intro-caixa p:last-child{margin-bottom:0}
+  .intro-caixa b{color:var(--verde-900)}
+  .hgr-secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06)}
+  .hgr-secao-header{padding:22px 28px 20px;color:#fff;display:flex;align-items:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%)}
+  .hgr-secao-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
+  .hgr-secao-titulo{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2}
+  .hgr-secao-sub{font-size:13px;opacity:.92;font-style:italic;margin-top:3px}
+  .hgr-secao-body{padding:22px 28px 26px}
+  .hgr-secao-body p{margin-bottom:14px;font-size:15px;line-height:1.7}
+  .hgr-secao-body p:last-child{margin-bottom:0}
+  .hgr-secao-body b{color:var(--verde-900)}
+  .subsec-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin:22px 0 10px;padding-top:18px;border-top:1px dashed var(--verde-100)}
+  .subsec-label:first-child{margin-top:0;padding-top:0;border-top:none}
+  .lista-check{list-style:none;padding:0;margin-top:8px}
+  .lista-check li{padding:8px 0 8px 26px;position:relative;font-size:14px;line-height:1.55;color:var(--tinta)}
+  .lista-check li::before{content:"→";position:absolute;left:0;top:8px;color:var(--coral);font-weight:700}
+  .lista-check li b{color:var(--verde-900)}
+  .autor-box{background:#F0F5F2;border-left:3px solid var(--verde-700);padding:14px 20px;border-radius:0 10px 10px 0;margin-top:12px;font-size:14px;line-height:1.6}
+  .autor-box b{color:var(--verde-900)}
+  .autor-titulo{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:6px}
+  .erro-caixa{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
+  .erro-caixa .erro-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .erro-caixa b{color:var(--verde-900)}
+  .aviso-final{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0 20px}
+  .aviso-final h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .aviso-final p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .aviso-final p:last-child{margin-bottom:0}
+  .aviso-final b{color:var(--verde-900)}
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
+</style>
+</head>
+<body>
+<!--intentia-nav:start--><style>
+.intnav{position:sticky;top:0;z-index:99999;display:flex;align-items:center;gap:14px;
+  background:#275750;color:#F5F7F3;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+  font-size:13.5px;line-height:1;padding:0 18px;height:46px;box-shadow:0 2px 12px rgba(39,87,80,.28);
+  -webkit-font-smoothing:antialiased}
+.intnav a{color:#CFE0D6;text-decoration:none;transition:color .15s}
+.intnav a:hover{color:#FF6842}
+.intnav .intnav-brand{font-weight:700;letter-spacing:.02em;color:#F5F7F3;display:inline-flex;align-items:center;gap:7px;flex-shrink:0}
+.intnav .intnav-brand::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6842;flex-shrink:0}
+.intnav .intnav-crumb{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+.intnav .intnav-crumb .sep{color:#5f867d;flex-shrink:0}
+.intnav .intnav-crumb .cur{color:#F5F7F3;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.intnav .intnav-spacer{flex:1 1 auto}
+.intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.intnav .intnav-jornada{font-weight:600}
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+  font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
+.intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
+.intnav .intnav-menu{position:relative;flex-shrink:0}
+.intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
+.intnav .intnav-menu-btn .caret{transition:transform .18s}
+.intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
+.intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
+  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  display:none;flex-direction:column;z-index:100000}
+.intnav .intnav-menu.open .intnav-menu-panel{display:flex}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
+.intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
+@media(max-width:620px){
+  .intnav{gap:9px;padding:0 12px;font-size:12.5px}
+  .intnav .intnav-brand span{display:none}
+  .intnav .intnav-crumb .crumb-capa,.intnav .intnav-crumb .sep-capa{display:none}
+  .intnav .intnav-jornada{display:none}
+  .intnav .intnav-menu-btn .lbl{display:none}
+  .intnav .intnav-pill .lbl{display:none}
+  .intnav .intnav-pill{padding:6px 10px}
+}
+</style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Capa da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Capa</a><span class="sep sep-capa">›</span><a href="index.html">Dia 22</a><span class="sep">›</span><span class="cur">Playbook</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html" class="atual">Playbook</a><a href="missao.html">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-jornada" href="../jornada.html">Jornada</a><a class="intnav-pill" href="../Dia 21/index.html" title="Dia 21 (tecla ←)">←<span class="lbl"> Dia 21</span></a><a class="intnav-pill" href="../Dia 23/index.html" title="Dia 23 (tecla →)"><span class="lbl">Dia 23 </span>→</a></span></nav><script>
+(function(){
+  // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
+  document.addEventListener('keydown', function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.defaultPrevented) return;
+    var el=document.activeElement;
+    if(el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+    if(e.key==='Escape'){ var mo=document.querySelector('.intnav-menu.open'); if(mo){mo.classList.remove('open');} return; }
+    var dir=e.key==='ArrowLeft'?'←':e.key==='ArrowRight'?'→':null;
+    if(!dir) return;
+    var alvo=null;
+    document.querySelectorAll('nav.intnav a.intnav-pill').forEach(function(a){
+      if(a.textContent.indexOf(dir)>=0) alvo=a.getAttribute('href');
+    });
+    if(alvo){ e.preventDefault(); window.location.href=alvo; }
+  });
+  // Menu "Neste dia" (abre/fecha, fecha ao clicar fora)
+  document.addEventListener('click', function(e){
+    var btn=e.target.closest('.intnav-menu-btn');
+    var menu=document.querySelector('.intnav-menu');
+    if(!menu) return;
+    if(btn){ e.preventDefault(); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); return; }
+    if(!e.target.closest('.intnav-menu')) menu.classList.remove('open');
+  });
+})();
+</script><!--intentia-nav:end-->
+
+<header>
+  <div class="hero-inner">
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para o Dia 22</a>
+    <div class="eyebrow">Playbook · Dia 22</div>
+    <h1>Hábito, Gatilho, Registro — <span class="grifo">a fundo</span>.</h1>
+    <p class="lede">Os 3 elementos em profundidade: por que o hábito precisa ser pequeno (Fogg), como escolher o gatilho robusto (Duhigg + Fogg), como o tracker cria a série (Clear) — e o cronograma de instalação de múltiplos hábitos sem sobrecarga.</p>
+  </div>
+  <div class="arc"></div>
+</header>
+<main>
+  <div class="intro-caixa">
+    <h2>Por que "força de vontade" é um plano frágil</h2>
+    <p>A pesquisa em psicologia comportamental é razoavelmente convergente num ponto: <b>força de vontade é finita</b> — oscila ao longo do dia, cai com stress, esgota com decisões acumuladas. Um plano que depende de você "querer" o hábito diariamente vai colidir com o primeiro dia difícil. Fogg foi enfático: se você mede o sucesso pelo nível de motivação, você está no plano errado. Meça pela série de X consecutivos.</p>
+    <p>A alternativa robusta é <b>desenho de sistema</b>: hábito pequeno + gatilho ancorado + tracker visível + recompensa imediata. Este playbook detalha cada elemento e o cronograma de instalação — porque tentar instalar 3 hábitos em 1 dia (mesmo depois de desenhá-los) raramente sobrevive à segunda semana.</p>
+  </div>
+
+  <section class="hgr-secao">
+    <div class="hgr-secao-header"><div class="hgr-secao-letra">H</div><div><div class="hgr-secao-titulo">Hábito</div><div class="hgr-secao-sub">pequeno o suficiente para o dia ruim</div></div></div>
+    <div class="hgr-secao-body">
+      <div class="subsec-label">A tese de Fogg: comportamento pequeno vence sempre</div>
+      <p>BJ Fogg cunhou o termo <em>tiny habits</em> para descrever o menor comportamento possível que ainda faça sentido como início do que você quer construir. Não "meditar 20 min"; "sentar em posição de meditar e respirar 3 vezes". Não "escrever 1000 palavras"; "abrir o doc e escrever 1 frase". A ideia contraintuitiva: <b>quanto menor o hábito no início, maior a chance de que o comportamento realmente aconteça — e cresça naturalmente com o tempo</b>.</p>
+
+      <div class="autor-box"><div class="autor-titulo">O teste do "dia ruim"</div>Pergunte-se: no meu pior dia dessa semana (mal dormida, dia difícil no trabalho, filho doente), eu conseguiria fazer esse hábito? Se sim, o tamanho está certo. Se não, ainda é grande demais — reduza. É contraintuitivo mas comprovado empiricamente: <b>consistência composta &gt; intensidade esporádica</b>.</div>
+
+      <div class="subsec-label">Como calibrar o tamanho</div>
+      <ul class="lista-check">
+        <li><b>Comece na versão menor que ainda produz output visível</b> — 20 min de escrita &gt; "escrever mais"</li>
+        <li><b>Cresça o hábito só depois de 4-6 semanas consistentes</b> — quando ele já acontece no automático</li>
+        <li><b>Um hábito, um comportamento</b> — não empilhe "escrever + revisar + publicar"; comece só com escrever</li>
+        <li><b>Mensurável em binário</b> — fez ou não fez, sem escala; qualidade vem depois</li>
+      </ul>
+
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>Confundir hábito com objetivo.</b> "Publicar 1 artigo/semana" é objetivo; "escrever 20 min por dia" é hábito. Objetivos ambiciosos disfarçados de hábitos morrem porque não sobrevivem ao primeiro dia difícil. Hábito real sobrevive porque é <em>pequeno o bastante</em> para não colidir com a realidade da vida.</p></div>
+    </div>
+  </section>
+
+  <section class="hgr-secao">
+    <div class="hgr-secao-header"><div class="hgr-secao-letra">G</div><div><div class="hgr-secao-titulo">Gatilho</div><div class="hgr-secao-sub">depois de qual rotina existente?</div></div></div>
+    <div class="hgr-secao-body">
+      <div class="subsec-label">Duhigg + Fogg: sinal robusto vs sinal frágil</div>
+      <p>Duhigg descreveu neurologicamente que <b>hábitos são disparados por sinais</b> — sem sinal identificado, o comportamento depende de você "lembrar", e memória é sinal frágil. Fogg refinou operacionalmente: <em>ancore o novo hábito em algo que você já faz sem pensar</em>. A fórmula: <b>"depois de [rotina existente], eu vou [novo hábito pequeno]"</b>. A rotina existente vira o gatilho — o cérebro consolida a sequência em 3-6 semanas.</p>
+
+      <div class="autor-box"><div class="autor-titulo">Sinal robusto vs frágil</div>Sinal <b>robusto</b>: ação física recorrente que você faz sem pensar (escovar dente, tomar café, sentar no carro). Sinal <b>frágil</b>: horário no relógio ("todo dia às 7h30"), estado emocional ("quando estiver motivada"), lembrete no celular. Fogg: ancore sempre em ação, nunca em tempo — porque ação acontece <em>com você</em>; tempo exige que você olhe o relógio no momento certo.</div>
+
+      <div class="subsec-label">Como escolher o gatilho certo</div>
+      <ul class="lista-check">
+        <li><b>Escreva a frase completa</b> — "depois de X, eu vou Y" — num post-it visível na 1ª semana</li>
+        <li><b>Rotina existente do horário certo do dia</b> — manhã se hábito é criativo, noite se é reflexivo</li>
+        <li><b>Rotina que você já faz sem falha</b> — se a rotina-âncora falha em 20% dos dias, o hábito herda a fragilidade</li>
+        <li><b>Sequência única e repetida</b> — sempre o mesmo lugar, mesma ordem, mesma pausa entre gatilho e hábito</li>
+      </ul>
+
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>Sinal ambíguo ("de manhã").</b> "De manhã" não é gatilho — é janela de tempo. Você não vai lembrar de fazer "de manhã" no dia difícil. Especificidade extrema é a proteção: "depois de escovar dente logo ao acordar, eu vou..." é gatilho robusto. "De manhã cedo, eu vou..." não é.</p></div>
+    </div>
+  </section>
+
+  <section class="hgr-secao">
+    <div class="hgr-secao-header"><div class="hgr-secao-letra">R</div><div><div class="hgr-secao-titulo">Registro</div><div class="hgr-secao-sub">a série que fica visível</div></div></div>
+    <div class="hgr-secao-body">
+      <div class="subsec-label">Clear: comportamento visível é comportamento que muda</div>
+      <p>James Clear consolidou empiricamente algo simples: <b>quando o hábito é observado, ele muda</b>. Um tracker simples (planilha, caderno, app) com X por dia cria o efeito "don't break the chain": você não quer perder o que já construiu, e essa aversão é motor mais robusto que motivação positiva. A série de 15 dias consecutivos vira patrimônio psicológico — perdê-lo é caro; mantê-lo é fácil.</p>
+
+      <div class="autor-box"><div class="autor-titulo">Recompensa imediata (Duhigg)</div>Sem recompensa, o cérebro não consolida o loop. A recompensa não precisa ser grande — precisa ser <b>imediata e explícita</b>. Um bom café depois de marcar o X. 10 segundos olhando conscientemente a série crescer. Uma respiração profunda. O cérebro precisa registrar "isso valeu a pena". Marcar o X sozinho já é uma micro-recompensa se você prestar atenção.</div>
+
+      <div class="subsec-label">Como desenhar o tracker</div>
+      <ul class="lista-check">
+        <li><b>Formato visível no local do hábito</b> — planilha aberta, caderno na mesa, app no celular</li>
+        <li><b>Simplíssimo — X ou nada</b>; sem escala, sem notas, sem "como foi". Binário é robusto</li>
+        <li><b>Revisão semanal de 30 segundos</b> — quantos X? padrão da série?</li>
+        <li><b>Compartilhado (opcional) com 1 pessoa</b> — accountability aumenta chance em ~30-40%</li>
+      </ul>
+
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>Tracker complicado que exige esforço.</b> Se preencher o tracker leva mais de 30 s, ele mesmo vira fricção — e a fricção mata o hábito antes do próprio hábito. Marque X ou não marque na 1ª fase — nada mais. Sofisticação vem <em>depois</em> do hábito instalado, nunca antes.</p></div>
+    </div>
+  </section>
+
+  <div class="aviso-final">
+    <h3>A regra do Dia 22: 1 hábito de cada vez, com ~10-14 dias entre cada</h3>
+    <p>Fogg observou em milhares de participantes do programa Tiny Habits: <b>3 hábitos simultâneos do zero raramente sobrevivem 4 semanas</b>. A força de vontade é finita, e 3 mudanças ao mesmo tempo competem entre si. A alternativa: instalar um, esperar 10-14 dias até virar automático, adicionar o próximo, esperar mais 10-14 dias, adicionar o terceiro.</p>
+    <p>Isso significa que o plano completo dos 3 hábitos <em>não</em> começa amanhã — só o primeiro. Os outros já estão desenhados (para não perder o pensamento) e vão entrar em fases. Parece devagar. É o único ritmo que sustenta 3 hábitos vivos ao fim de 6 semanas.</p>
+    <p>Amanhã (Dia 23): <b>Ambiente e fricção</b> — como o espaço físico ao seu redor pode fazer 60% do trabalho que hoje você tenta fazer com força de vontade. Complementa perfeitamente H·G·R.</p>
+  </div>
+</main>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Dia 22 · Playbook — H·G·R</div></footer>
+</body>
+</html>
