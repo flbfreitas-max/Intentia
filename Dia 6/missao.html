@@ -364,5 +364,57 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   atualizarProgresso();
 </script>
 
+<!--intentia-save:start--><style>
+.intentia-fab{position:fixed;right:16px;bottom:16px;z-index:9998;display:inline-flex;align-items:center;gap:8px;
+  background:#275750;color:#fff;border:none;border-radius:999px;padding:13px 20px;font-family:'Hanken Grotesk',-apple-system,sans-serif;
+  font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(39,87,80,.32);transition:background .2s,transform .2s;-webkit-tap-highlight-color:transparent}
+.intentia-fab:hover{transform:translateY(-2px)}
+.intentia-fab:active{transform:translateY(0)}
+.intentia-fab.ok{background:#4A8B75}
+.intentia-fab svg{width:18px;height:18px;fill:currentColor;flex-shrink:0}
+@media(max-width:600px){.intentia-fab{right:12px;bottom:12px;padding:12px 17px;font-size:14px}}
+@media print{.intentia-fab{display:none}}
+</style><button type="button" class="intentia-fab" id="intentia-fab" aria-label="Salvar respostas"><svg viewBox="0 0 24 24"><path d="M17 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7l-4-4zm-5 16a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm3-10H5V5h10v4z"/></svg><span id="intentia-fab-txt">Salvar</span></button><script>
+(function(){
+  var KEY="intentia-missao-dia6-rascunho";
+  function campos(){return Array.prototype.slice.call(document.querySelectorAll('input,textarea,select'));}
+  function chave(el,i){return el.id||el.name||('idx-'+i);}
+  function coletar(){
+    var d={campos:{},chips:[]};
+    campos().forEach(function(el,i){
+      if(el.type==='checkbox'||el.type==='radio'){d.campos[chave(el,i)]=el.checked?1:0;}
+      else{d.campos[chave(el,i)]=el.value;}
+    });
+    document.querySelectorAll('.sensacao-chip.selected').forEach(function(c){
+      var g=c.closest('[data-sensacao]');
+      if(g)d.chips.push({g:g.getAttribute('data-sensacao'),v:c.getAttribute('data-val')});
+    });
+    return d;
+  }
+  function salvar(){try{localStorage.setItem(KEY,JSON.stringify(coletar()));return true;}catch(e){return false;}}
+  function esc(s){return (window.CSS&&CSS.escape)?CSS.escape(s):String(s).replace(/["\\]/g,'\\</body>');}
+  function restaurar(){
+    var raw;try{raw=localStorage.getItem(KEY);}catch(e){return;}
+    if(!raw)return;var d;try{d=JSON.parse(raw);}catch(e){return;}
+    if(d&&d.campos){campos().forEach(function(el,i){
+      var k=chave(el,i);if(!(k in d.campos))return;var v=d.campos[k];
+      if(el.type==='checkbox'||el.type==='radio'){var w=!!v;if(el.checked!==w){el.checked=w;el.dispatchEvent(new Event('change',{bubbles:true}));}}
+      else if(el.value!==v){el.value=v;el.dispatchEvent(new Event('input',{bubbles:true}));}
+    });}
+    if(d&&d.chips&&d.chips.length){d.chips.forEach(function(ch){
+      try{var chip=document.querySelector('[data-sensacao="'+esc(ch.g)+'"] .sensacao-chip[data-val="'+esc(ch.v)+'"]');
+        if(chip&&!chip.classList.contains('selected'))chip.click();}catch(e){}
+    });}
+  }
+  var t;function agendar(){clearTimeout(t);t=setTimeout(salvar,400);}
+  document.addEventListener('input',agendar,true);
+  document.addEventListener('change',agendar,true);
+  document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('.sensacao-chip'))agendar();},true);
+  window.addEventListener('beforeunload',salvar);
+  var fab=document.getElementById('intentia-fab'),txt=document.getElementById('intentia-fab-txt');
+  if(fab){fab.addEventListener('click',function(){var ok=salvar();fab.classList.add('ok');txt.textContent=ok?'Salvo ✓':'Erro';setTimeout(function(){fab.classList.remove('ok');txt.textContent='Salvar';},1800);});}
+  window.addEventListener('load',function(){setTimeout(restaurar,60);});
+})();
+</script><!--intentia-save:end-->
 </body>
 </html>
