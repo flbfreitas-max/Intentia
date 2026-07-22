@@ -158,7 +158,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <header>
   <div class="hero-inner">
     <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 22</a>
-    <div class="eyebrow">Material · Etapa 22 · Semana 4 · Etapa 1 de 7</div>
+    <div class="eyebrow">Material · Etapa 22 · Bloco 4 · Etapa 1 de 7</div>
     <h1>Seu <span class="grifo">tracker</span> — 7 dias, 1 hábito começa amanhã.</h1>
     <p class="lede">Os 3 hábitos desenhados, o que começa amanhã destacado, o mini-tracker visual dos próximos 7 dias, e o cronograma de instalação dos hábitos 2 e 3.</p>
   </div>
@@ -193,12 +193,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <td class="slot">·</td><td class="slot">·</td><td class="slot">·</td><td class="slot">·</td><td class="slot">·</td><td class="slot">·</td><td class="slot">·</td>
         </tr>
         <tr>
-          <td id="h2-nome">Hábito 2 — <em>começa Semana 2</em></td>
-          <td colspan="7" style="background:#F0F5F2;color:var(--tinta-suave);font-style:italic;font-size:13px;padding:14px">aguarda semana 2 · instalar depois que Hábito 1 estiver estabelecido</td>
+          <td id="h2-nome">Hábito 2 — <em>começo Bloco 2</em></td>
+          <td colspan="7" style="background:#F0F5F2;color:var(--tinta-suave);font-style:italic;font-size:13px;padding:14px">aguarda bloco 2 · instalar depois que Hábito 1 estiver estabelecido</td>
         </tr>
         <tr>
-          <td id="h3-nome">Hábito 3 — <em>começa Semana 3</em></td>
-          <td colspan="7" style="background:#F0F5F2;color:var(--tinta-suave);font-style:italic;font-size:13px;padding:14px">aguarda semana 3 · sequência: 1 → 2 → 3, com ~10-14 dias entre cada</td>
+          <td id="h3-nome">Hábito 3 — <em>começo Bloco 3</em></td>
+          <td colspan="7" style="background:#F0F5F2;color:var(--tinta-suave);font-style:italic;font-size:13px;padding:14px">aguarda bloco 3 · sequência: 1 → 2 → 3, com ~10-14 dias entre cada</td>
         </tr>
       </tbody>
     </table>
@@ -207,7 +207,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
   <div class="habitos-grid">
     <div class="habito-col" id="h1-col">
-      <div class="habito-col-header"><div class="habito-col-num">1</div><div class="habito-col-inicio" id="h1-inicio">semana 1</div><div class="habito-col-nome">Hábito 1</div></div>
+      <div class="habito-col-header"><div class="habito-col-num">1</div><div class="habito-col-inicio" id="h1-inicio">bloco 1</div><div class="habito-col-nome">Hábito 1</div></div>
       <div class="habito-col-body">
         <div>
           <div class="habito-secao-label">Comportamento</div>
@@ -220,7 +220,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
     </div>
     <div class="habito-col" id="h2-col">
-      <div class="habito-col-header"><div class="habito-col-num">2</div><div class="habito-col-inicio" id="h2-inicio">semana 2</div><div class="habito-col-nome">Hábito 2</div></div>
+      <div class="habito-col-header"><div class="habito-col-num">2</div><div class="habito-col-inicio" id="h2-inicio">bloco 2</div><div class="habito-col-nome">Hábito 2</div></div>
       <div class="habito-col-body">
         <div>
           <div class="habito-secao-label">Comportamento</div>
@@ -233,7 +233,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
     </div>
     <div class="habito-col" id="h3-col">
-      <div class="habito-col-header"><div class="habito-col-num">3</div><div class="habito-col-inicio" id="h3-inicio">semana 3</div><div class="habito-col-nome">Hábito 3</div></div>
+      <div class="habito-col-header"><div class="habito-col-num">3</div><div class="habito-col-inicio" id="h3-inicio">bloco 3</div><div class="habito-col-nome">Hábito 3</div></div>
       <div class="habito-col-body">
         <div>
           <div class="habito-secao-label">Comportamento</div>
@@ -312,7 +312,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   setText('h3-txt', d.h3); setText('g3-txt', d.g3);
 
   const NOMES_HAB = {h1: 'Hábito 1', h2: 'Hábito 2', h3: 'Hábito 3'};
-  const CRONO = {h1: 'semana 1', h2: 'semana 2', h3: 'semana 3'};
+  const CRONO = {h1: 'bloco 1', h2: 'bloco 2', h3: 'bloco 3'};
   const amanha = d.amanha || 'h1';
 
   // Reordenar cronograma pela escolha do "começa amanhã"
@@ -325,7 +325,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   document.getElementById(amanha+'-col').classList.add('destaque');
   document.getElementById(amanha+'-inicio').textContent = 'começa amanhã';
   restantes.forEach((k, i) => {
-    document.getElementById(k+'-inicio').textContent = (i === 0 ? 'semana 2' : 'semana 3');
+    document.getElementById(k+'-inicio').textContent = (i === 0 ? 'bloco 2' : 'bloco 3');
   });
 
   // Amanhã destaque
