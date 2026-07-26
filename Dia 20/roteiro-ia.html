@@ -156,7 +156,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 20</a>
     <div class="badge-doc">Spec interno · Roteiro da IA</div>
     <h1>Roteiro da IA · <span class="grifo">Missão da Etapa 20</span></h1>
-    <p class="lede">Este documento define, campo por campo, o que a IA da Intentia deve fazer na missão do próximo horizonte — o recap dos 28 dias, a reavaliação da direção da Etapa 7 (mantém, refina, redireciona), os marcos de 3-6 meses, o próximo ciclo e a carta para si futura. Escrito para orientar a integração, a curadoria de prompts e o QA das respostas.</p>
+    <p class="lede">Este documento define, campo por campo, o que a IA da Intentia deve fazer na missão do próximo horizonte — o recap dos 21 dias, a reavaliação da direção da Etapa 7 (mantém, refina, redireciona), os marcos de 3-6 meses, o próximo ciclo e a carta para si futura. Escrito para orientar a integração, a curadoria de prompts e o QA das respostas.</p>
   </div>
   <div class="arc"></div>
 </header>
@@ -184,7 +184,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
     <div class="principio">
       <h4>Preservar o núcleo do que a pessoa escreveu</h4>
-      <p>A IA polir, não reescrever. Surpresas continuam sendo as surpresas que a pessoa viu; marcos continuam sendo os dela; a carta continua na voz dela. É proibido inventar fatos dos 28 dias, atribuir progresso que a pessoa não relatou ou trocar a substância de qualquer campo.</p>
+      <p>A IA polir, não reescrever. Surpresas continuam sendo as surpresas que a pessoa viu; marcos continuam sendo os dela; a carta continua na voz dela. É proibido inventar fatos dos 21 dias, atribuir progresso que a pessoa não relatou ou trocar a substância de qualquer campo.</p>
     </div>
 
     <div class="principio">
@@ -214,7 +214,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <div class="campo-doc">
       <div class="campo-header">
         <span class="campo-tag">surpresas</span>
-        <span class="campo-nome">"Surpresas dos 28 dias"</span>
+        <span class="campo-nome">"Surpresas dos 21 dias"</span>
       </div>
       <div class="campo-bloco">
         <div class="campo-bloco-label">Objetivo do campo</div>
@@ -250,7 +250,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
       <div class="campo-bloco">
         <div class="campo-bloco-label">Prompt sugerido para a IA</div>
-        <div class="prompt-box"><span class="prompt-label">System prompt · surpresas</span>Você é a IA da Intentia. A pessoa está na Etapa 20, escrevendo o recap dos 28 dias: 3-4 observações do que a surpreendeu, para bem ou para mal.
+        <div class="prompt-box"><span class="prompt-label">System prompt · surpresas</span>Você é a IA da Intentia. A pessoa está na Etapa 20, escrevendo o recap dos 21 dias: 3-4 observações do que a surpreendeu, para bem ou para mal.
 
 Sua tarefa:
 - Polir cada observação como CONSTATAÇÃO no passado ("descobri que…", "X rendeu mais que Y"), numerada (1)-(4).
@@ -299,7 +299,7 @@ Retorne apenas o texto polido. Sem preâmbulo.</div>
       </div>
       <div class="campo-bloco">
         <div class="campo-bloco-label">Objetivo do campo</div>
-        <div class="campo-bloco-conteudo">Registrar a decisão da pessoa sobre a direção da Etapa 7, à luz dos dados dos 28 dias. Três opções: <b>mantém</b> (dados confirmam), <b>refina</b> (ajuste calibrado), <b>redireciona</b> (mudança grande).</div>
+        <div class="campo-bloco-conteudo">Registrar a decisão da pessoa sobre a direção da Etapa 7, à luz dos dados dos 21 dias. Três opções: <b>mantém</b> (dados confirmam), <b>refina</b> (ajuste calibrado), <b>redireciona</b> (mudança grande).</div>
       </div>
       <div class="campo-bloco">
         <div class="campo-bloco-label">O que a IA deve fazer</div>
@@ -469,7 +469,7 @@ Retorne apenas o texto. Sem preâmbulo.</div>
       </div>
       <div class="campo-bloco">
         <div class="campo-bloco-label">O que a IA deve fazer</div>
-        <div class="campo-bloco-conteudo">Se a carta veio vaga ("boa sorte, confia em você"), devolver o empurrão aprovado: <b>"seja específica: o que a [nome] de 3 meses precisa lembrar? o que celebrar? o que evitar? 3-4 linhas concretas &gt; parágrafos abstratos."</b> Se veio concreta, polir minimamente: a carta perde valor se soar escrita por outra pessoa. Preservar apelidos, tom carinhoso, despedidas ("Beijo", "Se cuida") — isso é voz, não ruído. Ancorar em conteúdo real dos 28 dias quando a pessoa o citou (surpresas da etapa 1, accountability da Etapa 19).</div>
+        <div class="campo-bloco-conteudo">Se a carta veio vaga ("boa sorte, confia em você"), devolver o empurrão aprovado: <b>"seja específica: o que a [nome] de 3 meses precisa lembrar? o que celebrar? o que evitar? 3-4 linhas concretas &gt; parágrafos abstratos."</b> Se veio concreta, polir minimamente: a carta perde valor se soar escrita por outra pessoa. Preservar apelidos, tom carinhoso, despedidas ("Beijo", "Se cuida") — isso é voz, não ruído. Ancorar em conteúdo real dos 21 dias quando a pessoa o citou (surpresas da etapa 1, accountability da Etapa 19).</div>
       </div>
 
       <div class="campo-bloco">
@@ -478,7 +478,7 @@ Retorne apenas o texto. Sem preâmbulo.</div>
 
 Sua tarefa:
 - Se a carta cobre lembrar/celebrar/evitar com conteúdo concreto: polir MINIMAMENTE (pontuação, construção). Preservar apelidos, tom afetivo e despedidas. Extensão-alvo: 3-4 linhas; nunca expandir para além de 6.
-- Se a carta é vaga (genérica, sem conteúdo dos 28 dias): devolver exatamente: "Seja específica: o que a você de 3 meses precisa lembrar? o que celebrar? o que evitar? 3-4 linhas concretas > parágrafos abstratos." — seguido de 1 pergunta que puxe uma surpresa registrada na etapa 1, se houver.
+- Se a carta é vaga (genérica, sem conteúdo dos 21 dias): devolver exatamente: "Seja específica: o que a você de 3 meses precisa lembrar? o que celebrar? o que evitar? 3-4 linhas concretas > parágrafos abstratos." — seguido de 1 pergunta que puxe uma surpresa registrada na etapa 1, se houver.
 - A carta é em primeira pessoa da autora para ela mesma. Nunca migrar para conselho da IA ("você deveria…").
 
 Regras absolutas:
