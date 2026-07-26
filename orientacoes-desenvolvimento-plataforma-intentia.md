@@ -5,6 +5,20 @@ Versão 1.0 · 22/07/2026 · Preparado a partir do protótipo em `Trilha Nova Es
 
 ---
 
+## ⚠️ Atualização estrutural · 26/07/2026 — trilha de 28 → 21 dias
+
+Este documento foi escrito para a trilha de 28 dias. Em 26/07/2026 a estrutura mudou; **leia todas as referências abaixo através deste mapeamento**:
+
+- O antigo **Bloco 1 "Onde estou" (Dias 1–7)** foi **substituído pelo produto de entrada Retrato de Carreira** (app próprio: Vercel + Supabase, repositório `Intentia_Mapa_Estrategico/app`). A trilha não mapeia mais os ativos — ela **parte do Retrato**.
+- Os antigos **Dias 8–28 viraram Dias 1–21**, em **3 blocos**: Direção (1–7), Amplificação (8–14), Rotina (15–21). Marcos nas Etapas **7 (Direção Escolhida), 14 (Plano) e 21 (Fechamento)**. Ao ler "Dia N" (N ≥ 8) neste documento, subtraia 7.
+- O **Dia 0** foi reescrito: recebe quem chega do Retrato e tem a **ponte de dados** — formulário "Traga o seu Retrato" (manchete revisada, prioridade, valores) que grava `intentia-dia0` (session + localStorage) e marca a Etapa 0 no `intentia-progresso`. **As Etapas 5 e 21 leem essa chave** (cruzamento de valores e comparação de manchetes).
+- O encadeamento de dados citado no §de dados passa a ser: `escolhaFrase` vive no **Dia 7** (ex-14), `novaDirecao` no **Dia 20** (ex-27), lidos pelo **Dia 21** (ex-28). A chave mais lida é `intentia-dia7`.
+- A feature **"Peças do Retrato"** da Jornada (`index.html`) foi removida — o Retrato agora é o produto de entrada, não uma coleção interna.
+- `jornada.html` não existe (a Jornada é o próprio `index.html`).
+- Integração futura já decidida em produto: migrar a trilha para o mesmo app/login do Retrato (Supabase), aposentando a ponte manual do Dia 0.
+
+---
+
 ## Como ler este documento
 
 Este documento orienta a transformação do protótipo HTML existente em uma plataforma real, em produção, usando **Vercel e/ou Hostinger** (os dois cenários estão cobertos no §4). A decisão de produto já tomada é: **evoluir o protótipo atual, não reescrever do zero**. O protótipo é a referência fiel de design, conteúdo e comportamento — o trabalho do desenvolvedor é adicionar as camadas que faltam (contas de usuário, persistência em servidor, IA real, áudio final) com o mínimo de retrabalho sobre o que já existe.
