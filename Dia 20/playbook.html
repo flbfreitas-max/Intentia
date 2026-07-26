@@ -1,70 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 20 · Playbook — E·F·R</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
-  *{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
-  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
-  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
-  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
-  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
-  .voltar svg{width:14px;height:14px;fill:currentColor}
-  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
-  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:14px}
-  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
-  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
-  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
-  .intro-caixa{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .intro-caixa h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
-  .intro-caixa p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
-  .intro-caixa p:last-child{margin-bottom:0}
-  .intro-caixa b{color:var(--verde-900)}
-  .efr-secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06)}
-  .efr-secao-header{padding:22px 28px 20px;color:#fff;display:flex;align-items:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%)}
-  .efr-secao-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
-  .efr-secao-titulo{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2}
-  .efr-secao-sub{font-size:13px;opacity:.92;font-style:italic;margin-top:3px}
-  .efr-secao-body{padding:22px 28px 26px}
-  .efr-secao-body p{margin-bottom:14px;font-size:15px;line-height:1.7}
-  .efr-secao-body p:last-child{margin-bottom:0}
-  .efr-secao-body b{color:var(--verde-900)}
-  .subsec-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin:22px 0 10px;padding-top:18px;border-top:1px dashed var(--verde-100)}
-  .subsec-label:first-child{margin-top:0;padding-top:0;border-top:none}
-  .lista-check{list-style:none;padding:0;margin-top:8px}
-  .lista-check li{padding:8px 0 8px 26px;position:relative;font-size:14px;line-height:1.55;color:var(--tinta)}
-  .lista-check li::before{content:"→";position:absolute;left:0;top:8px;color:var(--coral);font-weight:700}
-  .lista-check li b{color:var(--verde-900)}
-  .box-info{background:#F0F5F2;border-left:3px solid var(--verde-700);padding:14px 20px;border-radius:0 10px 10px 0;margin-top:12px;font-size:14px;line-height:1.6}
-  .box-info b{color:var(--verde-900)}
-  .box-info-titulo{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:6px}
-  .erro-caixa{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
-  .erro-caixa .erro-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
-  .erro-caixa b{color:var(--verde-900)}
-  .matriz-caixa{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:22px 26px;margin:28px 0 20px}
-  .matriz-caixa h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
-  .matriz-caixa p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
-  .matriz-caixa p:last-child{margin-bottom:0}
-  .matriz-caixa b{color:var(--verde-900)}
-  .matriz-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 6px}
-  @media (max-width:520px){.matriz-grid{grid-template-columns:1fr}}
-  .matriz-quad{background:#fff;border:1px solid var(--verde-100);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.5}
-  .matriz-quad b{color:var(--verde-900);font-family:var(--serif);display:block;margin-bottom:3px}
-  .matriz-quad.purposeful{border-color:var(--coral);background:#FFF6F2}
-  .matriz-quad.purposeful b{color:var(--coral)}
-  .aviso-final{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0 20px}
-  .aviso-final h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
-  .aviso-final p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
-  .aviso-final p:last-child{margin-bottom:0}
-  .aviso-final b{color:var(--verde-900)}
-  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
-  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
-</style>
-
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Intentia · Etapa 20 · Playbook — R·A·N</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><style>:root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}.grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}header{background:var(--verde-900);color:var(--creme,#F5F7F3);padding:52px 24px 60px;position:relative;overflow:hidden}.hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}.voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}.voltar svg{width:14px;height:14px;fill:currentColor}.eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:14px;color:#F5F7F3}header .lede{font-size:16px;color:#CFE0D6;max-width:600px}.arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}main{max-width:760px;margin:0 auto;padding:0 24px 40px}.intro{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}.intro h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:10px;font-weight:600}.intro p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}.intro p:last-child{margin-bottom:0}.intro b{color:var(--verde-900)}.secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06)}.secao-header{padding:22px 28px 20px;color:#fff;display:flex;align-items:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%)}.secao-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}.secao-titulo{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2}.secao-sub{font-size:13px;opacity:.92;font-style:italic;margin-top:3px}.secao-body{padding:22px 28px 26px}.secao-body p{margin-bottom:14px;font-size:15px;line-height:1.7}.secao-body p:last-child{margin-bottom:0}.secao-body b{color:var(--verde-900)}.check{list-style:none;padding:0;margin-top:8px}.check li{padding:8px 0 8px 26px;position:relative;font-size:14px;line-height:1.55;color:var(--tinta)}.check li::before{content:"→";position:absolute;left:0;top:8px;color:var(--coral);font-weight:700}.check li b{color:var(--verde-900)}.aviso{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0 20px}.aviso h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}.aviso p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}.aviso p:last-child{margin-bottom:0}.aviso b{color:var(--verde-900)}footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}</style>
 <!--intentia-mobile:start--><style>
 /* Intentia — navegabilidade mobile (iOS + Android) */
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -144,98 +79,80 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 })();
 </script><!--intentia-nav:end-->
 
-<header>
-  <div class="hero-inner">
-    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 20</a>
-    <div class="eyebrow">Playbook · Etapa 20</div>
-    <h1>Energia, Foco, Ritmo — <span class="grifo">a fundo</span>.</h1>
-    <p class="lede">Os 3 elementos em profundidade: as 4 dimensões de Schwartz, a matriz energia × foco de Bruch & Ghoshal, o modelo oscilatório de recuperação e por que "gestão de tempo" tem retorno decrescente em profissionais experientes.</p>
-  </div>
-  <div class="arc"></div>
-</header>
+<header><div class="hero-inner"><a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 20</a><div class="eyebrow">Playbook · Etapa 20</div><h1>Recap, Ajuste, Novo — <span class="grifo">a fundo</span>.</h1><p class="lede">Ibarra revisitada: por que direção é hipótese testada em ciclos, não decisão irrevogável — e como refinamento &gt; reinvenção sustenta transição de longo prazo.</p></div><div class="arc"></div></header>
 <main>
-  <div class="intro-caixa">
-    <h2>Por que "gerir tempo" não resolve mais</h2>
-    <p>Nas primeiras décadas de trabalho, gestão de tempo funciona: você tem energia sobrando e o problema real é organizar os blocos. Depois de 10-15 anos de carreira, a curva se inverte — tempo continua fixo (24h por dia), mas <b>energia começa a ficar cara</b>. Reunião extra não custa 30 min; custa a próxima hora de foco profundo. Sono ruim não custa uma manhã cansada; custa 3 dias de decisões piores.</p>
-    <p>Schwartz e Bruch/Ghoshal chegaram na mesma conclusão por caminhos diferentes: o gargalo em profissionais competentes <em>não é tempo</em>. É <b>energia</b> (matéria-prima) e <b>foco</b> (direção). Sem os dois juntos, mais horas produzem exatamente o efeito oposto do esperado.</p>
+  <div class="intro">
+    <h2>Por que ciclos curtos e repetidos &gt; grande plano único</h2>
+    <p>A pesquisa longitudinal de Ibarra em transições de identidade profissional mostra um padrão: <b>quem sustenta mudança ao longo de 12-24 meses trata direção como hipótese testada em ciclos de 3-6 meses</b>. Cada ciclo — como esses 28 dias — gera dados. A cada final de ciclo, direção é reavaliada com esses dados e refinada (não reinventada). Depois de 3-4 ciclos, o refinamento composto produz mudança de identidade profissional real.</p>
+    <p>O oposto — grande plano único definido em 1 momento e executado por 12 meses — quase sempre quebra em 3-6 meses. Não porque a pessoa "perdeu força"; porque os dados dos primeiros meses invariavelmente contradizem parte do plano inicial. Sem estrutura de reavaliação, o plano rígido não sabe se ajustar — e desmonta.</p>
   </div>
 
-  <section class="efr-secao">
-    <div class="efr-secao-header"><div class="efr-secao-letra">E</div><div><div class="efr-secao-titulo">Energia — 4 dimensões</div><div class="efr-secao-sub">a matéria-prima renovável</div></div></div>
-    <div class="efr-secao-body">
-      <div class="subsec-label">As 4 dimensões (Schwartz & McCarthy)</div>
-      <p><b>Física</b> — sono, movimento, alimentação, capacidade cardiovascular. A base biológica; se ela cai, todas as outras caem em cascata. É a dimensão que profissionais competentes negligenciam mais cedo, porque parece "não afetar o trabalho". Afeta — só com atraso de dias, não horas.</p>
-      <p><b>Emocional</b> — regulação sob estresse, qualidade das relações próximas, capacidade de <em>não</em> reagir. Não é "sentir menos"; é ter mais espaço entre estímulo e resposta. Quando essa dimensão está baixa, decisões pequenas pesam demais e o dia inteiro parece difícil.</p>
-      <p><b>Mental</b> — capacidade de foco profundo (60-90 min sem interrupção), memória de trabalho, tomada de decisão complexa. É a dimensão que Slack, email e reuniões fragmentadas destroem primeiro. Reconstrução exige blocos protegidos, não "produtividade".</p>
-      <p><b>Propósito</b> — conexão entre o trabalho e algo que importa além dele. Quando essa dimensão está alta, energia física e mental duram mais; quando está baixa, mesmo trabalho fácil parece pesado. É a dimensão mais confundida com "motivação" — e a que mais separa carreira de emprego.</p>
-
-      <div class="box-info"><div class="box-info-titulo">Como diagnosticar honestamente</div>Nota de 1 a 5 em cada, sem otimismo performático. Regra prática: se você <em>hesita</em> ao dar a nota, a nota real é uma abaixo. Confie na hesitação.</div>
-
-      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>Reformar as 4 dimensões ao mesmo tempo.</b> Sobrecarga garantida — ninguém sustenta. Escolha a mais fraca (ou a que mais afeta as outras em cascata) e trabalhe só ela por 3-6 semanas. Depois, próxima. O resultado é composto: dimensão física subindo puxa mental e emocional junto.</p></div>
-    </div>
-  </section>
-
-  <section class="efr-secao">
-    <div class="efr-secao-header"><div class="efr-secao-letra">F</div><div><div class="efr-secao-titulo">Foco — matriz energia × propósito</div><div class="efr-secao-sub">a direção da energia</div></div></div>
-    <div class="efr-secao-body">
-      <div class="subsec-label">A matriz de Bruch & Ghoshal</div>
-      <p>Bruch e Ghoshal cruzaram duas variáveis simples — <b>nível de energia</b> e <b>nível de foco</b> — e descobriram 4 perfis. Só um move a agulha, e é minoria.</p>
-
-      <div class="matriz-grid">
-        <div class="matriz-quad"><b>Procrastinador · baixa energia + baixo foco</b>10% dos gestores. Ocupado com tarefas defensivas — email, arquivos, "colocar em dia". Sensação de esforço sem efeito real.</div>
-        <div class="matriz-quad"><b>Desengajado · baixa energia + alto foco</b>30%. Sabe o que precisa fazer mas não tem combustível — trabalha em piloto automático, entregas medianas, apagado por dentro.</div>
-        <div class="matriz-quad"><b>Distraído · alta energia + baixo foco</b>40%. O quadrante mais comum. Muita atividade, muitos "meetings", muita reação — pouco propósito. O trabalho "urgente" nunca acaba.</div>
-        <div class="matriz-quad purposeful"><b>Purposeful · alta energia + alto foco</b>10-20%. Escolhe deliberadamente onde a energia vai. Diz não sem culpa. Faz menos, entrega mais. É a minoria — e o padrão a construir.</div>
-      </div>
-
-      <p style="margin-top:14px">A tese central: <b>não é temperamento — é escolha</b>. A maioria dos profissionais oscila entre os 4 quadrantes ao longo da semana. Bruch/Ghoshal descobriram que os <em>purposeful</em> tinham 2 hábitos em comum: (1) definiam a 1 prioridade da semana <em>antes</em> da semana começar, e (2) definiam explicitamente o que <em>não</em> fariam quando a semana ficasse cheia.</p>
-
-      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>Confundir ocupação com foco.</b> "Estou muito ocupado" quase sempre significa "estou no quadrante distraído". Foco tem uma marca clara: <em>no fim da semana você consegue nomear a 1 coisa que a semana entregou</em>. Se você lembra de muitas coisas mas nenhuma se destaca, você provavelmente estava ocupado — não focado.</p></div>
-    </div>
-  </section>
-
-  <section class="efr-secao">
-    <div class="efr-secao-header"><div class="efr-secao-letra">R</div><div><div class="efr-secao-titulo">Ritmo — oscilação, não linearidade</div><div class="efr-secao-sub">o que sustenta décadas</div></div></div>
-    <div class="efr-secao-body">
-      <div class="subsec-label">A tese de Schwartz sobre sistemas humanos</div>
-      <p>Sistemas biológicos <b>não são lineares</b>. Coração não bate constante — pulsa. Sono não é uniforme — cicla. Foco não sustenta constante — precisa oscilar entre esforço e recuperação. Trabalhar contínuo tratando o corpo como máquina linear é o padrão que produz burnout no ano 3-5 mesmo com "gestão de tempo perfeita".</p>
-      <p>O padrão que sustenta décadas: <b>trabalho intenso + recuperação real</b>, em ciclos curtos (blocos de 60-90 min de foco profundo seguidos de pausa real de 10-15 min) e em ciclos longos (semanas de intensidade seguidas de semanas mais leves; férias reais, não "descanso conectado"). Rituais tornam essa oscilação automática — sem depender de força de vontade em dias ruins.</p>
-
-      <div class="box-info"><div class="box-info-titulo">Por que rituais &gt; motivação</div>Motivação oscila (às vezes está alta, às vezes não). Ritual não depende de motivação — é comportamento repetido no mesmo horário/lugar/gatilho. Depois de 3-6 semanas, ele acontece no automático. É por isso que Schwartz insiste: <em>desenhe o ritual, não a intenção</em>.</div>
-
-      <div class="subsec-label">Rituais que sustentam</div>
-      <ul class="lista-check">
-        <li><b>Blocos de foco protegidos</b> — 60-90 min, mesmo horário na semana, sem notificação (o ritmo cognitivo agradece a repetição)</li>
-        <li><b>Pausa real entre blocos</b> — não "rolar rede social"; caminhada, água, olhar longe. Recuperação exige desconexão real, mesmo que curta</li>
-        <li><b>Ritual noturno de corte</b> — celular fora do quarto; última hora sem trabalho; sono como prioridade infraestrutural, não "quando sobrar"</li>
-        <li><b>Ritual semanal</b> — 1 dia sem trabalho (nenhum, não "leve"); 1 movimento físico regular; 1 conversa não-profissional real</li>
+  <section class="secao">
+    <div class="secao-header"><div class="secao-letra">R</div><div><div class="secao-titulo">Recap</div><div class="secao-sub">leitura honesta dos dados</div></div></div>
+    <div class="secao-body">
+      <p>Recap é <b>a coleta dos dados que os 28 dias produziram</b>. Foco em surpresa — o que aconteceu que você não previa. Surpresa é matéria-prima do refinamento; sem observá-la, você repete o plano original sem incorporar aprendizado.</p>
+      <ul class="check">
+        <li><b>3-4 observações concretas</b> — não abstratas</li>
+        <li><b>Foco em surpresa</b> (positiva e negativa) — não em juízo de performance</li>
+        <li><b>Comparar com expectativa inicial</b> — o gap revela aprendizado</li>
       </ul>
-
-      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>Confundir distração com recuperação.</b> Rolar rede social, assistir séries em fundo, ficar disponível "de leve" para trabalho — nada disso é recuperação; é energia mental sendo drenada em outro canal. Recuperação real exige <em>desconexão total temporária</em>. Sem isso, o descanso é falso: parece descansar mas continua consumindo.</p></div>
     </div>
   </section>
 
-  <div class="matriz-caixa" style="border-color:var(--verde-500);background:linear-gradient(135deg,#fff 0%, var(--verde-100) 100%)">
-    <h3>3 complementos práticos que sustentam E·F·R</h3>
-    <p><b>Anthony (2011) — priorizar com filtros, não com entusiasmo.</b> Quando a lista de "coisas para fazer" fica longa, três filtros ajudam a cortar sem culpa: <em>evidência</em> (procure sinal real antes de investir pesado — ação revela prioridade que discurso esconde), <em>gargalo</em> (ache a restrição que trava tudo e ataque ela primeiro), <em>olhar de fora</em> (converse com alguém de outro contexto — sozinha, você reprioriza sempre dentro do mesmo repertório). O Intentia acrescenta o filtro que vem antes: <em>direção primeiro</em> — corte o que não serve ao seu norte, depois use os 3 do Anthony no que restou.</p>
-    <p><b>Zhang, Spreitzer & Qiu (2023) — a agenda é ferramenta de energia.</b> A mesma carga de reuniões cansa de formas diferentes conforme o arranjo. Reunião picada fatia o dia e drena; agrupada devolve blocos de foco. Toda troca de contexto tem custo — proteja transições, deixe respiros entre compromissos pesados, não encoste uma reunião difícil na outra. Reserve seu melhor horário do dia para o trabalho difícil; empurre o leve para os vales. Agenda montada por ordem de chegada dos convites é agenda <em>reativa</em>; agenda desenhada por energia é agenda <em>conduzida</em>.</p>
-    <p><b>Alpaio & Ravishankar (2022) — proteger a energia é parte do trabalho, não luxo.</b> Nomear o que drena é o começo — enquanto o cansaço é névoa genérica, não há o que fazer com ele; quando você identifica a fonte, vira problema concreto (que tem solução possível). Cuide dos dois lados: reduza o que esgota <em>e</em> alimente de propósito o que recarrega. Advertência importante: autocuidado individual não conserta ambiente que adoece — se o esgotamento é fabricado por cultura de excesso, respirar melhor não basta.</p>
+  <section class="secao">
+    <div class="secao-header"><div class="secao-letra">A</div><div><div class="secao-titulo">Ajuste</div><div class="secao-sub">refinamento &gt; reinvenção</div></div></div>
+    <div class="secao-body">
+      <p>Ajuste é <b>a resposta calibrada aos dados</b>: mantém direção, refina alguma parte, ou (raramente) redireciona. Ibarra: refinamento é o padrão saudável; redirecionamento drástico em fim de ciclo é geralmente reação emocional (esgotamento, decepção pontual) — não aprendizado. Se você quer mudar 100%, pause pelo menos 1 semana e converse com accountability antes.</p>
+      <ul class="check">
+        <li><b>Refinar é ajuste pequeno</b> — 1-2 palavras/nuances na frase da direção</li>
+        <li><b>Redirecionar exige dados robustos</b> — não apenas cansaço de fim de ciclo</li>
+        <li><b>Data + versão nova</b> — para comparar no próximo ciclo</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="secao-header"><div class="secao-letra">N</div><div><div class="secao-titulo">Novo horizonte</div><div class="secao-sub">3-6 meses + próximo ciclo</div></div></div>
+    <div class="secao-body">
+      <p>Novo horizonte é <b>a projeção intermediária + a data do próximo ciclo Intentia</b>. Horizonte de 3-6 meses é o intervalo que sustenta melhor: longo o suficiente para consolidação, curto o suficiente para não esquecer. Sem marcar o próximo ciclo agora, ele vai ser adiado — porque contexto de trabalho intenso raramente cria espaço espontâneo.</p>
+      <ul class="check">
+        <li><b>2-3 marcos observáveis</b> — não plano detalhado, marcos concretos</li>
+        <li><b>Data específica do próximo ciclo Intentia</b> — 3-4 meses à frente</li>
+        <li><b>Carta breve para si futura</b> — em lugar visível (foto, post-it, doc)</li>
+      </ul>
+    </div>
+  </section>
+
+  
+  <div class="intro">
+    <h2>Calibrar os marcos do novo ciclo — o que a pesquisa diz</h2>
+    <p><b>Locke &amp; Latham</b> (a pesquisa clássica sobre metas, resumida na Academia deste dia): metas <b>específicas e desafiadoras</b> produzem desempenho consistentemente maior do que "vou dar o meu melhor" — desde que acompanhadas de <b>feedback</b> ao longo do caminho. Traduzindo para o R·A·N: cada marco do novo horizonte precisa ser observável (você sabe dizer se aconteceu) e esticado (não aconteceria sozinho), e o ciclo precisa de um ponto de checagem antes do fim — é para isso que serve o ritual semanal instalado no Bloco 3.</p>
+    <p><b>Halvorson</b> (Nove coisas que pessoas bem-sucedidas fazem) acrescenta duas calibragens: escrever os marcos como <b>"melhorar em"</b> (get better), não como <b>"provar que sou"</b> (be good) — meta de prova desmorona no primeiro tropeço, meta de progresso usa o tropeço como dado; e amarrar cada marco a um <b>plano se-então</b>: "se chegar segunda 8h, então reviso o tracker". O se-então tira a decisão do momento de cansaço e a entrega ao contexto.</p>
+    <ul class="check">
+      <li><b>Observável</b> — dá para responder sim/não no fim do ciclo</li>
+      <li><b>Esticado, não heroico</b> — desafia sem exigir vida ideal</li>
+      <li><b>"Melhorar em", não "provar que"</b> — progresso &gt; performance</li>
+      <li><b>Um se-então por marco</b> — gatilho de contexto, não de força de vontade</li>
+    </ul>
   </div>
 
-  <div class="matriz-caixa">
-    <h3>O par mínimo viável: 1 ritual + 1 prioridade</h3>
-    <p>Todo a Etapa 20 se resume nisso: <b>1 ritual de renovação</b> (na dimensão de energia mais fraca hoje) + <b>1 prioridade única</b> da semana (que a sua direção mais exige) + <b>1 sinal claro</b> do que cede primeiro quando a semana aperta.</p>
-    <p>Parece pouco. É o suficiente. Tentar mais dilui. Schwartz: rituais precisam ser tão pequenos que <em>é impossível não fazer</em> nos dias ruins. Bruch/Ghoshal: prioridade nomeada antes da semana começar é o que separa <em>purposeful</em> dos outros 90%.</p>
-    <p>Depois de 4 semanas com esse par sustentado, você pode adicionar mais — outro ritual, outra prioridade quinzenal. Mas antes, sustente esse par. É a diferença entre plano bonito e plano que dura.</p>
+  <div class="intro">
+    <h2>Erros comuns na virada de ciclo</h2>
+    <ul class="check">
+      <li><b>Marco vago</b> — "ganhar mais visibilidade" não fecha ciclo; "apresentar para a diretoria 1 vez" fecha.</li>
+      <li><b>Marcos demais</b> — mais de 2-3 marcos em 3-6 meses dilui atenção; o refinamento composto vem de poucos marcos repetidos, não de listas.</li>
+      <li><b>Redirecionar por cansaço</b> — fim de ciclo é o momento de menor energia; decisão drástica aqui é reação, não leitura. Refine agora; redirecione (se for o caso) depois de uma semana de distância.</li>
+      <li><b>Ciclo sem data</b> — novo ciclo "quando der" é novo ciclo que não acontece. A data entra no calendário hoje.</li>
+      <li><b>Ignorar a surpresa</b> — se o Recap não mudou nada no plano, ou o ciclo foi perfeito (raro) ou os dados não foram lidos.</li>
+    </ul>
+    <p style="margin-top:12px;font-size:14.5px"><b>Um exemplo em uma linha</b> — Rafael não reescreveu a direção no fim do ciclo: trocou duas palavras ("operações que funcionam" virou "operações que <em>previnem</em>"), transformou o dado-surpresa do Recap (os dois nãos a urgências fabricadas foram o que mais gerou reconhecimento) em um marco observável — "conduzir 1 revisão de causa-raiz por mês" — e marcou o ciclo seguinte para dali a 4 meses. Refinamento composto é isso: pequeno, datado, verificável.</p>
   </div>
 
-  <div class="aviso-final">
-    <h3>A regra da Etapa 20: sustentar &gt; otimizar</h3>
-    <p>A tentação depois do Bloco 3 é <b>adicionar</b> — mais um curso, mais uma competência, mais um projeto. Não adicione. Sustente. As capacidades do Bloco 3 (presença, autoridade, rede, persuasão, aprendizagem) precisam de <em>base energética</em> para virarem infraestrutura em vez de esforço pontual.</p>
-    <p>Cede primeiro tudo que <em>não</em> ameaça a prioridade da semana e o ritual da dimensão-alvo. Reunião opcional? Cede. FYI? Cede. Post curto no LinkedIn? Cede. Só não cede o bloco de foco protegido e o ritual de renovação — porque sem eles, tudo mais desmonta.</p>
-    <p>Amanhã (Etapa 21) você fecha o Bloco 3 com <b>Estratégia → Execução</b>: como conectar tudo que amplificamos num plano executável que sobrevive à realidade da agenda. Sem execução, estratégia é literatura.</p>
+  <div class="aviso">
+    <h3>A regra da Etapa 20: 1 ciclo é 1 experimento — não 1 destino</h3>
+    <p>28 dias na trilha te deram dados que 6 meses de intuição não dariam. Esses dados são para <b>refinar direção</b>, não para "provar" que estava certa (nem errada). Direção da Etapa 7 foi hipótese; Etapa 20 ajusta a hipótese com dados. É assim que mudança de identidade profissional funciona empiricamente — ciclo após ciclo, refinamento composto.</p>
+    <p>Amanhã: <b>fechamento e celebração</b>. A trilha inteira em uma página. Ritual de encerramento — porque marcos não celebrados viram esquecidos.</p>
   </div>
 </main>
-<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 20 · Playbook — Energia · Foco · Ritmo</div></footer>
-</body>
-</html>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 20 · Playbook — R·A·N</div></footer>
+</body></html>

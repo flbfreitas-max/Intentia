@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 8 · Missão — Seus 3 Eus Possíveis</title>
+<title>Intentia · Etapa 8 · Missão — Diagnóstico das 3 dimensões</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--lilas:#8B7BB8;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.6;font-size:16px}
   .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
   header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
-  .hero-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
-  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:16px}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
   .voltar svg{width:14px;height:14px;fill:currentColor}
   .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
   header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:12px}
@@ -22,46 +22,47 @@
   .missao-meta{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:22px;font-size:13px;color:#A9C6B8}
   .missao-meta span{display:inline-flex;align-items:center;gap:6px}
   .missao-meta svg{width:14px;height:14px;fill:currentColor}
-  main{max-width:720px;margin:0 auto;padding:0 24px}
+  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
   .progresso{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:16px 22px;margin:24px 0;display:flex;align-items:center;gap:18px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
   .progresso-info{flex:1}
   .progresso-titulo{font-size:13px;font-weight:600;color:var(--verde-900);margin-bottom:6px}
   .progresso-bar{background:var(--verde-100);height:6px;border-radius:3px;overflow:hidden}
   .progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}
   .progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px;font-size:13.5px;line-height:1.55}
+  .aviso-demo-icone{color:var(--coral);font-size:18px;flex-shrink:0;margin-top:1px}
+  .aviso-demo b{color:var(--verde-900)}
+  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
+  .direcao-recap{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);padding:14px 20px;border-radius:0 10px 10px 0;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
+  .direcao-recap b{color:var(--verde-900);font-family:var(--serif);font-style:italic;font-weight:500}
 
-  .lembrete{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 20px;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
-  .lembrete b{color:var(--verde-900);font-weight:600}
+  .dim-etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
+  .dim-etapa-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px}
+  .dim-etapa-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
+  .dim-etapa-titulo{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.2;margin-bottom:3px}
+  .dim-etapa-sub{font-size:13px;opacity:.92;font-style:italic}
+  .dim-etapa-corpo{padding:22px 28px 24px}
 
-  .eu-etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
-  .eu-etapa-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px}
-  .eu-etapa-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
-  .eu-etapa-titulo{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.2;margin-bottom:3px}
-  .eu-etapa-sub{font-size:13px;opacity:.92;font-style:italic}
-  .eu-etapa-corpo{padding:24px 28px}
-  .eu-campo{margin-bottom:16px}
-  .eu-campo:last-child{margin-bottom:0}
-  label{display:block;font-size:12.5px;font-weight:600;color:var(--verde-700);margin-bottom:6px;letter-spacing:.02em;text-transform:uppercase}
-  label small{color:var(--tinta-suave);font-weight:500;text-transform:none;letter-spacing:0;font-size:12px;margin-left:6px;font-style:italic}
-  input[type=text],textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:15px;color:var(--tinta);background:#fff;transition:border-color .2s}
-  input[type=text]:focus,textarea:focus{outline:none;border-color:var(--coral)}
-  textarea{resize:vertical;min-height:60px;line-height:1.5}
-  .eu-nome-input{font-family:var(--serif);font-size:17px;font-weight:500;font-style:italic}
+  .escala-notas{display:flex;gap:6px;margin-bottom:10px}
+  .nota-op{flex:1;background:#fff;border:1.5px solid var(--verde-100);border-radius:8px;padding:10px 4px;text-align:center;cursor:pointer;transition:all .15s;user-select:none;font-family:var(--serif);font-size:17px;font-weight:600;color:var(--tinta-suave)}
+  .nota-op:hover{border-color:var(--verde-500)}
+  .nota-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
+  .escala-desc{font-size:11.5px;color:var(--tinta-suave);text-align:center;margin-bottom:12px;font-style:italic}
+  label{display:block;font-size:12.5px;font-weight:600;color:var(--verde-700);margin-bottom:6px;letter-spacing:.02em;text-transform:uppercase;margin-top:12px}
+  textarea{width:100%;padding:10px 12px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14px;color:var(--tinta);background:#fff;transition:border-color .2s;resize:vertical;min-height:60px;line-height:1.5}
+  textarea:focus{outline:none;border-color:var(--coral)}
 
-  .sensacoes-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-  .sens-chip{background:#fff;border:1.5px solid var(--verde-100);border-radius:20px;padding:6px 12px;font-size:12.5px;font-weight:600;color:var(--tinta-suave);cursor:pointer;transition:all .15s;user-select:none}
-  .sens-chip:hover{border-color:var(--verde-500)}
-  .sens-chip.selected{background:var(--coral);border-color:var(--coral);color:#fff}
-  .sens-hint{font-size:11.5px;color:var(--tinta-suave);font-style:italic;margin-top:8px;padding-left:2px}
-
-  .etapa-final{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 30px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .etapa-final-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px}
-  .etapa-final-num{width:34px;height:34px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
-  .etapa-final-titulo{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
-  .etapa-final-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
-  .etapa-final-desc b{color:var(--verde-900)}
-
-  .dica{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-top:8px;padding-left:12px;border-left:2px solid var(--verde-500)}
+  .gargalo-final{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .gargalo-final-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
+  .gargalo-final-num{width:34px;height:34px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
+  .gargalo-final-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
+  .gargalo-final-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
+  .gargalo-radio{display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;margin-top:10px}
+  @media (max-width:520px){.gargalo-radio{grid-template-columns:1fr}}
+  .gargalo-op{background:#fff;border:1.5px solid var(--verde-100);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all .2s;user-select:none;text-align:center}
+  .gargalo-op:hover{border-color:var(--verde-500)}
+  .gargalo-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
+  .gargalo-op b{font-family:var(--serif);display:block;margin-bottom:3px;font-size:15px}
 
   .concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}
   .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px}
@@ -70,7 +71,6 @@
   .btn-concluir:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
   .btn-concluir .icone{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
   .btn-concluir .icone svg{width:14px;height:14px;fill:currentColor}
-
   footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
   footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
 </style>
@@ -194,10 +194,10 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <div class="hero-inner">
     <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 8</a>
     <div class="eyebrow">Missão · Etapa 8 · Bloco 2</div>
-    <h1>Seus 3 <span class="grifo">Eus Possíveis</span>.</h1>
-    <p class="lede">Uma versão sua para cada tipo — Continuação, Adjacência, Reinvenção — com nome, cena típica, preço e sensação dominante. <b>Sem escolher nenhuma.</b> Gerar hoje; a escolha vem nos próximos dias.</p>
+    <h1>Diagnóstico das 3 dimensões de <span class="grifo">presença</span>.</h1>
+    <p class="lede">Voz, Gravitas, Coerência — nota de 1 a 5 em cada. Escolha do gargalo. Um movimento pequeno esta semana. Vinculado à direção da Etapa 7.</p>
     <div class="missao-meta">
-      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 20 min</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 15 min</span>
       <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
     </div>
   </div>
@@ -213,211 +213,148 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <div class="progresso-num" id="progresso-num">0/5</div>
   </div>
 
-  <div class="lembrete">
-    <b>Regra do Bloco 2:</b> hoje é para <b>gerar</b>, não para escolher. Se você sentir tentação de decidir qual "é o certo", solte e passe para a próxima versão. A escolha vem nos próximos 6 dias — com repertório maior.
+  <div id="aviso-demo" class="aviso-demo" style="display:none">
+    <div class="aviso-demo-icone">◆</div>
+    <div><b>Sua direção da Etapa 7 não foi encontrada.</b> Estamos usando exemplo demonstrativo. <a href="../Dia 7/missao.html">Voltar à Etapa 7 →</a></div>
   </div>
 
-  <!-- EU CONTINUAÇÃO -->
-  <section class="eu-etapa">
-    <div class="eu-etapa-header">
-      <div class="eu-etapa-letra">C</div>
-      <div>
-        <div class="eu-etapa-titulo">Eu-Continuação</div>
-        <div class="eu-etapa-sub">"Continuo o que faço — mais aprofundado, mais dono"</div>
+  <div class="direcao-recap">
+    <b id="direcao-txt">—</b>
+    <span style="font-size:12px;color:var(--tinta-suave);display:block;margin-top:6px;font-style:italic">← sua direção da Etapa 7. Cada nota abaixo é sobre presença <em>a serviço dessa direção</em>.</span>
+  </div>
+
+  <!-- VOZ -->
+  <section class="dim-etapa">
+    <div class="dim-etapa-header"><div class="dim-etapa-letra">V</div><div><div class="dim-etapa-titulo">Voz</div><div class="dim-etapa-sub">"como você fala e é ouvido"</div></div></div>
+    <div class="dim-etapa-corpo">
+      <div class="escala-desc">1 = evito falar sobre; 3 = falo mas com hesitação; 5 = fala fluente e sem hedges</div>
+      <div class="escala-notas" data-dim="voz">
+        <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
       </div>
-    </div>
-    <div class="eu-etapa-corpo">
-      <div class="eu-campo">
-        <label>O nome dessa versão <small>uma frase de descrição</small></label>
-        <input type="text" id="cont-nome" class="eu-nome-input" placeholder="ex.: A analista sênior de dados que virou referência interna e externa em análise de decisão">
-      </div>
-      <div class="eu-campo">
-        <label>Cena típica de um dia <small>como se você já estivesse lá</small></label>
-        <textarea id="cont-cena" placeholder="ex.: chego 9h, olho os indicadores da semana, tenho 1:1 com dois analistas jr. que oriento, à tarde apresento análise para o comitê..."></textarea>
-      </div>
-      <div class="eu-campo">
-        <label>O preço <small>o que custaria manter/desenvolver essa rota?</small></label>
-        <textarea id="cont-preco" placeholder="ex.: continuar no setor bancário mesmo tendo interesse crescente por fintech; investir tempo próprio em conteúdo público sem retorno imediato..."></textarea>
-      </div>
-      <div class="eu-campo">
-        <label>Sensação dominante <small>ao imaginar essa versão</small></label>
-        <div class="sensacoes-grid" data-eu="cont">
-          <span class="sens-chip">tranquilidade</span><span class="sens-chip">tédio</span>
-          <span class="sens-chip">segurança</span><span class="sens-chip">alívio</span>
-          <span class="sens-chip">estagnação</span><span class="sens-chip">satisfação</span>
-          <span class="sens-chip">frustração leve</span><span class="sens-chip">"faz sentido"</span>
-        </div>
-        <p class="sens-hint">Pode escolher mais de uma — sensações complexas costumam ter camadas.</p>
-      </div>
+      <label>Um exemplo concreto <small>que sustenta essa nota</small></label>
+      <textarea id="voz-ex" placeholder="ex.: em reunião de área na 3ª feira, comecei duas frases com 'meio que' e falei baixo quando defendi minha tese central"></textarea>
     </div>
   </section>
 
-  <!-- EU ADJACÊNCIA -->
-  <section class="eu-etapa">
-    <div class="eu-etapa-header">
-      <div class="eu-etapa-letra">A</div>
-      <div>
-        <div class="eu-etapa-titulo">Eu-Adjacência</div>
-        <div class="eu-etapa-sub">"Mudo de contexto mantendo minhas habilidades"</div>
+  <!-- GRAVITAS -->
+  <section class="dim-etapa">
+    <div class="dim-etapa-header"><div class="dim-etapa-letra">G</div><div><div class="dim-etapa-titulo">Gravitas</div><div class="dim-etapa-sub">"o peso silencioso da sua fala"</div></div></div>
+    <div class="dim-etapa-corpo">
+      <div class="escala-desc">1 = pessoas questionam constantemente; 3 = pessoas escutam depois de argumentar; 5 = pessoas escutam antes de contestar</div>
+      <div class="escala-notas" data-dim="gravitas">
+        <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
       </div>
-    </div>
-    <div class="eu-etapa-corpo">
-      <div class="eu-campo">
-        <label>O nome dessa versão</label>
-        <input type="text" id="adj-nome" class="eu-nome-input" placeholder="ex.: A analista que virou head de dados em uma fintech em crescimento">
-      </div>
-      <div class="eu-campo">
-        <label>Cena típica de um dia</label>
-        <textarea id="adj-cena" placeholder="ex.: acordo, café rápido, standup com time de produto, mão na massa em análise de retenção..."></textarea>
-      </div>
-      <div class="eu-campo">
-        <label>O preço</label>
-        <textarea id="adj-preco" placeholder="ex.: perda de estabilidade do banco (CLT sólida, benefícios); precisar aprender a rodar em ambiente mais caótico..."></textarea>
-      </div>
-      <div class="eu-campo">
-        <label>Sensação dominante</label>
-        <div class="sensacoes-grid" data-eu="adj">
-          <span class="sens-chip">curiosidade</span><span class="sens-chip">medo controlado</span>
-          <span class="sens-chip">empolgação</span><span class="sens-chip">ansiedade</span>
-          <span class="sens-chip">energia</span><span class="sens-chip">insegurança</span>
-          <span class="sens-chip">alívio</span><span class="sens-chip">tensão saudável</span>
-        </div>
-        <p class="sens-hint">Pode escolher mais de uma.</p>
-      </div>
+      <label>Um exemplo concreto</label>
+      <textarea id="grav-ex" placeholder="ex.: quando um colega mais sênior contestou minha ideia na semana passada, eu recuei antes de ouvir a objeção inteira"></textarea>
     </div>
   </section>
 
-  <!-- EU REINVENÇÃO -->
-  <section class="eu-etapa">
-    <div class="eu-etapa-header">
-      <div class="eu-etapa-letra">R</div>
-      <div>
-        <div class="eu-etapa-titulo">Eu-Reinvenção</div>
-        <div class="eu-etapa-sub">"Faço algo estruturalmente novo — outra área, outro modelo"</div>
+  <!-- COERÊNCIA -->
+  <section class="dim-etapa">
+    <div class="dim-etapa-header"><div class="dim-etapa-letra">C</div><div><div class="dim-etapa-titulo">Coerência</div><div class="dim-etapa-sub">"como o visual confirma a mensagem"</div></div></div>
+    <div class="dim-etapa-corpo">
+      <div class="escala-desc">1 = tudo mostra a versão antiga; 3 = alguns lugares atualizados, outros ainda antigos; 5 = tudo alinhado com direção nova</div>
+      <div class="escala-notas" data-dim="coerencia">
+        <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
       </div>
-    </div>
-    <div class="eu-etapa-corpo">
-      <div class="eu-campo">
-        <label>O nome dessa versão</label>
-        <input type="text" id="rei-nome" class="eu-nome-input" placeholder="ex.: A professora e autora sobre alfabetização de dados para gestores não-técnicos">
-      </div>
-      <div class="eu-campo">
-        <label>Cena típica de um dia</label>
-        <textarea id="rei-cena" placeholder="ex.: manhã escrevendo, tarde gravando aula ou consultoria com cliente por hora..."></textarea>
-      </div>
-      <div class="eu-campo">
-        <label>O preço <small>e o plano de ponte para atravessar a transição</small></label>
-        <textarea id="rei-preco" placeholder="ex.: 12-18 meses de renda mais baixa até o negócio estabilizar; largar a carreira construída até aqui; plano de ponte = testar por 6 meses com uma turma piloto antes de sair..."></textarea>
-      </div>
-      <div class="eu-campo">
-        <label>Sensação dominante</label>
-        <div class="sensacoes-grid" data-eu="rei">
-          <span class="sens-chip">medo real</span><span class="sens-chip">vertigem</span>
-          <span class="sens-chip">euforia</span><span class="sens-chip">liberdade</span>
-          <span class="sens-chip">peso</span><span class="sens-chip">chamado</span>
-          <span class="sens-chip">receio</span><span class="sens-chip">"finalmente"</span>
-        </div>
-        <p class="sens-hint">Pode escolher mais de uma — reinvenção quase sempre traz mistura.</p>
-      </div>
+      <label>Um exemplo concreto</label>
+      <textarea id="coer-ex" placeholder="ex.: LinkedIn ainda tem headline do cargo antigo; e-mail assinatura idem; portfolio online meio dividido"></textarea>
     </div>
   </section>
 
-  <!-- ETAPA FINAL: PERGUNTA -->
-  <section class="etapa-final">
-    <div class="etapa-final-header">
-      <div class="etapa-final-num">?</div>
+  <!-- GARGALO + MOVIMENTO -->
+  <section class="gargalo-final">
+    <div class="gargalo-final-header">
+      <div class="gargalo-final-num">→</div>
       <div>
-        <div class="etapa-final-titulo">Uma pergunta aberta para carregar</div>
-        <div class="etapa-final-desc">Uma pergunta que apareceu no exercício e que você vai <b>carregar pelos próximos 6 dias</b> — sem tentar responder hoje.</div>
+        <div class="gargalo-final-titulo">Qual é o gargalo?</div>
+        <div class="gargalo-final-desc">A dimensão com nota mais baixa costuma ser o gargalo real. Se tem empate, escolha aquela em que <em>o movimento pequeno é mais claro para você</em>.</div>
       </div>
     </div>
-    <textarea id="pergunta" placeholder="ex.: como saber se a inércia me leva a um lugar que eu escolheria conscientemente, se estivesse com tempo?"></textarea>
-    <p class="dica">A melhor pergunta é a que te incomoda um pouco. Se veio fácil, provavelmente não é ela.</p>
+    <div class="gargalo-radio" data-dim="gargalo">
+      <div class="gargalo-op" data-r="voz"><b>Voz</b></div>
+      <div class="gargalo-op" data-r="gravitas"><b>Gravitas</b></div>
+      <div class="gargalo-op" data-r="coerencia"><b>Coerência</b></div>
+    </div>
+    <label style="margin-top:16px">Movimento pequeno para esta semana <small>específico, executável, verificável</small></label>
+    <textarea id="movimento" placeholder="ex.: gravar áudio de 60s falando minha história curta até 3ª feira, ouvir de volta e regravar sem hedges"></textarea>
   </section>
 
   <div class="concluir">
-    <h3>Terminou de gerar as 3 versões?</h3>
-    <p>Ao concluir, o material da Etapa 8 é gerado: seus 3 Eus Possíveis lado a lado, com preço e sensação, e a pergunta aberta que vai amadurecer pelos próximos 6 dias.</p>
-    <a href="material.html" class="btn-concluir" id="btn-concluir">
-      Ver Meus 3 Eus Possíveis
-      <span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
-    </a>
+    <h3>Terminou o diagnóstico?</h3>
+    <p>O material da Etapa 8 mostra seu espelho de presença + o movimento escolhido + a evolução (que você atualiza semana a semana).</p>
+    <a href="material.html" class="btn-concluir" id="btn-concluir">Ver Espelho de Presença<span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span></a>
   </div>
 </main>
 
-<footer>
-  <div class="assinatura">Do reagir ao conduzir.</div>
-  <div>Etapa 8 · Missão — Seus 3 Eus Possíveis</div>
-</footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 8 · Missão — Diagnóstico das 3 dimensões</div></footer>
 
 <script>
-  const sensacoes = {cont:[], adj:[], rei:[]};
+  const notas = { voz:0, gravitas:0, coerencia:0 };
+  let gargalo = '';
 
-  document.querySelectorAll('.sensacoes-grid').forEach(grid => {
-    grid.querySelectorAll('.sens-chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        const eu = grid.dataset.eu;
-        chip.classList.toggle('selected');
-        const txt = chip.textContent.trim();
-        if (chip.classList.contains('selected')) {
-          if (!sensacoes[eu].includes(txt)) sensacoes[eu].push(txt);
-        } else {
-          sensacoes[eu] = sensacoes[eu].filter(s => s !== txt);
-        }
-        atualizarProgresso();
+  document.querySelectorAll('.escala-notas').forEach(grid => {
+    const dim = grid.dataset.dim;
+    grid.querySelectorAll('.nota-op').forEach(op => {
+      op.addEventListener('click', () => {
+        grid.querySelectorAll('.nota-op').forEach(x => x.classList.remove('selecionada'));
+        op.classList.add('selecionada');
+        notas[dim] = parseInt(op.dataset.n);
+        atualizar();
       });
     });
   });
 
-  function atualizarProgresso() {
-    const eus = ['cont','adj','rei'];
-    let pontos = 0;
-    eus.forEach(prefix => {
-      const nome = document.getElementById(prefix+'-nome').value.trim();
-      const cena = document.getElementById(prefix+'-cena').value.trim();
-      const preco = document.getElementById(prefix+'-preco').value.trim();
-      const sens = sensacoes[prefix];
-      if (nome && cena && preco && sens.length > 0) pontos++;
+  document.querySelectorAll('.gargalo-radio .gargalo-op').forEach(op => {
+    op.addEventListener('click', () => {
+      document.querySelectorAll('.gargalo-radio .gargalo-op').forEach(x => x.classList.remove('selecionada'));
+      op.classList.add('selecionada');
+      gargalo = op.dataset.r;
+      atualizar();
     });
-    const pergOk = document.getElementById('pergunta').value.trim().length > 0 ? 1 : 0;
-    const total = pontos + pergOk + (pontos === 3 ? 1 : 0); // bônus de 1 por completar os 3 eus
-    const totalCapped = Math.min(total, 5);
-    document.getElementById('progresso-num').textContent = totalCapped + '/5';
-    document.getElementById('progresso-fill').style.width = (totalCapped/5*100) + '%';
-  }
-
-  ['cont-nome','cont-cena','cont-preco','adj-nome','adj-cena','adj-preco','rei-nome','rei-cena','rei-preco','pergunta'].forEach(id => {
-    document.getElementById(id).addEventListener('input', atualizarProgresso);
   });
+
+  function atualizar() {
+    let pontos = 0;
+    if (notas.voz) pontos++;
+    if (notas.gravitas) pontos++;
+    if (notas.coerencia) pontos++;
+    if (gargalo) pontos++;
+    if (document.getElementById('movimento').value.trim().length > 0) pontos++;
+    document.getElementById('progresso-num').textContent = pontos + '/5';
+    document.getElementById('progresso-fill').style.width = (pontos/5*100) + '%';
+  }
+  document.getElementById('movimento').addEventListener('input', atualizar);
+
+  // Puxar direção da Etapa 7
+  (function(){
+    try {
+      const s = sessionStorage.getItem('intentia-dia7');
+      if (s) {
+        const p = JSON.parse(s);
+        if (p && p.escolhaFrase) {
+          document.getElementById('direcao-txt').textContent = p.escolhaFrase;
+          return;
+        }
+      }
+    } catch(e){}
+    document.getElementById('aviso-demo').style.display = 'flex';
+    document.getElementById('direcao-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo)';
+  })();
 
   document.getElementById('btn-concluir').addEventListener('click', () => {
     try {
       sessionStorage.setItem('intentia-dia8', JSON.stringify({
         dataConclusao: new Date().toISOString(),
-        continuacao: {
-          nome: document.getElementById('cont-nome').value,
-          cena: document.getElementById('cont-cena').value,
-          preco: document.getElementById('cont-preco').value,
-          sensacoes: sensacoes.cont
-        },
-        adjacencia: {
-          nome: document.getElementById('adj-nome').value,
-          cena: document.getElementById('adj-cena').value,
-          preco: document.getElementById('adj-preco').value,
-          sensacoes: sensacoes.adj
-        },
-        reinvencao: {
-          nome: document.getElementById('rei-nome').value,
-          cena: document.getElementById('rei-cena').value,
-          preco: document.getElementById('rei-preco').value,
-          sensacoes: sensacoes.rei
-        },
-        perguntaAberta: document.getElementById('pergunta').value
+        notas: notas,
+        exemplos: {voz:document.getElementById('voz-ex').value, gravitas:document.getElementById('grav-ex').value, coerencia:document.getElementById('coer-ex').value},
+        gargalo: gargalo,
+        movimento: document.getElementById('movimento').value
       }));
     } catch(e) {}
   });
 
-  atualizarProgresso();
+  atualizar();
 </script>
 
 <!--intentia-save:start--><style>

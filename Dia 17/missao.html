@@ -3,61 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 17 · Missão — Mapa das 3 redes</title>
+<title>Intentia · Etapa 17 · Missão — Mapa de imunidade</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.6;font-size:16px}
+  *{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.6;font-size:16px}
   .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
   header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
   .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
-  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
-  .voltar svg{width:14px;height:14px;fill:currentColor}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}.voltar svg{width:14px;height:14px;fill:currentColor}
   .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
   header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:12px}
   header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
   .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
   .missao-meta{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:22px;font-size:13px;color:#A9C6B8}
-  .missao-meta span{display:inline-flex;align-items:center;gap:6px}
-  .missao-meta svg{width:14px;height:14px;fill:currentColor}
+  .missao-meta span{display:inline-flex;align-items:center;gap:6px}.missao-meta svg{width:14px;height:14px;fill:currentColor}
   main{max-width:760px;margin:0 auto;padding:0 24px 40px}
   .progresso{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:16px 22px;margin:24px 0;display:flex;align-items:center;gap:18px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .progresso-info{flex:1}
-  .progresso-titulo{font-size:13px;font-weight:600;color:var(--verde-900);margin-bottom:6px}
+  .progresso-info{flex:1}.progresso-titulo{font-size:13px;font-weight:600;color:var(--verde-900);margin-bottom:6px}
   .progresso-bar{background:var(--verde-100);height:6px;border-radius:3px;overflow:hidden}
   .progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}
   .progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}
-  .direcao-recap{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);padding:14px 20px;border-radius:0 10px 10px 0;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
-  .direcao-recap b{color:var(--verde-900);font-family:var(--serif);font-style:italic;font-weight:500}
-  .rede-etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
-  .rede-etapa-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px}
-  .rede-etapa-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
-  .rede-etapa-titulo{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.2;margin-bottom:3px}
-  .rede-etapa-sub{font-size:13px;opacity:.92;font-style:italic}
-  .rede-etapa-corpo{padding:22px 28px 24px}
+  .habito-recap{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);padding:14px 20px;border-radius:0 10px 10px 0;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
+  .habito-recap b{color:var(--verde-900);font-family:var(--serif);font-style:italic;font-weight:500}
+  .aviso-cuidado{background:#F0F5F2;border-left:3px solid var(--verde-700);padding:14px 18px;border-radius:0 10px 10px 0;margin-bottom:20px;font-size:13.5px;color:var(--tinta);line-height:1.55}
+  .aviso-cuidado b{color:var(--verde-900)}
+  .etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:18px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
+  .etapa-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:20px 26px;display:flex;align-items:center;gap:14px}
+  .etapa-num{width:38px;height:38px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;font-weight:600;flex-shrink:0}
+  .etapa-titulo{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.2;margin-bottom:3px}
+  .etapa-sub{font-size:12.5px;opacity:.92;font-style:italic}
+  .etapa-corpo{padding:22px 26px 24px}
+  .etapa-corpo p.instrucao{font-size:13.5px;color:var(--tinta-suave);line-height:1.55;margin-bottom:12px}
   label{display:block;font-size:12.5px;font-weight:600;color:var(--verde-700);margin-bottom:6px;letter-spacing:.02em;text-transform:uppercase;margin-top:14px}
-  label:first-child{margin-top:0}
-  label small{color:var(--tinta-suave);font-weight:500;text-transform:none;letter-spacing:0;font-size:12px;margin-left:6px;font-style:italic}
-  textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14px;color:var(--tinta);background:#fff;transition:border-color .2s;resize:vertical;min-height:80px;line-height:1.5}
-  textarea:focus{outline:none;border-color:var(--coral)}
-  .escala-notas{display:flex;gap:6px;margin-top:6px}
-  .nota-op{flex:1;background:#fff;border:1.5px solid var(--verde-100);border-radius:8px;padding:10px 4px;text-align:center;cursor:pointer;transition:all .15s;user-select:none;font-family:var(--serif);font-size:17px;font-weight:600;color:var(--tinta-suave)}
-  .nota-op:hover{border-color:var(--verde-500)}
-  .nota-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
-  .escala-desc{font-size:11.5px;color:var(--tinta-suave);text-align:center;margin-top:8px;font-style:italic}
-  .gargalo-etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .gargalo-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
-  .gargalo-num{width:34px;height:34px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
-  .gargalo-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
-  .gargalo-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
-  .gargalo-radio{display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;margin-top:12px}
-  @media (max-width:520px){.gargalo-radio{grid-template-columns:1fr}}
-  .gargalo-op{background:#fff;border:1.5px solid var(--verde-100);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all .2s;user-select:none;text-align:center}
-  .gargalo-op:hover{border-color:var(--verde-500)}
-  .gargalo-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
-  .gargalo-op b{font-family:var(--serif);display:block;margin-bottom:3px;font-size:15px}
+  label:first-child{margin-top:0}label small{color:var(--tinta-suave);font-weight:500;text-transform:none;letter-spacing:0;font-size:12px;margin-left:6px;font-style:italic}
+  input[type="text"],input[type="date"],textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14px;color:var(--tinta);background:#fff;transition:border-color .2s;line-height:1.5}
+  textarea{resize:vertical;min-height:70px}
+  input:focus,textarea:focus{outline:none;border-color:var(--coral)}
   .concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}
   .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px}
   .concluir p{font-size:14.5px;opacity:.92;margin-bottom:22px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
@@ -187,10 +170,10 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <div class="hero-inner">
     <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 17</a>
     <div class="eyebrow">Missão · Etapa 17 · Bloco 3</div>
-    <h1>Mapa das <span class="grifo">3 redes</span>.</h1>
-    <p class="lede">Listar pessoas em cada rede. Avaliar densidade. Escolher gargalo. Um movimento pequeno na rede certa.</p>
+    <h1>Mapa de <span class="grifo">imunidade</span> — 6 etapas.</h1>
+    <p class="lede">Observar sabotagem. Nomear o compromisso oculto. Escrever a suposição por trás. Desenhar 1 teste pequeno. Marcar revisão.</p>
     <div class="missao-meta">
-      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 18 min</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 20 min</span>
       <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
     </div>
   </div>
@@ -202,146 +185,120 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       <div class="progresso-titulo">Seu preenchimento</div>
       <div class="progresso-bar"><div class="progresso-fill" id="progresso-fill"></div></div>
     </div>
-    <div class="progresso-num" id="progresso-num">0/5</div>
+    <div class="progresso-num" id="progresso-num">0/6</div>
   </div>
 
-  <div class="direcao-recap">
-    <b id="direcao-txt">—</b>
-    <span style="font-size:12px;color:var(--tinta-suave);display:block;margin-top:6px;font-style:italic">← sua direção da Etapa 14. As redes são avaliadas <em>a serviço dessa direção</em>.</span>
+  <div class="habito-recap">
+    <b id="habito-txt">—</b>
+    <span style="font-size:12px;color:var(--tinta-suave);display:block;margin-top:6px;font-style:italic">← hábito 1 da Etapa 15. O mapa abaixo é sobre a sabotagem <em>desse</em> hábito específico.</span>
   </div>
 
-  <!-- OPERACIONAL -->
-  <section class="rede-etapa">
-    <div class="rede-etapa-header"><div class="rede-etapa-letra">O</div><div><div class="rede-etapa-titulo">Rede Operacional</div><div class="rede-etapa-sub">"quem faz o trabalho atual acontecer"</div></div></div>
-    <div class="rede-etapa-corpo">
-      <label>Nomes (8-15 pessoas ideal) <small>time, pares, clientes, fornecedores atuais</small></label>
-      <textarea id="op-lista" placeholder="ex.: Ana (colega de time), João (líder da área X), Marina (cliente do projeto Y), Pedro (fornecedor Z)…"></textarea>
-      <label>Densidade da rede (1-5)</label>
-      <div class="escala-notas" data-rede="op">
-        <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
-      </div>
-      <div class="escala-desc">1 = poucos contatos frágeis; 3 = ok mas superficial; 5 = time forte, entrega fluida</div>
+  <div class="aviso-cuidado">
+    <b>Sobre este exercício:</b> Kegan &amp; Lahey desenharam este mapa para uso individual reflexivo — não é diagnóstico psicológico. Se você reconhecer padrões ligados a experiências difíceis (perdas, traumas, momentos de vida delicados), considere conversar com um profissional (terapia, coach). O Intentia oferece o mapa; a profundidade que ele revela pode se beneficiar de suporte especializado.
+  </div>
+
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">1</div><div><div class="etapa-titulo">Onde o hábito escapou</div><div class="etapa-sub">2-3 momentos recentes — padrões</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Últimos 2-3 dias — momentos específicos em que você não fez o hábito 1. Não regra, padrões.</p>
+      <label>3 momentos específicos <small>o que aconteceu, quando, contexto</small></label>
+      <textarea id="momentos" placeholder="ex.: (1) segunda 07h — abri email antes do doc, sumiu 40 min; (2) quarta 07h — mesma coisa; (3) sexta — sentei mas fiquei relendo artigo alheio ao invés de escrever"></textarea>
     </div>
   </section>
 
-  <!-- PESSOAL -->
-  <section class="rede-etapa">
-    <div class="rede-etapa-header"><div class="rede-etapa-letra">P</div><div><div class="rede-etapa-titulo">Rede Pessoal</div><div class="rede-etapa-sub">"quem te desenvolve como profissional"</div></div></div>
-    <div class="rede-etapa-corpo">
-      <label>Nomes (5-10 pessoas ideal) <small>mentores, ex-colegas, grupos, comunidades</small></label>
-      <textarea id="pe-lista" placeholder="ex.: Carla (ex-chefe/mentora), grupo de estudos de dados, comunidade online X, Rafael (colega de MBA)…"></textarea>
-      <label>Densidade da rede (1-5)</label>
-      <div class="escala-notas" data-rede="pe">
-        <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
-      </div>
-      <div class="escala-desc">1 = ninguém que me expande; 3 = alguns esparsos; 5 = 5+ pessoas que me desafiam com regularidade</div>
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">2</div><div><div class="etapa-titulo">Comportamento contrário</div><div class="etapa-sub">o que você faz em vez</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Muito específico. Não "distração"; não "cansaço". O comportamento observável concreto que substitui o hábito.</p>
+      <label>Comportamento contrário <small>específico e observável</small></label>
+      <textarea id="comportamento" placeholder="ex.: quando sento para escrever, abro Slack/email primeiro; passo 30-45 min lá; volto ao doc quando já é hora de sair"></textarea>
     </div>
   </section>
 
-  <!-- ESTRATÉGICA -->
-  <section class="rede-etapa">
-    <div class="rede-etapa-header"><div class="rede-etapa-letra">E</div><div><div class="rede-etapa-titulo">Rede Estratégica</div><div class="rede-etapa-sub">"quem abre as próximas portas (na direção nova)"</div></div></div>
-    <div class="rede-etapa-corpo">
-      <label>Nomes (3-10 pessoas ideal) <small>pessoas do território da sua direção nova que hoje te associam a esse território</small></label>
-      <textarea id="es-lista" placeholder="ex.: (se menos de 3, escrever 'menos de 3' — isso é diagnóstico honesto)"></textarea>
-      <label>Densidade da rede (1-5)</label>
-      <div class="escala-notas" data-rede="es">
-        <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
-      </div>
-      <div class="escala-desc">1 = ninguém do território novo me conhece; 3 = 3-5 me reconhecem; 5 = pessoas mencionam meu nome quando o assunto surge</div>
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">3</div><div><div class="etapa-titulo">Compromisso oculto</div><div class="etapa-sub">se fosse sábio, o que protegeria?</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">A pergunta central de Kegan &amp; Lahey. Não "por que sou fraca?" — "que outro compromisso, se eu admitisse, faz esse comportamento parecer razoável?"</p>
+      <label>O compromisso oculto <small>o que você protege sem admitir</small></label>
+      <textarea id="compromisso" placeholder="ex.: proteger minha reputação de sólida — se eu publicar algo medíocre, alguém do banco pode ler e questionar minha competência técnica"></textarea>
     </div>
   </section>
 
-  <!-- GARGALO -->
-  <section class="gargalo-etapa">
-    <div class="gargalo-header">
-      <div class="gargalo-num">→</div>
-      <div>
-        <div class="gargalo-titulo">Qual é o gargalo?</div>
-        <div class="gargalo-desc">A rede com nota mais baixa. Em transições, é quase sempre a Estratégica. Se você marcou empate, escolha a que <em>o movimento pequeno é mais claro</em>.</div>
-      </div>
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">4</div><div><div class="etapa-titulo">A suposição por trás</div><div class="etapa-sub">se X, então Y — a "verdade" antiga</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Escreva a frase completa. Kegan &amp; Lahey: a suposição raramente é dita — está por baixo, silenciosa. Nomeá-la é meio caminho.</p>
+      <label>A suposição <small>"se eu ___, então ___"</small></label>
+      <textarea id="suposicao" placeholder="ex.: se eu publicar um artigo curto e imperfeito, então minha reputação técnica no banco cai — e minha estabilidade profissional é ameaçada"></textarea>
     </div>
-    <div class="gargalo-radio">
-      <div class="gargalo-op" data-r="operacional"><b>Operacional</b></div>
-      <div class="gargalo-op" data-r="pessoal"><b>Pessoal</b></div>
-      <div class="gargalo-op" data-r="estrategica"><b>Estratégica</b></div>
+  </section>
+
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">5</div><div><div class="etapa-titulo">1 experimento pequeno</div><div class="etapa-sub">testa a suposição sem drama</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Não teste a suposição inteira (arriscado). Teste uma versão pequena — o que acontece no mundo real em pequena dose. 1 semana, mensurável, reversível.</p>
+      <label>O experimento <small>específico, curto, com dado claro</small></label>
+      <textarea id="experimento" placeholder="ex.: publicar 1 artigo de 400 palavras esta semana, no LinkedIn, marcado como 'notas rápidas' — medir: quantas reações profissionais negativas surgiram vs. neutras/positivas"></textarea>
+      <label style="margin-top:16px">O que "prova" / "não prova" a suposição <small>defina antes de começar</small></label>
+      <textarea id="criterio" placeholder="ex.: prova = 3+ reações negativas de pessoas relevantes do banco; não-prova = 0-1 reação negativa (ou zero comentários — silêncio profissional é dado)"></textarea>
     </div>
-    <label style="margin-top:16px">Movimento pequeno esta semana <small>específico, executável, verificável</small></label>
-    <textarea id="movimento" placeholder="ex.: mandar mensagem específica a 3 pessoas do território novo até domingo — com 1 insight ou pergunta útil, sem pedido"></textarea>
+  </section>
+
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">6</div><div><div class="etapa-titulo">Data da revisão do teste</div><div class="etapa-sub">7 dias depois — específica</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Sem data, o teste vira boa intenção. Marque agora.</p>
+      <label>Data</label>
+      <input type="date" id="data-revisao">
+    </div>
   </section>
 
   <div class="concluir">
     <h3>Terminou o mapa?</h3>
-    <p>O material da Etapa 17 mostra o Mapa das 3 Redes — pessoas listadas, densidade, gargalo, movimento. Volte a cada 4 semanas para atualizar.</p>
-    <a href="material.html" class="btn-concluir" id="btn-concluir">Ver Mapa das 3 Redes<span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span></a>
+    <p>O material da Etapa 17 consolida seu mapa e sinaliza como interpretar o resultado do teste — teste que prova sabe que a proteção ainda faz sentido; teste que não prova libera a mudança.</p>
+    <a href="material.html" class="btn-concluir" id="btn-concluir">Ver seu mapa de imunidade<span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span></a>
   </div>
 </main>
 
-<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 17 · Missão — Mapa das 3 redes</div></footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 17 · Missão — Mapa de imunidade</div></footer>
 
 <script>
-  const notas = {op:0, pe:0, es:0};
-  let gargalo = '';
-
-  document.querySelectorAll('.escala-notas').forEach(grid => {
-    const r = grid.dataset.rede;
-    grid.querySelectorAll('.nota-op').forEach(op => {
-      op.addEventListener('click', () => {
-        grid.querySelectorAll('.nota-op').forEach(x => x.classList.remove('selecionada'));
-        op.classList.add('selecionada');
-        notas[r] = parseInt(op.dataset.n);
-        atualizar();
-      });
-    });
-  });
-
-  document.querySelectorAll('.gargalo-radio .gargalo-op').forEach(op => {
-    op.addEventListener('click', () => {
-      document.querySelectorAll('.gargalo-radio .gargalo-op').forEach(x => x.classList.remove('selecionada'));
-      op.classList.add('selecionada');
-      gargalo = op.dataset.r;
-      atualizar();
-    });
-  });
-
+  const CAMPOS = ['momentos','comportamento','compromisso','suposicao','experimento','criterio','data-revisao'];
   function atualizar() {
     let pontos = 0;
-    const oplista = document.getElementById('op-lista').value.trim();
-    const pelista = document.getElementById('pe-lista').value.trim();
-    const eslista = document.getElementById('es-lista').value.trim();
-    const mov = document.getElementById('movimento').value.trim();
-    if (oplista && notas.op) pontos++;
-    if (pelista && notas.pe) pontos++;
-    if (eslista && notas.es) pontos++;
-    if (gargalo) pontos++;
-    if (mov) pontos++;
-    document.getElementById('progresso-num').textContent = pontos + '/5';
-    document.getElementById('progresso-fill').style.width = (pontos/5*100) + '%';
+    if (document.getElementById('momentos').value.trim()) pontos++;
+    if (document.getElementById('comportamento').value.trim()) pontos++;
+    if (document.getElementById('compromisso').value.trim()) pontos++;
+    if (document.getElementById('suposicao').value.trim()) pontos++;
+    if (document.getElementById('experimento').value.trim() && document.getElementById('criterio').value.trim()) pontos++;
+    if (document.getElementById('data-revisao').value) pontos++;
+    document.getElementById('progresso-num').textContent = pontos + '/6';
+    document.getElementById('progresso-fill').style.width = (pontos/6*100) + '%';
   }
-  ['op-lista','pe-lista','es-lista','movimento'].forEach(id => document.getElementById(id).addEventListener('input', atualizar));
+  CAMPOS.forEach(id => document.getElementById(id).addEventListener('input', atualizar));
 
   (function(){
     try {
-      const s = sessionStorage.getItem('intentia-dia14');
-      if (s) { const p = JSON.parse(s); if (p && p.escolhaFrase) { document.getElementById('direcao-txt').textContent = p.escolhaFrase; return; } }
+      const s = sessionStorage.getItem('intentia-dia15');
+      if (s) { const p = JSON.parse(s); const a = p.amanha || 'h1'; const h = p[a]; if (h) { document.getElementById('habito-txt').textContent = h; return; } }
     } catch(e){}
-    document.getElementById('direcao-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo)';
+    document.getElementById('habito-txt').textContent = 'seu hábito 1 da Etapa 15 (não preenchido — exemplo demonstrativo)';
   })();
 
   document.getElementById('btn-concluir').addEventListener('click', () => {
     try {
       sessionStorage.setItem('intentia-dia17', JSON.stringify({
         dataConclusao: new Date().toISOString(),
-        operacional: {lista: document.getElementById('op-lista').value, nota: notas.op},
-        pessoal: {lista: document.getElementById('pe-lista').value, nota: notas.pe},
-        estrategica: {lista: document.getElementById('es-lista').value, nota: notas.es},
-        gargalo: gargalo,
-        movimento: document.getElementById('movimento').value
+        momentos: document.getElementById('momentos').value,
+        comportamento: document.getElementById('comportamento').value,
+        compromisso: document.getElementById('compromisso').value,
+        suposicao: document.getElementById('suposicao').value,
+        experimento: document.getElementById('experimento').value,
+        criterio: document.getElementById('criterio').value,
+        dataRevisao: document.getElementById('data-revisao').value
       }));
     } catch(e) {}
   });
-
-  atualizar();
 </script>
 <!--intentia-save:start--><style>
 .intentia-fab{position:fixed;right:16px;bottom:16px;z-index:9998;display:inline-flex;align-items:center;gap:8px;

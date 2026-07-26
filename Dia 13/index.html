@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 13 · Essencial</title>
+<title>Intentia · Etapa 13 · Energia e prioridades</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -83,6 +83,10 @@
   .leva-lista li::after{content:"";position:absolute;left:9px;top:29px;width:10px;height:6px;border-left:2.5px solid var(--verde-900);border-bottom:2.5px solid var(--verde-900);transform:rotate(-45deg)}
   .leva-lista strong{color:var(--verde-900)}
   .ponto{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);padding:24px 28px;border-radius:0 12px 12px 0;margin-top:8px}
+  .direcao-recap{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:18px 22px;margin-bottom:20px}
+  .direcao-recap-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .direcao-recap-frase{font-family:var(--serif);font-size:16px;font-weight:500;font-style:italic;color:var(--verde-900);line-height:1.4}
+  .direcao-recap small{font-size:12px;color:var(--tinta-suave);display:block;margin-top:6px;font-style:italic}
   .definicao-eu{background:#fff;border:1.5px solid var(--verde-700);border-radius:12px;padding:18px 22px;margin:16px 0}
   .definicao-eu-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
   .definicao-eu-texto{font-family:var(--serif);font-size:18px;line-height:1.45;color:var(--tinta);font-weight:500}
@@ -92,16 +96,16 @@
   .conteudo-item{padding:18px 20px;background:var(--creme);border-radius:10px;margin-bottom:12px;border-left:3px solid var(--verde-500)}
   .conteudo-item h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);margin-bottom:8px}
   .conteudo-item h3 .marcador{font-family:var(--sans);font-size:11px;font-weight:700;color:#fff;background:var(--verde-700);padding:3px 8px;border-radius:4px;letter-spacing:.1em;margin-right:8px;vertical-align:2px}
-  .mov-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
-  @media (max-width:640px){.mov-grid{grid-template-columns:1fr}}
-  .mov-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
-  .mov-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
-  .mov-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
-  .mov-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
-  .mov-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
-  .mov-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
-  .mov-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
-  .mov-hint svg{width:12px;height:12px;fill:currentColor}
+  .efr-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
+  @media (max-width:640px){.efr-grid{grid-template-columns:1fr}}
+  .efr-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
+  .efr-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
+  .efr-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
+  .efr-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
+  .efr-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
+  .efr-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
+  .efr-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
+  .efr-hint svg{width:12px;height:12px;fill:currentColor}
   .modal-overlay{position:fixed;inset:0;background:rgba(32,51,47,.55);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s}
   .modal-overlay.aberto{display:flex;opacity:1}
   .modal-caixa{background:#fff;border-radius:20px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;transform:translateY(20px);transition:transform .3s ease}
@@ -268,8 +272,8 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <header>
   <div class="hero-inner">
     <div class="eyebrow">Trilha Capital de Carreira · Bloco A · Etapa 13</div>
-    <h1>Essencial: <span class="grifo">o que subtrair</span> para essa versão caber.</h1>
-    <p class="lede">McKeown: "menos, mas melhor". Cada Eu passa hoje pelos 3 movimentos essencialistas — Subtrair, Concentrar, Automatizar — para descobrir se a versão é atravessável, e o que exige tirar do caminho.</p>
+    <h1>Energia — <span class="grifo">gerir</span>, não gastar.</h1>
+    <p class="lede">Schwartz & McCarthy: gerir energia (não tempo) é o que sustenta profissionais em alta demanda por anos. Bruch & Ghoshal: agitação não é ação — só energia com foco vira propósito. 3 elementos para sustentar o que você construiu no Bloco 2.</p>
   </div>
   <div class="arc"></div>
 </header>
@@ -286,11 +290,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <div class="onde-estamos">
   <div class="oe-inner">
     <div class="oe-camada">
-      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 2 de 4</div>
+      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 1 de 3 · Amplificar</div>
       <div class="oe-semanas">
         <span class="oe-semana feita"><span class="num">A</span>Mapear ativos ✓</span>
-        <span class="oe-semana atual"><span class="num">B</span>Escolher direção</span>
-        <span class="oe-semana"><span class="num">C</span>Traçar plano</span>
+        <span class="oe-semana feita"><span class="num">B</span>Escolher direção ✓</span>
+        <span class="oe-semana atual"><span class="num">C</span>Amplificar</span>
         <span class="oe-semana"><span class="num">D</span>Instalar rotina</span>
       </div>
     </div>
@@ -307,7 +311,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
     </div>
     <p class="oe-texto">
-      A versão que sobra depois de <span class="oe-tag-dia">Subtrair</span> quase sempre é a que faz sentido. Amanhã fechamos com marca — a leitura externa.
+      Você tem presença, autoridade, rede, persuasão e ciclo de aprendizagem. Hoje: <span class="oe-tag-dia">Energia e prioridades</span> — o que sustenta tudo isso quando a semana fica cheia.
     </p>
   </div>
 </div>
@@ -318,11 +322,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <h2>A ideia central, contada com calma.</h2>
     <p class="subtitulo">Ouça antes de começar — 5 min.</p>
     <div class="player">
-      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 13 · Bloco A · Bloco 2</span></div>
-      <div class="player-titulo">Menos, mas melhor — a busca disciplinada</div>
+      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 13 · Bloco A · Bloco 1</span></div>
+      <div class="player-titulo">Energia com foco: o que sustenta o ritmo</div>
       <div class="player-sub">A ideia central do dia — contada pela <b>voz do Intentia</b>.</div>
       <div class="waveform" id="waveform"></div>
-      <div class="player-tempo"><span>00:00</span><span>05:12</span></div>
+      <div class="player-tempo"><span>00:00</span><span>05:00</span></div>
       <div class="player-controles">
         <button class="ctrl-btn"><svg viewBox="0 0 24 24"><path d="M12.5 3v2.5c4.14 0 7.5 3.36 7.5 7.5s-3.36 7.5-7.5 7.5-7.5-3.36-7.5-7.5c0-1.4.39-2.7 1.06-3.83L4.32 7.86A9.955 9.955 0 003 13c0 5.24 4.26 9.5 9.5 9.5S22 18.24 22 13s-4.26-10-9.5-10z"/></svg></button>
         <button class="ctrl-play" id="btn-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
@@ -345,37 +349,44 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <h2>Você termina o dia sendo capaz de…</h2>
     <p class="subtitulo">Três capacidades no presente.</p>
     <ul class="leva-lista">
-      <li><strong>Reconhecer que a escolha da versão certa envolve <em>o que sai</em>, não só <em>o que entra</em></strong> — McKeown mostra que "menos, mas melhor" só funciona com disciplina de subtração; pessoas boas na escolha do "o que fazer" frequentemente falham na escolha do "o que não fazer".</li>
-      <li><strong>Aplicar 3 movimentos essencialistas a cada Eu</strong> — Subtrair (o que precisa sair), Concentrar (onde vai a melhor energia), Automatizar (o que roda sem sua atenção). Cada movimento revela dependências reais.</li>
-      <li><strong>Descobrir se cada versão é atravessável hoje</strong> — se você não consegue nomear o que subtrai para essa versão caber, é sinal claro de que ela ainda não é uma opção real, mesmo com placar alto e propósito forte.</li>
+      <li><strong>Distinguir energia de tempo</strong> — Schwartz & McCarthy: profissionais em alta demanda que sustentam produtividade não são os que "administram melhor o tempo"; são os que gerem 4 dimensões de energia (física, emocional, mental e propósito). Tempo é fixo; energia é renovável — e é o gargalo real da maioria.</li>
+      <li><strong>Reconhecer a diferença entre agitação e ação com propósito</strong> — Bruch & Ghoshal mapearam 4 perfis de gestores: procrastinadores (baixa energia + baixo foco), disengaged (alta energia + baixo foco), distraídos (baixo foco + alta energia), <em>purposeful</em> (alta energia + alto foco). Só o 4º move a agulha — e é uma minoria.</li>
+      <li><strong>Desenhar 1 ritual de renovação e 1 prioridade da semana</strong> — Schwartz insistiu: rituais &gt; força de vontade. Um ritual de renovação (que sua energia hoje mais precisa) e uma prioridade única (que sua direção hoje mais exige) são o par mínimo para sustentar Bloco 2+.</li>
     </ul>
   </section>
 
   <section class="bloco" id="ponto">
     <div class="bloco-num"><span class="n">3</span> O Ponto de Partida de Hoje</div>
-    <h2>Não é sobre <em>adicionar</em> a versão. É sobre <em>abrir espaço</em> para ela.</h2>
-    <p class="subtitulo">Strack: "pensamento estratégico começa com o que você <em>não</em> vai fazer."</p>
+    <h2>Tempo é fixo. <em>Energia</em> é renovável.</h2>
+    <p class="subtitulo">Schwartz & McCarthy (2007): "o problema não é falta de tempo — é depleção sistemática de energia."</p>
     <div class="ponto">
-      <div class="definicao-eu">
-        <div class="definicao-eu-label">O que é "essencial na carreira"</div>
-        <div class="definicao-eu-texto"><b>Essencial na carreira é o conjunto mínimo de atividades, relacionamentos e commitments que sustentam a versão que você quer</b> — nada além disso. McKeown chama de "menos, mas melhor". A maior parte das pessoas tenta <em>adicionar</em> a nova versão à vida atual sem subtrair nada; o resultado é uma versão que nunca vira realidade porque não tem <b>espaço vital</b> para acontecer.</div>
+
+      <div class="direcao-recap">
+        <div class="direcao-recap-label">Sua direção escolhida (Etapa 7)</div>
+        <div class="direcao-recap-frase" id="direcao-recap-txt">—</div>
+        <small>Energia + prioridade é o que faz o Bloco 2 (presença, autoridade, rede, persuasão, aprendizagem) sustentar-se em vez de virar sobrecarga.</small>
       </div>
 
-      <p style="margin-top:18px"><b>Greg McKeown (2012)</b> propôs o essencialismo como resposta ao "sim para tudo" que domina a vida profissional. A tese central é <em>disciplinada</em>: para poder dizer sim ao que importa, você precisa dizer não a muitas coisas — inclusive coisas boas. Só o que passa o filtro do essencial merece sua melhor energia.</p>
+      <div class="definicao-eu">
+        <div class="definicao-eu-label">O que é "energia com propósito" nesta semana</div>
+        <div class="definicao-eu-texto"><b>Energia com propósito é o encontro entre 4 dimensões renováveis (física, emocional, mental, propósito) e 1 prioridade nomeada que a sua direção exige</b>. Sem a matéria-prima (energia), nada acontece; sem o foco (prioridade), a energia se dissipa em agitação. As duas juntas: ação que move.</div>
+      </div>
 
-      <p><b>Rainer Strack (2023)</b> traz o mesmo princípio para o pensamento estratégico aplicado à vida: cada decisão sobre "o que fazer" implica uma decisão silenciosa sobre "o que não fazer". Quem só olha para o "o que fazer" toma decisões piores — porque não vê os trade-offs. Estratégia é <em>desenhar as duas listas</em>: a de sim e a de não.</p>
+      <p style="margin-top:18px"><b>Tony Schwartz e Catherine McCarthy (2007)</b> estudaram profissionais em alta demanda (executivos, atletas, cirurgiões) e concluíram: quem sustenta performance por décadas não é quem trabalha mais horas — é quem <em>oscila</em>. Trabalho intenso seguido de recuperação real. Sistemas humanos não são lineares (mais horas = mais output); são <em>oscilatórios</em>. Rituais curtos e específicos de renovação em 4 dimensões (dormir bem, gerir emoção sob estresse, blocos de foco profundo, conectar trabalho a propósito) sustentam mais que qualquer técnica de gestão de tempo.</p>
+
+      <p><b>Heike Bruch e Sumantra Ghoshal (2002)</b> observaram algo complementar: entre gestores em alta pressão, <em>90% se movem sem propósito claro</em>. Confundem atividade com resultado. Eles montaram uma matriz simples — energia × foco — e descobriram 4 perfis: <em>procrastinador</em> (baixa energia, baixo foco), <em>desengajado</em> (alta energia, baixo foco, "cabeça em outro lugar"), <em>distraído</em> (baixo foco, muitas fontes puxando), e <em>purposeful</em> (alta energia + alto foco = ação com propósito). O último é 10% da amostra. É o único que move a agulha.</p>
 
       <div class="teste-linha">
-        Teste rápido: se você fosse viver a versão "ganhadora" dos últimos 5 dias, <b>o que você teria que largar</b> da sua vida atual?
+        Teste rápido: nas últimas 2 semanas, você agiu <b>com propósito</b> — ou apenas ficou ocupada?
       </div>
 
-      <p style="margin-top:18px"><b>Por que hoje o exercício é aplicar 3 movimentos?</b> Porque "subtrair" sozinho é abstrato demais. Os 3 movimentos decompõem: <em>Subtrair</em> nomeia o que sai (atividades, relacionamentos, projetos, hábitos); <em>Concentrar</em> nomeia onde vai a energia liberada; <em>Automatizar</em> nomeia o que roda sem sua atenção diária. Uma versão sem essas 3 respostas nomeadas é uma versão que ainda não é uma opção real — é ideia sem plano.</p>
+      <p style="margin-top:18px"><b>Por que hoje o exercício é 1 ritual + 1 prioridade?</b> Porque tentar reformar 4 dimensões de energia ao mesmo tempo falha (sobrecarga). E tentar priorizar 5 coisas simultâneas dilui todas. 1 ritual de renovação (na dimensão de energia mais fraca <em>agora</em>) + 1 prioridade única da semana (que a sua direção mais exige) é o par mínimo viável — sustentável, testável, honesto.</p>
     </div>
   </section>
 
   <section class="bloco" id="conteudo">
     <div class="bloco-num"><span class="n">4</span> O conteúdo que direciona a sua missão de hoje</div>
-    <h2>Três movimentos essencialistas — clicáveis para o método.</h2>
+    <h2>Três elementos — Energia · Foco · Ritmo.</h2>
     <p class="subtitulo">10 min. Material de referência.</p>
 
     <div class="personagens-intro">
@@ -388,49 +399,49 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">01</span>Três movimentos essencialistas — Subtrair · Concentrar · Automatizar</h3>
-      <p>Cada movimento pergunta algo diferente sobre a viabilidade real da versão. Toque em cada um para método e exemplo.</p>
+      <h3><span class="marcador">01</span>Três elementos — Energia · Foco · Ritmo</h3>
+      <p>Toque em cada elemento para o método, exemplo aplicado e o erro clássico.</p>
 
-      <div class="mov-grid">
-        <div class="mov-card" data-modal="subtrair" role="button" tabindex="0">
-          <div class="mov-icone">S</div>
-          <div class="mov-nome">Subtrair</div>
-          <div class="mov-pergunta">"O que precisa sair da vida atual?"</div>
-          <span class="mov-seta">›</span>
+      <div class="efr-grid">
+        <div class="efr-card" data-modal="energia" role="button" tabindex="0">
+          <div class="efr-icone">E</div>
+          <div class="efr-nome">Energia</div>
+          <div class="efr-pergunta">"a matéria-prima está aí?"</div>
+          <span class="efr-seta">›</span>
         </div>
-        <div class="mov-card" data-modal="concentrar" role="button" tabindex="0">
-          <div class="mov-icone">C</div>
-          <div class="mov-nome">Concentrar</div>
-          <div class="mov-pergunta">"Onde vai a melhor energia dessa versão?"</div>
-          <span class="mov-seta">›</span>
+        <div class="efr-card" data-modal="foco" role="button" tabindex="0">
+          <div class="efr-icone">F</div>
+          <div class="efr-nome">Foco</div>
+          <div class="efr-pergunta">"a energia vai para onde?"</div>
+          <span class="efr-seta">›</span>
         </div>
-        <div class="mov-card" data-modal="automatizar" role="button" tabindex="0">
-          <div class="mov-icone">A</div>
-          <div class="mov-nome">Automatizar</div>
-          <div class="mov-pergunta">"O que precisa rodar sem sua atenção?"</div>
-          <span class="mov-seta">›</span>
+        <div class="efr-card" data-modal="ritmo" role="button" tabindex="0">
+          <div class="efr-icone">R</div>
+          <div class="efr-nome">Ritmo</div>
+          <div class="efr-pergunta">"como se renova?"</div>
+          <span class="efr-seta">›</span>
         </div>
       </div>
 
-      <span class="mov-hint">
+      <span class="efr-hint">
         <svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>
-        Toque em cada movimento para o método completo.
+        Toque em cada elemento para o método e o exemplo aplicado.
       </span>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">02</span>Aplicação nos personagens — o custo real de cada versão</h3>
+      <h3><span class="marcador">02</span>1 ritual + 1 prioridade — leitura dos personagens</h3>
 
       <div class="caso">
         <div class="caso-header">
           <div class="caso-avatar">C</div>
           <div>
             <div class="caso-nome">Camila</div>
-            <div class="caso-perfil">Continuação Paralela (referência + presença externa)</div>
+            <div class="caso-perfil">Dimensão fraca: mental (fragmentação por reuniões e Slack); prioridade: 1 artigo por semana</div>
           </div>
-          <span class="caso-tag">Precisa subtrair pouco</span>
+          <span class="caso-tag">Ritual + Prioridade</span>
         </div>
-        <p><b>Subtrair:</b> reduzir 4-6h semanais de tarefas administrativas do banco que não somam (delegar, dizer não, automatizar relatórios). <b>Concentrar:</b> o pico da semana para escrever/publicar. <b>Automatizar:</b> processo de análise mensal do dashboard que hoje ocupa 8h vira 2h com script + template. <em>Versão atravessável.</em></p>
+        <p><b>Ritual (renovação mental):</b> bloco de 90 min quinta 07h–08h30, sem celular, sem notificações — dedicado ao artigo da semana. Após o bloco, 15 min de caminhada sem tela. <b>Prioridade:</b> 1 artigo publicado até domingo. Todas as outras "coisas de presença" (posts curtos, comentários) só acontecem se sobrar tempo — não antes.</p>
       </div>
 
       <div class="caso">
@@ -438,11 +449,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <div class="caso-avatar rafael">R</div>
           <div>
             <div class="caso-nome">Rafael</div>
-            <div class="caso-perfil">Adjacência Iterativa (indústria → fintech via cargo-ponte)</div>
+            <div class="caso-perfil">Dimensão fraca: física (sono irregular por reuniões noturnas); prioridade: 1 vídeo curto por semana</div>
           </div>
-          <span class="caso-tag">Precisa subtrair muito</span>
+          <span class="caso-tag">Ritual + Prioridade</span>
         </div>
-        <p><b>Subtrair:</b> 3-4 reuniões operacionais/semana no cargo atual (delegar para o time), 1-2 comitês corporativos que não somam à transição. <b>Concentrar:</b> 10h/semana em estudo de setor-alvo + coffee chats + projeto lateral. <b>Automatizar:</b> gestão do time atual via delegação estruturada (reunião semanal + dashboard). <em>Atravessável, mas exige disciplina alta de "não".</em></p>
+        <p><b>Ritual (renovação física):</b> corte total de reuniões após 21h por 3 semanas + celular fora do quarto. Objetivo: 7h de sono no mínimo. <b>Prioridade:</b> 1 vídeo de 5 min gravado até quarta e publicado até sexta. Se surgir "urgência" no meio do bloco de gravação, ela espera — não é urgente se não veio antes.</p>
       </div>
 
       <div class="caso">
@@ -450,54 +461,70 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <div class="caso-avatar juliana">J</div>
           <div>
             <div class="caso-nome">Juliana</div>
-            <div class="caso-perfil">Reinvenção Paralela (autora/educadora com plano de ponte)</div>
+            <div class="caso-perfil">Dimensão fraca: emocional (ansiedade com curso novo); prioridade: aula piloto pronta em 3 semanas</div>
           </div>
-          <span class="caso-tag">Subtração maior</span>
+          <span class="caso-tag">Ritual + Prioridade</span>
         </div>
-        <p><b>Subtrair:</b> 40% dos clientes atuais (recusar projetos novos por 12 meses; encerrar 2 contratos menores). <b>Concentrar:</b> 15h/semana em produto autoral (curso piloto, escrita, marketing). <b>Automatizar:</b> onboarding e proposta comercial dos clientes que ficam, para reduzir tempo de venda. <em>Atravessável com plano de ponte robusto; sem plano de ponte, insustentável.</em></p>
+        <p><b>Ritual (renovação emocional):</b> conversa semanal de 30 min com a mentora informal — pauta única: "o que estou levando bem, o que estou ampliando sem necessidade". <b>Prioridade:</b> aula piloto de 20 min pronta e testada com 3 alunos beta até o fim da 3ª semana. Feedback esperado &gt; feedback perfeito.</p>
       </div>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">03</span>A regra da Etapa 13: versão que não subtrai é ideia, não opção</h3>
-      <p>Se você não consegue nomear <b>o que subtrai, o que concentra, e o que automatiza</b> para uma versão específica, ela não é uma opção real — é ideia bem elaborada. Uma versão real cabe na vida real; e caber na vida real quase sempre exige tirar coisas. Esse é o teste do essencial: a versão que <em>ainda que abstrata pareça atrativa</em>, mas para a qual você não consegue nomear os 3 movimentos, provavelmente ainda não está madura para decisão.</p>
+      <h3><span class="marcador">03</span>A regra da Etapa 13: 1 dimensão, 1 ritual, 1 prioridade</h3>
+      <p>Schwartz mostrou que tentar reformar 4 dimensões simultâneas falha — sobrecarga. Trabalhe <b>a mais fraca hoje</b>. Bruch & Ghoshal mostraram que 5 prioridades = 0 prioridades — o cérebro dilui. Trabalhe <b>1 por semana</b>. As demais coisas continuam acontecendo (rede, aprendizagem, presença) — mas <em>não competem</em> com a prioridade única quando o tempo aperta.</p>
     </div>
   </section>
 
   <section class="bonus bloco" id="bonus">
     <div class="bloco-num"><span class="n">5</span> Seu bônus antes da missão</div>
-    <h2>Menos, mas melhor. Pensamento estratégico para a vida.</h2>
-    <p class="subtitulo">Duas leituras que fundamentam os 3 movimentos.</p>
+    <h2>Energia, foco, priorização, agenda, proteção.</h2>
+    <p class="subtitulo">5 estudos comentados que fundamentam E·F·R.</p>
     <div class="leituras">
       <div class="leitura">
-        <span class="tipo">Resumo · 3 páginas</span>
-        <h4>A busca disciplinada por menos</h4>
-        <p class="meta-leitura">McKeown (2012) — o essencialismo como disciplina, não como estética. A diferença entre "sim para tudo" e "sim para o que importa" está no rigor da subtração.</p>
+        <span class="tipo">Base · 3 páginas</span>
+        <h4>Gerencie sua energia, não seu tempo</h4>
+        <p class="meta-leitura">Schwartz & McCarthy · HBR · 2007. As 4 dimensões de energia (física, emocional, mental, propósito) e por que rituais de renovação superam gestão de tempo.</p>
       </div>
       <div class="leitura">
-        <span class="tipo">Resumo · 3 páginas</span>
-        <h4>Pensamento estratégico para a vida</h4>
-        <p class="meta-leitura">Strack (2023) — como aplicar a lógica de estratégia empresarial (o que não fazer, trade-offs explícitos, alocação disciplinada) para decisões de carreira e vida.</p>
+        <span class="tipo">Base · 3 páginas</span>
+        <h4>Cuidado com o gestor ocupado</h4>
+        <p class="meta-leitura">Bruch & Ghoshal · HBR · 2002. A matriz energia × foco e os 4 perfis — só ~10% agem com propósito; o ocupado distraído é o mais elogiado e o mais enganoso.</p>
+      </div>
+      <div class="leitura">
+        <span class="tipo">Complemento · 3 páginas</span>
+        <h4>Três formas de priorizar uma lista longa</h4>
+        <p class="meta-leitura">Anthony · HBR · 2011. Três filtros práticos: evidência (não confie em palavras — em comportamento), gargalo (o que destrava tudo), olhar de fora (para escapar da própria miopia).</p>
+      </div>
+      <div class="leitura">
+        <span class="tipo">Complemento · 3 páginas</span>
+        <h4>Agende as reuniões pensando na sua energia</h4>
+        <p class="meta-leitura">Zhang, Spreitzer & Qiu · HBR · 2023. A arrumação da agenda é ela própria gestão de energia — reunião picada drena; agrupada devolve blocos de foco. Toda troca de contexto tem custo.</p>
+      </div>
+      <div class="leitura">
+        <span class="tipo">Complemento · 3 páginas</span>
+        <h4>Proteger a sua energia é parte do trabalho</h4>
+        <p class="meta-leitura">Alpaio & Arni Ravishankar · HBR · 2022. Dar nome ao invisível — nomear o que drena é o primeiro passo do cuidado. Reduzir o dreno + alimentar a fonte. Autocuidado não conserta ambiente.</p>
       </div>
     </div>
-    <a href="academia.html" class="link-academia">Abrir os resumos na Academia Intentia →</a>
+    <a href="academia.html" class="link-academia">Abrir os 5 estudos na Academia Intentia →</a>
     <p class="bonus-nota">Opcional. As leituras enriquecem o dia — mas a missão funciona sem elas.</p>
   </section>
 
   <section class="bloco" id="missao">
     <div class="bloco-num"><span class="n">6</span> Missão do Dia</div>
     <div class="missao-header">
-      <h2>Três movimentos por Eu.</h2>
+      <h2>Desenhar 1 ritual + 1 prioridade da semana.</h2>
       <span class="missao-tempo">18 min</span>
     </div>
-    <p class="subtitulo">Para cada versão, nomear concretamente: o que subtrai, o que concentra, o que automatiza. Se não conseguir nomear, a versão não é opção real ainda.</p>
+    <p class="subtitulo">Diagnosticar as 4 dimensões. Escolher a mais fraca. Desenhar 1 ritual. Nomear 1 prioridade única. Marcar tudo na agenda.</p>
 
     <ol class="passos">
-      <li><strong>Recuperar seus 3 Eus + placares das Etapas 10 e 12 <span class="tempo-passo">3 min</span></strong><p>Reler o material anterior mentalmente. Cada versão tem preço, formato, placar de critério e placar de propósito.</p></li>
-      <li><strong>Aplicar Subtrair a cada Eu <span class="tempo-passo">5 min</span></strong><p>Nomear <b>2-3 coisas específicas</b> que precisam sair da sua vida atual para essa versão caber. Se não conseguir nomear, marque isso — é diagnóstico.</p></li>
-      <li><strong>Aplicar Concentrar a cada Eu <span class="tempo-passo">4 min</span></strong><p>Onde vai sua melhor energia (pico do dia/semana) nessa versão? Que atividade central absorve as horas de máxima presença?</p></li>
-      <li><strong>Aplicar Automatizar a cada Eu <span class="tempo-passo">4 min</span></strong><p>O que precisa rodar <em>sem sua atenção diária</em> para essa versão sobrar tempo de foco? Delegação, sistema, processo automatizado.</p></li>
-      <li><strong>Identificar a versão mais atravessável e o insight <span class="tempo-passo">2 min</span></strong><p>Qual Eu você conseguiu nomear os 3 movimentos com clareza? Qual ficou vago? Isso costuma coincidir com a versão que está pronta para virar decisão.</p></li>
+      <li><strong>Diagnosticar as 4 dimensões <span class="tempo-passo">4 min</span></strong><p>Nota de 1 a 5 em Física (sono, corpo, energia crua), Emocional (regulação sob estresse), Mental (blocos de foco profundo), Propósito (conexão do trabalho com o que importa).</p></li>
+      <li><strong>Escolher a dimensão-alvo <span class="tempo-passo">2 min</span></strong><p>A com a nota mais baixa. Se empatarem, a que <em>mais afeta as outras 3</em>. Escolha 1 — não 2.</p></li>
+      <li><strong>Desenhar 1 ritual <span class="tempo-passo">4 min</span></strong><p>Curto (5-30 min), específico (o quê, onde, com quê), frequente (diário ou semanal). Ritual, não intenção — Schwartz: "sem quando/onde/o quê, é resolução, não ritual".</p></li>
+      <li><strong>Nomear 1 prioridade da semana <span class="tempo-passo">4 min</span></strong><p>UMA coisa ligada à direção que <em>se você fizer só isso</em>, a semana valeu. Não 3, não 5 — 1. Bruch & Ghoshal: 1 prioridade nomeada &gt; 5 diluídas.</p></li>
+      <li><strong>Marcar na agenda <span class="tempo-passo">2 min</span></strong><p>Data + hora do ritual + bloco protegido para a prioridade. Sem agenda, o ritual não vai acontecer e a prioridade vai perder para o urgente.</p></li>
+      <li><strong>Definir sinal de "cede tudo, menos isso" <span class="tempo-passo">2 min</span></strong><p>Quando a semana ficar cheia, o que <em>cede</em> primeiro? Nomear agora, não no meio. Se a prioridade e o ritual não têm proteção definida, eles cedem — e você volta ao ponto zero.</p></li>
     </ol>
 
     <a href="missao.html" class="cta-missao">
@@ -541,12 +568,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
     <div class="modal-body">
       <div class="modal-secao">
-        <div class="modal-secao-label">O que o movimento faz</div>
+        <div class="modal-secao-label">O que o elemento faz</div>
         <p id="modal-conceito"></p>
       </div>
       <div class="modal-secao">
         <div class="modal-exemplos">
-          <div class="modal-exemplos-label">Perguntas específicas</div>
+          <div class="modal-exemplos-label">Como aplicar</div>
           <ul id="modal-exemplos"></ul>
         </div>
         <div class="modal-erro"><b>Erro comum</b><span id="modal-erro"></span></div>
@@ -555,33 +582,33 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   </div>
 </div>
 
-<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 13 · Essencial — três movimentos</div></footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 13 · Energia e prioridades — Energia · Foco · Ritmo</div></footer>
 
 <script>
-  const MOV_DETALHE = {
-    subtrair: {
-      nome: 'Movimento Subtrair',
-      tagline: 'o que precisa sair da vida atual',
-      icone: 'S',
-      conceito: 'Subtrair é o movimento fundador do essencialismo. McKeown mostra que <em>tempo e energia são recursos finitos</em> — cada nova versão de você exige espaço, e espaço não aparece por milagre; aparece porque você tirou algo. Subtrair é nomear concretamente o que sai: atividades, projetos, relacionamentos, hábitos, obrigações. Sem subtração explícita, a nova versão vira só mais uma camada em cima do que já pesa.',
-      exemplos: ['Que 2-3 atividades da minha semana atual precisam sair?', 'Que projeto/comitê/reunião não soma à versão futura e ainda ocupa tempo?', 'Que "sim" antigo eu ainda estou honrando por hábito?', 'Que relacionamentos profissionais consomem sem devolver?'],
-      erro: 'Subtrair "no futuro" ("um dia eu paro de X"). Subtração real tem <b>data</b> e <b>o que substitui</b>. Se você não sabe até quando vai parar de fazer X, ainda não subtraiu — só imaginou subtração.'
+  const EFR_DETALHE = {
+    energia: {
+      nome: 'Energia',
+      tagline: '"a matéria-prima está aí?"',
+      icone: 'E',
+      conceito: 'Energia é <b>a matéria-prima de qualquer trabalho profissional</b>. Schwartz & McCarthy identificaram 4 dimensões renováveis: <em>física</em> (sono, corpo, alimentação, movimento), <em>emocional</em> (regulação sob estresse, qualidade das relações próximas), <em>mental</em> (capacidade de foco profundo, ausência de fragmentação), e <em>propósito</em> (conexão do trabalho com algo que importa além dele). Sem energia, nem foco nem ritmo salvam — só o esgotamento se acumula.',
+      exemplos: ['Diagnosticar honestamente as 4 dimensões com nota de 1 a 5 — sem otimismo performático', 'Trabalhar a mais fraca primeiro (efeito de cascata sobre as outras)', 'Ritual curto e específico &gt; grande reforma anual', 'Rever a cada 4-6 semanas — dimensões mudam de nota com o contexto'],
+      erro: '<b>Tratar energia como "força de vontade".</b> Se você repete "vou dormir melhor" por 3 semanas e não muda, o problema não é motivação — é ausência de ritual desenhado. Schwartz foi enfático: <em>rituais mecânicos superam intenção heroica</em>. Se o ritual não é específico o suficiente para acontecer no piloto automático, ele não vai sustentar quando a semana ficar difícil.'
     },
-    concentrar: {
-      nome: 'Movimento Concentrar',
-      tagline: 'onde vai a melhor energia dessa versão',
-      icone: 'C',
-      conceito: 'Concentrar é decidir <em>onde vai o pico de atenção diário/semanal</em>. Toda pessoa tem 2-4 horas por dia de <b>presença máxima</b> — o resto do dia é energia média ou baixa. A versão nova precisa acessar essa faixa de pico, senão vira só mais uma tarefa espremida em faixas de energia média. Concentrar é nomear <b>qual atividade dessa versão fica no pico</b>, e proteger essa faixa contra invasão.',
-      exemplos: ['Em qual horário da minha semana eu mais rendo?', 'Qual atividade central dessa versão precisa acontecer nesse horário?', 'O que hoje ocupa essa faixa de pico e não deveria?', 'Como eu protejo esse tempo (agenda, ambiente, dispositivos)?'],
-      erro: 'Concentrar sem proteger. Se você nomeia a faixa de pico mas continua deixando reuniões, notificações e tarefas urgentes invadirem, a concentração vira ideia. <b>Concentração real tem regras explícitas de proteção</b> — não é aspiração.'
+    foco: {
+      nome: 'Foco',
+      tagline: '"a energia vai para onde?"',
+      icone: 'F',
+      conceito: 'Foco é <b>a direção da energia — a escolha do que fica de fora</b>. Bruch & Ghoshal mostraram que gestores em alta demanda frequentemente têm energia (às vezes muita) mas dispersam em atividade sem propósito claro. A matriz simples: alta energia + alto foco = ação com propósito (<em>purposeful</em>); alta energia + baixo foco = distração/agitação; baixa energia + alto foco = passividade/procrastinação bem-intencionada. Só o primeiro quadrante move a agulha.',
+      exemplos: ['1 prioridade por semana — nomeada, escrita, visível', 'Definir o que cede primeiro quando a semana aperta (antes de apertar)', 'Distinguir ativo (você escolheu) de reativo (te puxaram) — anotar o padrão real da semana passada', 'Bloco de tempo dedicado à prioridade &gt; encaixar entre reuniões'],
+      erro: '<b>Confundir estar ocupado com estar focado.</b> Bruch & Ghoshal descobriram que 40% dos gestores estudados estavam no quadrante "distraído/desengajado" — muito ocupados, movendo pouco. Se no fim da semana você não consegue nomear a 1 coisa que a semana entregou, você provavelmente estava ocupado, não focado. Ocupação sem foco é energia queimada sem propósito.'
     },
-    automatizar: {
-      nome: 'Movimento Automatizar',
-      tagline: 'o que precisa rodar sem sua atenção',
-      icone: 'A',
-      conceito: 'Automatizar é <em>tirar da sua atenção diária</em> tudo que pode ser feito por sistema, delegação, processo ou rotina. Não é sobre tecnologia — é sobre <b>liberar ciclo cognitivo</b>. Toda versão nova falha quando você continua cuidando manualmente das mesmas 20 coisas da versão antiga; a atenção acaba, a versão nova não recebe seu pico, e ela nunca acontece de verdade. Automatizar é criar <em>infraestrutura invisível</em> que sustenta a nova versão.',
-      exemplos: ['Que decisões repetitivas eu ainda tomo caso a caso e poderia virar regra fixa?', 'Que atividade que hoje ocupa 5h/semana poderia ser delegada?', 'Que informação eu ainda busco manualmente e poderia ter dashboard/relatório automático?', 'Que relacionamentos eu poderia manter com sistema (newsletter, atualização mensal) em vez de contatos ad hoc?'],
-      erro: 'Automatizar tudo. O ponto do essencialismo não é otimização total — é liberar atenção <em>para o que importa</em>. Automatizar coisas que você já não faz (ou não deveria estar fazendo) é falso ganho. Primeiro subtraia; depois automatize o que sobrou.'
+    ritmo: {
+      nome: 'Ritmo',
+      tagline: '"como se renova?"',
+      icone: 'R',
+      conceito: 'Ritmo é <b>a oscilação que sustenta o trabalho ao longo do tempo</b>. Schwartz foi central aqui: sistemas humanos <em>não são lineares</em>. Mais horas não produzem mais output; produzem depleção. O padrão que sustenta décadas é oscilatório — trabalho intenso seguido de <em>recuperação real</em> (não distração, não "trabalho leve"). O ritmo é o que separa quem ainda está no jogo no ano 5 de quem esgotou no ano 2 fazendo o mesmo trabalho.',
+      exemplos: ['Blocos de foco profundo (60-90 min) seguidos de pausa real (10-15 min)', 'Fim de semana com pelo menos 1 dia sem trabalho — não "leve", nenhum', 'Ritual noturno que corta trabalho antes do sono (celular fora do quarto é o mais robusto)', 'Renovação semanal — algo que te devolve energia (movimento, natureza, contato humano fora do trabalho)'],
+      erro: '<b>Confundir descanso com distração.</b> Rolar rede social, assistir séries em fundo, ficar disponível "de leve" para trabalho — nada disso é recuperação; é energia mental sendo drenada em outro canal. Schwartz: recuperação real exige <em>desconexão total temporária</em>. Sem isso, a oscilação é falsa — parece descanso mas continua consumindo.'
     }
   };
 </script>
@@ -616,7 +643,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     const btnClose = document.getElementById('modal-close');
     if(!overlay) return;
     window.abrirModal = function(id){
-      const d = MOV_DETALHE[id];
+      const d = EFR_DETALHE[id];
       if(!d) return;
       document.getElementById('modal-icone').textContent = d.icone;
       document.getElementById('modal-titulo').textContent = d.nome;
@@ -628,13 +655,26 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       document.body.style.overflow = 'hidden';
     };
     function fechar(){ overlay.classList.remove('aberto'); document.body.style.overflow = ''; }
-    document.querySelectorAll('.mov-card[data-modal]').forEach(card => {
+    document.querySelectorAll('.efr-card[data-modal]').forEach(card => {
       card.addEventListener('click', () => abrirModal(card.dataset.modal));
       card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirModal(card.dataset.modal); } });
     });
     btnClose.addEventListener('click', fechar);
     overlay.addEventListener('click', (e) => { if(e.target === overlay) fechar(); });
     document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && overlay.classList.contains('aberto')) fechar(); });
+  })();
+  (function(){
+    try {
+      const s = sessionStorage.getItem('intentia-dia7');
+      if (s) {
+        const p = JSON.parse(s);
+        if (p && p.escolhaFrase) {
+          document.getElementById('direcao-recap-txt').textContent = p.escolhaFrase;
+          return;
+        }
+      }
+    } catch(e){}
+    document.getElementById('direcao-recap-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo demonstrativo)';
   })();
 </script>
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 10 · Missão — Cada Eu, três notas</title>
+<title>Intentia · Etapa 10 · Missão — Mapa das 3 redes</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -29,55 +29,35 @@
   .progresso-bar{background:var(--verde-100);height:6px;border-radius:3px;overflow:hidden}
   .progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}
   .progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}
-  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px;font-size:13.5px;line-height:1.55}
-  .aviso-demo-icone{color:var(--coral);font-size:18px;flex-shrink:0;margin-top:1px}
-  .aviso-demo b{color:var(--verde-900)}
-  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
-  .lembrete{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 20px;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
-  .lembrete b{color:var(--verde-900);font-weight:600}
-
-  .eu-etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
-  .eu-etapa-header{color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px}
-  .eu-etapa.continuacao .eu-etapa-header{background:linear-gradient(135deg, #336B62 0%, #275750 100%)}
-  .eu-etapa.adjacencia .eu-etapa-header{background:linear-gradient(135deg, #FF7A57 0%, #E85530 100%)}
-  .eu-etapa.reinvencao .eu-etapa-header{background:linear-gradient(135deg, #8B7BB8 0%, #5F4E8C 100%)}
-  .eu-etapa-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
-  .eu-etapa-titulo{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.2;margin-bottom:3px}
-  .eu-etapa-sub{font-size:13px;opacity:.92;font-style:italic}
-  .eu-etapa-corpo{padding:22px 28px 24px}
-  .eu-recap{background:var(--creme);border-radius:10px;padding:14px 18px;margin-bottom:18px;font-size:13.5px;line-height:1.55;color:var(--tinta-suave)}
-  .eu-recap-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:5px}
-  .eu-recap b{color:var(--verde-900);font-weight:500;font-family:var(--serif);font-size:14.5px;font-style:italic}
-  .fmt-tag{display:inline-block;background:var(--verde-700);color:#fff;padding:2px 8px;border-radius:8px;font-size:11px;font-weight:600;margin-left:8px;text-transform:uppercase;letter-spacing:.05em}
-
-  .filtro{margin-bottom:20px;padding:16px 18px;background:var(--creme);border-radius:10px;border-left:3px solid var(--verde-500)}
-  .filtro:last-child{margin-bottom:0}
-  .filtro-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  .filtro-letra{width:28px;height:28px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:14px;flex-shrink:0}
-  .filtro-nome{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--verde-900)}
-  .filtro-desc{font-size:12.5px;color:var(--tinta-suave);margin-bottom:10px;font-style:italic;line-height:1.4}
-
-  .escala-notas{display:flex;gap:6px;margin-bottom:10px}
+  .direcao-recap{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);padding:14px 20px;border-radius:0 10px 10px 0;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
+  .direcao-recap b{color:var(--verde-900);font-family:var(--serif);font-style:italic;font-weight:500}
+  .rede-etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
+  .rede-etapa-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px}
+  .rede-etapa-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
+  .rede-etapa-titulo{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.2;margin-bottom:3px}
+  .rede-etapa-sub{font-size:13px;opacity:.92;font-style:italic}
+  .rede-etapa-corpo{padding:22px 28px 24px}
+  label{display:block;font-size:12.5px;font-weight:600;color:var(--verde-700);margin-bottom:6px;letter-spacing:.02em;text-transform:uppercase;margin-top:14px}
+  label:first-child{margin-top:0}
+  label small{color:var(--tinta-suave);font-weight:500;text-transform:none;letter-spacing:0;font-size:12px;margin-left:6px;font-style:italic}
+  textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14px;color:var(--tinta);background:#fff;transition:border-color .2s;resize:vertical;min-height:80px;line-height:1.5}
+  textarea:focus{outline:none;border-color:var(--coral)}
+  .escala-notas{display:flex;gap:6px;margin-top:6px}
   .nota-op{flex:1;background:#fff;border:1.5px solid var(--verde-100);border-radius:8px;padding:10px 4px;text-align:center;cursor:pointer;transition:all .15s;user-select:none;font-family:var(--serif);font-size:17px;font-weight:600;color:var(--tinta-suave)}
   .nota-op:hover{border-color:var(--verde-500)}
   .nota-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
-
-  .filtro-textarea{width:100%;padding:10px 12px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:13.5px;color:var(--tinta);background:#fff;transition:border-color .2s;resize:vertical;min-height:50px;line-height:1.5}
-  .filtro-textarea:focus{outline:none;border-color:var(--coral)}
-  .filtro-label{font-size:11.5px;font-weight:600;color:var(--verde-700);margin-bottom:5px;letter-spacing:.02em;text-transform:uppercase}
-
-  .placar-eu{background:linear-gradient(135deg, var(--verde-700) 0%, var(--verde-900) 100%);color:#fff;padding:14px 20px;border-radius:10px;margin-top:14px;text-align:center;font-family:var(--serif);font-weight:600}
-  .placar-eu .placar-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral-soft);margin-bottom:4px;font-family:var(--sans)}
-  .placar-eu .placar-num{font-size:24px;line-height:1.1}
-  .placar-eu .placar-num small{font-size:14px;opacity:.7}
-
-  .finalizacao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .finalizacao-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
-  .finalizacao-num{width:34px;height:34px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
-  .finalizacao-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
-  .finalizacao-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
-  .dica{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-top:8px;padding-left:12px;border-left:2px solid var(--verde-500)}
-
+  .escala-desc{font-size:11.5px;color:var(--tinta-suave);text-align:center;margin-top:8px;font-style:italic}
+  .gargalo-etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .gargalo-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
+  .gargalo-num{width:34px;height:34px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
+  .gargalo-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
+  .gargalo-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
+  .gargalo-radio{display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;margin-top:12px}
+  @media (max-width:520px){.gargalo-radio{grid-template-columns:1fr}}
+  .gargalo-op{background:#fff;border:1.5px solid var(--verde-100);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all .2s;user-select:none;text-align:center}
+  .gargalo-op:hover{border-color:var(--verde-500)}
+  .gargalo-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
+  .gargalo-op b{font-family:var(--serif);display:block;margin-bottom:3px;font-size:15px}
   .concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}
   .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px}
   .concluir p{font-size:14.5px;opacity:.92;margin-bottom:22px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
@@ -85,7 +65,6 @@
   .btn-concluir:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
   .btn-concluir .icone{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
   .btn-concluir .icone svg{width:14px;height:14px;fill:currentColor}
-
   footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
   footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
 </style>
@@ -204,13 +183,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 })();
 </script><!--intentia-nav:end-->
 
-
 <header>
   <div class="hero-inner">
     <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 10</a>
     <div class="eyebrow">Missão · Etapa 10 · Bloco 2</div>
-    <h1>Cada Eu, <span class="grifo">três notas</span>.</h1>
-    <p class="lede">Passar cada um dos 3 Eus pelos 3 filtros: Alocação, Reversibilidade e Retorno. Notas de 1 a 5. O placar não decide — <b>revela</b>.</p>
+    <h1>Mapa das <span class="grifo">3 redes</span>.</h1>
+    <p class="lede">Listar pessoas em cada rede. Avaliar densidade. Escolher gargalo. Um movimento pequeno na rede certa.</p>
     <div class="missao-meta">
       <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 18 min</span>
       <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
@@ -218,282 +196,153 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   </div>
   <div class="arc"></div>
 </header>
-
 <main>
   <div class="progresso">
     <div class="progresso-info">
       <div class="progresso-titulo">Seu preenchimento</div>
       <div class="progresso-bar"><div class="progresso-fill" id="progresso-fill"></div></div>
     </div>
-    <div class="progresso-num" id="progresso-num">0/4</div>
+    <div class="progresso-num" id="progresso-num">0/5</div>
   </div>
 
-  <div id="aviso-demo" class="aviso-demo" style="display:none">
-    <div class="aviso-demo-icone">◆</div>
-    <div>
-      <b>Você ainda não preencheu as missões das Etapas 8 e 9.</b> Os "recaps" abaixo estão em <b>modo demonstrativo</b>. <a href="../Dia 8/missao.html">Ir para a Etapa 8 →</a>
-    </div>
+  <div class="direcao-recap">
+    <b id="direcao-txt">—</b>
+    <span style="font-size:12px;color:var(--tinta-suave);display:block;margin-top:6px;font-style:italic">← sua direção da Etapa 7. As redes são avaliadas <em>a serviço dessa direção</em>.</span>
   </div>
 
-  <div class="lembrete">
-    <b>Como usar as notas:</b> pense em cada uma como uma <em>hipótese</em> — pode ser ajustada em revisões futuras. Nota alta ≠ Eu vencedor; nota baixa ≠ Eu descartado. O placar é diagnóstico do que a versão exige, não sentença.
-  </div>
-
-  <!-- CONTINUAÇÃO -->
-  <section class="eu-etapa continuacao">
-    <div class="eu-etapa-header">
-      <div class="eu-etapa-letra">C</div>
-      <div>
-        <div class="eu-etapa-titulo">Eu-Continuação<span class="fmt-tag" id="cont-fmt-tag">—</span></div>
-        <div class="eu-etapa-sub">"Continuo o que faço — mais aprofundado, mais dono"</div>
+  <!-- OPERACIONAL -->
+  <section class="rede-etapa">
+    <div class="rede-etapa-header"><div class="rede-etapa-letra">O</div><div><div class="rede-etapa-titulo">Rede Operacional</div><div class="rede-etapa-sub">"quem faz o trabalho atual acontecer"</div></div></div>
+    <div class="rede-etapa-corpo">
+      <label>Nomes (8-15 pessoas ideal) <small>time, pares, clientes, fornecedores atuais</small></label>
+      <textarea id="op-lista" placeholder="ex.: Ana (colega de time), João (líder da área X), Marina (cliente do projeto Y), Pedro (fornecedor Z)…"></textarea>
+      <label>Densidade da rede (1-5)</label>
+      <div class="escala-notas" data-rede="op">
+        <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
       </div>
-    </div>
-    <div class="eu-etapa-corpo">
-      <div class="eu-recap" id="recap-cont">
-        <div class="eu-recap-label">Sua versão da Etapa 8</div>
-        <b>—</b>
-      </div>
-
-      <div class="filtro">
-        <div class="filtro-header"><div class="filtro-letra">A</div><div class="filtro-nome">Alocação</div></div>
-        <div class="filtro-desc">Quanto da alocação (tempo/dinheiro) exigida por essa versão você já tem hoje?</div>
-        <div class="escala-notas" data-eu="cont" data-fil="aloc">
-          <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
-        </div>
-        <div class="filtro-label">Por quê? <small>uma frase</small></div>
-        <textarea id="cont-aloc-just" class="filtro-textarea" placeholder="ex.: banco cobre a base, mas exige realocar 4-6h/semana para conteúdo — não está lá ainda"></textarea>
-      </div>
-
-      <div class="filtro">
-        <div class="filtro-header"><div class="filtro-letra">R</div><div class="filtro-nome">Reversibilidade</div></div>
-        <div class="filtro-desc">Se em 12 meses descobrir que não era, quanto custa desfazer?</div>
-        <div class="escala-notas" data-eu="cont" data-fil="rev">
-          <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
-        </div>
-        <div class="filtro-label">Por quê?</div>
-        <textarea id="cont-rev-just" class="filtro-textarea" placeholder="ex.: publicar em paralelo é totalmente reversível; parar não deixa dívida estrutural"></textarea>
-      </div>
-
-      <div class="filtro">
-        <div class="filtro-header"><div class="filtro-letra">T</div><div class="filtro-nome">Retorno</div></div>
-        <div class="filtro-desc">Quanto tempo até sinal claro de sucesso?</div>
-        <div class="escala-notas" data-eu="cont" data-fil="ret">
-          <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
-        </div>
-        <div class="filtro-label">Por quê?</div>
-        <textarea id="cont-ret-just" class="filtro-textarea" placeholder="ex.: 12-18 meses para construir autoridade externa mínima e primeira validação"></textarea>
-      </div>
-
-      <div class="placar-eu"><div class="placar-label">Placar Continuação</div><div class="placar-num" id="placar-cont">— <small>/ 15</small></div></div>
+      <div class="escala-desc">1 = poucos contatos frágeis; 3 = ok mas superficial; 5 = time forte, entrega fluida</div>
     </div>
   </section>
 
-  <!-- ADJACÊNCIA -->
-  <section class="eu-etapa adjacencia">
-    <div class="eu-etapa-header">
-      <div class="eu-etapa-letra">A</div>
-      <div>
-        <div class="eu-etapa-titulo">Eu-Adjacência<span class="fmt-tag" id="adj-fmt-tag">—</span></div>
-        <div class="eu-etapa-sub">"Mudo de contexto mantendo minhas habilidades"</div>
+  <!-- PESSOAL -->
+  <section class="rede-etapa">
+    <div class="rede-etapa-header"><div class="rede-etapa-letra">P</div><div><div class="rede-etapa-titulo">Rede Pessoal</div><div class="rede-etapa-sub">"quem te desenvolve como profissional"</div></div></div>
+    <div class="rede-etapa-corpo">
+      <label>Nomes (5-10 pessoas ideal) <small>mentores, ex-colegas, grupos, comunidades</small></label>
+      <textarea id="pe-lista" placeholder="ex.: Carla (ex-chefe/mentora), grupo de estudos de dados, comunidade online X, Rafael (colega de MBA)…"></textarea>
+      <label>Densidade da rede (1-5)</label>
+      <div class="escala-notas" data-rede="pe">
+        <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
       </div>
-    </div>
-    <div class="eu-etapa-corpo">
-      <div class="eu-recap" id="recap-adj">
-        <div class="eu-recap-label">Sua versão da Etapa 8</div>
-        <b>—</b>
-      </div>
-
-      <div class="filtro">
-        <div class="filtro-header"><div class="filtro-letra">A</div><div class="filtro-nome">Alocação</div></div>
-        <div class="filtro-desc">Quanto da alocação exigida você já tem hoje?</div>
-        <div class="escala-notas" data-eu="adj" data-fil="aloc">
-          <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
-        </div>
-        <div class="filtro-label">Por quê?</div>
-        <textarea id="adj-aloc-just" class="filtro-textarea"></textarea>
-      </div>
-      <div class="filtro">
-        <div class="filtro-header"><div class="filtro-letra">R</div><div class="filtro-nome">Reversibilidade</div></div>
-        <div class="filtro-desc">Quanto custa desfazer?</div>
-        <div class="escala-notas" data-eu="adj" data-fil="rev">
-          <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
-        </div>
-        <div class="filtro-label">Por quê?</div>
-        <textarea id="adj-rev-just" class="filtro-textarea"></textarea>
-      </div>
-      <div class="filtro">
-        <div class="filtro-header"><div class="filtro-letra">T</div><div class="filtro-nome">Retorno</div></div>
-        <div class="filtro-desc">Quanto tempo até sinal claro?</div>
-        <div class="escala-notas" data-eu="adj" data-fil="ret">
-          <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
-        </div>
-        <div class="filtro-label">Por quê?</div>
-        <textarea id="adj-ret-just" class="filtro-textarea"></textarea>
-      </div>
-      <div class="placar-eu"><div class="placar-label">Placar Adjacência</div><div class="placar-num" id="placar-adj">— <small>/ 15</small></div></div>
+      <div class="escala-desc">1 = ninguém que me expande; 3 = alguns esparsos; 5 = 5+ pessoas que me desafiam com regularidade</div>
     </div>
   </section>
 
-  <!-- REINVENÇÃO -->
-  <section class="eu-etapa reinvencao">
-    <div class="eu-etapa-header">
-      <div class="eu-etapa-letra">R</div>
-      <div>
-        <div class="eu-etapa-titulo">Eu-Reinvenção<span class="fmt-tag" id="rei-fmt-tag">—</span></div>
-        <div class="eu-etapa-sub">"Faço algo estruturalmente novo — outra área, outro modelo"</div>
+  <!-- ESTRATÉGICA -->
+  <section class="rede-etapa">
+    <div class="rede-etapa-header"><div class="rede-etapa-letra">E</div><div><div class="rede-etapa-titulo">Rede Estratégica</div><div class="rede-etapa-sub">"quem abre as próximas portas (na direção nova)"</div></div></div>
+    <div class="rede-etapa-corpo">
+      <label>Nomes (3-10 pessoas ideal) <small>pessoas do território da sua direção nova que hoje te associam a esse território</small></label>
+      <textarea id="es-lista" placeholder="ex.: (se menos de 3, escrever 'menos de 3' — isso é diagnóstico honesto)"></textarea>
+      <label>Densidade da rede (1-5)</label>
+      <div class="escala-notas" data-rede="es">
+        <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
       </div>
-    </div>
-    <div class="eu-etapa-corpo">
-      <div class="eu-recap" id="recap-rei">
-        <div class="eu-recap-label">Sua versão da Etapa 8</div>
-        <b>—</b>
-      </div>
-
-      <div class="filtro">
-        <div class="filtro-header"><div class="filtro-letra">A</div><div class="filtro-nome">Alocação</div></div>
-        <div class="filtro-desc">Quanto da alocação exigida você já tem hoje?</div>
-        <div class="escala-notas" data-eu="rei" data-fil="aloc">
-          <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
-        </div>
-        <div class="filtro-label">Por quê?</div>
-        <textarea id="rei-aloc-just" class="filtro-textarea"></textarea>
-      </div>
-      <div class="filtro">
-        <div class="filtro-header"><div class="filtro-letra">R</div><div class="filtro-nome">Reversibilidade</div></div>
-        <div class="filtro-desc">Quanto custa desfazer?</div>
-        <div class="escala-notas" data-eu="rei" data-fil="rev">
-          <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
-        </div>
-        <div class="filtro-label">Por quê?</div>
-        <textarea id="rei-rev-just" class="filtro-textarea"></textarea>
-      </div>
-      <div class="filtro">
-        <div class="filtro-header"><div class="filtro-letra">T</div><div class="filtro-nome">Retorno</div></div>
-        <div class="filtro-desc">Quanto tempo até sinal claro?</div>
-        <div class="escala-notas" data-eu="rei" data-fil="ret">
-          <div class="nota-op" data-n="1">1</div><div class="nota-op" data-n="2">2</div><div class="nota-op" data-n="3">3</div><div class="nota-op" data-n="4">4</div><div class="nota-op" data-n="5">5</div>
-        </div>
-        <div class="filtro-label">Por quê?</div>
-        <textarea id="rei-ret-just" class="filtro-textarea"></textarea>
-      </div>
-      <div class="placar-eu"><div class="placar-label">Placar Reinvenção</div><div class="placar-num" id="placar-rei">— <small>/ 15</small></div></div>
+      <div class="escala-desc">1 = ninguém do território novo me conhece; 3 = 3-5 me reconhecem; 5 = pessoas mencionam meu nome quando o assunto surge</div>
     </div>
   </section>
 
-  <!-- INSIGHT FINAL -->
-  <section class="finalizacao">
-    <div class="finalizacao-header">
-      <div class="finalizacao-num">✎</div>
+  <!-- GARGALO -->
+  <section class="gargalo-etapa">
+    <div class="gargalo-header">
+      <div class="gargalo-num">→</div>
       <div>
-        <div class="finalizacao-titulo">O que o placar revela</div>
-        <div class="finalizacao-desc">O placar mais alto surpreende? Concorda com seu instinto? Alguma versão perdeu <em>por critério</em> mas continua "sua favorita"? Anote — isso vai voltar amanhã, com armadilhas cognitivas.</div>
+        <div class="gargalo-titulo">Qual é o gargalo?</div>
+        <div class="gargalo-desc">A rede com nota mais baixa. Em transições, é quase sempre a Estratégica. Se você marcou empate, escolha a que <em>o movimento pequeno é mais claro</em>.</div>
       </div>
     </div>
-    <textarea id="insight" class="filtro-textarea" style="min-height:70px" placeholder="ex.: o Eu-Reinvenção perde no filtro Retorno mas eu ainda queria seguir com ele — pode ser sinal de convicção real ou de armadilha; ver amanhã"></textarea>
-    <p class="dica">Não force insight. Se nada apareceu, escreva "nada apareceu ainda" e siga.</p>
+    <div class="gargalo-radio">
+      <div class="gargalo-op" data-r="operacional"><b>Operacional</b></div>
+      <div class="gargalo-op" data-r="pessoal"><b>Pessoal</b></div>
+      <div class="gargalo-op" data-r="estrategica"><b>Estratégica</b></div>
+    </div>
+    <label style="margin-top:16px">Movimento pequeno esta semana <small>específico, executável, verificável</small></label>
+    <textarea id="movimento" placeholder="ex.: mandar mensagem específica a 3 pessoas do território novo até domingo — com 1 insight ou pergunta útil, sem pedido"></textarea>
   </section>
 
   <div class="concluir">
-    <h3>Terminou de pontuar?</h3>
-    <p>Ao concluir, o material da Etapa 10 é gerado: placar completo dos 3 Eus com radar visual + o insight que ficou.</p>
-    <a href="material.html" class="btn-concluir" id="btn-concluir">
-      Ver Placar por Critério
-      <span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
-    </a>
+    <h3>Terminou o mapa?</h3>
+    <p>O material da Etapa 10 mostra o Mapa das 3 Redes — pessoas listadas, densidade, gargalo, movimento. Volte a cada 4 semanas para atualizar.</p>
+    <a href="material.html" class="btn-concluir" id="btn-concluir">Ver Mapa das 3 Redes<span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span></a>
   </div>
 </main>
 
-<footer>
-  <div class="assinatura">Do reagir ao conduzir.</div>
-  <div>Etapa 10 · Missão — Cada Eu, três notas</div>
-</footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 10 · Missão — Mapa das 3 redes</div></footer>
 
 <script>
-  const notas = { cont: {aloc:0, rev:0, ret:0}, adj: {aloc:0, rev:0, ret:0}, rei: {aloc:0, rev:0, ret:0} };
-  const FMT_NOMES = { linear: 'Linear', paralela: 'Paralela', iterativa: 'Iterativa' };
+  const notas = {op:0, pe:0, es:0};
+  let gargalo = '';
 
   document.querySelectorAll('.escala-notas').forEach(grid => {
-    const eu = grid.dataset.eu, fil = grid.dataset.fil;
+    const r = grid.dataset.rede;
     grid.querySelectorAll('.nota-op').forEach(op => {
       op.addEventListener('click', () => {
         grid.querySelectorAll('.nota-op').forEach(x => x.classList.remove('selecionada'));
         op.classList.add('selecionada');
-        notas[eu][fil] = parseInt(op.dataset.n);
-        atualizarPlacares();
-        atualizarProgresso();
+        notas[r] = parseInt(op.dataset.n);
+        atualizar();
       });
     });
   });
 
-  function atualizarPlacares() {
-    ['cont','adj','rei'].forEach(prefix => {
-      const soma = notas[prefix].aloc + notas[prefix].rev + notas[prefix].ret;
-      const el = document.getElementById('placar-'+prefix);
-      if (el) el.innerHTML = (soma || '—') + ' <small>/ 15</small>';
+  document.querySelectorAll('.gargalo-radio .gargalo-op').forEach(op => {
+    op.addEventListener('click', () => {
+      document.querySelectorAll('.gargalo-radio .gargalo-op').forEach(x => x.classList.remove('selecionada'));
+      op.classList.add('selecionada');
+      gargalo = op.dataset.r;
+      atualizar();
     });
-  }
-
-  function atualizarProgresso() {
-    let pontos = 0;
-    ['cont','adj','rei'].forEach(p => {
-      if (notas[p].aloc && notas[p].rev && notas[p].ret) pontos++;
-    });
-    if (document.getElementById('insight').value.trim().length > 0) pontos++;
-    document.getElementById('progresso-num').textContent = pontos + '/4';
-    document.getElementById('progresso-fill').style.width = (pontos/4*100) + '%';
-  }
-
-  document.getElementById('insight').addEventListener('input', atualizarProgresso);
-
-  // Puxa Etapa 8 e Etapa 9
-  const DEMO_DIA8 = {
-    continuacao: { nome: 'A analista sênior de dados que virou referência interna e externa em análise de decisão' },
-    adjacencia: { nome: 'A analista sênior que virou head de dados de uma fintech em crescimento' },
-    reinvencao: { nome: 'A professora e autora sobre alfabetização de dados para gestores não-técnicos' }
-  };
-  const DEMO_DIA9 = {
-    continuacao: {formato:'paralela'}, adjacencia: {formato:'iterativa'}, reinvencao: {formato:'paralela'}
-  };
-
-  function pega(key, fallback) {
-    try {
-      const s = sessionStorage.getItem(key);
-      if (s) {
-        const p = JSON.parse(s);
-        if (p && Object.keys(p).length > 0) return p;
-      }
-    } catch(e) {}
-    return fallback;
-  }
-
-  const dia8 = pega('intentia-dia8', DEMO_DIA8);
-  const dia9 = pega('intentia-dia9', DEMO_DIA9);
-  const usouDemo = !sessionStorage.getItem('intentia-dia8') || !sessionStorage.getItem('intentia-dia9');
-  if (usouDemo) document.getElementById('aviso-demo').style.display = 'flex';
-
-  ['continuacao','adjacencia','reinvencao'].forEach(tipo => {
-    const prefix = tipo === 'continuacao' ? 'cont' : (tipo === 'adjacencia' ? 'adj' : 'rei');
-    const nomeEl = document.querySelector('#recap-'+prefix+' b');
-    if (nomeEl) nomeEl.textContent = (dia8[tipo] && dia8[tipo].nome) ? dia8[tipo].nome : '(não preenchido)';
-    const fmtEl = document.getElementById(prefix+'-fmt-tag');
-    if (fmtEl && dia9[tipo] && dia9[tipo].formato) fmtEl.textContent = FMT_NOMES[dia9[tipo].formato];
   });
+
+  function atualizar() {
+    let pontos = 0;
+    const oplista = document.getElementById('op-lista').value.trim();
+    const pelista = document.getElementById('pe-lista').value.trim();
+    const eslista = document.getElementById('es-lista').value.trim();
+    const mov = document.getElementById('movimento').value.trim();
+    if (oplista && notas.op) pontos++;
+    if (pelista && notas.pe) pontos++;
+    if (eslista && notas.es) pontos++;
+    if (gargalo) pontos++;
+    if (mov) pontos++;
+    document.getElementById('progresso-num').textContent = pontos + '/5';
+    document.getElementById('progresso-fill').style.width = (pontos/5*100) + '%';
+  }
+  ['op-lista','pe-lista','es-lista','movimento'].forEach(id => document.getElementById(id).addEventListener('input', atualizar));
+
+  (function(){
+    try {
+      const s = sessionStorage.getItem('intentia-dia7');
+      if (s) { const p = JSON.parse(s); if (p && p.escolhaFrase) { document.getElementById('direcao-txt').textContent = p.escolhaFrase; return; } }
+    } catch(e){}
+    document.getElementById('direcao-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo)';
+  })();
 
   document.getElementById('btn-concluir').addEventListener('click', () => {
     try {
       sessionStorage.setItem('intentia-dia10', JSON.stringify({
         dataConclusao: new Date().toISOString(),
-        continuacao: { notas: notas.cont, justificativas: {aloc:document.getElementById('cont-aloc-just').value, rev:document.getElementById('cont-rev-just').value, ret:document.getElementById('cont-ret-just').value} },
-        adjacencia: { notas: notas.adj, justificativas: {aloc:document.getElementById('adj-aloc-just').value, rev:document.getElementById('adj-rev-just').value, ret:document.getElementById('adj-ret-just').value} },
-        reinvencao: { notas: notas.rei, justificativas: {aloc:document.getElementById('rei-aloc-just').value, rev:document.getElementById('rei-rev-just').value, ret:document.getElementById('rei-ret-just').value} },
-        insight: document.getElementById('insight').value
+        operacional: {lista: document.getElementById('op-lista').value, nota: notas.op},
+        pessoal: {lista: document.getElementById('pe-lista').value, nota: notas.pe},
+        estrategica: {lista: document.getElementById('es-lista').value, nota: notas.es},
+        gargalo: gargalo,
+        movimento: document.getElementById('movimento').value
       }));
     } catch(e) {}
   });
 
-  atualizarProgresso();
+  atualizar();
 </script>
-
 <!--intentia-save:start--><style>
 .intentia-fab{position:fixed;right:16px;bottom:16px;z-index:9998;display:inline-flex;align-items:center;gap:8px;
   background:#275750;color:#fff;border:none;border-radius:999px;padding:13px 20px;font-family:'Hanken Grotesk',-apple-system,sans-serif;

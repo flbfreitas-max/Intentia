@@ -1,72 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 19 · Seu ciclo D·F·A</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
-  *{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
-  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
-  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
-  .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
-  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
-  .voltar svg{width:14px;height:14px;fill:currentColor}
-  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
-  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.6vw,42px);line-height:1.12;margin-bottom:14px;letter-spacing:-.01em}
-  header .lede{font-size:16px;color:#CFE0D6;max-width:640px}
-  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
-  main{max-width:960px;margin:0 auto;padding:0 24px 40px}
-  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:16px 22px;margin:24px 0;display:flex;align-items:flex-start;gap:14px;font-size:13.5px;line-height:1.55}
-  .aviso-demo-icone{color:var(--coral);font-size:20px;flex-shrink:0;margin-top:2px}
-  .aviso-demo b{color:var(--verde-900)}
-  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
-  .competencia-topo{background:linear-gradient(135deg, var(--verde-900) 0%, #1d453f 100%);color:var(--creme);border-radius:16px;padding:28px 32px;margin:24px 0;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(39,87,80,.2)}
-  .competencia-label{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
-  .competencia-topo h2{font-family:var(--serif);font-size:26px;font-weight:600;color:#fff;margin-bottom:10px;line-height:1.2}
-  .competencia-por-que{font-size:14.5px;color:#CFE0D6;line-height:1.55;font-style:italic}
-  .cic-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:18px;margin:24px 0}
-  @media (max-width:820px){.cic-grid{grid-template-columns:1fr}}
-  .cic-col{background:#fff;border:1px solid var(--verde-100);border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06);display:flex;flex-direction:column}
-  .cic-col-header{padding:22px 22px 18px;color:#fff;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);text-align:center}
-  .cic-col-letra{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;font-family:var(--serif);font-size:24px;font-weight:600;margin-bottom:10px}
-  .cic-col-tipo{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.85;margin-bottom:4px}
-  .cic-col-nome{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.2}
-  .cic-col-pergunta{margin-top:8px;font-size:12.5px;opacity:.92;font-style:italic}
-  .cic-col-body{padding:22px;flex:1}
-  .cic-conteudo{font-size:14px;line-height:1.65;color:var(--tinta)}
-  .cic-conteudo.vazio{color:var(--tinta-suave);font-style:italic;font-size:12.5px}
-  .datas-box{background:#fff;border:1.5px solid var(--verde-700);border-radius:16px;padding:24px 30px;margin:24px 0;box-shadow:0 4px 16px rgba(39,87,80,.06);display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  @media (max-width:640px){.datas-box{grid-template-columns:1fr}}
-  .data-item{padding:14px 18px;background:var(--creme);border-radius:10px;border-left:3px solid var(--coral)}
-  .data-item-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
-  .data-item-valor{font-family:var(--serif);font-size:19px;color:var(--verde-900);font-weight:600;margin-bottom:4px}
-  .data-item-nota{font-size:12.5px;color:var(--tinta-suave);font-style:italic}
-  .bloco-agenda-box{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:22px 28px;margin:24px 0}
-  .bloco-agenda-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:8px}
-  .bloco-agenda-txt{font-family:var(--serif);font-size:18px;color:var(--verde-900);line-height:1.4;font-weight:500}
-  .fechamento{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 32px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .fechamento h2{font-family:var(--serif);font-size:22px;color:var(--verde-900);margin-bottom:12px;font-weight:600}
-  .fechamento p{font-size:15px;color:var(--tinta);line-height:1.65;margin-bottom:12px}
-  .fechamento p:last-child{margin-bottom:0}
-  .fechamento b{color:var(--verde-900)}
-  .proximo{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:28px 30px;margin:24px 0;text-align:center;position:relative;overflow:hidden}
-  .proximo-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
-  .proximo h3{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;margin-bottom:8px}
-  .proximo p{font-size:14.5px;color:#CFE0D6;margin-bottom:20px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
-  .proximo-cta{display:inline-flex;align-items:center;gap:12px;background:var(--coral);color:#fff;padding:14px 26px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:16px;font-weight:600;transition:transform .2s;box-shadow:0 6px 18px rgba(255,104,66,.32)}
-  .proximo-cta:hover{transform:translateY(-2px)}
-  .proximo-cta svg{width:14px;height:14px;fill:currentColor}
-  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
-  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
-
-  /* === TEXTO JUSTIFICADO (materiais) === */
-  main p{text-align:justify;text-justify:inter-word;hyphens:auto}
-  main .fechamento, main .fechamento p, main .competencia-por-que, main .cic-conteudo, main .bloco-agenda-txt, main .data-item-nota{text-align:justify;text-justify:inter-word;hyphens:auto}
-</style>
-
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Intentia · Etapa 19 · Sua rede de suporte</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><style>:root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}.grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}.voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}.voltar svg{width:14px;height:14px;fill:currentColor}.eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.6vw,42px);line-height:1.12;margin-bottom:14px;letter-spacing:-.01em}header .lede{font-size:16px;color:#CFE0D6;max-width:640px}.arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}main{max-width:960px;margin:0 auto;padding:0 24px 40px}.aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:16px 22px;margin:24px 0;display:flex;align-items:flex-start;gap:14px;font-size:13.5px;line-height:1.55}.aviso-demo-icone{color:var(--coral);font-size:20px;flex-shrink:0;margin-top:2px}.aviso-demo b{color:var(--verde-900)}.aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}.rede-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:18px;margin:24px 0}@media (max-width:820px){.rede-grid{grid-template-columns:1fr}}.rede-col{background:#fff;border:1px solid var(--verde-100);border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06);display:flex;flex-direction:column}.rede-col-header{padding:22px 22px 18px;color:#fff;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);text-align:center}.rede-col-letra{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;font-family:var(--serif);font-size:24px;font-weight:600;margin-bottom:10px}.rede-col-tipo{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.9;margin-bottom:4px}.rede-col-nome{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.2}.rede-col-body{padding:22px;flex:1;font-size:14px;line-height:1.6;color:var(--tinta)}.rede-col-body b{color:var(--verde-900);font-family:var(--serif);display:block;margin-bottom:4px;font-size:13px}.rede-col-body .item{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--verde-100)}.rede-col-body .item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}.rede-col-body .vazio{color:var(--tinta-suave);font-style:italic;font-size:13px}.convite-box{background:#fff;border:1.5px solid var(--verde-700);border-radius:16px;padding:26px 30px;margin:24px 0;box-shadow:0 4px 16px rgba(39,87,80,.06)}.convite-label{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}.convite-box h2{font-family:var(--serif);font-size:22px;color:var(--verde-900);margin-bottom:12px;font-weight:600}.convite-txt{background:var(--creme);border-left:4px solid var(--coral);border-radius:0 12px 12px 0;padding:20px 24px;font-family:var(--serif);font-size:15.5px;line-height:1.7;color:var(--tinta);font-style:italic;white-space:pre-wrap}.convite-txt.vazio{color:var(--tinta-suave);font-style:italic;font-size:14px}.convite-quando{margin-top:12px;font-size:13.5px;color:var(--tinta-suave)}.convite-quando b{color:var(--verde-900);font-family:var(--serif)}.crono-box{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:24px 0}.crono-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:8px}.crono-box h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:12px;font-weight:600}.crono-linha{padding:10px 14px;background:#fff;border-radius:8px;margin-bottom:8px;font-size:13.5px;line-height:1.5;display:flex;gap:12px;align-items:center}.crono-linha:last-child{margin-bottom:0}.crono-tag{background:var(--verde-700);color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:8px;letter-spacing:.04em;flex-shrink:0}.crono-linha b{color:var(--verde-900);font-family:var(--serif)}.fechamento{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 32px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}.fechamento h2{font-family:var(--serif);font-size:22px;color:var(--verde-900);margin-bottom:12px;font-weight:600}.fechamento p{font-size:15px;color:var(--tinta);line-height:1.65;margin-bottom:12px}.fechamento p:last-child{margin-bottom:0}.fechamento b{color:var(--verde-900)}.proximo{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:28px 30px;margin:24px 0;text-align:center;position:relative;overflow:hidden}.proximo-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}.proximo h3{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;margin-bottom:8px}.proximo p{font-size:14.5px;color:#CFE0D6;margin-bottom:20px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}.proximo-cta{display:inline-flex;align-items:center;gap:12px;background:var(--coral);color:#fff;padding:14px 26px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:16px;font-weight:600;transition:transform .2s;box-shadow:0 6px 18px rgba(255,104,66,.32)}.proximo-cta:hover{transform:translateY(-2px)}.proximo-cta svg{width:14px;height:14px;fill:currentColor}footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}main p{text-align:justify;text-justify:inter-word;hyphens:auto}main .fechamento, main .fechamento p, main .rede-col-body, main .convite-txt, main .crono-linha{text-align:justify;text-justify:inter-word;hyphens:auto}</style>
 <!--intentia-mobile:start--><style>
 /* Intentia — navegabilidade mobile (iOS + Android) */
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -146,77 +79,58 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 })();
 </script><!--intentia-nav:end-->
 
-<header>
-  <div class="hero-inner">
-    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 19</a>
-    <div class="eyebrow">Material · Etapa 19 · Bloco 3 · Etapa 5 de 7</div>
-    <h1>Seu ciclo <span class="grifo">D·F·A</span> — 21 dias, 1 competência.</h1>
-    <p class="lede">A competência escolhida, o Desafio semanal, a fonte de Feedback nomeada, o local do Ajuste e as datas na agenda. Comece nesta semana. Reavalie no dia 21.</p>
-  </div>
-  <div class="arc"></div>
-</header>
+<header><div class="hero-inner"><a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 19</a><div class="eyebrow">Material · Etapa 19 · Bloco 3 · Etapa 5 de 7</div><h1>Sua <span class="grifo">rede de suporte</span> — 3 lugares nomeados.</h1><p class="lede">Accountability semanal, comunidade contínua, referência pré-nomeada. O convite pronto para enviar hoje. Cronograma dos primeiros 3 meses.</p></div><div class="arc"></div></header>
 <main>
-  <div id="aviso-demo" class="aviso-demo" style="display:none">
-    <div class="aviso-demo-icone">◆</div>
-    <div><b>Você ainda não preencheu a missão da Etapa 19.</b> Dados em <b>modo demonstrativo</b>. <a href="missao.html">Ir preencher →</a></div>
-  </div>
+  <div id="aviso-demo" class="aviso-demo" style="display:none"><div class="aviso-demo-icone">◆</div><div><b>Você ainda não preencheu a missão da Etapa 19.</b> Dados em <b>modo demonstrativo</b>. <a href="missao.html">Ir preencher →</a></div></div>
 
-  <div class="competencia-topo">
-    <div class="competencia-label">Sua competência-alvo · 21 dias</div>
-    <h2 id="competencia-txt">—</h2>
-    <div class="competencia-por-que" id="por-que-txt">—</div>
-  </div>
-
-  <div class="cic-grid">
-    <div class="cic-col">
-      <div class="cic-col-header"><div class="cic-col-letra">D</div><div class="cic-col-tipo">Elemento</div><div class="cic-col-nome">Desafio</div><div class="cic-col-pergunta">1x por semana, no limite</div></div>
-      <div class="cic-col-body">
-        <div class="cic-conteudo" id="desafio-txt">—</div>
+  <div class="rede-grid">
+    <div class="rede-col">
+      <div class="rede-col-header"><div class="rede-col-letra">A</div><div class="rede-col-tipo">Semanal</div><div class="rede-col-nome">Accountability</div></div>
+      <div class="rede-col-body">
+        <div class="item"><b>Pessoa</b><span id="pessoa-txt">—</span></div>
+        <div class="item"><b>Formato + cadência</b><span id="formato-txt">—</span></div>
       </div>
     </div>
-    <div class="cic-col">
-      <div class="cic-col-header"><div class="cic-col-letra">F</div><div class="cic-col-tipo">Elemento</div><div class="cic-col-nome">Feedback</div><div class="cic-col-pergunta">fonte específica, nomeada</div></div>
-      <div class="cic-col-body">
-        <div class="cic-conteudo" id="feedback-txt">—</div>
+    <div class="rede-col">
+      <div class="rede-col-header"><div class="rede-col-letra">C</div><div class="rede-col-tipo">Mensal+</div><div class="rede-col-nome">Comunidade</div></div>
+      <div class="rede-col-body">
+        <div class="item"><b>Grupo/coletivo</b><span id="comunidade-txt">—</span></div>
       </div>
     </div>
-    <div class="cic-col">
-      <div class="cic-col-header"><div class="cic-col-letra">A</div><div class="cic-col-tipo">Elemento</div><div class="cic-col-nome">Ajuste</div><div class="cic-col-pergunta">registrado, testado no próximo</div></div>
-      <div class="cic-col-body">
-        <div class="cic-conteudo" id="ajuste-txt">—</div>
+    <div class="rede-col">
+      <div class="rede-col-header"><div class="rede-col-letra">R</div><div class="rede-col-tipo">Se precisar</div><div class="rede-col-nome">Referência</div></div>
+      <div class="rede-col-body">
+        <div class="item"><b>Profissional pré-nomeado</b><span id="referencia-txt">—</span></div>
       </div>
     </div>
   </div>
 
-  <div class="datas-box">
-    <div class="data-item">
-      <div class="data-item-label">Primeiro Desafio</div>
-      <div class="data-item-valor" id="data-inicio-txt">—</div>
-      <div class="data-item-nota">se não está na agenda, não acontece</div>
-    </div>
-    <div class="data-item">
-      <div class="data-item-label">Etapa 21 · reavaliação</div>
-      <div class="data-item-valor" id="data-21-txt">—</div>
-      <div class="data-item-nota">o que mudou · próxima competência</div>
-    </div>
+  <div class="convite-box">
+    <div class="convite-label">Convite para o accountability</div>
+    <h2>Pronto para copiar e enviar</h2>
+    <div class="convite-txt" id="convite-txt">—</div>
+    <div class="convite-quando"><b>Quando envia:</b> <span id="quando-txt">—</span></div>
   </div>
 
-  <div class="bloco-agenda-box">
-    <div class="bloco-agenda-label">Bloco semanal na agenda</div>
-    <div class="bloco-agenda-txt" id="bloco-txt">—</div>
+  <div class="crono-box">
+    <div class="crono-label">Cronograma · primeiros 3 meses pós-Intentia</div>
+    <h3>O que acontece quando</h3>
+    <div class="crono-linha"><span class="crono-tag">Mês 1</span><span>Rotina semanal de mensagens ao accountability (aos domingos). 1ª participação na comunidade. Sistema roda.</span></div>
+    <div class="crono-linha"><span class="crono-tag">Mês 2</span><span>Revisão do sistema — sinal para adaptativo profundo? Se sim, acionar <b>referência</b>. Se não, mantém.</span></div>
+    <div class="crono-linha"><span class="crono-tag">Mês 3</span><span>Reavaliação maior: os 3 movimentos ainda servem à direção? Próximo ciclo Intentia (novos hábitos, próxima competência)?</span></div>
   </div>
 
   <div class="fechamento">
-    <h2>Como sustentar o ciclo nas 3 semanas</h2>
-    <p><b>Bloco 1</b> é a mais difícil. O primeiro Desafio é sempre desconfortável — a competência ainda é fraca e a evidência aparece. Dweck: é aqui que o mindset fixo tenta convencer você a desistir ("não é para mim"). Fique. O ciclo <em>precisa</em> desse desconforto — sem ele, você não está no limite, e sem limite não há crescimento.</p>
-    <p><b>Bloco 2-3</b> o padrão de crítica se repete. Se você recebeu 3x "falta concretude" ou "está longo demais" ou "não está claro no início", <em>esse é seu ajuste central</em>. Não tente corrigir tudo — corrija o padrão. O 1 ajuste bem feito supera 5 ajustes dispersos.</p>
-    <p><b>Etapa 21:</b> não julgue a competência ("melhorei?"). Julgue o <b>ciclo</b>: fiz os 3 Desafios? recebi Feedback nomeado nas 3 vezes? registrei os Ajustes? Se sim, a competência subiu (mesmo que você não sinta). Se não, o problema não foi você — foi o desenho do ciclo. Refaça o desenho, não a autocrítica.</p>
+    <h2>Como manter a rede viva nos próximos meses</h2>
+    <p><b>A pessoa de accountability é a mais frágil</b> — porque depende do outro. Se ela responder pouco/tarde nas primeiras 2 semanas, converse abertamente: "está funcionando para você? quer ajustar o formato?" Melhor recalibrar cedo do que sistema silencioso de meses.</p>
+    <p><b>A comunidade sustenta identidade lentamente.</b> Não é resultado imediato — é acúmulo. Depois de 3-6 meses de presença regular, você começa a receber convites e conversas do território sem precisar buscar. É o efeito Ibarra de "rede Pessoal" bem cultivada.</p>
+    <p><b>A referência é seguro, não uso rotineiro.</b> Se você chega ao mês 3 sem ter acionado o profissional pré-nomeado, ótimo — não precisou. Mas se em algum ponto o sinal da Etapa 18 chegar, aja com rapidez (o adiamento é o principal custo).</p>
   </div>
 
   <div class="proximo">
     <div class="proximo-eyebrow">Amanhã · Etapa 20</div>
-    <h3>Energia e prioridades — o que sustenta o ritmo</h3>
-    <p>Schwartz/McCarthy + Bruch/Ghoshal: gerir energia (não tempo) e agir com foco (não com atividade). Como o ciclo D·F·A não consome — se energia e prioridade estiverem certas.</p>
+    <h3>Próximo horizonte — 6-12 meses</h3>
+    <p>A direção da Etapa 7 é para 6-12 meses. Amanhã: reavaliação — o que foi cumprido, o que muda, qual é o próximo horizonte. Preparação para o próximo ciclo Intentia dentro de 3-4 meses.</p>
     <a href="../Dia 20/index.html" class="proximo-cta">Ir para a Etapa 20 <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></a>
   </div>
 <!--intentia-dayend:start--><style>
@@ -229,48 +143,21 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 10px 24px rgba(255,104,66,.3);transition:transform .2s,box-shadow .2s}
 .intday .intday-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,104,66,.4)}
 @media(max-width:600px){.intday{padding:26px 22px}.intday h3{font-size:19px}}
-</style><div class="intday"><div class="intday-eyebrow">A jornada continua</div><h3>Amanhã: Etapa 20 — Energia e prioridades.</h3><p>Você concluiu a Etapa 19. Quando estiver pronto, dê o próximo passo da travessia.</p><a class="intday-cta" href="../Dia 20/index.html">Ir para a Etapa 20 →</a></div><!--intentia-dayend:end-->
+</style><div class="intday"><div class="intday-eyebrow">A jornada continua</div><h3>Amanhã: Etapa 20 — Próximo horizonte — os 90 dias que vêm.</h3><p>Você concluiu a Etapa 19. Quando estiver pronto, dê o próximo passo da travessia.</p><a class="intday-cta" href="../Dia 20/index.html">Ir para a Etapa 20 →</a></div><!--intentia-dayend:end-->
 </main>
-<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 19 · Ciclo D·F·A</div></footer>
-
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 19 · Rede de suporte</div></footer>
 <script>
-  const DEMO = {
-    competencia:'escrever artigo técnico curto (800 palavras) sobre IA aplicada a decisão em risco',
-    porQue:'se eu consigo escrever com clareza sobre esse tema, tudo mais da presença externa fica mais fácil — palestras nascem de artigos, convites nascem de artigos.',
-    desafio:'escrever 1 artigo de 800 palavras por semana sobre um caso real da minha rotina — publicar no LinkedIn até domingo à noite',
-    feedback:'enviar rascunho para Ana (par técnico) e Bruno (leitor externo não-técnico) antes de publicar — pedir 1 crítica concreta cada em até 24h',
-    ajuste:'doc "ciclo-artigos.md" no Obsidian — 3 linhas por semana: crítica principal recebida / meu ajuste concreto na próxima / padrão que já percebi em mim',
-    dataInicio:'2026-07-23',
-    data21:'2026-08-13',
-    blocoAgenda:'quinta-feira 07h-08h30, no escritório, sem celular na mesa'
-  };
-  function formatarData(iso) {
-    if (!iso) return '—';
-    try {
-      const [ano, mes, dia] = iso.split('-');
-      const meses = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
-      return dia + ' ' + meses[parseInt(mes)-1] + ' ' + ano;
-    } catch(e) { return iso; }
-  }
+  const DEMO = { pessoa:'Beatriz — ex-chefe/mentora dos meus 5 primeiros anos no banco', formato:'mensagem WhatsApp aos domingos 20h — 3 linhas (o que aconteceu, o que não, próxima ação)', comunidade:'grupo de estudos de dados aplicados — encontro online quinzenal (terças 20h)', referencia:'(1) Coach Marina — atende profissionais do banco — WhatsApp XXX; (2) Mentor Pedro — fintech advisor — LinkedIn; critério para acionar: se mesmo padrão adaptativo por 4 semanas seguidas', convite:'Bia, tudo bem?\n\nEstou fechando 28 dias de um plano de carreira e queria te pedir uma coisa: você me ajudaria como accountability semanal? Formato baixo: mensagem minha aos domingos 20h com 3 linhas (o que fiz, o que não fiz, próxima ação); você responde durante a semana com 1 comentário se quiser. 3 meses.\n\nAceita?', quando:'agora, ao terminar essa missão' };
   const raw = sessionStorage.getItem('intentia-dia19');
   let d, demo = false;
-  try { const p = raw ? JSON.parse(raw) : null; if (p && p.competencia) d = p; else { d = DEMO; demo = true; } } catch(e){ d = DEMO; demo = true; }
+  try { const p = raw ? JSON.parse(raw) : null; if (p && p.pessoa) d = p; else { d = DEMO; demo = true; } } catch(e){ d = DEMO; demo = true; }
   if (demo) document.getElementById('aviso-demo').style.display = 'flex';
-  function setText(id, val) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    if (!val || !val.toString().trim()) { el.textContent = '—'; el.classList.add('vazio','vazia'); return; }
-    el.textContent = val;
-    el.classList.remove('vazio','vazia');
-  }
-  setText('competencia-txt', d.competencia);
-  setText('por-que-txt', d.porQue);
-  setText('desafio-txt', d.desafio);
-  setText('feedback-txt', d.feedback);
-  setText('ajuste-txt', d.ajuste);
-  document.getElementById('data-inicio-txt').textContent = formatarData(d.dataInicio);
-  document.getElementById('data-21-txt').textContent = formatarData(d.data21);
-  setText('bloco-txt', d.blocoAgenda);
+  function setText(id, val) { const el = document.getElementById(id); if (!el) return; if (!val || !val.toString().trim()) { el.textContent = '—'; el.classList.add('vazio','vazia'); return; } el.textContent = val; el.classList.remove('vazio','vazia'); }
+  setText('pessoa-txt', d.pessoa);
+  setText('formato-txt', d.formato);
+  setText('comunidade-txt', d.comunidade);
+  setText('referencia-txt', d.referencia);
+  setText('convite-txt', d.convite);
+  setText('quando-txt', d.quando);
 </script>
-</body>
-</html>
+</body></html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 11 · Missão — Refazer com antídoto</title>
+<title>Intentia · Etapa 11 · Missão — Preparar 1 pedido</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -29,58 +29,30 @@
   .progresso-bar{background:var(--verde-100);height:6px;border-radius:3px;overflow:hidden}
   .progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}
   .progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}
-  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px;font-size:13.5px;line-height:1.55}
-  .aviso-demo-icone{color:var(--coral);font-size:18px;flex-shrink:0;margin-top:1px}
-  .aviso-demo b{color:var(--verde-900)}
-  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
-  .lembrete{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 20px;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
-  .lembrete b{color:var(--verde-900);font-weight:600}
-
-  .antidoto{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
-  .antidoto-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px}
-  .antidoto-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
-  .antidoto-titulo{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.2;margin-bottom:3px}
-  .antidoto-sub{font-size:13px;opacity:.92;font-style:italic}
-  .antidoto-corpo{padding:22px 28px 24px}
-  .antidoto-pergunta{background:var(--creme);border-left:3px solid var(--verde-700);padding:14px 18px;border-radius:0 8px 8px 0;font-family:var(--serif);font-size:15.5px;font-style:italic;color:var(--verde-900);margin-bottom:18px}
-
-  .checagem-eus{display:grid;gap:12px}
-  @media (min-width:600px){.checagem-eus{grid-template-columns:1fr 1fr 1fr}}
-  .checagem-eu{background:var(--creme);padding:14px;border-radius:10px;border-top:3px solid var(--verde-500)}
-  .checagem-eu.continuacao{border-top-color:#336B62}
-  .checagem-eu.adjacencia{border-top-color:#E85530}
-  .checagem-eu.reinvencao{border-top-color:#5F4E8C}
-  .checagem-nome{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--verde-900);margin-bottom:8px}
-  .checagem-opcoes{display:flex;gap:6px;margin-bottom:8px}
-  .checagem-op{flex:1;background:#fff;border:1.5px solid var(--verde-100);border-radius:8px;padding:6px 8px;text-align:center;font-size:11.5px;font-weight:600;color:var(--tinta-suave);cursor:pointer;transition:all .15s;user-select:none;line-height:1.2}
-  .checagem-op:hover{border-color:var(--verde-500)}
-  .checagem-op.sim{}
-  .checagem-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
-  .checagem-textarea{width:100%;padding:8px 10px;border:1.5px solid var(--verde-100);border-radius:6px;font-family:var(--sans);font-size:12.5px;color:var(--tinta);background:#fff;resize:vertical;min-height:44px;line-height:1.45}
-  .checagem-textarea:focus{outline:none;border-color:var(--coral)}
-
-  .maximizador{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .maximizador-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px}
-  .maximizador-num{width:34px;height:34px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
-  .maximizador-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
-  .maximizador-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
-  .max-radio{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-  @media (max-width:500px){.max-radio{grid-template-columns:1fr}}
-  .max-op{background:#fff;border:1.5px solid var(--verde-100);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all .2s;user-select:none}
-  .max-op:hover{border-color:var(--verde-500)}
-  .max-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
-  .max-op b{font-family:var(--serif);display:block;margin-bottom:3px;font-size:14.5px}
-  .max-op span{font-size:12px}
-
-  .final{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .final-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
-  .final-num{width:34px;height:34px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
-  .final-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
-  .final-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
-  .final-textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14.5px;color:var(--tinta);background:#fff;transition:border-color .2s;resize:vertical;min-height:70px;line-height:1.5;margin-top:8px}
-  .final-textarea:focus{outline:none;border-color:var(--coral)}
-  .dica{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-top:8px;padding-left:12px;border-left:2px solid var(--verde-500)}
-
+  .direcao-recap{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);padding:14px 20px;border-radius:0 10px 10px 0;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
+  .direcao-recap b{color:var(--verde-900);font-family:var(--serif);font-style:italic;font-weight:500}
+  .etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:18px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
+  .etapa-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:20px 26px;display:flex;align-items:center;gap:14px}
+  .etapa-num{width:38px;height:38px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;font-weight:600;flex-shrink:0}
+  .etapa-titulo{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.2;margin-bottom:3px}
+  .etapa-sub{font-size:12.5px;opacity:.92;font-style:italic}
+  .etapa-corpo{padding:22px 26px 24px}
+  .etapa-corpo p.instrucao{font-size:13.5px;color:var(--tinta-suave);line-height:1.55;margin-bottom:12px}
+  label{display:block;font-size:12.5px;font-weight:600;color:var(--verde-700);margin-bottom:6px;letter-spacing:.02em;text-transform:uppercase;margin-top:14px}
+  label:first-child{margin-top:0}
+  label small{color:var(--tinta-suave);font-weight:500;text-transform:none;letter-spacing:0;font-size:12px;margin-left:6px;font-style:italic}
+  input[type="text"],textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14px;color:var(--tinta);background:#fff;transition:border-color .2s;line-height:1.5}
+  textarea{resize:vertical;min-height:80px}
+  input[type="text"]:focus,textarea:focus{outline:none;border-color:var(--coral)}
+  .tipo-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:8px;margin-top:6px}
+  @media (max-width:520px){.tipo-grid{grid-template-columns:repeat(2, 1fr)}}
+  .tipo-op{background:#fff;border:1.5px solid var(--verde-100);border-radius:8px;padding:10px 8px;text-align:center;cursor:pointer;transition:all .15s;user-select:none;font-size:12.5px;font-weight:600;color:var(--tinta-suave);line-height:1.2}
+  .tipo-op:hover{border-color:var(--verde-500)}
+  .tipo-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
+  .mensagem-final{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:22px 26px;margin-bottom:18px}
+  .mensagem-final-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:8px}
+  .mensagem-final h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:8px;font-weight:600}
+  .mensagem-final p{font-size:14px;color:var(--tinta);line-height:1.6;margin-bottom:10px}
   .concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}
   .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px}
   .concluir p{font-size:14.5px;opacity:.92;margin-bottom:22px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
@@ -88,7 +60,6 @@
   .btn-concluir:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
   .btn-concluir .icone{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
   .btn-concluir .icone svg{width:14px;height:14px;fill:currentColor}
-
   footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
   footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
 </style>
@@ -207,282 +178,162 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 })();
 </script><!--intentia-nav:end-->
 
-
 <header>
   <div class="hero-inner">
     <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 11</a>
     <div class="eyebrow">Missão · Etapa 11 · Bloco 2</div>
-    <h1>Refazer o placar com <span class="grifo">antídoto</span>.</h1>
-    <p class="lede">Três perguntas — uma por armadilha — aplicadas aos 3 Eus. Ver se alguma nota da Etapa 10 muda quando o viés é neutralizado.</p>
+    <h1>Preparar <span class="grifo">1 pedido</span> com os 3 pilares.</h1>
+    <p class="lede">Escolha 1 pedido real da sua direção. Prepare Credibilidade, Prova e Ressonância. Escreva a mensagem final. Envie esta semana.</p>
     <div class="missao-meta">
-      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 15 min</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 18 min</span>
       <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
     </div>
   </div>
   <div class="arc"></div>
 </header>
-
 <main>
   <div class="progresso">
     <div class="progresso-info">
       <div class="progresso-titulo">Seu preenchimento</div>
       <div class="progresso-bar"><div class="progresso-fill" id="progresso-fill"></div></div>
     </div>
-    <div class="progresso-num" id="progresso-num">0/5</div>
+    <div class="progresso-num" id="progresso-num">0/7</div>
   </div>
 
-  <div id="aviso-demo" class="aviso-demo" style="display:none">
-    <div class="aviso-demo-icone">◆</div>
-    <div><b>Você ainda não preencheu as missões anteriores.</b> Os "recaps" estão em modo demonstrativo. <a href="../Dia 10/missao.html">Ir para a Etapa 10 →</a></div>
+  <div class="direcao-recap">
+    <b id="direcao-txt">—</b>
+    <span style="font-size:12px;color:var(--tinta-suave);display:block;margin-top:6px;font-style:italic">← sua direção da Etapa 7. O pedido preparado abaixo tem que servir a ela.</span>
   </div>
 
-  <div class="lembrete">
-    <b>Como responder:</b> para cada antídoto, marque em cada Eu se a resposta é <b>Sim</b> (a nota estava alta pela armadilha) ou <b>Não</b> (a nota se mantém). Onde marcar Sim, anote 1 frase do que muda.
-  </div>
-
-  <!-- ANCORAGEM -->
-  <section class="antidoto">
-    <div class="antidoto-header">
-      <div class="antidoto-letra">A</div>
-      <div>
-        <div class="antidoto-titulo">Antídoto: Ancoragem</div>
-        <div class="antidoto-sub">"a primeira opção pesa demais na comparação"</div>
+  <!-- ETAPA 1: O pedido -->
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">1</div><div><div class="etapa-titulo">Escolha o pedido</div><div class="etapa-sub">3 min · real, executável, ligado à direção</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Um pedido específico, executável nas <b>próximas 2 semanas</b>, ligado à sua direção. Não é hipotético — é real.</p>
+      <label>Tipo do pedido</label>
+      <div class="tipo-grid" data-campo="tipo">
+        <div class="tipo-op" data-v="apresentacao">Apresentação</div>
+        <div class="tipo-op" data-v="convite">Convite</div>
+        <div class="tipo-op" data-v="indicacao">Indicação</div>
+        <div class="tipo-op" data-v="colaboracao">Colaboração</div>
+        <div class="tipo-op" data-v="feedback">Feedback</div>
+        <div class="tipo-op" data-v="entrevista">Entrevista informal</div>
       </div>
-    </div>
-    <div class="antidoto-corpo">
-      <div class="antidoto-pergunta">"Se eu tivesse imaginado esse Eu <em>primeiro</em>, ele ficaria melhor colocado no placar?"</div>
-      <div class="checagem-eus">
-        <div class="checagem-eu continuacao">
-          <div class="checagem-nome">Eu-Continuação</div>
-          <div class="checagem-opcoes" data-eu="cont" data-arm="anc">
-            <div class="checagem-op sim" data-r="sim">Sim, mudaria</div>
-            <div class="checagem-op" data-r="nao">Não, se mantém</div>
-          </div>
-          <textarea id="cont-anc-nota" class="checagem-textarea" placeholder="Se marcou Sim, o que muda?"></textarea>
-        </div>
-        <div class="checagem-eu adjacencia">
-          <div class="checagem-nome">Eu-Adjacência</div>
-          <div class="checagem-opcoes" data-eu="adj" data-arm="anc">
-            <div class="checagem-op sim" data-r="sim">Sim, mudaria</div>
-            <div class="checagem-op" data-r="nao">Não, se mantém</div>
-          </div>
-          <textarea id="adj-anc-nota" class="checagem-textarea"></textarea>
-        </div>
-        <div class="checagem-eu reinvencao">
-          <div class="checagem-nome">Eu-Reinvenção</div>
-          <div class="checagem-opcoes" data-eu="rei" data-arm="anc">
-            <div class="checagem-op sim" data-r="sim">Sim, mudaria</div>
-            <div class="checagem-op" data-r="nao">Não, se mantém</div>
-          </div>
-          <textarea id="rei-anc-nota" class="checagem-textarea"></textarea>
-        </div>
-      </div>
+      <label>O que exatamente você vai pedir? <small>1-2 frases · específico, sem vagueza</small></label>
+      <textarea id="pedido" placeholder="ex.: convite para palestrar 20 min sobre auditabilidade de IA num evento de fintechs no próximo trimestre"></textarea>
     </div>
   </section>
 
-  <!-- CUSTO AFUNDADO -->
-  <section class="antidoto">
-    <div class="antidoto-header">
-      <div class="antidoto-letra">C</div>
-      <div>
-        <div class="antidoto-titulo">Antídoto: Custo Afundado</div>
-        <div class="antidoto-sub">"o que já investi trava minha decisão futura"</div>
-      </div>
-    </div>
-    <div class="antidoto-corpo">
-      <div class="antidoto-pergunta">"Se eu estivesse decidindo <em>pela primeira vez</em>, sem histórico, ainda daria essa nota a esse Eu?"</div>
-      <div class="checagem-eus">
-        <div class="checagem-eu continuacao">
-          <div class="checagem-nome">Eu-Continuação</div>
-          <div class="checagem-opcoes" data-eu="cont" data-arm="cus">
-            <div class="checagem-op sim" data-r="sim">Não, daria outra</div>
-            <div class="checagem-op" data-r="nao">Sim, mantém</div>
-          </div>
-          <textarea id="cont-cus-nota" class="checagem-textarea" placeholder="Se marcou Não, o que muda?"></textarea>
-        </div>
-        <div class="checagem-eu adjacencia">
-          <div class="checagem-nome">Eu-Adjacência</div>
-          <div class="checagem-opcoes" data-eu="adj" data-arm="cus">
-            <div class="checagem-op sim" data-r="sim">Não, daria outra</div>
-            <div class="checagem-op" data-r="nao">Sim, mantém</div>
-          </div>
-          <textarea id="adj-cus-nota" class="checagem-textarea"></textarea>
-        </div>
-        <div class="checagem-eu reinvencao">
-          <div class="checagem-nome">Eu-Reinvenção</div>
-          <div class="checagem-opcoes" data-eu="rei" data-arm="cus">
-            <div class="checagem-op sim" data-r="sim">Não, daria outra</div>
-            <div class="checagem-op" data-r="nao">Sim, mantém</div>
-          </div>
-          <textarea id="rei-cus-nota" class="checagem-textarea"></textarea>
-        </div>
-      </div>
+  <!-- ETAPA 2: A quem -->
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">2</div><div><div class="etapa-titulo">Definir a quem</div><div class="etapa-sub">2 min · nome real, não categoria</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Se você não sabe o nome, o pedido ainda é abstrato. Pesquise antes.</p>
+      <label>Nome da pessoa <small>específico</small></label>
+      <input type="text" id="pessoa" placeholder="ex.: Marina Chen, curadora do Fintech Summit BR">
+      <label>Contexto dela <small>cargo/organização/relação com você (se houver)</small></label>
+      <input type="text" id="contexto" placeholder="ex.: curadora do maior evento de fintechs do país; conheci em conversa no LinkedIn há 3 meses">
     </div>
   </section>
 
-  <!-- STATUS QUO -->
-  <section class="antidoto">
-    <div class="antidoto-header">
-      <div class="antidoto-letra">S</div>
-      <div>
-        <div class="antidoto-titulo">Antídoto: Status Quo</div>
-        <div class="antidoto-sub">"o conhecido pesa mais que o desconhecido, sempre"</div>
-      </div>
-    </div>
-    <div class="antidoto-corpo">
-      <div class="antidoto-pergunta">"Se eu <em>já estivesse vivendo</em> esse Eu, escolheria voltar para minha situação atual?"</div>
-      <div class="checagem-eus">
-        <div class="checagem-eu continuacao">
-          <div class="checagem-nome">Eu-Continuação</div>
-          <div class="checagem-opcoes" data-eu="cont" data-arm="sta">
-            <div class="checagem-op sim" data-r="sim">Não voltaria</div>
-            <div class="checagem-op" data-r="nao">Voltaria sim</div>
-          </div>
-          <textarea id="cont-sta-nota" class="checagem-textarea" placeholder="Se marcou Não voltaria, o que muda?"></textarea>
-        </div>
-        <div class="checagem-eu adjacencia">
-          <div class="checagem-nome">Eu-Adjacência</div>
-          <div class="checagem-opcoes" data-eu="adj" data-arm="sta">
-            <div class="checagem-op sim" data-r="sim">Não voltaria</div>
-            <div class="checagem-op" data-r="nao">Voltaria sim</div>
-          </div>
-          <textarea id="adj-sta-nota" class="checagem-textarea"></textarea>
-        </div>
-        <div class="checagem-eu reinvencao">
-          <div class="checagem-nome">Eu-Reinvenção</div>
-          <div class="checagem-opcoes" data-eu="rei" data-arm="sta">
-            <div class="checagem-op sim" data-r="sim">Não voltaria</div>
-            <div class="checagem-op" data-r="nao">Voltaria sim</div>
-          </div>
-          <textarea id="rei-sta-nota" class="checagem-textarea"></textarea>
-        </div>
-      </div>
+  <!-- ETAPA 3: Credibilidade -->
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">3</div><div><div class="etapa-titulo">Pilar C — Credibilidade</div><div class="etapa-sub">4 min · "por que ouvir você agora?"</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Uma frase (2-3 linhas) que responde <b>por que ouvir você agora</b> com <b>evidência concreta</b>. Cargo, tempo, entrega recente, mensurável. Não use adjetivo genérico.</p>
+      <label>Sua âncora de credibilidade <small>específica, mensurável</small></label>
+      <textarea id="credibilidade" placeholder="ex.: sou analista sênior de risco em banco médio, comecei a publicar sobre IA aplicada há 6 meses — 3 artigos com 500+ leitores cada, 1 palestra em evento menor já confirmada"></textarea>
     </div>
   </section>
 
-  <!-- MAXIMIZADOR OU BOM-O-SUFICIENTE -->
-  <section class="maximizador">
-    <div class="maximizador-header">
-      <div class="maximizador-num">?</div>
-      <div>
-        <div class="maximizador-titulo">Você é maximizador ou bom-o-suficiente?</div>
-        <div class="maximizador-desc">Não existe resposta certa — mas existe padrão. Parker mostra que <b>a mentalidade que você aplica à decisão</b> muda tanto o resultado quanto a satisfação com ele.</div>
-      </div>
-    </div>
-    <div class="max-radio" data-eu="perfil">
-      <div class="max-op" data-r="max"><b>Maximizador</b><span>Quero comparar tudo até encontrar a melhor opção; adio até ter certeza.</span></div>
-      <div class="max-op" data-r="bom"><b>Bom-o-suficiente</b><span>Se passa nos critérios mínimos, escolho e sigo — comparação infinita me esgota.</span></div>
+  <!-- ETAPA 4: Prova -->
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">4</div><div><div class="etapa-titulo">Pilar P — Prova</div><div class="etapa-sub">4 min · o que sustenta o que você diz</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Links, docs, dados, depoimentos que sustentam sua credibilidade. 1-2 fortes valem mais que 5 fracos. Prova concreta > adjetivos.</p>
+      <label>Provas concretas <small>o que você anexa/cita como evidência</small></label>
+      <textarea id="prova" placeholder="ex.: link do artigo mais lido + gravação da palestra menor + métrica de leitores"></textarea>
     </div>
   </section>
 
-  <!-- INSIGHT FINAL -->
-  <section class="final">
-    <div class="final-header">
-      <div class="final-num">✎</div>
-      <div>
-        <div class="final-titulo">Qual armadilha te afetou mais?</div>
-        <div class="final-desc">A que gerou mais "Sim" no exercício. Ou a que gerou o "Sim" mais desconfortável. Anote — vai voltar amanhã com o teste de propósito.</div>
-      </div>
+  <!-- ETAPA 5: Ressonância -->
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">5</div><div><div class="etapa-titulo">Pilar R — Ressonância</div><div class="etapa-sub">4 min · "por que isso importa para o outro?"</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Uma frase que responde <b>por que isso importa para a pessoa que decide</b> — não é o que você quer; é o que <em>ela</em> ganha ao dizer sim. Cite algo específico dela ou do contexto dela.</p>
+      <label>Sua ligação de ressonância <small>específica ao contexto dela, não genérica</small></label>
+      <textarea id="ressonancia" placeholder="ex.: vi que o evento tem uma seção sobre uso responsável de IA — meu enfoque em auditabilidade de modelos casa exatamente com o tema, e traz um ângulo que ainda não vi coberto no line-up"></textarea>
     </div>
-    <textarea id="insight" class="final-textarea" placeholder="ex.: Status Quo apareceu forte no Eu-Reinvenção; percebi que estava inflando o custo da mudança e minimizando o custo de permanecer"></textarea>
-    <p class="dica">Se nenhuma armadilha te afetou, escreva "nenhuma me tocou hoje" — e siga. Nem todo dia gera revisão.</p>
+  </section>
+
+  <!-- ETAPA 6: Mensagem final -->
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">6</div><div><div class="etapa-titulo">A mensagem preparada</div><div class="etapa-sub">1 min · junte os 3 pilares em 5-10 linhas</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Junte Credibilidade + Prova + Ressonância + Pedido específico numa mensagem curta. É o que você vai enviar.</p>
+      <label>Mensagem final</label>
+      <textarea id="mensagem" rows="6" placeholder="ex.: Marina, boa tarde. Sou analista sênior de risco em banco médio; nos últimos 6 meses publiquei 3 artigos sobre IA aplicada a decisão (link) e falei em 1 evento menor (gravação). Vi que o Fintech Summit tem seção sobre uso responsável de IA — meu enfoque em auditabilidade de modelos casa com o tema e cobre um ângulo que ainda não vi no line-up. Posso submeter um resumo de 20 min para sua consideração?"></textarea>
+    </div>
   </section>
 
   <div class="concluir">
-    <h3>Terminou com os antídotos?</h3>
-    <p>O material da Etapa 11 vai mostrar sua "leitura corrigida" — quais Eus tiveram nota inflada por viés e como o mapa fica sem essas distorções.</p>
-    <a href="material.html" class="btn-concluir" id="btn-concluir">
-      Ver Leitura Corrigida
-      <span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
-    </a>
+    <h3>Terminou a preparação?</h3>
+    <p>O material da Etapa 11 consolida seu pedido preparado — visualiza os 3 pilares e a mensagem final. Envie esta semana; volte a essa página se quiser preparar outro pedido depois.</p>
+    <a href="material.html" class="btn-concluir" id="btn-concluir">Ver seu pedido preparado<span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span></a>
   </div>
 </main>
 
-<footer>
-  <div class="assinatura">Do reagir ao conduzir.</div>
-  <div>Etapa 11 · Missão — Refazer com antídoto</div>
-</footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 11 · Missão — Preparar 1 pedido</div></footer>
 
 <script>
-  const respostas = { cont:{anc:'', cus:'', sta:''}, adj:{anc:'', cus:'', sta:''}, rei:{anc:'', cus:'', sta:''}, perfil:'' };
-
-  document.querySelectorAll('.checagem-opcoes').forEach(grid => {
-    const eu = grid.dataset.eu, arm = grid.dataset.arm;
-    grid.querySelectorAll('.checagem-op').forEach(op => {
-      op.addEventListener('click', () => {
-        grid.querySelectorAll('.checagem-op').forEach(x => x.classList.remove('selecionada'));
-        op.classList.add('selecionada');
-        respostas[eu][arm] = op.dataset.r;
-        atualizarProgresso();
-      });
-    });
-  });
-
-  document.querySelectorAll('.max-radio .max-op').forEach(op => {
+  let tipo = '';
+  document.querySelectorAll('.tipo-grid .tipo-op').forEach(op => {
     op.addEventListener('click', () => {
-      document.querySelectorAll('.max-radio .max-op').forEach(x => x.classList.remove('selecionada'));
+      document.querySelectorAll('.tipo-grid .tipo-op').forEach(x => x.classList.remove('selecionada'));
       op.classList.add('selecionada');
-      respostas.perfil = op.dataset.r;
-      atualizarProgresso();
+      tipo = op.dataset.v;
+      atualizar();
     });
   });
 
-  function atualizarProgresso() {
+  const CAMPOS = ['pedido','pessoa','credibilidade','prova','ressonancia','mensagem'];
+
+  function atualizar() {
     let pontos = 0;
-    // 3 armadilhas x 3 eus = 9 respostas possíveis, mas contamos como 3 pontos (1 por armadilha completa)
-    ['anc','cus','sta'].forEach(arm => {
-      const preenchidos = ['cont','adj','rei'].filter(eu => respostas[eu][arm]).length;
-      if (preenchidos === 3) pontos++;
-    });
-    if (respostas.perfil) pontos++;
-    if (document.getElementById('insight').value.trim().length > 0) pontos++;
-    document.getElementById('progresso-num').textContent = pontos + '/5';
-    document.getElementById('progresso-fill').style.width = (pontos/5*100) + '%';
+    if (tipo) pontos++;
+    CAMPOS.forEach(id => { if (document.getElementById(id).value.trim()) pontos++; });
+    document.getElementById('progresso-num').textContent = pontos + '/7';
+    document.getElementById('progresso-fill').style.width = (pontos/7*100) + '%';
   }
+  CAMPOS.forEach(id => document.getElementById(id).addEventListener('input', atualizar));
+  document.getElementById('contexto').addEventListener('input', atualizar);
 
-  document.getElementById('insight').addEventListener('input', atualizarProgresso);
-
-  // Puxar dias anteriores
-  function pega(key) {
+  (function(){
     try {
-      const s = sessionStorage.getItem(key);
-      if (s) return JSON.parse(s);
-    } catch(e) {}
-    return null;
-  }
-
-  const dia10 = pega('intentia-dia10');
-  const dia8 = pega('intentia-dia8');
-  if (!dia8 || !dia10) document.getElementById('aviso-demo').style.display = 'flex';
+      const s = sessionStorage.getItem('intentia-dia7');
+      if (s) { const p = JSON.parse(s); if (p && p.escolhaFrase) { document.getElementById('direcao-txt').textContent = p.escolhaFrase; return; } }
+    } catch(e){}
+    document.getElementById('direcao-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo)';
+  })();
 
   document.getElementById('btn-concluir').addEventListener('click', () => {
     try {
       sessionStorage.setItem('intentia-dia11', JSON.stringify({
         dataConclusao: new Date().toISOString(),
-        continuacao: {
-          ancoragem: {resposta: respostas.cont.anc, nota: document.getElementById('cont-anc-nota').value},
-          custo: {resposta: respostas.cont.cus, nota: document.getElementById('cont-cus-nota').value},
-          statusquo: {resposta: respostas.cont.sta, nota: document.getElementById('cont-sta-nota').value}
-        },
-        adjacencia: {
-          ancoragem: {resposta: respostas.adj.anc, nota: document.getElementById('adj-anc-nota').value},
-          custo: {resposta: respostas.adj.cus, nota: document.getElementById('adj-cus-nota').value},
-          statusquo: {resposta: respostas.adj.sta, nota: document.getElementById('adj-sta-nota').value}
-        },
-        reinvencao: {
-          ancoragem: {resposta: respostas.rei.anc, nota: document.getElementById('rei-anc-nota').value},
-          custo: {resposta: respostas.rei.cus, nota: document.getElementById('rei-cus-nota').value},
-          statusquo: {resposta: respostas.rei.sta, nota: document.getElementById('rei-sta-nota').value}
-        },
-        perfilDecisao: respostas.perfil,
-        insight: document.getElementById('insight').value
+        tipo: tipo,
+        pedido: document.getElementById('pedido').value,
+        pessoa: document.getElementById('pessoa').value,
+        contexto: document.getElementById('contexto').value,
+        credibilidade: document.getElementById('credibilidade').value,
+        prova: document.getElementById('prova').value,
+        ressonancia: document.getElementById('ressonancia').value,
+        mensagem: document.getElementById('mensagem').value
       }));
     } catch(e) {}
   });
 
-  atualizarProgresso();
+  atualizar();
 </script>
-
 <!--intentia-save:start--><style>
 .intentia-fab{position:fixed;right:16px;bottom:16px;z-index:9998;display:inline-flex;align-items:center;gap:8px;
   background:#275750;color:#fff;border:none;border-radius:999px;padding:13px 20px;font-family:'Hanken Grotesk',-apple-system,sans-serif;

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 13 · Missão — Três movimentos essencialistas</title>
+<title>Intentia · Etapa 13 · Missão — 1 ritual + 1 prioridade</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -29,50 +29,34 @@
   .progresso-bar{background:var(--verde-100);height:6px;border-radius:3px;overflow:hidden}
   .progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}
   .progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}
-  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px;font-size:13.5px;line-height:1.55}
-  .aviso-demo-icone{color:var(--coral);font-size:18px;flex-shrink:0;margin-top:1px}
-  .aviso-demo b{color:var(--verde-900)}
-  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
-  .lembrete{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 20px;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
-  .lembrete b{color:var(--verde-900);font-weight:600}
-
-  .eu-etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
-  .eu-etapa-header{color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px}
-  .eu-etapa.continuacao .eu-etapa-header{background:linear-gradient(135deg, #336B62 0%, #275750 100%)}
-  .eu-etapa.adjacencia .eu-etapa-header{background:linear-gradient(135deg, #FF7A57 0%, #E85530 100%)}
-  .eu-etapa.reinvencao .eu-etapa-header{background:linear-gradient(135deg, #8B7BB8 0%, #5F4E8C 100%)}
-  .eu-etapa-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
-  .eu-etapa-titulo{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.2;margin-bottom:3px}
-  .eu-etapa-sub{font-size:13px;opacity:.92;font-style:italic}
-  .eu-etapa-corpo{padding:22px 28px 24px}
-  .eu-recap{background:var(--creme);border-radius:10px;padding:14px 18px;margin-bottom:18px;font-size:13.5px;line-height:1.55;color:var(--tinta-suave)}
-  .eu-recap-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:5px}
-  .eu-recap b{color:var(--verde-900);font-weight:500;font-family:var(--serif);font-size:14.5px;font-style:italic}
-
-  .mov-bloco{margin-bottom:16px;padding:14px 16px;background:var(--creme);border-radius:10px;border-left:3px solid var(--verde-500)}
-  .mov-bloco:last-child{margin-bottom:0}
-  .mov-header{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-  .mov-letra{width:28px;height:28px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:14px;flex-shrink:0}
-  .mov-nome{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--verde-900)}
-  .mov-desc{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-bottom:8px;line-height:1.4}
-  .mov-textarea{width:100%;padding:9px 12px;border:1.5px solid var(--verde-100);border-radius:6px;font-family:var(--sans);font-size:13.5px;color:var(--tinta);background:#fff;transition:border-color .2s;resize:vertical;min-height:60px;line-height:1.5}
-  .mov-textarea:focus{outline:none;border-color:var(--coral)}
-  .checkbox-linha{margin-top:8px;display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--tinta-suave)}
-  .checkbox-linha input{cursor:pointer}
-
-  .placar-atrav{background:linear-gradient(135deg, var(--verde-700) 0%, var(--verde-900) 100%);color:#fff;padding:12px 18px;border-radius:10px;margin-top:14px;text-align:center;font-family:var(--serif);font-weight:600}
-  .placar-atrav .placar-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral-soft);margin-bottom:4px;font-family:var(--sans)}
-  .placar-atrav .placar-num{font-size:16px;line-height:1.1;text-transform:uppercase;letter-spacing:.05em}
-
-  .final{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .final-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
-  .final-num{width:34px;height:34px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
-  .final-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
-  .final-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
-  .final-textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14.5px;color:var(--tinta);background:#fff;transition:border-color .2s;resize:vertical;min-height:70px;line-height:1.5;margin-top:8px}
-  .final-textarea:focus{outline:none;border-color:var(--coral)}
-  .dica{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-top:8px;padding-left:12px;border-left:2px solid var(--verde-500)}
-
+  .direcao-recap{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);padding:14px 20px;border-radius:0 10px 10px 0;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
+  .direcao-recap b{color:var(--verde-900);font-family:var(--serif);font-style:italic;font-weight:500}
+  .etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:18px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
+  .etapa-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:20px 26px;display:flex;align-items:center;gap:14px}
+  .etapa-num{width:38px;height:38px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;font-weight:600;flex-shrink:0}
+  .etapa-titulo{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.2;margin-bottom:3px}
+  .etapa-sub{font-size:12.5px;opacity:.92;font-style:italic}
+  .etapa-corpo{padding:22px 26px 24px}
+  .etapa-corpo p.instrucao{font-size:13.5px;color:var(--tinta-suave);line-height:1.55;margin-bottom:12px}
+  label{display:block;font-size:12.5px;font-weight:600;color:var(--verde-700);margin-bottom:6px;letter-spacing:.02em;text-transform:uppercase;margin-top:14px}
+  label:first-child{margin-top:0}
+  label small{color:var(--tinta-suave);font-weight:500;text-transform:none;letter-spacing:0;font-size:12px;margin-left:6px;font-style:italic}
+  input[type="text"],textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14px;color:var(--tinta);background:#fff;transition:border-color .2s;line-height:1.5}
+  textarea{resize:vertical;min-height:70px}
+  input[type="text"]:focus,textarea:focus{outline:none;border-color:var(--coral)}
+  .dim-linha{background:#F0F5F2;border-radius:10px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;gap:12px}
+  .dim-info{flex:1}
+  .dim-nome{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--verde-900);margin-bottom:2px}
+  .dim-desc{font-size:12px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
+  .dim-notas{display:flex;gap:4px}
+  .dim-nota{width:32px;height:32px;background:#fff;border:1.5px solid var(--verde-100);border-radius:8px;text-align:center;cursor:pointer;transition:all .15s;font-family:var(--serif);font-size:14px;font-weight:600;color:var(--tinta-suave);display:flex;align-items:center;justify-content:center;user-select:none}
+  .dim-nota:hover{border-color:var(--verde-500)}
+  .dim-nota.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
+  .alvo-radio{display:grid;grid-template-columns:repeat(2, 1fr);gap:8px;margin-top:6px}
+  @media (max-width:520px){.alvo-radio{grid-template-columns:1fr}}
+  .alvo-op{background:#fff;border:1.5px solid var(--verde-100);border-radius:10px;padding:12px 14px;cursor:pointer;transition:all .2s;user-select:none;text-align:center;font-size:14px;font-weight:600;color:var(--tinta-suave)}
+  .alvo-op:hover{border-color:var(--verde-500)}
+  .alvo-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
   .concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}
   .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px}
   .concluir p{font-size:14.5px;opacity:.92;margin-bottom:22px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
@@ -80,7 +64,6 @@
   .btn-concluir:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
   .btn-concluir .icone{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
   .btn-concluir .icone svg{width:14px;height:14px;fill:currentColor}
-
   footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
   footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
 </style>
@@ -199,13 +182,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 })();
 </script><!--intentia-nav:end-->
 
-
 <header>
   <div class="hero-inner">
     <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 13</a>
     <div class="eyebrow">Missão · Etapa 13 · Bloco 2</div>
-    <h1>Três movimentos por <span class="grifo">Eu</span>.</h1>
-    <p class="lede">Subtrair, Concentrar, Automatizar. Para cada versão, nomeie concretamente. Se não conseguir nomear, marque isso — a versão ainda não é opção real.</p>
+    <h1>1 ritual + <span class="grifo">1 prioridade</span>.</h1>
+    <p class="lede">4 dimensões diagnosticadas. 1 dimensão-alvo. 1 ritual desenhado. 1 prioridade única. Tudo na agenda. Sinal claro do que cede primeiro.</p>
     <div class="missao-meta">
       <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 18 min</span>
       <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
@@ -213,215 +195,171 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   </div>
   <div class="arc"></div>
 </header>
-
 <main>
   <div class="progresso">
     <div class="progresso-info">
       <div class="progresso-titulo">Seu preenchimento</div>
       <div class="progresso-bar"><div class="progresso-fill" id="progresso-fill"></div></div>
     </div>
-    <div class="progresso-num" id="progresso-num">0/4</div>
+    <div class="progresso-num" id="progresso-num">0/6</div>
   </div>
 
-  <div id="aviso-demo" class="aviso-demo" style="display:none">
-    <div class="aviso-demo-icone">◆</div>
-    <div><b>Preencha os dias anteriores primeiro.</b> Sem eles, este exercício perde referência. <a href="../Dia 8/missao.html">Começar pela Etapa 8 →</a></div>
+  <div class="direcao-recap">
+    <b id="direcao-txt">—</b>
+    <span style="font-size:12px;color:var(--tinta-suave);display:block;margin-top:6px;font-style:italic">← sua direção da Etapa 7. Energia e prioridade servem a essa direção.</span>
   </div>
 
-  <div class="lembrete">
-    <b>Marque se não conseguir nomear:</b> se a resposta não vier em 2 minutos, é sinal — a versão ainda não amadureceu para virar decisão. Sem julgamento, só diagnóstico.
-  </div>
-
-  <!-- CONTINUAÇÃO -->
-  <section class="eu-etapa continuacao">
-    <div class="eu-etapa-header"><div class="eu-etapa-letra">C</div><div><div class="eu-etapa-titulo">Eu-Continuação</div><div class="eu-etapa-sub">Aplicar 3 movimentos</div></div></div>
-    <div class="eu-etapa-corpo">
-      <div class="eu-recap" id="recap-cont"><div class="eu-recap-label">Sua versão</div><b>—</b></div>
-
-      <div class="mov-bloco">
-        <div class="mov-header"><div class="mov-letra">S</div><div class="mov-nome">Subtrair</div></div>
-        <div class="mov-desc">Que 2-3 coisas concretas precisam sair da sua vida atual para essa versão caber?</div>
-        <textarea id="cont-sub" class="mov-textarea" placeholder="ex.: reduzir 4h/semana de tarefas administrativas do banco (delegar/automatizar), sair de 1 comitê que não soma"></textarea>
-        <label class="checkbox-linha"><input type="checkbox" data-eu="cont" data-vazio="sub"> Não consigo nomear (marque só se travou)</label>
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">1</div><div><div class="etapa-titulo">Diagnóstico · 4 dimensões</div><div class="etapa-sub">4 min · notas honestas de 1 a 5</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Nota honesta em cada dimensão. 1 = muito baixa, 5 = muito boa. Sem otimismo performático — o diagnóstico só serve se for real.</p>
+      <div class="dim-linha">
+        <div class="dim-info"><div class="dim-nome">Física</div><div class="dim-desc">sono, corpo, alimentação, movimento</div></div>
+        <div class="dim-notas" data-dim="fisica">
+          <div class="dim-nota" data-n="1">1</div><div class="dim-nota" data-n="2">2</div><div class="dim-nota" data-n="3">3</div><div class="dim-nota" data-n="4">4</div><div class="dim-nota" data-n="5">5</div>
+        </div>
       </div>
-
-      <div class="mov-bloco">
-        <div class="mov-header"><div class="mov-letra">C</div><div class="mov-nome">Concentrar</div></div>
-        <div class="mov-desc">Qual atividade dessa versão precisa ocupar sua faixa de pico?</div>
-        <textarea id="cont-conc" class="mov-textarea" placeholder="ex.: 2h da manhã de sábado, dedicadas 100% a escrever/publicar conteúdo"></textarea>
-        <label class="checkbox-linha"><input type="checkbox" data-eu="cont" data-vazio="conc"> Não consigo nomear</label>
+      <div class="dim-linha">
+        <div class="dim-info"><div class="dim-nome">Emocional</div><div class="dim-desc">regulação sob estresse, relações próximas</div></div>
+        <div class="dim-notas" data-dim="emocional">
+          <div class="dim-nota" data-n="1">1</div><div class="dim-nota" data-n="2">2</div><div class="dim-nota" data-n="3">3</div><div class="dim-nota" data-n="4">4</div><div class="dim-nota" data-n="5">5</div>
+        </div>
       </div>
-
-      <div class="mov-bloco">
-        <div class="mov-header"><div class="mov-letra">A</div><div class="mov-nome">Automatizar</div></div>
-        <div class="mov-desc">O que precisa rodar sem sua atenção diária?</div>
-        <textarea id="cont-auto" class="mov-textarea" placeholder="ex.: análise mensal do dashboard (script + template reduz de 8h para 2h)"></textarea>
-        <label class="checkbox-linha"><input type="checkbox" data-eu="cont" data-vazio="auto"> Não consigo nomear</label>
+      <div class="dim-linha">
+        <div class="dim-info"><div class="dim-nome">Mental</div><div class="dim-desc">foco profundo, ausência de fragmentação</div></div>
+        <div class="dim-notas" data-dim="mental">
+          <div class="dim-nota" data-n="1">1</div><div class="dim-nota" data-n="2">2</div><div class="dim-nota" data-n="3">3</div><div class="dim-nota" data-n="4">4</div><div class="dim-nota" data-n="5">5</div>
+        </div>
       </div>
-
-      <div class="placar-atrav"><div class="placar-label">Atravessabilidade · Continuação</div><div class="placar-num" id="atrav-cont">—</div></div>
+      <div class="dim-linha">
+        <div class="dim-info"><div class="dim-nome">Propósito</div><div class="dim-desc">conexão do trabalho com o que importa</div></div>
+        <div class="dim-notas" data-dim="proposito">
+          <div class="dim-nota" data-n="1">1</div><div class="dim-nota" data-n="2">2</div><div class="dim-nota" data-n="3">3</div><div class="dim-nota" data-n="4">4</div><div class="dim-nota" data-n="5">5</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ADJACÊNCIA -->
-  <section class="eu-etapa adjacencia">
-    <div class="eu-etapa-header"><div class="eu-etapa-letra">A</div><div><div class="eu-etapa-titulo">Eu-Adjacência</div><div class="eu-etapa-sub">Aplicar 3 movimentos</div></div></div>
-    <div class="eu-etapa-corpo">
-      <div class="eu-recap" id="recap-adj"><div class="eu-recap-label">Sua versão</div><b>—</b></div>
-
-      <div class="mov-bloco">
-        <div class="mov-header"><div class="mov-letra">S</div><div class="mov-nome">Subtrair</div></div>
-        <div class="mov-desc">O que precisa sair?</div>
-        <textarea id="adj-sub" class="mov-textarea"></textarea>
-        <label class="checkbox-linha"><input type="checkbox" data-eu="adj" data-vazio="sub"> Não consigo nomear</label>
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">2</div><div><div class="etapa-titulo">Dimensão-alvo</div><div class="etapa-sub">2 min · a mais fraca (ou a que mais afeta as outras)</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Escolha 1. A com nota mais baixa. Se empatar, a que <b>mais afeta as outras 3</b> quando está mal.</p>
+      <div class="alvo-radio" data-campo="alvo">
+        <div class="alvo-op" data-v="fisica">Física</div>
+        <div class="alvo-op" data-v="emocional">Emocional</div>
+        <div class="alvo-op" data-v="mental">Mental</div>
+        <div class="alvo-op" data-v="proposito">Propósito</div>
       </div>
-
-      <div class="mov-bloco">
-        <div class="mov-header"><div class="mov-letra">C</div><div class="mov-nome">Concentrar</div></div>
-        <div class="mov-desc">Onde vai a melhor energia?</div>
-        <textarea id="adj-conc" class="mov-textarea"></textarea>
-        <label class="checkbox-linha"><input type="checkbox" data-eu="adj" data-vazio="conc"> Não consigo nomear</label>
-      </div>
-
-      <div class="mov-bloco">
-        <div class="mov-header"><div class="mov-letra">A</div><div class="mov-nome">Automatizar</div></div>
-        <div class="mov-desc">O que roda sem atenção diária?</div>
-        <textarea id="adj-auto" class="mov-textarea"></textarea>
-        <label class="checkbox-linha"><input type="checkbox" data-eu="adj" data-vazio="auto"> Não consigo nomear</label>
-      </div>
-
-      <div class="placar-atrav"><div class="placar-label">Atravessabilidade · Adjacência</div><div class="placar-num" id="atrav-adj">—</div></div>
     </div>
   </section>
 
-  <!-- REINVENÇÃO -->
-  <section class="eu-etapa reinvencao">
-    <div class="eu-etapa-header"><div class="eu-etapa-letra">R</div><div><div class="eu-etapa-titulo">Eu-Reinvenção</div><div class="eu-etapa-sub">Aplicar 3 movimentos</div></div></div>
-    <div class="eu-etapa-corpo">
-      <div class="eu-recap" id="recap-rei"><div class="eu-recap-label">Sua versão</div><b>—</b></div>
-
-      <div class="mov-bloco">
-        <div class="mov-header"><div class="mov-letra">S</div><div class="mov-nome">Subtrair</div></div>
-        <div class="mov-desc">O que precisa sair?</div>
-        <textarea id="rei-sub" class="mov-textarea"></textarea>
-        <label class="checkbox-linha"><input type="checkbox" data-eu="rei" data-vazio="sub"> Não consigo nomear</label>
-      </div>
-
-      <div class="mov-bloco">
-        <div class="mov-header"><div class="mov-letra">C</div><div class="mov-nome">Concentrar</div></div>
-        <div class="mov-desc">Onde vai a melhor energia?</div>
-        <textarea id="rei-conc" class="mov-textarea"></textarea>
-        <label class="checkbox-linha"><input type="checkbox" data-eu="rei" data-vazio="conc"> Não consigo nomear</label>
-      </div>
-
-      <div class="mov-bloco">
-        <div class="mov-header"><div class="mov-letra">A</div><div class="mov-nome">Automatizar</div></div>
-        <div class="mov-desc">O que roda sem atenção diária?</div>
-        <textarea id="rei-auto" class="mov-textarea"></textarea>
-        <label class="checkbox-linha"><input type="checkbox" data-eu="rei" data-vazio="auto"> Não consigo nomear</label>
-      </div>
-
-      <div class="placar-atrav"><div class="placar-label">Atravessabilidade · Reinvenção</div><div class="placar-num" id="atrav-rei">—</div></div>
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">3</div><div><div class="etapa-titulo">1 ritual de renovação</div><div class="etapa-sub">4 min · curto, específico, frequente</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">O ritual da dimensão-alvo. Curto (5-30 min), específico (o quê, onde, com quê), frequente (diário ou semanal). Sem quando/onde/o quê, é resolução — não ritual.</p>
+      <label>O ritual <small>específico o suficiente para o piloto automático</small></label>
+      <textarea id="ritual" placeholder="ex.: mental — bloco de 90 min quinta 07h-08h30 sem celular, dedicado à prioridade da semana; após bloco, 15 min de caminhada sem tela"></textarea>
     </div>
   </section>
 
-  <section class="final">
-    <div class="final-header">
-      <div class="final-num">✎</div>
-      <div>
-        <div class="final-titulo">Qual versão é mais atravessável?</div>
-        <div class="final-desc">Aquela em que você nomeou os 3 movimentos com clareza costuma coincidir com a que está pronta para decisão. Aquela onde você marcou vazios é sinal — precisa de mais amadurecimento antes.</div>
-      </div>
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">4</div><div><div class="etapa-titulo">1 prioridade da semana</div><div class="etapa-sub">4 min · UMA coisa que a semana entrega</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">1 coisa ligada à direção que — <b>se você fizer só isso</b> — a semana valeu. Não 3, não 5. UMA.</p>
+      <label>A prioridade da semana <small>específica, verificável no domingo</small></label>
+      <textarea id="prioridade" placeholder="ex.: publicar 1 artigo de 800 palavras sobre IA aplicada até domingo — no LinkedIn"></textarea>
     </div>
-    <textarea id="insight" class="final-textarea" placeholder="ex.: Continuação Paralela é a mais atravessável — sei exatamente o que subtrair, onde concentrar e o que automatizar; a Reinvenção ainda tem 2 vazios"></textarea>
-    <p class="dica">Isso não decide ainda — decisão fica para amanhã. Só nomeie o que percebeu.</p>
+  </section>
+
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">5</div><div><div class="etapa-titulo">Marcar na agenda</div><div class="etapa-sub">2 min · sem agenda, não acontece</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Onde exatamente na agenda: dia + hora do ritual + bloco protegido da prioridade.</p>
+      <label>Bloco na agenda <small>dia + hora + local — específico</small></label>
+      <input type="text" id="agenda" placeholder="ex.: ritual: seg-sex 22h30-22h45 (celular fora do quarto) · bloco prioridade: qui 07h-08h30 no escritório">
+    </div>
+  </section>
+
+  <section class="etapa">
+    <div class="etapa-header"><div class="etapa-num">6</div><div><div class="etapa-titulo">Sinal de "cede tudo, menos isso"</div><div class="etapa-sub">2 min · nomear antes de apertar</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Quando a semana ficar cheia, o que <b>cede primeiro</b>? Nomear agora — não no meio. Sem proteção nomeada, ritual e prioridade cedem primeiro (é o padrão).</p>
+      <label>O que cede primeiro <small>e o que NUNCA cede (ritual + prioridade)</small></label>
+      <textarea id="cede" placeholder="ex.: cede primeiro: reuniões-status que dá para virar mensagem; posts curtos no LinkedIn; participação em call opcional. NUNCA cede: bloco de quinta 07h + ritual de sono"></textarea>
+    </div>
   </section>
 
   <div class="concluir">
-    <h3>Terminou?</h3>
-    <p>O material da Etapa 13 mostra a atravessabilidade das 3 versões + as 3 leituras acumuladas (critério, propósito, essencial). Amanhã fecha a semana.</p>
-    <a href="material.html" class="btn-concluir" id="btn-concluir">Ver Atravessabilidade<span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span></a>
+    <h3>Terminou o desenho?</h3>
+    <p>O material da Etapa 13 consolida seu diagnóstico + ritual + prioridade + proteção — visualização única de como a semana funciona. Reavalie a cada 2 semanas: dimensão-alvo pode mudar.</p>
+    <a href="material.html" class="btn-concluir" id="btn-concluir">Ver seu plano de energia<span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span></a>
   </div>
 </main>
 
-<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 13 · Missão — Três movimentos essencialistas</div></footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 13 · Missão — 1 ritual + 1 prioridade</div></footer>
 
 <script>
-  const vazios = { cont:{sub:false, conc:false, auto:false}, adj:{sub:false, conc:false, auto:false}, rei:{sub:false, conc:false, auto:false} };
+  const notas = {fisica:0, emocional:0, mental:0, proposito:0};
+  let alvo = '';
 
-  document.querySelectorAll('input[type="checkbox"][data-vazio]').forEach(cb => {
-    cb.addEventListener('change', () => {
-      const eu = cb.dataset.eu, mov = cb.dataset.vazio;
-      vazios[eu][mov] = cb.checked;
+  document.querySelectorAll('.dim-notas').forEach(grid => {
+    const dim = grid.dataset.dim;
+    grid.querySelectorAll('.dim-nota').forEach(op => {
+      op.addEventListener('click', () => {
+        grid.querySelectorAll('.dim-nota').forEach(x => x.classList.remove('selecionada'));
+        op.classList.add('selecionada');
+        notas[dim] = parseInt(op.dataset.n);
+        atualizar();
+      });
+    });
+  });
+
+  document.querySelectorAll('.alvo-radio .alvo-op').forEach(op => {
+    op.addEventListener('click', () => {
+      document.querySelectorAll('.alvo-radio .alvo-op').forEach(x => x.classList.remove('selecionada'));
+      op.classList.add('selecionada');
+      alvo = op.dataset.v;
       atualizar();
     });
   });
 
-  function atravessabilidade(prefix) {
-    const v = vazios[prefix];
-    const textos = ['sub','conc','auto'].map(m => document.getElementById(prefix+'-'+m).value.trim().length > 0);
-    const preenchidos = textos.filter(Boolean).length;
-    const marcadosVazios = Object.values(v).filter(Boolean).length;
-    const contribui = preenchidos - marcadosVazios;
-    if (preenchidos === 0 && marcadosVazios === 0) return '—';
-    if (contribui >= 3) return 'Alta';
-    if (contribui >= 2) return 'Média';
-    if (contribui >= 1) return 'Baixa';
-    return 'Não pronta';
-  }
+  const CAMPOS = ['ritual','prioridade','agenda','cede'];
 
   function atualizar() {
-    ['cont','adj','rei'].forEach(p => {
-      document.getElementById('atrav-'+p).textContent = atravessabilidade(p);
-    });
     let pontos = 0;
-    ['cont','adj','rei'].forEach(p => {
-      const preenchidos = ['sub','conc','auto'].filter(m => document.getElementById(p+'-'+m).value.trim().length > 0 || vazios[p][m]).length;
-      if (preenchidos === 3) pontos++;
-    });
-    if (document.getElementById('insight').value.trim().length > 0) pontos++;
-    document.getElementById('progresso-num').textContent = pontos + '/4';
-    document.getElementById('progresso-fill').style.width = (pontos/4*100) + '%';
+    const todasNotas = Object.values(notas).every(n => n > 0);
+    if (todasNotas) pontos++;
+    if (alvo) pontos++;
+    CAMPOS.forEach(id => { if (document.getElementById(id).value.trim()) pontos++; });
+    document.getElementById('progresso-num').textContent = pontos + '/6';
+    document.getElementById('progresso-fill').style.width = (pontos/6*100) + '%';
   }
+  CAMPOS.forEach(id => document.getElementById(id).addEventListener('input', atualizar));
 
-  ['cont','adj','rei'].forEach(p => {
-    ['sub','conc','auto'].forEach(m => {
-      document.getElementById(p+'-'+m).addEventListener('input', atualizar);
-    });
-  });
-  document.getElementById('insight').addEventListener('input', atualizar);
-
-  const DEMO = {
-    continuacao: { nome: 'A analista que virou referência em análise de decisão' },
-    adjacencia: { nome: 'A analista que virou head de dados de uma fintech' },
-    reinvencao: { nome: 'A professora e autora sobre alfabetização de dados' }
-  };
-
-  function pega(k, fb) { try{const s=sessionStorage.getItem(k);if(s){const p=JSON.parse(s);if(p&&Object.keys(p).length>0)return p;}}catch(e){}return fb; }
-  const dia8 = pega('intentia-dia8', DEMO);
-  if (!sessionStorage.getItem('intentia-dia8')) document.getElementById('aviso-demo').style.display = 'flex';
-
-  ['continuacao','adjacencia','reinvencao'].forEach(tipo => {
-    const p = tipo === 'continuacao' ? 'cont' : (tipo === 'adjacencia' ? 'adj' : 'rei');
-    const el = document.querySelector('#recap-'+p+' b');
-    if (el) el.textContent = dia8[tipo] && dia8[tipo].nome ? dia8[tipo].nome : '(não preenchido)';
-  });
+  (function(){
+    try {
+      const s = sessionStorage.getItem('intentia-dia7');
+      if (s) { const p = JSON.parse(s); if (p && p.escolhaFrase) { document.getElementById('direcao-txt').textContent = p.escolhaFrase; return; } }
+    } catch(e){}
+    document.getElementById('direcao-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo)';
+  })();
 
   document.getElementById('btn-concluir').addEventListener('click', () => {
     try {
       sessionStorage.setItem('intentia-dia13', JSON.stringify({
         dataConclusao: new Date().toISOString(),
-        continuacao: { subtrair:{texto:document.getElementById('cont-sub').value, vazio:vazios.cont.sub}, concentrar:{texto:document.getElementById('cont-conc').value, vazio:vazios.cont.conc}, automatizar:{texto:document.getElementById('cont-auto').value, vazio:vazios.cont.auto}, atravessabilidade: atravessabilidade('cont') },
-        adjacencia: { subtrair:{texto:document.getElementById('adj-sub').value, vazio:vazios.adj.sub}, concentrar:{texto:document.getElementById('adj-conc').value, vazio:vazios.adj.conc}, automatizar:{texto:document.getElementById('adj-auto').value, vazio:vazios.adj.auto}, atravessabilidade: atravessabilidade('adj') },
-        reinvencao: { subtrair:{texto:document.getElementById('rei-sub').value, vazio:vazios.rei.sub}, concentrar:{texto:document.getElementById('rei-conc').value, vazio:vazios.rei.conc}, automatizar:{texto:document.getElementById('rei-auto').value, vazio:vazios.rei.auto}, atravessabilidade: atravessabilidade('rei') },
-        insight: document.getElementById('insight').value
+        notas: notas,
+        alvo: alvo,
+        ritual: document.getElementById('ritual').value,
+        prioridade: document.getElementById('prioridade').value,
+        agenda: document.getElementById('agenda').value,
+        cede: document.getElementById('cede').value
       }));
     } catch(e) {}
   });
 
   atualizar();
 </script>
-
 <!--intentia-save:start--><style>
 .intentia-fab{position:fixed;right:16px;bottom:16px;z-index:9998;display:inline-flex;align-items:center;gap:8px;
   background:#275750;color:#fff;border:none;border-radius:999px;padding:13px 20px;font-family:'Hanken Grotesk',-apple-system,sans-serif;

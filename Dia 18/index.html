@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 18 · Persuasão</title>
+<title>Intentia · Etapa 18 · Ciclo de revisão sustentável</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -27,8 +27,7 @@
   .nav-label{font-size:11.5px;font-weight:600;letter-spacing:.02em;text-align:center;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;transition:color .2s}
   .nav-item:hover .nav-num{border-color:var(--coral);color:var(--coral);transform:scale(1.08)}
   .nav-item.ativo .nav-num{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 0 0 4px #fff, 0 4px 14px rgba(255,104,66,.35)}
-  .nav-item.ativo{color:var(--verde-900)}
-  .nav-item.ativo .nav-label{color:var(--verde-900);font-weight:700}
+  .nav-item.ativo{color:var(--verde-900)}.nav-item.ativo .nav-label{color:var(--verde-900);font-weight:700}
   @media (max-width:640px){.nav-label{display:none}.nav-inner::before{top:22px}.nav-num{width:40px;height:40px;font-size:16px}}
   section.bloco[id]{scroll-margin-top:100px}
   .onde-estamos{background:var(--verde-100);border-top:1px solid var(--verde-500);border-bottom:1px solid var(--verde-500);padding:18px 24px}
@@ -96,16 +95,16 @@
   .conteudo-item{padding:18px 20px;background:var(--creme);border-radius:10px;margin-bottom:12px;border-left:3px solid var(--verde-500)}
   .conteudo-item h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);margin-bottom:8px}
   .conteudo-item h3 .marcador{font-family:var(--sans);font-size:11px;font-weight:700;color:#fff;background:var(--verde-700);padding:3px 8px;border-radius:4px;letter-spacing:.1em;margin-right:8px;vertical-align:2px}
-  .pil-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
-  @media (max-width:640px){.pil-grid{grid-template-columns:1fr}}
-  .pil-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
-  .pil-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
-  .pil-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
-  .pil-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
-  .pil-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
-  .pil-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
-  .pil-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
-  .pil-hint svg{width:12px;height:12px;fill:currentColor}
+  .tar-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
+  @media (max-width:640px){.tar-grid{grid-template-columns:1fr}}
+  .tar-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
+  .tar-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
+  .tar-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
+  .tar-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
+  .tar-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
+  .tar-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
+  .tar-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
+  .tar-hint svg{width:12px;height:12px;fill:currentColor}
   .modal-overlay{position:fixed;inset:0;background:rgba(32,51,47,.55);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s}
   .modal-overlay.aberto{display:flex;opacity:1}
   .modal-caixa{background:#fff;border-radius:20px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;transform:translateY(20px);transition:transform .3s ease}
@@ -117,8 +116,7 @@
   .modal-icone{width:52px;height:52px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--serif);font-size:24px;font-weight:600}
   .modal-titulo{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.15;letter-spacing:-.005em;margin-bottom:4px}
   .modal-tagline{font-size:13.5px;font-style:italic;opacity:.92}
-  .modal-body{padding:28px 32px 32px}
-  .modal-secao{margin-bottom:22px}.modal-secao:last-child{margin-bottom:0}
+  .modal-body{padding:28px 32px 32px}.modal-secao{margin-bottom:22px}.modal-secao:last-child{margin-bottom:0}
   .modal-secao-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
   .modal-secao p{font-size:15px;line-height:1.6;color:var(--tinta);margin:0}
   .modal-exemplos{background:var(--creme);border-left:3px solid var(--verde-700);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:12px;font-size:13.5px;line-height:1.55}
@@ -131,8 +129,7 @@
   .personagens-intro{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--tinta-suave);margin:16px 0 10px;padding:11px 16px;background:var(--verde-100);border-radius:10px;border-left:3px solid var(--verde-700)}
   .personagens-intro-icone{width:22px;height:22px;flex-shrink:0;color:var(--verde-700)}
   .personagens-intro-icone svg{width:22px;height:22px;fill:currentColor}
-  .personagens-intro-texto{flex:1;line-height:1.45}
-  .personagens-intro b{color:var(--verde-900);font-weight:600}
+  .personagens-intro-texto{flex:1;line-height:1.45}.personagens-intro b{color:var(--verde-900);font-weight:600}
   .personagens-intro a{color:var(--verde-700);text-decoration:none;font-weight:600;border-bottom:1px dotted var(--verde-500)}
   .caso{margin-top:14px;padding:16px 18px;background:#fff;border:1px solid var(--verde-100);border-radius:10px}
   .caso-header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
@@ -141,12 +138,10 @@
   .caso-nome{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--verde-900)}
   .caso-perfil{font-size:12px;color:var(--tinta-suave);font-weight:500}
   .caso-tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--verde-100);color:var(--verde-900);padding:4px 9px;border-radius:6px;margin-left:auto}
-  .caso p{font-size:14.5px;line-height:1.55;color:var(--tinta);margin-bottom:0}
-  .caso p b{color:var(--verde-900)}
+  .caso p{font-size:14.5px;line-height:1.55;color:var(--tinta);margin-bottom:0}.caso p b{color:var(--verde-900)}
   .bonus{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:32px 30px;margin:24px 0}
   .bonus .bloco-num{color:var(--coral-soft)}.bonus .bloco-num .n{background:var(--coral)}
-  .bonus h2{color:#fff;font-family:var(--serif)}.bonus .subtitulo{color:#CFE0D6;font-style:italic}
-  .bonus p{color:#CFE0D6}
+  .bonus h2{color:#fff;font-family:var(--serif)}.bonus .subtitulo{color:#CFE0D6;font-style:italic}.bonus p{color:#CFE0D6}
   .leituras{display:grid;gap:14px;margin-top:20px}
   .leitura{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 20px}
   .leitura .tipo{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--coral-soft);margin-bottom:8px;display:block}
@@ -272,8 +267,8 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <header>
   <div class="hero-inner">
     <div class="eyebrow">Trilha Capital de Carreira · Bloco A · Etapa 18</div>
-    <h1>Persuasão — <span class="grifo">como pedir</span> sem soar venda.</h1>
-    <p class="lede">Conger: persuasão não é convencer — é criar as condições para o outro dizer sim. Cialdini: 6 princípios reduzidos a 3 pilares operacionais para uso ético em carreira. Aplicado à sua direção da Etapa 14.</p>
+    <h1>Revisão — <span class="grifo">15 min</span> que sustentam meses.</h1>
+    <p class="lede">Heifetz: problemas se dividem em técnicos (aplique o que já sabe) e adaptativos (aprenda algo novo sobre si). Confundir os dois é a fonte mais comum de esgotamento. Hoje: desenhar sua revisão semanal de 15 min que distingue os dois — e decide próximo passo em cada.</p>
   </div>
   <div class="arc"></div>
 </header>
@@ -290,12 +285,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <div class="onde-estamos">
   <div class="oe-inner">
     <div class="oe-camada">
-      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 3 de 4 · Amplificar</div>
+      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 2 de 3 · Instalar rotina</div>
       <div class="oe-semanas">
         <span class="oe-semana feita"><span class="num">A</span>Mapear ativos ✓</span>
         <span class="oe-semana feita"><span class="num">B</span>Escolher direção ✓</span>
-        <span class="oe-semana atual"><span class="num">C</span>Amplificar</span>
-        <span class="oe-semana"><span class="num">D</span>Instalar rotina</span>
+        <span class="oe-semana feita"><span class="num">C</span>Amplificar ✓</span>
+        <span class="oe-semana atual"><span class="num">D</span>Instalar rotina</span>
       </div>
     </div>
     <div class="oe-camada">
@@ -311,7 +306,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
     </div>
     <p class="oe-texto">
-      Você tem presença, autoridade, rede. Hoje: <span class="oe-tag-dia">Persuasão</span> — o que faz o sim acontecer quando o momento chega.
+      Hábito, ambiente, imunidade. Hoje: <span class="oe-tag-dia">Técnico · Adaptativo · Revisão</span> — o ciclo semanal de 15 min que sustenta.
     </p>
   </div>
 </div>
@@ -322,11 +317,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <h2>A ideia central, contada com calma.</h2>
     <p class="subtitulo">Ouça antes de começar — 5 min.</p>
     <div class="player">
-      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 18 · Bloco A · Bloco 3</span></div>
-      <div class="player-titulo">Persuasão: criar condições, não convencer</div>
+      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 18 · Bloco A · Bloco 2</span></div>
+      <div class="player-titulo">Técnico vs adaptativo: por que se cansar</div>
       <div class="player-sub">A ideia central do dia — contada pela <b>voz do Intentia</b>.</div>
       <div class="waveform" id="waveform"></div>
-      <div class="player-tempo"><span>00:00</span><span>05:10</span></div>
+      <div class="player-tempo"><span>00:00</span><span>05:00</span></div>
       <div class="player-controles">
         <button class="ctrl-btn"><svg viewBox="0 0 24 24"><path d="M12.5 3v2.5c4.14 0 7.5 3.36 7.5 7.5s-3.36 7.5-7.5 7.5-7.5-3.36-7.5-7.5c0-1.4.39-2.7 1.06-3.83L4.32 7.86A9.955 9.955 0 003 13c0 5.24 4.26 9.5 9.5 9.5S22 18.24 22 13s-4.26-10-9.5-10z"/></svg></button>
         <button class="ctrl-play" id="btn-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
@@ -349,147 +344,91 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <h2>Você termina o dia sendo capaz de…</h2>
     <p class="subtitulo">Três capacidades no presente.</p>
     <ul class="leva-lista">
-      <li><strong>Reformular persuasão como <em>preparação, não convencimento</em></strong> — Conger mostra que persuasão sólida é <em>trabalho antes da conversa</em>: entender o outro, ancorar credibilidade, ter evidência. A conversa em si é 20% do processo.</li>
-      <li><strong>Aplicar 3 pilares que cobrem os 6 princípios de Cialdini</strong> — Credibilidade (autoridade + reciprocidade), Prova (prova social + escassez) e Ressonância (afinidade + compromisso). Simplificação operacional para uso ético.</li>
-      <li><strong>Preparar 1 pedido específico da sua direção</strong> — não em abstrato. Um pedido real que você faria nesta semana ou nas próximas, aplicando os 3 pilares para maximizar chance de sim.</li>
+      <li><strong>Distinguir problema técnico de problema adaptativo</strong> — Heifetz &amp; Linsky: técnico é aquele que <em>você já sabe como resolver</em>, exige aplicação de método conhecido. Adaptativo é aquele que exige <em>você mudar algo em si</em> (crença, valor, hábito) — aprender antes de agir. Confundir os dois esgota: aplicar técnica em problema adaptativo produz falha repetida.</li>
+      <li><strong>Reconhecer o padrão mais comum: tratar adaptativo como técnico</strong> — profissionais capazes tendem a fazer isso porque <em>técnico é confortável</em> — você sabe fazer. Adaptativo é desconfortável — exige encarar o que ainda não domina. Quando o hábito escapa toda semana pelo mesmo motivo, provavelmente é adaptativo — e nenhum "método" novo vai resolver sem mudança interna.</li>
+      <li><strong>Desenhar 1 revisão semanal de 15 min com 3 perguntas fixas</strong> — data, horário, local, formato. Perguntas que <em>forçam</em> distinção entre técnico e adaptativo — para que a resposta certa apareça em vez de "vou me esforçar mais" (que serve mal para os dois).</li>
     </ul>
   </section>
 
   <section class="bloco" id="ponto">
     <div class="bloco-num"><span class="n">3</span> O Ponto de Partida de Hoje</div>
-    <h2>Persuasão não é convencer. É <em>criar condições</em> para o outro dizer sim.</h2>
-    <p class="subtitulo">Conger (1998): "quem tenta convencer sempre perde para quem consegue fazer a outra pessoa concluir sozinha."</p>
+    <h2>Nem todo problema é da mesma <em>natureza</em>. Tratar tudo como técnico esgota.</h2>
+    <p class="subtitulo">Heifetz &amp; Linsky (2002): "a causa mais comum de fracasso em liderança é aplicar solução técnica em problema adaptativo."</p>
     <div class="ponto">
 
       <div class="direcao-recap">
-        <div class="direcao-recap-label">Sua direção escolhida (Etapa 14)</div>
+        <div class="direcao-recap-label">Sua direção (Etapa 7) · seus movimentos (Etapa 14) · seu hábito 1 (Etapa 15)</div>
         <div class="direcao-recap-frase" id="direcao-recap-txt">—</div>
-        <small>Persuasão é a ferramenta que faz pessoas dizerem "sim" à sua direção — no momento em que você precisa.</small>
+        <small>Hoje: desenhar a revisão semanal que classifica o que aconteceu — para que a resposta seja proporcional à natureza do problema.</small>
       </div>
 
       <div class="definicao-eu">
-        <div class="definicao-eu-label">O que é "persuasão" nesta semana</div>
-        <div class="definicao-eu-texto"><b>Persuasão é a arte de criar as condições em que uma pessoa que não é obrigada a te ajudar decide ajudar mesmo assim</b>. Não é venda (troca comercial), não é manipulação (aproveitar viés sem serviço mútuo), não é pressão (forçar concordância). É <em>gestão da entrada</em> — como você chega, o que traz, o que pede, o que oferece — que faz o sim ficar disponível.</div>
+        <div class="definicao-eu-label">O que é "revisão sustentável" nesta semana</div>
+        <div class="definicao-eu-texto"><b>Revisão sustentável é o ritual semanal curto (15 min) que classifica o que aconteceu em duas categorias — técnico e adaptativo — e responde a cada com a intervenção certa</b>. Não é auditoria, não é análise profunda. É triagem inteligente que economiza esforço colocando cada problema no processo apropriado.</div>
       </div>
 
-      <p style="margin-top:18px"><b>Jay Conger (1998)</b> pesquisou executivos em posições de alta persuasão (grandes vendas, decisões de board, negociações complexas) e destruiu o mito da "boa conversa". Persuasão real é <em>75% preparação e 25% conversa</em>: entender profundamente o outro, ancorar sua credibilidade, ter framing e evidência bem escolhidos. A conversa é execução, não o trabalho.</p>
+      <p style="margin-top:18px"><b>Ronald Heifetz</b> (Harvard Kennedy School), em <em>Leadership on the Line</em> (2002, com Marty Linsky) e depois em <em>The Practice of Adaptive Leadership</em> (2009, com Grashow &amp; Linsky), sistematizou uma distinção que reorganiza a maneira de pensar problemas: <b>problemas técnicos</b> têm solução conhecida (mesmo que difícil de executar), exigem <em>autoridade</em> e <em>método</em>; <b>problemas adaptativos</b> não têm solução conhecida ainda, exigem que a pessoa (ou o grupo) <em>aprenda</em> — mude crenças, valores, hábitos. A solução para adaptativo <em>emerge do aprendizado</em>, não pode ser aplicada de fora.</p>
 
-      <p><b>Robert Cialdini (2001)</b> sistematizou os 6 princípios canônicos que fazem pessoas dizerem sim mais que "não" quando estão indecisas: <em>reciprocidade, compromisso, prova social, autoridade, afinidade e escassez</em>. Para uso ético em carreira, esses 6 se reduzem a 3 pilares operacionais que você usa em conjunto — não como truque, mas como <em>estrutura de preparação</em>.</p>
+      <p>A descoberta prática é dura: <b>a maioria dos fracassos em profissionais capazes vem de tratar problema adaptativo como técnico</b>. Você aplica método após método, com esforço crescente, e o problema persiste. Isso não é falha sua — é diagnóstico errado. Reconhecer que "isso é adaptativo" muda o processo: em vez de "aplicar melhor", vai para "aprender mais lento e mais fundo" — como no mapa de imunidade da Etapa 17.</p>
 
       <div class="teste-linha">
-        Teste rápido: pense num pedido que você precisaria fazer esta semana ligado à sua direção. Você <b>fez a preparação</b> — ou vai improvisar na conversa?
+        Teste rápido: seu hábito 1 escapou pelo mesmo motivo mais de 2x seguidas? <b>Não é técnico</b> — é adaptativo. Ajuste de método não vai resolver.
       </div>
 
-      <p style="margin-top:18px"><b>Por que hoje o exercício é preparar 1 pedido específico?</b> Porque persuasão abstrata não muda comportamento. Só o pedido real, com preparação real, revela onde você tem credibilidade fraca, prova insuficiente ou baixa ressonância com o outro. Um pedido preparado bem — mesmo pequeno — vale mais que 10 pedidos improvisados.</p>
+      <p style="margin-top:18px"><b>Por que hoje o exercício é desenhar a revisão de 15 min?</b> Porque a revisão da Etapa 14 (com as 3 perguntas fixas de execução) precisa agora ganhar <em>uma classificação</em>: para cada movimento que não aconteceu como planejado, foi técnico (novo método) ou adaptativo (novo aprendizado)? A resposta muda o que você faz na próxima semana. 15 min semanais são suficientes; menos que isso não classifica, mais que isso vira ruminação.</p>
     </div>
   </section>
 
   <section class="bloco" id="conteudo">
     <div class="bloco-num"><span class="n">4</span> O conteúdo que direciona a sua missão de hoje</div>
-    <h2>Três pilares — Credibilidade · Prova · Ressonância.</h2>
+    <h2>Três lentes — Técnico · Adaptativo · Revisão.</h2>
     <p class="subtitulo">10 min. Material de referência.</p>
 
     <div class="personagens-intro">
-      <span class="personagens-intro-icone" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-      </span>
-      <div class="personagens-intro-texto">
-        Os três profissionais de referência seguem com você: <b>Camila</b>, <b>Rafael</b> e <b>Juliana</b>. <a href="../Dia 0/personagens.html">Rever quem são →</a>
+      <span class="personagens-intro-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span>
+      <div class="personagens-intro-texto">Os três profissionais de referência seguem com você: <b>Camila</b>, <b>Rafael</b> e <b>Juliana</b>. <a href="../Dia 0/personagens.html">Rever quem são →</a></div>
+    </div>
+
+    <div class="conteudo-item">
+      <h3><span class="marcador">01</span>Três lentes — Técnico · Adaptativo · Revisão</h3>
+      <p>Toque em cada lente para o método, exemplos e o erro clássico.</p>
+      <div class="tar-grid">
+        <div class="tar-card" data-modal="tecnico" role="button" tabindex="0"><div class="tar-icone">T</div><div class="tar-nome">Técnico</div><div class="tar-pergunta">"você já sabe como resolver?"</div><span class="tar-seta">›</span></div>
+        <div class="tar-card" data-modal="adaptativo" role="button" tabindex="0"><div class="tar-icone">A</div><div class="tar-nome">Adaptativo</div><div class="tar-pergunta">"você precisa mudar algo em si?"</div><span class="tar-seta">›</span></div>
+        <div class="tar-card" data-modal="revisao" role="button" tabindex="0"><div class="tar-icone">R</div><div class="tar-nome">Revisão</div><div class="tar-pergunta">"15 min, 3 perguntas, ação"</div><span class="tar-seta">›</span></div>
+      </div>
+      <span class="tar-hint"><svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>Toque em cada lente para o método aplicado.</span>
+    </div>
+
+    <div class="conteudo-item">
+      <h3><span class="marcador">02</span>Técnico ou adaptativo — leitura dos personagens</h3>
+      <div class="caso">
+        <div class="caso-header"><div class="caso-avatar">C</div><div><div class="caso-nome">Camila</div><div class="caso-perfil">Falhou o hábito de escrever 3 dias esta semana</div></div><span class="caso-tag">T ou A?</span></div>
+        <p><b>Se técnico:</b> preciso testar novo horário (07h30 em vez de 07h). <b>Se adaptativo:</b> mesmo padrão da semana passada — abro email antes; a proteção da reputação (Etapa 17) segue ativa. Diagnóstico: <em>adaptativo</em>. Não faz sentido mudar de horário — próxima ação vem do mapa de imunidade, não do calendário.</p>
+      </div>
+      <div class="caso">
+        <div class="caso-header"><div class="caso-avatar rafael">R</div><div><div class="caso-nome">Rafael</div><div class="caso-perfil">Não gravou o vídeo — filho ficou doente na quarta</div></div><span class="caso-tag">T ou A?</span></div>
+        <p><b>Se técnico:</b> preciso de plano B para semana com imprevisto — mover para sábado ou pular sem culpa. <b>Se adaptativo:</b> não é padrão; é evento pontual. Diagnóstico: <em>técnico</em>. Ação: incorporar "plano B" ao desenho do movimento — regra simples: se semana tem imprevisto grande, movimento vai para o próximo sábado ou é pulado, sem drama.</p>
+      </div>
+      <div class="caso">
+        <div class="caso-header"><div class="caso-avatar juliana">J</div><div><div class="caso-nome">Juliana</div><div class="caso-perfil">Aula piloto ainda não pronta na 3ª semana — refinando</div></div><span class="caso-tag">T ou A?</span></div>
+        <p><b>Se técnico:</b> preciso de deadline mais firme, definir data limite. <b>Se adaptativo:</b> mesmo padrão da Etapa 17 — refinamento infinito protege contra teste imperfeito. Diagnóstico: <em>adaptativo</em>. Ação: testar com 3 alunos beta esta semana mesmo em 70% pronto — a lição do teste é mais valiosa que a lição do refinamento.</p>
       </div>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">01</span>Três pilares — Credibilidade · Prova · Ressonância</h3>
-      <p>Cada pilar reduz operacionalmente 2 dos 6 princípios de Cialdini. Toque em cada para o método e o exemplo.</p>
-
-      <div class="pil-grid">
-        <div class="pil-card" data-modal="credibilidade" role="button" tabindex="0">
-          <div class="pil-icone">C</div>
-          <div class="pil-nome">Credibilidade</div>
-          <div class="pil-pergunta">"por que ouvir você agora?"</div>
-          <span class="pil-seta">›</span>
-        </div>
-        <div class="pil-card" data-modal="prova" role="button" tabindex="0">
-          <div class="pil-icone">P</div>
-          <div class="pil-nome">Prova</div>
-          <div class="pil-pergunta">"o que sustenta o que você diz?"</div>
-          <span class="pil-seta">›</span>
-        </div>
-        <div class="pil-card" data-modal="ressonancia" role="button" tabindex="0">
-          <div class="pil-icone">R</div>
-          <div class="pil-nome">Ressonância</div>
-          <div class="pil-pergunta">"por que isso importa para o outro?"</div>
-          <span class="pil-seta">›</span>
-        </div>
-      </div>
-
-      <span class="pil-hint">
-        <svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>
-        Toque em cada pilar para o método e o exemplo aplicado.
-      </span>
-    </div>
-
-    <div class="conteudo-item">
-      <h3><span class="marcador">02</span>Um pedido específico — leitura dos personagens</h3>
-
-      <div class="caso">
-        <div class="caso-header">
-          <div class="caso-avatar">C</div>
-          <div>
-            <div class="caso-nome">Camila</div>
-            <div class="caso-perfil">Pedido: convite para palestrar em evento de fintechs</div>
-          </div>
-          <span class="caso-tag">3 pilares</span>
-        </div>
-        <p><b>Credibilidade:</b> "sou analista sênior de risco em banco médio, comecei a publicar sobre IA aplicada há 6 meses — 3 artigos com 500+ leitores cada." <b>Prova:</b> links dos 3 artigos + 1 palestra menor confirmada. <b>Ressonância:</b> "vi que seu evento tem seção sobre uso responsável de IA — meu enfoque em auditabilidade de modelos casa exatamente com o tema."</p>
-      </div>
-
-      <div class="caso">
-        <div class="caso-header">
-          <div class="caso-avatar rafael">R</div>
-          <div>
-            <div class="caso-nome">Rafael</div>
-            <div class="caso-perfil">Pedido: apresentação a um fundador de fintech</div>
-          </div>
-          <span class="caso-tag">3 pilares</span>
-        </div>
-        <p><b>Credibilidade:</b> "12 anos coordenando operações industriais em escala — fiz um projeto de consultoria numa fintech logística no último trimestre." <b>Prova:</b> depoimento do CEO dessa fintech + resultado mensurável do projeto. <b>Ressonância:</b> "sei que a empresa dele está saindo de 50 para 200 pessoas — o gap operacional dessa fase é exatamente o que aprendi a resolver na indústria."</p>
-      </div>
-
-      <div class="caso">
-        <div class="caso-header">
-          <div class="caso-avatar juliana">J</div>
-          <div>
-            <div class="caso-nome">Juliana</div>
-            <div class="caso-perfil">Pedido: parceria com plataforma de cursos</div>
-          </div>
-          <span class="caso-tag">3 pilares</span>
-        </div>
-        <p><b>Credibilidade:</b> "designer autônoma há 2 anos, portfolio com 40+ projetos de sistemas visuais para pequenos negócios." <b>Prova:</b> currículo do curso piloto rascunhado + 8 pré-inscritos + depoimento de aluna informal antes. <b>Ressonância:</b> "vi que sua plataforma cresceu no vertical criativo — meu curso complementa o que vocês já têm sem competir com criadores atuais."</p>
-      </div>
-    </div>
-
-    <div class="conteudo-item">
-      <h3><span class="marcador">03</span>A regra da Etapa 18: preparar > improvisar</h3>
-      <p>Conger: profissionais competentes frequentemente <b>subestimam a preparação</b> porque acreditam que "vão descobrir na conversa". Não vão. A conversa amplifica o que você trouxe pronto e expõe o que você não preparou. 30 minutos de preparação (nomear os 3 pilares com concretude) mudam mais o resultado que 30 minutos "mais na conversa".</p>
+      <h3><span class="marcador">03</span>A regra da Etapa 18: mesma sabotagem 3x = adaptativo</h3>
+      <p>Heurística prática: se o mesmo motivo aparece <b>3 vezes seguidas</b> para o hábito ou movimento não acontecer, quase certamente é adaptativo. Aplicar mais um método vai gerar 4ª falha pelo mesmo motivo. Vá para o mapa de imunidade (Etapa 17) ou para trabalho reflexivo com apoio (mentor, terapia, coaching). Técnico &amp; adaptativo têm processos diferentes; escolher o certo é o ganho.</p>
     </div>
   </section>
 
   <section class="bonus bloco" id="bonus">
     <div class="bloco-num"><span class="n">5</span> Seu bônus antes da missão</div>
-    <h2>A arte necessária + a ciência dos 6 princípios.</h2>
-    <p class="subtitulo">Duas leituras que fundamentam os 3 pilares.</p>
+    <h2>Liderança adaptativa em profundidade.</h2>
+    <p class="subtitulo">Duas leituras que fundamentam T·A·R.</p>
     <div class="leituras">
-      <div class="leitura">
-        <span class="tipo">Resumo · 3 páginas</span>
-        <h4>A arte necessária da persuasão</h4>
-        <p class="meta-leitura">Conger (1998) — pesquisa com executivos de alta performance em persuasão. A tese: persuasão sólida é 75% preparação e 25% conversa. A conversa apenas executa.</p>
-      </div>
-      <div class="leitura">
-        <span class="tipo">Resumo · 3 páginas</span>
-        <h4>A ciência da persuasão</h4>
-        <p class="meta-leitura">Cialdini (2001) — os 6 princípios canônicos (reciprocidade, compromisso, prova social, autoridade, afinidade, escassez). Uso ético e uso manipulativo — o texto separa os dois.</p>
-      </div>
+      <div class="leitura"><span class="tipo">Resumo · 3 páginas</span><h4>Leadership on the Line</h4><p class="meta-leitura">Ronald Heifetz &amp; Marty Linsky · Harvard Business School Press · 2002. A distinção fundadora entre técnico e adaptativo, e o custo de confundi-los na prática de liderança.</p></div>
+      <div class="leitura"><span class="tipo">Resumo · 3 páginas</span><h4>The Practice of Adaptive Leadership</h4><p class="meta-leitura">Ronald Heifetz, Alexander Grashow &amp; Marty Linsky · Harvard Business Press · 2009. O método operacional aplicado — como diagnosticar (é técnico ou adaptativo?) e como intervir em cada caso.</p></div>
     </div>
     <a href="academia.html" class="link-academia">Abrir os resumos na Academia Intentia →</a>
     <p class="bonus-nota">Opcional. As leituras enriquecem o dia — mas a missão funciona sem elas.</p>
@@ -498,22 +437,22 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <section class="bloco" id="missao">
     <div class="bloco-num"><span class="n">6</span> Missão do Dia</div>
     <div class="missao-header">
-      <h2>Preparar 1 pedido específico da sua direção.</h2>
-      <span class="missao-tempo">18 min</span>
+      <h2>Desenhar sua revisão semanal de 15 min.</h2>
+      <span class="missao-tempo">15 min</span>
     </div>
-    <p class="subtitulo">Escolha 1 pedido real que você fará nas próximas 2 semanas. Aplique os 3 pilares. Não é sobre pedir grande — é sobre pedir preparado.</p>
+    <p class="subtitulo">Data, horário, local, formato. 3 perguntas fixas que forçam a distinção técnico/adaptativo. Sinal claro para pedir ajuda quando o padrão é adaptativo profundo.</p>
 
     <ol class="passos">
-      <li><strong>Escolher o pedido <span class="tempo-passo">3 min</span></strong><p>Um pedido específico, executável nas próximas 2 semanas, ligado à sua direção. Pode ser: apresentação, convite, indicação, colaboração, feedback, entrevista informal. Real, não hipotético.</p></li>
-      <li><strong>Definir a quem <span class="tempo-passo">2 min</span></strong><p>Nome específico. Se você não sabe o nome, o pedido ainda é abstrato. Pesquise antes.</p></li>
-      <li><strong>Preparar Credibilidade <span class="tempo-passo">4 min</span></strong><p>Uma frase (2-3 linhas) que responde "por que ouvir você agora?" com evidência concreta.</p></li>
-      <li><strong>Preparar Prova <span class="tempo-passo">4 min</span></strong><p>Links, docs, dados, depoimentos que sustentam o que você diz. Mesmo que pequenos. Prova concreta > adjetivos.</p></li>
-      <li><strong>Preparar Ressonância <span class="tempo-passo">4 min</span></strong><p>Uma frase que responde "por que isso importa para o outro?" — não é o que você quer; é o que <em>a pessoa</em> ganha ao dizer sim.</p></li>
-      <li><strong>Escrever a mensagem/pedido preparado <span class="tempo-passo">1 min</span></strong><p>Junte os 3 pilares numa mensagem curta (5-10 linhas). Envie esta semana.</p></li>
+      <li><strong>Confirmar cadência (data e horário) <span class="tempo-passo">2 min</span></strong><p>Reutilize a data da revisão da Etapa 14 (se marcou) ou defina agora. 15 min semanais fixos — mesmo dia, mesmo horário, semana após semana.</p></li>
+      <li><strong>Definir local + formato <span class="tempo-passo">2 min</span></strong><p>Casa, café, escritório? Sozinha com caderno? Com um par de accountability? Formato influencia consistência — escolha o que você mais consegue sustentar.</p></li>
+      <li><strong>Escrever as 3 perguntas fixas <span class="tempo-passo">4 min</span></strong><p>1) O que aconteceu vs. o planejado? 2) O que não aconteceu é técnico (novo método) ou adaptativo (novo aprendizado)? 3) Qual é a ação da próxima semana para cada?</p></li>
+      <li><strong>Sinal para "isso é adaptativo profundo" <span class="tempo-passo">3 min</span></strong><p>Quando você reconhece que precisa de apoio externo (mentor, terapia, coach)? Escreva o critério — para não protelar quando o momento chegar.</p></li>
+      <li><strong>Onde você registra as revisões <span class="tempo-passo">2 min</span></strong><p>Caderno, doc, planilha — mesmo lugar do tracker da Etapa 15 idealmente. Ver a série de revisões cria memória do padrão.</p></li>
+      <li><strong>Marcar as próximas 4 revisões no calendário <span class="tempo-passo">2 min</span></strong><p>Não uma — 4. Recorrente. Se não estão marcadas até o fim deste exercício, a rotina não começa.</p></li>
     </ol>
 
     <a href="missao.html" class="cta-missao">
-      <span class="cta-texto"><span class="cta-tempo">18 min</span>Fazer a Missão</span>
+      <span class="cta-texto"><span class="cta-tempo">15 min</span>Fazer a Missão</span>
       <span class="cta-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
     </a>
   </section>
@@ -541,128 +480,56 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
 <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
   <div class="modal-caixa">
-    <button class="modal-close" id="modal-close" aria-label="Fechar">
-      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-    </button>
-    <div class="modal-header">
-      <div class="modal-icone" id="modal-icone"></div>
-      <div>
-        <div class="modal-titulo" id="modal-titulo"></div>
-        <div class="modal-tagline" id="modal-tagline"></div>
-      </div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-secao">
-        <div class="modal-secao-label">O que o pilar faz</div>
-        <p id="modal-conceito"></p>
-      </div>
-      <div class="modal-secao">
-        <div class="modal-exemplos">
-          <div class="modal-exemplos-label">Como preparar bem</div>
-          <ul id="modal-exemplos"></ul>
-        </div>
-        <div class="modal-erro"><b>Erro comum</b><span id="modal-erro"></span></div>
-      </div>
-    </div>
+    <button class="modal-close" id="modal-close" aria-label="Fechar"><svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+    <div class="modal-header"><div class="modal-icone" id="modal-icone"></div><div><div class="modal-titulo" id="modal-titulo"></div><div class="modal-tagline" id="modal-tagline"></div></div></div>
+    <div class="modal-body"><div class="modal-secao"><div class="modal-secao-label">O que a lente faz</div><p id="modal-conceito"></p></div><div class="modal-secao"><div class="modal-exemplos"><div class="modal-exemplos-label">Como aplicar</div><ul id="modal-exemplos"></ul></div><div class="modal-erro"><b>Erro comum</b><span id="modal-erro"></span></div></div></div>
   </div>
 </div>
 
-<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 18 · Persuasão — três pilares</div></footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 18 · Ciclo de revisão sustentável — T·A·R</div></footer>
 
 <script>
-  const PIL_DETALHE = {
-    credibilidade: {
-      nome: 'Pilar Credibilidade',
-      tagline: '"por que ouvir você agora?"',
-      icone: 'C',
-      conceito: 'Credibilidade responde a pergunta silenciosa que a outra pessoa faz nos primeiros segundos: <b>por que devo dedicar atenção a este pedido específico, vindo desta pessoa específica, agora</b>? Combina os princípios de Autoridade (Cialdini) e Reciprocidade (relação anterior, valor já entregue, mesmo pequeno). Sem credibilidade, os outros pilares não sustentam nada.',
-      exemplos: ['Ancorar em capital: "X anos de experiência em Y" — específico, mensurável', 'Ancorar em contribuição: "publiquei/entreguei/apresentei Z recentemente" — data e prova', 'Ancorar em contexto compartilhado: "conversei com Fulano/participei do evento W" — reciprocidade indireta', 'Nunca começar com pedido — sempre com ancoragem'],
-      erro: '<b>Credibilidade genérica.</b> "Sou profissional experiente" não é credibilidade — é ruído. Credibilidade real é <em>específica</em>: cargo, tempo, entrega recente, mensurável. Se sua frase de credibilidade cabe em qualquer profissional, ela não te distingue.'
+  const TAR_DETALHE = {
+    tecnico: {
+      nome: 'Técnico',
+      tagline: '"você já sabe como resolver?"',
+      icone: 'T',
+      conceito: 'Problema técnico é <b>aquele que tem solução conhecida</b> — a resposta existe, o método é claro, exige aplicação (que pode ser difícil, mas é definida). Heifetz: técnico não significa "fácil"; significa "resolvível com o que já se sabe". Ex.: reformular um horário que não deu certo, criar plano B para semana com imprevisto, aumentar a fricção do celular à noite. Autoridade e método bastam.',
+      exemplos: ['Ajustar horário / lugar / duração do bloco', 'Criar plano B para imprevistos (se X, então adio para sábado)', 'Refinar o desenho do ambiente (movimento novo de objeto físico)', 'Trocar o formato do tracker por outro mais visível'],
+      erro: '<b>Tratar tudo como técnico.</b> Se você ajusta método 3 semanas seguidas e o mesmo padrão volta, você provavelmente não está com problema técnico — mas continua tentando resolver como se fosse. Mais método não resolve adaptativo. Custo alto: esgotamento sem resultado.'
     },
-    prova: {
-      nome: 'Pilar Prova',
-      tagline: '"o que sustenta o que você diz?"',
-      icone: 'P',
-      conceito: 'Prova é <b>evidência tangível</b> que substitui a necessidade da outra pessoa "acreditar em você". Combina os princípios de Prova Social (outros já validaram) e Escassez (o que você tem/faz não é comum, é limitado). Prova bem escolhida é o que faz o pedido soar <em>concreto</em> em vez de aspiracional.',
-      exemplos: ['Link para conteúdo próprio (artigo, portfolio, gravação) — 1 é melhor que 5', 'Depoimento escrito ou métrica de resultado — específico, atribuível, verificável', 'Referência a projeto recente entregue — nome do projeto, resultado, prazo', 'Menção a reconhecimento externo — prêmio, convite, menção de terceiros'],
-      erro: '<b>Prova exagerada.</b> Muita prova soa insegurança — como se você precisasse convencer. Regra prática: 1-2 provas fortes valem mais que 5 fracas. Se você precisa citar 4 depoimentos, provavelmente nenhum é forte o suficiente sozinho.'
+    adaptativo: {
+      nome: 'Adaptativo',
+      tagline: '"você precisa mudar algo em si?"',
+      icone: 'A',
+      conceito: 'Problema adaptativo é <b>aquele em que a solução ainda não é conhecida por você — exige aprender algo novo sobre si, mudar crença, valor ou hábito interno</b>. Heifetz: adaptativo não pode ser resolvido pela aplicação de método — resolve-se por aprendizagem. É onde o mapa de imunidade (Etapa 17) opera, ou onde apoio externo (mentor, terapia, coach) tem alto retorno. Reconhecer que é adaptativo é o primeiro passo — muda o processo, não o esforço.',
+      exemplos: ['Mesmo padrão de sabotagem 3x seguidas — provavelmente adaptativo', 'Escapa por motivo emocional (ansiedade, medo, culpa) mais que por logística', 'Todo método novo que você tenta bate na mesma parede', 'Sensação de que "eu sei o que fazer mas não consigo" — clássica sinalização'],
+      erro: '<b>Sentir vergonha do adaptativo.</b> Heifetz é claro: problemas adaptativos são os mais frequentes em profissionais capazes — porque quem chegou até aqui já resolveu os técnicos óbvios. O que sobra é adaptativo. Não é sinal de fraqueza; é sinal de já ter absorvido o repertório técnico disponível.'
     },
-    ressonancia: {
-      nome: 'Pilar Ressonância',
-      tagline: '"por que isso importa para o outro?"',
+    revisao: {
+      nome: 'Revisão',
+      tagline: '"15 min, 3 perguntas, ação"',
       icone: 'R',
-      conceito: 'Ressonância é <b>o pilar que separa persuasão de venda</b>. Combina Afinidade (você conhece o outro, seu contexto, suas prioridades) e Compromisso (você conecta o pedido a algo que a pessoa já valoriza/faz). Sem ressonância, seu pedido é sobre você — com ressonância, o pedido vira algo que a pessoa <em>quer</em> conceder porque serve a ela também.',
-      exemplos: ['Nomear algo específico da pessoa/organização que você pesquisou: "vi que vocês estão focados em X"', 'Conectar seu pedido ao trabalho atual da pessoa: "seu insight sobre Y faz muito sentido para o que eu proponho"', 'Reconhecer o que a pessoa ganha ao dizer sim (mesmo que pequeno): tempo, informação, contato, aprendizagem', 'Ser explícito sobre o quanto está pedindo: "20 minutos de conversa" > "quando você tiver tempo"'],
-      erro: '<b>Ressonância genérica ("acompanho seu trabalho").</b> Isso não é ressonância — é adulação. Ressonância real cita <em>algo específico</em> que só vale para essa pessoa/contexto. Se sua frase de ressonância vale para 100 outras pessoas do território, ela não é ressonância; é lista de contatos massa.'
+      conceito: 'Revisão é <b>o ritual semanal de 15 min que classifica o que aconteceu e decide o próximo passo</b>. Não é auditoria, não é análise profunda — é triagem inteligente. As 3 perguntas fixas forçam a distinção técnico/adaptativo e produzem ação concreta. Sem esse filtro, todo problema entra no mesmo processo ("vou me esforçar mais") — e adaptativo escapa sistematicamente.',
+      exemplos: ['15 min semanais fixos — mesmo dia, mesmo horário, mesmo local', 'As 3 perguntas repetidas sem mudança (a estrutura fixa é o que produz aprendizado)', 'Registro breve (3-5 linhas) — série de revisões revela padrão maior', 'Sinal claro para "isso é adaptativo profundo, preciso de apoio" — escrito antes de precisar'],
+      erro: '<b>Revisão que vira reunião comigo mesma sem pauta.</b> Sem as 3 perguntas fixas, a revisão vira ruminação — você "revisa" tudo, decide nada. E sem distinção técnico/adaptativo, você acaba sempre no mesmo lugar: "vou me esforçar mais". Revisão real produz decisão concreta com natureza diferenciada.'
     }
   };
 </script>
 
 <script>
-  (function(){
-    const items = document.querySelectorAll('.nav-item');
-    const secoes = Array.from(items).map(it => document.getElementById(it.dataset.target)).filter(Boolean);
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if(entry.isIntersecting){ items.forEach(it => it.classList.toggle('ativo', it.dataset.target === entry.target.id)); } });
-    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-    secoes.forEach(s => observer.observe(s));
-    if(items[0]) items[0].classList.add('ativo');
-  })();
-  (function(){
-    const wf = document.getElementById('waveform');
-    if(!wf) return;
-    const alturas = [24,30,38,44,36,30,34,42,48,54,46,40,48,56,62,54,46,38,44,52,60,68,74,68,60,52,44,52,60,68,76,82,76,68,60,52,46,40,34,42,50,58,52,44,38,32,40,48,42,36,30,26,32,38,44,38,32,28,34,30,24,22,28,24];
-    alturas.forEach(h => { const bar = document.createElement('div'); bar.className = 'bar'; bar.style.height = h + '%'; wf.appendChild(bar); });
-  })();
-  (function(){
-    const btn = document.getElementById('btn-play');
-    if(!btn) return;
-    let tocando = false;
-    btn.addEventListener('click', () => { tocando = !tocando; btn.innerHTML = tocando ? '<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>' : '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; });
-  })();
-  (function(){
-    document.querySelectorAll('.vel-btn').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('.vel-btn').forEach(x => x.classList.remove('ativa')); b.classList.add('ativa'); }));
-  })();
-  (function(){
-    const overlay = document.getElementById('modal-overlay');
-    const btnClose = document.getElementById('modal-close');
-    if(!overlay) return;
-    window.abrirModal = function(id){
-      const d = PIL_DETALHE[id];
-      if(!d) return;
-      document.getElementById('modal-icone').textContent = d.icone;
-      document.getElementById('modal-titulo').textContent = d.nome;
-      document.getElementById('modal-tagline').textContent = d.tagline;
-      document.getElementById('modal-conceito').innerHTML = d.conceito;
-      document.getElementById('modal-exemplos').innerHTML = d.exemplos.map(e => `<li>${e}</li>`).join('');
-      document.getElementById('modal-erro').innerHTML = d.erro;
-      overlay.classList.add('aberto');
-      document.body.style.overflow = 'hidden';
-    };
-    function fechar(){ overlay.classList.remove('aberto'); document.body.style.overflow = ''; }
-    document.querySelectorAll('.pil-card[data-modal]').forEach(card => {
-      card.addEventListener('click', () => abrirModal(card.dataset.modal));
-      card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirModal(card.dataset.modal); } });
-    });
-    btnClose.addEventListener('click', fechar);
-    overlay.addEventListener('click', (e) => { if(e.target === overlay) fechar(); });
-    document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && overlay.classList.contains('aberto')) fechar(); });
-  })();
+  (function(){ const items = document.querySelectorAll('.nav-item'); const secoes = Array.from(items).map(it => document.getElementById(it.dataset.target)).filter(Boolean); const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting){ items.forEach(it => it.classList.toggle('ativo', it.dataset.target === entry.target.id)); } }); }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 }); secoes.forEach(s => observer.observe(s)); if(items[0]) items[0].classList.add('ativo'); })();
+  (function(){ const wf = document.getElementById('waveform'); if(!wf) return; const alturas = [24,30,38,44,36,30,34,42,48,54,46,40,48,56,62,54,46,38,44,52,60,68,74,68,60,52,44,52,60,68,76,82,76,68,60,52,46,40,34,42,50,58,52,44,38,32,40,48,42,36,30,26,32,38,44,38,32,28,34,30,24,22,28,24]; alturas.forEach(h => { const bar = document.createElement('div'); bar.className = 'bar'; bar.style.height = h + '%'; wf.appendChild(bar); }); })();
+  (function(){ const btn = document.getElementById('btn-play'); if(!btn) return; let tocando = false; btn.addEventListener('click', () => { tocando = !tocando; btn.innerHTML = tocando ? '<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>' : '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; }); })();
+  (function(){ document.querySelectorAll('.vel-btn').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('.vel-btn').forEach(x => x.classList.remove('ativa')); b.classList.add('ativa'); })); })();
+  (function(){ const overlay = document.getElementById('modal-overlay'); const btnClose = document.getElementById('modal-close'); if(!overlay) return; window.abrirModal = function(id){ const d = TAR_DETALHE[id]; if(!d) return; document.getElementById('modal-icone').textContent = d.icone; document.getElementById('modal-titulo').textContent = d.nome; document.getElementById('modal-tagline').textContent = d.tagline; document.getElementById('modal-conceito').innerHTML = d.conceito; document.getElementById('modal-exemplos').innerHTML = d.exemplos.map(e => `<li>${e}</li>`).join(''); document.getElementById('modal-erro').innerHTML = d.erro; overlay.classList.add('aberto'); document.body.style.overflow = 'hidden'; }; function fechar(){ overlay.classList.remove('aberto'); document.body.style.overflow = ''; } document.querySelectorAll('.tar-card[data-modal]').forEach(card => { card.addEventListener('click', () => abrirModal(card.dataset.modal)); card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirModal(card.dataset.modal); } }); }); btnClose.addEventListener('click', fechar); overlay.addEventListener('click', (e) => { if(e.target === overlay) fechar(); }); document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && overlay.classList.contains('aberto')) fechar(); }); })();
   (function(){
     try {
-      const s = sessionStorage.getItem('intentia-dia14');
-      if (s) {
-        const p = JSON.parse(s);
-        if (p && p.escolhaFrase) {
-          document.getElementById('direcao-recap-txt').textContent = p.escolhaFrase;
-          return;
-        }
-      }
+      const s = sessionStorage.getItem('intentia-dia7'); if (s) { const p = JSON.parse(s); if (p && p.escolhaFrase) { document.getElementById('direcao-recap-txt').textContent = p.escolhaFrase; return; } }
     } catch(e){}
     document.getElementById('direcao-recap-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo demonstrativo)';
   })();
 </script>
-
 
 <script>
 /* Player real (integração 21/07/2026): toca o audio.mp3 da pasta do dia.

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 14 · Missão — Sua Direção Escolhida</title>
+<title>Intentia · Etapa 14 · Missão — Consolidar Bloco 2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -29,45 +29,29 @@
   .progresso-bar{background:var(--verde-100);height:6px;border-radius:3px;overflow:hidden}
   .progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}
   .progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}
-  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px;font-size:13.5px;line-height:1.55}
-  .aviso-demo-icone{color:var(--coral);font-size:18px;flex-shrink:0;margin-top:1px}
-  .aviso-demo b{color:var(--verde-900)}
-  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
-  .lembrete{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 20px;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
-  .lembrete b{color:var(--verde-900);font-weight:600}
-
-  .etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .etapa-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
-  .etapa-num{width:34px;height:34px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
-  .etapa-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
-  .etapa-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
-  .etapa-desc b{color:var(--verde-900)}
-
-  .tabela-recap{background:var(--creme);border-radius:10px;padding:14px 16px;margin-bottom:16px;font-size:12.5px}
-  .tabela-recap-titulo{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:8px}
-  .tabela-recap-linha{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:8px;padding:6px 0;font-size:12px;border-bottom:1px dashed var(--verde-100)}
-  .tabela-recap-linha:last-child{border-bottom:none}
-  .tabela-recap-linha.cabec{color:var(--tinta-suave);font-weight:700;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
-  @media (max-width:520px){.tabela-recap-linha{grid-template-columns:1fr;gap:3px}.tabela-recap-linha.cabec{display:none}.tabela-recap-linha .cel::before{content:attr(data-label);color:var(--tinta-suave);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-right:6px}}
-  .tabela-recap-linha .cel{color:var(--tinta)}
-  .tabela-recap-linha .nome{font-family:var(--serif);font-weight:600;color:var(--verde-900);font-size:13px}
-
-  .escolha-opcoes{display:grid;gap:10px;margin-top:8px}
-  .escolha-op{background:#fff;border:1.5px solid var(--verde-100);border-radius:10px;padding:12px 16px;cursor:pointer;transition:all .2s;user-select:none;display:flex;gap:12px;align-items:center}
-  .escolha-op:hover{border-color:var(--verde-500)}
-  .escolha-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
-  .escolha-op-letra{width:28px;height:28px;background:var(--verde-100);color:var(--verde-700);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:13px;flex-shrink:0}
-  .escolha-op.selecionada .escolha-op-letra{background:rgba(255,255,255,.22);color:#fff}
-  .escolha-op-texto{font-family:var(--serif);font-size:14.5px;font-weight:500;line-height:1.3}
-
-  label{display:block;font-size:12.5px;font-weight:600;color:var(--verde-700);margin-bottom:6px;letter-spacing:.02em;text-transform:uppercase}
+  .direcao-recap{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);padding:14px 20px;border-radius:0 10px 10px 0;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
+  .direcao-recap b{color:var(--verde-900);font-family:var(--serif);font-style:italic;font-weight:500}
+  .recap-caixa{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:20px 24px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .recap-caixa-titulo{font-family:var(--serif);font-size:17px;color:var(--verde-900);margin-bottom:12px;font-weight:600}
+  .recap-lista{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:8px}
+  .recap-linha{padding:10px 14px;background:var(--creme);border-radius:8px;font-size:13.5px;line-height:1.5;color:var(--tinta);border-left:3px solid var(--verde-500);display:flex;gap:10px;align-items:baseline}
+  .recap-linha b{color:var(--verde-900);font-family:var(--serif);flex-shrink:0}
+  .recap-linha .conteudo{color:var(--tinta-suave);flex:1;font-style:italic}
+  .etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:18px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
+  .etapa-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:20px 26px;display:flex;align-items:center;gap:14px}
+  .etapa-num{width:38px;height:38px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;font-weight:600;flex-shrink:0}
+  .etapa-titulo{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.2;margin-bottom:3px}
+  .etapa-sub{font-size:12.5px;opacity:.92;font-style:italic}
+  .etapa-corpo{padding:22px 26px 24px}
+  .etapa-corpo p.instrucao{font-size:13.5px;color:var(--tinta-suave);line-height:1.55;margin-bottom:12px}
+  label{display:block;font-size:12.5px;font-weight:600;color:var(--verde-700);margin-bottom:6px;letter-spacing:.02em;text-transform:uppercase;margin-top:14px}
+  label:first-child{margin-top:0}
   label small{color:var(--tinta-suave);font-weight:500;text-transform:none;letter-spacing:0;font-size:12px;margin-left:6px;font-style:italic}
-  input[type=text],textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:15px;color:var(--tinta);background:#fff;transition:border-color .2s}
-  input[type=text]:focus,textarea:focus{outline:none;border-color:var(--coral)}
-  textarea{resize:vertical;min-height:70px;line-height:1.5}
-  input.frase-input{font-family:var(--serif);font-size:17px;font-weight:500}
-  .contador{font-size:11.5px;color:var(--tinta-suave);text-align:right;margin-top:4px;font-style:italic}
-
+  input[type="text"],input[type="date"],textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14px;color:var(--tinta);background:#fff;transition:border-color .2s;line-height:1.5}
+  textarea{resize:vertical;min-height:70px}
+  input[type="text"]:focus,input[type="date"]:focus,textarea:focus{outline:none;border-color:var(--coral)}
+  .revisao-linha{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+  @media (max-width:520px){.revisao-linha{grid-template-columns:1fr}}
   .concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}
   .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px}
   .concluir p{font-size:14.5px;opacity:.92;margin-bottom:22px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
@@ -75,7 +59,6 @@
   .btn-concluir:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
   .btn-concluir .icone{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
   .btn-concluir .icone svg{width:14px;height:14px;fill:currentColor}
-
   footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
   footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
 </style>
@@ -194,21 +177,19 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 })();
 </script><!--intentia-nav:end-->
 
-
 <header>
   <div class="hero-inner">
     <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 14</a>
-    <div class="eyebrow">Missão · Etapa 14 · Fechamento Bloco 2</div>
-    <h1>Sua <span class="grifo">Direção Escolhida</span>.</h1>
-    <p class="lede">Escolha (uma versão, combinação de duas, ou "mais um ciclo"). Marca articulada em 3 elementos. Próximo passo + pergunta para carregar para Bloco 3.</p>
+    <div class="eyebrow">Missão · Etapa 14 · Fim do Bloco 2</div>
+    <h1>Consolidar Bloco 2 em <span class="grifo">3 movimentos</span>.</h1>
+    <p class="lede">Recap das Etapas 15-20. 3 movimentos para as próximas 4 semanas. O que cede. Cadência de revisão marcada. Sinal de saída do plano.</p>
     <div class="missao-meta">
-      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 25 min</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 20 min</span>
       <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
     </div>
   </div>
   <div class="arc"></div>
 </header>
-
 <main>
   <div class="progresso">
     <div class="progresso-info">
@@ -218,213 +199,163 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <div class="progresso-num" id="progresso-num">0/6</div>
   </div>
 
-  <div id="aviso-demo" class="aviso-demo" style="display:none">
-    <div class="aviso-demo-icone">◆</div>
-    <div><b>Preencha os dias anteriores primeiro.</b> Sem eles, o fechamento perde referência. <a href="../Dia 8/missao.html">Começar pela Etapa 8 →</a></div>
+  <div class="direcao-recap">
+    <b id="direcao-txt">—</b>
+    <span style="font-size:12px;color:var(--tinta-suave);display:block;margin-top:6px;font-style:italic">← sua direção da Etapa 7. Os 3 movimentos abaixo servem a ela.</span>
   </div>
 
-  <div class="lembrete">
-    <b>Sobre a decisão:</b> não existe resposta certa. Uma das 3 versões, combinação de 2, ou "vou testar por 6 meses e reavaliar" — todas as três são maduras. O que importa é <b>nomear</b>.
+  <div class="recap-caixa">
+    <div class="recap-caixa-titulo">Recap · o que você registrou nas Etapas 15-20</div>
+    <ul class="recap-lista">
+      <li class="recap-linha"><b>Etapa 8 · Presença (V·G·C):</b><span class="conteudo" id="recap-15">—</span></li>
+      <li class="recap-linha"><b>Etapa 9 · Autoridade (D·V·R):</b><span class="conteudo" id="recap-16">—</span></li>
+      <li class="recap-linha"><b>Etapa 10 · Rede (O·P·E):</b><span class="conteudo" id="recap-17">—</span></li>
+      <li class="recap-linha"><b>Etapa 11 · Persuasão (C·P·R):</b><span class="conteudo" id="recap-18">—</span></li>
+      <li class="recap-linha"><b>Etapa 12 · Aprendizagem (D·F·A):</b><span class="conteudo" id="recap-19">—</span></li>
+      <li class="recap-linha"><b>Etapa 13 · Energia (E·F·R):</b><span class="conteudo" id="recap-20">—</span></li>
+    </ul>
   </div>
 
-  <!-- 1. TABELA RECAP -->
   <section class="etapa">
-    <div class="etapa-header">
-      <div class="etapa-num">1</div>
-      <div>
-        <div class="etapa-titulo">Sua tabela acumulada</div>
-        <div class="etapa-desc">Rápida releitura das 3 leituras da semana (Critério, Propósito, Atravessável). Isso vai ancorar sua decisão nos próximos passos.</div>
-      </div>
-    </div>
-    <div class="tabela-recap">
-      <div class="tabela-recap-titulo">3 leituras · lado a lado</div>
-      <div class="tabela-recap-linha cabec"><div>Eu</div><div>Critério</div><div>Propósito</div><div>Atravessável</div></div>
-      <div id="recap-linhas"></div>
+    <div class="etapa-header"><div class="etapa-num">1</div><div><div class="etapa-titulo">Movimento 1</div><div class="etapa-sub">o mais alavancado — o que mais destrava</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Um movimento concreto para as próximas 4 semanas. Nome específico + frequência + ligação com a direção.</p>
+      <label>Movimento 1 <small>o quê, com que frequência, quando começa</small></label>
+      <textarea id="mov1" placeholder="ex.: publicar 1 artigo curto sobre IA aplicada por semana — quinta 07h-08h30, publicado até domingo"></textarea>
     </div>
   </section>
 
-  <!-- 2. ESCOLHA -->
   <section class="etapa">
-    <div class="etapa-header">
-      <div class="etapa-num">2</div>
-      <div>
-        <div class="etapa-titulo">Sua decisão de direção</div>
-        <div class="etapa-desc">Escolha uma das 5 opções (ou preencha a última com síntese própria).</div>
-      </div>
-    </div>
-    <div class="escolha-opcoes" id="escolha-container">
-      <div class="escolha-op" data-esc="continuacao"><div class="escolha-op-letra">C</div><div class="escolha-op-texto" id="escolha-cont-txt">Continuação — a versão da Etapa 8</div></div>
-      <div class="escolha-op" data-esc="adjacencia"><div class="escolha-op-letra">A</div><div class="escolha-op-texto" id="escolha-adj-txt">Adjacência — a versão da Etapa 8</div></div>
-      <div class="escolha-op" data-esc="reinvencao"><div class="escolha-op-letra">R</div><div class="escolha-op-texto" id="escolha-rei-txt">Reinvenção — a versão da Etapa 8</div></div>
-      <div class="escolha-op" data-esc="sintese"><div class="escolha-op-letra">S</div><div class="escolha-op-texto">Síntese: combinação de 2 (escrevo qual)</div></div>
-      <div class="escolha-op" data-esc="ciclo"><div class="escolha-op-letra">⋯</div><div class="escolha-op-texto">Ainda amadurecendo — vou testar/reavaliar em X tempo</div></div>
-    </div>
-    <div style="margin-top:14px">
-      <label>Nomeie sua escolha em 1 frase <small>obrigatório</small></label>
-      <textarea id="escolha-frase" placeholder="ex.: sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA"></textarea>
+    <div class="etapa-header"><div class="etapa-num">2</div><div><div class="etapa-titulo">Movimento 2</div><div class="etapa-sub">o de rede/autoridade — sustenta o 1</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Segundo movimento — algo de rede, autoridade ou persuasão que sustenta ou amplia o Movimento 1.</p>
+      <label>Movimento 2 <small>o quê, com que frequência, quando começa</small></label>
+      <textarea id="mov2" placeholder="ex.: preparar 1 pedido específico da direção por semana usando os 3 pilares (C·P·R) — sábado de manhã"></textarea>
     </div>
   </section>
 
-  <!-- 3. FRASE-SÍNTESE -->
   <section class="etapa">
-    <div class="etapa-header">
-      <div class="etapa-num">3</div>
-      <div>
-        <div class="etapa-titulo">Sua Frase-Síntese</div>
-        <div class="etapa-desc">2-4 palavras que dizem o que você faz na direção escolhida. Não é slogan; é resumo.</div>
-      </div>
+    <div class="etapa-header"><div class="etapa-num">3</div><div><div class="etapa-titulo">Movimento 3</div><div class="etapa-sub">o de energia/ritual — sustenta os 2 primeiros</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Terceiro movimento — o ritual da dimensão-alvo da Etapa 13 (energia) que sustenta os outros 2.</p>
+      <label>Movimento 3 <small>ritual específico, diário ou semanal</small></label>
+      <textarea id="mov3" placeholder="ex.: celular fora do quarto todo dia às 22h30 — gatilho: escovar dente"></textarea>
     </div>
-    <label>Frase-síntese <small>máximo 5 palavras</small></label>
-    <input type="text" id="frase-sintese" class="frase-input" placeholder="ex.: análise de decisão com IA">
-    <div class="contador" id="contador-frase">0 palavras</div>
   </section>
 
-  <!-- 4. HISTÓRIA CURTA -->
   <section class="etapa">
-    <div class="etapa-header">
-      <div class="etapa-num">4</div>
-      <div>
-        <div class="etapa-titulo">Sua História Curta</div>
-        <div class="etapa-desc">50-70 palavras. De onde você vem, onde está indo, o que está fazendo agora. <b>Testável em voz alta em 30s.</b></div>
-      </div>
+    <div class="etapa-header"><div class="etapa-num">4</div><div><div class="etapa-titulo">O que cede primeiro</div><div class="etapa-sub">quando o mês fica cheio</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Sem essa lista nomeada agora, os 3 movimentos vão perder para o urgente. Nomeie 3-5 coisas específicas que cedem ANTES dos movimentos.</p>
+      <label>O que cede primeiro <small>específico, escrito, revisitável</small></label>
+      <textarea id="cede" placeholder="ex.: reuniões-status que dá para virar mensagem; posts curtos no LinkedIn; calls opcionais; 'estudar sobre' sem output; comparação nas redes sociais"></textarea>
     </div>
-    <label>História curta</label>
-    <textarea id="historia" style="min-height:100px" placeholder="ex.: Sou analista sênior de dados num banco há 8 anos. Comecei há 6 meses a escrever sobre como IA muda análise de risco — tenho um blog com 500 leitores e um convite para palestra em janeiro."></textarea>
-    <div class="contador" id="contador-hist">0 palavras</div>
   </section>
 
-  <!-- 5. PROVA SOCIAL -->
   <section class="etapa">
-    <div class="etapa-header">
-      <div class="etapa-num">5</div>
-      <div>
-        <div class="etapa-titulo">Sua Prova Social atual</div>
-        <div class="etapa-desc">O que <em>já existe</em> que valida sua direção. Se nada existe ainda, escreva "próximo passo é gerar a primeira prova" — isso vira sua ação da semana.</div>
+    <div class="etapa-header"><div class="etapa-num">5</div><div><div class="etapa-titulo">Revisão marcada</div><div class="etapa-sub">data + horário + formato + 3 perguntas fixas</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">Sull: revisão sem cadência marcada é revisão que não acontece. Marque agora — no calendário — a data da 1ª revisão.</p>
+      <div class="revisao-linha">
+        <div>
+          <label>Data da 1ª revisão</label>
+          <input type="date" id="data-revisao">
+        </div>
+        <div>
+          <label>Horário e formato</label>
+          <input type="text" id="formato-revisao" placeholder="ex.: 17h-17h30, sozinho, no café perto de casa">
+        </div>
       </div>
+      <label style="margin-top:16px">As 3 perguntas fixas <small>as mesmas toda revisão — força decisão</small></label>
+      <textarea id="perguntas" placeholder="ex.: 1) qual movimento aconteceu como planejado?  2) qual não aconteceu — por quê?  3) o que ajusto para as próximas 2 semanas (manter/ajustar/cortar cada movimento)?"></textarea>
     </div>
-    <label>Prova social</label>
-    <textarea id="prova" placeholder="ex.: 3 artigos publicados no blog, 500 assinantes, 1 palestra confirmada em janeiro, 2 conversas com editoras interessadas em livro"></textarea>
   </section>
 
-  <!-- 6. PRÓXIMO PASSO + PERGUNTA -->
   <section class="etapa">
-    <div class="etapa-header">
-      <div class="etapa-num">6</div>
-      <div>
-        <div class="etapa-titulo">Próximo passo + pergunta para Bloco 3</div>
-        <div class="etapa-desc">1 ação específica esta semana. 1 pergunta que você carrega para o Bloco 3 (Traçar plano).</div>
-      </div>
-    </div>
-    <div style="margin-bottom:14px">
-      <label>Próximo passo específico (esta semana)</label>
-      <textarea id="passo" placeholder="ex.: escrever e publicar 1 post sobre 'IA aplicada a análise de decisão de crédito' até domingo"></textarea>
-    </div>
-    <div>
-      <label>Pergunta para carregar para Bloco 3 <small>sem responder ainda</small></label>
-      <textarea id="pergunta" placeholder="ex.: como transformar essa direção em plano de 90 dias — sem que ela vire lista de coisas para fazer?"></textarea>
+    <div class="etapa-header"><div class="etapa-num">6</div><div><div class="etapa-titulo">Sinal de "estou saindo do plano"</div><div class="etapa-sub">quando chamar revisão emergencial</div></div></div>
+    <div class="etapa-corpo">
+      <p class="instrucao">O que aciona uma revisão fora do calendário? Adaptar cedo &gt; corrigir tarde.</p>
+      <label>Sinal de saída do plano <small>condição específica, mensurável</small></label>
+      <textarea id="sinal" placeholder="ex.: se eu pular 2 semanas seguidas do Movimento 1 (artigo), chamo revisão emergencial no domingo seguinte para ajustar o desenho — não a força de vontade"></textarea>
     </div>
   </section>
 
   <div class="concluir">
-    <h3>Terminou o fechamento?</h3>
-    <p>O material da Etapa 14 é <b>Sua Direção Escolhida</b> — a síntese completa do Bloco 2, com toda a jornada visível. Bloco 3 começa amanhã.</p>
-    <a href="material.html" class="btn-concluir" id="btn-concluir">Ver Sua Direção Escolhida<span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span></a>
+    <h3>Terminou a consolidação?</h3>
+    <p>O material da Etapa 14 consolida tudo — os 3 movimentos, o que cede, a cadência e o sinal. É o documento que abre o Bloco 3 (Instalar rotina). Salvo e visível para as próximas 4 semanas.</p>
+    <a href="material.html" class="btn-concluir" id="btn-concluir">Ver seu plano executável<span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span></a>
   </div>
 </main>
 
-<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 14 · Missão — Sua Direção Escolhida</div></footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 14 · Missão — Consolidar Bloco 2</div></footer>
 
 <script>
-  let escolha = '';
+  function truncar(str, n) {
+    if (!str) return '—';
+    const s = str.toString().trim();
+    if (s.length <= n) return s;
+    return s.substring(0, n).trim() + '…';
+  }
 
-  document.querySelectorAll('.escolha-op').forEach(op => {
-    op.addEventListener('click', () => {
-      document.querySelectorAll('.escolha-op').forEach(x => x.classList.remove('selecionada'));
-      op.classList.add('selecionada');
-      escolha = op.dataset.esc;
-      atualizar();
-    });
-  });
+  function recuperar(chave, campo) {
+    try {
+      const s = sessionStorage.getItem(chave);
+      if (!s) return '';
+      const p = JSON.parse(s);
+      return (p && p[campo]) || '';
+    } catch(e) { return ''; }
+  }
 
-  function contarPalavras(t) { return t.trim().split(/\s+/).filter(Boolean).length; }
+  (function(){
+    document.getElementById('recap-15').textContent = truncar(recuperar('intentia-dia8','movimento') || recuperar('intentia-dia8','compromisso'), 90) || '(não preenchido)';
+    document.getElementById('recap-16').textContent = truncar(recuperar('intentia-dia9','movimento') || recuperar('intentia-dia9','territorio'), 90) || '(não preenchido)';
+    document.getElementById('recap-17').textContent = truncar(recuperar('intentia-dia10','movimento'), 90) || '(não preenchido)';
+    document.getElementById('recap-18').textContent = truncar(recuperar('intentia-dia11','pedido'), 90) || '(não preenchido)';
+    document.getElementById('recap-19').textContent = truncar(recuperar('intentia-dia12','desafio'), 90) || '(não preenchido)';
+    document.getElementById('recap-20').textContent = truncar(recuperar('intentia-dia13','ritual'), 90) || '(não preenchido)';
+  })();
+
+  const CAMPOS = ['mov1','mov2','mov3','cede','perguntas','sinal'];
+  const REVISAO = ['data-revisao','formato-revisao'];
 
   function atualizar() {
-    const frase = document.getElementById('frase-sintese').value.trim();
-    const historia = document.getElementById('historia').value.trim();
-    const prova = document.getElementById('prova').value.trim();
-    const passo = document.getElementById('passo').value.trim();
-    const pergunta = document.getElementById('pergunta').value.trim();
-    const escolhaFrase = document.getElementById('escolha-frase').value.trim();
-    document.getElementById('contador-frase').textContent = contarPalavras(frase) + ' palavras';
-    document.getElementById('contador-hist').textContent = contarPalavras(historia) + ' palavras';
     let pontos = 0;
-    if (escolha && escolhaFrase.length > 0) pontos++;
-    if (frase.length > 0) pontos++;
-    if (historia.length > 0) pontos++;
-    if (prova.length > 0) pontos++;
-    if (passo.length > 0) pontos++;
-    if (pergunta.length > 0) pontos++;
+    ['mov1','mov2','mov3','cede','sinal','perguntas'].forEach(id => {
+      if (document.getElementById(id).value.trim()) pontos++;
+    });
+    const revOk = document.getElementById('data-revisao').value && document.getElementById('formato-revisao').value.trim();
+    if (!revOk && pontos > 4) pontos--;
     document.getElementById('progresso-num').textContent = pontos + '/6';
     document.getElementById('progresso-fill').style.width = (pontos/6*100) + '%';
   }
+  CAMPOS.concat(REVISAO).forEach(id => document.getElementById(id).addEventListener('input', atualizar));
 
-  ['frase-sintese','historia','prova','passo','pergunta','escolha-frase'].forEach(id => {
-    document.getElementById(id).addEventListener('input', atualizar);
-  });
-
-  // Puxar Etapa 8 e demais
-  function pega(k, fb) { try{const s=sessionStorage.getItem(k);if(s){const p=JSON.parse(s);if(p&&Object.keys(p).length>0)return p;}}catch(e){}return fb; }
-  const DEMO_DIA8 = {
-    continuacao: { nome: 'A analista de dados que virou referência em análise de decisão' },
-    adjacencia: { nome: 'A analista que virou head de dados de fintech' },
-    reinvencao: { nome: 'A professora e autora sobre alfabetização de dados' }
-  };
-  const dia8 = pega('intentia-dia8', DEMO_DIA8);
-  const dia10 = pega('intentia-dia10', {continuacao:{notas:{aloc:4,rev:5,ret:3}}, adjacencia:{notas:{aloc:2,rev:3,ret:4}}, reinvencao:{notas:{aloc:3,rev:2,ret:2}}});
-  const dia12 = pega('intentia-dia12', {continuacao:{legado:{forca:'forte'},servico:{forca:'forte'},vocacao:{forca:'forte'}},adjacencia:{legado:{forca:'medio'},servico:{forca:'forte'},vocacao:{forca:'fraco'}},reinvencao:{legado:{forca:'forte'},servico:{forca:'forte'},vocacao:{forca:'forte'}}});
-  const dia13 = pega('intentia-dia13', {continuacao:{atravessabilidade:'Alta'},adjacencia:{atravessabilidade:'Alta'},reinvencao:{atravessabilidade:'Média'}});
-
-  if (!sessionStorage.getItem('intentia-dia8')) document.getElementById('aviso-demo').style.display = 'flex';
-
-  // Preencher etiquetas de escolha com o nome real
-  ['continuacao','adjacencia','reinvencao'].forEach(tipo => {
-    const p = tipo === 'continuacao' ? 'cont' : (tipo === 'adjacencia' ? 'adj' : 'rei');
-    const nome = dia8[tipo] && dia8[tipo].nome ? dia8[tipo].nome : `${tipo} — não preenchido`;
-    document.getElementById('escolha-'+p+'-txt').textContent = nome;
-  });
-
-  // Preencher tabela recap
-  function calcCritTot(t) { const n=(dia10[t]&&dia10[t].notas)||{};return (n.aloc||0)+(n.rev||0)+(n.ret||0); }
-  function calcProp(t) { const d=dia12[t]||{};const v={forte:3,medio:2,fraco:1};const s=(v[d.legado?.forca]||0)+(v[d.servico?.forca]||0)+(v[d.vocacao?.forca]||0);if(s===0)return '—';if(s>=8)return 'Alto';if(s>=6)return 'Médio-alto';if(s>=4)return 'Médio';return 'Baixo'; }
-  const NOMES = { continuacao:'Continuação', adjacencia:'Adjacência', reinvencao:'Reinvenção' };
-  const linhasEl = document.getElementById('recap-linhas');
-  ['continuacao','adjacencia','reinvencao'].forEach(t => {
-    const linha = document.createElement('div');
-    linha.className = 'tabela-recap-linha';
-    linha.innerHTML = `<div class="cel nome" data-label="Eu">${NOMES[t]}</div><div class="cel" data-label="Critério">${calcCritTot(t)||'—'}/15</div><div class="cel" data-label="Propósito">${calcProp(t)}</div><div class="cel" data-label="Atravessável">${dia13[t]?.atravessabilidade || '—'}</div>`;
-    linhasEl.appendChild(linha);
-  });
+  (function(){
+    try {
+      const s = sessionStorage.getItem('intentia-dia7');
+      if (s) { const p = JSON.parse(s); if (p && p.escolhaFrase) { document.getElementById('direcao-txt').textContent = p.escolhaFrase; return; } }
+    } catch(e){}
+    document.getElementById('direcao-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo)';
+  })();
 
   document.getElementById('btn-concluir').addEventListener('click', () => {
     try {
       sessionStorage.setItem('intentia-dia14', JSON.stringify({
         dataConclusao: new Date().toISOString(),
-        escolha: escolha,
-        escolhaFrase: document.getElementById('escolha-frase').value,
-        marca: {
-          fraseSintese: document.getElementById('frase-sintese').value,
-          historia: document.getElementById('historia').value,
-          prova: document.getElementById('prova').value
-        },
-        proximoPasso: document.getElementById('passo').value,
-        perguntaSemana3: document.getElementById('pergunta').value
+        mov1: document.getElementById('mov1').value,
+        mov2: document.getElementById('mov2').value,
+        mov3: document.getElementById('mov3').value,
+        cede: document.getElementById('cede').value,
+        dataRevisao: document.getElementById('data-revisao').value,
+        formatoRevisao: document.getElementById('formato-revisao').value,
+        perguntas: document.getElementById('perguntas').value,
+        sinal: document.getElementById('sinal').value
       }));
     } catch(e) {}
   });
 
   atualizar();
 </script>
-
 <!--intentia-save:start--><style>
 .intentia-fab{position:fixed;right:16px;bottom:16px;z-index:9998;display:inline-flex;align-items:center;gap:8px;
   background:#275750;color:#fff;border:none;border-radius:999px;padding:13px 20px;font-family:'Hanken Grotesk',-apple-system,sans-serif;

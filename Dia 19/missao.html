@@ -1,62 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 19 · Missão — Ciclo D·F·A de 21 dias</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.6;font-size:16px}
-  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
-  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
-  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
-  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
-  .voltar svg{width:14px;height:14px;fill:currentColor}
-  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
-  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:12px}
-  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
-  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
-  .missao-meta{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:22px;font-size:13px;color:#A9C6B8}
-  .missao-meta span{display:inline-flex;align-items:center;gap:6px}
-  .missao-meta svg{width:14px;height:14px;fill:currentColor}
-  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
-  .progresso{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:16px 22px;margin:24px 0;display:flex;align-items:center;gap:18px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .progresso-info{flex:1}
-  .progresso-titulo{font-size:13px;font-weight:600;color:var(--verde-900);margin-bottom:6px}
-  .progresso-bar{background:var(--verde-100);height:6px;border-radius:3px;overflow:hidden}
-  .progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}
-  .progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}
-  .direcao-recap{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);padding:14px 20px;border-radius:0 10px 10px 0;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
-  .direcao-recap b{color:var(--verde-900);font-family:var(--serif);font-style:italic;font-weight:500}
-  .etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:18px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
-  .etapa-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:20px 26px;display:flex;align-items:center;gap:14px}
-  .etapa-num{width:38px;height:38px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;font-weight:600;flex-shrink:0}
-  .etapa-titulo{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.2;margin-bottom:3px}
-  .etapa-sub{font-size:12.5px;opacity:.92;font-style:italic}
-  .etapa-corpo{padding:22px 26px 24px}
-  .etapa-corpo p.instrucao{font-size:13.5px;color:var(--tinta-suave);line-height:1.55;margin-bottom:12px}
-  label{display:block;font-size:12.5px;font-weight:600;color:var(--verde-700);margin-bottom:6px;letter-spacing:.02em;text-transform:uppercase;margin-top:14px}
-  label:first-child{margin-top:0}
-  label small{color:var(--tinta-suave);font-weight:500;text-transform:none;letter-spacing:0;font-size:12px;margin-left:6px;font-style:italic}
-  input[type="text"],input[type="date"],textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14px;color:var(--tinta);background:#fff;transition:border-color .2s;line-height:1.5}
-  textarea{resize:vertical;min-height:70px}
-  input[type="text"]:focus,input[type="date"]:focus,textarea:focus{outline:none;border-color:var(--coral)}
-  .datas-linha{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
-  @media (max-width:520px){.datas-linha{grid-template-columns:1fr}}
-  .concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}
-  .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px}
-  .concluir p{font-size:14.5px;opacity:.92;margin-bottom:22px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
-  .btn-concluir{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--coral);padding:16px 30px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:17px;font-weight:600;border:none;cursor:pointer;transition:all .2s;box-shadow:0 6px 18px rgba(0,0,0,.15)}
-  .btn-concluir:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
-  .btn-concluir .icone{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
-  .btn-concluir .icone svg{width:14px;height:14px;fill:currentColor}
-  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
-  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
-</style>
-<script>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Intentia · Etapa 19 · Missão — Rede de suporte</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><style>:root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.6;font-size:16px}.grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}.hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}.voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}.voltar svg{width:14px;height:14px;fill:currentColor}.eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:12px}header .lede{font-size:16px;color:#CFE0D6;max-width:600px}.arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}.missao-meta{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:22px;font-size:13px;color:#A9C6B8}.missao-meta span{display:inline-flex;align-items:center;gap:6px}.missao-meta svg{width:14px;height:14px;fill:currentColor}main{max-width:760px;margin:0 auto;padding:0 24px 40px}.progresso{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:16px 22px;margin:24px 0;display:flex;align-items:center;gap:18px;box-shadow:0 3px 12px rgba(39,87,80,.05)}.progresso-info{flex:1}.progresso-titulo{font-size:13px;font-weight:600;color:var(--verde-900);margin-bottom:6px}.progresso-bar{background:var(--verde-100);height:6px;border-radius:3px;overflow:hidden}.progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}.progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}.etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:18px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}.etapa-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:20px 26px;display:flex;align-items:center;gap:14px}.etapa-num{width:38px;height:38px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;font-weight:600;flex-shrink:0}.etapa-titulo{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.2;margin-bottom:3px}.etapa-sub{font-size:12.5px;opacity:.92;font-style:italic}.etapa-corpo{padding:22px 26px 24px}.etapa-corpo p.instrucao{font-size:13.5px;color:var(--tinta-suave);line-height:1.55;margin-bottom:12px}label{display:block;font-size:12.5px;font-weight:600;color:var(--verde-700);margin-bottom:6px;letter-spacing:.02em;text-transform:uppercase;margin-top:14px}label:first-child{margin-top:0}label small{color:var(--tinta-suave);font-weight:500;text-transform:none;letter-spacing:0;font-size:12px;margin-left:6px;font-style:italic}input[type="text"],textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14px;color:var(--tinta);background:#fff;transition:border-color .2s;line-height:1.5}textarea{resize:vertical;min-height:70px}input:focus,textarea:focus{outline:none;border-color:var(--coral)}.concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}.concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px}.concluir p{font-size:14.5px;opacity:.92;margin-bottom:22px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}.btn-concluir{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--coral);padding:16px 30px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:17px;font-weight:600;border:none;cursor:pointer;transition:all .2s;box-shadow:0 6px 18px rgba(0,0,0,.15)}.btn-concluir:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}.btn-concluir .icone{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}.btn-concluir .icone svg{width:14px;height:14px;fill:currentColor}footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}</style><script>
 /* Persistência entre sessões (integração 21/07/2026)
    Espelha as chaves intentia-* gravadas em sessionStorage para localStorage,
    mantém o array localStorage.intentia-progresso (lido por jornada.html e pela capa)
@@ -171,138 +114,30 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 })();
 </script><!--intentia-nav:end-->
 
-<header>
-  <div class="hero-inner">
-    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 19</a>
-    <div class="eyebrow">Missão · Etapa 19 · Bloco 3</div>
-    <h1>Ciclo <span class="grifo">D·F·A</span> · 21 dias.</h1>
-    <p class="lede">1 competência da direção. Desafio semanal. Feedback nomeado. Ajuste registrado. Marcar próxima ação e dia 21 na agenda.</p>
-    <div class="missao-meta">
-      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 18 min</span>
-      <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
-    </div>
-  </div>
-  <div class="arc"></div>
-</header>
+<header><div class="hero-inner"><a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 19</a><div class="eyebrow">Missão · Etapa 19 · Bloco 3</div><h1>1 accountability + <span class="grifo">1 comunidade</span> + 1 referência.</h1><p class="lede">Nomes específicos, formato do contato, gatilho para apoio profissional. Convite enviado hoje.</p><div class="missao-meta"><span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 15 min</span><span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span></div></div><div class="arc"></div></header>
 <main>
-  <div class="progresso">
-    <div class="progresso-info">
-      <div class="progresso-titulo">Seu preenchimento</div>
-      <div class="progresso-bar"><div class="progresso-fill" id="progresso-fill"></div></div>
-    </div>
-    <div class="progresso-num" id="progresso-num">0/6</div>
-  </div>
+  <div class="progresso"><div class="progresso-info"><div class="progresso-titulo">Seu preenchimento</div><div class="progresso-bar"><div class="progresso-fill" id="progresso-fill"></div></div></div><div class="progresso-num" id="progresso-num">0/6</div></div>
 
-  <div class="direcao-recap">
-    <b id="direcao-txt">—</b>
-    <span style="font-size:12px;color:var(--tinta-suave);display:block;margin-top:6px;font-style:italic">← sua direção da Etapa 14. A competência escolhida abaixo tem que servir a ela.</span>
-  </div>
+  <section class="etapa"><div class="etapa-header"><div class="etapa-num">1</div><div><div class="etapa-titulo">Pessoa de accountability</div><div class="etapa-sub">nome específico</div></div></div><div class="etapa-corpo"><p class="instrucao">Alguém que já te conhece, respeita seu plano, tem tempo para 10-20 min por semana. Se não sabe o nome, ainda é vago.</p><label>Nome + relação com você</label><input type="text" id="pessoa" placeholder="ex.: Beatriz — ex-chefe/mentora dos meus 5 primeiros anos no banco"></div></section>
 
-  <section class="etapa">
-    <div class="etapa-header"><div class="etapa-num">1</div><div><div class="etapa-titulo">Escolher a competência</div><div class="etapa-sub">3 min · 1 competência, não 5</div></div></div>
-    <div class="etapa-corpo">
-      <p class="instrucao">1 competência específica que sua direção exige e você ainda não domina. Se você tem várias, escolha a que <b>mais destrava as outras</b> se subir 1 nível.</p>
-      <label>Competência-alvo <small>específica, verificável</small></label>
-      <input type="text" id="competencia" placeholder="ex.: escrever artigo técnico curto (800 palavras) sobre IA aplicada">
-      <label>Por que essa e não outra? <small>1 frase — qual é o efeito de cascata</small></label>
-      <textarea id="por-que" placeholder="ex.: se eu consigo escrever com clareza, tudo mais da presença externa fica mais fácil — palestras nascem de artigos"></textarea>
-    </div>
-  </section>
+  <section class="etapa"><div class="etapa-header"><div class="etapa-num">2</div><div><div class="etapa-titulo">Formato do contato</div><div class="etapa-sub">baixa fricção, alta regularidade</div></div></div><div class="etapa-corpo"><p class="instrucao">Mensagem semanal 3 linhas? Call 15 min? Café mensal? Cadência semanal ou quinzenal.</p><label>Formato + cadência</label><input type="text" id="formato" placeholder="ex.: mensagem WhatsApp aos domingos 20h — 3 linhas (o que aconteceu, o que não, próxima ação)"></div></section>
 
-  <section class="etapa">
-    <div class="etapa-header"><div class="etapa-num">2</div><div><div class="etapa-titulo">Desenhar o Desafio</div><div class="etapa-sub">4 min · atividade concreta, semanal, no limite</div></div></div>
-    <div class="etapa-corpo">
-      <p class="instrucao">Uma atividade que você fará <b>1 vez por semana</b> por 3 semanas, que exige exatamente essa competência. Executável em 1 sessão isolada (30-90 min).</p>
-      <label>O Desafio semanal <small>o que exatamente você produz cada semana</small></label>
-      <textarea id="desafio" placeholder="ex.: escrever 1 artigo de 800 palavras por semana sobre um caso real da minha rotina — publicar no LinkedIn"></textarea>
-    </div>
-  </section>
+  <section class="etapa"><div class="etapa-header"><div class="etapa-num">3</div><div><div class="etapa-titulo">Comunidade contínua</div><div class="etapa-sub">grupo, coletivo, curso — mensal mínimo</div></div></div><div class="etapa-corpo"><p class="instrucao">Algo que já existe (ou pode entrar). Frequência mínima: 1x por mês.</p><label>Comunidade + frequência</label><input type="text" id="comunidade" placeholder="ex.: grupo de estudos de dados aplicados — encontro online quinzenal (terças 20h)"></div></section>
 
-  <section class="etapa">
-    <div class="etapa-header"><div class="etapa-num">3</div><div><div class="etapa-titulo">Desenhar o Feedback</div><div class="etapa-sub">4 min · fonte nomeada, específica</div></div></div>
-    <div class="etapa-corpo">
-      <p class="instrucao">Nome de pessoa que devolve feedback OU fonte concreta de dado (métrica, gravação, questionário). Sem feedback nomeado, o ciclo não fecha.</p>
-      <label>Fonte de feedback <small>pessoa nomeada ou métrica/dado específico</small></label>
-      <textarea id="feedback" placeholder="ex.: enviar rascunho para Ana (par técnico) e Bruno (leitor externo) antes de publicar — pedir 1 crítica concreta cada"></textarea>
-    </div>
-  </section>
+  <section class="etapa"><div class="etapa-header"><div class="etapa-num">4</div><div><div class="etapa-titulo">Profissional de referência</div><div class="etapa-sub">pré-nomeado, não usar agora</div></div></div><div class="etapa-corpo"><p class="instrucao">Coach, mentor sério, terapeuta. 2-3 nomes possíveis + contato. Sem escolher agora — só listar.</p><label>Nomes + contato + tipo</label><textarea id="referencia" placeholder="ex.: (1) Coach Marina — atende profissionais do banco — WhatsApp XXX; (2) Mentor Pedro — fintech advisor — LinkedIn; critério para acionar: se mesmo padrão adaptativo por 4 semanas seguidas"></textarea></div></section>
 
-  <section class="etapa">
-    <div class="etapa-header"><div class="etapa-num">4</div><div><div class="etapa-titulo">Desenhar o Ajuste</div><div class="etapa-sub">3 min · onde você registra e como usa</div></div></div>
-    <div class="etapa-corpo">
-      <p class="instrucao">Onde você anota o feedback recebido e o que muda na próxima tentativa. Caderno, doc, planilha — o que for. Sem local para o ajuste, o feedback vira ruído.</p>
-      <label>Local do Ajuste <small>ferramenta + o quê você escreve</small></label>
-      <textarea id="ajuste" placeholder="ex.: doc chamado 'ciclo-artigos.md' no Obsidian — 3 linhas por semana: crítica recebida / meu ajuste na próxima / o que aprendi sobre meu padrão"></textarea>
-    </div>
-  </section>
+  <section class="etapa"><div class="etapa-header"><div class="etapa-num">5</div><div><div class="etapa-titulo">Mensagem de convite</div><div class="etapa-sub">breve, específica, gentil</div></div></div><div class="etapa-corpo"><p class="instrucao">Escreva o convite para a pessoa de accountability. O que propõe (formato, cadência), o que ganha, o que pede.</p><label>Rascunho da mensagem</label><textarea id="convite" rows="5" placeholder="ex.: Bia, tudo bem? Estou fechando 28 dias de um plano de carreira e queria te pedir uma coisa: você me ajudaria como accountability semanal? Formato baixo: mensagem minha aos domingos 20h com 3 linhas (o que fiz, o que não fiz, próxima ação); você responde durante a semana com 1 comentário se quiser. 3 meses. Aceita?"></textarea></div></section>
 
-  <section class="etapa">
-    <div class="etapa-header"><div class="etapa-num">5</div><div><div class="etapa-titulo">Marcar as datas</div><div class="etapa-sub">4 min · primeira ação + dia 21</div></div></div>
-    <div class="etapa-corpo">
-      <p class="instrucao">Data + hora do <b>primeiro Desafio</b> e data exata do <b>dia 21</b> (reavaliação). Se não está na agenda, não vai acontecer.</p>
-      <div class="datas-linha">
-        <div>
-          <label>Primeira ação (data)</label>
-          <input type="date" id="data-inicio">
-        </div>
-        <div>
-          <label>Etapa 21 (reavaliação)</label>
-          <input type="date" id="data-21">
-        </div>
-      </div>
-      <label style="margin-top:16px">Bloco na agenda <small>hora + local — específico</small></label>
-      <input type="text" id="bloco-agenda" placeholder="ex.: quinta-feira 07h-08h30, no escritório, sem celular">
-    </div>
-  </section>
+  <section class="etapa"><div class="etapa-header"><div class="etapa-num">6</div><div><div class="etapa-titulo">Quando você envia</div><div class="etapa-sub">agora ou hoje</div></div></div><div class="etapa-corpo"><p class="instrucao">Sem timestamp, o convite não sai. Marque agora.</p><label>Quando</label><input type="text" id="quando" placeholder="ex.: agora, ao terminar essa missão (2 min); ou hoje 18h antes do jantar"></div></section>
 
-  <div class="concluir">
-    <h3>Terminou o plano?</h3>
-    <p>O material da Etapa 19 consolida seu ciclo D·F·A — visualiza os 3 elementos com datas e mostra o próximo passo. Comece nesta semana. Reavalie no dia 21.</p>
-    <a href="material.html" class="btn-concluir" id="btn-concluir">Ver seu ciclo D·F·A<span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span></a>
-  </div>
+  <div class="concluir"><h3>Terminou?</h3><p>O material da Etapa 19 consolida sua rede de suporte + mostra o cronograma dos primeiros 3 meses após a trilha. Envie o convite hoje.</p><a href="material.html" class="btn-concluir" id="btn-concluir">Ver sua rede de suporte<span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span></a></div>
 </main>
-
-<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 19 · Missão — Ciclo D·F·A</div></footer>
-
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 19 · Missão — Rede de suporte</div></footer>
 <script>
-  const CAMPOS = ['competencia','por-que','desafio','feedback','ajuste'];
-  const DATAS = ['data-inicio','data-21','bloco-agenda'];
-
-  function atualizar() {
-    let pontos = 0;
-    CAMPOS.forEach(id => { if (document.getElementById(id).value.trim()) pontos++; });
-    const datasOk = document.getElementById('data-inicio').value && document.getElementById('data-21').value && document.getElementById('bloco-agenda').value.trim();
-    if (datasOk) pontos++;
-    document.getElementById('progresso-num').textContent = pontos + '/6';
-    document.getElementById('progresso-fill').style.width = (pontos/6*100) + '%';
-  }
-  CAMPOS.concat(DATAS).forEach(id => document.getElementById(id).addEventListener('input', atualizar));
-
-  (function(){
-    try {
-      const s = sessionStorage.getItem('intentia-dia14');
-      if (s) { const p = JSON.parse(s); if (p && p.escolhaFrase) { document.getElementById('direcao-txt').textContent = p.escolhaFrase; return; } }
-    } catch(e){}
-    document.getElementById('direcao-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo)';
-  })();
-
-  document.getElementById('btn-concluir').addEventListener('click', () => {
-    try {
-      sessionStorage.setItem('intentia-dia19', JSON.stringify({
-        dataConclusao: new Date().toISOString(),
-        competencia: document.getElementById('competencia').value,
-        porQue: document.getElementById('por-que').value,
-        desafio: document.getElementById('desafio').value,
-        feedback: document.getElementById('feedback').value,
-        ajuste: document.getElementById('ajuste').value,
-        dataInicio: document.getElementById('data-inicio').value,
-        data21: document.getElementById('data-21').value,
-        blocoAgenda: document.getElementById('bloco-agenda').value
-      }));
-    } catch(e) {}
-  });
-
-  atualizar();
+  const CAMPOS = ['pessoa','formato','comunidade','referencia','convite','quando'];
+  function atualizar() { let pontos = 0; CAMPOS.forEach(id => { if (document.getElementById(id).value.trim()) pontos++; }); document.getElementById('progresso-num').textContent = pontos + '/6'; document.getElementById('progresso-fill').style.width = (pontos/6*100) + '%'; }
+  CAMPOS.forEach(id => document.getElementById(id).addEventListener('input', atualizar));
+  document.getElementById('btn-concluir').addEventListener('click', () => { try { sessionStorage.setItem('intentia-dia19', JSON.stringify({ dataConclusao: new Date().toISOString(), pessoa: document.getElementById('pessoa').value, formato: document.getElementById('formato').value, comunidade: document.getElementById('comunidade').value, referencia: document.getElementById('referencia').value, convite: document.getElementById('convite').value, quando: document.getElementById('quando').value })); } catch(e) {} });
 </script>
 <!--intentia-save:start--><style>
 .intentia-fab{position:fixed;right:16px;bottom:16px;z-index:9998;display:inline-flex;align-items:center;gap:8px;
@@ -356,5 +191,4 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   window.addEventListener('load',function(){setTimeout(restaurar,60);});
 })();
 </script><!--intentia-save:end-->
-</body>
-</html>
+</body></html>

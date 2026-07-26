@@ -3,65 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 5 · Playbook — Rede profissional</title>
+<title>Intentia · Etapa 5 · Playbook — Propósito construído</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.7;font-size:17px}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
   .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
-  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 56px;position:relative;overflow:hidden}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
   .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
-  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:14px}
-  .voltar:hover{color:#fff}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
   .voltar svg{width:14px;height:14px;fill:currentColor}
-  .badge-aprofundamento{display:inline-flex;align-items:center;gap:8px;background:rgba(255,104,66,.18);color:var(--coral-soft);border:1px solid rgba(255,104,66,.35);padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px}
-  .badge-aprofundamento svg{width:12px;height:12px;fill:currentColor}
-  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
-  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.15;letter-spacing:-.01em;margin-bottom:12px}
-  header .lede{font-size:16px;color:#CFE0D6;max-width:600px;margin-bottom:14px}
-  .relacao-index{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-left:3px solid var(--coral);border-radius:0 8px 8px 0;padding:14px 18px;margin-top:14px;font-size:13.5px;color:#CFE0D6;line-height:1.5}
-  .relacao-index b{color:#fff}
-  .relacao-index a{color:var(--coral-soft);text-decoration:none;font-weight:600;border-bottom:1px dotted var(--coral-soft)}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:14px}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
   .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
-  .meta{display:flex;gap:20px;font-size:12.5px;color:#A9C6B8;margin-top:14px}
+  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
+  .intro-caixa{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .intro-caixa h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .intro-caixa p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .intro-caixa p:last-child{margin-bottom:0}
+  .intro-caixa b{color:var(--verde-900)}
 
-  nav{background:#fff;border-bottom:1px solid var(--verde-100);position:sticky;top:0;z-index:10;padding:14px 24px;box-shadow:0 2px 12px rgba(39,87,80,.04)}
-  .chips{max-width:820px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
-  .chips a{color:var(--verde-700);text-decoration:none;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:20px;border:1px solid var(--verde-100);transition:all .2s}
-  .chips a:hover{background:var(--verde-100);border-color:var(--verde-700)}
+  .lente-secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06)}
+  .lente-secao-header{padding:22px 28px 20px;color:#fff;display:flex;align-items:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%)}
+  .lente-secao-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
+  .lente-secao-titulo{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2}
+  .lente-secao-sub{font-size:13px;opacity:.92;font-style:italic;margin-top:3px}
+  .lente-secao-body{padding:22px 28px 26px}
+  .lente-secao-body p{margin-bottom:14px;font-size:15px;line-height:1.7}
+  .lente-secao-body p:last-child{margin-bottom:0}
+  .lente-secao-body b{color:var(--verde-900)}
+  .subsec-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin:22px 0 10px;padding-top:18px;border-top:1px dashed var(--verde-100)}
+  .subsec-label:first-child{margin-top:0;padding-top:0;border-top:none}
+  .caixa-perguntas{background:var(--creme);border-left:3px solid var(--verde-700);border-radius:0 10px 10px 0;padding:14px 20px;margin-top:12px;font-size:14px;line-height:1.6}
+  .caixa-perguntas ul{list-style:none;padding:0;margin:0}
+  .caixa-perguntas li{padding:5px 0 5px 16px;position:relative}
+  .caixa-perguntas li::before{content:"→";position:absolute;left:0;color:var(--coral);font-weight:700}
+  .caixa-perguntas li em{color:var(--verde-900);font-weight:500;font-family:var(--serif);font-style:italic}
+  .erro-caixa{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
+  .erro-caixa .erro-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .erro-caixa b{color:var(--verde-900)}
 
-  main{max-width:760px;margin:0 auto;padding:36px 24px}
-  section{margin-bottom:36px}
-  section h2{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--verde-900);margin-bottom:16px;letter-spacing:-.005em}
-  section p{margin-bottom:14px}
-  section p:last-child{margin-bottom:0}
-  section .eyebrow{color:var(--coral);margin-bottom:10px}
-  section blockquote{background:var(--verde-100);border-left:4px solid var(--verde-700);padding:18px 22px;font-family:var(--serif);font-size:19px;line-height:1.4;color:var(--verde-900);font-style:italic;margin:16px 0;border-radius:0 10px 10px 0}
-
-  .dim{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 26px;margin-bottom:16px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .dim-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
-  .dim-ico{width:44px;height:44px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;font-weight:600;flex-shrink:0}
-  .dim-head h3{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--verde-900);line-height:1.2;margin-bottom:0}
-  .def{font-size:15px;color:var(--tinta-suave);font-style:italic;margin-bottom:12px}
-  .dim h4{font-size:11.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--coral);margin-top:14px;margin-bottom:8px}
-  .gatilhos{list-style:none;padding:0}
-  .gatilhos li{padding:6px 0 6px 22px;position:relative;font-size:14.5px;line-height:1.55}
-  .gatilhos li::before{content:"→";position:absolute;left:0;color:var(--coral);font-weight:700}
-  .caso{background:var(--creme);border-radius:10px;padding:14px 18px;font-size:14px;line-height:1.55;margin-top:10px}
-  .caso .quem{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--verde-700);display:block;margin-bottom:6px}
-  .caso.c2 .quem{color:var(--coral)}
-  .caso.c3 .quem{color:var(--verde-500)}
-  .caso b{color:var(--verde-900)}
-  .protocolo{background:var(--creme);border-left:3px solid var(--verde-700);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:10px;font-size:14px;line-height:1.6}
-  .protocolo b{color:var(--verde-900)}
-  .protocolo ol{padding-left:20px;margin-top:6px}
-  .protocolo ol li{margin-bottom:4px}
-  .cuidado{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:10px;font-size:14px;line-height:1.55}
-  .cuidado b{color:var(--verde-900);display:block;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
-  .prox{text-align:center;font-size:14px;color:var(--tinta-suave);margin-top:32px;padding:20px;background:#fff;border:1px dashed var(--verde-500);border-radius:12px}
+  .aviso-final{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0 20px}
+  .aviso-final h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .aviso-final p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .aviso-final p:last-child{margin-bottom:0}
+  .aviso-final b{color:var(--verde-900)}
   footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
   footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
 </style>
@@ -145,167 +134,94 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 })();
 </script><!--intentia-nav:end-->
 
+
 <header>
   <div class="hero-inner">
-    <a href="index.html" class="voltar">
-      <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-      Voltar para a Etapa 5
-    </a>
-    <span class="badge-aprofundamento">
-      <svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1z"/></svg>
-      Playbook · Aprofundamento da Etapa 5
-    </span>
-    <div class="eyebrow">Trilha Capital de Carreira · Bloco A · Etapa 5</div>
-    <h1>Rede, <span class="grifo">em profundidade</span>.</h1>
-    <p class="lede">O que é rede ativa (e o que não é), as três dimensões D·N·P com protocolo de diagnóstico, o repertório de manutenção, e os cuidados éticos. Material para quem quer construir uma rede que rende juros no longo prazo.</p>
-    <div class="relacao-index">
-      <b>Como este material se relaciona com a Etapa 5:</b> o índice do dia trouxe o essencial. Este playbook aprofunda cada dimensão do diagnóstico. <a href="index.html">Voltar ao índice do dia →</a>
-    </div>
-    <div class="meta"><span>Leitura de 12–15 min · opcional</span></div>
+    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 5</a>
+    <div class="eyebrow">Playbook · Etapa 5</div>
+    <h1>Legado, Serviço, Vocação — <span class="grifo">a fundo</span>.</h1>
+    <p class="lede">As três lentes decompõem o que "propósito" significa em partes operacionais. Cada uma pergunta algo específico e verificável; cada uma tem um erro clássico que engana quem não conhece.</p>
   </div>
   <div class="arc"></div>
 </header>
 
-<nav>
-  <div class="chips">
-    <a href="#conceito">O conceito</a>
-    <a href="#dimensoes">As 3 dimensões D·N·P</a>
-    <a href="#manutencao">Manutenção</a>
-    <a href="#cuidados">Cuidados éticos</a>
-  </div>
-</nav>
-
 <main>
+  <div class="intro-caixa">
+    <h2>Propósito não é encontrado — mas também não é inventado</h2>
+    <p>O erro do "propósito encontrado" é <b>esperar epifania</b>. O erro oposto — "propósito inventado" — é imaginar que basta decidir. Nenhum dos dois se sustenta. Propósito é <em>construído</em>: emerge do encadeamento de escolhas repetidas ao longo do tempo, cada uma feita com atenção a algo que serve.</p>
+    <p>As 3 lentes de hoje são <b>diagnóstico do propósito em construção</b>. Elas não perguntam "qual seu propósito?" (pergunta grande, quase impossível de responder). Perguntam três coisas menores e verificáveis: <em>o que fica</em>, <em>a quem serve</em>, <em>o que chama</em>. Se essas três se alinham numa versão, o propósito está sendo construído. Se não se alinham, algum ajuste é necessário.</p>
+  </div>
 
-  <section id="conceito">
-    <div class="eyebrow">O ponto de partida</div>
-    <h2>O que é rede profissional ativa</h2>
-    <p>Rede profissional ativa é <strong>o conjunto de pessoas com quem você tem relação viva</strong> — que responderiam se você chamasse hoje, e que te lembrariam se um convite aparecesse na cabeça delas. Não é o número de conexões no LinkedIn. Não é a lista de cartões acumulados. É a interseção entre <em>quem você conhece</em> e <em>quem está disponível para você</em>.</p>
-    <p>A maioria das pessoas confunde rede com lista, e "networking" com "conhecer gente nova". As duas confusões geram a mesma consequência: quando surge a necessidade — indicação, oportunidade, conselho, mudança — a rede não responde, porque não estava viva. E aí a pessoa começa a fazer "networking de crise": manda dezenas de mensagens frias, recebe silêncio, e conclui erroneamente que "não sabe fazer networking". O problema não é o networking; é a manutenção que não aconteceu antes.</p>
-    <blockquote>Rede que só existe quando você precisa não é rede — é lista telefônica.</blockquote>
-    <p>Nesta trilha, tratamos rede como <strong>ativo que rende juros compostos</strong>: cada peça pequena de manutenção deposita valor; a soma vira uma reserva que aparece nas transições. E, como todo ativo, deprecia se ignorado — rede não cultivada vira contatos que não abrem porta nenhuma.</p>
-  </section>
+  <section class="lente-secao">
+    <div class="lente-secao-header"><div class="lente-secao-letra">L</div><div><div class="lente-secao-titulo">Lente Legado</div><div class="lente-secao-sub">"o que fica depois de você não estar mais nessa versão"</div></div></div>
+    <div class="lente-secao-body">
+      <div class="subsec-label">O que ela mede</div>
+      <p>Legado não é fama, tamanho ou reconhecimento imediato. É <b>durabilidade</b>: o que dessa versão continua a fazer efeito no mundo depois que você mudar ou parar. Pode ser material (livros, cursos, produtos, código), sistema (empresa/time/processo funcionando sem você), pessoas (alunos, mentorados), ou cultura (uma prática nova que outros adotam).</p>
+      <p>A pergunta operacional: se você viver essa versão por 5-15 anos e depois soltar, <b>o que resta impresso</b>?</p>
 
-  <section id="dimensoes">
-    <div class="eyebrow">O conceito, dimensão por dimensão</div>
-    <h2>As três dimensões da rede (D·N·P)</h2>
-    <p>Toda rede que trava, trava em uma dessas três dimensões. Diagnosticar onde é o primeiro trabalho.</p>
-
-    <div class="dim">
-      <div class="dim-head"><div class="dim-ico">D</div><h3>Diversidade</h3></div>
-      <p class="def">A mistura de contextos que a sua rede cobre.</p>
-      <h4>Perguntas de diagnóstico</h4>
-      <ul class="gatilhos">
-        <li>Se eu listar meus 30 contatos mais próximos, quantos contextos distintos aparecem? (Setor, área, formação, comunidade, geografia.)</li>
-        <li>Existe algum grupo que domina — mais de 50% dos contatos vêm dele?</li>
-        <li>Se o meu setor entrasse em crise amanhã, para onde eu olharia dentro da minha rede?</li>
-      </ul>
-      <h4>Protocolo de fortalecimento</h4>
-      <div class="protocolo">
-        <b>Diversifique por adjacência, não por saltos:</b>
-        <ol>
-          <li>Identifique 2-3 <b>setores adjacentes</b> ao seu (que compartilham problemas semelhantes com abordagens diferentes).</li>
-          <li>Encontre 1 pessoa influente em cada setor adjacente — via comunidade, conteúdo público, indicação.</li>
-          <li>Cultive uma relação horizontal (par a par), não uma relação de "aprendizado" — troca em vez de extração.</li>
-        </ol>
+      <div class="subsec-label">Perguntas que ativam a lente</div>
+      <div class="caixa-perguntas">
+        <ul>
+          <li><em>O que sobra dessa versão quando eu me aposentar dela?</em></li>
+          <li><em>Nomear 3 pessoas concretas cuja trajetória mudou por causa dessa versão minha.</em></li>
+          <li><em>Se eu escrevesse um obituário profissional de 5 linhas — o que essa versão contribui para ele?</em></li>
+          <li><em>A qual conversa/discussão eu adicionei algo que ficou registrado?</em></li>
+        </ul>
       </div>
-      <h4>Caso</h4>
-      <div class="caso"><span class="quem">Camila · Analista</span>Rede de 120 contatos, 90% analistas de dados em bancos. Quando o setor bancário travou contratação, ela não tinha para onde olhar. Diagnóstico: rede grande, diversidade zero. Onde agir: cultivar 3 relações em fintechs, 2 em seguros, 2 em varejo — setores que usam dados de formas diferentes.</div>
-    </div>
 
-    <div class="dim">
-      <div class="dim-head"><div class="dim-ico">N</div><h3>Nutrição</h3></div>
-      <p class="def">A frequência com que você mantém a rede viva.</p>
-      <h4>Perguntas de diagnóstico</h4>
-      <ul class="gatilhos">
-        <li>Quando foi a última vez que você mandou mensagem sem pedir nada?</li>
-        <li>Nos últimos 6 meses, com quantos contatos você trocou algo — mensagem, ajuda, indicação?</li>
-        <li>Se seu Top 20 sumisse por 3 meses, algum deles ligaria pra saber onde você anda?</li>
-      </ul>
-      <h4>Protocolo de fortalecimento</h4>
-      <div class="protocolo">
-        <b>Ritual de nutrição periódica (10 min por semana):</b>
-        <ol>
-          <li>Uma vez por semana, olhe seu Top 20 de rede. Identifique 2-3 pessoas que estão "esfriando".</li>
-          <li>Mande UMA mensagem específica para cada — algo que faça sentido para o outro: um artigo, uma pergunta genuína, uma lembrança concreta.</li>
-          <li>Sem cobrar retorno. Sem agenda de pedido. Apenas manter o fio ativo.</li>
-        </ol>
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p>Confundir Legado com <em>fama ou impacto grande</em>. Um professor que forma 200 alunos ao longo de 30 anos tem legado maior que um influencer com 50 mil seguidores que somem em 5 anos. <b>Legado mede-se pela durabilidade, não pela amplitude imediata.</b></p></div>
+    </div>
+  </section>
+
+  <section class="lente-secao">
+    <div class="lente-secao-header"><div class="lente-secao-letra">S</div><div><div class="lente-secao-titulo">Lente Serviço</div><div class="lente-secao-sub">"a quem essa versão serve concretamente"</div></div></div>
+    <div class="lente-secao-body">
+      <div class="subsec-label">O que ela mede</div>
+      <p>A dimensão mais imediata do propósito. Não pergunta o que fica em 20 anos — pergunta a quem você serve <em>na próxima segunda</em>. Nome (ou tipo) do público, número aproximado, dor específica que você alivia.</p>
+      <p>A pergunta operacional: quando essa versão está funcionando bem, <b>quem está sendo servido</b> e como?</p>
+
+      <div class="subsec-label">Perguntas que ativam a lente</div>
+      <div class="caixa-perguntas">
+        <ul>
+          <li><em>Se eu descrevesse meu cliente/beneficiário ideal em 2 linhas, quem é?</em></li>
+          <li><em>Quantas pessoas essa versão de mim atende por ano? Por semana?</em></li>
+          <li><em>Qual dor específica dessas pessoas eu alivio?</em></li>
+          <li><em>Se eu perguntasse a 3 dessas pessoas o que mudou porque eu existo, o que elas diriam?</em></li>
+        </ul>
       </div>
-      <h4>Caso</h4>
-      <div class="caso c2"><span class="quem">Rafael · Coordenador</span>Rede grande, diversa (ex-empresas, MBA, clientes antigos, comunidade). Mas Rafael não falava com nenhuma dessas pessoas há 8 meses. Quando precisou de indicação para uma vaga, mandou mensagens frias — a maioria não respondeu. Diagnóstico: rede ampla, dormente. Onde agir: instituir ritual semanal de 3 mensagens.</div>
-    </div>
 
-    <div class="dim">
-      <div class="dim-head"><div class="dim-ico">P</div><h3>Profundidade</h3></div>
-      <p class="def">O quanto as conversas vão além do superficial.</p>
-      <h4>Perguntas de diagnóstico</h4>
-      <ul class="gatilhos">
-        <li>Suas conversas com a rede ficam no "e aí, tudo bem?" ou passam para "estou pensando em ___"?</li>
-        <li>Existem 5+ pessoas com quem você conseguiria discutir uma dúvida real sobre carreira <em>hoje mesmo</em>?</li>
-        <li>Quando alguém te procura para conselho, você é um dos primeiros nomes ou o último recurso?</li>
-      </ul>
-      <h4>Protocolo de fortalecimento</h4>
-      <div class="protocolo">
-        <b>Aprofunde por escuta, não por revelação:</b>
-        <ol>
-          <li>Na próxima conversa profissional (café, reunião, chamada), faça <b>uma pergunta sobre processo</b> em vez de sobre fato: "como você chegou nessa decisão?" em vez de "o que você faz?".</li>
-          <li>Escute a resposta inteira, sem pular para a sua história. A profundidade se instala na escuta específica.</li>
-          <li>Se a conversa aprofundar, marque uma continuação — não deixe o momento morrer no fim do café.</li>
-        </ol>
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p>Serviço "abstrato" (servir "as pessoas", "a sociedade", "o mundo") = quase sempre serviço fraco. Toda versão sólida em Serviço tem <b>público nomeado</b> — um segmento reconhecível cuja necessidade específica você atende. Sem público nomeado, a versão vira gesto vazio.</p></div>
+    </div>
+  </section>
+
+  <section class="lente-secao">
+    <div class="lente-secao-header"><div class="lente-secao-letra">V</div><div><div class="lente-secao-titulo">Lente Vocação</div><div class="lente-secao-sub">"o que chama, para além de salário e status"</div></div></div>
+    <div class="lente-secao-body">
+      <div class="subsec-label">O que ela mede</div>
+      <p>A força interna que sobra <em>depois</em> que a força externa é subtraída. Uma versão com salário alto e reconhecimento pode ter vocação zero (você faz pelo salário). Uma versão sem salário pode ter vocação enorme (você faz de graça se pudesse). A pergunta operacional: retirando salário, retirando reconhecimento, <b>o que ainda te chama para essa versão</b>?</p>
+
+      <div class="subsec-label">Perguntas que ativam a lente</div>
+      <div class="caixa-perguntas">
+        <ul>
+          <li><em>Se essa versão pagasse metade do que eu ganho hoje, eu ainda escolheria?</em></li>
+          <li><em>Qual parte dessa versão eu faria mesmo sem que ninguém soubesse (sem status)?</em></li>
+          <li><em>O que dessa versão eu quero mesmo, não porque "faz sentido" para outros?</em></li>
+          <li><em>Ao imaginar essa versão, meu corpo abre ou fecha? Alivia ou pesa?</em></li>
+        </ul>
       </div>
-      <h4>Caso</h4>
-      <div class="caso c3"><span class="quem">Juliana · Autônoma</span>Fala com muita gente — clientes, prospects, comunidade. Rede viva e diversa. Mas as conversas ficam sempre no operacional (prazo, escopo, briefing). Quando precisou de conselho estratégico sobre o próprio negócio, não sabia a quem recorrer. Diagnóstico: rede ativa, superficial. Onde agir: escolher 3 pessoas e instituir conversas mensais fora do operacional.</div>
+
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p>Confundir vocação com <em>paixão fácil ou entusiasmo passageiro</em>. Vocação sólida é <b>chamado persistente</b> — algo que continua chamando mesmo depois que a novidade passou, mesmo nos dias difíceis. Se você só sente vocação quando as coisas vão bem, é entusiasmo — não vocação.</p></div>
     </div>
   </section>
 
-  <section id="manutencao">
-    <div class="eyebrow">Ferramentas</div>
-    <h2>Repertório de manutenção — por dimensão</h2>
-
-    <div class="dim">
-      <div class="dim-head"><div class="dim-ico">D</div><h3>Ações para Diversidade</h3></div>
-      <ul class="gatilhos">
-        <li><b>Entrar em uma comunidade adjacente:</b> Slack, Discord, grupo profissional de setor vizinho — só ouvir por 30 dias antes de participar.</li>
-        <li><b>Um café por mês fora da sua bolha:</b> alguém de setor diferente que faz algo próximo ao seu.</li>
-        <li><b>Escrever em canal cross:</b> um post que interesse a duas indústrias ao mesmo tempo — atrai gente nova de contextos que você não alcançava.</li>
-      </ul>
-    </div>
-
-    <div class="dim">
-      <div class="dim-head"><div class="dim-ico">N</div><h3>Ações para Nutrição</h3></div>
-      <ul class="gatilhos">
-        <li><b>Ritual semanal de 3 mensagens:</b> toda sexta, 3 mensagens específicas para 3 pessoas do Top 20. Sem pedido.</li>
-        <li><b>Recomendação sem ser pedida:</b> quando você recebe uma boa referência, indicação, artigo — pense em 1-2 pessoas da rede que se beneficiariam e mande.</li>
-        <li><b>Aniversário profissional:</b> LinkedIn mostra promoções e mudanças. Uma mensagem de parabéns específica, escrita, reabre relação melhor que qualquer estratégia elaborada.</li>
-      </ul>
-    </div>
-
-    <div class="dim">
-      <div class="dim-head"><div class="dim-ico">P</div><h3>Ações para Profundidade</h3></div>
-      <ul class="gatilhos">
-        <li><b>Conversa mensal com 3 âncoras:</b> escolha 3 pessoas para cultivar profundidade — café ou call de 30 min, mensalmente.</li>
-        <li><b>Compartilhar dúvida em vez de conquista:</b> a próxima vez que estiver decidindo algo importante, compartilhe a <em>dúvida</em> com 2 pessoas de confiança antes de decidir. Aprofunda relação e traz perspectiva.</li>
-        <li><b>Pedir crítica, não elogio:</b> depois de uma entrega, escolha 1 pessoa de confiança e peça uma crítica específica. Vulnerabilidade calibrada aprofunda mais que qualquer conversa social.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="cuidados">
-    <div class="eyebrow">Cuidados éticos</div>
-    <h2>Networking sem virar oportunismo</h2>
-    <div class="cuidado"><b>Rede não é planilha</b>Se cada contato virou "linha do CRM pessoal", a relação morre. Manutenção genuína é lembrar da pessoa como pessoa — o que ela está construindo, o que a preocupa — não como potencial recurso futuro.</div>
-    <div class="cuidado"><b>Reciprocidade real, não simétrica</b>Rede saudável tem trocas — mas nem sempre balanceadas no mesmo mês. Alguém sempre está mais pra dar; outro, mais pra receber. O problema é quando você sempre está no lado do que pede.</div>
-    <div class="cuidado"><b>Silêncio é resposta</b>Se você mandou 2 mensagens em contextos diferentes e o outro não respondeu, a resposta chegou. Insistir vira assédio, não persistência. Volte pra pessoa daqui a 6-12 meses com contexto diferente, ou deixe ir.</div>
-  </section>
-
-  <div class="prox">Próximo passo: Missão da Etapa 5 — Seu Mapa de Rede (20 min)</div>
-
+  <div class="aviso-final">
+    <h3>Como usar essas 3 lentes daqui em diante</h3>
+    <p>As lentes de propósito <b>não substituem</b> os filtros de decisão (Etapa 3). Elas complementam. Uma versão pode passar os 3 filtros com nota alta e falhar em propósito — nesse caso, provavelmente vira sustentabilidade sem alma; escolha racional que vira deserção lenta em 3-5 anos.</p>
+    <p>Uma versão pode reprovar em critério e passar forte em propósito — nesse caso, é <em>preciso construir plano de ponte</em> que resolva a fragilidade estrutural sem perder o que dá sentido. É frequentemente a escolha certa, só exige mais preparo antes de atravessar.</p>
+    <p>Amanhã (Etapa 6) o filtro do essencial vai perguntar: <em>o que você precisa subtrair</em> para essa versão caber na sua vida? Muitas vezes o problema não é escolher entre versões — é reconhecer que <b>a versão certa exige tirar coisas</b>, não só adicionar.</p>
+  </div>
 </main>
 
-<footer>
-  <div class="assinatura">Do reagir ao conduzir.</div>
-  <div>Etapa 5 · Playbook — Rede profissional</div>
-</footer>
-
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 5 · Playbook — Propósito construído</div></footer>
 </body>
 </html>

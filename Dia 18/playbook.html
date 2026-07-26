@@ -1,64 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 18 · Playbook — 3 Pilares</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
-  *{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
-  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
-  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
-  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
-  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
-  .voltar svg{width:14px;height:14px;fill:currentColor}
-  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
-  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:14px}
-  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
-  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
-  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
-  .intro-caixa{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .intro-caixa h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
-  .intro-caixa p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
-  .intro-caixa p:last-child{margin-bottom:0}
-  .intro-caixa b{color:var(--verde-900)}
-  .pilar-secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06)}
-  .pilar-secao-header{padding:22px 28px 20px;color:#fff;display:flex;align-items:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%)}
-  .pilar-secao-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
-  .pilar-secao-titulo{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2}
-  .pilar-secao-sub{font-size:13px;opacity:.92;font-style:italic;margin-top:3px}
-  .pilar-secao-body{padding:22px 28px 26px}
-  .pilar-secao-body p{margin-bottom:14px;font-size:15px;line-height:1.7}
-  .pilar-secao-body p:last-child{margin-bottom:0}
-  .pilar-secao-body b{color:var(--verde-900)}
-  .subsec-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin:22px 0 10px;padding-top:18px;border-top:1px dashed var(--verde-100)}
-  .subsec-label:first-child{margin-top:0;padding-top:0;border-top:none}
-  .lista-check{list-style:none;padding:0;margin-top:8px}
-  .lista-check li{padding:8px 0 8px 26px;position:relative;font-size:14px;line-height:1.55;color:var(--tinta)}
-  .lista-check li::before{content:"→";position:absolute;left:0;top:8px;color:var(--coral);font-weight:700}
-  .lista-check li b{color:var(--verde-900)}
-  .cialdini-box{background:#F0F5F2;border-left:3px solid var(--verde-700);padding:14px 20px;border-radius:0 10px 10px 0;margin-top:12px;font-size:14px;line-height:1.6}
-  .cialdini-box b{color:var(--verde-900)}
-  .cialdini-titulo{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:6px}
-  .erro-caixa{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
-  .erro-caixa .erro-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
-  .erro-caixa b{color:var(--verde-900)}
-  .etica-caixa{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:22px 26px;margin:28px 0 20px}
-  .etica-caixa h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
-  .etica-caixa p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
-  .etica-caixa p:last-child{margin-bottom:0}
-  .etica-caixa b{color:var(--verde-900)}
-  .aviso-final{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0 20px}
-  .aviso-final h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
-  .aviso-final p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
-  .aviso-final p:last-child{margin-bottom:0}
-  .aviso-final b{color:var(--verde-900)}
-  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
-  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
-</style>
-
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Intentia · Etapa 18 · Playbook — T·A·R</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><style>:root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}.grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}.hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}.voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}.voltar svg{width:14px;height:14px;fill:currentColor}.eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:14px}header .lede{font-size:16px;color:#CFE0D6;max-width:600px}.arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}main{max-width:760px;margin:0 auto;padding:0 24px 40px}.intro{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}.intro h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:10px;font-weight:600}.intro p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}.intro p:last-child{margin-bottom:0}.intro b{color:var(--verde-900)}.secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06)}.secao-header{padding:22px 28px 20px;color:#fff;display:flex;align-items:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%)}.secao-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}.secao-titulo{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2}.secao-sub{font-size:13px;opacity:.92;font-style:italic;margin-top:3px}.secao-body{padding:22px 28px 26px}.secao-body p{margin-bottom:14px;font-size:15px;line-height:1.7}.secao-body p:last-child{margin-bottom:0}.secao-body b{color:var(--verde-900)}.subsec{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin:22px 0 10px;padding-top:18px;border-top:1px dashed var(--verde-100)}.subsec:first-child{margin-top:0;padding-top:0;border-top:none}.check{list-style:none;padding:0;margin-top:8px}.check li{padding:8px 0 8px 26px;position:relative;font-size:14px;line-height:1.55;color:var(--tinta)}.check li::before{content:"→";position:absolute;left:0;top:8px;color:var(--coral);font-weight:700}.check li b{color:var(--verde-900)}.info{background:#F0F5F2;border-left:3px solid var(--verde-700);padding:14px 20px;border-radius:0 10px 10px 0;margin-top:12px;font-size:14px;line-height:1.6}.info b{color:var(--verde-900)}.info-titulo{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:6px}.erro{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}.erro-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}.erro b{color:var(--verde-900)}.aviso{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0 20px}.aviso h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}.aviso p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}.aviso p:last-child{margin-bottom:0}.aviso b{color:var(--verde-900)}footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}</style>
 <!--intentia-mobile:start--><style>
 /* Intentia — navegabilidade mobile (iOS + Android) */
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -138,97 +79,70 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 })();
 </script><!--intentia-nav:end-->
 
-<header>
-  <div class="hero-inner">
-    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 18</a>
-    <div class="eyebrow">Playbook · Etapa 18</div>
-    <h1>Credibilidade, Prova, Ressonância — <span class="grifo">a fundo</span>.</h1>
-    <p class="lede">Os 3 pilares em profundidade: função de cada, como preparar bem, quais dos 6 princípios de Cialdini cada um cobre, e a fronteira ética entre persuasão e manipulação.</p>
-  </div>
-  <div class="arc"></div>
-</header>
+<header><div class="hero-inner"><a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 18</a><div class="eyebrow">Playbook · Etapa 18</div><h1>Técnico, Adaptativo, Revisão — <span class="grifo">a fundo</span>.</h1><p class="lede">A distinção fundadora de Heifetz &amp; Linsky, por que confundir os dois é a causa mais comum de fracasso em profissionais capazes, e como o ciclo semanal de 15 min classifica e decide.</p></div><div class="arc"></div></header>
 <main>
-  <div class="intro-caixa">
-    <h2>Por que 3 pilares (não 6 princípios)</h2>
-    <p>Cialdini enumerou 6 princípios (reciprocidade, compromisso, prova social, autoridade, afinidade, escassez) porque queria <b>descrever fenômenos psicológicos observáveis</b>. Excelente para pesquisa. Ruim para preparação — 6 itens simultâneos viram checklist mecânica e induzem uso manipulativo.</p>
-    <p>Na Trilha, reduzimos para 3 pilares operacionais — cada um <b>cobrindo 2 princípios de Cialdini</b>. Credibilidade absorve autoridade + reciprocidade. Prova absorve prova social + escassez. Ressonância absorve afinidade + compromisso. A vantagem: fica <em>impossível</em> preparar um pilar bem sem servir também ao outro que a pessoa vai receber. É mecânica de preparação anti-manipulação por design.</p>
+  <div class="intro">
+    <h2>Por que essa distinção reorganiza a resposta a problemas</h2>
+    <p>Ronald Heifetz passou 3 décadas estudando lideranças em contextos difíceis — de saúde pública a política internacional. A conclusão mais influente do trabalho é uma distinção simples: <b>problemas técnicos</b> são aqueles cuja solução já é conhecida (mesmo que difícil de executar); <b>problemas adaptativos</b> são aqueles em que a solução ainda não é conhecida — exige que a pessoa (ou o grupo) <em>aprenda</em>. E a descoberta prática mais impactante: a maioria dos fracassos em liderança vem de tratar problema adaptativo como técnico.</p>
+    <p>Aplicado à instalação de hábitos individuais, isso muda o processo: se o mesmo padrão de sabotagem se repete pelo mesmo motivo, ajuste de método é resposta técnica a problema adaptativo — não resolve. A resposta certa é reconhecer o adaptativo, aplicar mapa de imunidade (Etapa 17), e considerar apoio externo (mentor, terapia, coach).</p>
   </div>
 
-  <section class="pilar-secao">
-    <div class="pilar-secao-header"><div class="pilar-secao-letra">C</div><div><div class="pilar-secao-titulo">Credibilidade</div><div class="pilar-secao-sub">"por que ouvir você agora?"</div></div></div>
-    <div class="pilar-secao-body">
-      <div class="subsec-label">O que faz</div>
-      <p>Credibilidade responde à pergunta silenciosa dos primeiros segundos: <b>por que dedicar atenção a este pedido específico, vindo desta pessoa específica, agora</b>? Sem credibilidade, os outros 2 pilares não sustentam nada — a pessoa nunca chega a considerar sua Prova ou sua Ressonância porque parou de te ler no primeiro parágrafo.</p>
-
-      <div class="cialdini-box"><div class="cialdini-titulo">Cobre em Cialdini</div><b>Autoridade</b> (você é alguém com credencial legítima no assunto) + <b>Reciprocidade</b> (você já entregou/contribuiu com algo, ainda que pequeno; existe relação prévia real). Autoridade sem Reciprocidade soa arrogância; Reciprocidade sem Autoridade soa amadorismo.</div>
-
-      <div class="subsec-label">Como preparar bem</div>
-      <ul class="lista-check">
-        <li><b>Ancore em capital específico</b> — "X anos em Y" com número, "cargo Z em empresa W" com nome. Vago (senior, especialista, referência) não é credibilidade.</li>
-        <li><b>Ancore em contribuição recente</b> — "publiquei/entreguei/apresentei Z há N tempo". Data explícita ativa reciprocidade indireta.</li>
-        <li><b>Ancore em contexto compartilhado</b> — "conversei com Fulano/participei do evento W". Se a pessoa reconhece o ponto de contato, credibilidade acelera.</li>
-        <li><b>Nunca comece com pedido</b> — sempre com ancoragem. O cérebro do leitor pergunta "por que ouvir você" antes de "o que você quer".</li>
+  <section class="secao">
+    <div class="secao-header"><div class="secao-letra">T</div><div><div class="secao-titulo">Técnico</div><div class="secao-sub">solução conhecida — aplicar</div></div></div>
+    <div class="secao-body">
+      <div class="subsec">O que caracteriza</div>
+      <p>Problema técnico tem 3 propriedades: (1) você <b>já sabe</b> como resolver; (2) exige aplicação de método/repertório existente; (3) a solução pode ser difícil de executar, mas não é misteriosa. Heifetz: técnico não significa "fácil"; significa "resolvível com o que já se sabe". Ajustar o horário de um bloco de trabalho, criar plano B para semana com imprevisto, aumentar fricção do celular à noite — tudo técnico.</p>
+      <div class="info"><div class="info-titulo">Teste de "isso é técnico?"</div>Pergunte-se: "se eu tivesse mais tempo/energia/foco, eu saberia como resolver?" Se sim, é técnico. A questão é execução, não descoberta.</div>
+      <div class="subsec">Como intervir</div>
+      <ul class="check">
+        <li><b>Aplique o método</b> — não fique refletindo demais; faça o ajuste</li>
+        <li><b>Recorra a autoridade/expertise</b> — mentor, especialista, colega mais experiente</li>
+        <li><b>Escale se recorrente</b> — se técnica não resolve depois de 2 tentativas, provavelmente é adaptativo disfarçado</li>
       </ul>
-
-      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>Credibilidade genérica.</b> "Sou profissional experiente" não é credibilidade — é ruído. Credibilidade real é <em>específica</em>: cargo, tempo, entrega recente, mensurável. Se sua frase de credibilidade cabe em qualquer profissional do território, ela não te distingue — e a pessoa pula para o próximo email.</p></div>
+      <div class="erro"><span class="erro-label">Erro clássico</span><p><b>Tratar tudo como técnico.</b> É confortável — porque técnico é o que você sabe fazer. Se você ajusta método 3 semanas seguidas e o mesmo padrão volta, você está com problema adaptativo mas continuando a aplicar solução técnica. Mais método não resolve.</p></div>
     </div>
   </section>
 
-  <section class="pilar-secao">
-    <div class="pilar-secao-header"><div class="pilar-secao-letra">P</div><div><div class="pilar-secao-titulo">Prova</div><div class="pilar-secao-sub">"o que sustenta o que você diz?"</div></div></div>
-    <div class="pilar-secao-body">
-      <div class="subsec-label">O que faz</div>
-      <p>Prova é <b>evidência tangível</b> que substitui a necessidade da outra pessoa "acreditar em você". Sem prova, sua credibilidade é declaração; com prova, vira fato verificável. Prova bem escolhida é o que faz o pedido soar <em>concreto</em> em vez de aspiracional — e reduz o custo cognitivo da decisão.</p>
-
-      <div class="cialdini-box"><div class="cialdini-titulo">Cobre em Cialdini</div><b>Prova Social</b> (outras pessoas já validaram; o que você faz não é solo) + <b>Escassez</b> (o que você tem/faz não é comum, é limitado no tempo ou no espaço). Prova Social sem Escassez soa "mais um"; Escassez sem Prova Social soa marketing.</div>
-
-      <div class="subsec-label">Como preparar bem</div>
-      <ul class="lista-check">
-        <li><b>Link para conteúdo próprio</b> — artigo, portfolio, gravação. <em>1 link forte é melhor que 5 fracos</em>.</li>
-        <li><b>Depoimento escrito ou métrica de resultado</b> — específico, atribuível, verificável. Nome + resultado + prazo.</li>
-        <li><b>Referência a projeto recente entregue</b> — nome do projeto, resultado mensurável, quando.</li>
-        <li><b>Menção a reconhecimento externo</b> — prêmio, convite, menção de terceiros. Ativa prova social sem exigir que você mesmo se elogie.</li>
+  <section class="secao">
+    <div class="secao-header"><div class="secao-letra">A</div><div><div class="secao-titulo">Adaptativo</div><div class="secao-sub">solução emergente — aprender</div></div></div>
+    <div class="secao-body">
+      <div class="subsec">O que caracteriza</div>
+      <p>Problema adaptativo tem 3 propriedades: (1) você <b>não sabe ainda</b> como resolver — a solução vai emergir; (2) exige <em>mudança de crença, valor ou hábito interno</em>; (3) é desconfortável — encara o que você ainda não domina em si. Heifetz: adaptativo não pode ser resolvido pela aplicação de método — resolve-se por aprendizagem. É onde o mapa de imunidade opera; é onde apoio externo (mentor sério, terapia, coach adaptativo) tem alto retorno.</p>
+      <div class="info"><div class="info-titulo">Teste de "isso é adaptativo?"</div>Pergunte-se: "o mesmo padrão se repete pelo mesmo motivo apesar de eu já ter tentado 2-3 métodos?" Se sim, é adaptativo. Sinal complementar: sensação de "sei o que fazer mas não consigo" — clássica de adaptativo.</div>
+      <div class="subsec">Como intervir</div>
+      <ul class="check">
+        <li><b>Reconhecer publicamente</b> (para si mesma) que é adaptativo — muda o processo</li>
+        <li><b>Aplicar mapa de imunidade</b> (Etapa 17) — geralmente há compromisso oculto</li>
+        <li><b>Considerar apoio externo</b> se o padrão persiste — terapia, coach, mentor sério</li>
+        <li><b>Dar tempo</b> — aprendizado adaptativo leva mais tempo que aplicação técnica; não force</li>
       </ul>
-
-      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>Prova exagerada soa insegurança.</b> Como se você precisasse convencer. Regra prática: 1-2 provas fortes valem mais que 5 fracas. Se você precisa citar 4 depoimentos, provavelmente nenhum é forte o suficiente sozinho — corte para o melhor e reforce-o em vez de acumular.</p></div>
+      <div class="erro"><span class="erro-label">Erro clássico</span><p><b>Sentir vergonha ou culpa do adaptativo.</b> Heifetz: problemas adaptativos são <em>os mais frequentes</em> em profissionais capazes — quem chegou até aqui já resolveu os técnicos óbvios. Adaptativo é sinal de fronteira de crescimento, não de fraqueza.</p></div>
     </div>
   </section>
 
-  <section class="pilar-secao">
-    <div class="pilar-secao-header"><div class="pilar-secao-letra">R</div><div><div class="pilar-secao-titulo">Ressonância</div><div class="pilar-secao-sub">"por que isso importa para o outro?"</div></div></div>
-    <div class="pilar-secao-body">
-      <div class="subsec-label">O que faz</div>
-      <p>Ressonância é <b>o pilar que separa persuasão de venda</b>. Sem ela, seu pedido é <em>sobre você</em> — o que você precisa, o que você quer, o que serve à sua direção. Com ela, o pedido vira algo que a pessoa <em>quer</em> conceder porque também serve a ela. Ressonância bem preparada faz o sim ficar disponível sem que você precise convencer — a própria pessoa constrói a razão de dizer sim.</p>
-
-      <div class="cialdini-box"><div class="cialdini-titulo">Cobre em Cialdini</div><b>Afinidade</b> (você conhece a pessoa, seu contexto, suas prioridades; existe base comum real) + <b>Compromisso</b> (você conecta o pedido a algo que a pessoa já valoriza/faz publicamente; ela não precisa mudar posição). Sem essas duas, o pedido tem que "vender"; com elas, ele "conecta".</div>
-
-      <div class="subsec-label">Como preparar bem</div>
-      <ul class="lista-check">
-        <li><b>Nomeie algo específico</b> que você pesquisou sobre a pessoa/organização: "vi que vocês estão focados em X" — com X real, não genérico.</li>
-        <li><b>Conecte seu pedido ao trabalho atual da pessoa</b>: "seu insight sobre Y faz muito sentido para o que eu proponho".</li>
-        <li><b>Reconheça o que a pessoa ganha ao dizer sim</b> — mesmo pequeno: tempo, informação, contato, aprendizagem, alinhamento com posição pública.</li>
-        <li><b>Seja explícito sobre o que está pedindo</b>: "20 min de conversa" &gt; "quando você tiver tempo". Concretude reduz risco percebido.</li>
+  <section class="secao">
+    <div class="secao-header"><div class="secao-letra">R</div><div><div class="secao-titulo">Revisão</div><div class="secao-sub">15 min semanais, 3 perguntas</div></div></div>
+    <div class="secao-body">
+      <div class="subsec">Por que 15 min bastam</div>
+      <p>Heifetz observou algo importante em programas de longa duração: <b>revisão eficaz é curta e fixa</b>. Reflexão longa vira ruminação; reflexão sem estrutura vira conversa. 15 min semanais com 3 perguntas fixas produzem mais aprendizado observável que 60 min mensais sem estrutura. A brevidade obriga a decisão; a fixidez obriga a comparação com semana anterior.</p>
+      <div class="info"><div class="info-titulo">As 3 perguntas fixas — por que essas</div>Pergunta 1 (o que aconteceu vs planejado) força observação factual. Pergunta 2 (é técnico ou adaptativo?) força classificação — sem ela, tudo vira "vou me esforçar mais". Pergunta 3 (ação da próxima semana para cada?) força decisão concreta com natureza diferenciada. Cada pergunta puxa a próxima.</div>
+      <div class="subsec">Como sustentar</div>
+      <ul class="check">
+        <li><b>Mesmo dia, mesmo horário, mesmo local</b> — sem variar</li>
+        <li><b>3 perguntas fixas</b> — nunca "improvise" na hora</li>
+        <li><b>Faça mesmo em semana "normal"</b> — o músculo se mantém</li>
+        <li><b>Registre breve (3-5 linhas)</b> — série revela padrão maior ao longo de meses</li>
       </ul>
-
-      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p><b>Ressonância genérica ("acompanho seu trabalho").</b> Isso não é ressonância — é adulação. Ressonância real cita <em>algo específico</em> que só vale para essa pessoa/contexto. Se sua frase de ressonância cabe em 100 outras pessoas do território, ela não é ressonância; é lista de contatos massa. E a pessoa <em>percebe</em>.</p></div>
+      <div class="erro"><span class="erro-label">Erro clássico</span><p><b>Pular revisão em semana difícil.</b> É exatamente na semana difícil que a revisão mais importa — porque revela por quê. Adiar semanas seguidas mata o hábito da revisão; sem revisão, o sistema todo (Etapas 21-25) começa a desmontar silenciosamente.</p></div>
     </div>
   </section>
 
-  <div class="etica-caixa">
-    <h3>A fronteira: persuasão ética × manipulação</h3>
-    <p>Cialdini foi explícito ao longo da carreira: os mesmos 6 princípios servem para persuasão ética <b>e</b> para manipulação. A diferença não está no mecanismo — está no <b>serviço mútuo</b>.</p>
-    <p><b>Persuasão ética:</b> a pessoa que diz sim ganha algo real (mesmo que seja só informação, aprendizagem, ou coerência com uma posição que ela já defende). Você pode explicar por que aquele sim serviu a ela sem embaraço, meses depois.</p>
-    <p><b>Manipulação:</b> a pessoa diz sim por um mecanismo psicológico ativado sem serviço mútuo real (escassez fabricada, prova social inventada, ressonância performática). Depois que a pessoa percebe, ela não confia mais em você — e você quebra a rede que passou 6 meses construindo.</p>
-    <p>O teste da Etapa 18: se você não conseguiria justificar seu pedido com franqueza para a pessoa 6 meses depois, você está do lado errado da fronteira. Refaça.</p>
-  </div>
-
-  <div class="aviso-final">
-    <h3>A regra da Etapa 18: preparar &gt; improvisar</h3>
-    <p>Conger foi enfático: profissionais competentes frequentemente <b>subestimam a preparação</b> porque acreditam que "vão descobrir na conversa". Não vão. A conversa amplifica o que você trouxe pronto e expõe o que você não preparou. 30 min de preparação (nomear os 3 pilares com concretude) mudam mais o resultado que 30 min "mais na conversa".</p>
-    <p>Meta prática: <b>preparar 1 pedido por semana</b> pelas próximas 8 semanas. Depois de 8 pedidos preparados, a mecânica dos 3 pilares vira automática — você começa a estruturar mensagens assim sem esforço consciente. Persuasão vira <em>parte da forma como você trabalha</em>, não evento especial.</p>
-    <p>Amanhã (Etapa 19) você entra em <b>Aprendizagem deliberada</b> — como acelerar o quanto você aprende do território novo. Persuasão sem aprendizagem constante fica repetitiva; aprendizagem sem persuasão fica invisível.</p>
+  <div class="aviso">
+    <h3>A regra da Etapa 18: 3x mesmo motivo = adaptativo</h3>
+    <p>Heurística prática robusta: <b>se o mesmo motivo aparece 3 vezes seguidas</b> para o hábito ou movimento não acontecer, quase certamente é adaptativo. Aplicar mais um método técnico vai gerar 4ª falha pelo mesmo motivo. A resposta adequada não é "vou tentar diferente" — é "isso é adaptativo, vou para a Etapa 17 (mapa de imunidade) ou buscar apoio".</p>
+    <p>Reconhecer isso <em>economiza esforço</em>. Você para de aplicar receitas em problema errado, o que é a fonte mais comum de desgaste em profissionais competentes.</p>
+    <p>Amanhã (Etapa 19): <b>Rede de suporte pós-Intentia</b> — nenhum sistema pessoal sobrevive isolado. Quem você mantém ativo nas 3 redes (Operacional, Pessoal, Estratégica — Etapa 10) depois que a trilha acaba, e 1 accountability nomeado para os próximos 3 meses.</p>
   </div>
 </main>
-<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 18 · Playbook — 3 pilares da persuasão</div></footer>
-</body>
-</html>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 18 · Playbook — T·A·R</div></footer>
+</body></html>

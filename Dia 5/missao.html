@@ -3,18 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 5 · Missão — Seu Mapa de Rede</title>
+<title>Intentia · Etapa 5 · Missão — Três lentes de propósito</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--lilas:#8B7BB8;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.6;font-size:16px}
   .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
   header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
-  .hero-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
-  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:16px}
-  .voltar:hover{color:#fff}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
   .voltar svg{width:14px;height:14px;fill:currentColor}
   .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
   header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:12px}
@@ -23,63 +22,61 @@
   .missao-meta{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:22px;font-size:13px;color:#A9C6B8}
   .missao-meta span{display:inline-flex;align-items:center;gap:6px}
   .missao-meta svg{width:14px;height:14px;fill:currentColor}
-  main{max-width:720px;margin:0 auto;padding:0 24px}
+  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
   .progresso{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:16px 22px;margin:24px 0;display:flex;align-items:center;gap:18px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
   .progresso-info{flex:1}
   .progresso-titulo{font-size:13px;font-weight:600;color:var(--verde-900);margin-bottom:6px}
   .progresso-bar{background:var(--verde-100);height:6px;border-radius:3px;overflow:hidden}
   .progresso-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:3px;transition:width .4s ease;width:0%}
   .progresso-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--coral);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px;font-size:13.5px;line-height:1.55}
+  .aviso-demo-icone{color:var(--coral);font-size:18px;flex-shrink:0;margin-top:1px}
+  .aviso-demo b{color:var(--verde-900)}
+  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
+  .lembrete{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 20px;margin-bottom:20px;font-size:14px;color:var(--tinta);line-height:1.55}
+  .lembrete b{color:var(--verde-900);font-weight:600}
 
-  .etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 30px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .etapa-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
-  .etapa-num{width:34px;height:34px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
-  .etapa-titulo{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
-  .etapa-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
-  .etapa-desc b{color:var(--verde-900)}
+  .eu-etapa{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:0;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05);overflow:hidden}
+  .eu-etapa-header{color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px}
+  .eu-etapa.continuacao .eu-etapa-header{background:linear-gradient(135deg, #336B62 0%, #275750 100%)}
+  .eu-etapa.adjacencia .eu-etapa-header{background:linear-gradient(135deg, #FF7A57 0%, #E85530 100%)}
+  .eu-etapa.reinvencao .eu-etapa-header{background:linear-gradient(135deg, #8B7BB8 0%, #5F4E8C 100%)}
+  .eu-etapa-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
+  .eu-etapa-titulo{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.2;margin-bottom:3px}
+  .eu-etapa-sub{font-size:13px;opacity:.92;font-style:italic}
+  .eu-etapa-corpo{padding:22px 28px 24px}
+  .eu-recap{background:var(--creme);border-radius:10px;padding:14px 18px;margin-bottom:18px;font-size:13.5px;line-height:1.55;color:var(--tinta-suave)}
+  .eu-recap-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:5px}
+  .eu-recap b{color:var(--verde-900);font-weight:500;font-family:var(--serif);font-size:14.5px;font-style:italic}
 
-  label{display:block;font-size:13px;font-weight:600;color:var(--verde-700);margin-bottom:6px;letter-spacing:.02em}
-  input[type=text],textarea,select{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:15px;color:var(--tinta);background:#fff;transition:border-color .2s;font-weight:500}
-  input[type=text]:focus,textarea:focus,select:focus{outline:none;border-color:var(--coral)}
-  textarea{resize:vertical;min-height:80px;line-height:1.5}
+  .lente-bloco{margin-bottom:18px;padding:14px 16px;background:var(--creme);border-radius:10px;border-left:3px solid var(--verde-500)}
+  .lente-bloco:last-child{margin-bottom:0}
+  .lente-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .lente-letra{width:28px;height:28px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:14px;flex-shrink:0}
+  .lente-nome{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--verde-900)}
+  .lente-desc{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-bottom:8px;line-height:1.4}
+  .lente-textarea{width:100%;padding:9px 12px;border:1.5px solid var(--verde-100);border-radius:6px;font-family:var(--sans);font-size:13.5px;color:var(--tinta);background:#fff;transition:border-color .2s;resize:vertical;min-height:52px;line-height:1.5;margin-bottom:8px}
+  .lente-textarea:focus{outline:none;border-color:var(--coral)}
+  .forca-opcoes{display:flex;gap:6px}
+  .forca-op{flex:1;background:#fff;border:1.5px solid var(--verde-100);border-radius:6px;padding:6px 4px;text-align:center;font-size:11.5px;font-weight:600;color:var(--tinta-suave);cursor:pointer;transition:all .15s;user-select:none}
+  .forca-op:hover{border-color:var(--verde-500)}
+  .forca-op.selecionada{background:var(--coral);border-color:var(--coral);color:#fff}
 
-  /* Contatos da rede */
-  .contatos-hint{background:var(--creme);border-left:3px solid var(--verde-500);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:14px;font-size:13px;color:var(--tinta);line-height:1.5}
-  .contatos-hint b{color:var(--verde-900)}
-  .contato-linha{background:var(--creme);border-radius:8px;padding:12px 14px;margin-bottom:8px;display:grid;grid-template-columns:auto 1fr auto auto;gap:10px;align-items:center}
-  @media (max-width:600px){.contato-linha{grid-template-columns:auto 1fr;gap:8px}.contato-linha .div-selo,.contato-linha .nut-selo{grid-column:2}}
-  .contato-num{width:24px;height:24px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:12px;flex-shrink:0}
-  .contato-linha input{padding:6px 10px;font-size:14px}
-  .contato-select{background:#fff;border:1.5px solid var(--verde-100);border-radius:6px;padding:5px 10px;font-family:var(--sans);font-size:12px;font-weight:600;color:var(--verde-900);cursor:pointer;min-width:130px}
-  .contato-select:focus{outline:none;border-color:var(--coral)}
-  .btn-add-contato{background:transparent;border:2px dashed var(--verde-500);color:var(--verde-700);padding:12px 20px;border-radius:10px;font-family:var(--sans);font-size:13.5px;font-weight:600;cursor:pointer;width:100%;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px}
-  .btn-add-contato:hover{background:var(--verde-100);color:var(--verde-900);border-color:var(--verde-700)}
-  .btn-add-contato svg{width:16px;height:16px;fill:currentColor}
+  .placar-prop{background:linear-gradient(135deg, var(--verde-700) 0%, var(--verde-900) 100%);color:#fff;padding:12px 18px;border-radius:10px;margin-top:14px;text-align:center;font-family:var(--serif);font-weight:600}
+  .placar-prop .placar-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral-soft);margin-bottom:4px;font-family:var(--sans)}
+  .placar-prop .placar-num{font-size:18px;line-height:1.1;text-transform:uppercase;letter-spacing:.05em}
 
-  /* Reativação */
-  .reativacao-lista{display:flex;flex-direction:column;gap:8px;margin-top:8px}
-  .reativacao-item{background:var(--creme);border-radius:8px;padding:12px 14px;display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;font-size:14px}
-  .reativacao-item .estrela{color:var(--coral);cursor:pointer;font-size:20px;user-select:none;transition:transform .15s}
-  .reativacao-item .estrela:hover{transform:scale(1.15)}
-  .reativacao-item .estrela.marcada{filter:none}
-  .reativacao-item .nome-contato{font-family:var(--serif);font-weight:600;color:var(--verde-900)}
-  .reativacao-item .div-tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-suave);background:#fff;padding:3px 8px;border-radius:6px}
-
-  .ai-btn{background:linear-gradient(135deg, #A594D1 0%, var(--lilas) 100%);color:#fff;border:none;padding:7px 14px;border-radius:20px;font-family:var(--sans);font-size:12px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-top:8px;transition:transform .15s}
-  .ai-btn:hover{transform:translateY(-1px)}
-  .ai-btn svg{width:12px;height:12px;fill:currentColor}
-  .ai-sugestao{background:#F5F1FA;border:1px solid #DFD1F0;border-left:3px solid var(--lilas);border-radius:8px;padding:12px 14px;margin-top:8px;font-size:13.5px;color:var(--tinta);line-height:1.5;display:none;animation:slideDown .3s}
-  .ai-sugestao.visivel{display:block}
-  .ai-sugestao-header{font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--lilas);margin-bottom:6px;display:flex;align-items:center;gap:6px}
-  .ai-sugestao-header svg{width:12px;height:12px;fill:currentColor}
-  .ai-sugestao-acoes{margin-top:8px;display:flex;gap:8px}
-  .ai-sugestao-acoes button{background:#fff;color:var(--verde-900);border:1px solid var(--verde-100);padding:5px 12px;border-radius:6px;font-family:var(--sans);font-size:12px;font-weight:600;cursor:pointer}
-  .ai-sugestao-acoes button:hover{border-color:var(--verde-700)}
-  @keyframes slideDown{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+  .final{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .final-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
+  .final-num{width:34px;height:34px;background:var(--verde-700);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;flex-shrink:0}
+  .final-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);line-height:1.25;margin-bottom:5px}
+  .final-desc{font-size:13.5px;color:var(--tinta-suave);line-height:1.55}
+  .final-textarea{width:100%;padding:11px 14px;border:1.5px solid var(--verde-100);border-radius:8px;font-family:var(--sans);font-size:14.5px;color:var(--tinta);background:#fff;transition:border-color .2s;resize:vertical;min-height:70px;line-height:1.5;margin-top:8px}
+  .final-textarea:focus{outline:none;border-color:var(--coral)}
   .dica{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin-top:8px;padding-left:12px;border-left:2px solid var(--verde-500)}
 
   .concluir{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:32px 32px;border-radius:18px;margin-top:32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(255,104,66,.28)}
-  .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px;letter-spacing:-.005em}
+  .concluir h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:10px}
   .concluir p{font-size:14.5px;opacity:.92;margin-bottom:22px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
   .btn-concluir{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--coral);padding:16px 30px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:17px;font-weight:600;border:none;cursor:pointer;transition:all .2s;box-shadow:0 6px 18px rgba(0,0,0,.15)}
   .btn-concluir:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
@@ -208,12 +205,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <header>
   <div class="hero-inner">
     <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 5</a>
-    <div class="eyebrow">Missão · Etapa 5</div>
-    <h1>Seu Mapa de <span class="grifo">Rede</span>.</h1>
-    <p class="lede">Um mapa honesto de quem já está na sua rede — categorizado por diversidade e frequência — e três conversas de reativação para os próximos 7 dias.</p>
+    <div class="eyebrow">Missão · Etapa 5 · Bloco 1</div>
+    <h1>Três lentes de <span class="grifo">propósito</span> em cada Eu.</h1>
+    <p class="lede">Legado (o que fica), Serviço (a quem serve), Vocação (o que chama). Uma frase + força (forte/médio/fraco) para cada lente, para cada Eu.</p>
     <div class="missao-meta">
-      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 20 min</span>
-      <span><svg viewBox="0 0 24 24"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg> IA que ajuda</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg> 18 min</span>
       <span><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Só você lê</span>
     </div>
   </div>
@@ -229,239 +225,219 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <div class="progresso-num" id="progresso-num">0/4</div>
   </div>
 
-  <!-- ETAPA 1: MAPA AMPLO -->
-  <section class="etapa">
-    <div class="etapa-header">
-      <div class="etapa-num">1</div>
-      <div>
-        <div class="etapa-titulo">Mapa amplo — 15 a 25 nomes</div>
-        <div class="etapa-desc">Sem filtro, sem editar. Todos os nomes profissionais relevantes que vierem à cabeça. Para cada um, marque <b>a categoria</b> (para ver a diversidade) e <b>quando foi a última conversa</b> (para ver a nutrição).</div>
+  <div id="aviso-demo" class="aviso-demo" style="display:none">
+    <div class="aviso-demo-icone">◆</div>
+    <div><b>Preencha as missões anteriores primeiro.</b> Sem elas, este dia perde referência. <a href="../Dia 1/missao.html">Começar pela Etapa 1 →</a></div>
+  </div>
+
+  <div class="lembrete">
+    <b>Como responder:</b> uma frase por lente, mais uma marcação de força (Forte / Médio / Fraco). Não force lentes fortes onde elas não estão — o valor do exercício é a honestidade.
+  </div>
+
+  <!-- CONTINUAÇÃO -->
+  <section class="eu-etapa continuacao">
+    <div class="eu-etapa-header"><div class="eu-etapa-letra">C</div><div><div class="eu-etapa-titulo">Eu-Continuação</div><div class="eu-etapa-sub">"Continuo o que faço — mais aprofundado"</div></div></div>
+    <div class="eu-etapa-corpo">
+      <div class="eu-recap" id="recap-cont"><div class="eu-recap-label">Sua versão</div><b>—</b></div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">L</div><div class="lente-nome">Legado</div></div>
+        <div class="lente-desc">O que fica depois de você não estar mais nessa versão?</div>
+        <textarea id="cont-leg-txt" class="lente-textarea" placeholder="ex.: material publicado, alunos formados, uma nova prática que virou padrão em um lugar"></textarea>
+        <div class="forca-opcoes" data-eu="cont" data-lente="leg">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
       </div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">S</div><div class="lente-nome">Serviço</div></div>
+        <div class="lente-desc">A quem essa versão serve concretamente? Nome do público, tipo de contribuição.</div>
+        <textarea id="cont-ser-txt" class="lente-textarea" placeholder="ex.: gestores não-técnicos que precisam interpretar dados; ~3-5 mil pessoas por ano via blog"></textarea>
+        <div class="forca-opcoes" data-eu="cont" data-lente="ser">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">V</div><div class="lente-nome">Vocação</div></div>
+        <div class="lente-desc">O que te chama nessa versão, para além de salário e status?</div>
+        <textarea id="cont-voc-txt" class="lente-textarea" placeholder="ex.: sempre gostei de traduzir complexo em simples; faria isso mesmo sem retorno financeiro"></textarea>
+        <div class="forca-opcoes" data-eu="cont" data-lente="voc">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="placar-prop"><div class="placar-label">Placar propósito · Continuação</div><div class="placar-num" id="placar-cont">—</div></div>
     </div>
-    <div class="contatos-hint">
-      <b>Onde caçar:</b> ex-colegas de trabalho (todas as empresas) · ex-clientes ou parceiros · alumni de formação · comunidade de tema · contatos de rede pessoal que tocam o profissional · gente do LinkedIn com quem você realmente conversou uma vez.
-    </div>
-    <div id="contatos-lista"></div>
-    <button class="btn-add-contato" id="btn-add-contato">
-      <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-      Adicionar mais um contato
-    </button>
   </section>
 
-  <!-- ETAPA 2: DIAGNÓSTICO DNP -->
-  <section class="etapa">
-    <div class="etapa-header">
-      <div class="etapa-num">2</div>
-      <div>
-        <div class="etapa-titulo">Sua leitura do mapa</div>
-        <div class="etapa-desc">Olhe a lista inteira: em qual dimensão D·N·P sua rede trava mais? Diversidade (concentração de contextos), Nutrição (tempo sem falar), ou Profundidade (conversas superficiais)?</div>
+  <!-- ADJACÊNCIA -->
+  <section class="eu-etapa adjacencia">
+    <div class="eu-etapa-header"><div class="eu-etapa-letra">A</div><div><div class="eu-etapa-titulo">Eu-Adjacência</div><div class="eu-etapa-sub">"Mudo de contexto mantendo minhas habilidades"</div></div></div>
+    <div class="eu-etapa-corpo">
+      <div class="eu-recap" id="recap-adj"><div class="eu-recap-label">Sua versão</div><b>—</b></div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">L</div><div class="lente-nome">Legado</div></div>
+        <div class="lente-desc">O que fica depois?</div>
+        <textarea id="adj-leg-txt" class="lente-textarea"></textarea>
+        <div class="forca-opcoes" data-eu="adj" data-lente="leg">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
       </div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">S</div><div class="lente-nome">Serviço</div></div>
+        <div class="lente-desc">A quem serve concretamente?</div>
+        <textarea id="adj-ser-txt" class="lente-textarea"></textarea>
+        <div class="forca-opcoes" data-eu="adj" data-lente="ser">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">V</div><div class="lente-nome">Vocação</div></div>
+        <div class="lente-desc">O que chama, além de salário/status?</div>
+        <textarea id="adj-voc-txt" class="lente-textarea"></textarea>
+        <div class="forca-opcoes" data-eu="adj" data-lente="voc">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="placar-prop"><div class="placar-label">Placar propósito · Adjacência</div><div class="placar-num" id="placar-adj">—</div></div>
     </div>
-    <button class="ai-btn" data-ai="leitura"><svg viewBox="0 0 24 24"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg> Analisar minha rede</button>
-    <div class="ai-sugestao" id="ai-leitura">
-      <div class="ai-sugestao-header"><svg viewBox="0 0 24 24"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg> Análise da IA</div>
-      <span id="ai-leitura-texto"></span>
-    </div>
-    <label for="leitura" style="margin-top:14px">Sua leitura pessoal (opcional)</label>
-    <textarea id="leitura" placeholder="ex.: minha rede é ampla mas 80% é da mesma indústria — trava em Diversidade. E boa parte não falo há mais de 6 meses, então também trava em Nutrição."></textarea>
   </section>
 
-  <!-- ETAPA 3: CANDIDATOS À REATIVAÇÃO -->
-  <section class="etapa">
-    <div class="etapa-header">
-      <div class="etapa-num">3</div>
-      <div>
-        <div class="etapa-titulo">3 a 5 candidatos à reativação</div>
-        <div class="etapa-desc">Da sua lista, escolha as pessoas com quem <b>faz sentido reabrir agora</b> — por afinidade, por potencial, por saudade real. Marque com ★. Sem agenda de pedido ainda.</div>
+  <!-- REINVENÇÃO -->
+  <section class="eu-etapa reinvencao">
+    <div class="eu-etapa-header"><div class="eu-etapa-letra">R</div><div><div class="eu-etapa-titulo">Eu-Reinvenção</div><div class="eu-etapa-sub">"Faço algo estruturalmente novo"</div></div></div>
+    <div class="eu-etapa-corpo">
+      <div class="eu-recap" id="recap-rei"><div class="eu-recap-label">Sua versão</div><b>—</b></div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">L</div><div class="lente-nome">Legado</div></div>
+        <div class="lente-desc">O que fica depois?</div>
+        <textarea id="rei-leg-txt" class="lente-textarea"></textarea>
+        <div class="forca-opcoes" data-eu="rei" data-lente="leg">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
       </div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">S</div><div class="lente-nome">Serviço</div></div>
+        <div class="lente-desc">A quem serve?</div>
+        <textarea id="rei-ser-txt" class="lente-textarea"></textarea>
+        <div class="forca-opcoes" data-eu="rei" data-lente="ser">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="lente-bloco">
+        <div class="lente-header"><div class="lente-letra">V</div><div class="lente-nome">Vocação</div></div>
+        <div class="lente-desc">O que chama?</div>
+        <textarea id="rei-voc-txt" class="lente-textarea"></textarea>
+        <div class="forca-opcoes" data-eu="rei" data-lente="voc">
+          <div class="forca-op" data-f="forte">Forte</div><div class="forca-op" data-f="medio">Médio</div><div class="forca-op" data-f="fraco">Fraco</div>
+        </div>
+      </div>
+
+      <div class="placar-prop"><div class="placar-label">Placar propósito · Reinvenção</div><div class="placar-num" id="placar-rei">—</div></div>
     </div>
-    <div class="reativacao-lista" id="reativacao-lista"></div>
-    <p class="dica">A tela vai listar os contatos que você não fala há mais de 6 meses — são candidatos naturais. Se a lista estiver vazia, adicione mais contatos na Etapa 1.</p>
   </section>
 
-  <!-- ETAPA 4: MENSAGEM DE RETOMADA -->
-  <section class="etapa">
-    <div class="etapa-header">
-      <div class="etapa-num">4</div>
+  <!-- INSIGHT -->
+  <section class="final">
+    <div class="final-header">
+      <div class="final-num">✎</div>
       <div>
-        <div class="etapa-titulo">A mensagem de retomada da primeira pessoa</div>
-        <div class="etapa-desc">Escolha UMA das pessoas marcadas com ★ e escreva a mensagem que você vai enviar. Formato: nome, contexto compartilhado, motivo da retomada. <b>Sem pedido</b> — a primeira mensagem é para reabrir.</div>
+        <div class="final-titulo">Coincidiu com o placar da Etapa 3?</div>
+        <div class="final-desc">A versão mais forte por propósito é a mesma que ganhou por critério? Se sim: convergência importante. Se não: sinal — a versão que perdeu por critério pode ser a que fica; a que ganhou pode virar deserção lenta.</div>
       </div>
     </div>
-    <label for="pessoa-alvo">Nome da pessoa</label>
-    <input type="text" id="pessoa-alvo" placeholder="ex.: João Menezes">
-    <label for="mensagem" style="margin-top:12px">A mensagem</label>
-    <textarea id="mensagem" placeholder="ex.: Oi, João, tudo bem? Vi teu post sobre reestruturação de time — bateu com uma coisa que estou pensando aqui e me lembrei do projeto que fizemos em 2021. Vale um café rápido esse mês, sem agenda, só pra atualizar?"></textarea>
-    <button class="ai-btn" data-ai="mensagem"><svg viewBox="0 0 24 24"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg> Refinar a mensagem</button>
-    <div class="ai-sugestao" id="ai-mensagem">
-      <div class="ai-sugestao-header"><svg viewBox="0 0 24 24"><path d="M12 2l1.6 4.4L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.6L12 2z"/></svg> Sugestão de refino</div>
-      <span id="ai-mensagem-texto"></span>
-      <div class="ai-sugestao-acoes"><button onclick="usarSugestaoMensagem()">Usar essa versão</button></div>
-    </div>
-    <p class="dica">Bom formato: começa por algo do outro (post, projeto conjunto, lembrança concreta), não por você. Termina com um convite pequeno e opcional — não uma agenda formal.</p>
+    <textarea id="insight" class="final-textarea" placeholder="ex.: o Eu-Continuação ganhou nas duas leituras — critério e propósito. Convergência real."></textarea>
+    <p class="dica">Se você não sabe ainda, escreva "vou deixar amadurecer" e siga. A leitura ficará mais clara nos próximos 2 dias.</p>
   </section>
 
   <div class="concluir">
-    <h3>Terminou o mapa?</h3>
-    <p>Ao concluir, o material da Etapa 5 é gerado: seu Mapa de Rede D·N·P, os candidatos à reativação, e a mensagem para enviar hoje mesmo.</p>
-    <a href="material.html" class="btn-concluir" id="btn-concluir">
-      Ver Meu Mapa de Rede
-      <span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
-    </a>
+    <h3>Terminou com as lentes?</h3>
+    <p>O material da Etapa 5 vai mostrar os 2 placares lado a lado (critério vs propósito) e destacar onde eles convergem ou divergem.</p>
+    <a href="material.html" class="btn-concluir" id="btn-concluir">Ver Placar Propósito<span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span></a>
   </div>
 </main>
 
-<footer>
-  <div class="assinatura">Do reagir ao conduzir.</div>
-  <div>Etapa 5 · Missão — Seu Mapa de Rede</div>
-</footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 5 · Missão — Três lentes de propósito</div></footer>
 
 <script>
-  const CATEGORIAS = [
-    {v:'', l:'— categoria —'},
-    {v:'empresa-atual', l:'Empresa atual'},
-    {v:'ex-empresa', l:'Ex-empresa'},
-    {v:'mesmo-setor', l:'Mesmo setor'},
-    {v:'setor-diferente', l:'Setor diferente'},
-    {v:'formacao', l:'Formação / alumni'},
-    {v:'comunidade', l:'Comunidade de tema'},
-    {v:'pessoal', l:'Rede pessoal'}
-  ];
-  const NUTRICOES = [
-    {v:'', l:'— quando falou —'},
-    {v:'3m', l:'Últimos 3 meses'},
-    {v:'6m', l:'3 a 6 meses'},
-    {v:'12m', l:'6 a 12 meses'},
-    {v:'mais', l:'Mais de 1 ano'}
-  ];
+  const forcas = { cont:{leg:'', ser:'', voc:''}, adj:{leg:'', ser:'', voc:''}, rei:{leg:'', ser:'', voc:''} };
+  const NOMES_FORCA = { forte:'Forte', medio:'Médio', fraco:'Fraco' };
 
-  let contatos = [];
-  for (let i = 0; i < 8; i++) contatos.push({nome:'', cat:'', nut:'', estrela:false});
-
-  function renderContatos() {
-    const lista = document.getElementById('contatos-lista');
-    lista.innerHTML = '';
-    contatos.forEach((c, idx) => {
-      const div = document.createElement('div');
-      div.className = 'contato-linha';
-      div.innerHTML = `
-        <div class="contato-num">${idx+1}</div>
-        <input type="text" placeholder="Nome" value="${c.nome}" data-field="nome">
-        <select class="contato-select" data-field="cat">${CATEGORIAS.map(x => `<option value="${x.v}" ${c.cat===x.v?'selected':''}>${x.l}</option>`).join('')}</select>
-        <select class="contato-select" data-field="nut">${NUTRICOES.map(x => `<option value="${x.v}" ${c.nut===x.v?'selected':''}>${x.l}</option>`).join('')}</select>
-      `;
-      div.querySelectorAll('[data-field]').forEach(el => {
-        el.addEventListener('input', e => {
-          c[e.target.dataset.field] = e.target.value;
-          atualizarProgresso();
-          renderReativacao();
-        });
+  document.querySelectorAll('.forca-opcoes').forEach(grid => {
+    const eu = grid.dataset.eu, lente = grid.dataset.lente;
+    grid.querySelectorAll('.forca-op').forEach(op => {
+      op.addEventListener('click', () => {
+        grid.querySelectorAll('.forca-op').forEach(x => x.classList.remove('selecionada'));
+        op.classList.add('selecionada');
+        forcas[eu][lente] = op.dataset.f;
+        atualizar();
       });
-      lista.appendChild(div);
     });
+  });
+
+  function calcularPlacar(prefix) {
+    const f = forcas[prefix];
+    const val = {forte:3, medio:2, fraco:1};
+    const soma = (val[f.leg]||0) + (val[f.ser]||0) + (val[f.voc]||0);
+    if (soma === 0) return '—';
+    if (soma >= 8) return 'Alto';
+    if (soma >= 6) return 'Médio-alto';
+    if (soma >= 4) return 'Médio';
+    return 'Baixo';
   }
 
-  function renderReativacao() {
-    const lista = document.getElementById('reativacao-lista');
-    lista.innerHTML = '';
-    const candidatos = contatos.filter(c => c.nome.trim() && (c.nut === '6m' || c.nut === '12m' || c.nut === 'mais'));
-    if (candidatos.length === 0) {
-      lista.innerHTML = '<div style="padding:14px;text-align:center;color:var(--tinta-suave);font-size:13.5px;font-style:italic">Preencha os contatos na Etapa 1 (com "quando falou") para ver os candidatos aqui.</div>';
-      return;
-    }
-    candidatos.forEach(c => {
-      const div = document.createElement('div');
-      div.className = 'reativacao-item';
-      const tagNut = {'6m':'3-6 meses','12m':'6-12 meses','mais':'+1 ano'}[c.nut];
-      div.innerHTML = `
-        <span class="estrela" data-nome="${c.nome}">${c.estrela ? '★' : '☆'}</span>
-        <span class="nome-contato">${c.nome}</span>
-        <span class="div-tag">${tagNut}</span>
-      `;
-      div.querySelector('.estrela').addEventListener('click', () => {
-        c.estrela = !c.estrela;
-        renderReativacao();
-        atualizarProgresso();
-      });
-      lista.appendChild(div);
+  function atualizar() {
+    ['cont','adj','rei'].forEach(p => {
+      document.getElementById('placar-'+p).textContent = calcularPlacar(p);
     });
-  }
-
-  function atualizarProgresso() {
-    const contatosOk = contatos.filter(c => c.nome.trim() && c.cat && c.nut).length >= 10;
-    const leituraOk = document.getElementById('ai-leitura').classList.contains('visivel') || document.getElementById('leitura').value.trim().length > 0;
-    const estrelasOk = contatos.filter(c => c.estrela).length >= 3;
-    const mensagemOk = document.getElementById('pessoa-alvo').value.trim() && document.getElementById('mensagem').value.trim();
-    const pontos = (contatosOk?1:0) + (leituraOk?1:0) + (estrelasOk?1:0) + (mensagemOk?1:0);
+    let pontos = 0;
+    ['cont','adj','rei'].forEach(p => {
+      if (forcas[p].leg && forcas[p].ser && forcas[p].voc) pontos++;
+    });
+    if (document.getElementById('insight').value.trim().length > 0) pontos++;
     document.getElementById('progresso-num').textContent = pontos + '/4';
     document.getElementById('progresso-fill').style.width = (pontos/4*100) + '%';
   }
 
-  document.getElementById('btn-add-contato').addEventListener('click', () => {
-    if (contatos.length >= 25) return;
-    contatos.push({nome:'', cat:'', nut:'', estrela:false});
-    renderContatos();
-    renderReativacao();
-    atualizarProgresso();
+  document.getElementById('insight').addEventListener('input', atualizar);
+
+  const DEMO = {
+    continuacao: { nome: 'A analista sênior de dados que virou referência em análise de decisão' },
+    adjacencia: { nome: 'A analista sênior que virou head de dados de uma fintech' },
+    reinvencao: { nome: 'A professora e autora sobre alfabetização de dados' }
+  };
+
+  function pega(k, fb) { try{const s=sessionStorage.getItem(k);if(s){const p=JSON.parse(s);if(p&&Object.keys(p).length>0)return p;}}catch(e){}return fb; }
+  const dia8 = pega('intentia-dia1', DEMO);
+  if (!sessionStorage.getItem('intentia-dia1')) document.getElementById('aviso-demo').style.display = 'flex';
+
+  ['continuacao','adjacencia','reinvencao'].forEach(tipo => {
+    const p = tipo === 'continuacao' ? 'cont' : (tipo === 'adjacencia' ? 'adj' : 'rei');
+    const el = document.querySelector('#recap-'+p+' b');
+    if (el) el.textContent = dia8[tipo] && dia8[tipo].nome ? dia8[tipo].nome : '(não preenchido)';
   });
-
-  document.querySelector('[data-ai="leitura"]').addEventListener('click', () => {
-    const preenchidos = contatos.filter(c => c.nome.trim() && c.cat && c.nut);
-    if (preenchidos.length < 5) return;
-    const catCount = {}; preenchidos.forEach(c => catCount[c.cat] = (catCount[c.cat]||0)+1);
-    const nutCount = {}; preenchidos.forEach(c => nutCount[c.nut] = (nutCount[c.nut]||0)+1);
-    const catDominante = Object.entries(catCount).sort((a,b)=>b[1]-a[1])[0];
-    const dormentesRatio = ((nutCount['12m']||0)+(nutCount['mais']||0)) / preenchidos.length;
-    let analise = `Você mapeou <b>${preenchidos.length} contatos</b>. `;
-    if (catDominante && catDominante[1] / preenchidos.length > 0.5) {
-      analise += `Mais da metade (${catDominante[1]}) vem da categoria "<b>${CATEGORIAS.find(c=>c.v===catDominante[0]).l}</b>" — sinal de <b>baixa diversidade</b>. `;
-    } else {
-      analise += `A distribuição por categoria é razoavelmente <b>diversa</b> — bom sinal. `;
-    }
-    if (dormentesRatio > 0.4) {
-      analise += `E <b>${Math.round(dormentesRatio*100)}% dos contatos</b> estão sem contato há mais de 6 meses — sua rede está bastante dormente, precisa de <b>nutrição</b>.`;
-    } else {
-      analise += `E a maioria dos contatos foi ativada nos últimos meses — nutrição está OK.`;
-    }
-    document.getElementById('ai-leitura-texto').innerHTML = analise;
-    document.getElementById('ai-leitura').classList.add('visivel');
-    atualizarProgresso();
-  });
-
-  document.querySelector('[data-ai="mensagem"]').addEventListener('click', () => {
-    const val = document.getElementById('mensagem').value.trim();
-    if (!val) return;
-    setTimeout(() => {
-      const refinado = `${val.replace(/\s+/g,' ')} — considere terminar com uma pergunta aberta (não uma agenda formal), tipo "sem pressa, me avisa se rolar". Fica mais leve.`;
-      document.getElementById('ai-mensagem-texto').textContent = refinado;
-      document.getElementById('ai-mensagem').classList.add('visivel');
-    }, 500);
-  });
-
-  function usarSugestaoMensagem() {
-    document.getElementById('mensagem').value = document.getElementById('ai-mensagem-texto').textContent;
-    document.getElementById('ai-mensagem').classList.remove('visivel');
-    atualizarProgresso();
-  }
-
-  ['pessoa-alvo','mensagem','leitura'].forEach(id => document.getElementById(id).addEventListener('input', atualizarProgresso));
 
   document.getElementById('btn-concluir').addEventListener('click', () => {
     try {
       sessionStorage.setItem('intentia-dia5', JSON.stringify({
         dataConclusao: new Date().toISOString(),
-        contatos: contatos,
-        leituraIA: document.getElementById('ai-leitura-texto').innerHTML || '',
-        leituraPessoal: document.getElementById('leitura').value,
-        pessoaAlvo: document.getElementById('pessoa-alvo').value,
-        mensagem: document.getElementById('mensagem').value
+        continuacao: { legado:{forca:forcas.cont.leg, texto:document.getElementById('cont-leg-txt').value}, servico:{forca:forcas.cont.ser, texto:document.getElementById('cont-ser-txt').value}, vocacao:{forca:forcas.cont.voc, texto:document.getElementById('cont-voc-txt').value} },
+        adjacencia: { legado:{forca:forcas.adj.leg, texto:document.getElementById('adj-leg-txt').value}, servico:{forca:forcas.adj.ser, texto:document.getElementById('adj-ser-txt').value}, vocacao:{forca:forcas.adj.voc, texto:document.getElementById('adj-voc-txt').value} },
+        reinvencao: { legado:{forca:forcas.rei.leg, texto:document.getElementById('rei-leg-txt').value}, servico:{forca:forcas.rei.ser, texto:document.getElementById('rei-ser-txt').value}, vocacao:{forca:forcas.rei.voc, texto:document.getElementById('rei-voc-txt').value} },
+        insight: document.getElementById('insight').value
       }));
     } catch(e) {}
   });
 
-  renderContatos();
-  renderReativacao();
-  atualizarProgresso();
+  atualizar();
 </script>
 
 <!--intentia-save:start--><style>

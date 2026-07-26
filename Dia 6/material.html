@@ -3,62 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 6 · Minha leitura da Cadeia A·C·I</title>
+<title>Intentia · Etapa 6 · Atravessabilidade das 3 versões</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--lilas:#8B7BB8;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
   .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
   header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
-  .hero-inner{max-width:820px;margin:0 auto;position:relative;z-index:1}
-  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:16px}
-  .voltar:hover{color:#fff}
+  .hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
   .voltar svg{width:14px;height:14px;fill:currentColor}
   .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
-  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:12px}
-  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.6vw,42px);line-height:1.12;margin-bottom:14px;letter-spacing:-.01em}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:720px}
   .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
-  main{max-width:820px;margin:0 auto;padding:0 24px 40px}
-  .demo-banner{max-width:820px;margin:-20px auto 0;background:#F5F1FA;border:1px solid #DFD1F0;border-left:4px solid var(--lilas);border-radius:10px;padding:14px 20px;position:relative;z-index:2;font-size:13.5px;color:var(--tinta-suave);display:none}
-  .demo-banner.visivel{display:block}
-  .demo-banner b{color:var(--verde-900);font-weight:700}
+  main{max-width:1080px;margin:0 auto;padding:0 24px 40px}
+  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:16px 22px;margin:24px 0;display:flex;align-items:flex-start;gap:14px;font-size:13.5px;line-height:1.55}
+  .aviso-demo-icone{color:var(--coral);font-size:20px;flex-shrink:0;margin-top:2px}
+  .aviso-demo b{color:var(--verde-900)}
+  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
 
-  .secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:32px 34px;margin:24px 0;box-shadow:0 4px 16px rgba(39,87,80,.06)}
-  .secao-header{display:flex;align-items:center;gap:14px;margin-bottom:20px}
-  .secao-num{width:36px;height:36px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:16px}
-  .secao h2{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--verde-900);line-height:1.2;letter-spacing:-.005em}
+  /* Placar acumulado topo */
+  .acumulado-topo{background:linear-gradient(135deg, var(--verde-900) 0%, #1d453f 100%);color:var(--creme);border-radius:16px;padding:28px 32px;margin:24px 0;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(39,87,80,.2)}
+  .acumulado-label{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  .acumulado-titulo{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;margin-bottom:16px}
+  .acumulado-tabela{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:12px;font-size:13px}
+  @media (max-width:700px){.acumulado-tabela{grid-template-columns:1fr;gap:16px}.acumulado-tabela .cel::before{content:attr(data-label);display:block;font-size:10px;color:#A9C6B8;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:3px}}
+  .acumulado-cab{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#A9C6B8;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.10)}
+  @media (max-width:700px){.acumulado-cab{display:none}}
+  .acumulado-linha{display:contents}
+  .acumulado-nome{font-family:var(--serif);color:#fff;font-weight:600;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+  .acumulado-cel{color:#CFE0D6;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:13px}
+  @media (min-width:700px){.acumulado-cel{text-align:center}}
+  .acumulado-cel.top{color:var(--coral-soft);font-weight:600}
+  .acumulado-nota{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.10);font-size:13px;color:#CFE0D6;line-height:1.55;font-style:italic}
+  .acumulado-nota b{color:#fff;font-weight:600;font-style:normal}
 
-  .cadeia-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:12px}
-  @media (max-width:640px){.cadeia-grid{grid-template-columns:1fr}}
-  .cadeia-card{background:var(--creme);border-radius:12px;padding:20px 22px;position:relative;border-top:3px solid var(--verde-500)}
-  .cadeia-letra{position:absolute;top:-16px;left:22px;width:36px;height:36px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:19px;font-weight:600;box-shadow:0 3px 10px rgba(255,104,66,.3)}
-  .cadeia-nome{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--verde-900);margin-top:14px;margin-bottom:12px}
-  .cadeia-campo{margin-bottom:10px}
-  .cadeia-campo:last-child{margin-bottom:0}
-  .cadeia-campo-label{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-700);margin-bottom:4px}
-  .cadeia-campo-valor{font-size:14px;color:var(--tinta);line-height:1.5}
-  .cadeia-campo-valor.vazio{color:var(--tinta-suave);font-style:italic}
+  /* Grid 3 eus com movimentos */
+  .ess-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:18px;margin:24px 0}
+  @media (max-width:820px){.ess-grid{grid-template-columns:1fr}}
+  .ess-col{background:#fff;border:1px solid var(--verde-100);border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06);display:flex;flex-direction:column}
+  .ess-col-header{padding:22px 22px 18px;color:#fff}
+  .ess-col.continuacao .ess-col-header{background:linear-gradient(135deg, #336B62 0%, #275750 100%)}
+  .ess-col.adjacencia .ess-col-header{background:linear-gradient(135deg, #FF7A57 0%, #E85530 100%)}
+  .ess-col.reinvencao .ess-col-header{background:linear-gradient(135deg, #8B7BB8 0%, #5F4E8C 100%)}
+  .ess-col-letra{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;font-family:var(--serif);font-size:18px;font-weight:600;margin-bottom:10px}
+  .ess-col-tipo{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.85;margin-bottom:4px}
+  .ess-col-nome{font-family:var(--serif);font-size:15px;font-weight:500;font-style:italic;line-height:1.3;opacity:.95}
+  .ess-col-body{padding:22px;flex:1}
+  .ess-atrav{text-align:center;margin-bottom:18px;padding:14px 16px;background:var(--creme);border-radius:10px}
+  .ess-atrav-num{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1;color:var(--coral)}
+  .ess-atrav-num.baixa{color:var(--tinta-suave)}
+  .ess-atrav-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-suave);margin-top:4px}
+  .mov-linha{margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed var(--verde-100)}
+  .mov-linha:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .mov-header-linha{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .mov-letra-linha{width:24px;height:24px;background:var(--verde-100);color:var(--verde-700);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:12px}
+  .mov-nome-linha{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--verde-900);flex:1}
+  .mov-tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;letter-spacing:.05em;text-transform:uppercase}
+  .mov-tag.ok{background:var(--verde-500);color:#fff}
+  .mov-tag.vazio{background:#FBF0EA;color:var(--coral);border:1px solid var(--coral-soft)}
+  .mov-texto{font-size:12.5px;color:var(--tinta);line-height:1.5;font-style:italic}
+  .mov-texto.vazia{color:var(--tinta-suave);font-size:12px}
 
-  .elo-destaque{background:var(--verde-900);color:var(--creme);padding:18px 22px;border-radius:12px;margin-top:14px}
-  .elo-destaque-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral-soft);margin-bottom:6px}
-  .elo-destaque-nome{font-family:var(--serif);font-size:20px;font-weight:600;margin-bottom:6px}
-  .elo-destaque-desc{font-size:14px;color:#CFE0D6;line-height:1.5}
+  .insight-topo{background:linear-gradient(135deg, #fff 0%, #FFF8F5 100%);border:1.5px solid var(--coral-soft);border-radius:16px;padding:28px 32px;margin:24px 0;position:relative;box-shadow:0 6px 22px rgba(255,104,66,.08)}
+  .insight-topo::before{content:"";position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(to bottom, var(--coral) 0%, #FF7A57 100%);border-radius:16px 0 0 16px}
+  .badge-novo{display:inline-flex;align-items:center;gap:5px;background:var(--coral);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 11px;border-radius:14px;margin-bottom:12px}
+  .badge-novo::before{content:"◆"}
+  .insight-topo h2{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--verde-900);margin-bottom:10px}
+  .insight-topo .insight-conteudo{font-family:var(--serif);font-size:18px;line-height:1.45;color:var(--tinta);font-weight:500;font-style:italic}
 
-  .acao-destaque{background:linear-gradient(135deg, var(--coral) 0%, #FF7A57 100%);color:#fff;padding:24px 28px;border-radius:14px;margin-top:12px}
-  .acao-destaque-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:10px}
-  .acao-destaque-texto{font-family:var(--serif);font-size:19px;font-weight:400;line-height:1.5;font-style:italic}
-  .acao-destaque-prazo{margin-top:12px;font-size:12.5px;color:rgba(255,255,255,.85);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .fechamento{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 32px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .fechamento h2{font-family:var(--serif);font-size:22px;color:var(--verde-900);margin-bottom:12px;font-weight:600}
+  .fechamento p{font-size:15px;color:var(--tinta);line-height:1.65;margin-bottom:12px}
+  .fechamento p:last-child{margin-bottom:0}
+  .fechamento b{color:var(--verde-900)}
 
-  .amanha{background:var(--verde-100);border-radius:12px;padding:20px 24px;margin-top:24px;font-size:14px;color:var(--tinta);line-height:1.6;text-align:center;border-left:3px solid var(--verde-700)}
-  .amanha b{color:var(--verde-900);font-weight:600}
-
-  .voltar-dia{text-align:center;margin-top:40px}
-  .voltar-dia a{display:inline-flex;align-items:center;gap:8px;color:var(--verde-700);text-decoration:none;font-weight:600;font-size:14px;border-bottom:1px dotted var(--verde-500);padding-bottom:2px}
-  .voltar-dia svg{width:14px;height:14px;fill:currentColor}
-
-  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  .proximo{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:28px 30px;margin:24px 0;text-align:center;position:relative;overflow:hidden}
+  .proximo-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+  .proximo h3{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;margin-bottom:8px}
+  .proximo p{font-size:14.5px;color:#CFE0D6;margin-bottom:20px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55}
+  .proximo-cta{display:inline-flex;align-items:center;gap:12px;background:var(--coral);color:#fff;padding:14px 26px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:16px;font-weight:600;transition:transform .2s;box-shadow:0 6px 18px rgba(255,104,66,.32)}
+  .proximo-cta:hover{transform:translateY(-2px)}
+  .proximo-cta svg{width:14px;height:14px;fill:currentColor}
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
   footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
 
   /* === TEXTO JUSTIFICADO (materiais) === */
@@ -145,86 +175,85 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 })();
 </script><!--intentia-nav:end-->
 
-
 <header>
   <div class="hero-inner">
     <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 6</a>
-    <div class="eyebrow">Material · Etapa 6</div>
-    <h1>Minha leitura da Cadeia <span class="grifo">A·C·I</span>.</h1>
-    <p class="lede">Os três diagnósticos lado a lado, o elo travado nomeado, e a ação de estirão para os próximos 7 dias.</p>
+    <div class="eyebrow">Material · Etapa 6 · Bloco 1 · Etapa 6 de 7</div>
+    <h1>Atravessabilidade das 3 versões — <span class="grifo">3 leituras acumuladas</span>.</h1>
+    <p class="lede">Você tem 3 placares agora: Critério (Etapa 3), Propósito (Etapa 5), Atravessabilidade (hoje). A tabela no topo mostra as 3 leituras lado a lado — e onde elas convergem ou divergem para cada Eu. Amanhã fecha.</p>
   </div>
   <div class="arc"></div>
 </header>
-
-<div class="demo-banner" id="demo-banner">
-  <b>Prévia com dados de demonstração.</b> Você abriu este material sem completar a missão — o conteúdo abaixo mostra como ele fica preenchido, usando o perfil da Camila. <a href="missao.html" style="color:var(--lilas);font-weight:700;text-decoration:none;margin-left:4px">Fazer a missão →</a>
-</div>
-
 <main>
-
-  <section class="secao">
-    <div class="secao-header"><div class="secao-num">1</div><h2>Os três elos da sua cadeia</h2></div>
-    <div class="cadeia-grid">
-      <div class="cadeia-card">
-        <div class="cadeia-letra">A</div>
-        <div class="cadeia-nome">Aprendizagem</div>
-        <div class="cadeia-campo">
-          <div class="cadeia-campo-label">O que domino</div>
-          <div class="cadeia-campo-valor" id="ap-domino"></div>
-        </div>
-        <div class="cadeia-campo">
-          <div class="cadeia-campo-label">O que construo</div>
-          <div class="cadeia-campo-valor" id="ap-construo"></div>
-        </div>
-      </div>
-      <div class="cadeia-card">
-        <div class="cadeia-letra">C</div>
-        <div class="cadeia-nome">Credibilidade</div>
-        <div class="cadeia-campo">
-          <div class="cadeia-campo-label">Primeira lembrança para o problema</div>
-          <div class="cadeia-campo-valor" id="cr-problema"></div>
-        </div>
-      </div>
-      <div class="cadeia-card">
-        <div class="cadeia-letra">I</div>
-        <div class="cadeia-nome">Influência</div>
-        <div class="cadeia-campo">
-          <div class="cadeia-campo-label">Dentro da empresa</div>
-          <div class="cadeia-campo-valor" id="in-dentro"></div>
-        </div>
-        <div class="cadeia-campo">
-          <div class="cadeia-campo-label">Fora da empresa</div>
-          <div class="cadeia-campo-valor" id="in-fora"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="secao">
-    <div class="secao-header"><div class="secao-num">2</div><h2>O elo que trava</h2></div>
-    <div class="elo-destaque" id="elo-destaque"></div>
-  </section>
-
-  <section class="secao">
-    <div class="secao-header"><div class="secao-num">3</div><h2>Sua ação de estirão</h2></div>
-    <div class="acao-destaque">
-      <div class="acao-destaque-label">Ação da semana · toca os três elos</div>
-      <div class="acao-destaque-texto" id="acao-texto"></div>
-      <div class="acao-destaque-prazo">7 dias · Rastro visível</div>
-    </div>
-  </section>
-
-  <div class="amanha">
-    <b>Amanhã, todos os quatro aprofundamentos se encontram.</b> Você já mapeou Resultados (Etapa 3), Reputação (Etapa 4), Rede (Etapa 5) e agora a Cadeia A·C·I. Na Etapa 7, isso tudo se agrega no seu <b>Retrato de Capital de Carreira</b>, com o filtro de valores que amarra os ativos ao propósito.
+  <div id="aviso-demo" class="aviso-demo" style="display:none">
+    <div class="aviso-demo-icone">◆</div>
+    <div><b>Você ainda não preencheu a missão da Etapa 6.</b> Dados abaixo em <b>modo demonstrativo</b>. <a href="missao.html">Ir preencher agora →</a></div>
   </div>
 
-  <div class="voltar-dia">
-    <a href="index.html">
-      <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-      Voltar ao índice da Etapa 6
-    </a>
+  <div class="acumulado-topo">
+    <div class="acumulado-label">3 leituras · lado a lado</div>
+    <div class="acumulado-titulo">Como cada Eu se comporta em cada teste</div>
+    <div class="acumulado-tabela">
+      <div class="acumulado-cab">Eu</div>
+      <div class="acumulado-cab">Critério (Etapa 3)</div>
+      <div class="acumulado-cab">Propósito (Etapa 5)</div>
+      <div class="acumulado-cab">Atravessável (Etapa 6)</div>
+      <div class="acumulado-linha" id="acumulado-linhas"></div>
+    </div>
+    <div class="acumulado-nota" id="acumulado-nota">Preencha para ver as 3 leituras aqui.</div>
   </div>
 
+  <div class="ess-grid">
+    <div class="ess-col continuacao">
+      <div class="ess-col-header"><div class="ess-col-letra">C</div><div class="ess-col-tipo">Eu · Continuação</div><div class="ess-col-nome" id="cont-nome">—</div></div>
+      <div class="ess-col-body">
+        <div class="ess-atrav"><div class="ess-atrav-num" id="cont-atrav">—</div><div class="ess-atrav-label">Atravessabilidade</div></div>
+        <div class="mov-linha"><div class="mov-header-linha"><div class="mov-letra-linha">S</div><div class="mov-nome-linha">Subtrair</div><span class="mov-tag" id="cont-sub-tag">—</span></div><div class="mov-texto" id="cont-sub-txt">—</div></div>
+        <div class="mov-linha"><div class="mov-header-linha"><div class="mov-letra-linha">C</div><div class="mov-nome-linha">Concentrar</div><span class="mov-tag" id="cont-conc-tag">—</span></div><div class="mov-texto" id="cont-conc-txt">—</div></div>
+        <div class="mov-linha"><div class="mov-header-linha"><div class="mov-letra-linha">A</div><div class="mov-nome-linha">Automatizar</div><span class="mov-tag" id="cont-auto-tag">—</span></div><div class="mov-texto" id="cont-auto-txt">—</div></div>
+      </div>
+    </div>
+
+    <div class="ess-col adjacencia">
+      <div class="ess-col-header"><div class="ess-col-letra">A</div><div class="ess-col-tipo">Eu · Adjacência</div><div class="ess-col-nome" id="adj-nome">—</div></div>
+      <div class="ess-col-body">
+        <div class="ess-atrav"><div class="ess-atrav-num" id="adj-atrav">—</div><div class="ess-atrav-label">Atravessabilidade</div></div>
+        <div class="mov-linha"><div class="mov-header-linha"><div class="mov-letra-linha">S</div><div class="mov-nome-linha">Subtrair</div><span class="mov-tag" id="adj-sub-tag">—</span></div><div class="mov-texto" id="adj-sub-txt">—</div></div>
+        <div class="mov-linha"><div class="mov-header-linha"><div class="mov-letra-linha">C</div><div class="mov-nome-linha">Concentrar</div><span class="mov-tag" id="adj-conc-tag">—</span></div><div class="mov-texto" id="adj-conc-txt">—</div></div>
+        <div class="mov-linha"><div class="mov-header-linha"><div class="mov-letra-linha">A</div><div class="mov-nome-linha">Automatizar</div><span class="mov-tag" id="adj-auto-tag">—</span></div><div class="mov-texto" id="adj-auto-txt">—</div></div>
+      </div>
+    </div>
+
+    <div class="ess-col reinvencao">
+      <div class="ess-col-header"><div class="ess-col-letra">R</div><div class="ess-col-tipo">Eu · Reinvenção</div><div class="ess-col-nome" id="rei-nome">—</div></div>
+      <div class="ess-col-body">
+        <div class="ess-atrav"><div class="ess-atrav-num" id="rei-atrav">—</div><div class="ess-atrav-label">Atravessabilidade</div></div>
+        <div class="mov-linha"><div class="mov-header-linha"><div class="mov-letra-linha">S</div><div class="mov-nome-linha">Subtrair</div><span class="mov-tag" id="rei-sub-tag">—</span></div><div class="mov-texto" id="rei-sub-txt">—</div></div>
+        <div class="mov-linha"><div class="mov-header-linha"><div class="mov-letra-linha">C</div><div class="mov-nome-linha">Concentrar</div><span class="mov-tag" id="rei-conc-tag">—</span></div><div class="mov-texto" id="rei-conc-txt">—</div></div>
+        <div class="mov-linha"><div class="mov-header-linha"><div class="mov-letra-linha">A</div><div class="mov-nome-linha">Automatizar</div><span class="mov-tag" id="rei-auto-tag">—</span></div><div class="mov-texto" id="rei-auto-txt">—</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-topo">
+    <div class="badge-novo">Insight da Etapa 6</div>
+    <h2>A versão mais atravessável</h2>
+    <div class="insight-conteudo" id="insight-texto">—</div>
+  </div>
+
+  <div class="fechamento">
+    <h2>Como usar essa tabela para a Etapa 7</h2>
+    <p>A versão que <b>ganhou nas 3 leituras</b> (critério, propósito, atravessabilidade) é a candidata forte à direção escolhida. Se ela é uma só, a Etapa 7 vai só confirmar e fechar.</p>
+    <p>Se você tem <b>versão vencedora diferente por leitura</b>, a Etapa 7 vai te convidar a construir uma síntese — talvez pegar a rota-esqueleto de uma versão e o propósito de outra. Combinações costumam ser respostas legítimas.</p>
+    <p>Se você marcou <b>vazios em muitos movimentos essenciais</b>, a Etapa 7 vai reconhecer isso e sugerir mais um ciclo de amadurecimento antes de decidir. Não decidir também é decisão consciente — melhor que forçar convergência.</p>
+  </div>
+
+  <div class="proximo">
+    <div class="proximo-eyebrow">Amanhã · Etapa 7 · Fechamento do Bloco 1</div>
+    <h3>Sua Direção Escolhida</h3>
+    <p>Marca pessoal (Avery/Greenwald + Clark) como última lente — como cada versão se comunica ao mundo — e o fechamento: a direção escolhida do Bloco 1, com pergunta madura, próximo passo, e ponte para o Bloco 2.</p>
+    <a href="../Dia 7/index.html" class="proximo-cta">Ir para a Etapa 7 <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></a>
+  </div>
 <!--intentia-dayend:start--><style>
 .intday{background:linear-gradient(135deg,#275750 0%,#1d453f 100%);color:#F5F7F3;border-radius:20px;
   padding:34px 38px;margin:36px 0 8px;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif}
@@ -235,68 +264,117 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 10px 24px rgba(255,104,66,.3);transition:transform .2s,box-shadow .2s}
 .intday .intday-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,104,66,.4)}
 @media(max-width:600px){.intday{padding:26px 22px}.intday h3{font-size:19px}}
-</style><div class="intday"><div class="intday-eyebrow">A jornada continua</div><h3>Amanhã: Etapa 7 — Valores + Retrato de Capital de Carreira.</h3><p>Você concluiu a Etapa 6. Quando estiver pronto, dê o próximo passo da travessia.</p><a class="intday-cta" href="../Dia 7/index.html">Ir para a Etapa 7 →</a></div><!--intentia-dayend:end-->
+</style><div class="intday"><div class="intday-eyebrow">A jornada continua</div><h3>Amanhã: Etapa 7 — Marca + Direção Escolhida.</h3><p>Você concluiu a Etapa 6. Quando estiver pronto, dê o próximo passo da travessia.</p><a class="intday-cta" href="../Dia 7/index.html">Ir para a Etapa 7 →</a></div><!--intentia-dayend:end-->
 </main>
-
-<footer>
-  <div class="assinatura">Do reagir ao conduzir.</div>
-  <div>Etapa 6 · Minha leitura da Cadeia A·C·I</div>
-</footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 6 · Atravessabilidade das 3 versões</div></footer>
 
 <script>
-  const ELO_INFO = {
-    'a-c': {nome:'A → C', desc:'Você aprende bastante, mas não colhe credibilidade sobre o que aprende. Onde agir: tornar visível o que você domina — apresentações internas, resposta a perguntas específicas, publicação sobre o tema.'},
-    'c-i': {nome:'C → I', desc:'Você tem credibilidade local, mas ela não vira ação além do seu círculo. Onde agir: subir seu tema para contextos maiores — reuniões cross-área, publicação externa, aliança com padrinho de credibilidade.'},
-    'i-a': {nome:'I sem retorno para A', desc:'Você fala muito, mas sistematiza pouco. Onde agir: instituir prática de aprendizagem estruturada — escrita, leitura ativa, sessão de reflexão mensal — antes que a influência vire palanque raso.'}
+  const NOMES_EU = { continuacao: 'Eu-Continuação', adjacencia: 'Eu-Adjacência', reinvencao: 'Eu-Reinvenção' };
+
+  const DEMO_DIA8 = {
+    continuacao: { nome: 'A analista que virou referência em análise de decisão' },
+    adjacencia: { nome: 'A analista que virou head de dados de fintech' },
+    reinvencao: { nome: 'A professora e autora sobre alfabetização de dados' }
   };
-  const DADOS_DEMO = {
-    aprendizagem: {
-      domino: 'Análise de dados de comportamento de usuário — especialmente cohorts, funil de conversão e leitura de séries temporais.',
-      construo: 'Leitura de negócios além do dado: entender por que a área pediu o número antes de entregar, não só depois.'
-    },
-    credibilidade: 'Quando alguém precisa de um número que sustenta decisão em reunião de comitê — sou a primeira lembrança do meu time e da gerência direta.',
-    influencia: {
-      dentro: '~8 pessoas (meu time + gerente direta)',
-      fora: '2-3 pessoas da comunidade de analytics'
-    },
-    eloQuebrado: 'c-i',
-    acao: 'Vou apresentar internamente, na próxima quinta, o estudo de cohort que fiz — para o meu time e para 2 pessoas da área de produto que citarem interesse. Publico um resumo curto no LinkedIn na sexta.'
+  const DEMO_DIA10 = { continuacao: {notas:{aloc:4,rev:5,ret:3}}, adjacencia: {notas:{aloc:2,rev:3,ret:4}}, reinvencao: {notas:{aloc:3,rev:2,ret:2}} };
+  const DEMO_DIA12 = {
+    continuacao: { legado:{forca:'forte'}, servico:{forca:'forte'}, vocacao:{forca:'forte'} },
+    adjacencia: { legado:{forca:'medio'}, servico:{forca:'forte'}, vocacao:{forca:'fraco'} },
+    reinvencao: { legado:{forca:'forte'}, servico:{forca:'forte'}, vocacao:{forca:'forte'} }
+  };
+  const DEMO_DIA13 = {
+    continuacao: { subtrair:{texto:'reduzir 4h/semana de tarefas administrativas do banco', vazio:false}, concentrar:{texto:'2h da manhã de sábado dedicadas 100% a escrever/publicar', vazio:false}, automatizar:{texto:'análise mensal do dashboard vira 2h com script + template', vazio:false}, atravessabilidade:'Alta' },
+    adjacencia: { subtrair:{texto:'3-4 reuniões operacionais/semana delegar; 1 comitê corporativo', vazio:false}, concentrar:{texto:'10h/semana em estudo de setor-alvo, coffee chats, projeto lateral', vazio:false}, automatizar:{texto:'gestão do time via reunião semanal + dashboard', vazio:false}, atravessabilidade:'Alta' },
+    reinvencao: { subtrair:{texto:'40% dos clientes atuais; recusar projetos novos por 12 meses', vazio:false}, concentrar:{texto:'15h/semana em produto autoral', vazio:false}, automatizar:{texto:'', vazio:true}, atravessabilidade:'Média' },
+    insight: 'Continuação Paralela é a mais atravessável — sei exatamente o que subtrair, onde concentrar e o que automatizar; Reinvenção ainda tem 1 vazio'
   };
 
-  let dados, usandoDemo = false;
+  function pega(k, fb) { try{const s=sessionStorage.getItem(k);if(s){const p=JSON.parse(s);if(p&&Object.keys(p).length>0)return p;}}catch(e){}return fb; }
+
+  const dia8 = pega('intentia-dia1', DEMO_DIA8);
+  const dia10 = pega('intentia-dia3', DEMO_DIA10);
+  const dia12 = pega('intentia-dia5', DEMO_DIA12);
+  const dia13raw = sessionStorage.getItem('intentia-dia6');
+  let dia13, demo13 = false;
   try {
-    const s = sessionStorage.getItem('intentia-dia6');
-    if (s) {
-      const parsed = JSON.parse(s);
-      dados = {
-        aprendizagem: {
-          domino: (parsed.aprendizagem && parsed.aprendizagem.domino || '').trim() || DADOS_DEMO.aprendizagem.domino,
-          construo: (parsed.aprendizagem && parsed.aprendizagem.construo || '').trim() || DADOS_DEMO.aprendizagem.construo
-        },
-        credibilidade: (parsed.credibilidade || '').trim() || DADOS_DEMO.credibilidade,
-        influencia: {
-          dentro: (parsed.influencia && parsed.influencia.dentro || '').trim() || DADOS_DEMO.influencia.dentro,
-          fora: (parsed.influencia && parsed.influencia.fora || '').trim() || DADOS_DEMO.influencia.fora
-        },
-        eloQuebrado: parsed.eloQuebrado || DADOS_DEMO.eloQuebrado,
-        acao: (parsed.acao || '').trim() || DADOS_DEMO.acao
-      };
-    } else { dados = DADOS_DEMO; usandoDemo = true; }
-  } catch(e) { dados = DADOS_DEMO; usandoDemo = true; }
-  if (usandoDemo) document.getElementById('demo-banner').classList.add('visivel');
+    const p = dia13raw ? JSON.parse(dia13raw) : null;
+    if (p && p.continuacao && p.continuacao.subtrair) dia13 = p;
+    else { dia13 = DEMO_DIA13; demo13 = true; }
+  } catch(e){ dia13 = DEMO_DIA13; demo13 = true; }
+  if (demo13) document.getElementById('aviso-demo').style.display = 'flex';
 
-  document.getElementById('ap-domino').textContent = dados.aprendizagem.domino;
-  document.getElementById('ap-construo').textContent = dados.aprendizagem.construo;
-  document.getElementById('cr-problema').textContent = dados.credibilidade;
-  document.getElementById('in-dentro').textContent = dados.influencia.dentro;
-  document.getElementById('in-fora').textContent = dados.influencia.fora;
+  function setText(id, val) { const el = document.getElementById(id); if (!el) return; if (!val || !val.toString().trim()) { el.textContent = '—'; el.classList.add('vazia'); } else { el.textContent = val; el.classList.remove('vazia'); } }
 
-  const elo = ELO_INFO[dados.eloQuebrado];
-  if (elo) {
-    document.getElementById('elo-destaque').innerHTML = `<div class="elo-destaque-label">Diagnóstico</div><div class="elo-destaque-nome">${elo.nome}</div><div class="elo-destaque-desc">${elo.desc}</div>`;
+  // Placar critério (soma A+R+T)
+  function placarCriterio(tipo) {
+    const n = (dia10[tipo] && dia10[tipo].notas) || {};
+    return (n.aloc||0) + (n.rev||0) + (n.ret||0);
+  }
+  // Placar propósito (label)
+  function placarProp(tipo) {
+    const d = dia12[tipo] || {};
+    const val = {forte:3, medio:2, fraco:1};
+    const soma = (val[d.legado?.forca]||0) + (val[d.servico?.forca]||0) + (val[d.vocacao?.forca]||0);
+    if (soma === 0) return '—';
+    if (soma >= 8) return 'Alto';
+    if (soma >= 6) return 'Médio-alto';
+    if (soma >= 4) return 'Médio';
+    return 'Baixo';
   }
 
-  document.getElementById('acao-texto').textContent = '"' + dados.acao + '"';
+  // Preencher tabela acumulada
+  const linhas = document.getElementById('acumulado-linhas');
+  const tipos = ['continuacao','adjacencia','reinvencao'];
+  const criterios = tipos.map(t => placarCriterio(t));
+  const topCriterio = Math.max(...criterios);
+  const proposEnum = {'Alto':4,'Médio-alto':3,'Médio':2,'Baixo':1,'—':0};
+  const propostos = tipos.map(t => proposEnum[placarProp(t)]);
+  const topProposto = Math.max(...propostos);
+  const atravEnum = {'Alta':3,'Média':2,'Baixa':1,'Não pronta':0,'—':0};
+  const atravs = tipos.map(t => atravEnum[dia13[t]?.atravessabilidade || '—']);
+  const topAtrav = Math.max(...atravs);
+
+  tipos.forEach((t, i) => {
+    const linha = document.createElement('div');
+    linha.style.display = 'contents';
+    const isCritTop = criterios[i] === topCriterio && criterios[i] > 0;
+    const isPropTop = propostos[i] === topProposto && propostos[i] > 0;
+    const isAtravTop = atravs[i] === topAtrav && atravs[i] > 0;
+    linha.innerHTML = `<div class="acumulado-nome cel" data-label="Eu">${NOMES_EU[t]}</div><div class="acumulado-cel cel ${isCritTop ? 'top':''}" data-label="Critério">${criterios[i] || '—'}/15</div><div class="acumulado-cel cel ${isPropTop ? 'top':''}" data-label="Propósito">${placarProp(t)}</div><div class="acumulado-cel cel ${isAtravTop ? 'top':''}" data-label="Atravessável">${dia13[t]?.atravessabilidade || '—'}</div>`;
+    linhas.appendChild(linha);
+  });
+
+  // Nota
+  const rankCrit = tipos.slice().sort((a,b) => placarCriterio(b) - placarCriterio(a))[0];
+  const rankProp = tipos.slice().sort((a,b) => proposEnum[placarProp(b)] - proposEnum[placarProp(a)])[0];
+  const rankAtrav = tipos.slice().sort((a,b) => (atravEnum[dia13[b]?.atravessabilidade||'—']) - (atravEnum[dia13[a]?.atravessabilidade||'—']))[0];
+  const nota = document.getElementById('acumulado-nota');
+  if (rankCrit === rankProp && rankProp === rankAtrav) {
+    nota.innerHTML = `<b>${NOMES_EU[rankCrit]}</b> venceu <b>nas 3 leituras</b>. Amanhã confirma e fecha a semana com essa direção.`;
+  } else {
+    nota.innerHTML = `Convergência parcial: <b>${NOMES_EU[rankCrit]}</b> por critério, <b>${NOMES_EU[rankProp]}</b> por propósito, <b>${NOMES_EU[rankAtrav]}</b> por atravessabilidade. Amanhã você constrói a síntese.`;
+  }
+
+  // Preencher cada coluna
+  tipos.forEach(t => {
+    const p = t === 'continuacao' ? 'cont' : (t === 'adjacencia' ? 'adj' : 'rei');
+    setText(p + '-nome', dia8[t] ? dia8[t].nome : null);
+    const atrav = dia13[t]?.atravessabilidade || '—';
+    const atravEl = document.getElementById(p+'-atrav');
+    atravEl.textContent = atrav;
+    if (atrav === 'Baixa' || atrav === 'Não pronta' || atrav === '—') atravEl.classList.add('baixa');
+    ['sub','conc','auto'].forEach(m => {
+      const full = m === 'sub' ? 'subtrair' : (m === 'conc' ? 'concentrar' : 'automatizar');
+      const d = dia13[t]?.[full] || {};
+      const tag = document.getElementById(p+'-'+m+'-tag');
+      const txtEl = document.getElementById(p+'-'+m+'-txt');
+      if (d.vazio) { tag.className = 'mov-tag vazio'; tag.textContent = 'Não nomeado'; txtEl.textContent = '(marcado vazio)'; txtEl.classList.add('vazia'); }
+      else if (d.texto && d.texto.trim().length > 0) { tag.className = 'mov-tag ok'; tag.textContent = 'Nomeado'; txtEl.textContent = d.texto; }
+      else { tag.className = 'mov-tag'; tag.textContent = '—'; txtEl.textContent = '—'; txtEl.classList.add('vazia'); }
+    });
+  });
+
+  setText('insight-texto', dia13.insight || '(sem insight registrado)');
 </script>
 
 </body>

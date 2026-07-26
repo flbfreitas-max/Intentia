@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 19 · Aprendizagem deliberada</title>
+<title>Intentia · Etapa 19 · Rede de suporte pós-Intentia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -27,8 +27,7 @@
   .nav-label{font-size:11.5px;font-weight:600;letter-spacing:.02em;text-align:center;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;transition:color .2s}
   .nav-item:hover .nav-num{border-color:var(--coral);color:var(--coral);transform:scale(1.08)}
   .nav-item.ativo .nav-num{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 0 0 4px #fff, 0 4px 14px rgba(255,104,66,.35)}
-  .nav-item.ativo{color:var(--verde-900)}
-  .nav-item.ativo .nav-label{color:var(--verde-900);font-weight:700}
+  .nav-item.ativo{color:var(--verde-900)}.nav-item.ativo .nav-label{color:var(--verde-900);font-weight:700}
   @media (max-width:640px){.nav-label{display:none}.nav-inner::before{top:22px}.nav-num{width:40px;height:40px;font-size:16px}}
   section.bloco[id]{scroll-margin-top:100px}
   .onde-estamos{background:var(--verde-100);border-top:1px solid var(--verde-500);border-bottom:1px solid var(--verde-500);padding:18px 24px}
@@ -96,16 +95,16 @@
   .conteudo-item{padding:18px 20px;background:var(--creme);border-radius:10px;margin-bottom:12px;border-left:3px solid var(--verde-500)}
   .conteudo-item h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);margin-bottom:8px}
   .conteudo-item h3 .marcador{font-family:var(--sans);font-size:11px;font-weight:700;color:#fff;background:var(--verde-700);padding:3px 8px;border-radius:4px;letter-spacing:.1em;margin-right:8px;vertical-align:2px}
-  .cic-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
-  @media (max-width:640px){.cic-grid{grid-template-columns:1fr}}
-  .cic-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
-  .cic-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
-  .cic-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
-  .cic-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
-  .cic-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
-  .cic-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
-  .cic-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
-  .cic-hint svg{width:12px;height:12px;fill:currentColor}
+  .acr-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
+  @media (max-width:640px){.acr-grid{grid-template-columns:1fr}}
+  .acr-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
+  .acr-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
+  .acr-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
+  .acr-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
+  .acr-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
+  .acr-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
+  .acr-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
+  .acr-hint svg{width:12px;height:12px;fill:currentColor}
   .modal-overlay{position:fixed;inset:0;background:rgba(32,51,47,.55);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s}
   .modal-overlay.aberto{display:flex;opacity:1}
   .modal-caixa{background:#fff;border-radius:20px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;transform:translateY(20px);transition:transform .3s ease}
@@ -131,8 +130,7 @@
   .personagens-intro{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--tinta-suave);margin:16px 0 10px;padding:11px 16px;background:var(--verde-100);border-radius:10px;border-left:3px solid var(--verde-700)}
   .personagens-intro-icone{width:22px;height:22px;flex-shrink:0;color:var(--verde-700)}
   .personagens-intro-icone svg{width:22px;height:22px;fill:currentColor}
-  .personagens-intro-texto{flex:1;line-height:1.45}
-  .personagens-intro b{color:var(--verde-900);font-weight:600}
+  .personagens-intro-texto{flex:1;line-height:1.45}.personagens-intro b{color:var(--verde-900);font-weight:600}
   .personagens-intro a{color:var(--verde-700);text-decoration:none;font-weight:600;border-bottom:1px dotted var(--verde-500)}
   .caso{margin-top:14px;padding:16px 18px;background:#fff;border:1px solid var(--verde-100);border-radius:10px}
   .caso-header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
@@ -141,12 +139,10 @@
   .caso-nome{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--verde-900)}
   .caso-perfil{font-size:12px;color:var(--tinta-suave);font-weight:500}
   .caso-tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--verde-100);color:var(--verde-900);padding:4px 9px;border-radius:6px;margin-left:auto}
-  .caso p{font-size:14.5px;line-height:1.55;color:var(--tinta);margin-bottom:0}
-  .caso p b{color:var(--verde-900)}
+  .caso p{font-size:14.5px;line-height:1.55;color:var(--tinta);margin-bottom:0}.caso p b{color:var(--verde-900)}
   .bonus{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:32px 30px;margin:24px 0}
   .bonus .bloco-num{color:var(--coral-soft)}.bonus .bloco-num .n{background:var(--coral)}
-  .bonus h2{color:#fff;font-family:var(--serif)}.bonus .subtitulo{color:#CFE0D6;font-style:italic}
-  .bonus p{color:#CFE0D6}
+  .bonus h2{color:#fff;font-family:var(--serif)}.bonus .subtitulo{color:#CFE0D6;font-style:italic}.bonus p{color:#CFE0D6}
   .leituras{display:grid;gap:14px;margin-top:20px}
   .leitura{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 20px}
   .leitura .tipo{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--coral-soft);margin-bottom:8px;display:block}
@@ -272,8 +268,8 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <header>
   <div class="hero-inner">
     <div class="eyebrow">Trilha Capital de Carreira · Bloco A · Etapa 19</div>
-    <h1>Aprendizagem — <span class="grifo">deliberada</span>, não acumulada.</h1>
-    <p class="lede">Ericsson: horas de prática só amplificam quando são deliberadas — desafio no limite, feedback específico, ajuste. Dweck: mindset de crescimento é o que sustenta o desconforto que aprendizagem real exige. 3 elementos aplicados a 1 competência da sua direção.</p>
+    <h1>Rede de suporte — <span class="grifo">ninguém sustenta</span> isolado.</h1>
+    <p class="lede">Ibarra: rede não é acessório — é infraestrutura da mudança. Nenhum sistema individual sobrevive isolado por 3-6 meses. Hoje: nomear 1 pessoa para accountability semanal, 1 comunidade para conexão contínua, e ter clareza sobre quando buscar apoio profissional.</p>
   </div>
   <div class="arc"></div>
 </header>
@@ -290,12 +286,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <div class="onde-estamos">
   <div class="oe-inner">
     <div class="oe-camada">
-      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 3 de 4 · Amplificar</div>
+      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 2 de 3 · Instalar rotina</div>
       <div class="oe-semanas">
         <span class="oe-semana feita"><span class="num">A</span>Mapear ativos ✓</span>
         <span class="oe-semana feita"><span class="num">B</span>Escolher direção ✓</span>
-        <span class="oe-semana atual"><span class="num">C</span>Amplificar</span>
-        <span class="oe-semana"><span class="num">D</span>Instalar rotina</span>
+        <span class="oe-semana feita"><span class="num">C</span>Amplificar ✓</span>
+        <span class="oe-semana atual"><span class="num">D</span>Instalar rotina</span>
       </div>
     </div>
     <div class="oe-camada">
@@ -311,7 +307,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
     </div>
     <p class="oe-texto">
-      Você tem presença, autoridade, rede, persuasão. Hoje: <span class="oe-tag-dia">Aprendizagem deliberada</span> — como a competência-chave da direção cresce em 21 dias em vez de 2 anos.
+      Hábito, ambiente, imunidade, revisão. Hoje: <span class="oe-tag-dia">Accountability · Comunidade · Referência</span> — o suporte humano que sustenta.
     </p>
   </div>
 </div>
@@ -322,8 +318,8 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <h2>A ideia central, contada com calma.</h2>
     <p class="subtitulo">Ouça antes de começar — 5 min.</p>
     <div class="player">
-      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 19 · Bloco A · Bloco 3</span></div>
-      <div class="player-titulo">Prática deliberada: quando horas viram capacidade</div>
+      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 19 · Bloco A · Bloco 2</span></div>
+      <div class="player-titulo">Nenhum sistema pessoal sobrevive isolado</div>
       <div class="player-sub">A ideia central do dia — contada pela <b>voz do Intentia</b>.</div>
       <div class="waveform" id="waveform"></div>
       <div class="player-tempo"><span>00:00</span><span>05:00</span></div>
@@ -349,171 +345,118 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <h2>Você termina o dia sendo capaz de…</h2>
     <p class="subtitulo">Três capacidades no presente.</p>
     <ul class="leva-lista">
-      <li><strong>Distinguir prática deliberada de prática comum</strong> — Ericsson mostrou que "10 mil horas" só se traduz em maestria quando as horas têm 3 propriedades: desafio no limite, feedback específico, ajuste imediato. Sem isso, horas viram apenas repetição — e repetição sem desafio cristaliza o nível atual.</li>
-      <li><strong>Aplicar o ciclo D·F·A a 1 competência da sua direção</strong> — Desafio (uma tarefa que hoje você não faz bem), Feedback (fonte específica que te devolve dado sobre a tarefa), Ajuste (o que você muda na próxima tentativa). É o motor operacional da aprendizagem acelerada.</li>
-      <li><strong>Reconhecer quando o mindset fixo está travando</strong> — Dweck: as frases "eu não sou bom em X" e "não é minha praia" são sintomas de mindset fixo. Trocar por "ainda não sou bom em X" e "estou construindo essa praia" muda o comportamento — não porque motiva, mas porque abre a porta ao desafio.</li>
+      <li><strong>Reconhecer que rede não é acessório — é infraestrutura</strong> — Ibarra (Etapa 10): profissionais em transição que sustentam mudança têm um traço em comum — accountability humano regular. Não motivação abstrata; alguém específico que sabe do plano e pergunta como vai.</li>
+      <li><strong>Nomear 1 pessoa de accountability para os próximos 3 meses</strong> — não vago ("alguém"); específico. Nome, formato do contato (mensagem semanal? café mensal?), o que ela sabe do plano. Accountability sem nome é ilusão.</li>
+      <li><strong>Definir 1 comunidade contínua + gatilho para apoio profissional</strong> — a comunidade (grupo, coletivo, curso, evento recorrente) é onde você recebe estímulo lento e constante do território. A referência profissional (mentor, coach, terapeuta) é para quando o adaptativo (Etapa 17-25) exige mais que autoconstrução.</li>
     </ul>
   </section>
 
   <section class="bloco" id="ponto">
     <div class="bloco-num"><span class="n">3</span> O Ponto de Partida de Hoje</div>
-    <h2>Horas não bastam. <em>Horas certas</em> bastam.</h2>
-    <p class="subtitulo">Ericsson (1993): "a diferença entre expert e experiente médio é o <em>tipo de prática</em>, não a quantidade."</p>
+    <h2>Sistema individual + zero apoio = <em>3 meses até desmontar</em>.</h2>
+    <p class="subtitulo">Observação prática: profissionais que instalam rotinas sem accountability geralmente perdem o sistema em 8-12 semanas.</p>
     <div class="ponto">
 
       <div class="direcao-recap">
-        <div class="direcao-recap-label">Sua direção escolhida (Etapa 14)</div>
+        <div class="direcao-recap-label">Sua rede (Etapa 10) · seus movimentos (Etapa 14) · seu sistema (Etapas 22-25)</div>
         <div class="direcao-recap-frase" id="direcao-recap-txt">—</div>
-        <small>Aprendizagem deliberada é a ferramenta que faz uma competência da sua direção crescer em semanas — não em anos.</small>
+        <small>Hoje: nomear as pessoas específicas que vão te acompanhar depois que a trilha acabar. Sem elas nomeadas, o sistema é frágil.</small>
       </div>
 
       <div class="definicao-eu">
-        <div class="definicao-eu-label">O que é "aprendizagem deliberada"</div>
-        <div class="definicao-eu-texto"><b>Aprendizagem deliberada é o ciclo curto e específico em que você (1) faz algo que hoje não domina, (2) recebe feedback claro sobre onde falhou, e (3) ajusta a próxima tentativa</b>. Não é "estudar mais". Não é "fazer curso". Não é "ganhar experiência". É um ciclo com 3 propriedades — sem qualquer uma, o tempo passa mas a competência não sobe.</div>
+        <div class="definicao-eu-label">O que é "rede de suporte pós-Intentia" nesta semana</div>
+        <div class="definicao-eu-texto"><b>Rede de suporte pós-Intentia é o conjunto mínimo de pessoas — nomeadas — que vão te ajudar a sustentar o sistema depois que os 28 dias acabarem</b>. Não é grande — 1 pessoa de accountability, 1 comunidade constante, e clareza sobre quando um profissional (mentor, coach, terapeuta) entra em cena. O tamanho é pequeno porque o suporte real é <em>específico</em>, não amplo.</div>
       </div>
 
-      <p style="margin-top:18px"><b>Anders Ericsson</b> passou 30 anos estudando experts em música, xadrez, medicina, esportes. A tese popularizada como "10 mil horas" é uma <em>simplificação errada</em> do seu trabalho — Ericsson insistia que <em>horas por si só não fazem nada</em>. O que faz é a estrutura da prática: desafio calibrado (nem fácil demais nem impossível), feedback específico (não "foi bom", mas "no compasso 34 seu tempo caiu 8%"), e ajuste consciente na tentativa seguinte. Sem isso, 10 mil horas produzem apenas competência mediana consolidada.</p>
+      <p style="margin-top:18px"><b>Ibarra</b> (retomando Etapa 10) mostrou que profissionais em transição de carreira que sustentam mudanças ao longo de 6-12 meses têm um traço em comum: <b>accountability regular com pelo menos 1 pessoa específica</b>. Não motivação abstrata, não "família apoiadora" genérica — alguém que sabe do plano concreto, pergunta como vai, e recebe atualizações regulares. Sem esse elemento, o sistema individual funciona por 8-12 semanas e depois desmonta silenciosamente — não porque a pessoa "perdeu vontade", mas porque nenhum sistema sobrevive isolado.</p>
 
-      <p><b>Carol Dweck</b> descobriu, em paralelo, por que profissionais capazes evitam prática deliberada mesmo quando entendem o método: o <em>mindset fixo</em> (a crença de que capacidade é fixa e revela talento) faz o desafio virar ameaça — cada falha "prova" que você não é bom o suficiente. Já o <em>mindset de crescimento</em> (a crença de que capacidade cresce com esforço estruturado) faz a falha virar dado — informação sobre o próximo ajuste.</p>
+      <p>Complementarmente, comunidades constantes (grupo de estudo, coletivo profissional, curso em andamento, evento recorrente) fornecem estímulo lento — você vê outros no mesmo território, recebe ideias novas, mantém a direção viva. E há situações em que a construção individual não basta: quando o adaptativo (Etapas 24-25) exige mais que autoconstrução, apoio profissional (mentor sério, coach, terapeuta) é o caminho — e ter isso pré-definido evita adiar quando o momento chegar.</p>
 
       <div class="teste-linha">
-        Teste rápido: pense na última semana. Você <b>fez algo que não fazia bem</b> — ou só fez o que já faz bem?
+        Teste rápido: se você desaparecer 3 semanas do plano, <b>alguém vai notar</b> (não pela ausência de posts — pela sua ausência)? Se não, você não tem accountability.
       </div>
 
-      <p style="margin-top:18px"><b>Por que hoje o exercício é 1 competência da direção em ciclo D·F·A?</b> Porque aprendizagem deliberada aplicada a tudo é impossível — vira sobrecarga e ninguém sustenta. Mas aplicada a <em>1 competência que a sua direção da Etapa 14 exige e você ainda não domina</em>, por 21 dias, é o mais rápido caminho que existe para essa competência subir 1 nível real. Depois, outro ciclo em outra competência.</p>
+      <p style="margin-top:18px"><b>Por que hoje o exercício é 1 pessoa + 1 comunidade + 1 gatilho para profissional?</b> Porque tentar montar uma "rede de apoio grande" trava — vira lista de contatos, não suporte real. 1 accountability nomeado + 1 comunidade real + 1 critério para apoio profissional é o suficiente para os próximos 3 meses. Expansão vem depois, se necessário.</p>
     </div>
   </section>
 
   <section class="bloco" id="conteudo">
     <div class="bloco-num"><span class="n">4</span> O conteúdo que direciona a sua missão de hoje</div>
-    <h2>O ciclo — Desafio · Feedback · Ajuste.</h2>
+    <h2>Três lentes — Accountability · Comunidade · Referência.</h2>
     <p class="subtitulo">10 min. Material de referência.</p>
 
     <div class="personagens-intro">
-      <span class="personagens-intro-icone" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-      </span>
-      <div class="personagens-intro-texto">
-        Os três profissionais de referência seguem com você: <b>Camila</b>, <b>Rafael</b> e <b>Juliana</b>. <a href="../Dia 0/personagens.html">Rever quem são →</a>
+      <span class="personagens-intro-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span>
+      <div class="personagens-intro-texto">Os três profissionais de referência seguem com você: <b>Camila</b>, <b>Rafael</b> e <b>Juliana</b>. <a href="../Dia 0/personagens.html">Rever quem são →</a></div>
+    </div>
+
+    <div class="conteudo-item">
+      <h3><span class="marcador">01</span>Três lentes — Accountability · Comunidade · Referência</h3>
+      <p>Toque em cada lente para o método, exemplos e o erro clássico.</p>
+      <div class="acr-grid">
+        <div class="acr-card" data-modal="accountability" role="button" tabindex="0"><div class="acr-icone">A</div><div class="acr-nome">Accountability</div><div class="acr-pergunta">"1 pessoa nomeada"</div><span class="acr-seta">›</span></div>
+        <div class="acr-card" data-modal="comunidade" role="button" tabindex="0"><div class="acr-icone">C</div><div class="acr-nome">Comunidade</div><div class="acr-pergunta">"contexto contínuo do território"</div><span class="acr-seta">›</span></div>
+        <div class="acr-card" data-modal="referencia" role="button" tabindex="0"><div class="acr-icone">R</div><div class="acr-nome">Referência</div><div class="acr-pergunta">"profissional se precisar"</div><span class="acr-seta">›</span></div>
+      </div>
+      <span class="acr-hint"><svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>Toque em cada lente para o método aplicado.</span>
+    </div>
+
+    <div class="conteudo-item">
+      <h3><span class="marcador">02</span>Rede de suporte — leitura dos personagens</h3>
+      <div class="caso">
+        <div class="caso-header"><div class="caso-avatar">C</div><div><div class="caso-nome">Camila</div><div class="caso-perfil">Accountability: Beatriz (ex-chefe/mentora) · Comunidade: grupo de estudos de dados · Referência: coach</div></div><span class="caso-tag">A·C·R</span></div>
+        <p><b>Accountability:</b> mensagem para Beatriz aos domingos — 3 linhas (o que aconteceu, o que não aconteceu, próxima ação). Beatriz responde durante a semana com 1 comentário. <b>Comunidade:</b> mantém participação semanal no grupo de estudos (já ativa). <b>Referência:</b> se o mesmo padrão adaptativo persistir 4 semanas, marca 1 sessão com coach que atende profissionais do banco.</p>
+      </div>
+      <div class="caso">
+        <div class="caso-header"><div class="caso-avatar rafael">R</div><div><div class="caso-nome">Rafael</div><div class="caso-perfil">Accountability: par de MBA · Comunidade: café mensal com ex-alunos · Referência: mentor</div></div><span class="caso-tag">A·C·R</span></div>
+        <p><b>Accountability:</b> call de 20 min por semana com par do MBA — mesma pauta simples (movimentos da semana). <b>Comunidade:</b> café mensal com grupo de 8 ex-alunos que segue ativo há 2 anos. <b>Referência:</b> mentor sênior (fintech advisor) — 1 hora a cada 6 semanas, pauta preparada.</p>
+      </div>
+      <div class="caso">
+        <div class="caso-header"><div class="caso-avatar juliana">J</div><div><div class="caso-nome">Juliana</div><div class="caso-perfil">Accountability: parceira de curso · Comunidade: coletivo de designers · Referência: terapeuta</div></div><span class="caso-tag">A·C·R</span></div>
+        <p><b>Accountability:</b> co-criadora do curso — reunião semanal 30 min, terça 09h. Elas se cobram mutuamente. <b>Comunidade:</b> coletivo de designers autônomas — encontro presencial mensal. <b>Referência:</b> terapeuta que já acompanha (não iniciar; manter frequência).</p>
       </div>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">01</span>O ciclo — Desafio · Feedback · Ajuste</h3>
-      <p>Ericsson descobriu que os 3 elementos são <b>indispensáveis simultaneamente</b>. Toque em cada para o método e o exemplo.</p>
-
-      <div class="cic-grid">
-        <div class="cic-card" data-modal="desafio" role="button" tabindex="0">
-          <div class="cic-icone">D</div>
-          <div class="cic-nome">Desafio</div>
-          <div class="cic-pergunta">"o que hoje você não faz bem?"</div>
-          <span class="cic-seta">›</span>
-        </div>
-        <div class="cic-card" data-modal="feedback" role="button" tabindex="0">
-          <div class="cic-icone">F</div>
-          <div class="cic-nome">Feedback</div>
-          <div class="cic-pergunta">"quem/o que te devolve dado?"</div>
-          <span class="cic-seta">›</span>
-        </div>
-        <div class="cic-card" data-modal="ajuste" role="button" tabindex="0">
-          <div class="cic-icone">A</div>
-          <div class="cic-nome">Ajuste</div>
-          <div class="cic-pergunta">"o que você muda na próxima?"</div>
-          <span class="cic-seta">›</span>
-        </div>
-      </div>
-
-      <span class="cic-hint">
-        <svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>
-        Toque em cada elemento para o método e o exemplo aplicado.
-      </span>
-    </div>
-
-    <div class="conteudo-item">
-      <h3><span class="marcador">02</span>1 competência da direção — leitura dos personagens</h3>
-
-      <div class="caso">
-        <div class="caso-header">
-          <div class="caso-avatar">C</div>
-          <div>
-            <div class="caso-nome">Camila</div>
-            <div class="caso-perfil">Competência: escrever artigo técnico curto sobre IA aplicada</div>
-          </div>
-          <span class="caso-tag">Ciclo D·F·A</span>
-        </div>
-        <p><b>Desafio:</b> escrever 1 artigo curto (800 palavras) por semana, sobre um caso real da sua rotina. <b>Feedback:</b> enviar rascunho para 2 leitores específicos (1 par técnico, 1 leitor externo) antes de publicar, pedindo 1 crítica concreta cada. <b>Ajuste:</b> anotar o padrão de críticas recebidas — se sempre é "faltou concretude", o ajuste é começar cada artigo por uma cena real específica.</p>
-      </div>
-
-      <div class="caso">
-        <div class="caso-header">
-          <div class="caso-avatar rafael">R</div>
-          <div>
-            <div class="caso-nome">Rafael</div>
-            <div class="caso-perfil">Competência: fazer apresentação de 10 min sem slide</div>
-          </div>
-          <span class="caso-tag">Ciclo D·F·A</span>
-        </div>
-        <p><b>Desafio:</b> gravar 1 vídeo curto (5-10 min) por semana explicando 1 tema da direção sem slide, só falando para a câmera. <b>Feedback:</b> revisar o vídeo próprio 24h depois com 1 critério (clareza, ritmo, energia — 1 por semana, não tudo). <b>Ajuste:</b> se o critério da semana era ritmo, na próxima gravação deliberadamente mudar cadência — falar mais devagar nos pontos-chave.</p>
-      </div>
-
-      <div class="caso">
-        <div class="caso-header">
-          <div class="caso-avatar juliana">J</div>
-          <div>
-            <div class="caso-nome">Juliana</div>
-            <div class="caso-perfil">Competência: estruturar 1 aula piloto de 20 min</div>
-          </div>
-          <span class="caso-tag">Ciclo D·F·A</span>
-        </div>
-        <p><b>Desafio:</b> desenhar 1 aula piloto (20 min) sobre um subtema do curso e apresentar para 3 alunos beta no bloco 2. <b>Feedback:</b> aplicar questionário de 3 perguntas ao final (o que ficou claro, o que ficou confuso, o que faltou). <b>Ajuste:</b> refazer a aula com base no padrão de respostas — se "ficou confuso" for o mesmo ponto para os 3, é ali que o desenho da aula precisa ser reestruturado.</p>
-      </div>
-    </div>
-
-    <div class="conteudo-item">
-      <h3><span class="marcador">03</span>A regra da Etapa 19: 1 competência, 1 ciclo, 21 dias</h3>
-      <p>Ericsson: aplicar prática deliberada a 5 competências simultâneas dilui o efeito de todas. <b>1 competência por ciclo</b> é o formato que sustenta. Dweck: o mindset de crescimento não é "força de vontade" — é a decisão consciente de tratar cada feedback (sobretudo o negativo) como <em>dado</em>, não como <em>veredito sobre você</em>. Ciclo D·F·A é a forma de tornar essa decisão automática — porque o processo já está desenhado para receber dado, não elogio.</p>
+      <h3><span class="marcador">03</span>A regra da Etapa 19: 1 accountability &gt; 5 "contatos"</h3>
+      <p>Ibarra: <b>1 pessoa específica que sabe do plano e pergunta como vai</b> é mais robusto que 20 pessoas na rede que sabem "que você está mudando de carreira". Accountability real é regular, específico, mútuo (idealmente). Se não é essas três coisas, é apenas "conhecer alguém" — que não sustenta plano em semana difícil.</p>
     </div>
   </section>
 
   <section class="bonus bloco" id="bonus">
     <div class="bloco-num"><span class="n">5</span> Seu bônus antes da missão</div>
-    <h2>Prática deliberada + mindset de crescimento.</h2>
-    <p class="subtitulo">Duas leituras que fundamentam o ciclo D·F·A.</p>
+    <h2>Ibarra revisitada.</h2>
+    <p class="subtitulo">Retomando a base de rede.</p>
     <div class="leituras">
       <div class="leitura">
-        <span class="tipo">Resumo · 3 páginas</span>
-        <h4>O papel da prática deliberada</h4>
-        <p class="meta-leitura">Ericsson, Krampe & Tesch-Römer (1993) — o estudo que originou "10 mil horas" (e cuja tese central é a oposta: horas só valem quando são deliberadas). Detalha as 3 propriedades da prática que produz maestria.</p>
-      </div>
-      <div class="leitura">
-        <span class="tipo">Resumo · 3 páginas</span>
-        <h4>Mindset — a nova psicologia do sucesso</h4>
-        <p class="meta-leitura">Carol Dweck (2006) — 30 anos de pesquisa mostrando que crenças sobre capacidade (fixa × crescimento) mudam o comportamento diante de desafio, mais do que talento ou circunstância. Aplicável a qualquer domínio.</p>
+        <span class="tipo">Retorno · Etapa 10</span>
+        <h4>Como líderes usam redes (recap)</h4>
+        <p class="meta-leitura">Herminia Ibarra &amp; Mark Hunter · Harvard Business Review · 2007. Os 3 tipos de rede (Operacional, Pessoal, Estratégica) revisitados através da lente de accountability para sustentação do sistema pessoal.</p>
       </div>
     </div>
     <a href="academia.html" class="link-academia">Abrir os resumos na Academia Intentia →</a>
-    <p class="bonus-nota">Opcional. As leituras enriquecem o dia — mas a missão funciona sem elas.</p>
+    <p class="bonus-nota">Opcional. A leitura enriquece — mas a missão funciona sem ela.</p>
   </section>
 
   <section class="bloco" id="missao">
     <div class="bloco-num"><span class="n">6</span> Missão do Dia</div>
     <div class="missao-header">
-      <h2>Projetar 1 ciclo D·F·A de 21 dias.</h2>
-      <span class="missao-tempo">18 min</span>
+      <h2>Nomear 1 accountability + 1 comunidade + 1 referência.</h2>
+      <span class="missao-tempo">15 min</span>
     </div>
-    <p class="subtitulo">Escolha 1 competência-chave da direção. Desenhe Desafio, Feedback e Ajuste. Comece nesta semana. Reavalie no dia 21.</p>
+    <p class="subtitulo">Pessoa específica para accountability semanal. Comunidade contínua a participar. Profissional pré-definido para quando adaptativo persistir. Convite feito hoje.</p>
 
     <ol class="passos">
-      <li><strong>Escolher a competência <span class="tempo-passo">3 min</span></strong><p>1 competência específica da sua direção que hoje você não domina. Não 5 — 1. Se você tem várias, escolha a que <em>mais destrava as outras</em> se subir 1 nível.</p></li>
-      <li><strong>Desenhar o Desafio <span class="tempo-passo">4 min</span></strong><p>Uma atividade concreta que você fará <b>1 vez por semana</b> por 3 semanas, que exige exatamente essa competência. Nem fácil, nem impossível — no limite.</p></li>
-      <li><strong>Desenhar o Feedback <span class="tempo-passo">4 min</span></strong><p>Nome específico de quem devolve feedback ou fonte concreta de dado (métrica, gravação, questionário). Sem feedback nomeado, o ciclo não fecha.</p></li>
-      <li><strong>Desenhar o Ajuste <span class="tempo-passo">3 min</span></strong><p>Onde você anota o feedback recebido e o que muda na próxima tentativa. 1 caderno, 1 doc, 1 planilha — o que for. Sem local para o ajuste, o feedback vira ruído.</p></li>
-      <li><strong>Marcar a próxima ação <span class="tempo-passo">2 min</span></strong><p>Data + hora do primeiro Desafio. Se não está na agenda, não vai acontecer. Dweck: "quando" é a variável que separa mindset de crescimento intencional de mindset de crescimento performático.</p></li>
-      <li><strong>Marcar o dia 21 <span class="tempo-passo">2 min</span></strong><p>Data exata para reavaliar: o que mudou, o que aprendi sobre o ciclo, próxima competência. Sem marco final, o ciclo vira eterno e ninguém sustenta.</p></li>
+      <li><strong>Escolher a pessoa de accountability <span class="tempo-passo">3 min</span></strong><p>Nome específico. Alguém que já te conhece razoavelmente, respeita seu plano, tem tempo para 10-20 min por semana. Se não sabe o nome, o accountability ainda é vago.</p></li>
+      <li><strong>Definir o formato do contato <span class="tempo-passo">3 min</span></strong><p>Mensagem semanal com 3 linhas? Call de 15 min? Café mensal? Ideal: baixa fricção, alta regularidade. Cadência semanal ou quinzenal.</p></li>
+      <li><strong>Escolher 1 comunidade contínua <span class="tempo-passo">3 min</span></strong><p>Grupo, coletivo, curso em andamento, evento recorrente. Precisa ser algo que já existe (ou já pode entrar) — não invenção nova. Frequência mínima: mensal.</p></li>
+      <li><strong>Definir o gatilho para apoio profissional <span class="tempo-passo">3 min</span></strong><p>Coach, mentor sério, terapeuta. Não escolha agora — defina o critério de "hora de buscar" (da Etapa 18) e liste 2-3 nomes possíveis com contato.</p></li>
+      <li><strong>Escrever a mensagem de convite para o accountability <span class="tempo-passo">2 min</span></strong><p>Breve, específica, gentil. O que você propõe (formato, cadência), o que ganha, o que pede.</p></li>
+      <li><strong>Enviar hoje (ou agendar envio) <span class="tempo-passo">1 min</span></strong><p>Sem timestamp, o convite não sai. Envie agora ou marque momento específico hoje.</p></li>
     </ol>
 
     <a href="missao.html" class="cta-missao">
-      <span class="cta-texto"><span class="cta-tempo">18 min</span>Fazer a Missão</span>
+      <span class="cta-texto"><span class="cta-tempo">15 min</span>Fazer a Missão</span>
       <span class="cta-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
     </a>
   </section>
@@ -541,128 +484,57 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
 <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
   <div class="modal-caixa">
-    <button class="modal-close" id="modal-close" aria-label="Fechar">
-      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-    </button>
-    <div class="modal-header">
-      <div class="modal-icone" id="modal-icone"></div>
-      <div>
-        <div class="modal-titulo" id="modal-titulo"></div>
-        <div class="modal-tagline" id="modal-tagline"></div>
-      </div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-secao">
-        <div class="modal-secao-label">O que o elemento faz</div>
-        <p id="modal-conceito"></p>
-      </div>
-      <div class="modal-secao">
-        <div class="modal-exemplos">
-          <div class="modal-exemplos-label">Como desenhar bem</div>
-          <ul id="modal-exemplos"></ul>
-        </div>
-        <div class="modal-erro"><b>Erro comum</b><span id="modal-erro"></span></div>
-      </div>
-    </div>
+    <button class="modal-close" id="modal-close" aria-label="Fechar"><svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+    <div class="modal-header"><div class="modal-icone" id="modal-icone"></div><div><div class="modal-titulo" id="modal-titulo"></div><div class="modal-tagline" id="modal-tagline"></div></div></div>
+    <div class="modal-body"><div class="modal-secao"><div class="modal-secao-label">O que a lente faz</div><p id="modal-conceito"></p></div><div class="modal-secao"><div class="modal-exemplos"><div class="modal-exemplos-label">Como aplicar</div><ul id="modal-exemplos"></ul></div><div class="modal-erro"><b>Erro comum</b><span id="modal-erro"></span></div></div></div>
   </div>
 </div>
 
-<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 19 · Aprendizagem deliberada — ciclo D·F·A</div></footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 19 · Rede de suporte — A·C·R</div></footer>
 
 <script>
-  const CIC_DETALHE = {
-    desafio: {
-      nome: 'Desafio',
-      tagline: '"o que hoje você não faz bem?"',
-      icone: 'D',
-      conceito: 'Desafio é a tarefa concreta que <b>exige exatamente a competência que você quer desenvolver</b> — e que hoje você não faria bem. Ericsson: se a tarefa é fácil, você está treinando o que já sabe; se é impossível, você não conclui o ciclo. O ponto de crescimento é o <em>limite</em> — desconforto real, mas não bloqueio. Deve ser executável em 1 sessão isolada (30-90 min é o típico).',
-      exemplos: ['Concretude: "escrever 1 artigo de 800 palavras sobre X" — não "escrever mais"', 'Frequência regular: 1 vez por semana por 3 semanas — não "quando der tempo"', 'Isolada: 1 sessão de trabalho contínuo — não fragmentada em 5 minutos por dia', 'No limite: se você conclui sem esforço, o desafio está fácil demais — suba a barra na próxima'],
-      erro: '<b>Desafio disfarçado de "estudar sobre".</b> Ler, assistir e "acompanhar" o assunto não é desafio — é consumo. Desafio é <em>produzir output</em> na competência que você quer desenvolver, mesmo que ruim no início. Sem output, não há ciclo — há acúmulo passivo.'
-    },
-    feedback: {
-      nome: 'Feedback',
-      tagline: '"quem/o que te devolve dado?"',
-      icone: 'F',
-      conceito: 'Feedback é <b>o dado externo específico</b> sobre como sua execução foi. Não "achei bom" — <em>o que exatamente</em> funcionou/não funcionou. Ericsson: sem feedback, o ciclo é cego — você repete os mesmos padrões (bons e ruins) sem saber quais. Fontes de feedback válidas: uma pessoa específica que devolve por escrito, métrica objetiva (contagem, tempo, taxa), gravação sua revisada 24h depois com critério, resposta do "público" (leitores, clientes, alunos).',
-      exemplos: ['Uma pessoa nomeada que você pediu explicitamente para dar 1 crítica concreta', 'Uma métrica objetiva definida antes da execução (tempo, taxa, contagem)', 'Sua própria gravação vista 24h depois com 1 critério por vez (não tudo junto)', 'Uma resposta do mundo (leitores, engajamento, feedback dos usuários) — dado, não opinião'],
-      erro: '<b>"Feedback" genérico ou ausente.</b> Perguntar "o que achou?" e ouvir "gostei" não é feedback — é gentileza. Feedback real é <em>específico e útil ao próximo ciclo</em>. Se você não sabe o que fazer diferente na próxima tentativa, o feedback foi ruim ou você não recebeu feedback nenhum.'
-    },
-    ajuste: {
-      nome: 'Ajuste',
-      tagline: '"o que você muda na próxima?"',
+  const ACR_DETALHE = {
+    accountability: {
+      nome: 'Accountability',
+      tagline: '"1 pessoa nomeada"',
       icone: 'A',
-      conceito: 'Ajuste é <b>a decisão explícita sobre o que muda na próxima tentativa</b>, feita a partir do feedback recebido. É onde Ericsson e Dweck se encontram: o ciclo só fecha se você <em>trata o feedback como dado</em> (mindset de crescimento) e traduz esse dado em <em>mudança concreta</em> (prática deliberada). Sem ajuste, feedback vira apenas juízo — e juízo sem tradução em ação não muda competência.',
-      exemplos: ['1 mudança específica por ciclo — não 5 (5 mudanças simultâneas mascaram qual gerou efeito)', 'Escrito num lugar único (caderno, doc, planilha) — não "vou lembrar"', 'Testado no próximo Desafio antes de próximo ajuste — 1 ciclo completo por vez', 'Anotado com honestidade: quando o ajuste não funcionou, admitir e tentar outra abordagem'],
-      erro: '<b>Confundir "sentir-se mal" com Ajuste.</b> Autocrítica sem tradução em mudança concreta é performance de esforço, não prática deliberada. Se depois do feedback você pensa "preciso melhorar" mas não muda <em>o quê</em>, você está usando culpa como substituto de método. Ajuste real cabe em 1 frase: "na próxima, vou X (que não fiz antes)".'
+      conceito: 'Accountability é <b>1 pessoa específica que sabe do seu plano e pergunta com regularidade como vai</b>. Não é mentor no sentido tradicional (não precisa ter mais experiência); é acompanhante honesta. Ibarra: profissionais que sustentam mudança ao longo de 6-12 meses quase sempre têm essa figura — nome, formato, cadência. Sem ela nomeada, o sistema desmonta em ~8-12 semanas em média.',
+      exemplos: ['Pessoa que já te conhece (não desconhecido) e respeita seu plano', 'Formato de baixa fricção: mensagem semanal 3 linhas, call de 15 min, café mensal', 'Cadência regular: semanal ou quinzenal (mensal é frágil demais)', 'Idealmente mútua — vocês se cobram; parceria &gt; hierarquia'],
+      erro: '<b>"Meu marido/família me apoia".</b> Apoio genérico não é accountability. Apoio de família é diferente de accountability estruturado (nome, formato, cadência, pauta). Ambos importam; não confunda um com o outro. Accountability precisa da estrutura para funcionar.'
+    },
+    comunidade: {
+      nome: 'Comunidade',
+      tagline: '"contexto contínuo do território"',
+      icone: 'C',
+      conceito: 'Comunidade é <b>o grupo constante que te mantém em contato lento e regular com o território novo</b>. Diferente do accountability (individual, direto), a comunidade é coletiva e indireta — você observa outros no mesmo caminho, recebe ideias, sente que o território é habitado. Ibarra classifica isso como parte da "rede Pessoal" (Etapa 10) — a que te desenvolve como profissional.',
+      exemplos: ['Grupo de estudos, coletivo profissional, curso em andamento', 'Evento recorrente (encontro mensal, meetup)', 'Comunidade online ativa (não passiva — participação, não só leitura)', 'Frequência mínima: 1x por mês; ideal: 1-2x por mês'],
+      erro: '<b>"Sigo várias pessoas no LinkedIn".</b> Consumo passivo de conteúdo não é comunidade — é audiência. Comunidade real exige <em>interação regular</em>. Se você só lê, você tem informação, não comunidade — e informação sozinha não sustenta identidade em transição.'
+    },
+    referencia: {
+      nome: 'Referência',
+      tagline: '"profissional se precisar"',
+      icone: 'R',
+      conceito: 'Referência é <b>o profissional pré-definido — mentor sério, coach, terapeuta — para quando o adaptativo (Etapas 24-25) exigir mais que autoconstrução</b>. Não é para usar agora; é para ter pré-nomeado para o momento em que o sinal da Etapa 18 chegar. Ter isso definido antes evita adiar por semanas quando o momento chegar — porque o adiamento é o principal fator de desgaste.',
+      exemplos: ['2-3 nomes de profissionais possíveis + contato (WhatsApp, e-mail)', 'Critério claro de "hora de buscar" — puxa da Etapa 18', 'Considerar: mentor (se é técnico); coach (se é comportamental); terapeuta (se é emocional/psíquico profundo)', 'Preço/formato pré-avaliados (ou faixa) para não paralisar por logística no momento delicado'],
+      erro: '<b>Adiar até a crise.</b> Buscar profissional no meio da crise (adaptativo profundo já estabelecido) é 3x mais custoso — emocionalmente e logisticamente — do que pré-definir hoje. Ter nome + contato + critério salva semanas de sofrimento futuro. Investimento pequeno agora, retorno enorme depois.'
     }
   };
 </script>
 
 <script>
-  (function(){
-    const items = document.querySelectorAll('.nav-item');
-    const secoes = Array.from(items).map(it => document.getElementById(it.dataset.target)).filter(Boolean);
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if(entry.isIntersecting){ items.forEach(it => it.classList.toggle('ativo', it.dataset.target === entry.target.id)); } });
-    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-    secoes.forEach(s => observer.observe(s));
-    if(items[0]) items[0].classList.add('ativo');
-  })();
-  (function(){
-    const wf = document.getElementById('waveform');
-    if(!wf) return;
-    const alturas = [24,30,38,44,36,30,34,42,48,54,46,40,48,56,62,54,46,38,44,52,60,68,74,68,60,52,44,52,60,68,76,82,76,68,60,52,46,40,34,42,50,58,52,44,38,32,40,48,42,36,30,26,32,38,44,38,32,28,34,30,24,22,28,24];
-    alturas.forEach(h => { const bar = document.createElement('div'); bar.className = 'bar'; bar.style.height = h + '%'; wf.appendChild(bar); });
-  })();
-  (function(){
-    const btn = document.getElementById('btn-play');
-    if(!btn) return;
-    let tocando = false;
-    btn.addEventListener('click', () => { tocando = !tocando; btn.innerHTML = tocando ? '<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>' : '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; });
-  })();
-  (function(){
-    document.querySelectorAll('.vel-btn').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('.vel-btn').forEach(x => x.classList.remove('ativa')); b.classList.add('ativa'); }));
-  })();
-  (function(){
-    const overlay = document.getElementById('modal-overlay');
-    const btnClose = document.getElementById('modal-close');
-    if(!overlay) return;
-    window.abrirModal = function(id){
-      const d = CIC_DETALHE[id];
-      if(!d) return;
-      document.getElementById('modal-icone').textContent = d.icone;
-      document.getElementById('modal-titulo').textContent = d.nome;
-      document.getElementById('modal-tagline').textContent = d.tagline;
-      document.getElementById('modal-conceito').innerHTML = d.conceito;
-      document.getElementById('modal-exemplos').innerHTML = d.exemplos.map(e => `<li>${e}</li>`).join('');
-      document.getElementById('modal-erro').innerHTML = d.erro;
-      overlay.classList.add('aberto');
-      document.body.style.overflow = 'hidden';
-    };
-    function fechar(){ overlay.classList.remove('aberto'); document.body.style.overflow = ''; }
-    document.querySelectorAll('.cic-card[data-modal]').forEach(card => {
-      card.addEventListener('click', () => abrirModal(card.dataset.modal));
-      card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirModal(card.dataset.modal); } });
-    });
-    btnClose.addEventListener('click', fechar);
-    overlay.addEventListener('click', (e) => { if(e.target === overlay) fechar(); });
-    document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && overlay.classList.contains('aberto')) fechar(); });
-  })();
+  (function(){ const items = document.querySelectorAll('.nav-item'); const secoes = Array.from(items).map(it => document.getElementById(it.dataset.target)).filter(Boolean); const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting){ items.forEach(it => it.classList.toggle('ativo', it.dataset.target === entry.target.id)); } }); }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 }); secoes.forEach(s => observer.observe(s)); if(items[0]) items[0].classList.add('ativo'); })();
+  (function(){ const wf = document.getElementById('waveform'); if(!wf) return; const alturas = [24,30,38,44,36,30,34,42,48,54,46,40,48,56,62,54,46,38,44,52,60,68,74,68,60,52,44,52,60,68,76,82,76,68,60,52,46,40,34,42,50,58,52,44,38,32,40,48,42,36,30,26,32,38,44,38,32,28,34,30,24,22,28,24]; alturas.forEach(h => { const bar = document.createElement('div'); bar.className = 'bar'; bar.style.height = h + '%'; wf.appendChild(bar); }); })();
+  (function(){ const btn = document.getElementById('btn-play'); if(!btn) return; let tocando = false; btn.addEventListener('click', () => { tocando = !tocando; btn.innerHTML = tocando ? '<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>' : '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; }); })();
+  (function(){ document.querySelectorAll('.vel-btn').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('.vel-btn').forEach(x => x.classList.remove('ativa')); b.classList.add('ativa'); })); })();
+  (function(){ const overlay = document.getElementById('modal-overlay'); const btnClose = document.getElementById('modal-close'); if(!overlay) return; window.abrirModal = function(id){ const d = ACR_DETALHE[id]; if(!d) return; document.getElementById('modal-icone').textContent = d.icone; document.getElementById('modal-titulo').textContent = d.nome; document.getElementById('modal-tagline').textContent = d.tagline; document.getElementById('modal-conceito').innerHTML = d.conceito; document.getElementById('modal-exemplos').innerHTML = d.exemplos.map(e => `<li>${e}</li>`).join(''); document.getElementById('modal-erro').innerHTML = d.erro; overlay.classList.add('aberto'); document.body.style.overflow = 'hidden'; }; function fechar(){ overlay.classList.remove('aberto'); document.body.style.overflow = ''; } document.querySelectorAll('.acr-card[data-modal]').forEach(card => { card.addEventListener('click', () => abrirModal(card.dataset.modal)); card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirModal(card.dataset.modal); } }); }); btnClose.addEventListener('click', fechar); overlay.addEventListener('click', (e) => { if(e.target === overlay) fechar(); }); document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && overlay.classList.contains('aberto')) fechar(); }); })();
   (function(){
     try {
-      const s = sessionStorage.getItem('intentia-dia14');
-      if (s) {
-        const p = JSON.parse(s);
-        if (p && p.escolhaFrase) {
-          document.getElementById('direcao-recap-txt').textContent = p.escolhaFrase;
-          return;
-        }
-      }
+      const s = sessionStorage.getItem('intentia-dia7');
+      if (s) { const p = JSON.parse(s); if (p && p.escolhaFrase) { document.getElementById('direcao-recap-txt').textContent = p.escolhaFrase; return; } }
     } catch(e){}
     document.getElementById('direcao-recap-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo demonstrativo)';
   })();
 </script>
-
 
 <script>
 /* Player real (integração 21/07/2026): toca o audio.mp3 da pasta do dia.

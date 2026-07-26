@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 11 · Armadilhas da decisão</title>
+<title>Intentia · Etapa 11 · Persuasão</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, 'Times New Roman', serif;--sans:'Hanken Grotesk', -apple-system, 'Segoe UI', sans-serif}
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
   body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.7;font-size:17px}
   .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
   .eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
@@ -32,11 +31,8 @@
   .nav-item.ativo .nav-label{color:var(--verde-900);font-weight:700}
   @media (max-width:640px){.nav-label{display:none}.nav-inner::before{top:22px}.nav-num{width:40px;height:40px;font-size:16px}}
   section.bloco[id]{scroll-margin-top:100px}
-
   .onde-estamos{background:var(--verde-100);border-top:1px solid var(--verde-500);border-bottom:1px solid var(--verde-500);padding:18px 24px}
-  .oe-inner{max-width:720px;margin:0 auto}
-  .oe-camada{margin-bottom:12px}
-  .oe-camada:last-child{margin-bottom:0}
+  .oe-inner{max-width:720px;margin:0 auto}.oe-camada{margin-bottom:12px}.oe-camada:last-child{margin-bottom:0}
   .oe-eyebrow{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--verde-700);margin-bottom:8px;text-align:center}
   .oe-semanas{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
   .oe-semana{background:#fff;border:1.5px solid var(--verde-500);color:var(--tinta-suave);font-size:12px;font-weight:600;padding:6px 12px;border-radius:16px;flex-shrink:0;line-height:1.2}
@@ -51,7 +47,6 @@
   .oe-texto{font-size:13.5px;color:var(--tinta);line-height:1.55;text-align:center;margin:12px auto 0;max-width:600px;padding-top:10px;border-top:1px solid rgba(124,168,158,.35)}
   .oe-texto b{color:var(--verde-900);font-weight:600}
   .oe-tag-dia{display:inline-block;background:var(--coral);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 10px;border-radius:12px;margin:0 3px;vertical-align:1px}
-
   main{max-width:720px;margin:0 auto;padding:0 24px}
   .bloco{background:#fff;border-radius:16px;padding:36px 34px;margin:24px 0;box-shadow:0 4px 16px rgba(39,87,80,.06);border:1px solid var(--verde-100)}
   .bloco-num{display:inline-flex;align-items:center;gap:10px;color:var(--coral);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
@@ -59,7 +54,6 @@
   .bloco h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.4vw,32px);line-height:1.15;color:var(--verde-900);margin-bottom:8px;letter-spacing:-.01em}
   .bloco .subtitulo{font-size:15px;color:var(--tinta-suave);margin-bottom:24px;font-style:italic}
   .bloco p{margin-bottom:14px}
-
   .player{background:linear-gradient(135deg, var(--verde-900) 0%, #1d453f 100%);color:var(--creme);border-radius:18px;padding:28px 30px;margin-top:8px;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(39,87,80,.22)}
   .player-topo{display:flex;align-items:center;gap:12px;margin-bottom:22px;position:relative}
   .player-topo .eyebrow-audio{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral)}
@@ -67,8 +61,7 @@
   @keyframes pulso{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
   .player-tag{margin-left:auto;font-size:11px;font-weight:600;color:#A9C6B8;letter-spacing:.05em;background:rgba(255,255,255,.06);padding:4px 10px;border-radius:12px}
   .player-titulo{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1.2;margin-bottom:6px;letter-spacing:-.01em}
-  .player-sub{font-size:13px;color:#A9C6B8;margin-bottom:22px}
-  .player-sub b{color:#CFE0D6;font-weight:600}
+  .player-sub{font-size:13px;color:#A9C6B8;margin-bottom:22px}.player-sub b{color:#CFE0D6;font-weight:600}
   .waveform{display:flex;align-items:center;gap:2.5px;height:44px;margin-bottom:14px;position:relative;padding:6px 0}
   .waveform .bar{flex:1;background:rgba(255,255,255,.20);border-radius:2px;min-width:2px}
   .player-tempo{display:flex;justify-content:space-between;font-size:12px;color:#A9C6B8;font-variant-numeric:tabular-nums;font-weight:600;margin-bottom:20px}
@@ -83,44 +76,41 @@
   .vel-btn.ativa{background:rgba(255,255,255,.14);color:#fff}
   .transcricao-btn{background:transparent;border:1px solid rgba(255,255,255,.18);color:#CFE0D6;padding:7px 14px;border-radius:20px;font-size:12.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:var(--sans);text-decoration:none}
   .transcricao-btn svg{width:14px;height:14px;fill:currentColor}
-
   .leva-lista{list-style:none;padding:0;margin-top:8px}
   .leva-lista li{padding:16px 0 16px 44px;border-bottom:1px dashed var(--verde-100);position:relative}
   .leva-lista li:last-child{border-bottom:none}
   .leva-lista li::before{content:"";position:absolute;left:0;top:22px;width:28px;height:28px;background:var(--verde-100);border-radius:50%}
   .leva-lista li::after{content:"";position:absolute;left:9px;top:29px;width:10px;height:6px;border-left:2.5px solid var(--verde-900);border-bottom:2.5px solid var(--verde-900);transform:rotate(-45deg)}
   .leva-lista strong{color:var(--verde-900)}
-
   .ponto{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);padding:24px 28px;border-radius:0 12px 12px 0;margin-top:8px}
+  .direcao-recap{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:18px 22px;margin-bottom:20px}
+  .direcao-recap-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .direcao-recap-frase{font-family:var(--serif);font-size:16px;font-weight:500;font-style:italic;color:var(--verde-900);line-height:1.4}
+  .direcao-recap small{font-size:12px;color:var(--tinta-suave);display:block;margin-top:6px;font-style:italic}
   .definicao-eu{background:#fff;border:1.5px solid var(--verde-700);border-radius:12px;padding:18px 22px;margin:16px 0}
   .definicao-eu-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
   .definicao-eu-texto{font-family:var(--serif);font-size:18px;line-height:1.45;color:var(--tinta);font-weight:500}
   .definicao-eu-texto b{color:var(--verde-900);font-weight:600}
   .teste-linha{background:var(--verde-900);color:var(--creme);padding:14px 20px;border-radius:10px;margin-top:12px;font-size:14.5px;line-height:1.5;text-align:center;font-family:var(--serif);font-style:italic}
   .teste-linha b{color:#fff;font-weight:600;font-style:normal}
-
   .conteudo-item{padding:18px 20px;background:var(--creme);border-radius:10px;margin-bottom:12px;border-left:3px solid var(--verde-500)}
   .conteudo-item h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);margin-bottom:8px}
   .conteudo-item h3 .marcador{font-family:var(--sans);font-size:11px;font-weight:700;color:#fff;background:var(--verde-700);padding:3px 8px;border-radius:4px;letter-spacing:.1em;margin-right:8px;vertical-align:2px}
-
-  .arm-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
-  @media (max-width:640px){.arm-grid{grid-template-columns:1fr}}
-  .arm-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
-  .arm-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
-  .arm-card:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
-  .arm-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
-  .arm-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
-  .arm-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
-  .arm-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;transition:all .2s;font-weight:700}
-  .arm-card:hover .arm-seta{color:var(--coral);transform:translateX(2px)}
-  .arm-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px;letter-spacing:.02em}
-  .arm-hint svg{width:12px;height:12px;fill:currentColor}
-
+  .pil-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
+  @media (max-width:640px){.pil-grid{grid-template-columns:1fr}}
+  .pil-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
+  .pil-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
+  .pil-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
+  .pil-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
+  .pil-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
+  .pil-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
+  .pil-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
+  .pil-hint svg{width:12px;height:12px;fill:currentColor}
   .modal-overlay{position:fixed;inset:0;background:rgba(32,51,47,.55);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s}
   .modal-overlay.aberto{display:flex;opacity:1}
   .modal-caixa{background:#fff;border-radius:20px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;transform:translateY(20px);transition:transform .3s ease}
   .modal-overlay.aberto .modal-caixa{transform:translateY(0)}
-  .modal-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.9);border:1px solid var(--verde-100);width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;z-index:2;color:var(--verde-900)}
+  .modal-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.9);border:1px solid var(--verde-100);width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;color:var(--verde-900)}
   .modal-close:hover{background:var(--coral);border-color:var(--coral);color:#fff}
   .modal-close svg{width:16px;height:16px;fill:currentColor}
   .modal-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:32px 32px 26px;border-radius:20px 20px 0 0;display:flex;align-items:center;gap:16px}
@@ -128,8 +118,7 @@
   .modal-titulo{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.15;letter-spacing:-.005em;margin-bottom:4px}
   .modal-tagline{font-size:13.5px;font-style:italic;opacity:.92}
   .modal-body{padding:28px 32px 32px}
-  .modal-secao{margin-bottom:22px}
-  .modal-secao:last-child{margin-bottom:0}
+  .modal-secao{margin-bottom:22px}.modal-secao:last-child{margin-bottom:0}
   .modal-secao-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
   .modal-secao p{font-size:15px;line-height:1.6;color:var(--tinta);margin:0}
   .modal-exemplos{background:var(--creme);border-left:3px solid var(--verde-700);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:12px;font-size:13.5px;line-height:1.55}
@@ -137,9 +126,8 @@
   .modal-exemplos ul{list-style:none;padding:0;margin:0}
   .modal-exemplos li{padding:3px 0 3px 16px;position:relative}
   .modal-exemplos li::before{content:"→";position:absolute;left:0;color:var(--coral);font-weight:700}
-  .modal-erro{background:#F0F5F2;border-left:3px solid var(--verde-700);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
-  .modal-erro b{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-700);margin-bottom:6px}
-
+  .modal-erro{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
+  .modal-erro b{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
   .personagens-intro{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--tinta-suave);margin:16px 0 10px;padding:11px 16px;background:var(--verde-100);border-radius:10px;border-left:3px solid var(--verde-700)}
   .personagens-intro-icone{width:22px;height:22px;flex-shrink:0;color:var(--verde-700)}
   .personagens-intro-icone svg{width:22px;height:22px;fill:currentColor}
@@ -149,19 +137,15 @@
   .caso{margin-top:14px;padding:16px 18px;background:#fff;border:1px solid var(--verde-100);border-radius:10px}
   .caso-header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
   .caso-avatar{width:36px;height:36px;border-radius:50%;background:var(--verde-700);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:16px;flex-shrink:0}
-  .caso-avatar.rafael{background:var(--coral)}
-  .caso-avatar.juliana{background:var(--verde-500)}
+  .caso-avatar.rafael{background:var(--coral)}.caso-avatar.juliana{background:var(--verde-500)}
   .caso-nome{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--verde-900)}
   .caso-perfil{font-size:12px;color:var(--tinta-suave);font-weight:500}
   .caso-tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--verde-100);color:var(--verde-900);padding:4px 9px;border-radius:6px;margin-left:auto}
   .caso p{font-size:14.5px;line-height:1.55;color:var(--tinta);margin-bottom:0}
   .caso p b{color:var(--verde-900)}
-
   .bonus{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:32px 30px;margin:24px 0}
-  .bonus .bloco-num{color:var(--coral-soft)}
-  .bonus .bloco-num .n{background:var(--coral)}
-  .bonus h2{color:#fff;font-family:var(--serif)}
-  .bonus .subtitulo{color:#CFE0D6;font-style:italic}
+  .bonus .bloco-num{color:var(--coral-soft)}.bonus .bloco-num .n{background:var(--coral)}
+  .bonus h2{color:#fff;font-family:var(--serif)}.bonus .subtitulo{color:#CFE0D6;font-style:italic}
   .bonus p{color:#CFE0D6}
   .leituras{display:grid;gap:14px;margin-top:20px}
   .leitura{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 20px}
@@ -170,7 +154,6 @@
   .leitura .meta-leitura{font-size:13px;color:#A9C6B8}
   .link-academia{display:inline-block;margin-top:20px;color:var(--coral-soft);text-decoration:none;font-weight:600;font-size:14px;border-bottom:1px dotted var(--coral-soft);padding-bottom:2px}
   .bonus-nota{margin-top:16px;font-size:12.5px;color:#A9C6B8;font-style:italic}
-
   .missao-header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
   .missao-tempo{background:var(--coral);color:#fff;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;border-radius:20px}
   .passos{counter-reset:passo;list-style:none;padding:0;margin-top:20px}
@@ -179,13 +162,12 @@
   .passos li strong{color:var(--verde-900);display:block;margin-bottom:4px;font-size:15px}
   .passos li .tempo-passo{font-size:12px;font-weight:600;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-left:8px}
   .passos li p{font-size:14.5px;color:var(--tinta-suave);margin-bottom:0;line-height:1.55}
-  .cta-missao{display:flex;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:22px 32px;border-radius:16px;margin-top:32px;text-decoration:none;font-family:var(--serif);font-size:20px;font-weight:600;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(255,104,66,.32);transition:transform .25s ease}
+  .cta-missao{display:flex;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:22px 32px;border-radius:16px;margin-top:32px;text-decoration:none;font-family:var(--serif);font-size:20px;font-weight:600;box-shadow:0 10px 28px rgba(255,104,66,.32);transition:transform .25s ease}
   .cta-missao:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,104,66,.42)}
   .cta-missao .cta-icone{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .cta-missao .cta-icone svg{width:16px;height:16px;fill:#fff}
   .cta-missao .cta-tempo{display:inline-block;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);color:#fff;padding:3px 10px;border-radius:12px;margin-right:10px;vertical-align:2px}
   @media (max-width:560px){.cta-missao{padding:20px 22px;font-size:17px;gap:10px}.cta-missao .cta-tempo{display:none}}
-
   footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:13px}
   footer .assinatura{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--verde-900);margin-bottom:6px}
 </style>
@@ -287,17 +269,15 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 })();
 </script><!--intentia-nav:end-->
 
-
 <header>
   <div class="hero-inner">
     <div class="eyebrow">Trilha Capital de Carreira · Bloco A · Etapa 11</div>
-    <h1>Três <span class="grifo">armadilhas</span> que distorcem sua decisão de carreira.</h1>
-    <p class="lede">Ancoragem, custo afundado, status quo — três padrões que o cérebro segue por default. Hoje você aplica antídotos ao placar da Etapa 10 e vê se ele muda.</p>
+    <h1>Persuasão — <span class="grifo">como pedir</span> sem soar venda.</h1>
+    <p class="lede">Conger: persuasão não é convencer — é criar as condições para o outro dizer sim. Cialdini: 6 princípios reduzidos a 3 pilares operacionais para uso ético em carreira. Aplicado à sua direção da Etapa 7.</p>
   </div>
   <div class="arc"></div>
 </header>
-
-<nav class="trilha" aria-label="Sequência do dia">
+<nav class="trilha">
   <div class="nav-inner">
     <a href="#audio" class="nav-item" data-target="audio"><span class="nav-num"><svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg></span><span class="nav-label">Áudio</span></a>
     <a href="#leva" class="nav-item" data-target="leva"><span class="nav-num"><svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span><span class="nav-label">O que você leva</span></a>
@@ -307,21 +287,20 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <a href="#missao" class="nav-item" data-target="missao"><span class="nav-num"><svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg></span><span class="nav-label">Missão</span></a>
   </div>
 </nav>
-
 <div class="onde-estamos">
   <div class="oe-inner">
     <div class="oe-camada">
-      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 2 de 4</div>
-      <div class="oe-semanas" aria-hidden="true">
+      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 1 de 3 · Amplificar</div>
+      <div class="oe-semanas">
         <span class="oe-semana feita"><span class="num">A</span>Mapear ativos ✓</span>
-        <span class="oe-semana atual"><span class="num">B</span>Escolher direção</span>
-        <span class="oe-semana"><span class="num">C</span>Traçar plano</span>
+        <span class="oe-semana feita"><span class="num">B</span>Escolher direção ✓</span>
+        <span class="oe-semana atual"><span class="num">C</span>Amplificar</span>
         <span class="oe-semana"><span class="num">D</span>Instalar rotina</span>
       </div>
     </div>
     <div class="oe-camada">
       <div class="oe-eyebrow">Etapa 4 de 7 nesta semana · Etapa 11 na trilha</div>
-      <div class="oe-dias" aria-hidden="true">
+      <div class="oe-dias">
         <span class="oe-dia feito">1</span><span class="oe-dia-conector"></span>
         <span class="oe-dia feito">2</span><span class="oe-dia-conector"></span>
         <span class="oe-dia feito">3</span><span class="oe-dia-conector"></span>
@@ -332,23 +311,22 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
     </div>
     <p class="oe-texto">
-      Ontem você teve o placar por critério. Hoje o placar passa pelo <span class="oe-tag-dia">Detector de vieses</span> — para saber se ele reflete a realidade ou seus atalhos mentais.
+      Você tem presença, autoridade, rede. Hoje: <span class="oe-tag-dia">Persuasão</span> — o que faz o sim acontecer quando o momento chega.
     </p>
   </div>
 </div>
 
 <main>
-
   <section class="bloco" id="audio">
     <div class="bloco-num"><span class="n">1</span> O áudio do dia</div>
     <h2>A ideia central, contada com calma.</h2>
     <p class="subtitulo">Ouça antes de começar — 5 min.</p>
     <div class="player">
-      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 11 · Bloco A · Bloco 2</span></div>
-      <div class="player-titulo">Três armadilhas que você está caindo agora</div>
+      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 11 · Bloco A · Bloco 1</span></div>
+      <div class="player-titulo">Persuasão: criar condições, não convencer</div>
       <div class="player-sub">A ideia central do dia — contada pela <b>voz do Intentia</b>.</div>
       <div class="waveform" id="waveform"></div>
-      <div class="player-tempo"><span>00:00</span><span>05:04</span></div>
+      <div class="player-tempo"><span>00:00</span><span>05:10</span></div>
       <div class="player-controles">
         <button class="ctrl-btn"><svg viewBox="0 0 24 24"><path d="M12.5 3v2.5c4.14 0 7.5 3.36 7.5 7.5s-3.36 7.5-7.5 7.5-7.5-3.36-7.5-7.5c0-1.4.39-2.7 1.06-3.83L4.32 7.86A9.955 9.955 0 003 13c0 5.24 4.26 9.5 9.5 9.5S22 18.24 22 13s-4.26-10-9.5-10z"/></svg></button>
         <button class="ctrl-play" id="btn-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
@@ -371,37 +349,44 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <h2>Você termina o dia sendo capaz de…</h2>
     <p class="subtitulo">Três capacidades no presente.</p>
     <ul class="leva-lista">
-      <li><strong>Reconhecer 3 armadilhas cognitivas específicas de decisão de carreira</strong> — ancoragem, custo afundado, status quo. Hammond mostra que essas 3 respondem pela maior parte das más decisões, mesmo entre pessoas informadas.</li>
-      <li><strong>Aplicar o antídoto correspondente a cada armadilha</strong> — não basta reconhecer, é preciso ter um movimento específico que neutralize. Cada armadilha tem uma pergunta que a desarma.</li>
-      <li><strong>Saber se você é maximizador ou "bom-o-suficiente"</strong> — Parker mostra que essa diferença muda tudo em decisão de carreira. Maximizadores adiam. "Bom-o-suficiente" escolhem — e frequentemente ficam mais satisfeitos com o resultado.</li>
+      <li><strong>Reformular persuasão como <em>preparação, não convencimento</em></strong> — Conger mostra que persuasão sólida é <em>trabalho antes da conversa</em>: entender o outro, ancorar credibilidade, ter evidência. A conversa em si é 20% do processo.</li>
+      <li><strong>Aplicar 3 pilares que cobrem os 6 princípios de Cialdini</strong> — Credibilidade (autoridade + reciprocidade), Prova (prova social + escassez) e Ressonância (afinidade + compromisso). Simplificação operacional para uso ético.</li>
+      <li><strong>Preparar 1 pedido específico da sua direção</strong> — não em abstrato. Um pedido real que você faria nesta semana ou nas próximas, aplicando os 3 pilares para maximizar chance de sim.</li>
     </ul>
   </section>
 
   <section class="bloco" id="ponto">
     <div class="bloco-num"><span class="n">3</span> O Ponto de Partida de Hoje</div>
-    <h2>Você não é objetivo. <em>Ninguém é</em>.</h2>
-    <p class="subtitulo">Hammond: "as armadilhas escondidas da decisão operam em profissionais treinados exatamente como operam em amadores".</p>
+    <h2>Persuasão não é convencer. É <em>criar condições</em> para o outro dizer sim.</h2>
+    <p class="subtitulo">Conger (1998): "quem tenta convencer sempre perde para quem consegue fazer a outra pessoa concluir sozinha."</p>
     <div class="ponto">
-      <div class="definicao-eu">
-        <div class="definicao-eu-label">O que são "armadilhas cognitivas"</div>
-        <div class="definicao-eu-texto"><b>Armadilhas cognitivas são padrões automáticos de raciocínio</b> que o cérebro aplica para economizar energia — e que, na maior parte das vezes, funcionam bem. Só que em decisões de carreira (raras, ambíguas, com muitas variáveis), esses mesmos atalhos ficam <em>ativamente errados</em>. A boa notícia: elas são <em>previsíveis</em> — reconheceu, dá para desarmar.</div>
+
+      <div class="direcao-recap">
+        <div class="direcao-recap-label">Sua direção escolhida (Etapa 7)</div>
+        <div class="direcao-recap-frase" id="direcao-recap-txt">—</div>
+        <small>Persuasão é a ferramenta que faz pessoas dizerem "sim" à sua direção — no momento em que você precisa.</small>
       </div>
 
-      <p style="margin-top:18px"><b>Hammond (1998)</b> catalogou 8 armadilhas em decisões de gestão. Três delas explicam quase toda a distorção que aparece em decisão de carreira: <em>ancoragem</em> (a primeira opção considerada domina a comparação), <em>custo afundado</em> (o que você já investiu conta contra decisões racionais futuras) e <em>status quo</em> (o cérebro sistematicamente prefere o que já é conhecido).</p>
+      <div class="definicao-eu">
+        <div class="definicao-eu-label">O que é "persuasão" nesta semana</div>
+        <div class="definicao-eu-texto"><b>Persuasão é a arte de criar as condições em que uma pessoa que não é obrigada a te ajudar decide ajudar mesmo assim</b>. Não é venda (troca comercial), não é manipulação (aproveitar viés sem serviço mútuo), não é pressão (forçar concordância). É <em>gestão da entrada</em> — como você chega, o que traz, o que pede, o que oferece — que faz o sim ficar disponível.</div>
+      </div>
 
-      <p><b>Parker (2007)</b> adiciona um recorte adicional: existem duas mentalidades de decisão — o <em>maximizador</em> (que quer a melhor opção possível, e por isso adia infinitamente) e o <em>bom-o-suficiente</em> (que escolhe a primeira opção que passa os critérios mínimos, e segue). Parker mostra dado empírico: bom-o-suficiente <b>relata mais satisfação</b> com suas escolhas de carreira — não porque suas opções fossem melhores, mas porque não gastam energia infinita comparando.</p>
+      <p style="margin-top:18px"><b>Jay Conger (1998)</b> pesquisou executivos em posições de alta persuasão (grandes vendas, decisões de board, negociações complexas) e destruiu o mito da "boa conversa". Persuasão real é <em>75% preparação e 25% conversa</em>: entender profundamente o outro, ancorar sua credibilidade, ter framing e evidência bem escolhidos. A conversa é execução, não o trabalho.</p>
+
+      <p><b>Robert Cialdini (2001)</b> sistematizou os 6 princípios canônicos que fazem pessoas dizerem sim mais que "não" quando estão indecisas: <em>reciprocidade, compromisso, prova social, autoridade, afinidade e escassez</em>. Para uso ético em carreira, esses 6 se reduzem a 3 pilares operacionais que você usa em conjunto — não como truque, mas como <em>estrutura de preparação</em>.</p>
 
       <div class="teste-linha">
-        Teste rápido: se você refizesse o placar de ontem, ele mudaria? Se muda muito, provavelmente uma armadilha te influenciou.
+        Teste rápido: pense num pedido que você precisaria fazer esta semana ligado à sua direção. Você <b>fez a preparação</b> — ou vai improvisar na conversa?
       </div>
 
-      <p style="margin-top:18px"><b>Por que hoje o exercício é aplicar antídoto?</b> Porque saber que existe armadilha <em>não é suficiente</em>. Hammond mostra que profissionais que <em>conhecem</em> as armadilhas continuam caindo nelas — a menos que apliquem <b>rotinas explícitas de desarme</b>. O exercício de hoje é justamente isso: pegar o placar da Etapa 10, aplicar 3 perguntas-antídoto, e ver se alguma nota muda quando o viés é neutralizado.</p>
+      <p style="margin-top:18px"><b>Por que hoje o exercício é preparar 1 pedido específico?</b> Porque persuasão abstrata não muda comportamento. Só o pedido real, com preparação real, revela onde você tem credibilidade fraca, prova insuficiente ou baixa ressonância com o outro. Um pedido preparado bem — mesmo pequeno — vale mais que 10 pedidos improvisados.</p>
     </div>
   </section>
 
   <section class="bloco" id="conteudo">
     <div class="bloco-num"><span class="n">4</span> O conteúdo que direciona a sua missão de hoje</div>
-    <h2>Três armadilhas — clicáveis para conceito, exemplo e antídoto.</h2>
+    <h2>Três pilares — Credibilidade · Prova · Ressonância.</h2>
     <p class="subtitulo">10 min. Material de referência.</p>
 
     <div class="personagens-intro">
@@ -414,50 +399,49 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">01</span>Três armadilhas + antídoto — Ancoragem · Custo Afundado · Status Quo</h3>
-      <p>Cada armadilha tem um padrão de sintoma e uma pergunta que desarma. Toque em cada uma para o conceito completo.</p>
+      <h3><span class="marcador">01</span>Três pilares — Credibilidade · Prova · Ressonância</h3>
+      <p>Cada pilar reduz operacionalmente 2 dos 6 princípios de Cialdini. Toque em cada para o método e o exemplo.</p>
 
-      <div class="arm-grid">
-        <div class="arm-card" data-modal="ancoragem" role="button" tabindex="0">
-          <div class="arm-icone">A</div>
-          <div class="arm-nome">Ancoragem</div>
-          <div class="arm-pergunta">"A primeira opção pesa demais na comparação"</div>
-          <span class="arm-seta">›</span>
+      <div class="pil-grid">
+        <div class="pil-card" data-modal="credibilidade" role="button" tabindex="0">
+          <div class="pil-icone">C</div>
+          <div class="pil-nome">Credibilidade</div>
+          <div class="pil-pergunta">"por que ouvir você agora?"</div>
+          <span class="pil-seta">›</span>
         </div>
-        <div class="arm-card" data-modal="custo" role="button" tabindex="0">
-          <div class="arm-icone">C</div>
-          <div class="arm-nome">Custo Afundado</div>
-          <div class="arm-pergunta">"O que já investi trava minha decisão futura"</div>
-          <span class="arm-seta">›</span>
+        <div class="pil-card" data-modal="prova" role="button" tabindex="0">
+          <div class="pil-icone">P</div>
+          <div class="pil-nome">Prova</div>
+          <div class="pil-pergunta">"o que sustenta o que você diz?"</div>
+          <span class="pil-seta">›</span>
         </div>
-        <div class="arm-card" data-modal="statusquo" role="button" tabindex="0">
-          <div class="arm-icone">S</div>
-          <div class="arm-nome">Status Quo</div>
-          <div class="arm-pergunta">"O conhecido pesa mais que o desconhecido, sempre"</div>
-          <span class="arm-seta">›</span>
+        <div class="pil-card" data-modal="ressonancia" role="button" tabindex="0">
+          <div class="pil-icone">R</div>
+          <div class="pil-nome">Ressonância</div>
+          <div class="pil-pergunta">"por que isso importa para o outro?"</div>
+          <span class="pil-seta">›</span>
         </div>
       </div>
 
-      <span class="arm-hint">
+      <span class="pil-hint">
         <svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>
-        Toque em cada armadilha para o conceito, o exemplo, e o antídoto que você vai usar hoje.
+        Toque em cada pilar para o método e o exemplo aplicado.
       </span>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">02</span>Como as armadilhas distorcem o placar — leitura dos personagens</h3>
-      <p>Cada uma das 3 armadilhas atua de forma diferente. Veja como ela mudaria a leitura de cada personagem:</p>
+      <h3><span class="marcador">02</span>Um pedido específico — leitura dos personagens</h3>
 
       <div class="caso">
         <div class="caso-header">
           <div class="caso-avatar">C</div>
           <div>
             <div class="caso-nome">Camila</div>
-            <div class="caso-perfil">Analista sênior de dados</div>
+            <div class="caso-perfil">Pedido: convite para palestrar em evento de fintechs</div>
           </div>
-          <span class="caso-tag">Ancoragem</span>
+          <span class="caso-tag">3 pilares</span>
         </div>
-        <p><b>Ancoragem:</b> a Camila gerou o Eu-Continuação primeiro (mais fácil de imaginar). Isso vira <em>referência</em> pela qual ela avalia os outros dois. O Eu-Adjacência e o Eu-Reinvenção começam com "quanto pior que o Continuação?" — nunca "quão bom em si mesmo?". <b>Antídoto:</b> avaliar cada Eu como se fosse o único; só depois comparar.</p>
+        <p><b>Credibilidade:</b> "sou analista sênior de risco em banco médio, comecei a publicar sobre IA aplicada há 6 meses — 3 artigos com 500+ leitores cada." <b>Prova:</b> links dos 3 artigos + 1 palestra menor confirmada. <b>Ressonância:</b> "vi que seu evento tem seção sobre uso responsável de IA — meu enfoque em auditabilidade de modelos casa exatamente com o tema."</p>
       </div>
 
       <div class="caso">
@@ -465,11 +449,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <div class="caso-avatar rafael">R</div>
           <div>
             <div class="caso-nome">Rafael</div>
-            <div class="caso-perfil">Coordenador de operações industrial</div>
+            <div class="caso-perfil">Pedido: apresentação a um fundador de fintech</div>
           </div>
-          <span class="caso-tag">Custo Afundado</span>
+          <span class="caso-tag">3 pilares</span>
         </div>
-        <p><b>Custo afundado:</b> Rafael tem 12 anos na indústria. Ao pontuar o Eu-Adjacência (fintech), o cérebro dele soma esse "investimento" como argumento contra sair — "seria jogar 12 anos fora". Mas os 12 anos <em>já foram</em>, independente da próxima escolha. <b>Antídoto:</b> avaliar como se fosse a primeira decisão de carreira, sem histórico.</p>
+        <p><b>Credibilidade:</b> "12 anos coordenando operações industriais em escala — fiz um projeto de consultoria numa fintech logística no último trimestre." <b>Prova:</b> depoimento do CEO dessa fintech + resultado mensurável do projeto. <b>Ressonância:</b> "sei que a empresa dele está saindo de 50 para 200 pessoas — o gap operacional dessa fase é exatamente o que aprendi a resolver na indústria."</p>
       </div>
 
       <div class="caso">
@@ -477,34 +461,34 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <div class="caso-avatar juliana">J</div>
           <div>
             <div class="caso-nome">Juliana</div>
-            <div class="caso-perfil">Designer autônoma</div>
+            <div class="caso-perfil">Pedido: parceria com plataforma de cursos</div>
           </div>
-          <span class="caso-tag">Status Quo</span>
+          <span class="caso-tag">3 pilares</span>
         </div>
-        <p><b>Status quo:</b> Juliana está em transição há 2 anos, mas a "rotina de autônoma" já virou o novo conhecido. Ao avaliar o Eu-Reinvenção (autora/educadora), o cérebro sistematicamente exagera os riscos e minimiza os benefícios — porque o desconhecido sempre parece mais arriscado. <b>Antídoto:</b> perguntar "se eu já estivesse na versão nova, escolheria voltar para a atual?".</p>
+        <p><b>Credibilidade:</b> "designer autônoma há 2 anos, portfolio com 40+ projetos de sistemas visuais para pequenos negócios." <b>Prova:</b> currículo do curso piloto rascunhado + 8 pré-inscritos + depoimento de aluna informal antes. <b>Ressonância:</b> "vi que sua plataforma cresceu no vertical criativo — meu curso complementa o que vocês já têm sem competir com criadores atuais."</p>
       </div>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">03</span>A regra da Etapa 11: refazer o placar com antídoto</h3>
-      <p>Não é para descartar o placar de ontem — é para <b>reler cada nota</b> com os antídotos ativos. Alguma nota vai mudar. Se nenhuma mudar, você é (raro) alguém que decide fora dos vieses médios; ou (mais provável) a armadilha ativa não é essa. Nesse caso, vale voltar aos 3 filtros e checar por outra distorção.</p>
+      <h3><span class="marcador">03</span>A regra da Etapa 11: preparar > improvisar</h3>
+      <p>Conger: profissionais competentes frequentemente <b>subestimam a preparação</b> porque acreditam que "vão descobrir na conversa". Não vão. A conversa amplifica o que você trouxe pronto e expõe o que você não preparou. 30 minutos de preparação (nomear os 3 pilares com concretude) mudam mais o resultado que 30 minutos "mais na conversa".</p>
     </div>
   </section>
 
   <section class="bonus bloco" id="bonus">
     <div class="bloco-num"><span class="n">5</span> Seu bônus antes da missão</div>
-    <h2>As armadilhas e o dilema maximizar vs bom-o-suficiente.</h2>
-    <p class="subtitulo">Duas leituras que fundamentam os antídotos.</p>
+    <h2>A arte necessária + a ciência dos 6 princípios.</h2>
+    <p class="subtitulo">Duas leituras que fundamentam os 3 pilares.</p>
     <div class="leituras">
       <div class="leitura">
         <span class="tipo">Resumo · 3 páginas</span>
-        <h4>As armadilhas escondidas da decisão</h4>
-        <p class="meta-leitura">Hammond (1998) — o catálogo clássico de 8 armadilhas cognitivas em decisões de gestão, com foco em como elas operam em profissionais informados.</p>
+        <h4>A arte necessária da persuasão</h4>
+        <p class="meta-leitura">Conger (1998) — pesquisa com executivos de alta performance em persuasão. A tese: persuasão sólida é 75% preparação e 25% conversa. A conversa apenas executa.</p>
       </div>
       <div class="leitura">
         <span class="tipo">Resumo · 3 páginas</span>
-        <h4>Maximizar ou bom-o-suficiente?</h4>
-        <p class="meta-leitura">Parker (2007) — evidência empírica sobre duas mentalidades de decisão e o efeito paradoxal delas na satisfação com escolhas de carreira.</p>
+        <h4>A ciência da persuasão</h4>
+        <p class="meta-leitura">Cialdini (2001) — os 6 princípios canônicos (reciprocidade, compromisso, prova social, autoridade, afinidade, escassez). Uso ético e uso manipulativo — o texto separa os dois.</p>
       </div>
     </div>
     <a href="academia.html" class="link-academia">Abrir os resumos na Academia Intentia →</a>
@@ -514,21 +498,22 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <section class="bloco" id="missao">
     <div class="bloco-num"><span class="n">6</span> Missão do Dia</div>
     <div class="missao-header">
-      <h2>Refazer o placar com antídoto.</h2>
-      <span class="missao-tempo">15 min</span>
+      <h2>Preparar 1 pedido específico da sua direção.</h2>
+      <span class="missao-tempo">18 min</span>
     </div>
-    <p class="subtitulo">Pegar cada Eu, aplicar 3 antídotos e checar se alguma nota da Etapa 10 muda.</p>
+    <p class="subtitulo">Escolha 1 pedido real que você fará nas próximas 2 semanas. Aplique os 3 pilares. Não é sobre pedir grande — é sobre pedir preparado.</p>
 
     <ol class="passos">
-      <li><strong>Reler placar da Etapa 10 <span class="tempo-passo">2 min</span></strong><p>Ver as notas dadas ontem. Marcar mentalmente o Eu que ganhou por placar e sua versão favorita subjetiva.</p></li>
-      <li><strong>Aplicar antídoto de Ancoragem <span class="tempo-passo">3 min</span></strong><p>Perguntar sobre cada Eu: "se eu tivesse imaginado ele PRIMEIRO, ele ficaria melhor colocado?" — muda alguma nota.</p></li>
-      <li><strong>Aplicar antídoto de Custo Afundado <span class="tempo-passo">3 min</span></strong><p>Perguntar sobre cada Eu: "se eu estivesse decidindo pela primeira vez, sem histórico, ainda daria essa nota?"</p></li>
-      <li><strong>Aplicar antídoto de Status Quo <span class="tempo-passo">3 min</span></strong><p>Perguntar sobre cada Eu: "se eu já estivesse vivendo essa versão, escolheria voltar para a atual?"</p></li>
-      <li><strong>Autoclassificar como maximizador ou bom-o-suficiente + registrar mudanças <span class="tempo-passo">4 min</span></strong><p>Você tende a comparar infinitamente ou a escolher quando bate o suficiente? E: quais notas mudaram nos antídotos? Qual armadilha te afetou mais?</p></li>
+      <li><strong>Escolher o pedido <span class="tempo-passo">3 min</span></strong><p>Um pedido específico, executável nas próximas 2 semanas, ligado à sua direção. Pode ser: apresentação, convite, indicação, colaboração, feedback, entrevista informal. Real, não hipotético.</p></li>
+      <li><strong>Definir a quem <span class="tempo-passo">2 min</span></strong><p>Nome específico. Se você não sabe o nome, o pedido ainda é abstrato. Pesquise antes.</p></li>
+      <li><strong>Preparar Credibilidade <span class="tempo-passo">4 min</span></strong><p>Uma frase (2-3 linhas) que responde "por que ouvir você agora?" com evidência concreta.</p></li>
+      <li><strong>Preparar Prova <span class="tempo-passo">4 min</span></strong><p>Links, docs, dados, depoimentos que sustentam o que você diz. Mesmo que pequenos. Prova concreta > adjetivos.</p></li>
+      <li><strong>Preparar Ressonância <span class="tempo-passo">4 min</span></strong><p>Uma frase que responde "por que isso importa para o outro?" — não é o que você quer; é o que <em>a pessoa</em> ganha ao dizer sim.</p></li>
+      <li><strong>Escrever a mensagem/pedido preparado <span class="tempo-passo">1 min</span></strong><p>Junte os 3 pilares numa mensagem curta (5-10 linhas). Envie esta semana.</p></li>
     </ol>
 
     <a href="missao.html" class="cta-missao">
-      <span class="cta-texto"><span class="cta-tempo">15 min</span>Fazer a Missão</span>
+      <span class="cta-texto"><span class="cta-tempo">18 min</span>Fazer a Missão</span>
       <span class="cta-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
     </a>
   </section>
@@ -552,7 +537,6 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   </div>
 </section>
 
-
 </main>
 
 <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
@@ -569,50 +553,47 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
     <div class="modal-body">
       <div class="modal-secao">
-        <div class="modal-secao-label">O padrão</div>
+        <div class="modal-secao-label">O que o pilar faz</div>
         <p id="modal-conceito"></p>
       </div>
       <div class="modal-secao">
         <div class="modal-exemplos">
-          <div class="modal-exemplos-label">Como se manifesta</div>
+          <div class="modal-exemplos-label">Como preparar bem</div>
           <ul id="modal-exemplos"></ul>
         </div>
-        <div class="modal-erro"><b>Antídoto</b><span id="modal-erro"></span></div>
+        <div class="modal-erro"><b>Erro comum</b><span id="modal-erro"></span></div>
       </div>
     </div>
   </div>
 </div>
 
-<footer>
-  <div class="assinatura">Do reagir ao conduzir.</div>
-  <div>Etapa 11 · Armadilhas da decisão — três antídotos</div>
-</footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 11 · Persuasão — três pilares</div></footer>
 
 <script>
-  const ARM_DETALHE = {
-    ancoragem: {
-      nome: 'Armadilha da Ancoragem',
-      tagline: 'a primeira opção pesa demais na comparação',
-      icone: 'A',
-      conceito: 'O cérebro usa a primeira opção considerada como <em>referência-âncora</em> para avaliar todas as demais. As opções posteriores são pontuadas por diferença em relação à âncora, não por mérito próprio. Em decisão de carreira, isso costuma inflar a nota da versão gerada primeiro (geralmente a Continuação, por ser a mais fácil de imaginar) e deprimir as demais.',
-      exemplos: ['Você gerou o Eu-Continuação em 3 minutos e o Eu-Reinvenção em 10 — o segundo parece "mais complicado" mesmo antes de avaliá-lo', 'Ao pontuar Alocação, o Continuação recebeu 5 automaticamente ("é o que já tenho"), e as outras versões foram avaliadas como "quanto pior que ele?"', 'A ordem em que você conheceu os 3 formatos (Linear, Paralela, Iterativa) influenciou qual você considerou "o normal"'],
-      erro: '<b>Antídoto:</b> avaliar cada Eu <em>como se fosse o único</em>. Feche os outros dois mentalmente. Dê nota 1-5 sem comparar. Só depois compare os resultados. Se alguma nota mudou nesse processo, ancoragem estava operando.'
-    },
-    custo: {
-      nome: 'Armadilha do Custo Afundado',
-      tagline: 'o que já investi trava minha decisão futura',
+  const PIL_DETALHE = {
+    credibilidade: {
+      nome: 'Pilar Credibilidade',
+      tagline: '"por que ouvir você agora?"',
       icone: 'C',
-      conceito: 'O cérebro trata investimentos passados (tempo, dinheiro, treinamento, formação) como se eles fossem <em>argumento racional</em> a favor de continuar. Não são. O que já foi investido está gasto independente da próxima decisão — o critério racional deveria considerar apenas custos e retornos <em>futuros</em>. Mas o cérebro insiste: "seria jogar fora tudo isso".',
-      exemplos: ['"Não posso sair da área depois de 12 anos" — os 12 anos aconteceram; a próxima década vai acontecer independente deles', '"Fiz MBA em finanças, seria desperdício mudar" — o MBA já foi feito, o valor dele não desaparece por você mudar de área', '"Já estou tão avançado nessa carreira" — avanço em uma rota não é impedimento para mudar para outra, é apenas mais capital acumulado'],
-      erro: '<b>Antídoto:</b> avaliar cada Eu <em>como se fosse a primeira decisão de carreira</em>, sem histórico. Pergunta: "se eu estivesse aos 22 anos, escolhendo do zero, com as habilidades e vocações que tenho hoje — essa versão faria sentido?" Se sim, o custo afundado não deveria vetar.'
+      conceito: 'Credibilidade responde a pergunta silenciosa que a outra pessoa faz nos primeiros segundos: <b>por que devo dedicar atenção a este pedido específico, vindo desta pessoa específica, agora</b>? Combina os princípios de Autoridade (Cialdini) e Reciprocidade (relação anterior, valor já entregue, mesmo pequeno). Sem credibilidade, os outros pilares não sustentam nada.',
+      exemplos: ['Ancorar em capital: "X anos de experiência em Y" — específico, mensurável', 'Ancorar em contribuição: "publiquei/entreguei/apresentei Z recentemente" — data e prova', 'Ancorar em contexto compartilhado: "conversei com Fulano/participei do evento W" — reciprocidade indireta', 'Nunca começar com pedido — sempre com ancoragem'],
+      erro: '<b>Credibilidade genérica.</b> "Sou profissional experiente" não é credibilidade — é ruído. Credibilidade real é <em>específica</em>: cargo, tempo, entrega recente, mensurável. Se sua frase de credibilidade cabe em qualquer profissional, ela não te distingue.'
     },
-    statusquo: {
-      nome: 'Armadilha do Status Quo',
-      tagline: 'o conhecido pesa mais que o desconhecido, sempre',
-      icone: 'S',
-      conceito: 'O cérebro sistematicamente prefere o estado atual — mesmo quando o estado atual não é objetivamente melhor. A razão é evolutiva: o conhecido é <em>previsível</em>, o desconhecido é <em>arriscado</em>, e o cérebro pesa risco muito mais que oportunidade. Em decisão de carreira, isso vira: manter o que se tem parece "seguro" e mudar parece "arriscar tudo" — mesmo quando manter tem custos escondidos maiores que a mudança.',
-      exemplos: ['O Eu-Continuação recebeu 5 em Reversibilidade automaticamente — mas "continuar" também tem custo de reversão (o mundo muda enquanto você não muda)', 'O Eu-Adjacência recebeu 2 em Alocação — porque exige mudar rotina, e mudar rotina "é difícil"; mas continuar a rotina atual também exige energia (que você já paga sem perceber)', 'Você deu nota mais baixa em Retorno para versões que exigem tempo — mas o "tempo de permanecer" no atual também é longo, só que invisível'],
-      erro: '<b>Antídoto:</b> inverter mentalmente. Perguntar: "se eu <em>já estivesse vivendo</em> essa nova versão, e alguém me propusesse voltar para a atual — eu voltaria?" Se a resposta é "não", a armadilha do status quo estava inflando o valor do atual.'
+    prova: {
+      nome: 'Pilar Prova',
+      tagline: '"o que sustenta o que você diz?"',
+      icone: 'P',
+      conceito: 'Prova é <b>evidência tangível</b> que substitui a necessidade da outra pessoa "acreditar em você". Combina os princípios de Prova Social (outros já validaram) e Escassez (o que você tem/faz não é comum, é limitado). Prova bem escolhida é o que faz o pedido soar <em>concreto</em> em vez de aspiracional.',
+      exemplos: ['Link para conteúdo próprio (artigo, portfolio, gravação) — 1 é melhor que 5', 'Depoimento escrito ou métrica de resultado — específico, atribuível, verificável', 'Referência a projeto recente entregue — nome do projeto, resultado, prazo', 'Menção a reconhecimento externo — prêmio, convite, menção de terceiros'],
+      erro: '<b>Prova exagerada.</b> Muita prova soa insegurança — como se você precisasse convencer. Regra prática: 1-2 provas fortes valem mais que 5 fracas. Se você precisa citar 4 depoimentos, provavelmente nenhum é forte o suficiente sozinho.'
+    },
+    ressonancia: {
+      nome: 'Pilar Ressonância',
+      tagline: '"por que isso importa para o outro?"',
+      icone: 'R',
+      conceito: 'Ressonância é <b>o pilar que separa persuasão de venda</b>. Combina Afinidade (você conhece o outro, seu contexto, suas prioridades) e Compromisso (você conecta o pedido a algo que a pessoa já valoriza/faz). Sem ressonância, seu pedido é sobre você — com ressonância, o pedido vira algo que a pessoa <em>quer</em> conceder porque serve a ela também.',
+      exemplos: ['Nomear algo específico da pessoa/organização que você pesquisou: "vi que vocês estão focados em X"', 'Conectar seu pedido ao trabalho atual da pessoa: "seu insight sobre Y faz muito sentido para o que eu proponho"', 'Reconhecer o que a pessoa ganha ao dizer sim (mesmo que pequeno): tempo, informação, contato, aprendizagem', 'Ser explícito sobre o quanto está pedindo: "20 minutos de conversa" > "quando você tiver tempo"'],
+      erro: '<b>Ressonância genérica ("acompanho seu trabalho").</b> Isso não é ressonância — é adulação. Ressonância real cita <em>algo específico</em> que só vale para essa pessoa/contexto. Se sua frase de ressonância vale para 100 outras pessoas do território, ela não é ressonância; é lista de contatos massa.'
     }
   };
 </script>
@@ -630,7 +611,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   (function(){
     const wf = document.getElementById('waveform');
     if(!wf) return;
-    const alturas = [22,30,38,44,36,30,34,42,48,54,46,40,48,56,62,54,46,38,44,52,60,68,74,68,60,52,44,52,60,68,76,82,76,68,60,52,46,40,34,42,50,58,52,44,38,32,40,48,42,36,30,26,32,38,44,38,32,28,34,30,24,22,28,24];
+    const alturas = [24,30,38,44,36,30,34,42,48,54,46,40,48,56,62,54,46,38,44,52,60,68,74,68,60,52,44,52,60,68,76,82,76,68,60,52,46,40,34,42,50,58,52,44,38,32,40,48,42,36,30,26,32,38,44,38,32,28,34,30,24,22,28,24];
     alturas.forEach(h => { const bar = document.createElement('div'); bar.className = 'bar'; bar.style.height = h + '%'; wf.appendChild(bar); });
   })();
   (function(){
@@ -647,7 +628,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     const btnClose = document.getElementById('modal-close');
     if(!overlay) return;
     window.abrirModal = function(id){
-      const d = ARM_DETALHE[id];
+      const d = PIL_DETALHE[id];
       if(!d) return;
       document.getElementById('modal-icone').textContent = d.icone;
       document.getElementById('modal-titulo').textContent = d.nome;
@@ -659,13 +640,26 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       document.body.style.overflow = 'hidden';
     };
     function fechar(){ overlay.classList.remove('aberto'); document.body.style.overflow = ''; }
-    document.querySelectorAll('.arm-card[data-modal]').forEach(card => {
+    document.querySelectorAll('.pil-card[data-modal]').forEach(card => {
       card.addEventListener('click', () => abrirModal(card.dataset.modal));
       card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirModal(card.dataset.modal); } });
     });
     btnClose.addEventListener('click', fechar);
     overlay.addEventListener('click', (e) => { if(e.target === overlay) fechar(); });
     document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && overlay.classList.contains('aberto')) fechar(); });
+  })();
+  (function(){
+    try {
+      const s = sessionStorage.getItem('intentia-dia7');
+      if (s) {
+        const p = JSON.parse(s);
+        if (p && p.escolhaFrase) {
+          document.getElementById('direcao-recap-txt').textContent = p.escolhaFrase;
+          return;
+        }
+      }
+    } catch(e){}
+    document.getElementById('direcao-recap-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo demonstrativo)';
   })();
 </script>
 

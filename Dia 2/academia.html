@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 2 · Academia — Leituras aprofundadas</title>
+<title>Intentia · Etapa 2 · Academia Intentia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -11,41 +11,36 @@
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
   .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
-  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  header{background:var(--verde-900);color:#F5F7F3;padding:52px 24px 60px;position:relative;overflow:hidden}
   .hero-inner{max-width:820px;margin:0 auto;position:relative;z-index:1}
-  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:16px}
-  .voltar:hover{color:#fff}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
   .voltar svg{width:14px;height:14px;fill:currentColor}
-  .badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
-  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:12px}
-  header .lede{font-size:16.5px;color:#CFE0D6;max-width:600px}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.15;margin-bottom:12px;letter-spacing:-.01em}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:640px}
   .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
-  main{max-width:820px;margin:0 auto;padding:36px 24px}
-  .leitura{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 32px;margin-bottom:20px;box-shadow:0 3px 12px rgba(39,87,80,.05);position:relative}
-  .leitura::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(to bottom, var(--coral) 0%, #FF7A57 100%);border-radius:16px 0 0 16px}
-  .leitura-meta{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-  .leitura-num{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:14px}
-  .leitura-tag{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--coral)}
-  .leitura h2{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--verde-900);line-height:1.2;margin-bottom:6px}
-  .leitura-autor{font-size:13px;color:var(--tinta-suave);font-style:italic;margin-bottom:16px}
-  .leitura-resumo{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:14px}
-  .leitura-resumo b{color:var(--verde-900);font-weight:600}
-  .leitura-pontos{background:var(--creme);border-radius:10px;padding:16px 20px;margin-top:14px}
-  .leitura-pontos h4{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
-  .leitura-pontos ul{list-style:none;padding:0}
-  .leitura-pontos li{font-size:13.5px;line-height:1.55;padding-left:16px;position:relative;margin-bottom:8px}
-  .leitura-pontos li::before{content:'→';position:absolute;left:0;color:var(--coral);font-weight:700}
-  .leitura-pontos li:last-child{margin-bottom:0}
-  .leitura-acoes{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--verde-100)}
-  .btn-abrir{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;text-decoration:none;font-size:13.5px;font-weight:600;padding:10px 18px;border-radius:8px;transition:background .2s}
-  .btn-abrir:hover{background:#E85530}
-  .btn-abrir svg{width:14px;height:14px;fill:currentColor}
-  .btn-pdf{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--verde-900);border:1.5px solid var(--verde-100);text-decoration:none;font-size:13.5px;font-weight:600;padding:10px 18px;border-radius:8px;transition:all .2s}
-  .btn-pdf:hover{border-color:var(--verde-700);background:var(--verde-100)}
-  .btn-pdf svg{width:14px;height:14px;fill:currentColor}
-  .nota{background:var(--verde-100);border-radius:12px;padding:20px 24px;margin-top:32px;font-size:13.5px;color:var(--tinta-suave);line-height:1.6}
-  .nota b{color:var(--verde-900)}
-  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  main{max-width:820px;margin:0 auto;padding:36px 24px 40px}
+
+  .contexto{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 12px 12px 0;padding:22px 26px;margin-bottom:28px}
+  .contexto h2{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:8px;font-weight:600}
+  .contexto p{font-size:14.5px;color:var(--tinta);line-height:1.65;margin-bottom:0}
+  .contexto b{color:var(--verde-900)}
+
+  .resumos-grid{display:grid;gap:20px}
+  .resumo{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;box-shadow:0 4px 16px rgba(39,87,80,.06);transition:transform .2s, box-shadow .2s}
+  .resumo:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(39,87,80,.10)}
+  .resumo-tipo{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+  .resumo h3{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:6px;line-height:1.25;font-weight:600}
+  .resumo .autor{font-size:13px;color:var(--tinta-suave);font-style:italic;margin-bottom:12px}
+  .resumo p{font-size:14px;color:var(--tinta);line-height:1.6;margin-bottom:16px}
+  .resumo-links{display:flex;flex-wrap:wrap;gap:10px}
+  .resumo-link{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);padding:8px 14px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:600;transition:all .2s}
+  .resumo-link:hover{background:var(--verde-500);color:#fff}
+  .resumo-link.pdf{background:var(--coral);color:#fff}
+  .resumo-link.pdf:hover{background:#E85530}
+  .resumo-link svg{width:13px;height:13px;fill:currentColor}
+
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
   footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
 </style>
 
@@ -128,85 +123,48 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 })();
 </script><!--intentia-nav:end-->
 
-
 <header>
   <div class="hero-inner">
     <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 2</a>
-    <div class="badge">Academia Intentia · Etapa 2</div>
-    <h1>A trajetória que muda <span class="grifo">não apaga quem você é</span>.</h1>
-    <p class="lede">Duas leituras sobre o momento em que a trajetória muda de rumo — resumos de três páginas de cada, para você ler em poucos minutos. Opcional; a missão de hoje não depende delas.</p>
+    <div class="eyebrow">Academia Intentia · Etapa 2</div>
+    <h1>As leituras que sustentam a <span class="grifo">carreira não linear</span></h1>
+    <p class="lede">Dois textos que embasam o argumento do dia — que a escada única foi um bom modelo para um mundo que não existe mais, e que hoje os formatos alternativos são frequentemente mais robustos.</p>
   </div>
   <div class="arc"></div>
 </header>
-
 <main>
-
-  <div class="leitura">
-    <div class="leitura-meta">
-      <div class="leitura-num">1</div>
-      <div class="leitura-tag">Resumo · 3 páginas · Estudo qualitativo</div>
-    </div>
-    <h2>Como mudar de carreira, segundo 50 pessoas que mudaram</h2>
-    <div class="leitura-autor">Liu (2019) · Forbes</div>
-    <p class="leitura-resumo">Entrevistas com <b>50 profissionais que fizeram transições substanciais</b> de carreira — de setor, de função, ou ambos. O objetivo não foi mapear casos de sucesso, mas identificar padrões comuns entre transições que "pegaram" e transições que voltaram atrás. O que emerge desafia várias narrativas populares sobre reinvenção profissional.</p>
-    <div class="leitura-pontos">
-      <h4>Dez lições, condensadas em três</h4>
-      <ul>
-        <li><b>Passos pequenos, não saltos.</b> A grande maioria das transições bem-sucedidas veio de uma série de movimentos laterais ou complementares — não da grande demissão dramática.</li>
-        <li><b>Energia em vez de paixão.</b> A pergunta que mais orientou boas escolhas foi "o que te dá energia?", não "qual a sua paixão?". Paixão é raro; energia é mensurável.</li>
-        <li><b>Instinto informado, não intuição pura.</b> As pessoas que acertaram testaram cenários por meses antes de decidir — o instinto que funcionou era o instinto de quem já tinha dados.</li>
-      </ul>
-    </div>
-    <div class="leitura-acoes">
-      <a href="resumo-mudar-de-carreira-50-pessoas-liu-2019.html" class="btn-abrir">
-        <svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg>
-        Abrir resumo (HTML)
-      </a>
-      <a href="resumo-mudar-de-carreira-50-pessoas-liu-2019.pdf" class="btn-pdf">
-        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9.5 11.5c0 .83-.67 1.5-1.5 1.5H7v2H5.5V9H8c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5H11V9h2c.83 0 1.5.67 1.5 1.5v3zm4-3H17v1h1.5V13H17v2h-1.5V9h3v1.5zM7 10.5h1v1H7zm5.5 0h1v3h-1z"/></svg>
-        Baixar PDF
-      </a>
-    </div>
+  <div class="contexto">
+    <h2>Por que essas leituras hoje</h2>
+    <p>Sehgal e Rinne argumentam a mesma tese por dois ângulos diferentes: <b>a estrutura tradicional da carreira em escada única já não é a norma nem o mais seguro</b>. Sehgal defende a segunda carreira em paralelo — duas trilhas que se fortalecem. Rinne substitui a metáfora da escada pela da parede de escalada — movimentos alternados que constroem repertório e opcionalidade. As duas leituras dão fundamento para o exercício de hoje: perguntar de que formato cada Eu Possível precisa.</p>
   </div>
 
-  <div class="leitura">
-    <div class="leitura-meta">
-      <div class="leitura-num">2</div>
-      <div class="leitura-tag">Resumo · 3 páginas · Psicologia organizacional</div>
+  <div class="resumos-grid">
+    <div class="resumo">
+      <span class="resumo-tipo">Resumo · 3 páginas</span>
+      <h3>Por que você deveria ter duas carreiras (ao mesmo tempo)</h3>
+      <p class="autor">Kabir Sehgal · Harvard Business Review · 2017</p>
+      <p>Sehgal argumenta que profissionais que mantêm uma segunda carreira em paralelo — não como hobby, mas como trilha intencional — se fortalecem em ambas. A primeira dá estabilidade e reputação; a segunda dá aprendizagem, opcionalidade e um "combustível" que a primeira não oferece. Ele mostra padrões em executivos, artistas e cientistas que operam nesse modelo dual.</p>
+      <div class="resumo-links">
+        <a class="resumo-link" href="resumo-por-que-ter-duas-carreiras-sehgal-2017.html"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg> Ler online (HTML)</a>
+        <a class="resumo-link pdf" href="resumo-por-que-ter-duas-carreiras-sehgal-2017.pdf"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF</a>
+      </div>
     </div>
-    <h2>Quando mudar de emprego muda a sua identidade</h2>
-    <div class="leitura-autor">Wittman (2022) · Harvard Business Review</div>
-    <p class="leitura-resumo">Análise psicológica sobre por que <b>trocar de cargo não te apaga</b> — e o que precisa acontecer para completar a transição de identidade. Wittman propõe que a resistência à mudança de carreira raramente é sobre o novo trabalho; é sobre a dor de deixar para trás a versão de si que estava associada ao trabalho antigo. E que essa dor tem um caminho previsível.</p>
-    <div class="leitura-pontos">
-      <h4>Três pontos principais</h4>
-      <ul>
-        <li>Toda transição de carreira tem três fases: <b>desapego</b>, <b>liminaridade</b> (o entre-lugar), e <b>reintegração</b>. Pular a fase 2 é a causa mais comum de "voltar atrás".</li>
-        <li>O luto da versão anterior é necessário — não patológico. Ignorá-lo produz a "síndrome do impostor" na nova função.</li>
-        <li>Trajetória (o que você viveu e o que ficou) é o material que mantém continuidade da identidade entre versões — daí a importância de fazer a Linha do Tempo <b>antes</b> de qualquer decisão de mudança.</li>
-      </ul>
-    </div>
-    <div class="leitura-acoes">
-      <a href="resumo-mudar-de-emprego-identidade-wittman-2022.html" class="btn-abrir">
-        <svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg>
-        Abrir resumo (HTML)
-      </a>
-      <a href="resumo-mudar-de-emprego-identidade-wittman-2022.pdf" class="btn-pdf">
-        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9.5 11.5c0 .83-.67 1.5-1.5 1.5H7v2H5.5V9H8c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5H11V9h2c.83 0 1.5.67 1.5 1.5v3zm4-3H17v1h1.5V13H17v2h-1.5V9h3v1.5zM7 10.5h1v1H7zm5.5 0h1v3h-1z"/></svg>
-        Baixar PDF
-      </a>
+
+    <div class="resumo">
+      <span class="resumo-tipo">Resumo · 3 páginas</span>
+      <h3>Repensar trajetórias: a escada foi ultrapassada</h3>
+      <p class="autor">April Rinne · Harvard Business Review · 2023</p>
+      <p>Rinne propõe substituir a metáfora da escada pela da parede de escalada. Numa parede, você escolhe os apoios (skills, contextos, projetos) e sobe usando movimentos verticais e laterais alternados — não como caos, mas como intencionalidade sobre múltiplas dimensões, não só a hierárquica. A pesquisa mostra que profissionais com trajetórias iterativas costumam ter mais opcionalidade real ao longo do tempo.</p>
+      <div class="resumo-links">
+        <a class="resumo-link" href="resumo-repensar-trajetorias-a-escada-ultrapassada-rinne-2023.html"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg> Ler online (HTML)</a>
+        <a class="resumo-link pdf" href="resumo-repensar-trajetorias-a-escada-ultrapassada-rinne-2023.pdf"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF</a>
+      </div>
     </div>
   </div>
-
-  <div class="nota">
-    <b>Leitura opcional e para sempre disponível.</b> As leituras aprofundam a ideia do dia — mas a missão (a sua Linha do Tempo com 5 a 12 momentos formadores) funciona sem elas. Volte quando quiser.
-  </div>
-
 </main>
-
 <footer>
   <div class="assinatura">Do reagir ao conduzir.</div>
-  <div>Etapa 2 · Academia Intentia — Leituras aprofundadas</div>
+  <div>Etapa 2 · Academia Intentia — 2 resumos</div>
 </footer>
-
 </body>
 </html>

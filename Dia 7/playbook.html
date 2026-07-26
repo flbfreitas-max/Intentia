@@ -3,43 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 7 · Playbook — Valores centrais</title>
+<title>Intentia · Etapa 7 · Playbook — Marca pessoal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
-  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.7;font-size:17px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
   .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
-  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 56px}
-  .hero-inner{max-width:760px;margin:0 auto}
-  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:14px}
+  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
   .voltar svg{width:14px;height:14px;fill:currentColor}
-  .badge-aprofundamento{display:inline-flex;align-items:center;gap:8px;background:rgba(255,104,66,.18);color:var(--coral-soft);border:1px solid rgba(255,104,66,.35);padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px}
-  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
-  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.15;letter-spacing:-.01em;margin-bottom:12px}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:14px}
   header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
-  main{max-width:760px;margin:0 auto;padding:36px 24px}
-  section{margin-bottom:36px}
-  section h2{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--verde-900);margin-bottom:16px;letter-spacing:-.005em}
-  section p{margin-bottom:14px}
-  section blockquote{background:var(--verde-100);border-left:4px solid var(--verde-700);padding:18px 22px;font-family:var(--serif);font-size:19px;line-height:1.4;color:var(--verde-900);font-style:italic;margin:16px 0;border-radius:0 10px 10px 0}
-  .dim{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 26px;margin-bottom:16px;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .dim-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
-  .dim-ico{width:44px;height:44px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;font-weight:600;flex-shrink:0}
-  .dim-head h3{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--verde-900);line-height:1.2}
-  .def{font-size:15px;color:var(--tinta-suave);font-style:italic;margin-bottom:12px}
-  .dim h4{font-size:11.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--coral);margin-top:14px;margin-bottom:8px}
-  .gatilhos{list-style:none;padding:0}
-  .gatilhos li{padding:6px 0 6px 22px;position:relative;font-size:14.5px;line-height:1.55}
-  .gatilhos li::before{content:"→";position:absolute;left:0;color:var(--coral);font-weight:700}
-  .protocolo{background:var(--creme);border-left:3px solid var(--verde-700);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:10px;font-size:14px;line-height:1.6}
-  .protocolo b{color:var(--verde-900)}
-  .protocolo ol{padding-left:20px;margin-top:6px}
-  .protocolo ol li{margin-bottom:4px}
-  .cuidado{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:10px;font-size:14px;line-height:1.55}
-  .cuidado b{color:var(--verde-900);display:block;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
-  .prox{text-align:center;font-size:14px;color:var(--tinta-suave);margin-top:32px;padding:20px;background:#fff;border:1px dashed var(--verde-500);border-radius:12px}
+  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
+  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
+  .intro-caixa{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .intro-caixa h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .intro-caixa p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .intro-caixa p:last-child{margin-bottom:0}
+  .intro-caixa b{color:var(--verde-900)}
+  .elem-secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06)}
+  .elem-secao-header{padding:22px 28px 20px;color:#fff;display:flex;align-items:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%)}
+  .elem-secao-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
+  .elem-secao-titulo{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2}
+  .elem-secao-sub{font-size:13px;opacity:.92;font-style:italic;margin-top:3px}
+  .elem-secao-body{padding:22px 28px 26px}
+  .elem-secao-body p{margin-bottom:14px;font-size:15px;line-height:1.7}
+  .elem-secao-body p:last-child{margin-bottom:0}
+  .elem-secao-body b{color:var(--verde-900)}
+  .subsec-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin:22px 0 10px;padding-top:18px;border-top:1px dashed var(--verde-100)}
+  .subsec-label:first-child{margin-top:0;padding-top:0;border-top:none}
+  .exemplo-caixa{background:var(--creme);border-left:3px solid var(--verde-700);padding:14px 20px;border-radius:0 10px 10px 0;margin-top:12px;font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.6;color:var(--verde-900)}
+  .exemplo-caixa b{color:var(--tinta);font-style:normal;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:6px}
+  .erro-caixa{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
+  .erro-caixa .erro-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .erro-caixa b{color:var(--verde-900)}
+  .aviso-final{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0 20px}
+  .aviso-final h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
+  .aviso-final p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
+  .aviso-final p:last-child{margin-bottom:0}
+  .aviso-final b{color:var(--verde-900)}
   footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
   footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
 </style>
@@ -126,169 +132,80 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <header>
   <div class="hero-inner">
     <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 7</a>
-    <span class="badge-aprofundamento">Playbook · Aprofundamento da Etapa 7</span>
-    <div class="eyebrow">Trilha Capital de Carreira · Bloco A · Etapa 7</div>
-    <h1>Valores centrais, <span class="grifo">em profundidade</span>.</h1>
-    <p class="lede">O que separa valor central de preferência ou aspiração, os três tipos que compõem uma boa lista, e o protocolo para descobrir os valores que já operam nas suas decisões — antes de você nomeá-los.</p>
+    <div class="eyebrow">Playbook · Etapa 7</div>
+    <h1>Frase-Síntese, História, Prova — <span class="grifo">a fundo</span>.</h1>
+    <p class="lede">Os 3 elementos de marca em profundidade. Como articular cada um bem, os erros clássicos, e como saber que a marca está pronta para o mundo externo.</p>
   </div>
+  <div class="arc"></div>
 </header>
-
 <main>
+  <div class="intro-caixa">
+    <h2>Por que 3 elementos, não mais</h2>
+    <p>Marca pessoal virou tópico saturado — cheio de frameworks de 8, 12, 20 passos. Clark (2011) mostrou o oposto: os 3 elementos essenciais respondem por 90% do impacto. Adicionar mais não fortalece a marca; frequentemente enfraquece (mais elementos = mais chance de contradição).</p>
+    <p>Frase-síntese é o núcleo. História curta é o contexto. Prova social é a validação. Sem um deles, a marca vira ideia. Com os 3, ela sobrevive ao teste externo — que é o único que importa depois que a decisão foi tomada.</p>
+  </div>
 
-  <section>
-    <div class="eyebrow">O ponto de partida</div>
-    <h2>Valor central × valor declarado × preferência</h2>
-    <p>Três palavras que se cruzam, mas descrevem coisas diferentes — e não distinguir as três é a origem da maioria das "listas de valores" que não servem para nada.</p>
-    <p><strong>Preferência</strong> é o que você gosta — chocolate, livro na cama, café pela manhã. Não custa nada segui-la. Pode virar valor um dia, mas por si não é.</p>
-    <p><strong>Valor declarado</strong> é o que você diz que valoriza — em bio, apresentação, entrevista. É aspiracional. Nem sempre bate com o que você faz quando ninguém está olhando.</p>
-    <p><strong>Valor central</strong> é o que aparece nas suas decisões difíceis — mesmo quando você não sabe nomeá-lo. É o critério que efetivamente veta ou aprova escolha. Passou pelo teste do custo.</p>
-    <blockquote>Um valor central sempre custou algo. Se você não lembra do custo, é declaração — não valor.</blockquote>
-    <p>Neste playbook, quando falamos de "valores" queremos dizer os centrais. Os declarados podem estar iguais ou muito diferentes — a semana serve, entre outras coisas, para reduzir essa distância.</p>
-  </section>
+  <section class="elem-secao">
+    <div class="elem-secao-header"><div class="elem-secao-letra">F</div><div><div class="elem-secao-titulo">Elemento Frase-Síntese</div><div class="elem-secao-sub">"2-4 palavras que dizem o que você faz"</div></div></div>
+    <div class="elem-secao-body">
+      <div class="subsec-label">Como articular bem</div>
+      <p>A frase-síntese deve responder <em>"o que você faz?"</em> em uma frase que caiba em um cartão de visita. Regra prática: se você usa mais que 5 palavras, ainda não sintetizou.</p>
+      <p>Três critérios de qualidade: (1) <b>compreensível para leigos</b> — sua avó entende? (2) <b>específica o suficiente</b> — te distingue de 100 outras pessoas do seu campo? (3) <b>fala do que faz, não do que a empresa te chama</b> — verbos, não cargos.</p>
 
-  <section>
-    <div class="eyebrow">Os três tipos</div>
-    <h2>Abordagem, Contribuição, Contorno</h2>
-    <p>Uma boa lista de valores centrais (3-5) tende a ter representantes dos três tipos. Uma lista só de "abordagem" fica técnica; só de "contribuição" fica aspiracional; só de "contorno" fica defensiva.</p>
+      <div class="subsec-label">Exemplos calibrados</div>
+      <div class="exemplo-caixa"><b>Boa</b>"análise de decisão com IA" — específico, compreensível, distintivo</div>
+      <div class="exemplo-caixa"><b>Boa</b>"educadora sobre design de sistemas" — verbo + tema específico</div>
+      <div class="exemplo-caixa"><b>Fraca</b>"consultor sênior" — genérico, não distingue, é cargo</div>
+      <div class="exemplo-caixa"><b>Fraca</b>"ajudo pessoas a alcançarem o próximo nível" — vazio, promessa marketing, sem substância</div>
 
-    <div class="dim">
-      <div class="dim-head"><div class="dim-ico">A</div><h3>Valor de Abordagem</h3></div>
-      <p class="def">Como você faz — sempre.</p>
-      <h4>Sinais de saúde</h4>
-      <ul class="gatilhos">
-        <li>É específico o suficiente para levar a decisões diferentes. "Excelência" não vale — o que é "excelência" no seu contexto?</li>
-        <li>Aparece independente do tema ou projeto. É a assinatura que vai junto.</li>
-        <li>Tem versão negativa clara: "não faço X sem Y".</li>
-      </ul>
-      <h4>Cuidado ético</h4>
-      <p style="font-size:14px;color:var(--tinta-suave);line-height:1.55">Cuidado com "abordagem" que na verdade é <em>obsessão disfarçada</em>. Perfeccionismo vestido de rigor. Controle vestido de organização. A pergunta: essa abordagem me serve ou me governa?</p>
-    </div>
-
-    <div class="dim">
-      <div class="dim-head"><div class="dim-ico">C</div><h3>Valor de Contribuição</h3></div>
-      <p class="def">O que você quer entregar ao mundo.</p>
-      <h4>Sinais de saúde</h4>
-      <ul class="gatilhos">
-        <li>Descreve o <em>efeito</em>, não a posição. Não depende de cargo específico para ser entregue.</li>
-        <li>Você reconhece momentos concretos em que buscou entregar isso — mesmo em contexto que não pedia.</li>
-        <li>Tem escala: pode se manifestar num projeto pequeno e num programa grande.</li>
-      </ul>
-      <h4>Cuidado ético</h4>
-      <p style="font-size:14px;color:var(--tinta-suave);line-height:1.55">Cuidado com contribuição vestida de <em>ambição</em>. "Ser referência do setor" pode ser contribuição legítima ou pura vaidade — a diferença é se o efeito no mundo é o que importa, ou se é o reconhecimento.</p>
-    </div>
-
-    <div class="dim">
-      <div class="dim-head"><div class="dim-ico">C</div><h3>Valor de Contorno</h3></div>
-      <p class="def">O que você não aceita.</p>
-      <h4>Sinais de saúde</h4>
-      <ul class="gatilhos">
-        <li>Você já disse não recente por conta desse valor — e o não teve custo real (financeiro, de relação, de tempo).</li>
-        <li>É defensável em conversa: você consegue explicar sem apelo emocional por que veta.</li>
-        <li>Tem exceção nomeada. Rigidez sem exceção vira ideologia; contorno saudável tem "eu não faço X, exceto quando Y".</li>
-      </ul>
-      <h4>Cuidado ético</h4>
-      <p style="font-size:14px;color:var(--tinta-suave);line-height:1.55">Cuidado com contorno que virou <em>desculpa</em>. "Não faço reunião sem pauta" pode ser valor real ou preguiça bem embalada. Teste: você criaria uma pauta em 5 minutos se a conversa exigisse? Se sim, o contorno é preguiça disfarçada.</p>
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p>Usar títulos corporativos ("VP de estratégia", "coordenador sênior"). Cargos internos não comunicam para fora. Frase-síntese boa <b>fala do que você faz, não do que a empresa te chama</b>.</p></div>
     </div>
   </section>
 
-  <section>
-    <div class="eyebrow">Protocolo</div>
-    <h2>Como descobrir seus valores centrais (30 min)</h2>
-    <div class="protocolo">
-      <b>Passo 1 — Olhar decisões, não intenções (10 min)</b>
-      <ol>
-        <li>Liste as <b>3 decisões mais difíceis</b> profissionais dos últimos 12 meses.</li>
-        <li>Para cada, escreva em uma frase o que efetivamente decidiu — o critério que operou.</li>
-        <li>Repare em quais palavras se repetem. Elas são candidatos fortes a valor central.</li>
-      </ol>
-    </div>
-    <div class="protocolo" style="margin-top:10px">
-      <b>Passo 2 — Aplicar o teste do custo (10 min)</b>
-      <ol>
-        <li>Para cada candidato: consigo lembrar de uma situação em que ele me fez perder algo (dinheiro, oportunidade, relação, tempo)?</li>
-        <li>Se sim → valor central. Se não → preferência disfarçada.</li>
-      </ol>
-    </div>
-    <div class="protocolo" style="margin-top:10px">
-      <b>Passo 3 — Balancear entre os três tipos (10 min)</b>
-      <ol>
-        <li>Sua lista tem representante de <b>Abordagem</b> (como você faz)?</li>
-        <li>Tem representante de <b>Contribuição</b> (o que entrega)?</li>
-        <li>Tem representante de <b>Contorno</b> (o que recusa)?</li>
-        <li>Se falta um dos três, provavelmente algum ainda não foi nomeado — vale procurar.</li>
-      </ol>
+  <section class="elem-secao">
+    <div class="elem-secao-header"><div class="elem-secao-letra">H</div><div><div class="elem-secao-titulo">Elemento História Curta</div><div class="elem-secao-sub">"30 segundos de posicionamento"</div></div></div>
+    <div class="elem-secao-body">
+      <div class="subsec-label">Como articular bem</div>
+      <p>Não é CV, não é bio. É <b>narrativa pequena</b> com 3 partes: (1) de onde você vem (2-3 pinceladas do capital acumulado), (2) onde está indo (a direção nova), (3) o que está fazendo agora (evidência de movimento).</p>
+      <p>Total: 50-70 palavras. Testável em voz alta em 30 segundos. Serve para: apresentação em reuniões novas, resposta em coffee chats, primeira mensagem em rede, LinkedIn "About" section.</p>
+
+      <div class="subsec-label">A regra do "presente primeiro"</div>
+      <p>Comece pelo presente ("estou fazendo X"), não pelo passado ("me formei em..."). Cronologia entedia; presente engaja. O passado entra <em>só o suficiente</em> para dar credibilidade ao presente.</p>
+
+      <div class="subsec-label">Estrutura recomendada</div>
+      <p><b>"Sou [frase-síntese] há [tempo/experiência-âncora]. Nos últimos [prazo], estou construindo [movimento novo] — hoje tenho [prova concreta pequena]."</b> Cabe em 40-60 palavras naturalmente.</p>
+
+      <div class="exemplo-caixa"><b>Exemplo</b>"Sou analista sênior de dados num banco há 8 anos. Nos últimos 6 meses, estou construindo presença pública sobre IA aplicada a análise de risco — hoje tenho blog com 500 leitores e palestra confirmada em janeiro."</div>
+
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p>Contar a história em ordem cronológica de currículo. História curta boa <b>começa pelo presente</b> e ancora o passado só o suficiente para dar credibilidade. Cronologia entedia; presente engaja.</p></div>
     </div>
   </section>
 
-  <section>
-    <div class="eyebrow">Cuidados éticos</div>
-    <h2>Valores sem virar liturgia</h2>
-    <div class="cuidado"><b>Valores mudam</b>Valor central hoje pode não ser daqui a 5 anos. Não é sinal de fraqueza — é sinal de que você está prestando atenção. Revisite anualmente.</div>
-    <div class="cuidado"><b>Valores em conflito</b>Toda pessoa tem 2-3 valores que às vezes brigam entre si (ex.: "franqueza" vs. "cuidado com o outro"). O trabalho é <em>hierarquizar por contexto</em>, não fingir que não brigam.</div>
-    <div class="cuidado"><b>Valores não são desculpa</b>"É meu valor" não pode virar escudo para não escutar crítica. Se um valor seu está fazendo dano a terceiros, ele merece ser revisto — não defendido.</div>
-  </section>
+  <section class="elem-secao">
+    <div class="elem-secao-header"><div class="elem-secao-letra">P</div><div><div class="elem-secao-titulo">Elemento Prova Social</div><div class="elem-secao-sub">"o que valida que você é quem diz ser"</div></div></div>
+    <div class="elem-secao-body">
+      <div class="subsec-label">Como articular bem</div>
+      <p>Prova social é <b>evidência concreta</b> — mesmo pequena — de que a direção existe fora da sua cabeça. Não precisa ser grande: 1 conteúdo publicado, 1 projeto entregue, 1 depoimento, 1 conversa que virou algo. O ponto é <em>existir</em>.</p>
+      <p>Sem prova social, sua marca é aspiração. Com prova social (mesmo mínima), é direção com evidência. A prova cresce com uso — quanto mais você comunica, mais é chamado para coisas da direção, o que gera nova prova.</p>
 
-  
-  <section>
-    <div class="eyebrow">Os profissionais de referência</div>
-    <h2>Três valores em operação — Camila, Rafael e Juliana</h2>
-    <p>Os três casos abaixo mostram o teste do custo funcionando na prática — um exemplo de cada tipo de valor.</p>
+      <div class="subsec-label">Tipos de prova social que funcionam</div>
+      <div class="exemplo-caixa"><b>Conteúdo</b>1 artigo publicado com 100+ interações; blog com 500 leitores; 1 palestra confirmada</div>
+      <div class="exemplo-caixa"><b>Entrega</b>1-2 projetos entregues na direção (mesmo laterais, para amigos/ex-colegas); portfolio online atualizado</div>
+      <div class="exemplo-caixa"><b>Reconhecimento</b>3 depoimentos escritos por ex-colegas/gestores; menções em posts de outros; convite para grupo/comunidade</div>
+      <div class="exemplo-caixa"><b>Estrutura</b>Currículo/LinkedIn atualizado para a direção nova; landing page própria; nome/perfil na área</div>
 
-    <div class="dim">
-      <div class="dim-head"><div class="dim-ico">C</div><h3>Camila · valor de Abordagem</h3></div>
-      <p class="def">"Não afirmo o que o dado não sustenta."</p>
-      <p style="font-size:14.5px;line-height:1.6">Na primeira lista, Camila escreveu "excelência" — e o teste do custo reprovou: ela não lembrava de nenhuma decisão em que "excelência" tivesse custado algo. Olhando as decisões difíceis do ano, o critério real apareceu: ela havia <strong>segurado uma análise por três dias</strong>, com o diretor cobrando, porque o número não fechava — e preferiu entregar tarde e certo a entregar rápido e frágil. Custou o desconforto da cobrança; sustentou a reputação que hoje trabalha por ela. O valor central não era "excelência" — era <em>não afirmar o que o dado não sustenta</em>. Específico, com versão negativa clara, e pago com custo real.</p>
-      <h4>O que aprender do caso</h4>
-      <ul class="gatilhos">
-        <li>O valor central quase sempre é mais <em>estreito</em> e mais <em>operacional</em> do que a palavra bonita da primeira lista.</li>
-        <li>A versão negativa ("não faço X sem Y") é o que o torna utilizável em decisão.</li>
-      </ul>
-    </div>
-
-    <div class="dim">
-      <div class="dim-head"><div class="dim-ico">R</div><h3>Rafael · valor de Contorno</h3></div>
-      <p class="def">"Não aceito urgência fabricada."</p>
-      <p style="font-size:14.5px;line-height:1.6">Rafael vive apagando incêndio — e por muito tempo achou que "disponibilidade" era um valor seu. O teste do custo virou o jogo ao contrário: as decisões de que ele mais se orgulhava no ano foram as duas em que <strong>disse não</strong> a uma "urgência" que não era urgência — e usou o tempo para resolver a causa do problema, não o sintoma. Um dos nãos custou uma conversa dura com um par. O valor de contorno dele ficou assim: <em>não aceito urgência fabricada — exceto quando o cliente final é o afetado</em>. Com exceção nomeada, para não virar ideologia.</p>
-      <h4>O que aprender do caso</h4>
-      <ul class="gatilhos">
-        <li>Às vezes o valor central aparece nos <em>nãos</em>, não nos sins — e é isso que o distingue de uma preferência.</li>
-        <li>Contorno saudável carrega a própria exceção; é isso que o torna defensável em conversa.</li>
-      </ul>
-    </div>
-
-    <div class="dim">
-      <div class="dim-head"><div class="dim-ico">J</div><h3>Juliana · valor de Contribuição</h3></div>
-      <p class="def">"Design que muda uma decisão de negócio — não que decora uma entrega."</p>
-      <p style="font-size:14.5px;line-height:1.6">Juliana recusou, no meio do ano, o maior orçamento que já tinha recebido — um projeto grande, mas em que o design seria puramente cosmético, sem acesso ao problema real do cliente. Na época pareceu "instinto"; no teste do custo, virou dado: o critério que operou foi <em>só aceito trabalho em que o design participa da decisão de negócio</em>. Custou dinheiro de verdade — e é exatamente por isso que é valor central, não aspiração. Repare que a contribuição dela descreve o <strong>efeito</strong> (mudar a decisão), não a posição: cabe num projeto pequeno e num programa grande.</p>
-      <h4>O que aprender do caso</h4>
-      <ul class="gatilhos">
-        <li>Contribuição legítima sobrevive à troca de cargo, de cliente e de formato.</li>
-        <li>Se o valor nunca custou uma oportunidade, desconfie: pode ser ambição bem embalada.</li>
-      </ul>
+      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p>Esperar ter prova "boa o suficiente" para começar a comunicar. Prova social <b>cresce com uso</b> — quanto mais você comunica, mais te chamam para coisas dessa direção, o que gera nova prova. A pequena prova de hoje sustenta a comunicação que gera a prova maior de amanhã.</p></div>
     </div>
   </section>
 
-  <section>
-    <div class="eyebrow">Fechando a semana</div>
-    <h2>Dos valores ao Retrato</h2>
-    <p>A Etapa 7 fecha o Bloco 1, e os valores são a última peça por um motivo: <strong>eles são o filtro de tudo o que vem depois</strong>. A semana inteira olhou para trás — trajetória, provas, reputação, rede, cadeia A·C·I. Os valores dizem o que, disso tudo, vale a pena amplificar.</p>
-    <p>Três encaixes concretos:</p>
-    <ul class="gatilhos">
-      <li><strong>No Retrato</strong> — os 3-5 valores entram ao lado dos seis ativos como o "critério de leitura" do material: um ativo forte que contradiz um valor central é um alerta, não um trunfo.</li>
-      <li><strong>Na manchete revisada</strong> — a distância entre a manchete da Etapa 1 e a de hoje é o resumo da semana. Se a nova manchete não passa no teste dos seus valores, ela ainda é declaração, não direção.</li>
-      <li><strong>No Bloco 2</strong> — quando as Etapas 10 e 11 pedirem critérios para decidir entre futuros possíveis, os valores centrais são a primeira linha do framework. Decisão que ignora valor central cobra juros depois.</li>
-    </ul>
-    <blockquote>O Bloco 1 termina quando você consegue dizer: é isto que eu tenho, é assim que eu decido.</blockquote>
-  </section>
-
-  <div class="prox">Próximo passo: Missão da Etapa 7 — Valores + Manchete revisada + Retrato final (20 min)</div>
-
+  <div class="aviso-final">
+    <h3>Como saber que a marca está pronta</h3>
+    <p><b>Teste 1:</b> Você consegue dizer sua frase-síntese e história curta em voz alta, sem gaguejar, para uma pessoa não-especialista, e ela consegue recontar a essência em 20 segundos? Se sim, o "para fora" está pronto.</p>
+    <p><b>Teste 2:</b> Você tem pelo menos <em>uma</em> prova social — mesmo pequena — que valida a direção? Se não, seu próximo passo mínimo da semana é gerar a primeira prova. Sem ela, a marca é aspiração.</p>
+    <p><b>Teste 3:</b> A sua "história curta" começa pelo presente, não pelo passado? Se começar por currículo cronológico, reescreva — perde engajamento e vira listagem.</p>
+    <p>Se você passou os 3 testes, sua marca está pronta para o Bloco 2 — quando ela vira <b>parte do plano de execução</b>, não mais só articulação.</p>
+  </div>
 </main>
-
-<footer>
-  <div class="assinatura">Do reagir ao conduzir.</div>
-  <div>Etapa 7 · Playbook — Valores centrais</div>
-</footer>
-
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 7 · Playbook — Marca pessoal em 3 elementos</div></footer>
 </body>
 </html>

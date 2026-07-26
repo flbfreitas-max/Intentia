@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 12 · Propósito construído</title>
+<title>Intentia · Etapa 12 · Aprendizagem deliberada</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, 'Times New Roman', serif;--sans:'Hanken Grotesk', -apple-system, 'Segoe UI', sans-serif}
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
   body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.7;font-size:17px}
   .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
   .eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
@@ -33,8 +32,7 @@
   @media (max-width:640px){.nav-label{display:none}.nav-inner::before{top:22px}.nav-num{width:40px;height:40px;font-size:16px}}
   section.bloco[id]{scroll-margin-top:100px}
   .onde-estamos{background:var(--verde-100);border-top:1px solid var(--verde-500);border-bottom:1px solid var(--verde-500);padding:18px 24px}
-  .oe-inner{max-width:720px;margin:0 auto}
-  .oe-camada{margin-bottom:12px}.oe-camada:last-child{margin-bottom:0}
+  .oe-inner{max-width:720px;margin:0 auto}.oe-camada{margin-bottom:12px}.oe-camada:last-child{margin-bottom:0}
   .oe-eyebrow{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--verde-700);margin-bottom:8px;text-align:center}
   .oe-semanas{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
   .oe-semana{background:#fff;border:1.5px solid var(--verde-500);color:var(--tinta-suave);font-size:12px;font-weight:600;padding:6px 12px;border-radius:16px;flex-shrink:0;line-height:1.2}
@@ -85,6 +83,10 @@
   .leva-lista li::after{content:"";position:absolute;left:9px;top:29px;width:10px;height:6px;border-left:2.5px solid var(--verde-900);border-bottom:2.5px solid var(--verde-900);transform:rotate(-45deg)}
   .leva-lista strong{color:var(--verde-900)}
   .ponto{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);padding:24px 28px;border-radius:0 12px 12px 0;margin-top:8px}
+  .direcao-recap{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:18px 22px;margin-bottom:20px}
+  .direcao-recap-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .direcao-recap-frase{font-family:var(--serif);font-size:16px;font-weight:500;font-style:italic;color:var(--verde-900);line-height:1.4}
+  .direcao-recap small{font-size:12px;color:var(--tinta-suave);display:block;margin-top:6px;font-style:italic}
   .definicao-eu{background:#fff;border:1.5px solid var(--verde-700);border-radius:12px;padding:18px 22px;margin:16px 0}
   .definicao-eu-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
   .definicao-eu-texto{font-family:var(--serif);font-size:18px;line-height:1.45;color:var(--tinta);font-weight:500}
@@ -94,23 +96,21 @@
   .conteudo-item{padding:18px 20px;background:var(--creme);border-radius:10px;margin-bottom:12px;border-left:3px solid var(--verde-500)}
   .conteudo-item h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);margin-bottom:8px}
   .conteudo-item h3 .marcador{font-family:var(--sans);font-size:11px;font-weight:700;color:#fff;background:var(--verde-700);padding:3px 8px;border-radius:4px;letter-spacing:.1em;margin-right:8px;vertical-align:2px}
-  .lente-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
-  @media (max-width:640px){.lente-grid{grid-template-columns:1fr}}
-  .lente-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
-  .lente-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
-  .lente-card:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
-  .lente-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
-  .lente-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
-  .lente-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
-  .lente-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;transition:all .2s;font-weight:700}
-  .lente-card:hover .lente-seta{color:var(--coral);transform:translateX(2px)}
-  .lente-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px;letter-spacing:.02em}
-  .lente-hint svg{width:12px;height:12px;fill:currentColor}
+  .cic-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
+  @media (max-width:640px){.cic-grid{grid-template-columns:1fr}}
+  .cic-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
+  .cic-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
+  .cic-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
+  .cic-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
+  .cic-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
+  .cic-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
+  .cic-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
+  .cic-hint svg{width:12px;height:12px;fill:currentColor}
   .modal-overlay{position:fixed;inset:0;background:rgba(32,51,47,.55);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s}
   .modal-overlay.aberto{display:flex;opacity:1}
   .modal-caixa{background:#fff;border-radius:20px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;transform:translateY(20px);transition:transform .3s ease}
   .modal-overlay.aberto .modal-caixa{transform:translateY(0)}
-  .modal-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.9);border:1px solid var(--verde-100);width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;z-index:2;color:var(--verde-900)}
+  .modal-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.9);border:1px solid var(--verde-100);width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;color:var(--verde-900)}
   .modal-close:hover{background:var(--coral);border-color:var(--coral);color:#fff}
   .modal-close svg{width:16px;height:16px;fill:currentColor}
   .modal-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:32px 32px 26px;border-radius:20px 20px 0 0;display:flex;align-items:center;gap:16px}
@@ -162,7 +162,7 @@
   .passos li strong{color:var(--verde-900);display:block;margin-bottom:4px;font-size:15px}
   .passos li .tempo-passo{font-size:12px;font-weight:600;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-left:8px}
   .passos li p{font-size:14.5px;color:var(--tinta-suave);margin-bottom:0;line-height:1.55}
-  .cta-missao{display:flex;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:22px 32px;border-radius:16px;margin-top:32px;text-decoration:none;font-family:var(--serif);font-size:20px;font-weight:600;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(255,104,66,.32);transition:transform .25s ease}
+  .cta-missao{display:flex;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:22px 32px;border-radius:16px;margin-top:32px;text-decoration:none;font-family:var(--serif);font-size:20px;font-weight:600;box-shadow:0 10px 28px rgba(255,104,66,.32);transition:transform .25s ease}
   .cta-missao:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,104,66,.42)}
   .cta-missao .cta-icone{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .cta-missao .cta-icone svg{width:16px;height:16px;fill:#fff}
@@ -272,12 +272,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <header>
   <div class="hero-inner">
     <div class="eyebrow">Trilha Capital de Carreira · Bloco A · Etapa 12</div>
-    <h1>Propósito não é <span class="grifo">encontrado</span>. É <span class="grifo">construído</span>.</h1>
-    <p class="lede">Hoje seus 3 Eus passam por 3 lentes de propósito — Legado, Serviço, Vocação. A versão que ganhou por critério pode perder aqui, e vice-versa. É a segunda triagem.</p>
+    <h1>Aprendizagem — <span class="grifo">deliberada</span>, não acumulada.</h1>
+    <p class="lede">Ericsson: horas de prática só amplificam quando são deliberadas — desafio no limite, feedback específico, ajuste. Dweck: mindset de crescimento é o que sustenta o desconforto que aprendizagem real exige. 3 elementos aplicados a 1 competência da sua direção.</p>
   </div>
   <div class="arc"></div>
 </header>
-<nav class="trilha" aria-label="Sequência do dia">
+<nav class="trilha">
   <div class="nav-inner">
     <a href="#audio" class="nav-item" data-target="audio"><span class="nav-num"><svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg></span><span class="nav-label">Áudio</span></a>
     <a href="#leva" class="nav-item" data-target="leva"><span class="nav-num"><svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span><span class="nav-label">O que você leva</span></a>
@@ -290,17 +290,17 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <div class="onde-estamos">
   <div class="oe-inner">
     <div class="oe-camada">
-      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 2 de 4</div>
-      <div class="oe-semanas" aria-hidden="true">
+      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 1 de 3 · Amplificar</div>
+      <div class="oe-semanas">
         <span class="oe-semana feita"><span class="num">A</span>Mapear ativos ✓</span>
-        <span class="oe-semana atual"><span class="num">B</span>Escolher direção</span>
-        <span class="oe-semana"><span class="num">C</span>Traçar plano</span>
+        <span class="oe-semana feita"><span class="num">B</span>Escolher direção ✓</span>
+        <span class="oe-semana atual"><span class="num">C</span>Amplificar</span>
         <span class="oe-semana"><span class="num">D</span>Instalar rotina</span>
       </div>
     </div>
     <div class="oe-camada">
       <div class="oe-eyebrow">Etapa 5 de 7 nesta semana · Etapa 12 na trilha</div>
-      <div class="oe-dias" aria-hidden="true">
+      <div class="oe-dias">
         <span class="oe-dia feito">1</span><span class="oe-dia-conector"></span>
         <span class="oe-dia feito">2</span><span class="oe-dia-conector"></span>
         <span class="oe-dia feito">3</span><span class="oe-dia-conector"></span>
@@ -311,7 +311,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
     </div>
     <p class="oe-texto">
-      Os critérios da Etapa 10 mediram <b>fragilidade estrutural</b>. Hoje as lentes de propósito medem <span class="oe-tag-dia">Sentido</span> — a força que sustenta uma escolha quando o preço aparece.
+      Você tem presença, autoridade, rede, persuasão. Hoje: <span class="oe-tag-dia">Aprendizagem deliberada</span> — como a competência-chave da direção cresce em 21 dias em vez de 2 anos.
     </p>
   </div>
 </div>
@@ -322,11 +322,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <h2>A ideia central, contada com calma.</h2>
     <p class="subtitulo">Ouça antes de começar — 5 min.</p>
     <div class="player">
-      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 12 · Bloco A · Bloco 2</span></div>
-      <div class="player-titulo">Propósito não se encontra — se constrói</div>
+      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 12 · Bloco A · Bloco 1</span></div>
+      <div class="player-titulo">Prática deliberada: quando horas viram capacidade</div>
       <div class="player-sub">A ideia central do dia — contada pela <b>voz do Intentia</b>.</div>
       <div class="waveform" id="waveform"></div>
-      <div class="player-tempo"><span>00:00</span><span>05:10</span></div>
+      <div class="player-tempo"><span>00:00</span><span>05:00</span></div>
       <div class="player-controles">
         <button class="ctrl-btn"><svg viewBox="0 0 24 24"><path d="M12.5 3v2.5c4.14 0 7.5 3.36 7.5 7.5s-3.36 7.5-7.5 7.5-7.5-3.36-7.5-7.5c0-1.4.39-2.7 1.06-3.83L4.32 7.86A9.955 9.955 0 003 13c0 5.24 4.26 9.5 9.5 9.5S22 18.24 22 13s-4.26-10-9.5-10z"/></svg></button>
         <button class="ctrl-play" id="btn-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
@@ -349,37 +349,44 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <h2>Você termina o dia sendo capaz de…</h2>
     <p class="subtitulo">Três capacidades no presente.</p>
     <ul class="leva-lista">
-      <li><strong>Recusar a ideia de que propósito é encontrado</strong> — Craig & Snook mostram que propósito é <em>construído</em>, ao longo do tempo, por escolhas conscientes. Quem espera "descobrir seu propósito" fica esperando; quem constrói, tem.</li>
-      <li><strong>Aplicar 3 lentes de propósito a cada Eu</strong> — Legado (o que fica), Serviço (a quem essa versão serve), Vocação (o chamado que você não consegue silenciar). Cada uma revela algo diferente.</li>
-      <li><strong>Ver se o ranking da Etapa 10 sobrevive à lente do propósito</strong> — muitas vezes a versão que ganhou por critério (menor fragilidade estrutural) perde por sentido. E o inverso: a versão frágil que ganha por propósito frequentemente é a certa — só exige mais preparo.</li>
+      <li><strong>Distinguir prática deliberada de prática comum</strong> — Ericsson mostrou que "10 mil horas" só se traduz em maestria quando as horas têm 3 propriedades: desafio no limite, feedback específico, ajuste imediato. Sem isso, horas viram apenas repetição — e repetição sem desafio cristaliza o nível atual.</li>
+      <li><strong>Aplicar o ciclo D·F·A a 1 competência da sua direção</strong> — Desafio (uma tarefa que hoje você não faz bem), Feedback (fonte específica que te devolve dado sobre a tarefa), Ajuste (o que você muda na próxima tentativa). É o motor operacional da aprendizagem acelerada.</li>
+      <li><strong>Reconhecer quando o mindset fixo está travando</strong> — Dweck: as frases "eu não sou bom em X" e "não é minha praia" são sintomas de mindset fixo. Trocar por "ainda não sou bom em X" e "estou construindo essa praia" muda o comportamento — não porque motiva, mas porque abre a porta ao desafio.</li>
     </ul>
   </section>
 
   <section class="bloco" id="ponto">
     <div class="bloco-num"><span class="n">3</span> O Ponto de Partida de Hoje</div>
-    <h2>"Encontrar seu propósito" — a promessa que trava mais gente do que ajuda.</h2>
-    <p class="subtitulo">Coleman: "as pessoas que dizem ter propósito não o encontraram — elas o construíram, por escolhas repetidas."</p>
+    <h2>Horas não bastam. <em>Horas certas</em> bastam.</h2>
+    <p class="subtitulo">Ericsson (1993): "a diferença entre expert e experiente médio é o <em>tipo de prática</em>, não a quantidade."</p>
     <div class="ponto">
-      <div class="definicao-eu">
-        <div class="definicao-eu-label">O que é "propósito construído"</div>
-        <div class="definicao-eu-texto"><b>Propósito construído é a coerência que emerge quando escolhas repetidas apontam para a mesma direção de contribuição</b>. Não é uma revelação mística — é o padrão que se forma quando você decide, semana após semana, com base no que serve, no que faz sentido a longo prazo, e no que você quer deixar no mundo. Diferente do propósito "encontrado" (que pressupõe algo escondido esperando para ser descoberto), o propósito construído reconhece que <em>a coerência é feita, não dada</em>.</div>
+
+      <div class="direcao-recap">
+        <div class="direcao-recap-label">Sua direção escolhida (Etapa 7)</div>
+        <div class="direcao-recap-frase" id="direcao-recap-txt">—</div>
+        <small>Aprendizagem deliberada é a ferramenta que faz uma competência da sua direção crescer em semanas — não em anos.</small>
       </div>
 
-      <p style="margin-top:18px"><b>Nick Craig e Scott Snook (2014)</b> pesquisaram executivos que se descrevem como "movidos por propósito" e encontraram um padrão: nenhum deles descreve o processo como "eureka". Todos descrevem <em>um encadeamento de escolhas</em> — cada uma pequena, cada uma feita com atenção ao que servia, e ao longo de 10-20 anos essas escolhas viraram um padrão reconhecível. Só <em>depois</em> alguém chamou aquilo de "propósito".</p>
+      <div class="definicao-eu">
+        <div class="definicao-eu-label">O que é "aprendizagem deliberada"</div>
+        <div class="definicao-eu-texto"><b>Aprendizagem deliberada é o ciclo curto e específico em que você (1) faz algo que hoje não domina, (2) recebe feedback claro sobre onde falhou, e (3) ajusta a próxima tentativa</b>. Não é "estudar mais". Não é "fazer curso". Não é "ganhar experiência". É um ciclo com 3 propriedades — sem qualquer uma, o tempo passa mas a competência não sobe.</div>
+      </div>
 
-      <p><b>John Coleman (2017)</b> vai além: mostra evidência de que a busca ativa por "meu propósito" frequentemente <em>atrasa</em> a construção dele. Porque a busca pressupõe que o propósito existe pronto em algum lugar; e enquanto você procura, você não constrói. A saída, segundo ele, é <em>parar de procurar e começar a fazer</em> — escolher a próxima ação por sua contribuição real, não pela expectativa de que ela vá revelar quem você é.</p>
+      <p style="margin-top:18px"><b>Anders Ericsson</b> passou 30 anos estudando experts em música, xadrez, medicina, esportes. A tese popularizada como "10 mil horas" é uma <em>simplificação errada</em> do seu trabalho — Ericsson insistia que <em>horas por si só não fazem nada</em>. O que faz é a estrutura da prática: desafio calibrado (nem fácil demais nem impossível), feedback específico (não "foi bom", mas "no compasso 34 seu tempo caiu 8%"), e ajuste consciente na tentativa seguinte. Sem isso, 10 mil horas produzem apenas competência mediana consolidada.</p>
+
+      <p><b>Carol Dweck</b> descobriu, em paralelo, por que profissionais capazes evitam prática deliberada mesmo quando entendem o método: o <em>mindset fixo</em> (a crença de que capacidade é fixa e revela talento) faz o desafio virar ameaça — cada falha "prova" que você não é bom o suficiente. Já o <em>mindset de crescimento</em> (a crença de que capacidade cresce com esforço estruturado) faz a falha virar dado — informação sobre o próximo ajuste.</p>
 
       <div class="teste-linha">
-        Teste rápido: se você tirasse a palavra "propósito" do vocabulário por 12 meses e só usasse "contribuição", o que mudaria na sua escolha entre os 3 Eus?
+        Teste rápido: pense na última semana. Você <b>fez algo que não fazia bem</b> — ou só fez o que já faz bem?
       </div>
 
-      <p style="margin-top:18px"><b>Por que hoje o exercício é aplicar 3 lentes?</b> Porque "propósito" é palavra grande demais. As 3 lentes decompõem: <em>Legado</em> pergunta o que fica; <em>Serviço</em> pergunta a quem essa versão serve concretamente; <em>Vocação</em> pergunta o que te chama, para além do salário e do reconhecimento. Cada lente é operacional — você consegue responder. Somadas, elas dão um retrato de sentido que resiste ao teste de tempo.</p>
+      <p style="margin-top:18px"><b>Por que hoje o exercício é 1 competência da direção em ciclo D·F·A?</b> Porque aprendizagem deliberada aplicada a tudo é impossível — vira sobrecarga e ninguém sustenta. Mas aplicada a <em>1 competência que a sua direção da Etapa 7 exige e você ainda não domina</em>, por 21 dias, é o mais rápido caminho que existe para essa competência subir 1 nível real. Depois, outro ciclo em outra competência.</p>
     </div>
   </section>
 
   <section class="bloco" id="conteudo">
     <div class="bloco-num"><span class="n">4</span> O conteúdo que direciona a sua missão de hoje</div>
-    <h2>Três lentes de propósito — clicáveis para o conceito completo.</h2>
+    <h2>O ciclo — Desafio · Feedback · Ajuste.</h2>
     <p class="subtitulo">10 min. Material de referência.</p>
 
     <div class="personagens-intro">
@@ -392,50 +399,49 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">01</span>Três lentes de propósito — Legado · Serviço · Vocação</h3>
-      <p>Cada lente decompõe uma dimensão do propósito. Toque em cada uma para o método de aplicação, exemplos e o erro comum.</p>
+      <h3><span class="marcador">01</span>O ciclo — Desafio · Feedback · Ajuste</h3>
+      <p>Ericsson descobriu que os 3 elementos são <b>indispensáveis simultaneamente</b>. Toque em cada para o método e o exemplo.</p>
 
-      <div class="lente-grid">
-        <div class="lente-card" data-modal="legado" role="button" tabindex="0">
-          <div class="lente-icone">L</div>
-          <div class="lente-nome">Legado</div>
-          <div class="lente-pergunta">"O que fica depois de eu não estar mais?"</div>
-          <span class="lente-seta">›</span>
+      <div class="cic-grid">
+        <div class="cic-card" data-modal="desafio" role="button" tabindex="0">
+          <div class="cic-icone">D</div>
+          <div class="cic-nome">Desafio</div>
+          <div class="cic-pergunta">"o que hoje você não faz bem?"</div>
+          <span class="cic-seta">›</span>
         </div>
-        <div class="lente-card" data-modal="servico" role="button" tabindex="0">
-          <div class="lente-icone">S</div>
-          <div class="lente-nome">Serviço</div>
-          <div class="lente-pergunta">"A quem essa versão serve concretamente?"</div>
-          <span class="lente-seta">›</span>
+        <div class="cic-card" data-modal="feedback" role="button" tabindex="0">
+          <div class="cic-icone">F</div>
+          <div class="cic-nome">Feedback</div>
+          <div class="cic-pergunta">"quem/o que te devolve dado?"</div>
+          <span class="cic-seta">›</span>
         </div>
-        <div class="lente-card" data-modal="vocacao" role="button" tabindex="0">
-          <div class="lente-icone">V</div>
-          <div class="lente-nome">Vocação</div>
-          <div class="lente-pergunta">"O que me chama, para além de salário e status?"</div>
-          <span class="lente-seta">›</span>
+        <div class="cic-card" data-modal="ajuste" role="button" tabindex="0">
+          <div class="cic-icone">A</div>
+          <div class="cic-nome">Ajuste</div>
+          <div class="cic-pergunta">"o que você muda na próxima?"</div>
+          <span class="cic-seta">›</span>
         </div>
       </div>
 
-      <span class="lente-hint">
+      <span class="cic-hint">
         <svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>
-        Toque em cada lente para exemplos aplicados aos 3 personagens.
+        Toque em cada elemento para o método e o exemplo aplicado.
       </span>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">02</span>Como as lentes mudam o ranking dos personagens</h3>
-      <p>A versão que ganhou por critério pode ganhar ou perder por propósito. Veja:</p>
+      <h3><span class="marcador">02</span>1 competência da direção — leitura dos personagens</h3>
 
       <div class="caso">
         <div class="caso-header">
           <div class="caso-avatar">C</div>
           <div>
             <div class="caso-nome">Camila</div>
-            <div class="caso-perfil">Continuação (Paralela) foi 1º no placar</div>
+            <div class="caso-perfil">Competência: escrever artigo técnico curto sobre IA aplicada</div>
           </div>
-          <span class="caso-tag">Legado forte</span>
+          <span class="caso-tag">Ciclo D·F·A</span>
         </div>
-        <p><b>Legado:</b> virar referência pública em análise de decisão <em>deixa material que outros usam</em> — posts, aulas, livros. <b>Serviço:</b> serve gestores não-técnicos que precisam aprender a interpretar dados; público real e crescente. <b>Vocação:</b> ela sempre gostou de traduzir complexo em simples. Placar por propósito: <b>forte nas 3 lentes</b> — a versão que ganhou por critério ganha aqui também. Convergência.</p>
+        <p><b>Desafio:</b> escrever 1 artigo curto (800 palavras) por semana, sobre um caso real da sua rotina. <b>Feedback:</b> enviar rascunho para 2 leitores específicos (1 par técnico, 1 leitor externo) antes de publicar, pedindo 1 crítica concreta cada. <b>Ajuste:</b> anotar o padrão de críticas recebidas — se sempre é "faltou concretude", o ajuste é começar cada artigo por uma cena real específica.</p>
       </div>
 
       <div class="caso">
@@ -443,11 +449,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <div class="caso-avatar rafael">R</div>
           <div>
             <div class="caso-nome">Rafael</div>
-            <div class="caso-perfil">Adjacência (Iterativa) foi 2º no placar</div>
+            <div class="caso-perfil">Competência: fazer apresentação de 10 min sem slide</div>
           </div>
-          <span class="caso-tag">Vocação questionável</span>
+          <span class="caso-tag">Ciclo D·F·A</span>
         </div>
-        <p><b>Legado:</b> virar head de operações em fintech deixa sistema, cultura, times — legado real, ainda que menos autoral. <b>Serviço:</b> serve o cliente da fintech e o time interno. <b>Vocação:</b> aqui é onde treme — Rafael reconhece que <em>parte da atração</em> é escapar da indústria, não ir para a fintech. Vocação parcial, não plena. Placar por propósito: <b>médio</b>. Pode subir se a vocação virar mais nítida.</p>
+        <p><b>Desafio:</b> gravar 1 vídeo curto (5-10 min) por semana explicando 1 tema da direção sem slide, só falando para a câmera. <b>Feedback:</b> revisar o vídeo próprio 24h depois com 1 critério (clareza, ritmo, energia — 1 por semana, não tudo). <b>Ajuste:</b> se o critério da semana era ritmo, na próxima gravação deliberadamente mudar cadência — falar mais devagar nos pontos-chave.</p>
       </div>
 
       <div class="caso">
@@ -455,34 +461,34 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <div class="caso-avatar juliana">J</div>
           <div>
             <div class="caso-nome">Juliana</div>
-            <div class="caso-perfil">Reinvenção (Paralela) foi 3º no placar</div>
+            <div class="caso-perfil">Competência: estruturar 1 aula piloto de 20 min</div>
           </div>
-          <span class="caso-tag">Vocação alta</span>
+          <span class="caso-tag">Ciclo D·F·A</span>
         </div>
-        <p><b>Legado:</b> virar autora/educadora deixa cursos, livros, alunos formados — legado explícito e duradouro. <b>Serviço:</b> serve pequenos empreendedores criativos que hoje ficam sem acesso ao conhecimento dela. <b>Vocação:</b> ela sempre ensinou informalmente, sempre foi a pessoa que traduz para clientes. Vocação alta. Placar por propósito: <b>forte</b>. A versão que perdeu por placar volta a fazer sentido — mas com plano de ponte, não em salto.</p>
+        <p><b>Desafio:</b> desenhar 1 aula piloto (20 min) sobre um subtema do curso e apresentar para 3 alunos beta no bloco 2. <b>Feedback:</b> aplicar questionário de 3 perguntas ao final (o que ficou claro, o que ficou confuso, o que faltou). <b>Ajuste:</b> refazer a aula com base no padrão de respostas — se "ficou confuso" for o mesmo ponto para os 3, é ali que o desenho da aula precisa ser reestruturado.</p>
       </div>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">03</span>A regra da Etapa 12: propósito não substitui critério</h3>
-      <p>Uma versão forte em propósito e fraca em critério ainda é uma versão de risco alto — mas <em>de risco que vale correr, com preparo</em>. Uma versão forte em critério e fraca em propósito é uma versão sustentável — mas que pode virar deserção lenta em 3-5 anos. A convergência da Etapa 14 vai combinar as duas leituras, não escolher uma sobre a outra.</p>
+      <h3><span class="marcador">03</span>A regra da Etapa 12: 1 competência, 1 ciclo, 21 dias</h3>
+      <p>Ericsson: aplicar prática deliberada a 5 competências simultâneas dilui o efeito de todas. <b>1 competência por ciclo</b> é o formato que sustenta. Dweck: o mindset de crescimento não é "força de vontade" — é a decisão consciente de tratar cada feedback (sobretudo o negativo) como <em>dado</em>, não como <em>veredito sobre você</em>. Ciclo D·F·A é a forma de tornar essa decisão automática — porque o processo já está desenhado para receber dado, não elogio.</p>
     </div>
   </section>
 
   <section class="bonus bloco" id="bonus">
     <div class="bloco-num"><span class="n">5</span> Seu bônus antes da missão</div>
-    <h2>Propósito não se encontra — se constrói. O que a pesquisa diz.</h2>
-    <p class="subtitulo">Duas leituras que fundamentam as 3 lentes.</p>
+    <h2>Prática deliberada + mindset de crescimento.</h2>
+    <p class="subtitulo">Duas leituras que fundamentam o ciclo D·F·A.</p>
     <div class="leituras">
       <div class="leitura">
         <span class="tipo">Resumo · 3 páginas</span>
-        <h4>Do propósito ao impacto</h4>
-        <p class="meta-leitura">Craig & Snook (2014) — pesquisa com executivos "movidos por propósito"; nenhum descreve como revelação, todos como padrão emergente de escolhas.</p>
+        <h4>O papel da prática deliberada</h4>
+        <p class="meta-leitura">Ericsson, Krampe & Tesch-Römer (1993) — o estudo que originou "10 mil horas" (e cuja tese central é a oposta: horas só valem quando são deliberadas). Detalha as 3 propriedades da prática que produz maestria.</p>
       </div>
       <div class="leitura">
         <span class="tipo">Resumo · 3 páginas</span>
-        <h4>Propósito se constrói (não se descobre)</h4>
-        <p class="meta-leitura">Coleman (2017) — a evidência de que a busca ativa por propósito atrasa sua construção. A saída: começar a servir; o resto emerge.</p>
+        <h4>Mindset — a nova psicologia do sucesso</h4>
+        <p class="meta-leitura">Carol Dweck (2006) — 30 anos de pesquisa mostrando que crenças sobre capacidade (fixa × crescimento) mudam o comportamento diante de desafio, mais do que talento ou circunstância. Aplicável a qualquer domínio.</p>
       </div>
     </div>
     <a href="academia.html" class="link-academia">Abrir os resumos na Academia Intentia →</a>
@@ -492,17 +498,18 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <section class="bloco" id="missao">
     <div class="bloco-num"><span class="n">6</span> Missão do Dia</div>
     <div class="missao-header">
-      <h2>Cada Eu, três lentes de propósito.</h2>
+      <h2>Projetar 1 ciclo D·F·A de 21 dias.</h2>
       <span class="missao-tempo">18 min</span>
     </div>
-    <p class="subtitulo">Passar cada um dos 3 Eus pelas 3 lentes de propósito. Ver quais ganham por sentido — e quais perdem apesar do bom placar.</p>
+    <p class="subtitulo">Escolha 1 competência-chave da direção. Desenhe Desafio, Feedback e Ajuste. Comece nesta semana. Reavalie no dia 21.</p>
 
     <ol class="passos">
-      <li><strong>Reler seus 3 Eus + placar da Etapa 10 <span class="tempo-passo">3 min</span></strong><p>Preparar o material anterior mentalmente. Cada versão tem: preço, formato, notas.</p></li>
-      <li><strong>Aplicar lente Legado a cada Eu <span class="tempo-passo">4 min</span></strong><p>O que essa versão deixa no mundo depois que você não estiver mais nela? Escrever uma frase; marcar forte/médio/fraco.</p></li>
-      <li><strong>Aplicar lente Serviço a cada Eu <span class="tempo-passo">4 min</span></strong><p>Concretamente, a quem essa versão serve? Nome do público, número aproximado, tipo de contribuição. Forte/médio/fraco.</p></li>
-      <li><strong>Aplicar lente Vocação a cada Eu <span class="tempo-passo">4 min</span></strong><p>Para além de salário e status, o que te chama nessa versão? O que você faria mesmo sem retorno econômico? Forte/médio/fraco.</p></li>
-      <li><strong>Comparar com placar da Etapa 10 + registrar insight <span class="tempo-passo">3 min</span></strong><p>Qual versão ganhou por propósito? Coincide com a que ganhou por critério? Se diverge, isso é sinal importante. Anote.</p></li>
+      <li><strong>Escolher a competência <span class="tempo-passo">3 min</span></strong><p>1 competência específica da sua direção que hoje você não domina. Não 5 — 1. Se você tem várias, escolha a que <em>mais destrava as outras</em> se subir 1 nível.</p></li>
+      <li><strong>Desenhar o Desafio <span class="tempo-passo">4 min</span></strong><p>Uma atividade concreta que você fará <b>1 vez por semana</b> por 3 semanas, que exige exatamente essa competência. Nem fácil, nem impossível — no limite.</p></li>
+      <li><strong>Desenhar o Feedback <span class="tempo-passo">4 min</span></strong><p>Nome específico de quem devolve feedback ou fonte concreta de dado (métrica, gravação, questionário). Sem feedback nomeado, o ciclo não fecha.</p></li>
+      <li><strong>Desenhar o Ajuste <span class="tempo-passo">3 min</span></strong><p>Onde você anota o feedback recebido e o que muda na próxima tentativa. 1 caderno, 1 doc, 1 planilha — o que for. Sem local para o ajuste, o feedback vira ruído.</p></li>
+      <li><strong>Marcar a próxima ação <span class="tempo-passo">2 min</span></strong><p>Data + hora do primeiro Desafio. Se não está na agenda, não vai acontecer. Dweck: "quando" é a variável que separa mindset de crescimento intencional de mindset de crescimento performático.</p></li>
+      <li><strong>Marcar o dia 21 <span class="tempo-passo">2 min</span></strong><p>Data exata para reavaliar: o que mudou, o que aprendi sobre o ciclo, próxima competência. Sem marco final, o ciclo vira eterno e ninguém sustenta.</p></li>
     </ol>
 
     <a href="missao.html" class="cta-missao">
@@ -530,7 +537,6 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   </div>
 </section>
 
-
 </main>
 
 <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
@@ -547,12 +553,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
     <div class="modal-body">
       <div class="modal-secao">
-        <div class="modal-secao-label">O que a lente mede</div>
+        <div class="modal-secao-label">O que o elemento faz</div>
         <p id="modal-conceito"></p>
       </div>
       <div class="modal-secao">
         <div class="modal-exemplos">
-          <div class="modal-exemplos-label">Perguntas que ativam a lente</div>
+          <div class="modal-exemplos-label">Como desenhar bem</div>
           <ul id="modal-exemplos"></ul>
         </div>
         <div class="modal-erro"><b>Erro comum</b><span id="modal-erro"></span></div>
@@ -561,36 +567,33 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   </div>
 </div>
 
-<footer>
-  <div class="assinatura">Do reagir ao conduzir.</div>
-  <div>Etapa 12 · Propósito construído — três lentes</div>
-</footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 12 · Aprendizagem deliberada — ciclo D·F·A</div></footer>
 
 <script>
-  const LENTE_DETALHE = {
-    legado: {
-      nome: 'Lente Legado',
-      tagline: 'o que fica depois de você não estar mais',
-      icone: 'L',
-      conceito: 'A lente Legado pergunta: se essa versão de você viver 5-15 anos e depois você mudar de novo (ou parar), <em>o que resta no mundo</em>? Pode ser material (livros, cursos, produtos, código), sistema (uma empresa/time/processo funcionando sem você), pessoas (alunos formados, mentorados que hoje ensinam outros), ou cultura (uma prática que virou padrão em um lugar). Legado não é sobre grandiosidade — é sobre <b>o que sua passagem por essa versão deixa impresso</b>.',
-      exemplos: ['O que sobra dessa versão quando eu me aposentar dela?', 'Nomear 3 pessoas concretas cuja trajetória mudou por causa dessa versão minha', 'Se eu escrevesse um obituário profissional de 5 linhas — o que essa versão contribui para ele?', 'A qual conversa/discussão eu adicionei algo que ficou registrado?'],
-      erro: 'Confundir Legado com <em>fama ou impacto grande</em>. Um professor que forma 200 alunos ao longo de 30 anos tem legado maior que um influencer com 50 mil seguidores que somem em 5 anos. Legado se mede pela durabilidade, não pela amplitude imediata.'
+  const CIC_DETALHE = {
+    desafio: {
+      nome: 'Desafio',
+      tagline: '"o que hoje você não faz bem?"',
+      icone: 'D',
+      conceito: 'Desafio é a tarefa concreta que <b>exige exatamente a competência que você quer desenvolver</b> — e que hoje você não faria bem. Ericsson: se a tarefa é fácil, você está treinando o que já sabe; se é impossível, você não conclui o ciclo. O ponto de crescimento é o <em>limite</em> — desconforto real, mas não bloqueio. Deve ser executável em 1 sessão isolada (30-90 min é o típico).',
+      exemplos: ['Concretude: "escrever 1 artigo de 800 palavras sobre X" — não "escrever mais"', 'Frequência regular: 1 vez por semana por 3 semanas — não "quando der tempo"', 'Isolada: 1 sessão de trabalho contínuo — não fragmentada em 5 minutos por dia', 'No limite: se você conclui sem esforço, o desafio está fácil demais — suba a barra na próxima'],
+      erro: '<b>Desafio disfarçado de "estudar sobre".</b> Ler, assistir e "acompanhar" o assunto não é desafio — é consumo. Desafio é <em>produzir output</em> na competência que você quer desenvolver, mesmo que ruim no início. Sem output, não há ciclo — há acúmulo passivo.'
     },
-    servico: {
-      nome: 'Lente Serviço',
-      tagline: 'a quem essa versão serve concretamente',
-      icone: 'S',
-      conceito: 'A lente Serviço pergunta: quando essa versão está funcionando bem, <em>quem específico está sendo servido</em>? Nome (ou tipo) do público, número aproximado, tipo de contribuição que você faz para eles. Serviço é a dimensão mais imediata do propósito — não pergunta o que fica no mundo daqui a 20 anos, pergunta a quem você serve na próxima segunda.',
-      exemplos: ['Se eu descrevesse meu cliente/beneficiário ideal em 2 linhas, quem é?', 'Quantas pessoas essa versão de mim atende por ano? Por semana?', 'Qual dor específica dessas pessoas eu alivio?', 'Se eu perguntasse a 3 dessas pessoas o que mudou porque eu existo, o que elas diriam?'],
-      erro: 'Serviço "abstrato" (servir "as pessoas", "a sociedade", "o mundo") = quase sempre serviço fraco. Toda versão sólida em Serviço tem <b>público nomeado</b> — um segmento reconhecível cuja necessidade específica você atende. Sem público nomeado, a versão vira gesto vazio.'
+    feedback: {
+      nome: 'Feedback',
+      tagline: '"quem/o que te devolve dado?"',
+      icone: 'F',
+      conceito: 'Feedback é <b>o dado externo específico</b> sobre como sua execução foi. Não "achei bom" — <em>o que exatamente</em> funcionou/não funcionou. Ericsson: sem feedback, o ciclo é cego — você repete os mesmos padrões (bons e ruins) sem saber quais. Fontes de feedback válidas: uma pessoa específica que devolve por escrito, métrica objetiva (contagem, tempo, taxa), gravação sua revisada 24h depois com critério, resposta do "público" (leitores, clientes, alunos).',
+      exemplos: ['Uma pessoa nomeada que você pediu explicitamente para dar 1 crítica concreta', 'Uma métrica objetiva definida antes da execução (tempo, taxa, contagem)', 'Sua própria gravação vista 24h depois com 1 critério por vez (não tudo junto)', 'Uma resposta do mundo (leitores, engajamento, feedback dos usuários) — dado, não opinião'],
+      erro: '<b>"Feedback" genérico ou ausente.</b> Perguntar "o que achou?" e ouvir "gostei" não é feedback — é gentileza. Feedback real é <em>específico e útil ao próximo ciclo</em>. Se você não sabe o que fazer diferente na próxima tentativa, o feedback foi ruim ou você não recebeu feedback nenhum.'
     },
-    vocacao: {
-      nome: 'Lente Vocação',
-      tagline: 'o que te chama, para além de salário e status',
-      icone: 'V',
-      conceito: 'A lente Vocação pergunta: retirando salário, retirando reconhecimento externo, retirando o status que essa versão traria — <em>o que ainda te faz querer segui-la</em>? Vocação é a força interna que sobra depois que a força externa é subtraída. Uma versão com salário alto e reconhecimento alto pode ter vocação zero (você faria só pelo salário); uma versão sem salário nenhum pode ter vocação enorme (você faria de graça se pudesse).',
-      exemplos: ['Se essa versão pagasse metade do que eu ganho hoje, eu ainda escolheria?', 'Qual parte dessa versão eu faria mesmo sem que ninguém soubesse (sem status)?', 'O que dessa versão eu quero mesmo, não porque "faz sentido" para outros?', 'Ao imaginar essa versão, meu corpo abre ou fecha? Alivia ou pesa?'],
-      erro: 'Confundir vocação com <em>paixão fácil ou entusiasmo passageiro</em>. Vocação sólida é <b>chamado persistente</b> — algo que continua chamando mesmo depois que a novidade passou, mesmo nos dias difíceis. Se você só sente vocação quando as coisas vão bem, é entusiasmo — não vocação.'
+    ajuste: {
+      nome: 'Ajuste',
+      tagline: '"o que você muda na próxima?"',
+      icone: 'A',
+      conceito: 'Ajuste é <b>a decisão explícita sobre o que muda na próxima tentativa</b>, feita a partir do feedback recebido. É onde Ericsson e Dweck se encontram: o ciclo só fecha se você <em>trata o feedback como dado</em> (mindset de crescimento) e traduz esse dado em <em>mudança concreta</em> (prática deliberada). Sem ajuste, feedback vira apenas juízo — e juízo sem tradução em ação não muda competência.',
+      exemplos: ['1 mudança específica por ciclo — não 5 (5 mudanças simultâneas mascaram qual gerou efeito)', 'Escrito num lugar único (caderno, doc, planilha) — não "vou lembrar"', 'Testado no próximo Desafio antes de próximo ajuste — 1 ciclo completo por vez', 'Anotado com honestidade: quando o ajuste não funcionou, admitir e tentar outra abordagem'],
+      erro: '<b>Confundir "sentir-se mal" com Ajuste.</b> Autocrítica sem tradução em mudança concreta é performance de esforço, não prática deliberada. Se depois do feedback você pensa "preciso melhorar" mas não muda <em>o quê</em>, você está usando culpa como substituto de método. Ajuste real cabe em 1 frase: "na próxima, vou X (que não fiz antes)".'
     }
   };
 </script>
@@ -625,7 +628,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     const btnClose = document.getElementById('modal-close');
     if(!overlay) return;
     window.abrirModal = function(id){
-      const d = LENTE_DETALHE[id];
+      const d = CIC_DETALHE[id];
       if(!d) return;
       document.getElementById('modal-icone').textContent = d.icone;
       document.getElementById('modal-titulo').textContent = d.nome;
@@ -637,13 +640,26 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       document.body.style.overflow = 'hidden';
     };
     function fechar(){ overlay.classList.remove('aberto'); document.body.style.overflow = ''; }
-    document.querySelectorAll('.lente-card[data-modal]').forEach(card => {
+    document.querySelectorAll('.cic-card[data-modal]').forEach(card => {
       card.addEventListener('click', () => abrirModal(card.dataset.modal));
       card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirModal(card.dataset.modal); } });
     });
     btnClose.addEventListener('click', fechar);
     overlay.addEventListener('click', (e) => { if(e.target === overlay) fechar(); });
     document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && overlay.classList.contains('aberto')) fechar(); });
+  })();
+  (function(){
+    try {
+      const s = sessionStorage.getItem('intentia-dia7');
+      if (s) {
+        const p = JSON.parse(s);
+        if (p && p.escolhaFrase) {
+          document.getElementById('direcao-recap-txt').textContent = p.escolhaFrase;
+          return;
+        }
+      }
+    } catch(e){}
+    document.getElementById('direcao-recap-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo demonstrativo)';
   })();
 </script>
 

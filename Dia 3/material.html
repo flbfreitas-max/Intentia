@@ -3,71 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 3 · Meu Banco de Provas</title>
+<title>Intentia · Etapa 3 · Placar por Critério</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--lilas:#7C6AC5;--lilas-soft:#EDE9F7;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
+  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
   .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
   header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
-  .hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
-  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:16px}
-  .voltar:hover{color:#fff}
+  .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
+  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
   .voltar svg{width:14px;height:14px;fill:currentColor}
-  .badge-material{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
-  .badge-material svg{width:14px;height:14px;fill:currentColor}
-  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.5vw,44px);line-height:1.1;letter-spacing:-.015em;margin-bottom:12px}
-  header .lede{font-size:16.5px;color:#CFE0D6;max-width:640px}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  header h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.6vw,42px);line-height:1.12;margin-bottom:14px;letter-spacing:-.01em}
+  header .lede{font-size:16px;color:#CFE0D6;max-width:640px}
   .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
-  .demo-banner{max-width:900px;margin:-32px auto 0;background:#fff;border:1px solid var(--verde-100);border-left:4px solid var(--lilas);border-radius:12px;padding:14px 20px;position:relative;z-index:2;box-shadow:0 10px 30px rgba(39,87,80,.10);font-size:13.5px;color:var(--tinta-suave);display:none}
-  .demo-banner.visivel{display:block}
-  .demo-banner b{color:var(--lilas)}
-  main{max-width:900px;margin:0 auto;padding:32px 24px}
-  .secao{margin-bottom:36px}
-  .secao-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-  .secao-num{width:28px;height:28px;background:var(--verde-900);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:13px}
-  .secao h2{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.15;color:var(--verde-900);letter-spacing:-.01em}
-  .secao-sub{font-size:14px;color:var(--tinta-suave);margin-bottom:20px;margin-left:40px;font-style:italic}
-  .destaque{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-radius:20px;padding:38px 40px;margin-bottom:32px;box-shadow:0 6px 24px rgba(39,87,80,.08);border:1px solid var(--verde-100);position:relative}
-  .destaque-aspas{position:absolute;top:14px;left:26px;font-family:var(--serif);font-size:100px;color:var(--verde-500);line-height:1;opacity:.28}
-  .destaque-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);margin-bottom:16px;position:relative}
-  .destaque-texto{font-family:var(--serif);font-size:clamp(20px,2.6vw,26px);font-weight:500;font-style:italic;line-height:1.35;color:var(--verde-900);padding-left:56px;padding-right:20px;position:relative}
-  .visibilidade-panel{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin-top:16px}
-  .vis-eyebrow{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--tinta-suave);margin-bottom:14px}
-  .vis-lista{display:flex;flex-direction:column;gap:10px}
-  .vis-item{display:grid;grid-template-columns:150px 1fr 40px;gap:12px;align-items:center;font-size:13.5px}
-  .vis-nome{color:var(--tinta);font-weight:500;text-transform:capitalize}
-  .vis-barra{height:10px;background:var(--verde-100);border-radius:5px;overflow:hidden}
-  .vis-fill{height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:5px}
-  .vis-count{font-family:var(--serif);font-weight:600;color:var(--verde-900);text-align:right;font-size:15px}
-  .vis-alerta{margin-top:14px;padding:12px 16px;background:var(--coral-soft);border-radius:8px;font-size:13px;color:var(--tinta);line-height:1.55}
-  .vis-alerta b{color:var(--coral)}
-  .provas-lista{display:flex;flex-direction:column;gap:16px}
-  .prova-card{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:22px 26px;box-shadow:0 3px 12px rgba(39,87,80,.05);position:relative;overflow:hidden}
-  .prova-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%)}
-  .prova-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-  .prova-num{width:36px;height:36px;background:linear-gradient(135deg, var(--verde-900) 0%, var(--verde-700) 100%);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:16px}
-  .prova-titulo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);flex:1;line-height:1.2}
-  .prova-vis-badge{display:inline-flex;align-items:center;gap:4px;background:var(--verde-100);color:var(--verde-900);padding:4px 10px;border-radius:14px;font-size:11px;font-weight:600;text-transform:capitalize}
-  .prova-vis-badge.gaveta{background:var(--coral-soft);color:#8B3A2C}
-  .care-grid{display:grid;grid-template-columns:auto 1fr;gap:10px;margin-bottom:8px;align-items:start}
-  .care-marc{width:26px;height:26px;background:var(--coral);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:12px;margin-top:2px}
-  .care-txt{font-size:14px;line-height:1.5;color:var(--tinta)}
-  .care-txt.vazio{color:var(--tinta-suave);font-style:italic}
-  .proximos{background:linear-gradient(135deg, var(--verde-900) 0%, #1d453f 100%);color:var(--creme);border-radius:20px;padding:36px 40px;margin-top:36px}
-  .proximos-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
-  .proximos h3{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.2;margin-bottom:12px}
-  .proximos p{font-size:15px;color:#CFE0D6;margin-bottom:22px;max-width:520px;line-height:1.55}
-  .proximos-cta{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:16px 28px;border-radius:14px;text-decoration:none;font-family:var(--serif);font-size:17px;font-weight:600;box-shadow:0 8px 20px rgba(255,104,66,.35)}
-  .proximos-cta .icone{width:32px;height:32px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25)}
-  .proximos-cta .icone svg{width:14px;height:14px;fill:#fff}
-  .acoes-material{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px;padding-top:24px;border-top:1px dashed var(--verde-100)}
-  .acao-mat{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--verde-100);color:var(--verde-900);padding:10px 18px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans)}
-  .acao-mat:hover{border-color:var(--coral);color:var(--coral)}
-  .acao-mat svg{width:15px;height:15px;fill:currentColor}
-  footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:12px}
+  main{max-width:960px;margin:0 auto;padding:0 24px 40px}
+
+  .aviso-demo{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:16px 22px;margin:24px 0;display:flex;align-items:flex-start;gap:14px;font-size:13.5px;line-height:1.55}
+  .aviso-demo-icone{color:var(--coral);font-size:20px;flex-shrink:0;margin-top:2px}
+  .aviso-demo b{color:var(--verde-900)}
+  .aviso-demo a{color:var(--coral);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--coral)}
+
+  /* Ranking em destaque no topo */
+  .ranking-topo{background:linear-gradient(135deg, var(--verde-900) 0%, #1d453f 100%);color:var(--creme);border-radius:16px;padding:28px 32px;margin:24px 0;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(39,87,80,.2)}
+  .ranking-label{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  .ranking-lista{display:flex;flex-direction:column;gap:10px}
+  .ranking-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:10px;transition:background .2s}
+  .ranking-item.top{background:rgba(255,104,66,.12);border-color:rgba(255,104,66,.35)}
+  .ranking-posicao{width:32px;height:32px;background:rgba(255,255,255,.14);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:16px;flex-shrink:0}
+  .ranking-item.top .ranking-posicao{background:var(--coral)}
+  .ranking-info{flex:1;min-width:0}
+  .ranking-tipo{font-family:var(--serif);font-size:16px;font-weight:600;color:#fff;line-height:1.2}
+  .ranking-formato{font-size:12px;color:#A9C6B8}
+  .ranking-placar{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;text-align:right;font-variant-numeric:tabular-nums}
+  .ranking-placar small{font-size:12px;color:#A9C6B8;font-weight:400}
+  .ranking-nota{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.10);font-size:12.5px;color:#CFE0D6;font-style:italic;line-height:1.55}
+
+  /* Grid dos 3 Eus com radar */
+  .placar-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:18px;margin:24px 0}
+  @media (max-width:820px){.placar-grid{grid-template-columns:1fr}}
+  .placar-col{background:#fff;border:1px solid var(--verde-100);border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06);display:flex;flex-direction:column}
+  .placar-col-header{padding:22px 22px 18px;color:#fff}
+  .placar-col.continuacao .placar-col-header{background:linear-gradient(135deg, #336B62 0%, #275750 100%)}
+  .placar-col.adjacencia .placar-col-header{background:linear-gradient(135deg, #FF7A57 0%, #E85530 100%)}
+  .placar-col.reinvencao .placar-col-header{background:linear-gradient(135deg, #8B7BB8 0%, #5F4E8C 100%)}
+  .placar-col-letra{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;font-family:var(--serif);font-size:18px;font-weight:600;margin-bottom:10px}
+  .placar-col-tipo{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.85;margin-bottom:4px}
+  .placar-col-nome{font-family:var(--serif);font-size:15px;font-weight:500;font-style:italic;line-height:1.3;opacity:.95}
+  .placar-col-body{padding:22px;flex:1}
+
+  .placar-total{text-align:center;margin-bottom:20px}
+  .placar-total-num{font-family:var(--serif);font-size:44px;font-weight:600;color:var(--verde-900);line-height:1}
+  .placar-total-num small{font-size:20px;color:var(--tinta-suave);font-weight:400}
+  .placar-total-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--tinta-suave);margin-top:4px}
+
+  .notas-lista{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
+  .nota-linha{display:grid;grid-template-columns:60px 1fr 24px;gap:10px;align-items:center;font-size:13px}
+  .nota-nome{font-size:11.5px;font-weight:700;color:var(--verde-700);letter-spacing:.1em;text-transform:uppercase}
+  .nota-barra{background:var(--verde-100);height:8px;border-radius:4px;position:relative;overflow:hidden}
+  .nota-barra-fill{position:absolute;left:0;top:0;height:100%;background:linear-gradient(90deg, var(--coral) 0%, #FF7A57 100%);border-radius:4px;transition:width .5s ease}
+  .nota-valor{font-family:var(--serif);font-weight:600;color:var(--verde-900);text-align:center;font-size:14px}
+
+  .just-lista{border-top:1px dashed var(--verde-100);padding-top:12px;display:flex;flex-direction:column;gap:10px;font-size:12.5px;line-height:1.5;color:var(--tinta-suave)}
+  .just-item b{color:var(--verde-900);text-transform:uppercase;letter-spacing:.08em;font-size:10.5px;font-weight:700}
+  .vazio{color:var(--tinta-suave);font-style:italic;font-size:13px}
+
+  /* Insight */
+  .insight-topo{background:linear-gradient(135deg, #fff 0%, #FFF8F5 100%);border:1.5px solid var(--coral-soft);border-radius:16px;padding:28px 32px;margin:24px 0;position:relative;box-shadow:0 6px 22px rgba(255,104,66,.08)}
+  .insight-topo::before{content:"";position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(to bottom, var(--coral) 0%, #FF7A57 100%);border-radius:16px 0 0 16px}
+  .badge-novo{display:inline-flex;align-items:center;gap:5px;background:var(--coral);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 11px;border-radius:14px;margin-bottom:12px}
+  .badge-novo::before{content:"◆"}
+  .insight-topo h2{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--verde-900);margin-bottom:10px}
+  .insight-topo .insight-conteudo{font-family:var(--serif);font-size:18px;line-height:1.45;color:var(--tinta);font-weight:500;font-style:italic}
+
+  .fechamento{background:#fff;border:1px solid var(--verde-100);border-radius:16px;padding:28px 32px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
+  .fechamento h2{font-family:var(--serif);font-size:22px;color:var(--verde-900);margin-bottom:12px;font-weight:600}
+  .fechamento p{font-size:15px;color:var(--tinta);line-height:1.65;margin-bottom:12px}
+  .fechamento p:last-child{margin-bottom:0}
+  .fechamento b{color:var(--verde-900)}
+
+  .proximo{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:28px 30px;margin:24px 0;text-align:center;position:relative;overflow:hidden}
+  .proximo-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;position:relative;z-index:1}
+  .proximo h3{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;margin-bottom:8px;position:relative;z-index:1}
+  .proximo p{font-size:14.5px;color:#CFE0D6;margin-bottom:20px;max-width:520px;margin-left:auto;margin-right:auto;position:relative;z-index:1;line-height:1.55}
+  .proximo-cta{display:inline-flex;align-items:center;gap:12px;background:var(--coral);color:#fff;padding:14px 26px;border-radius:12px;text-decoration:none;font-family:var(--serif);font-size:16px;font-weight:600;position:relative;z-index:1;transition:transform .2s;box-shadow:0 6px 18px rgba(255,104,66,.32)}
+  .proximo-cta:hover{transform:translateY(-2px)}
+  .proximo-cta svg{width:14px;height:14px;fill:currentColor}
+
+  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
   footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
 
   /* === TEXTO JUSTIFICADO (materiais) === */
@@ -158,134 +183,205 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <header>
   <div class="hero-inner">
     <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 3</a>
-    <div class="badge-material"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Material da Etapa 3 · Missão concluída</div>
-    <h1>Meu <span class="grifo">Banco de Provas</span>.</h1>
-    <p class="lede">Suas 3 provas no formato C·A·R·E — organizadas, com a distribuição de visibilidade e o dado que volta na sua estratégia de visibilidade do Bloco C.</p>
+    <div class="eyebrow">Material · Etapa 3 · Bloco 1 · Etapa 3 de 7</div>
+    <h1>Placar dos 3 Eus por <span class="grifo">Critério</span>.</h1>
+    <p class="lede">Ranking topo é diagnóstico, não sentença. Uma versão pode ganhar por placar e perder por propósito (Etapa 5); outra pode perder por placar e ganhar por marca (Etapa 7). Aqui você tem a leitura por critério — pura.</p>
   </div>
   <div class="arc"></div>
 </header>
 
-<div class="demo-banner" id="demo-banner">
-  <b>Prévia com dados de demonstração.</b> Exemplo usando o perfil da Camila. <a href="missao.html" style="color:var(--lilas);font-weight:700">Fazer a missão →</a>
-</div>
-
 <main>
-  <div class="destaque">
-    <span class="destaque-aspas">&ldquo;</span>
-    <div class="destaque-eyebrow">A prova que mais te orgulha</div>
-    <div class="destaque-texto" id="orgulho-texto"></div>
+  <div id="aviso-demo" class="aviso-demo" style="display:none">
+    <div class="aviso-demo-icone">◆</div>
+    <div><b>Você ainda não preencheu a missão da Etapa 3.</b> Os dados abaixo estão em <b>modo demonstrativo</b>. <a href="missao.html">Ir preencher agora →</a></div>
   </div>
 
-  <section class="secao">
-    <div class="secao-header"><div class="secao-num">1</div><h2>Distribuição de visibilidade</h2></div>
-    <p class="secao-sub">Da gaveta ao mercado — o quanto do seu trabalho está sendo visto.</p>
-    <div class="visibilidade-panel">
-      <div class="vis-eyebrow">Quem sabe hoje das suas 5 provas</div>
-      <div class="vis-lista" id="vis-lista"></div>
-      <div class="vis-alerta" id="vis-alerta"></div>
+  <!-- RANKING TOPO -->
+  <div class="ranking-topo">
+    <div class="ranking-label">Ranking por critério</div>
+    <div class="ranking-lista" id="ranking-lista"></div>
+    <div class="ranking-nota">O placar mais alto revela qual Eu tem <b>menos fragilidade estrutural</b> para acontecer. Isso ≠ ser a versão certa. É <em>ter menos obstáculos</em> — que pode ou não ser o critério que decide.</div>
+  </div>
+
+  <div class="placar-grid">
+    <div class="placar-col continuacao">
+      <div class="placar-col-header">
+        <div class="placar-col-letra">C</div>
+        <div class="placar-col-tipo">Eu · Continuação</div>
+        <div class="placar-col-nome" id="cont-nome">—</div>
+      </div>
+      <div class="placar-col-body">
+        <div class="placar-total"><div class="placar-total-num" id="cont-total">—<small>/15</small></div><div class="placar-total-label">Placar total</div></div>
+        <div class="notas-lista">
+          <div class="nota-linha"><div class="nota-nome">Aloc</div><div class="nota-barra"><div class="nota-barra-fill" id="cont-aloc-bar"></div></div><div class="nota-valor" id="cont-aloc-num">—</div></div>
+          <div class="nota-linha"><div class="nota-nome">Rev</div><div class="nota-barra"><div class="nota-barra-fill" id="cont-rev-bar"></div></div><div class="nota-valor" id="cont-rev-num">—</div></div>
+          <div class="nota-linha"><div class="nota-nome">Ret</div><div class="nota-barra"><div class="nota-barra-fill" id="cont-ret-bar"></div></div><div class="nota-valor" id="cont-ret-num">—</div></div>
+        </div>
+        <div class="just-lista">
+          <div class="just-item"><b>A:</b> <span id="cont-aloc-just">—</span></div>
+          <div class="just-item"><b>R:</b> <span id="cont-rev-just">—</span></div>
+          <div class="just-item"><b>T:</b> <span id="cont-ret-just">—</span></div>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <section class="secao">
-    <div class="secao-header"><div class="secao-num">2</div><h2>O resultado que quase ninguém viu</h2></div>
-    <p class="secao-sub">Sua resposta volta como matéria-prima da estratégia de visibilidade (Bloco C).</p>
-    <div class="destaque" style="margin-bottom:0">
-      <span class="destaque-aspas">&ldquo;</span>
-      <div class="destaque-eyebrow">Resultado invisível</div>
-      <div class="destaque-texto" id="invisivel-texto"></div>
+    <div class="placar-col adjacencia">
+      <div class="placar-col-header">
+        <div class="placar-col-letra">A</div>
+        <div class="placar-col-tipo">Eu · Adjacência</div>
+        <div class="placar-col-nome" id="adj-nome">—</div>
+      </div>
+      <div class="placar-col-body">
+        <div class="placar-total"><div class="placar-total-num" id="adj-total">—<small>/15</small></div><div class="placar-total-label">Placar total</div></div>
+        <div class="notas-lista">
+          <div class="nota-linha"><div class="nota-nome">Aloc</div><div class="nota-barra"><div class="nota-barra-fill" id="adj-aloc-bar"></div></div><div class="nota-valor" id="adj-aloc-num">—</div></div>
+          <div class="nota-linha"><div class="nota-nome">Rev</div><div class="nota-barra"><div class="nota-barra-fill" id="adj-rev-bar"></div></div><div class="nota-valor" id="adj-rev-num">—</div></div>
+          <div class="nota-linha"><div class="nota-nome">Ret</div><div class="nota-barra"><div class="nota-barra-fill" id="adj-ret-bar"></div></div><div class="nota-valor" id="adj-ret-num">—</div></div>
+        </div>
+        <div class="just-lista">
+          <div class="just-item"><b>A:</b> <span id="adj-aloc-just">—</span></div>
+          <div class="just-item"><b>R:</b> <span id="adj-rev-just">—</span></div>
+          <div class="just-item"><b>T:</b> <span id="adj-ret-just">—</span></div>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <section class="secao">
-    <div class="secao-header"><div class="secao-num">3</div><h2>Suas 3 provas completas</h2></div>
-    <p class="secao-sub">Cada uma no formato C·A·R·E, prontas para a conversa de avaliação, o currículo, a proposta.</p>
-    <div class="provas-lista" id="provas-lista"></div>
-  </section>
-
-  <div class="proximos">
-    <div class="proximos-eyebrow">A jornada continua</div>
-    <h3>Amanhã: Etapa 4 — Como te leem.</h3>
-    <p>Depois dos resultados registrados, a Etapa 4 vira o espelho para fora: sua reputação — o resumo que fazem de você quando você não está na sala.</p>
-    <a href="../Dia 4/index.html" class="proximos-cta">
-      Ir para a Etapa 4
-      <span class="icone"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
-    </a>
+    <div class="placar-col reinvencao">
+      <div class="placar-col-header">
+        <div class="placar-col-letra">R</div>
+        <div class="placar-col-tipo">Eu · Reinvenção</div>
+        <div class="placar-col-nome" id="rei-nome">—</div>
+      </div>
+      <div class="placar-col-body">
+        <div class="placar-total"><div class="placar-total-num" id="rei-total">—<small>/15</small></div><div class="placar-total-label">Placar total</div></div>
+        <div class="notas-lista">
+          <div class="nota-linha"><div class="nota-nome">Aloc</div><div class="nota-barra"><div class="nota-barra-fill" id="rei-aloc-bar"></div></div><div class="nota-valor" id="rei-aloc-num">—</div></div>
+          <div class="nota-linha"><div class="nota-nome">Rev</div><div class="nota-barra"><div class="nota-barra-fill" id="rei-rev-bar"></div></div><div class="nota-valor" id="rei-rev-num">—</div></div>
+          <div class="nota-linha"><div class="nota-nome">Ret</div><div class="nota-barra"><div class="nota-barra-fill" id="rei-ret-bar"></div></div><div class="nota-valor" id="rei-ret-num">—</div></div>
+        </div>
+        <div class="just-lista">
+          <div class="just-item"><b>A:</b> <span id="rei-aloc-just">—</span></div>
+          <div class="just-item"><b>R:</b> <span id="rei-rev-just">—</span></div>
+          <div class="just-item"><b>T:</b> <span id="rei-ret-just">—</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="acoes-material">
-    <button class="acao-mat" onclick="window.print()"><svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg> Imprimir / PDF</button>
-    <a href="missao.html" class="acao-mat"><svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> Editar respostas</a>
-    <a href="index.html" class="acao-mat"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> Voltar à Etapa 3</a>
+  <div class="insight-topo">
+    <div class="badge-novo">Insight da Etapa 3</div>
+    <h2>O que o placar revelou</h2>
+    <div class="insight-conteudo" id="insight-texto">—</div>
   </div>
+
+  <div class="fechamento">
+    <h2>O que o critério esconde</h2>
+    <p>Se sua versão favorita ganhou por placar: bom sinal, mas não conclusivo — precisa passar por armadilhas (amanhã), propósito (Etapa 5) e essencial (Etapa 6).</p>
+    <p>Se sua versão favorita <b>perdeu por placar mas você segue ancorado nela</b>: isso é sinal importante. Pode ser (1) convicção real que sobre um critério não-capturado aqui, ou (2) armadilha cognitiva — amanhã você vai ver a diferença.</p>
+    <p>Se as 3 versões tiveram placar parecido: possivelmente você está avaliando pelo mesmo referencial subjetivo. O critério de reversibilidade em particular costuma variar drasticamente entre versões — se todas ficaram em 3, revise.</p>
+  </div>
+
+  <div class="proximo">
+    <div class="proximo-eyebrow">Amanhã · Etapa 4</div>
+    <h3>Armadilhas cognitivas da decisão de carreira</h3>
+    <p>Hammond e Parker sobre as armadilhas escondidas (ancoragem, status quo, custo afundado) e o dilema maximizar-vs-suficiente. O placar de hoje vai ser relido por essa lente.</p>
+    <a href="../Dia 4/index.html" class="proximo-cta">Ir para a Etapa 4 <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></a>
+  </div>
+<!--intentia-dayend:start--><style>
+.intday{background:linear-gradient(135deg,#275750 0%,#1d453f 100%);color:#F5F7F3;border-radius:20px;
+  padding:34px 38px;margin:36px 0 8px;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif}
+.intday .intday-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7CA89E;margin-bottom:10px}
+.intday h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:22px;line-height:1.25;margin:0 0 10px;color:#F5F7F3}
+.intday p{font-size:14.5px;line-height:1.6;color:#CFE0D6;margin:0 0 20px;max-width:560px}
+.intday .intday-cta{display:inline-flex;align-items:center;gap:8px;background:#FF6842;color:#fff;text-decoration:none;
+  font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 10px 24px rgba(255,104,66,.3);transition:transform .2s,box-shadow .2s}
+.intday .intday-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,104,66,.4)}
+@media(max-width:600px){.intday{padding:26px 22px}.intday h3{font-size:19px}}
+</style><div class="intday"><div class="intday-eyebrow">A jornada continua</div><h3>Amanhã: Etapa 4 — Armadilhas da decisão.</h3><p>Você concluiu a Etapa 3. Quando estiver pronto, dê o próximo passo da travessia.</p><a class="intday-cta" href="../Dia 4/index.html">Ir para a Etapa 4 →</a></div><!--intentia-dayend:end-->
 </main>
 
 <footer>
   <div class="assinatura">Do reagir ao conduzir.</div>
-  <div>Etapa 3 · Meu Banco de Provas</div>
+  <div>Etapa 3 · Placar por Critério</div>
 </footer>
 
 <script>
-  const DADOS_DEMO = {
-    provas: [
-      {titulo:'Painel de decisão semanal da diretoria', C:'Diretoria levava uma semana em troca de e-mails toda segunda para decidir alocação de recursos.', A:'Desenhei e implementei um painel com os 6 indicadores que sustentam a decisão, atualizado toda sexta.', R:'A reunião passou a fechar em 40 minutos toda segunda; nenhuma decisão precisou ser adiada por falta de dado nos últimos 8 meses.', E:'Painel em produção + ata das reuniões antes/depois.', vis:'minha liderança'},
-      {titulo:'Padronização de métricas cross-área', C:'Três áreas usavam definições diferentes de "cliente ativo" — os relatórios nunca batiam.', A:'Liderei um workshop com as três áreas e escrevi a definição única. Cada área validou.', R:'Os relatórios bateram pela primeira vez em 18 meses. As três áreas continuam usando a definição hoje, mesmo depois de mudanças de gestão.', E:'Documento de definições em uso + pessoas das três áreas que confirmam.', vis:'só eu'},
-      {titulo:'Reversão de churn de conta importante', C:'Um cliente estratégico anunciou que ia sair. A análise que eu fiz mostrou que o problema era decisão errada de escopo, não valor entregue.', A:'Fiz a análise, apresentei ao gerente da conta e para o cliente. Redesenhamos o escopo em 3 sessões.', R:'Cliente ficou. Renovou com 40% a mais no valor do contrato — porque o novo escopo entregava o que ele realmente precisava.', E:'Contrato assinado + e-mail do cliente reconhecendo a virada.', vis:'só eu'}
-    ],
-    orgulho: 'A prova que mais me orgulha é a nº 3 porque foi a única em que eu enxerguei antes o que ninguém tinha visto — e isso mudou uma decisão que já estava tomada.',
-    invisivel: 'A padronização de métricas cross-área. Três áreas usam toda semana e ninguém sabe que fui eu que puxei — nem meu chefe atual, porque foi antes dele.'
+  const FMT_NOMES = { linear: 'Linear', paralela: 'Paralela', iterativa: 'Iterativa' };
+  const NOMES_EU = { continuacao: 'Eu-Continuação', adjacencia: 'Eu-Adjacência', reinvencao: 'Eu-Reinvenção' };
+
+  const DEMO_DIA8 = {
+    continuacao: { nome: 'A analista sênior de dados que virou referência interna e externa em análise de decisão' },
+    adjacencia: { nome: 'A analista sênior que virou head de dados de uma fintech em crescimento' },
+    reinvencao: { nome: 'A professora e autora sobre alfabetização de dados para gestores não-técnicos' }
+  };
+  const DEMO_DIA9 = { continuacao: {formato:'paralela'}, adjacencia: {formato:'iterativa'}, reinvencao: {formato:'paralela'} };
+  const DEMO_DIA10 = {
+    continuacao: { notas: {aloc:4, rev:5, ret:3}, justificativas: {aloc:'banco cobre a base, mas exige realocar 4-6h/semana', rev:'publicar em paralelo é totalmente reversível', ret:'12-18 meses para autoridade externa mínima'} },
+    adjacencia: { notas: {aloc:2, rev:3, ret:4}, justificativas: {aloc:'exige coffee chats e projeto lateral não alocados hoje', rev:'cargo-ponte razoavelmente reversível, mas sair da indústria tem custo de rede', ret:'6-12 meses para saber se o setor aceita a bagagem'} },
+    reinvencao: { notas: {aloc:3, rev:2, ret:2}, justificativas: {aloc:'dá para roubar 8h/semana dos projetos atuais', rev:'reconstruir base de clientes leva 6-12 meses se der errado', ret:'2-3 anos para renda do curso substituir a de projetos'} },
+    insight: 'o Eu-Reinvenção perde por placar mas eu ainda me sinto ancorada nele — ver amanhã se é convicção ou armadilha'
   };
 
-  let dados, usandoDemo = false;
-  try {
-    const s = sessionStorage.getItem('intentia-dia3');
-    if (s) { dados = JSON.parse(s); if (!dados.provas || !dados.provas.length) { dados = DADOS_DEMO; usandoDemo = true; } }
-    else { dados = DADOS_DEMO; usandoDemo = true; }
-  } catch(e) { dados = DADOS_DEMO; usandoDemo = true; }
-  if (usandoDemo) document.getElementById('demo-banner').classList.add('visivel');
-
-  document.getElementById('orgulho-texto').textContent = dados.orgulho || 'Ainda não escrito.';
-  document.getElementById('invisivel-texto').textContent = dados.invisivel || 'Ainda não escrito.';
-
-  // Visibilidade
-  const OPS = ['só eu', 'meu time', 'minha liderança', 'além da área', 'fora da empresa'];
-  const cont = {};
-  OPS.forEach(o => cont[o] = 0);
-  dados.provas.forEach(p => { if (p.vis && cont.hasOwnProperty(p.vis)) cont[p.vis]++; });
-  const total = dados.provas.length;
-  const visLista = document.getElementById('vis-lista');
-  OPS.forEach(op => {
-    const c = cont[op];
-    const pct = (c / total) * 100;
-    const div = document.createElement('div');
-    div.className = 'vis-item';
-    div.innerHTML = `<div class="vis-nome">${op}</div><div class="vis-barra"><div class="vis-fill" style="width:${pct}%"></div></div><div class="vis-count">${c}/${total}</div>`;
-    visLista.appendChild(div);
-  });
-  const soEu = cont['só eu'];
-  const meuTime = cont['meu time'];
-  const alerta = document.getElementById('vis-alerta');
-  if (soEu + meuTime >= 3) {
-    alerta.innerHTML = `<b>${soEu + meuTime} de ${total} provas</b> estão em "só eu" ou "meu time" — capital parado, matéria-prima da sua estratégia de visibilidade no Bloco C.`;
-  } else {
-    alerta.innerHTML = `Boa distribuição — suas provas circulam além do círculo imediato.`;
+  function pega(key, fallback) {
+    try {
+      const s = sessionStorage.getItem(key);
+      if (s) { const p = JSON.parse(s); if (p && Object.keys(p).length > 0) return p; }
+    } catch(e) {}
+    return fallback;
   }
 
-  // Provas
-  const lista = document.getElementById('provas-lista');
-  dados.provas.forEach((p, i) => {
-    const el = document.createElement('div');
-    el.className = 'prova-card';
-    const visClass = (p.vis === 'só eu') ? ' gaveta' : '';
-    el.innerHTML = `
-      <div class="prova-header">
-        <div class="prova-num">${i+1}</div>
-        <div class="prova-titulo">${p.titulo || '(sem título)'}</div>
-        ${p.vis ? `<div class="prova-vis-badge${visClass}">${p.vis}</div>` : ''}
-      </div>
-      ${['C','A','R','E'].map(k => `<div class="care-grid"><div class="care-marc">${k}</div><div class="care-txt${p[k]?'':' vazio'}">${p[k] || 'Não preenchido'}</div></div>`).join('')}
-    `;
-    lista.appendChild(el);
+  const dia8 = pega('intentia-dia1', DEMO_DIA8);
+  const dia9 = pega('intentia-dia2', DEMO_DIA9);
+  const dia10raw = sessionStorage.getItem('intentia-dia3');
+  let dia10, demo10 = false;
+  try {
+    const p = dia10raw ? JSON.parse(dia10raw) : null;
+    if (p && p.continuacao && p.continuacao.notas && p.continuacao.notas.aloc > 0) dia10 = p;
+    else { dia10 = DEMO_DIA10; demo10 = true; }
+  } catch(e) { dia10 = DEMO_DIA10; demo10 = true; }
+  if (demo10) document.getElementById('aviso-demo').style.display = 'flex';
+
+  function setText(id, val) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (!val || !val.toString().trim()) { el.textContent = '—'; el.classList.add('vazio'); }
+    else { el.textContent = val; el.classList.remove('vazio'); }
+  }
+
+  ['continuacao','adjacencia','reinvencao'].forEach(tipo => {
+    const prefix = tipo === 'continuacao' ? 'cont' : (tipo === 'adjacencia' ? 'adj' : 'rei');
+    setText(prefix + '-nome', dia8[tipo] ? dia8[tipo].nome : null);
+    const notas = (dia10[tipo] && dia10[tipo].notas) || {aloc:0, rev:0, ret:0};
+    const just = (dia10[tipo] && dia10[tipo].justificativas) || {};
+    const total = notas.aloc + notas.rev + notas.ret;
+    const totalEl = document.getElementById(prefix+'-total');
+    if (totalEl) totalEl.innerHTML = (total || '—') + '<small>/15</small>';
+    ['aloc','rev','ret'].forEach(f => {
+      const bar = document.getElementById(prefix+'-'+f+'-bar');
+      const num = document.getElementById(prefix+'-'+f+'-num');
+      if (bar) bar.style.width = (notas[f] / 5 * 100) + '%';
+      if (num) num.textContent = notas[f] || '—';
+      setText(prefix+'-'+f+'-just', just[f]);
+    });
   });
+
+  // Ranking
+  const rankings = ['continuacao','adjacencia','reinvencao'].map(tipo => {
+    const notas = (dia10[tipo] && dia10[tipo].notas) || {aloc:0, rev:0, ret:0};
+    const total = notas.aloc + notas.rev + notas.ret;
+    const fmt = (dia9[tipo] && dia9[tipo].formato) ? FMT_NOMES[dia9[tipo].formato] : '—';
+    return { tipo, total, fmt };
+  }).sort((a, b) => b.total - a.total);
+
+  const lista = document.getElementById('ranking-lista');
+  rankings.forEach((r, i) => {
+    const item = document.createElement('div');
+    item.className = 'ranking-item' + (i === 0 && r.total > 0 ? ' top' : '');
+    item.innerHTML = `<div class="ranking-posicao">${i+1}º</div><div class="ranking-info"><div class="ranking-tipo">${NOMES_EU[r.tipo]}</div><div class="ranking-formato">Formato: ${r.fmt}</div></div><div class="ranking-placar">${r.total || '—'} <small>/15</small></div>`;
+    lista.appendChild(item);
+  });
+
+  setText('insight-texto', dia10.insight || '(sem insight registrado)');
 </script>
 
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 15 · Presença executiva</title>
+<title>Intentia · Etapa 15 · Instalar hábito e tracker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -96,16 +96,16 @@
   .conteudo-item{padding:18px 20px;background:var(--creme);border-radius:10px;margin-bottom:12px;border-left:3px solid var(--verde-500)}
   .conteudo-item h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);margin-bottom:8px}
   .conteudo-item h3 .marcador{font-family:var(--sans);font-size:11px;font-weight:700;color:#fff;background:var(--verde-700);padding:3px 8px;border-radius:4px;letter-spacing:.1em;margin-right:8px;vertical-align:2px}
-  .dim-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
-  @media (max-width:640px){.dim-grid{grid-template-columns:1fr}}
-  .dim-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
-  .dim-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
-  .dim-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
-  .dim-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
-  .dim-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
-  .dim-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
-  .dim-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
-  .dim-hint svg{width:12px;height:12px;fill:currentColor}
+  .hgr-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
+  @media (max-width:640px){.hgr-grid{grid-template-columns:1fr}}
+  .hgr-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
+  .hgr-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
+  .hgr-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
+  .hgr-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
+  .hgr-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
+  .hgr-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
+  .hgr-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
+  .hgr-hint svg{width:12px;height:12px;fill:currentColor}
   .modal-overlay{position:fixed;inset:0;background:rgba(32,51,47,.55);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s}
   .modal-overlay.aberto{display:flex;opacity:1}
   .modal-caixa{background:#fff;border-radius:20px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;transform:translateY(20px);transition:transform .3s ease}
@@ -271,9 +271,9 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
 <header>
   <div class="hero-inner">
-    <div class="eyebrow">Trilha Capital de Carreira · Bloco A · Etapa 15 · Abre Bloco 3</div>
-    <h1>Presença executiva — <span class="grifo">como a direção soa</span> antes de acontecer.</h1>
-    <p class="lede">Bloco 3 abre. Você tem uma direção escolhida. Agora começam 7 capacidades que amplificam ela — e a primeira é a mais imediata: como você <em>se apresenta</em> quando fala dessa direção.</p>
+    <div class="eyebrow">Trilha Capital de Carreira · Bloco A · Etapa 15</div>
+    <h1>Hábito instalado — <span class="grifo">tracker no lugar</span>.</h1>
+    <p class="lede">Duhigg: hábito é loop — sinal, rotina, recompensa. Fogg: comportamento simples fica quando ancorado em rotina existente. Clear: tracker torna o hábito visível — e o visível se sustenta. Hoje: transformar os 3 movimentos da Etapa 14 em hábitos com gatilho + tracker.</p>
   </div>
   <div class="arc"></div>
 </header>
@@ -290,12 +290,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <div class="onde-estamos">
   <div class="oe-inner">
     <div class="oe-camada">
-      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 3 de 4 · Amplificar</div>
+      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 2 de 3 · Instalar rotina</div>
       <div class="oe-semanas">
         <span class="oe-semana feita"><span class="num">A</span>Mapear ativos ✓</span>
         <span class="oe-semana feita"><span class="num">B</span>Escolher direção ✓</span>
-        <span class="oe-semana atual"><span class="num">C</span>Amplificar</span>
-        <span class="oe-semana"><span class="num">D</span>Instalar rotina</span>
+        <span class="oe-semana feita"><span class="num">C</span>Amplificar ✓</span>
+        <span class="oe-semana atual"><span class="num">D</span>Instalar rotina</span>
       </div>
     </div>
     <div class="oe-camada">
@@ -311,7 +311,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
     </div>
     <p class="oe-texto">
-      Bloco 3 abre com <span class="oe-tag-dia">Presença</span>. Nos próximos 6 dias: autoridade, redes, persuasão, aprendizagem, energia, execução. Cada capacidade é trabalhada <b>vinculada à direção escolhida na Etapa 14</b>.
+      O Bloco 2 amplificou; o Bloco 3 <b>instala</b>. Hoje: <span class="oe-tag-dia">Hábito · Gatilho · Registro</span> — transformar movimento escolhido em hábito automático com tracker visível.
     </p>
   </div>
 </div>
@@ -322,11 +322,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <h2>A ideia central, contada com calma.</h2>
     <p class="subtitulo">Ouça antes de começar — 5 min.</p>
     <div class="player">
-      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia · Abre Bloco 3</span><span class="player-tag">Ep. 15 · Bloco A · Bloco 3</span></div>
-      <div class="player-titulo">Presença: como a direção soa antes de acontecer</div>
+      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 15 · Bloco A · Bloco 2</span></div>
+      <div class="player-titulo">De movimento para hábito: o pequeno que fica</div>
       <div class="player-sub">A ideia central do dia — contada pela <b>voz do Intentia</b>.</div>
       <div class="waveform" id="waveform"></div>
-      <div class="player-tempo"><span>00:00</span><span>05:10</span></div>
+      <div class="player-tempo"><span>00:00</span><span>05:00</span></div>
       <div class="player-controles">
         <button class="ctrl-btn"><svg viewBox="0 0 24 24"><path d="M12.5 3v2.5c4.14 0 7.5 3.36 7.5 7.5s-3.36 7.5-7.5 7.5-7.5-3.36-7.5-7.5c0-1.4.39-2.7 1.06-3.83L4.32 7.86A9.955 9.955 0 003 13c0 5.24 4.26 9.5 9.5 9.5S22 18.24 22 13s-4.26-10-9.5-10z"/></svg></button>
         <button class="ctrl-play" id="btn-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
@@ -349,44 +349,46 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <h2>Você termina o dia sendo capaz de…</h2>
     <p class="subtitulo">Três capacidades no presente.</p>
     <ul class="leva-lista">
-      <li><strong>Distinguir "presença" de "performance"</strong> — Antonakis mostra que carisma é aprendido, mas não é atuação. Presença sólida é <em>coerência entre o que você diz, como diz, e quem você é</em>. Performance é o oposto: dissonância entre camadas.</li>
-      <li><strong>Diagnosticar sua presença em 3 dimensões</strong> — Voz (como você fala e é ouvido), Gravitas (o peso silencioso da sua fala), Coerência (como o visual/postural confirma a mensagem). Hewlett mostra que os 3 pilares independentes movem juntos.</li>
-      <li><strong>Vincular presença à direção escolhida</strong> — presença sem direção clara vira ruído; direção sem presença vira aspiração privada. Hoje, cada dimensão de presença é avaliada <em>a serviço da direção da Etapa 14</em>.</li>
+      <li><strong>Reconhecer o loop do hábito</strong> — Duhigg descreveu 3 partes: <em>sinal</em> (o que dispara), <em>rotina</em> (o comportamento em si), <em>recompensa</em> (o retorno que o cérebro registra). Sem os 3, comportamento não vira hábito — permanece esforço consciente.</li>
+      <li><strong>Ancorar o novo comportamento numa rotina que já existe (Fogg)</strong> — BJ Fogg propõe uma fórmula simples: <em>"depois de [rotina existente], eu vou [novo comportamento pequeno]"</em>. Pequeno o suficiente para acontecer nos dias ruins. Ancorar &gt; começar do zero.</li>
+      <li><strong>Instalar um tracker visível (Clear)</strong> — tornar o comportamento observável muda o comportamento. Um tracker simples (planilha, caderno, app) mostra o progresso em série — e ver a série continuar é o próprio motor. "Don't break the chain."</li>
     </ul>
   </section>
 
   <section class="bloco" id="ponto">
     <div class="bloco-num"><span class="n">3</span> O Ponto de Partida de Hoje</div>
-    <h2>A direção escolhida precisa ser <em>ouvida</em> antes de acontecer.</h2>
-    <p class="subtitulo">Hewlett (2024): "presença é o que faz outras pessoas te levarem a sério antes de terem evidência".</p>
+    <h2>Movimento pontual precisa de força. <em>Hábito</em> precisa de gatilho e registro.</h2>
+    <p class="subtitulo">Fogg: "comportamentos ancorados em rotinas existentes sobrevivem; comportamentos ancorados em motivação não sobrevivem à semana ruim."</p>
     <div class="ponto">
 
       <div class="direcao-recap">
-        <div class="direcao-recap-label">Sua direção escolhida (Etapa 14)</div>
+        <div class="direcao-recap-label">Sua direção escolhida (Etapa 7) · seus 3 movimentos (Etapa 14)</div>
         <div class="direcao-recap-frase" id="direcao-recap-txt">—</div>
-        <small>Bloco 3 amplifica essa direção. Não a substitui.</small>
+        <small>Hoje transformamos os 3 movimentos em hábitos com gatilho + tracker — para que sobrevivam sem depender de motivação diária.</small>
       </div>
 
       <div class="definicao-eu">
-        <div class="definicao-eu-label">O que é "presença" nesta semana</div>
-        <div class="definicao-eu-texto"><b>Presença é a forma como sua direção chega ao mundo antes de você ter provas.</b> Não é carisma inato, não é performance de personagem — é <em>a coerência entre o que você diz, como você diz, e a autoridade calma de quem sabe onde está indo</em>. Presença fraca sabota direção forte; presença sólida faz direção fraca soar sólida (e essa é justamente a armadilha oposta que você tem que evitar).</div>
+        <div class="definicao-eu-label">O que é "instalar hábito" nesta semana</div>
+        <div class="definicao-eu-texto"><b>Instalar hábito é converter um comportamento consciente (que exige decisão a cada vez) em automático (que acontece com o gatilho certo)</b>. Não é força de vontade. É desenho — sinal + rotina + recompensa + registro. Depois de ~4-8 semanas de repetição estruturada, o comportamento acontece <em>sem que você precise decidir</em>.</div>
       </div>
 
-      <p style="margin-top:18px"><b>John Antonakis (2012)</b> pesquisou carisma em contextos organizacionais e desmontou o mito de que é dom inato. Isolou 12 "táticas de liderança carismática" (CLTs) — comportamentos aprendíveis que aumentam mensuravelmente a percepção de presença. Metáforas, listas de três, contrastes, expressão facial coerente com conteúdo. Não é sobre fingir; é sobre <em>tirar do caminho os hábitos que enfraquecem</em>.</p>
+      <p style="margin-top:18px"><b>Charles Duhigg</b> (jornalista do New York Times, em <em>The Power of Habit</em>, 2012) sistematizou a pesquisa neurocientífica sobre hábitos e nomeou o <b>loop</b> em 3 partes: sinal (o gatilho), rotina (o comportamento) e recompensa (o que o cérebro registra como "valeu a pena"). Duhigg mostrou que a maioria das tentativas de mudança falha por atacar só a rotina — sem entender o sinal que a dispara nem a recompensa que a sustenta. Você não muda um hábito no vácuo; você o substitui, mantendo sinal e recompensa.</p>
 
-      <p><b>Sylvia Ann Hewlett (2024)</b> atualizou a pesquisa clássica sobre "executive presence" para o ambiente contemporâneo (híbrido, mais diverso, mais digital). Confirma os 3 pilares: <em>Gravitas</em> (o peso da fala), <em>Comunicação</em> (a clareza da mensagem), <em>Aparência</em> (a coerência visual e postural). Mas os pesos mudaram: hoje, gravitas responde por 67% da percepção — comunicação e aparência dividem o resto.</p>
+      <p><b>BJ Fogg</b> (Stanford, em <em>Tiny Habits</em>, 2019) refinou o método operacional: o comportamento (B) só acontece quando três variáveis coincidem — motivação (M), habilidade/facilidade (A) e prompt/gatilho (P). B=MAP. A saída não é aumentar motivação (oscila); é <em>reduzir a fricção</em> (tornar o comportamento pequeno) e <em>ancorar no gatilho certo</em> (uma rotina que você já executa sem pensar).</p>
+
+      <p><b>James Clear</b> (em <em>Atomic Habits</em>, 2018) adicionou a dimensão do <b>ambiente e do registro</b>: comportamentos ficam quando o ambiente favorece (visibilidade, atrito reduzido) e quando existem sistemas simples de tracking. A regra "don't break the chain" (não perca a série) é o mais robusto sistema de reforço: você não quer perder o que já construiu.</p>
 
       <div class="teste-linha">
-        Teste rápido: se você <b>gravasse 30 segundos</b> falando sua história curta (Etapa 14) — o que a gravação mostraria: alinhamento ou dissonância entre voz, presença e mensagem?
+        Teste rápido: dos 3 movimentos da Etapa 14, algum tem <b>gatilho concreto</b> hoje? Se você não sabe <em>quando exatamente</em> ele começa, ainda é intenção.
       </div>
 
-      <p style="margin-top:18px"><b>Por que hoje o exercício é avaliar 3 dimensões?</b> Porque presença não se treina em bloco — se treina por camada. Voz, gravitas e coerência têm padrões diferentes de erro e melhoria. Uma pessoa com voz forte mas gravitas frágil parece <em>agitada</em>. Uma pessoa com gravitas forte mas voz baixa parece <em>invisível</em>. Uma pessoa com voz e gravitas ok mas coerência quebrada parece <em>desconfiável</em>. Diagnosticar por dimensão é o que permite ajuste específico.</p>
+      <p style="margin-top:18px"><b>Por que hoje o exercício é 1 hábito completo por movimento?</b> Porque tentar instalar 3 hábitos em 1 dia raramente sobrevive — Fogg é enfático: <em>1 hábito de cada vez, do menor possível, ancorado no gatilho certo</em>. Faremos os 3 hoje no desenho — mas <em>um</em> começa amanhã. Os outros 2 iniciam nas próximas semanas.</p>
     </div>
   </section>
 
   <section class="bloco" id="conteudo">
     <div class="bloco-num"><span class="n">4</span> O conteúdo que direciona a sua missão de hoje</div>
-    <h2>Três dimensões de presença — clicáveis para o método.</h2>
+    <h2>Três elementos — Hábito · Gatilho · Registro.</h2>
     <p class="subtitulo">10 min. Material de referência.</p>
 
     <div class="personagens-intro">
@@ -399,96 +401,101 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">01</span>Três dimensões de presença — Voz · Gravitas · Coerência</h3>
-      <p>Cada dimensão é aprendível e mede algo diferente. Toque em cada para o método e o exemplo aplicado à direção.</p>
+      <h3><span class="marcador">01</span>Três elementos — Hábito · Gatilho · Registro</h3>
+      <p>Toque em cada elemento para o método, exemplo aplicado e o erro clássico.</p>
 
-      <div class="dim-grid">
-        <div class="dim-card" data-modal="voz" role="button" tabindex="0">
-          <div class="dim-icone">V</div>
-          <div class="dim-nome">Voz</div>
-          <div class="dim-pergunta">"como você fala e é ouvido"</div>
-          <span class="dim-seta">›</span>
+      <div class="hgr-grid">
+        <div class="hgr-card" data-modal="habito" role="button" tabindex="0">
+          <div class="hgr-icone">H</div>
+          <div class="hgr-nome">Hábito</div>
+          <div class="hgr-pergunta">"pequeno o suficiente para o dia ruim?"</div>
+          <span class="hgr-seta">›</span>
         </div>
-        <div class="dim-card" data-modal="gravitas" role="button" tabindex="0">
-          <div class="dim-icone">G</div>
-          <div class="dim-nome">Gravitas</div>
-          <div class="dim-pergunta">"o peso silencioso da sua fala"</div>
-          <span class="dim-seta">›</span>
+        <div class="hgr-card" data-modal="gatilho" role="button" tabindex="0">
+          <div class="hgr-icone">G</div>
+          <div class="hgr-nome">Gatilho</div>
+          <div class="hgr-pergunta">"depois de qual rotina existente?"</div>
+          <span class="hgr-seta">›</span>
         </div>
-        <div class="dim-card" data-modal="coerencia" role="button" tabindex="0">
-          <div class="dim-icone">C</div>
-          <div class="dim-nome">Coerência</div>
-          <div class="dim-pergunta">"como o visual confirma a mensagem"</div>
-          <span class="dim-seta">›</span>
+        <div class="hgr-card" data-modal="registro" role="button" tabindex="0">
+          <div class="hgr-icone">R</div>
+          <div class="hgr-nome">Registro</div>
+          <div class="hgr-pergunta">"onde a série fica visível?"</div>
+          <span class="hgr-seta">›</span>
         </div>
       </div>
 
-      <span class="dim-hint">
+      <span class="hgr-hint">
         <svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>
-        Toque em cada dimensão para exemplos aplicados aos personagens.
+        Toque em cada elemento para o método e o exemplo aplicado.
       </span>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">02</span>Presença aplicada à direção — leitura dos personagens</h3>
+      <h3><span class="marcador">02</span>Hábito instalado — leitura dos personagens</h3>
 
       <div class="caso">
         <div class="caso-header">
           <div class="caso-avatar">C</div>
           <div>
-            <div class="caso-nome">Camila · Continuação Paralela</div>
-            <div class="caso-perfil">Frase: análise de decisão com IA</div>
+            <div class="caso-nome">Camila</div>
+            <div class="caso-perfil">Movimento: 1 artigo/semana. Versão-hábito: 20 min de escrita/dia</div>
           </div>
-          <span class="caso-tag">Voz frágil</span>
+          <span class="caso-tag">H·G·R</span>
         </div>
-        <p><b>Diagnóstico:</b> Camila tem gravitas alta (8 anos de banco, dados que fala por si), coerência ok (LinkedIn coerente com direção). <b>Gargalo: voz</b> — ela escreve bem, mas fala baixo em apresentações e enche de "acho que", "talvez". <b>Próximo passo:</b> gravar áudio de 60s do seu argumento central sobre IA em análise, ouvir de volta, retirar 5 hedges. Uma semana → recomeço da autoridade externa.</p>
+        <p><b>Hábito:</b> 20 min de escrita todo dia útil (não o artigo inteiro — só 20 min contínuos). <b>Gatilho (Fogg):</b> "depois de preparar o café da manhã, sento com o laptop na mesa e escrevo 20 min sem abrir email". <b>Registro:</b> planilha simples de 7 colunas (seg-dom); marca X ao concluir. Meta: 5 X por semana. No fim do mês, artigo pronto emerge naturalmente.</p>
       </div>
 
       <div class="caso">
         <div class="caso-header">
           <div class="caso-avatar rafael">R</div>
           <div>
-            <div class="caso-nome">Rafael · Adjacência Iterativa</div>
-            <div class="caso-perfil">Frase: operações para escala digital</div>
+            <div class="caso-nome">Rafael</div>
+            <div class="caso-perfil">Movimento: 1 vídeo curto/semana. Versão-hábito: 10 min de leitura em voz alta</div>
           </div>
-          <span class="caso-tag">Coerência frágil</span>
+          <span class="caso-tag">H·G·R</span>
         </div>
-        <p><b>Diagnóstico:</b> voz sólida (12 anos coordenando gente), gravitas média (ainda transitando entre setores, sem tribo consolidada). <b>Gargalo: coerência</b> — LinkedIn ainda mostra "coordenador industrial", currículo de 5 páginas de operações, sinal para fora ainda é do velho ele. <b>Próximo passo:</b> atualizar LinkedIn headline + about + primeira seção para a direção nova. Se um recrutador de fintech olhar hoje, precisa ver a versão nova primeiro.</p>
+        <p><b>Hábito:</b> 10 min de leitura em voz alta de artigo/notícia do seu território — treina cadência, dicção e vocabulário técnico oral. <b>Gatilho:</b> "depois de escovar dente à noite, leio 10 min em voz alta no espelho". <b>Registro:</b> app de tracker no celular (Habit Tracker, Streaks); notificação silenciosa às 22h. Meta: 5 dias por semana. No sábado, gravação do vídeo flui naturalmente.</p>
       </div>
 
       <div class="caso">
         <div class="caso-header">
           <div class="caso-avatar juliana">J</div>
           <div>
-            <div class="caso-nome">Juliana · Reinvenção Paralela</div>
-            <div class="caso-perfil">Frase: design de sistemas para pequenos negócios</div>
+            <div class="caso-nome">Juliana</div>
+            <div class="caso-perfil">Movimento: aula piloto em 3 semanas. Versão-hábito: 15 min de esboço/dia</div>
           </div>
-          <span class="caso-tag">Gravitas frágil</span>
+          <span class="caso-tag">H·G·R</span>
         </div>
-        <p><b>Diagnóstico:</b> voz alta (fala bem, vem de design ensinando clientes), coerência forte (portfolio online já mostra a direção). <b>Gargalo: gravitas</b> — Juliana ainda apresenta a direção como "estou tentando", "quem sabe funciona" — subtexto de dúvida que quebra o peso. <b>Próximo passo:</b> reescrever a bio pública sem uma única palavra de hedge. Se funciona: adotar como padrão de fala nas próximas 4 semanas.</p>
+        <p><b>Hábito:</b> 15 min de esboço da aula todo dia (roteiro, exercícios, exemplos — o que for). <b>Gatilho:</b> "depois do primeiro café da manhã, antes de abrir Slack/email, abro o doc da aula e escrevo 15 min". <b>Registro:</b> caderno físico ao lado da mesa — barra pintada por dia; visível o tempo todo. Meta: 6 dias por semana. Ao fim de 3 semanas, aula piloto pronta sem que "quando começo o material" tenha virado obstáculo.</p>
       </div>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">03</span>A regra da Etapa 15: uma dimensão de cada vez</h3>
-      <p>Se você identificou 3 gargalos, resista à tentação de atacar todos juntos. Presença sólida se instala por camada — uma dimensão trabalhada por 2-3 semanas gera efeito visível; três dimensões atacadas simultâneas geralmente não geram efeito nenhum. Escolha <b>a mais gargalo</b> e comece por ela.</p>
+      <h3><span class="marcador">03</span>A regra da Etapa 15: 1 hábito começa amanhã, os outros dois em desenho</h3>
+      <p>Fogg é enfático: <b>não instale 3 hábitos ao mesmo tempo</b>. A força de vontade é finita, e 3 mudanças simultâneas competem entre si. Hoje desenhamos os 3 (para não esquecer). Mas <b>1 começa amanhã</b> — o mais alavancado, o que sustenta os outros 2. Os outros iniciam nas semanas 2 e 3 do próximo mês, com espaçamento de ~10-14 dias. Clear: hábitos empilham depois — nunca em paralelo do zero.</p>
     </div>
   </section>
 
   <section class="bonus bloco" id="bonus">
     <div class="bloco-num"><span class="n">5</span> Seu bônus antes da missão</div>
-    <h2>Carisma se aprende. Presença executiva mudou.</h2>
-    <p class="subtitulo">Duas leituras que fundamentam as 3 dimensões.</p>
+    <h2>3 fontes que fundamentam H·G·R.</h2>
+    <p class="subtitulo">Três livros clássicos sobre formação de hábito.</p>
     <div class="leituras">
       <div class="leitura">
         <span class="tipo">Resumo · 3 páginas</span>
-        <h4>Carisma se aprende</h4>
-        <p class="meta-leitura">Antonakis (2012) — pesquisa sistemática que isolou 12 táticas de liderança carismática aprendíveis. O mito do carisma inato desmontado com dados.</p>
+        <h4>O poder do hábito</h4>
+        <p class="meta-leitura">Charles Duhigg · Random House · 2012. O loop clássico (sinal · rotina · recompensa) e por que hábitos raramente se "quebram" — se substituem, mantendo sinal e recompensa.</p>
       </div>
       <div class="leitura">
         <span class="tipo">Resumo · 3 páginas</span>
-        <h4>Novas regras da presença executiva</h4>
-        <p class="meta-leitura">Hewlett (2024) — atualização dos 3 pilares (Gravitas, Comunicação, Aparência) para o ambiente híbrido e mais diverso. Gravitas subiu para 67% da percepção.</p>
+        <h4>Tiny Habits — o método</h4>
+        <p class="meta-leitura">BJ Fogg · Houghton Mifflin Harcourt · 2019. A fórmula B=MAP e a técnica da <em>ancoragem</em> — como pequenas ações depois de rotinas existentes viram automáticas em semanas, não anos.</p>
+      </div>
+      <div class="leitura">
+        <span class="tipo">Resumo · 3 páginas</span>
+        <h4>Atomic Habits</h4>
+        <p class="meta-leitura">James Clear · Avery · 2018. As 4 leis (tornar óbvio, atrativo, fácil, satisfatório), o poder do 1% e o sistema "don't break the chain" que sustenta hábitos por anos.</p>
       </div>
     </div>
     <a href="academia.html" class="link-academia">Abrir os resumos na Academia Intentia →</a>
@@ -498,21 +505,22 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <section class="bloco" id="missao">
     <div class="bloco-num"><span class="n">6</span> Missão do Dia</div>
     <div class="missao-header">
-      <h2>Diagnóstico das 3 dimensões.</h2>
-      <span class="missao-tempo">15 min</span>
+      <h2>Desenhar 3 hábitos com gatilho + tracker.</h2>
+      <span class="missao-tempo">18 min</span>
     </div>
-    <p class="subtitulo">Avaliar Voz, Gravitas e Coerência (1-5 cada) vinculadas à direção da Etapa 14. Escolher o gargalo. Definir 1 movimento pequeno esta semana.</p>
+    <p class="subtitulo">Traduzir cada movimento da Etapa 14 em versão-hábito. Ancorar em rotina existente. Escolher o formato do tracker. Marcar qual começa amanhã.</p>
 
     <ol class="passos">
-      <li><strong>Reler sua marca (Etapa 14) <span class="tempo-passo">2 min</span></strong><p>Frase-síntese, história curta, prova social. O material da Etapa 14. Cada dimensão será avaliada <em>a serviço dessa marca</em>.</p></li>
-      <li><strong>Avaliar Voz (1-5) <span class="tempo-passo">3 min</span></strong><p>Como você fala hoje sobre a direção? Voz + escrita + presença verbal. 1 = evito falar; 5 = fala fluente, sem hedges, sem receio.</p></li>
-      <li><strong>Avaliar Gravitas (1-5) <span class="tempo-passo">3 min</span></strong><p>Quanto peso sua fala tem sobre a direção? 1 = pessoas questionam constantemente; 5 = pessoas escutam antes de contestar.</p></li>
-      <li><strong>Avaliar Coerência (1-5) <span class="tempo-passo">3 min</span></strong><p>Seu visual e sinais externos batem com a direção? LinkedIn, e-mail, apresentações, roupa em contextos-chave. 1 = tudo ainda mostra a versão antiga; 5 = tudo alinhado com direção nova.</p></li>
-      <li><strong>Escolher gargalo + próximo passo <span class="tempo-passo">4 min</span></strong><p>Uma dimensão só (a mais gargalo). Um movimento pequeno, específico, executável esta semana. Sem plano grande — só primeiro degrau.</p></li>
+      <li><strong>Recap dos 3 movimentos (Etapa 14) <span class="tempo-passo">2 min</span></strong><p>Ver rapidamente os 3 movimentos escolhidos. Não editar — só relembrar como cada um está.</p></li>
+      <li><strong>Reduzir cada movimento à versão-hábito <span class="tempo-passo">6 min</span></strong><p>Um comportamento <b>pequeno o suficiente para o dia ruim</b>: 15-30 min por dia, ou algo semanal específico. Fogg: se você não faria no dia com dor de cabeça, ainda é grande demais.</p></li>
+      <li><strong>Ancorar cada hábito num gatilho <span class="tempo-passo">4 min</span></strong><p>"Depois de [rotina existente], eu vou [hábito pequeno]." A rotina existente tem que ser algo você já faz sem pensar (escovar dente, café da manhã, entrar no carro).</p></li>
+      <li><strong>Escolher o formato do tracker <span class="tempo-passo">3 min</span></strong><p>Planilha, caderno, app, cartaz na parede — o que <em>fica visível</em> onde o hábito acontece. Sem visibilidade, "don't break the chain" não funciona (Clear).</p></li>
+      <li><strong>Marcar qual hábito começa amanhã <span class="tempo-passo">2 min</span></strong><p>UM só. O mais alavancado — o que sustenta os outros 2. Os outros começam nas semanas 2 e 3.</p></li>
+      <li><strong>Sinalizar recompensa (Duhigg) <span class="tempo-passo">1 min</span></strong><p>Depois de marcar o X no tracker, o que sinaliza "feito e satisfatório"? Café bom, música, respiração, olhada consciente para a série crescendo. Pequeno — mas explícito.</p></li>
     </ol>
 
     <a href="missao.html" class="cta-missao">
-      <span class="cta-texto"><span class="cta-tempo">15 min</span>Fazer a Missão</span>
+      <span class="cta-texto"><span class="cta-tempo">18 min</span>Fazer a Missão</span>
       <span class="cta-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
     </a>
   </section>
@@ -552,47 +560,47 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
     <div class="modal-body">
       <div class="modal-secao">
-        <div class="modal-secao-label">O que a dimensão mede</div>
+        <div class="modal-secao-label">O que o elemento faz</div>
         <p id="modal-conceito"></p>
       </div>
       <div class="modal-secao">
         <div class="modal-exemplos">
-          <div class="modal-exemplos-label">Sinais de que está frágil</div>
+          <div class="modal-exemplos-label">Como aplicar</div>
           <ul id="modal-exemplos"></ul>
         </div>
-        <div class="modal-erro"><b>Movimento pequeno para fortalecer</b><span id="modal-erro"></span></div>
+        <div class="modal-erro"><b>Erro comum</b><span id="modal-erro"></span></div>
       </div>
     </div>
   </div>
 </div>
 
-<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 15 · Presença executiva</div></footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 15 · Instalar hábito e tracker — H·G·R</div></footer>
 
 <script>
-  const DIM_DETALHE = {
-    voz: {
-      nome: 'Dimensão Voz',
-      tagline: 'como você fala e é ouvido',
-      icone: 'V',
-      conceito: 'Voz não é volume. É <b>a soma de: como você inicia uma frase, quanto hedge você usa ("acho", "talvez", "meio que"), a velocidade e o ritmo, onde você olha enquanto fala, e como você trata o silêncio</b>. Uma voz forte na direção escolhida tem: frases afirmativas, poucos hedges, pausas usadas como pontuação (não como hesitação), olhar direto quando defende a tese central.',
-      exemplos: ['Você começa muitas frases com "meio que", "eu acho que"', 'Sua fala acelera quando fica insegura sobre o assunto', 'Você evita silêncios — enche com "né?", "sabe?"', 'Em apresentações, você fala baixo especificamente na parte central da sua tese', 'Você pede desculpa antes de dizer algo que sabe'],
-      erro: '<b>Movimento pequeno:</b> grave 60 segundos falando sua história curta (Etapa 14). Ouça de volta. Marque cada hedge e cada silêncio-nervoso. Regrave sem eles. A diferença você ouve — mesmo antes de outros ouvirem.'
+  const HGR_DETALHE = {
+    habito: {
+      nome: 'Hábito',
+      tagline: '"pequeno o suficiente para o dia ruim?"',
+      icone: 'H',
+      conceito: 'Hábito é <b>o comportamento pequeno, específico, repetido</b> que — depois de ~4-8 semanas ancorado no gatilho certo — acontece <em>sem decisão consciente</em>. Fogg: o tamanho ideal do hábito é o que sobrevive no seu pior dia da semana. Se o hábito é "escrever 2h", ele morre na terça difícil. Se é "escrever 20 min", sobrevive. Depois de instalado, ele naturalmente cresce; nunca começa grande.',
+      exemplos: ['Versão pequena do movimento — 15-30 min diários, ou 1 ação semanal específica', 'Comportamento executável em qualquer dia — não depende de motivação, disposição ou tempo extra', 'Um output visível ao fim (X no tracker, arquivo salvo, mensagem enviada)', 'Não tenta cobrir tudo — cobre uma parte específica do movimento'],
+      erro: '<b>Fazer o hábito grande demais.</b> "Escrever 1 artigo por dia" não é hábito — é objetivo enorme disfarçado de hábito. Fogg: se você mede o sucesso pelo <em>número de dias que fez</em>, o hábito precisa ser pequeno o bastante para você conseguir manter esse número alto. 30 dias de 20 min &gt; 3 dias de 3h. Sempre.'
     },
-    gravitas: {
-      nome: 'Dimensão Gravitas',
-      tagline: 'o peso silencioso da sua fala',
+    gatilho: {
+      nome: 'Gatilho',
+      tagline: '"depois de qual rotina existente?"',
       icone: 'G',
-      conceito: 'Gravitas é <b>a percepção de peso e autoridade que você carrega antes de abrir a boca</b> — e que sua fala, quando começa, confirma. Hewlett (2024) mostra que gravitas hoje responde por 67% da percepção de presença executiva. É a soma de: postura calma sob pressão, capacidade de tomar posição, coragem para o silêncio pensativo, evitar defensividade quando questionado. Não se confunde com seriedade ou frieza — é <em>coerência interna visível externa</em>.',
-      exemplos: ['Você fica defensiva quando alguém contesta sua direção', 'Fala muito quando está insegura (tenta compensar com volume de palavras)', 'Aceita objeções por reflexo, sem processar se são procedentes', 'Fica agitada quando o assunto é sua direção — corpo tenso, gestos rápidos', 'Adiciona muitas ressalvas para "não parecer arrogante"'],
-      erro: '<b>Movimento pequeno:</b> reescreva sua história curta (Etapa 14) <em>sem uma única palavra de hedge</em>. Zero "eu acho", zero "talvez", zero "quem sabe". Leia em voz alta. Se sentir arrogância, releia — provavelmente é só a novidade da fala firme. Adote como padrão em 3 conversas essa semana.'
+      conceito: 'Gatilho é <b>o sinal que dispara o comportamento automaticamente</b>. Duhigg: sem sinal identificado, o hábito depende de "lembrar" — e você não vai lembrar nos dias difíceis. Fogg: a estratégia mais robusta é <em>ancorar o novo hábito imediatamente depois de uma rotina que você já executa sem pensar</em>. A fórmula: "depois de [rotina existente], eu vou [novo hábito pequeno]". A rotina existente vira o gatilho — sem esforço adicional de memória.',
+      exemplos: ['Ancorar em rotina física robusta: escovar dente, tomar café, entrar no carro, chegar do trabalho', 'Escrever a frase completa: "depois de X, eu vou Y" — literalmente, num post-it visível na primeira semana', 'Escolher rotina do horário certo do dia (manhã se hábito é criativo, noite se é reflexivo)', 'Repetir a mesma sequência todos os dias — a repetição consolida o gatilho em 3-6 semanas'],
+      erro: '<b>Usar o horário como gatilho ("todo dia às 7h30").</b> Horário sozinho é gatilho fraco — depende de você olhar o relógio no momento certo. Rotina física (escovar dente, café) é gatilho robusto — acontece com você em vez de exigir sua atenção. Fogg: sempre que possível, ancore em <em>ação</em>, não em <em>tempo</em>.'
     },
-    coerencia: {
-      nome: 'Dimensão Coerência',
-      tagline: 'como o visual e os sinais externos confirmam a mensagem',
-      icone: 'C',
-      conceito: 'Coerência é <b>o alinhamento entre o que você diz sobre a direção e o que o mundo vê de você</b> — LinkedIn, e-mail assinatura, apresentações, foto, roupa em contextos-chave, materiais que você compartilha. Não é sobre reformular tudo hoje — é sobre eliminar as <em>contradições ativas</em> que fazem alguém pensar "isso não bate". Coerência quebrada custa muito mais que ausência de coerência: prova ativa contra a sua direção.',
-      exemplos: ['Seu LinkedIn ainda tem o headline do cargo antigo', 'Sua bio pública fala em "estou explorando", "estou tentando"', 'Sua foto profissional é de 5 anos atrás, quando você era outra pessoa', 'Você compartilha conteúdos que reforçam a direção antiga, não a nova', 'Ao apresentar-se em reunião nova, começa por currículo cronológico (versão antiga primeiro)'],
-      erro: '<b>Movimento pequeno:</b> atualizar 1 elemento visível esta semana. Sugestões priorizadas: (1) headline do LinkedIn, (2) "sobre" do LinkedIn (primeira frase), (3) assinatura de e-mail, (4) foto se for antiga. Um por semana até estar tudo alinhado. Um lugar de cada vez.'
+    registro: {
+      nome: 'Registro',
+      tagline: '"onde a série fica visível?"',
+      icone: 'R',
+      conceito: 'Registro é <b>o tracker visível que faz a série existir</b>. Clear: o comportamento observável muda o comportamento. Sem registro, você não vê progresso — e sem ver progresso, o cérebro registra "estou tentando" (esforço) em vez de "estou construindo" (série). Um tracker simples (planilha, caderno, app) com X por dia cria o efeito "don\'t break the chain": você não quer perder o que já construiu, e essa aversão é motor mais robusto que motivação positiva.',
+      exemplos: ['Formato que fica visível no local onde o hábito acontece — planilha aberta, caderno na mesa, app no celular', 'Simplíssimo — X ou nada; sem escala, sem notas, sem "como foi". Binário é o mais robusto', 'Revisado semanalmente (30 s): quantos X essa semana? padrão da série?', 'Compartilhado (opcional) com 1 pessoa — accountability aumenta chance de manter em ~30-40%'],
+      erro: '<b>Tracker complicado que exige esforço para preencher.</b> Se o registro leva mais de 30 segundos, ele mesmo vira fricção — e a fricção mata o hábito antes do próprio hábito. Clear: quanto mais simples o registro, mais robusta a série. Marque X ou não marque — nada mais na 1ª fase. Sofisticação (métricas, notas, revisões) vem depois de 4-8 semanas do hábito instalado.'
     }
   };
 </script>
@@ -627,7 +635,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     const btnClose = document.getElementById('modal-close');
     if(!overlay) return;
     window.abrirModal = function(id){
-      const d = DIM_DETALHE[id];
+      const d = HGR_DETALHE[id];
       if(!d) return;
       document.getElementById('modal-icone').textContent = d.icone;
       document.getElementById('modal-titulo').textContent = d.nome;
@@ -639,7 +647,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       document.body.style.overflow = 'hidden';
     };
     function fechar(){ overlay.classList.remove('aberto'); document.body.style.overflow = ''; }
-    document.querySelectorAll('.dim-card[data-modal]').forEach(card => {
+    document.querySelectorAll('.hgr-card[data-modal]').forEach(card => {
       card.addEventListener('click', () => abrirModal(card.dataset.modal));
       card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirModal(card.dataset.modal); } });
     });
@@ -647,10 +655,9 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     overlay.addEventListener('click', (e) => { if(e.target === overlay) fechar(); });
     document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && overlay.classList.contains('aberto')) fechar(); });
   })();
-  // Puxa direção da Etapa 14
   (function(){
     try {
-      const s = sessionStorage.getItem('intentia-dia14');
+      const s = sessionStorage.getItem('intentia-dia7');
       if (s) {
         const p = JSON.parse(s);
         if (p && p.escolhaFrase) {

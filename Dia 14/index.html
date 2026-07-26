@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 14 · Marca + Direção Escolhida</title>
+<title>Intentia · Etapa 14 · Estratégia → Execução</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -83,6 +83,10 @@
   .leva-lista li::after{content:"";position:absolute;left:9px;top:29px;width:10px;height:6px;border-left:2.5px solid var(--verde-900);border-bottom:2.5px solid var(--verde-900);transform:rotate(-45deg)}
   .leva-lista strong{color:var(--verde-900)}
   .ponto{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);padding:24px 28px;border-radius:0 12px 12px 0;margin-top:8px}
+  .direcao-recap{background:linear-gradient(135deg, #FFF8F5 0%, #FFECE3 100%);border:1.5px solid var(--coral-soft);border-radius:12px;padding:18px 22px;margin-bottom:20px}
+  .direcao-recap-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .direcao-recap-frase{font-family:var(--serif);font-size:16px;font-weight:500;font-style:italic;color:var(--verde-900);line-height:1.4}
+  .direcao-recap small{font-size:12px;color:var(--tinta-suave);display:block;margin-top:6px;font-style:italic}
   .definicao-eu{background:#fff;border:1.5px solid var(--verde-700);border-radius:12px;padding:18px 22px;margin:16px 0}
   .definicao-eu-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
   .definicao-eu-texto{font-family:var(--serif);font-size:18px;line-height:1.45;color:var(--tinta);font-weight:500}
@@ -92,16 +96,16 @@
   .conteudo-item{padding:18px 20px;background:var(--creme);border-radius:10px;margin-bottom:12px;border-left:3px solid var(--verde-500)}
   .conteudo-item h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);margin-bottom:8px}
   .conteudo-item h3 .marcador{font-family:var(--sans);font-size:11px;font-weight:700;color:#fff;background:var(--verde-700);padding:3px 8px;border-radius:4px;letter-spacing:.1em;margin-right:8px;vertical-align:2px}
-  .marca-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
-  @media (max-width:640px){.marca-grid{grid-template-columns:1fr}}
-  .marca-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
-  .marca-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
-  .marca-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:22px;font-weight:600;text-align:center;line-height:1;padding:0}
-  .marca-nome{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
-  .marca-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
-  .marca-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
-  .marca-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
-  .marca-hint svg{width:12px;height:12px;fill:currentColor}
+  .ear-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
+  @media (max-width:640px){.ear-grid{grid-template-columns:1fr}}
+  .ear-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
+  .ear-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
+  .ear-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
+  .ear-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
+  .ear-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
+  .ear-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
+  .ear-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
+  .ear-hint svg{width:12px;height:12px;fill:currentColor}
   .modal-overlay{position:fixed;inset:0;background:rgba(32,51,47,.55);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s}
   .modal-overlay.aberto{display:flex;opacity:1}
   .modal-caixa{background:#fff;border-radius:20px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;transform:translateY(20px);transition:transform .3s ease}
@@ -110,7 +114,7 @@
   .modal-close:hover{background:var(--coral);border-color:var(--coral);color:#fff}
   .modal-close svg{width:16px;height:16px;fill:currentColor}
   .modal-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:32px 32px 26px;border-radius:20px 20px 0 0;display:flex;align-items:center;gap:16px}
-  .modal-icone{width:52px;height:52px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--serif);font-size:22px;font-weight:600;text-align:center;line-height:1}
+  .modal-icone{width:52px;height:52px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--serif);font-size:24px;font-weight:600}
   .modal-titulo{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.15;letter-spacing:-.005em;margin-bottom:4px}
   .modal-tagline{font-size:13.5px;font-style:italic;opacity:.92}
   .modal-body{padding:28px 32px 32px}
@@ -124,6 +128,13 @@
   .modal-exemplos li::before{content:"→";position:absolute;left:0;color:var(--coral);font-weight:700}
   .modal-erro{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
   .modal-erro b{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .semana-recap{background:linear-gradient(135deg, #F0F5F2 0%, var(--verde-100) 100%);border:1.5px solid var(--verde-500);border-radius:14px;padding:22px 26px;margin:20px 0}
+  .semana-recap-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:12px}
+  .semana-recap h3{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:12px;font-weight:600}
+  .semana-recap-lista{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  @media (max-width:520px){.semana-recap-lista{grid-template-columns:1fr}}
+  .semana-recap-lista li{padding:8px 12px;background:#fff;border-radius:8px;font-size:13.5px;color:var(--tinta);border-left:2.5px solid var(--verde-500)}
+  .semana-recap-lista li b{color:var(--verde-900);font-family:var(--serif)}
   .personagens-intro{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--tinta-suave);margin:16px 0 10px;padding:11px 16px;background:var(--verde-100);border-radius:10px;border-left:3px solid var(--verde-700)}
   .personagens-intro-icone{width:22px;height:22px;flex-shrink:0;color:var(--verde-700)}
   .personagens-intro-icone svg{width:22px;height:22px;fill:currentColor}
@@ -267,9 +278,9 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
 <header>
   <div class="hero-inner">
-    <div class="eyebrow">Trilha Capital de Carreira · Bloco A · Etapa 14 · Fechamento Bloco 2</div>
-    <h1>Como o mundo vê essa versão — e <span class="grifo">sua direção escolhida</span>.</h1>
-    <p class="lede">Marca como a última lente: se sua direção não pode ser dita em 30 segundos, ela ainda não é decisão. Hoje você fecha o Bloco 2 com Sua Direção Escolhida.</p>
+    <div class="eyebrow">Trilha Capital de Carreira · Bloco A · Etapa 14 · Fim do Bloco 2</div>
+    <h1>Estratégia → <span class="grifo">Execução</span>. Sem a seta, é literatura.</h1>
+    <p class="lede">Mankins & Steele: estratégias entregam em média só 63% do prometido — o gap é execução. Sull: execução falha em coordenação e adaptação, não em alinhamento. Fim do Bloco 2: consolidar tudo que amplificamos em 3 movimentos executáveis nas próximas 4 semanas.</p>
   </div>
   <div class="arc"></div>
 </header>
@@ -286,16 +297,16 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <div class="onde-estamos">
   <div class="oe-inner">
     <div class="oe-camada">
-      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 2 de 4 · FECHAMENTO</div>
+      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 1 de 3 · Amplificar</div>
       <div class="oe-semanas">
         <span class="oe-semana feita"><span class="num">A</span>Mapear ativos ✓</span>
-        <span class="oe-semana atual"><span class="num">B</span>Escolher direção ✓</span>
-        <span class="oe-semana"><span class="num">C</span>Traçar plano</span>
+        <span class="oe-semana feita"><span class="num">B</span>Escolher direção ✓</span>
+        <span class="oe-semana atual"><span class="num">C</span>Amplificar</span>
         <span class="oe-semana"><span class="num">D</span>Instalar rotina</span>
       </div>
     </div>
     <div class="oe-camada">
-      <div class="oe-eyebrow">Etapa 7 de 7 nesta semana · Etapa 14 na trilha · Último dia da semana</div>
+      <div class="oe-eyebrow">Etapa 7 de 7 nesta semana · Etapa 14 na trilha · fim de Bloco 2</div>
       <div class="oe-dias">
         <span class="oe-dia feito">1</span><span class="oe-dia-conector"></span>
         <span class="oe-dia feito">2</span><span class="oe-dia-conector"></span>
@@ -307,7 +318,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
     </div>
     <p class="oe-texto">
-      Hoje é <span class="oe-tag-dia">Fechamento</span>. Marca é a última lente — depois dela, a Direção Escolhida do Bloco 2. Bloco 3 abre com plano concreto sobre a rota que hoje virou escolha.
+      Você amplificou 6 capacidades. Hoje: <span class="oe-tag-dia">Estratégia → Execução</span> — consolidar em 3 movimentos que o Bloco 3 vai instalar como rotina.
     </p>
   </div>
 </div>
@@ -316,13 +327,13 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <section class="bloco" id="audio">
     <div class="bloco-num"><span class="n">1</span> O áudio do dia</div>
     <h2>A ideia central, contada com calma.</h2>
-    <p class="subtitulo">Ouça antes de começar — 6 min.</p>
+    <p class="subtitulo">Ouça antes de começar — 5 min.</p>
     <div class="player">
-      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia · Fechamento</span><span class="player-tag">Ep. 14 · Bloco A · Bloco 2</span></div>
-      <div class="player-titulo">A marca é o teste final — e a direção escolhida</div>
-      <div class="player-sub">O áudio de fechamento do Bloco 2 — pela <b>voz do Intentia</b>.</div>
+      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 14 · Bloco A · Bloco 1 · fim</span></div>
+      <div class="player-titulo">Sem execução, estratégia é literatura</div>
+      <div class="player-sub">A ideia central do dia — contada pela <b>voz do Intentia</b>.</div>
       <div class="waveform" id="waveform"></div>
-      <div class="player-tempo"><span>00:00</span><span>06:20</span></div>
+      <div class="player-tempo"><span>00:00</span><span>05:20</span></div>
       <div class="player-controles">
         <button class="ctrl-btn"><svg viewBox="0 0 24 24"><path d="M12.5 3v2.5c4.14 0 7.5 3.36 7.5 7.5s-3.36 7.5-7.5 7.5-7.5-3.36-7.5-7.5c0-1.4.39-2.7 1.06-3.83L4.32 7.86A9.955 9.955 0 003 13c0 5.24 4.26 9.5 9.5 9.5S22 18.24 22 13s-4.26-10-9.5-10z"/></svg></button>
         <button class="ctrl-play" id="btn-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
@@ -343,39 +354,59 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <section class="bloco" id="leva">
     <div class="bloco-num"><span class="n">2</span> O que você leva de hoje</div>
     <h2>Você termina o Bloco 2 sendo capaz de…</h2>
-    <p class="subtitulo">Três capacidades no presente — mais o fechamento.</p>
+    <p class="subtitulo">Três capacidades no presente.</p>
     <ul class="leva-lista">
-      <li><strong>Comunicar sua direção em 30 segundos</strong> — Avery & Greenwald mostram que marca pessoal não é sobre "brand" performático; é sobre a capacidade de dizer <em>quem você é profissionalmente</em> de forma que a outra pessoa consiga recontar em 15 segundos.</li>
-      <li><strong>Testar cada Eu contra 3 elementos de marca</strong> — Frase-síntese (2-3 palavras), História curta (30s), Prova social. Uma versão que não passa nesses 3 elementos ainda está em processo — não é decisão.</li>
-      <li><strong>Fechar o Bloco 2 com Sua Direção Escolhida</strong> — a síntese das 7 dias: pode ser um dos 3 Eus, pode ser uma combinação, pode ser "não decido ainda por X motivo". Todas as três respostas são legítimas.</li>
+      <li><strong>Nomear seu gap de execução</strong> — Mankins & Steele encontraram que estratégias empresariais entregam em média 63% do prometido; os 37% perdidos são gap de execução. Em carreira o padrão é o mesmo: você "sabe o que fazer" muito mais do que executa. Reconhecer isso é o primeiro passo — não é falha moral, é padrão sistêmico.</li>
+      <li><strong>Distinguir alinhamento de coordenação (Sull)</strong> — a maioria pensa que execução falha por "não estarem todos alinhados". Não. Sull mostrou que 84% da execução falha em <em>coordenação horizontal</em> (com outras áreas, com o mercado) e em <em>adaptação</em> ao inesperado — não em alinhamento vertical. Em carreira: seus movimentos precisam sobreviver ao mercado e ao caos, não só ao seu plano.</li>
+      <li><strong>Consolidar 3 movimentos + cadência de revisão</strong> — não 10, não 6. TRÊS movimentos concretos das próximas 4 semanas + a data e o formato exatos da revisão. É o par mínimo que o Bloco 3 vai transformar em rotina real.</li>
     </ul>
   </section>
 
   <section class="bloco" id="ponto">
     <div class="bloco-num"><span class="n">3</span> O Ponto de Partida de Hoje</div>
-    <h2>Se você não consegue <em>dizer</em>, você ainda não <em>tem</em>.</h2>
-    <p class="subtitulo">Avery & Greenwald: "a marca começa quando outra pessoa consegue explicar você para uma terceira".</p>
+    <h2>Estratégia sem execução é <em>vontade</em>. Execução sem revisão é <em>ilusão</em>.</h2>
+    <p class="subtitulo">Mankins & Steele (2005): "companhias perdem 37% do valor da estratégia entre a decisão e a execução."</p>
     <div class="ponto">
-      <div class="definicao-eu">
-        <div class="definicao-eu-label">O que é "marca" nessa semana</div>
-        <div class="definicao-eu-texto"><b>Marca é o teste final da decisão de direção</b> — não porque marca importa mais que critério, propósito ou essencial, mas porque <em>ela agrega tudo</em>. Uma direção que você consegue articular em 30 segundos, que tem prova concreta de que já está a caminho, e que sobrevive a "e daí?" da outra pessoa — essa direção passou por todos os filtros implicitamente.</div>
+
+      <div class="direcao-recap">
+        <div class="direcao-recap-label">Sua direção escolhida (Etapa 7)</div>
+        <div class="direcao-recap-frase" id="direcao-recap-txt">—</div>
+        <small>Fim do Bloco 2: a direção segue. O que muda é <em>o que você faz com ela</em> nas próximas 4 semanas — 3 movimentos, não 10.</small>
       </div>
 
-      <p style="margin-top:18px"><b>Jill Avery e Rachel Greenwald (2023)</b> reformulam marca pessoal para o século XXI: já não é sobre construir uma persona; é sobre <em>a coerência entre quem você é, o que você entrega e o que se lembra de você</em>. A "nova abordagem" é anti-performática — quer alinhamento, não marketing.</p>
+      <div class="semana-recap">
+        <div class="semana-recap-label">Recap · Bloco 2 amplificou 6 capacidades</div>
+        <h3>Do que você fez nos últimos 6 dias</h3>
+        <ul class="semana-recap-lista">
+          <li><b>Etapa 8 · Presença</b> — V·G·C</li>
+          <li><b>Etapa 9 · Autoridade</b> — D·V·R</li>
+          <li><b>Etapa 10 · Rede</b> — O·P·E</li>
+          <li><b>Etapa 11 · Persuasão</b> — C·P·R</li>
+          <li><b>Etapa 12 · Aprendizagem</b> — D·F·A</li>
+          <li><b>Etapa 13 · Energia</b> — E·F·R</li>
+        </ul>
+      </div>
 
-      <p><b>Dorie Clark (2011)</b> traz o método operacional: 3 elementos que qualquer marca pessoal precisa ter — <em>frase-síntese</em> (o que você faz em 2-3 palavras), <em>história curta</em> (30 segundos de posicionamento) e <em>prova social</em> (o que valida que você é quem diz ser). Se qualquer um dos 3 falta, a marca não sustenta.</p>
+      <div class="definicao-eu">
+        <div class="definicao-eu-label">O que é "estratégia executável" neste bloco</div>
+        <div class="definicao-eu-texto"><b>Estratégia executável é a redução consciente da lista de possíveis (grande) à lista de compromissos (pequena) com revisão marcada</b>. Não é "ter mais disciplina". É <em>escolher menos</em> — porque a mente humana e a agenda de qualquer profissional em atividade não sustentam 10 movimentos simultâneos. 3 sustentam.</div>
+      </div>
+
+      <p style="margin-top:18px"><b>Michael Mankins e Richard Steele (2005)</b>, em pesquisa com centenas de empresas, encontraram que <em>63%</em> era a média do retorno estratégico realmente entregue — os outros 37% se perdiam no caminho entre "decidido" e "feito". Não porque as estratégias fossem ruins, mas porque <b>a execução não recebia o mesmo cuidado que a decisão</b>. Diagnóstico: excesso de iniciativas simultâneas, falta de recursos direcionados, ausência de revisão sistemática, comunicação vaga. Em carreira individual, os 37% frequentemente viram 60-70%: profissionais competentes decidem bem e executam parcialmente.</p>
+
+      <p><b>Donald Sull</b>, pesquisando execução por mais de 20 anos, refinou o diagnóstico: <em>o problema quase nunca é alinhamento vertical</em> ("todos concordam com a estratégia?"). O problema é <em>coordenação horizontal</em> (fazer com outras áreas/atores) e <em>adaptação</em> (quando a realidade muda no meio do caminho). Sull descobriu que 84% dos gerentes confiam nas promessas dos pares — mas apenas 9% confiam de fato. Em carreira: seu plano executa quando você <em>desenha para o mercado real</em>, não para o mundo ideal em que os outros fazem sua parte pontualmente.</p>
 
       <div class="teste-linha">
-        Teste rápido: se um novo contato profissional te perguntar hoje "o que você faz?" — a resposta que sai da sua boca é <b>a versão nova ou a antiga</b>?
+        Teste rápido: dos 6 dias do Bloco 2, você <b>manteve</b> alguma coisa por 3+ dias — ou tudo ficou como bom em teoria?
       </div>
 
-      <p style="margin-top:18px"><b>Por que hoje é o dia da síntese?</b> Porque marca é o único filtro que <em>obriga a convergência</em>. Critério pode dividir; propósito pode dividir; essencial pode dividir. Mas você não pode ter <em>duas frases-síntese</em> vivas ao mesmo tempo — precisa escolher. Aqui vem a decisão: qual versão vira "sua direção escolhida" do Bloco 2. Pode ser um dos 3 Eus, pode ser uma combinação, pode ser "espera mais um ciclo". Todas as três respostas são maduras.</p>
+      <p style="margin-top:18px"><b>Por que hoje o exercício é 3 movimentos + cadência?</b> Porque o Bloco 3 é "Instalar rotina" — e rotina não instala se você chega nela com 10 iniciativas concorrentes. 3 movimentos + a data exata da 1ª revisão + o formato dela (5 min? 30 min? sozinho ou com alguém?) é o mínimo viável para o Bloco 3 começar bem. Menos que isso, vaga. Mais que isso, dilui.</p>
     </div>
   </section>
 
   <section class="bloco" id="conteudo">
     <div class="bloco-num"><span class="n">4</span> O conteúdo que direciona a sua missão de hoje</div>
-    <h2>Três elementos de marca — clicáveis para o método.</h2>
+    <h2>Três elementos — Escolher · Agir · Rever.</h2>
     <p class="subtitulo">10 min. Material de referência.</p>
 
     <div class="personagens-intro">
@@ -388,49 +419,49 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">01</span>Três elementos de marca — Frase-síntese · História · Prova</h3>
-      <p>Cada elemento é independente e obrigatório. Se falta um, a marca não sustenta.</p>
+      <h3><span class="marcador">01</span>Três elementos — Escolher · Agir · Rever</h3>
+      <p>Cada elemento cobre uma parte do gap de execução (Mankins & Steele + Sull). Toque em cada para o método aplicado.</p>
 
-      <div class="marca-grid">
-        <div class="marca-card" data-modal="frase" role="button" tabindex="0">
-          <div class="marca-icone">F</div>
-          <div class="marca-nome">Frase-síntese</div>
-          <div class="marca-pergunta">"2-3 palavras que dizem o que você faz"</div>
-          <span class="marca-seta">›</span>
+      <div class="ear-grid">
+        <div class="ear-card" data-modal="escolher" role="button" tabindex="0">
+          <div class="ear-icone">E</div>
+          <div class="ear-nome">Escolher</div>
+          <div class="ear-pergunta">"o que fica de fora?"</div>
+          <span class="ear-seta">›</span>
         </div>
-        <div class="marca-card" data-modal="historia" role="button" tabindex="0">
-          <div class="marca-icone">H</div>
-          <div class="marca-nome">História curta</div>
-          <div class="marca-pergunta">"30 segundos de posicionamento"</div>
-          <span class="marca-seta">›</span>
+        <div class="ear-card" data-modal="agir" role="button" tabindex="0">
+          <div class="ear-icone">A</div>
+          <div class="ear-nome">Agir</div>
+          <div class="ear-pergunta">"movimento próximo, específico"</div>
+          <span class="ear-seta">›</span>
         </div>
-        <div class="marca-card" data-modal="prova" role="button" tabindex="0">
-          <div class="marca-icone">P</div>
-          <div class="marca-nome">Prova social</div>
-          <div class="marca-pergunta">"O que valida que você é quem diz ser"</div>
-          <span class="marca-seta">›</span>
+        <div class="ear-card" data-modal="rever" role="button" tabindex="0">
+          <div class="ear-icone">R</div>
+          <div class="ear-nome">Rever</div>
+          <div class="ear-pergunta">"quando, com quem, como"</div>
+          <span class="ear-seta">›</span>
         </div>
       </div>
 
-      <span class="marca-hint">
+      <span class="ear-hint">
         <svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>
-        Toque em cada elemento para o método e exemplos.
+        Toque em cada elemento para o método e o exemplo aplicado.
       </span>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">02</span>A marca da direção escolhida — leitura dos personagens</h3>
+      <h3><span class="marcador">02</span>Consolidação do Bloco 2 — leitura dos personagens</h3>
 
       <div class="caso">
         <div class="caso-header">
           <div class="caso-avatar">C</div>
           <div>
             <div class="caso-nome">Camila</div>
-            <div class="caso-perfil">Direção escolhida: Continuação Paralela</div>
+            <div class="caso-perfil">3 movimentos: 1 artigo/semana · 1 pedido preparado · ritual mental</div>
           </div>
-          <span class="caso-tag">Marca clara</span>
+          <span class="caso-tag">Bloco 2 → 4</span>
         </div>
-        <p><b>Frase:</b> "análise de decisão com IA". <b>História:</b> "sou analista sênior num banco há 8 anos; estou virando referência pública em como IA muda análise de risco — escrevo, dou aulas, publico." <b>Prova:</b> 1º artigo publicado, 200 seguidores em 3 meses, convite para 1 palestra. Marca coerente — a direção comunica sozinha.</p>
+        <p><b>Escolher (cede):</b> comentários em posts alheios, "estudar mais sobre" IA sem output, calls opcionais. <b>Agir (3 movimentos):</b> (1) artigo semanal quinta 07h-08h30 → publicado até domingo; (2) pedido preparado por semana (rodízio: apresentação/convite/parceria); (3) ritual celular fora do quarto às 22h30. <b>Rever:</b> reunião comigo mesma sexta 17h-17h30 — 3 perguntas fixas.</p>
       </div>
 
       <div class="caso">
@@ -438,11 +469,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <div class="caso-avatar rafael">R</div>
           <div>
             <div class="caso-nome">Rafael</div>
-            <div class="caso-perfil">Direção escolhida: Adjacência Iterativa</div>
+            <div class="caso-perfil">3 movimentos: 1 vídeo/semana · 1 café estratégico · corte reuniões noturnas</div>
           </div>
-          <span class="caso-tag">Marca em construção</span>
+          <span class="caso-tag">Bloco 2 → 4</span>
         </div>
-        <p><b>Frase:</b> "operações para escala digital". <b>História:</b> "coordenei operações industriais por 12 anos; agora estou aplicando o que aprendi em empresas de tech em crescimento — fiz 2 projetos de consultoria em fintech e prospecto próximo cargo." <b>Prova:</b> 2 projetos entregues, 3 depoimentos escritos, LinkedIn atualizado. Marca em construção, direção clara.</p>
+        <p><b>Escolher (cede):</b> reuniões-status que dá para virar mensagem, participações "só para ficar visível", email fora do horário. <b>Agir (3 movimentos):</b> (1) 1 vídeo curto quarta 07h → publicado sexta; (2) 1 café com pessoa da rede estratégica por semana (agenda 15 dias antes); (3) reuniões cortadas após 21h por 4 semanas. <b>Rever:</b> domingo 20h-20h20 — check + agendar café da semana seguinte.</p>
       </div>
 
       <div class="caso">
@@ -450,34 +481,34 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <div class="caso-avatar juliana">J</div>
           <div>
             <div class="caso-nome">Juliana</div>
-            <div class="caso-perfil">Direção escolhida: síntese Continuação+Reinvenção Paralela</div>
+            <div class="caso-perfil">3 movimentos: aula piloto · mentoria emocional · projetos-âncora</div>
           </div>
-          <span class="caso-tag">Marca em transição</span>
+          <span class="caso-tag">Bloco 2 → 4</span>
         </div>
-        <p><b>Frase:</b> "design de sistemas para pequenos negócios". <b>História:</b> "sou designer autônoma há 2 anos; estou construindo em paralelo uma escola online sobre design de sistemas — primeiro curso piloto começa em 3 meses." <b>Prova:</b> currículo do curso rascunhado, lista de 8 alunos interessados, 3 depoimentos de clientes atuais. Marca em transição, direção definida.</p>
+        <p><b>Escolher (cede):</b> propostas de projeto que não são "curso" ou "portfolio-âncora"; comparação com outros designers no Instagram; refinar demais o material antes de testar. <b>Agir (3 movimentos):</b> (1) aula piloto pronta em 3 semanas + testada com 3 alunos beta; (2) conversa semanal com mentora informal (quinta 19h); (3) apenas 2 projetos-cliente novos por mês (âncora + explorador). <b>Rever:</b> a cada 15 dias, sábado de manhã, 45 min com café.</p>
       </div>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">03</span>A regra da Etapa 14: síntese, não pureza</h3>
-      <p>Sua direção escolhida <b>não precisa ser um dos 3 Eus puros</b>. Pode ser uma síntese (Continuação + Adjacência) — muitas trajetórias fortes são combinações. Pode ser "vou testar por 6 meses e reavaliar" — hipótese com prazo é decisão também. Pode ser "ainda preciso amadurecer" — reconhecer isso, com data para revisar, é decisão madura, não fuga.</p>
+      <h3><span class="marcador">03</span>A regra da Etapa 14: 3 movimentos + 1 revisão marcada</h3>
+      <p>Mankins & Steele: os 37% perdidos vêm de <b>iniciativas em excesso, cada uma subrecursada</b>. 3 movimentos totalmente recursados (agenda, energia, atenção) &gt; 10 movimentos meio-feitos. Sull: <b>revisão sem cadência marcada é revisão que não acontece</b>. A cadência precisa ser marcada agora, com data, horário e formato — não "quando der". Se a próxima revisão não está no calendário no fim da Etapa 14, os 3 movimentos vão viver 2 semanas e morrer no dia 18.</p>
     </div>
   </section>
 
   <section class="bonus bloco" id="bonus">
     <div class="bloco-num"><span class="n">5</span> Seu bônus antes da missão</div>
-    <h2>Marca pessoal do século XXI — coerência, não performance.</h2>
-    <p class="subtitulo">Duas leituras que fundamentam os 3 elementos.</p>
+    <h2>O gap real entre estratégia e execução.</h2>
+    <p class="subtitulo">Duas leituras que fecham o Bloco 2.</p>
     <div class="leituras">
       <div class="leitura">
         <span class="tipo">Resumo · 3 páginas</span>
-        <h4>Nova abordagem de marca pessoal</h4>
-        <p class="meta-leitura">Avery & Greenwald (2023) — marca pessoal reformulada: alinhamento entre quem você é, o que entrega e o que se lembra. Anti-performance, pró-coerência.</p>
+        <h4>Transformando estratégia excelente em performance excelente</h4>
+        <p class="meta-leitura">Michael C. Mankins & Richard Steele · Harvard Business Review · 2005. Estudo com centenas de empresas — só 63% do valor prometido pela estratégia se materializa. Os 37% perdidos vêm de causas identificáveis; não é aleatório.</p>
       </div>
       <div class="leitura">
         <span class="tipo">Resumo · 3 páginas</span>
-        <h4>Reinventar sua marca pessoal</h4>
-        <p class="meta-leitura">Dorie Clark (2011) — o método operacional em 3 elementos: frase-síntese, história curta, prova social. Se falta um, a marca não sustenta.</p>
+        <h4>Por que a execução da estratégia desmorona — e o que fazer</h4>
+        <p class="meta-leitura">Donald Sull, Rebecca Homkes & Charles Sull · Harvard Business Review · 2015. Pesquisa com 8.000+ gerentes desmonta 5 mitos comuns sobre execução, incluindo o mais persistente: "o problema é alinhamento". Não é.</p>
       </div>
     </div>
     <a href="academia.html" class="link-academia">Abrir os resumos na Academia Intentia →</a>
@@ -485,24 +516,24 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   </section>
 
   <section class="bloco" id="missao">
-    <div class="bloco-num"><span class="n">6</span> Missão do Dia · Fechamento Bloco 2</div>
+    <div class="bloco-num"><span class="n">6</span> Missão do Dia</div>
     <div class="missao-header">
-      <h2>Sua Direção Escolhida.</h2>
-      <span class="missao-tempo">25 min</span>
+      <h2>Consolidar Bloco 2 em 3 movimentos + 1 revisão.</h2>
+      <span class="missao-tempo">20 min</span>
     </div>
-    <p class="subtitulo">A síntese do Bloco 2. Decisão de direção (não de plano — plano vem no Bloco 3). Marca articulada + próximo passo + pergunta madura para carregar.</p>
+    <p class="subtitulo">Pegar das Etapas 15-20. Escolher 3 movimentos que o Bloco 3 vai instalar como rotina. Nomear o que cede. Marcar a próxima revisão.</p>
 
     <ol class="passos">
-      <li><strong>Revisitar as 3 leituras (Critério, Propósito, Atravessável) <span class="tempo-passo">3 min</span></strong><p>Abrir mentalmente o material da Etapa 13 — a tabela acumulada. Que versão convergiu forte? Alguma dividiu? Alguma ficou baixa?</p></li>
-      <li><strong>Decidir sua direção <span class="tempo-passo">5 min</span></strong><p>Uma das 3, combinação de 2, ou "vou testar por X meses e reavaliar". <b>Todas as 3 respostas são legítimas.</b> Nomeie sua escolha em uma frase.</p></li>
-      <li><strong>Escrever sua Frase-Síntese <span class="tempo-passo">4 min</span></strong><p>2-4 palavras que dizem o que você faz na direção escolhida. Não é slogan; é resumo. Se você fala mais que 5 palavras, ainda não é síntese.</p></li>
-      <li><strong>Escrever sua História Curta <span class="tempo-passo">6 min</span></strong><p>30 segundos de posicionamento (~50-70 palavras). De onde você vem, onde está indo, o que está fazendo agora nessa direção. Testável em voz alta.</p></li>
-      <li><strong>Nomear sua Prova Social atual <span class="tempo-passo">3 min</span></strong><p>O que <em>já existe</em> que valida essa direção — mesmo que pequeno. Pode ser: 1 projeto, 1 conteúdo publicado, 1 conversa que virou algo. Se não tem nada, esse é o próximo passo mínimo.</p></li>
-      <li><strong>Registrar próximo passo + pergunta para Bloco 3 <span class="tempo-passo">4 min</span></strong><p>1 ação específica da próxima semana + 1 pergunta que você quer levar para o Bloco 3 (Traçar plano). A pergunta é combustível — não precisa ter resposta ainda.</p></li>
+      <li><strong>Recap das Etapas 15-20 <span class="tempo-passo">4 min</span></strong><p>Ver rapidamente o que você registrou em cada dia. Não editar, não julgar — só relembrar. É a base do que vem a seguir.</p></li>
+      <li><strong>Escolher os 3 movimentos das próximas 4 semanas <span class="tempo-passo">5 min</span></strong><p>Não 5, não 6. TRÊS. O que — se você fizer só isso — o Bloco 3 valeu. Cada um com nome específico, frequência, e ligação com a direção.</p></li>
+      <li><strong>Nomear o que cede <span class="tempo-passo">3 min</span></strong><p>Quando o mês ficar cheio (vai ficar), o que <em>cede primeiro</em>? Sem essa lista nomeada agora, os 3 movimentos vão perder para o urgente.</p></li>
+      <li><strong>Desenhar a revisão <span class="tempo-passo">4 min</span></strong><p>Data + horário + formato + 3 perguntas fixas. Sull: revisão sem cadência marcada é revisão que não acontece.</p></li>
+      <li><strong>Sinal claro de "estou saindo do plano" <span class="tempo-passo">2 min</span></strong><p>O que aciona uma revisão fora do calendário? Ex.: "se pular 2 semanas do movimento 1, chamo revisão emergencial". Adaptar cedo &gt; corrigir tarde.</p></li>
+      <li><strong>Marcar o Bloco 3 <span class="tempo-passo">2 min</span></strong><p>Só 1 clique: você entra amanhã na semana "Instalar rotina" com estratégia consolidada. É a última semana da trilha — merece estar visível na sua agenda.</p></li>
     </ol>
 
     <a href="missao.html" class="cta-missao">
-      <span class="cta-texto"><span class="cta-tempo">25 min</span>Fazer a Missão de Fechamento</span>
+      <span class="cta-texto"><span class="cta-tempo">20 min</span>Fazer a Missão</span>
       <span class="cta-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
     </a>
   </section>
@@ -542,12 +573,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
     <div class="modal-body">
       <div class="modal-secao">
-        <div class="modal-secao-label">O que é</div>
+        <div class="modal-secao-label">O que o elemento faz</div>
         <p id="modal-conceito"></p>
       </div>
       <div class="modal-secao">
         <div class="modal-exemplos">
-          <div class="modal-exemplos-label">Como articular bem</div>
+          <div class="modal-exemplos-label">Como aplicar</div>
           <ul id="modal-exemplos"></ul>
         </div>
         <div class="modal-erro"><b>Erro comum</b><span id="modal-erro"></span></div>
@@ -556,33 +587,33 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   </div>
 </div>
 
-<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 14 · Marca + Direção Escolhida · Fechamento Bloco 2</div></footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 14 · Estratégia → Execução · fim do Bloco 2</div></footer>
 
 <script>
-  const MARCA_DETALHE = {
-    frase: {
-      nome: 'Elemento Frase-Síntese',
-      tagline: '2-3 palavras que dizem o que você faz',
-      icone: 'F',
-      conceito: 'A frase-síntese é o núcleo condensado da sua marca. Dorie Clark: se você usa mais que 5 palavras, ainda não sintetizou. É o que sobra quando você tira tudo o que é adjetivo, adorno ou explicação. Serve para: LinkedIn headline, apresentação em conferência, resposta ao "o que você faz?" no elevador. Deve ser <b>compreensível para leigos, específica o suficiente para distinguir você de 100 outras pessoas do seu campo</b>.',
-      exemplos: ['"Analista de risco financeiro" — funciona: específico + compreensível', '"Consultor" — falha: genérico demais, não distingue', '"Head de operações para fintechs em growth" — funciona: específico + posicionamento', '"Educadora sobre design de sistemas" — funciona: verbo (ação) + tema específico'],
-      erro: 'Usar títulos corporativos (VP de estratégia, coordenador sênior). Cargos internos não comunicam para fora. Frase-síntese boa <b>fala do que você faz, não do que a empresa te chama</b>.'
+  const EAR_DETALHE = {
+    escolher: {
+      nome: 'Escolher',
+      tagline: '"o que fica de fora?"',
+      icone: 'E',
+      conceito: 'Escolher é <b>a redução consciente da lista de possíveis à lista de compromissos</b>. Mankins & Steele: os 37% perdidos entre estratégia e execução vêm de iniciativas em excesso, cada uma subrecursada. Escolher é dizer não — não para 8, para <em>tudo menos 3</em>. Sem isso, o Bloco 3 começa com 10 movimentos concorrentes e nenhum vira rotina real.',
+      exemplos: ['3 movimentos totalmente recursados (agenda, energia, atenção) &gt; 10 movimentos meio-feitos', 'Escolher exige nomear o que <em>não</em> vai acontecer nas próximas 4 semanas — explicitamente', 'Escolha ligada à direção da Etapa 7 — não à urgência da semana', 'Escrito, visível, revisado — não "vou lembrar"'],
+      erro: '<b>Escolher tudo é escolher nada.</b> A tentação de "aproveitar" as 6 capacidades do Bloco 2 leva a listar 6 movimentos (um por dia). Isso não é execução — é sobrecarga com nome bonito. As outras 3 capacidades <em>continuam existindo</em> — só não competem pelo bloco protegido. Elas ganham espaço quando algum dos 3 movimentos escolhidos vira automático (~4-6 semanas).'
     },
-    historia: {
-      nome: 'Elemento História Curta',
-      tagline: '30 segundos de posicionamento',
-      icone: 'H',
-      conceito: 'A história curta expande a frase-síntese em contexto e trajetória. Não é bio ou CV — é <b>narrativa pequena</b> com: (1) de onde você vem (2-3 pinceladas do capital acumulado), (2) onde está indo (a direção nova), (3) o que está fazendo agora (evidência de movimento). Total: 50-70 palavras. Testável em voz alta em 30 segundos. Serve para: apresentação em reuniões novas, resposta em coffee chats, primeira mensagem em rede.',
-      exemplos: ['"Sou analista sênior de dados num banco há 8 anos. Comecei há 6 meses a escrever sobre como IA está mudando análise de risco — hoje tenho um blog com 500 leitores e um convite para palestra em janeiro."', '"Coordenei operações industriais por 12 anos. Estou aplicando esse background em fintechs em crescimento — fiz 2 projetos de consultoria e busco cargo de head de ops em empresa de 50-150 pessoas."', '"Sou designer autônoma há 2 anos, ex-agência. Estou lançando uma escola online sobre design de sistemas — currículo pronto, primeiro turma piloto em 3 meses, 8 pré-inscritos."'],
-      erro: 'Contar a história em ordem cronológica de currículo. História curta boa <b>começa pelo presente</b> ("estou fazendo X") e ancora o passado só o suficiente para dar credibilidade. Cronologia entedia; presente engaja.'
+    agir: {
+      nome: 'Agir',
+      tagline: '"movimento próximo, específico"',
+      icone: 'A',
+      conceito: 'Agir é <b>o que acontece na semana concreta</b> — não "próximo mês", não "quando estiver melhor". Sull: 84% dos gerentes confiam nas promessas dos pares, mas apenas 9% confiam de fato. Traduzindo para carreira individual: você confia na sua própria promessa de "vou começar segunda" muito mais do que deveria. A ação executa quando o <em>próximo passo</em> tem data, hora, local e gatilho — a partir dessa semana.',
+      exemplos: ['Cada movimento com nome, frequência, dia e hora — não "quando der"', 'Movimento próximo &lt; 7 dias da hoje — se o primeiro é daqui a 3 semanas, ele não vai começar', 'Ligação horizontal explícita (Sull): se depende de outro, quem é, e como você adapta se ele atrasar', 'Cada movimento com 1 métrica de "feito" simples (publicou/enviou/gravou)'],
+      erro: '<b>Ação em modo "vou tentar mais".</b> Isso é vontade, não ação. Sull mostrou que "esforço maior" quase nunca é o gap real — o gap é <em>coordenação e adaptação</em>. Se seu movimento depende de outro (mentor, cliente, colega), você tem plano B para quando o outro atrasar? Se depende do mercado (leitor, empresa, evento), você tem versão-alvo alcançável mesmo sem resposta ideal?'
     },
-    prova: {
-      nome: 'Elemento Prova Social',
-      tagline: 'o que valida que você é quem diz ser',
-      icone: 'P',
-      conceito: 'A prova social é <b>evidência concreta</b> de que a direção não é só intenção. Pode ser pequena: 1 conteúdo publicado, 1 projeto entregue, 1 depoimento de cliente, 1 conversa que virou algo. O ponto não é volume — é <em>existir</em>. Sem prova social, sua marca é aspiração; com prova social (mesmo mínima), é direção com evidência. Se sua direção é nova e você não tem prova ainda, <b>gerar a primeira prova é o próximo passo mínimo</b>.',
-      exemplos: ['1 artigo publicado no LinkedIn com 100+ interações', '1 projeto lateral entregue para cliente/amigo/empresa', '3 depoimentos escritos (podem ser de ex-colegas/gestores)', 'Currículo específico atualizado para a direção nova', 'Portfolio online com trabalhos dessa direção', 'Grupo/comunidade da área onde você já é ativo'],
-      erro: 'Achar que precisa esperar ter prova "boa o suficiente" para começar a comunicar. Prova social <b>cresce com uso</b> — quanto mais você comunica a direção, mais as pessoas te chamam para coisas dessa direção, o que gera nova prova. A pequena prova de hoje sustenta a comunicação que gera a prova maior de amanhã.'
+    rever: {
+      nome: 'Rever',
+      tagline: '"quando, com quem, como"',
+      icone: 'R',
+      conceito: 'Rever é <b>o mecanismo que impede o plano de morrer no dia 18</b>. Sull: as empresas que executam bem revisam <em>com cadência protegida</em>, não "quando surge tempo". Em carreira: 15-30 min a cada 1-2 semanas, com 3 perguntas fixas, salva os 3 movimentos. Sem isso, o plano vira boa intenção esquecida em 3 semanas. Cadência marcada &gt; disciplina esperada.',
+      exemplos: ['Data + horário + local + duração — específicos e no calendário agora', '3 perguntas fixas (não mudar toda vez): o que fiz? o que não fiz? o que ajusto?', 'Sozinho ou com alguém (mentor, par, coach) — o segundo formato tem mais compromisso, o primeiro mais reflexão', 'Sinal de "revisão emergencial fora do calendário" — quando os 3 movimentos estão saindo do plano'],
+      erro: '<b>Revisão que virou reunião consigo mesma sem pauta.</b> Sem 3 perguntas fixas, revisão vira ruminação — você "revisa" tudo, ajusta nada. As 3 perguntas devem forçar <em>decisão concreta</em> no fim: manter, ajustar ou cortar cada um dos 3 movimentos. Se você sai da revisão sem 1 decisão registrada, ela não foi revisão — foi conversa.'
     }
   };
 </script>
@@ -617,7 +648,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     const btnClose = document.getElementById('modal-close');
     if(!overlay) return;
     window.abrirModal = function(id){
-      const d = MARCA_DETALHE[id];
+      const d = EAR_DETALHE[id];
       if(!d) return;
       document.getElementById('modal-icone').textContent = d.icone;
       document.getElementById('modal-titulo').textContent = d.nome;
@@ -629,13 +660,26 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       document.body.style.overflow = 'hidden';
     };
     function fechar(){ overlay.classList.remove('aberto'); document.body.style.overflow = ''; }
-    document.querySelectorAll('.marca-card[data-modal]').forEach(card => {
+    document.querySelectorAll('.ear-card[data-modal]').forEach(card => {
       card.addEventListener('click', () => abrirModal(card.dataset.modal));
       card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirModal(card.dataset.modal); } });
     });
     btnClose.addEventListener('click', fechar);
     overlay.addEventListener('click', (e) => { if(e.target === overlay) fechar(); });
     document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && overlay.classList.contains('aberto')) fechar(); });
+  })();
+  (function(){
+    try {
+      const s = sessionStorage.getItem('intentia-dia7');
+      if (s) {
+        const p = JSON.parse(s);
+        if (p && p.escolhaFrase) {
+          document.getElementById('direcao-recap-txt').textContent = p.escolhaFrase;
+          return;
+        }
+      }
+    } catch(e){}
+    document.getElementById('direcao-recap-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo demonstrativo)';
   })();
 </script>
 

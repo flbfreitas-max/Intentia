@@ -3,17 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 6 · A cadeia A·C·I — do que você sabe ao que sua palavra move</title>
+<title>Intentia · Etapa 6 · Essencial</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, 'Times New Roman', serif;--sans:'Hanken Grotesk', -apple-system, 'Segoe UI', sans-serif}
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
   body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.7;font-size:17px}
   .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
   .eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
-
   header{background:var(--verde-900);color:var(--creme);padding:56px 24px 60px;position:relative;overflow:hidden}
   .hero-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
   header .eyebrow{color:var(--verde-500);margin-bottom:14px}
@@ -21,7 +19,6 @@
   header .lede{font-size:17px;color:#CFE0D6;max-width:560px}
   .arc{position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border:2px solid rgba(255,255,255,.10);border-radius:50%}
   .arc::after{content:"";position:absolute;top:24px;left:50%;width:20px;height:20px;border-radius:50%;background:var(--coral)}
-
   nav.trilha{background:#fff;border-bottom:1px solid var(--verde-100);padding:18px 24px;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px rgba(39,87,80,.04)}
   .nav-inner{max-width:820px;margin:0 auto;display:flex;gap:6px;justify-content:space-between;align-items:stretch;position:relative}
   .nav-inner::before{content:"";position:absolute;top:22px;left:22px;right:22px;height:2px;background:var(--verde-100);z-index:0}
@@ -29,174 +26,130 @@
   .nav-num{width:44px;height:44px;border-radius:50%;background:#fff;border:2px solid var(--verde-100);color:var(--tinta-suave);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:17px;transition:all .25s ease;flex-shrink:0;box-shadow:0 0 0 4px #fff}
   .nav-label{font-size:11.5px;font-weight:600;letter-spacing:.02em;text-align:center;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;transition:color .2s}
   .nav-item:hover .nav-num{border-color:var(--coral);color:var(--coral);transform:scale(1.08)}
-  .nav-item:hover{color:var(--verde-900)}
-  .nav-item:hover .nav-label{color:var(--verde-900)}
   .nav-item.ativo .nav-num{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 0 0 4px #fff, 0 4px 14px rgba(255,104,66,.35)}
   .nav-item.ativo{color:var(--verde-900)}
   .nav-item.ativo .nav-label{color:var(--verde-900);font-weight:700}
   @media (max-width:640px){.nav-label{display:none}.nav-inner::before{top:22px}.nav-num{width:40px;height:40px;font-size:16px}}
   section.bloco[id]{scroll-margin-top:100px}
-
-  /* Onde estamos */
   .onde-estamos{background:var(--verde-100);border-top:1px solid var(--verde-500);border-bottom:1px solid var(--verde-500);padding:18px 24px}
-  .oe-inner{max-width:720px;margin:0 auto}
-  .oe-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--verde-700);text-align:center;margin-bottom:12px}
-  .oe-arco{display:flex;align-items:center;gap:4px;margin-bottom:14px;justify-content:center;flex-wrap:wrap}
-  .oe-passo{width:28px;height:28px;border-radius:50%;background:#fff;border:1.5px solid var(--verde-500);color:var(--tinta-suave);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:12px;font-weight:600;flex-shrink:0;position:relative}
-  .oe-passo.feito{background:var(--verde-500);border-color:var(--verde-500);color:#fff}
-  .oe-passo.atual{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 3px 8px rgba(255,104,66,.35);transform:scale(1.15)}
-  .oe-passo.final{background:var(--verde-900);border-color:var(--verde-900);color:#fff}
-  .oe-conector{width:16px;height:2px;background:var(--verde-500);opacity:.5;flex-shrink:0}
-  .oe-conector.feito{opacity:1}
-  .oe-texto{font-size:13.5px;color:var(--tinta);line-height:1.55;text-align:center;margin:0;max-width:600px;margin-left:auto;margin-right:auto}
+  .oe-inner{max-width:720px;margin:0 auto}.oe-camada{margin-bottom:12px}.oe-camada:last-child{margin-bottom:0}
+  .oe-eyebrow{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--verde-700);margin-bottom:8px;text-align:center}
+  .oe-semanas{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
+  .oe-semana{background:#fff;border:1.5px solid var(--verde-500);color:var(--tinta-suave);font-size:12px;font-weight:600;padding:6px 12px;border-radius:16px;flex-shrink:0;line-height:1.2}
+  .oe-semana.feita{background:var(--verde-500);border-color:var(--verde-500);color:#fff}
+  .oe-semana.atual{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 3px 10px rgba(255,104,66,.28);font-weight:700}
+  .oe-semana .num{font-family:var(--serif);font-weight:600;margin-right:4px}
+  .oe-dias{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:center}
+  .oe-dia{width:26px;height:26px;border-radius:50%;background:#fff;border:1.5px solid var(--verde-500);color:var(--tinta-suave);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11.5px;font-weight:600;flex-shrink:0}
+  .oe-dia.feito{background:var(--verde-500);border-color:var(--verde-500);color:#fff}
+  .oe-dia.atual{background:var(--coral);border-color:var(--coral);color:#fff;transform:scale(1.15);box-shadow:0 3px 8px rgba(255,104,66,.3)}
+  .oe-dia-conector{width:12px;height:2px;background:var(--verde-500);opacity:.5;flex-shrink:0}
+  .oe-texto{font-size:13.5px;color:var(--tinta);line-height:1.55;text-align:center;margin:12px auto 0;max-width:600px;padding-top:10px;border-top:1px solid rgba(124,168,158,.35)}
   .oe-texto b{color:var(--verde-900);font-weight:600}
-  .oe-tag-ativo{display:inline-block;background:var(--coral);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 10px;border-radius:12px;margin:0 3px;vertical-align:1px}
-
+  .oe-tag-dia{display:inline-block;background:var(--coral);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 10px;border-radius:12px;margin:0 3px;vertical-align:1px}
   main{max-width:720px;margin:0 auto;padding:0 24px}
-
   .bloco{background:#fff;border-radius:16px;padding:36px 34px;margin:24px 0;box-shadow:0 4px 16px rgba(39,87,80,.06);border:1px solid var(--verde-100)}
   .bloco-num{display:inline-flex;align-items:center;gap:10px;color:var(--coral);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
   .bloco-num .n{background:var(--coral);color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:0}
   .bloco h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.4vw,32px);line-height:1.15;color:var(--verde-900);margin-bottom:8px;letter-spacing:-.01em}
   .bloco .subtitulo{font-size:15px;color:var(--tinta-suave);margin-bottom:24px;font-style:italic}
   .bloco p{margin-bottom:14px}
-  .bloco p:last-child{margin-bottom:0}
-
-  /* Player */
   .player{background:linear-gradient(135deg, var(--verde-900) 0%, #1d453f 100%);color:var(--creme);border-radius:18px;padding:28px 30px;margin-top:8px;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(39,87,80,.22)}
-  .player::before{content:"";position:absolute;top:-50%;right:-10%;width:280px;height:280px;background:radial-gradient(circle, rgba(255,104,66,.10) 0%, transparent 60%);pointer-events:none}
   .player-topo{display:flex;align-items:center;gap:12px;margin-bottom:22px;position:relative}
   .player-topo .eyebrow-audio{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral)}
   .player-topo .eyebrow-audio::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--coral);margin-right:8px;vertical-align:2px;animation:pulso 2s infinite}
   @keyframes pulso{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
-  .player-tag{margin-left:auto;font-size:11px;font-weight:600;color:#A9C6B8;letter-spacing:.05em;background:rgba(255,255,255,.06);padding:4px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.08)}
-  .player-titulo{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1.2;margin-bottom:6px;letter-spacing:-.01em;position:relative}
-  .player-sub{font-size:13px;color:#A9C6B8;margin-bottom:22px;position:relative}
-  .player-sub b{color:#CFE0D6;font-weight:600}
-  .waveform{display:flex;align-items:center;gap:2.5px;height:44px;margin-bottom:14px;position:relative;cursor:pointer;padding:6px 0}
-  .waveform .bar{flex:1;background:rgba(255,255,255,.20);border-radius:2px;transition:background .2s;min-width:2px}
-  .waveform .bar.tocada{background:var(--coral)}
-  .cursor-audio{position:absolute;top:6px;bottom:6px;width:2px;background:#fff;box-shadow:0 0 8px rgba(255,255,255,.6);pointer-events:none;transition:left .3s}
-  .cursor-audio::before{content:"";position:absolute;top:-4px;left:-4px;width:10px;height:10px;background:#fff;border-radius:50%}
+  .player-tag{margin-left:auto;font-size:11px;font-weight:600;color:#A9C6B8;letter-spacing:.05em;background:rgba(255,255,255,.06);padding:4px 10px;border-radius:12px}
+  .player-titulo{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1.2;margin-bottom:6px;letter-spacing:-.01em}
+  .player-sub{font-size:13px;color:#A9C6B8;margin-bottom:22px}.player-sub b{color:#CFE0D6;font-weight:600}
+  .waveform{display:flex;align-items:center;gap:2.5px;height:44px;margin-bottom:14px;position:relative;padding:6px 0}
+  .waveform .bar{flex:1;background:rgba(255,255,255,.20);border-radius:2px;min-width:2px}
   .player-tempo{display:flex;justify-content:space-between;font-size:12px;color:#A9C6B8;font-variant-numeric:tabular-nums;font-weight:600;margin-bottom:20px}
-  .player-controles{display:flex;align-items:center;justify-content:center;gap:22px;position:relative}
-  .ctrl-btn{background:transparent;border:none;color:#CFE0D6;cursor:pointer;padding:8px;display:flex;align-items:center;justify-content:center;transition:all .2s;border-radius:50%}
-  .ctrl-btn:hover{color:#fff;background:rgba(255,255,255,.08)}
+  .player-controles{display:flex;align-items:center;justify-content:center;gap:22px}
+  .ctrl-btn{background:transparent;border:none;color:#CFE0D6;cursor:pointer;padding:8px;display:flex;align-items:center;justify-content:center;border-radius:50%}
   .ctrl-btn svg{width:22px;height:22px;fill:currentColor}
-  .ctrl-play{width:64px;height:64px;border-radius:50%;background:var(--coral);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(255,104,66,.42);transition:all .2s}
-  .ctrl-play:hover{transform:scale(1.06);box-shadow:0 10px 26px rgba(255,104,66,.55)}
+  .ctrl-play{width:64px;height:64px;border-radius:50%;background:var(--coral);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(255,104,66,.42)}
   .ctrl-play svg{width:24px;height:24px;fill:#fff;margin-left:3px}
-  .player-extras{display:flex;justify-content:space-between;align-items:center;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);position:relative}
+  .player-extras{display:flex;justify-content:space-between;align-items:center;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08)}
   .velocidade{display:flex;gap:2px;background:rgba(255,255,255,.06);border-radius:20px;padding:3px}
-  .vel-btn{background:transparent;border:none;color:#A9C6B8;padding:5px 11px;border-radius:16px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;font-family:var(--sans)}
-  .vel-btn:hover{color:#fff}
+  .vel-btn{background:transparent;border:none;color:#A9C6B8;padding:5px 11px;border-radius:16px;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--sans)}
   .vel-btn.ativa{background:rgba(255,255,255,.14);color:#fff}
-  .transcricao-btn{background:transparent;border:1px solid rgba(255,255,255,.18);color:#CFE0D6;padding:7px 14px;border-radius:20px;font-size:12.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s;font-family:var(--sans)}
-  .transcricao-btn:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3);color:#fff}
+  .transcricao-btn{background:transparent;border:1px solid rgba(255,255,255,.18);color:#CFE0D6;padding:7px 14px;border-radius:20px;font-size:12.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:var(--sans);text-decoration:none}
   .transcricao-btn svg{width:14px;height:14px;fill:currentColor}
-  @media (max-width:560px){.player{padding:22px 20px}.player-titulo{font-size:20px}}
-
   .leva-lista{list-style:none;padding:0;margin-top:8px}
   .leva-lista li{padding:16px 0 16px 44px;border-bottom:1px dashed var(--verde-100);position:relative}
   .leva-lista li:last-child{border-bottom:none}
   .leva-lista li::before{content:"";position:absolute;left:0;top:22px;width:28px;height:28px;background:var(--verde-100);border-radius:50%}
   .leva-lista li::after{content:"";position:absolute;left:9px;top:29px;width:10px;height:6px;border-left:2.5px solid var(--verde-900);border-bottom:2.5px solid var(--verde-900);transform:rotate(-45deg)}
   .leva-lista strong{color:var(--verde-900)}
-
-  /* Ponto de partida */
   .ponto{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);padding:24px 28px;border-radius:0 12px 12px 0;margin-top:8px}
-  .definicao-cadeia{background:#fff;border:1.5px solid var(--verde-700);border-radius:12px;padding:18px 22px;margin:16px 0}
-  .definicao-cadeia-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
-  .definicao-cadeia-texto{font-family:var(--serif);font-size:18px;line-height:1.45;color:var(--tinta);font-weight:500}
-  .definicao-cadeia-texto b{color:var(--verde-900);font-weight:600}
-  .cadeia-visual{display:flex;align-items:center;justify-content:center;gap:6px;margin:20px 0;flex-wrap:wrap}
-  .cadeia-elo{background:var(--verde-100);border:1.5px solid var(--verde-500);padding:10px 18px;border-radius:22px;font-family:var(--serif);font-size:15px;font-weight:600;color:var(--verde-900)}
-  .cadeia-seta{color:var(--coral);font-size:20px;font-weight:700}
-
-  /* Conteúdo */
+  .definicao-eu{background:#fff;border:1.5px solid var(--verde-700);border-radius:12px;padding:18px 22px;margin:16px 0}
+  .definicao-eu-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+  .definicao-eu-texto{font-family:var(--serif);font-size:18px;line-height:1.45;color:var(--tinta);font-weight:500}
+  .definicao-eu-texto b{color:var(--verde-900);font-weight:600}
+  .teste-linha{background:var(--verde-900);color:var(--creme);padding:14px 20px;border-radius:10px;margin-top:12px;font-size:14.5px;line-height:1.5;text-align:center;font-family:var(--serif);font-style:italic}
+  .teste-linha b{color:#fff;font-weight:600;font-style:normal}
   .conteudo-item{padding:18px 20px;background:var(--creme);border-radius:10px;margin-bottom:12px;border-left:3px solid var(--verde-500)}
   .conteudo-item h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);margin-bottom:8px}
   .conteudo-item h3 .marcador{font-family:var(--sans);font-size:11px;font-weight:700;color:#fff;background:var(--verde-700);padding:3px 8px;border-radius:4px;letter-spacing:.1em;margin-right:8px;vertical-align:2px}
-
-  /* ACI cards */
-  .aci-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
-  @media (max-width:640px){.aci-grid{grid-template-columns:1fr}}
-  .aci-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
-  .aci-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
-  .aci-card:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
-  .aci-letra{width:48px;height:48px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:24px;font-weight:600;line-height:1}
-  .aci-nome{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
-  .aci-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
-  .aci-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;transition:all .2s;font-weight:700}
-  .aci-card:hover .aci-seta{color:var(--coral);transform:translateX(2px)}
-  .aci-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px;letter-spacing:.02em}
-  .aci-hint svg{width:12px;height:12px;fill:currentColor}
-
-  /* Modal */
+  .mov-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
+  @media (max-width:640px){.mov-grid{grid-template-columns:1fr}}
+  .mov-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
+  .mov-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
+  .mov-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
+  .mov-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
+  .mov-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
+  .mov-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
+  .mov-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
+  .mov-hint svg{width:12px;height:12px;fill:currentColor}
   .modal-overlay{position:fixed;inset:0;background:rgba(32,51,47,.55);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s}
   .modal-overlay.aberto{display:flex;opacity:1}
   .modal-caixa{background:#fff;border-radius:20px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;transform:translateY(20px);transition:transform .3s ease}
   .modal-overlay.aberto .modal-caixa{transform:translateY(0)}
-  .modal-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.9);border:1px solid var(--verde-100);width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;z-index:2;color:var(--verde-900)}
+  .modal-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.9);border:1px solid var(--verde-100);width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;color:var(--verde-900)}
   .modal-close:hover{background:var(--coral);border-color:var(--coral);color:#fff}
   .modal-close svg{width:16px;height:16px;fill:currentColor}
   .modal-header{background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;padding:32px 32px 26px;border-radius:20px 20px 0 0;display:flex;align-items:center;gap:16px}
-  .modal-icone{width:52px;height:52px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--serif);font-size:26px;font-weight:600}
+  .modal-icone{width:52px;height:52px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--serif);font-size:24px;font-weight:600}
   .modal-titulo{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.15;letter-spacing:-.005em;margin-bottom:4px}
   .modal-tagline{font-size:13.5px;font-style:italic;opacity:.92}
   .modal-body{padding:28px 32px 32px}
-  .modal-secao{margin-bottom:22px}
-  .modal-secao:last-child{margin-bottom:0}
+  .modal-secao{margin-bottom:22px}.modal-secao:last-child{margin-bottom:0}
   .modal-secao-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
   .modal-secao p{font-size:15px;line-height:1.6;color:var(--tinta);margin:0}
-  .modal-estados{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
-  @media (max-width:540px){.modal-estados{grid-template-columns:1fr}}
-  .modal-estado{padding:14px 16px;border-radius:10px;font-size:13.5px;line-height:1.5}
-  .modal-estado.forte{background:var(--verde-100);color:var(--verde-900)}
-  .modal-estado.forte b{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-700);margin-bottom:6px}
-  .modal-estado.invisivel{background:#fff;border:1.5px dashed var(--coral-soft);color:var(--tinta)}
-  .modal-estado.invisivel b{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+  .modal-exemplos{background:var(--creme);border-left:3px solid var(--verde-700);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:12px;font-size:13.5px;line-height:1.55}
+  .modal-exemplos-label{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-700);margin-bottom:6px}
+  .modal-exemplos ul{list-style:none;padding:0;margin:0}
+  .modal-exemplos li{padding:3px 0 3px 16px;position:relative}
+  .modal-exemplos li::before{content:"→";position:absolute;left:0;color:var(--coral);font-weight:700}
   .modal-erro{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
   .modal-erro b{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
-  .modal-footer{padding:0 32px 28px}
-  .modal-cta{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--verde-900);color:#fff;padding:14px 20px;border-radius:12px;text-decoration:none;font-family:var(--sans);font-size:14px;font-weight:600;transition:all .2s}
-  .modal-cta:hover{background:var(--verde-700);transform:translateY(-1px)}
-  .modal-cta .seta{color:var(--coral);font-size:18px;font-weight:400;line-height:1}
-
-  /* Personagens */
   .personagens-intro{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--tinta-suave);margin:16px 0 10px;padding:11px 16px;background:var(--verde-100);border-radius:10px;border-left:3px solid var(--verde-700)}
   .personagens-intro-icone{width:22px;height:22px;flex-shrink:0;color:var(--verde-700)}
   .personagens-intro-icone svg{width:22px;height:22px;fill:currentColor}
   .personagens-intro-texto{flex:1;line-height:1.45}
   .personagens-intro b{color:var(--verde-900);font-weight:600}
-  .personagens-intro a{color:var(--verde-700);text-decoration:none;font-weight:600;border-bottom:1px dotted var(--verde-500);white-space:nowrap}
-  .caso{margin-top:14px;padding:16px 18px;background:#fff;border:1px solid var(--verde-100);border-radius:10px;position:relative}
+  .personagens-intro a{color:var(--verde-700);text-decoration:none;font-weight:600;border-bottom:1px dotted var(--verde-500)}
+  .caso{margin-top:14px;padding:16px 18px;background:#fff;border:1px solid var(--verde-100);border-radius:10px}
   .caso-header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
   .caso-avatar{width:36px;height:36px;border-radius:50%;background:var(--verde-700);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:16px;flex-shrink:0}
-  .caso-avatar.rafael{background:var(--coral)}
-  .caso-avatar.juliana{background:var(--verde-500)}
+  .caso-avatar.rafael{background:var(--coral)}.caso-avatar.juliana{background:var(--verde-500)}
   .caso-nome{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--verde-900)}
   .caso-perfil{font-size:12px;color:var(--tinta-suave);font-weight:500}
-  .caso-tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--verde-100);color:var(--verde-900);padding:4px 9px 4px 6px;border-radius:6px;margin-left:auto}
+  .caso-tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--verde-100);color:var(--verde-900);padding:4px 9px;border-radius:6px;margin-left:auto}
   .caso p{font-size:14.5px;line-height:1.55;color:var(--tinta);margin-bottom:0}
   .caso p b{color:var(--verde-900)}
-
-  /* Bônus */
   .bonus{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:32px 30px;margin:24px 0}
-  .bonus .bloco-num{color:var(--coral-soft)}
-  .bonus .bloco-num .n{background:var(--coral)}
-  .bonus h2{color:#fff;font-family:var(--serif)}
-  .bonus .subtitulo{color:#CFE0D6;font-style:italic}
+  .bonus .bloco-num{color:var(--coral-soft)}.bonus .bloco-num .n{background:var(--coral)}
+  .bonus h2{color:#fff;font-family:var(--serif)}.bonus .subtitulo{color:#CFE0D6;font-style:italic}
   .bonus p{color:#CFE0D6}
   .leituras{display:grid;gap:14px;margin-top:20px}
-  .leitura{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 20px;transition:all .2s}
+  .leitura{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 20px}
   .leitura .tipo{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--coral-soft);margin-bottom:8px;display:block}
   .leitura h4{font-family:var(--serif);font-size:18px;font-weight:600;color:#fff;margin-bottom:6px;line-height:1.3}
   .leitura .meta-leitura{font-size:13px;color:#A9C6B8}
   .link-academia{display:inline-block;margin-top:20px;color:var(--coral-soft);text-decoration:none;font-weight:600;font-size:14px;border-bottom:1px dotted var(--coral-soft);padding-bottom:2px}
   .bonus-nota{margin-top:16px;font-size:12.5px;color:#A9C6B8;font-style:italic}
-
-  /* Missão */
   .missao-header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
   .missao-tempo{background:var(--coral);color:#fff;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;border-radius:20px}
   .passos{counter-reset:passo;list-style:none;padding:0;margin-top:20px}
@@ -205,17 +158,12 @@
   .passos li strong{color:var(--verde-900);display:block;margin-bottom:4px;font-size:15px}
   .passos li .tempo-passo{font-size:12px;font-weight:600;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-left:8px}
   .passos li p{font-size:14.5px;color:var(--tinta-suave);margin-bottom:0;line-height:1.55}
-  .cta-missao{display:flex;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:22px 32px;border-radius:16px;margin-top:32px;text-decoration:none;font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:-.005em;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(255,104,66,.32), inset 0 1px 0 rgba(255,255,255,.25);transition:transform .25s ease, box-shadow .25s ease}
-  .cta-missao::before{content:"";position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg, transparent 0%, rgba(255,255,255,.22) 50%, transparent 100%);transform:skewX(-20deg);transition:left .7s ease;pointer-events:none}
+  .cta-missao{display:flex;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 55%, #E85530 100%);color:#fff;padding:22px 32px;border-radius:16px;margin-top:32px;text-decoration:none;font-family:var(--serif);font-size:20px;font-weight:600;box-shadow:0 10px 28px rgba(255,104,66,.32);transition:transform .25s ease}
   .cta-missao:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,104,66,.42)}
-  .cta-missao:hover::before{left:130%}
-  .cta-missao .cta-texto{position:relative;z-index:1}
-  .cta-missao .cta-icone{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;transition:transform .25s ease, background .25s ease;border:1px solid rgba(255,255,255,.22)}
-  .cta-missao:hover .cta-icone{background:rgba(255,255,255,.28);transform:translateX(4px)}
+  .cta-missao .cta-icone{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .cta-missao .cta-icone svg{width:16px;height:16px;fill:#fff}
-  .cta-missao .cta-tempo{display:inline-block;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);color:#fff;padding:3px 10px;border-radius:12px;margin-right:10px;vertical-align:2px;position:relative;z-index:1}
-  @media (max-width:560px){.cta-missao{padding:20px 22px;font-size:17px;gap:10px}.cta-missao .cta-icone{width:34px;height:34px}.cta-missao .cta-tempo{display:none}}
-
+  .cta-missao .cta-tempo{display:inline-block;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);color:#fff;padding:3px 10px;border-radius:12px;margin-right:10px;vertical-align:2px}
+  @media (max-width:560px){.cta-missao{padding:20px 22px;font-size:17px;gap:10px}.cta-missao .cta-tempo{display:none}}
   footer{text-align:center;padding:40px 24px 60px;color:var(--tinta-suave);font-size:13px}
   footer .assinatura{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--verde-900);margin-bottom:6px}
 </style>
@@ -317,17 +265,15 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 })();
 </script><!--intentia-nav:end-->
 
-
 <header>
   <div class="hero-inner">
     <div class="eyebrow">Trilha Capital de Carreira · Bloco A · Etapa 6</div>
-    <h1>Do que você sabe ao que sua palavra <span class="grifo">move</span>.</h1>
-    <p class="lede">Aprendizagem, Credibilidade e Influência não são três ativos separados — são elos de uma cadeia. O que você domina alimenta a razão pela qual apostam em você, que por sua vez decide o peso que sua palavra tem quando você fala.</p>
+    <h1>Essencial: <span class="grifo">o que subtrair</span> para essa versão caber.</h1>
+    <p class="lede">McKeown: "menos, mas melhor". Cada Eu passa hoje pelos 3 movimentos essencialistas — Subtrair, Concentrar, Automatizar — para descobrir se a versão é atravessável, e o que exige tirar do caminho.</p>
   </div>
   <div class="arc"></div>
 </header>
-
-<nav class="trilha" aria-label="Sequência do dia">
+<nav class="trilha">
   <div class="nav-inner">
     <a href="#audio" class="nav-item" data-target="audio"><span class="nav-num"><svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg></span><span class="nav-label">Áudio</span></a>
     <a href="#leva" class="nav-item" data-target="leva"><span class="nav-num"><svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span><span class="nav-label">O que você leva</span></a>
@@ -337,38 +283,46 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <a href="#missao" class="nav-item" data-target="missao"><span class="nav-num"><svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg></span><span class="nav-label">Missão</span></a>
   </div>
 </nav>
-
 <div class="onde-estamos">
   <div class="oe-inner">
-    <div class="oe-eyebrow">Onde estamos na semana</div>
-    <div class="oe-arco" aria-hidden="true">
-      <span class="oe-passo feito">1</span><span class="oe-conector feito"></span>
-      <span class="oe-passo feito">2</span><span class="oe-conector feito"></span>
-      <span class="oe-passo feito">3</span><span class="oe-conector feito"></span>
-      <span class="oe-passo feito">4</span><span class="oe-conector feito"></span>
-      <span class="oe-passo feito">5</span><span class="oe-conector feito"></span>
-      <span class="oe-passo atual">6</span><span class="oe-conector"></span>
-      <span class="oe-passo final">7</span>
+    <div class="oe-camada">
+      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 1 de 3</div>
+      <div class="oe-semanas">
+        <span class="oe-semana feita"><span class="num">A</span>Mapear ativos ✓</span>
+        <span class="oe-semana atual"><span class="num">B</span>Escolher direção</span>
+        <span class="oe-semana"><span class="num">C</span>Traçar plano</span>
+        <span class="oe-semana"><span class="num">D</span>Instalar rotina</span>
+      </div>
+    </div>
+    <div class="oe-camada">
+      <div class="oe-eyebrow">Etapa 6 de 7 nesta semana · Etapa 6 na trilha</div>
+      <div class="oe-dias">
+        <span class="oe-dia feito">1</span><span class="oe-dia-conector"></span>
+        <span class="oe-dia feito">2</span><span class="oe-dia-conector"></span>
+        <span class="oe-dia feito">3</span><span class="oe-dia-conector"></span>
+        <span class="oe-dia feito">4</span><span class="oe-dia-conector"></span>
+        <span class="oe-dia feito">5</span><span class="oe-dia-conector"></span>
+        <span class="oe-dia atual">6</span><span class="oe-dia-conector"></span>
+        <span class="oe-dia">7</span>
+      </div>
     </div>
     <p class="oe-texto">
-      <b>Aprofundamento 4 de 4.</b> Hoje é o dia da <span class="oe-tag-ativo">Cadeia A·C·I</span> — três ativos que se alimentam. Cada dia dessa semana aprofundou um dos ativos que você mapeou na Etapa 1 — e <b>amanhã</b> tudo isso vira o seu <b>Retrato de Capital de Carreira</b>.
+      A versão que sobra depois de <span class="oe-tag-dia">Subtrair</span> quase sempre é a que faz sentido. Amanhã fechamos com marca — a leitura externa.
     </p>
   </div>
 </div>
 
 <main>
-
-  <!-- BLOCO 1 · ÁUDIO -->
   <section class="bloco" id="audio">
     <div class="bloco-num"><span class="n">1</span> O áudio do dia</div>
     <h2>A ideia central, contada com calma.</h2>
-    <p class="subtitulo">Ouça antes de começar — 5 min. Fone é bom, mas não obrigatório.</p>
+    <p class="subtitulo">Ouça antes de começar — 5 min.</p>
     <div class="player">
-      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 06 · Bloco A</span></div>
-      <div class="player-titulo">Do que você sabe ao que sua palavra move</div>
+      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 06 · Bloco A · Bloco 1</span></div>
+      <div class="player-titulo">Menos, mas melhor — a busca disciplinada</div>
       <div class="player-sub">A ideia central do dia — contada pela <b>voz do Intentia</b>.</div>
       <div class="waveform" id="waveform"></div>
-      <div class="player-tempo"><span>01:42</span><span>04:58</span></div>
+      <div class="player-tempo"><span>00:00</span><span>05:12</span></div>
       <div class="player-controles">
         <button class="ctrl-btn"><svg viewBox="0 0 24 24"><path d="M12.5 3v2.5c4.14 0 7.5 3.36 7.5 7.5s-3.36 7.5-7.5 7.5-7.5-3.36-7.5-7.5c0-1.4.39-2.7 1.06-3.83L4.32 7.86A9.955 9.955 0 003 13c0 5.24 4.26 9.5 9.5 9.5S22 18.24 22 13s-4.26-10-9.5-10z"/></svg></button>
         <button class="ctrl-play" id="btn-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
@@ -381,57 +335,48 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <button class="vel-btn" data-vel="1.25">1.25x</button>
           <button class="vel-btn" data-vel="1.5">1.5x</button>
         </div>
-        <a class="transcricao-btn" href="audio.html">
-          <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-          Ler transcrição
-        </a>
+        <a class="transcricao-btn" href="audio.html"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg> Ler transcrição</a>
       </div>
     </div>
   </section>
 
-  <!-- BLOCO 2 -->
   <section class="bloco" id="leva">
     <div class="bloco-num"><span class="n">2</span> O que você leva de hoje</div>
     <h2>Você termina o dia sendo capaz de…</h2>
-    <p class="subtitulo">Três capacidades no presente. Se você fizer só o essencial, é isso que fica.</p>
+    <p class="subtitulo">Três capacidades no presente.</p>
     <ul class="leva-lista">
-      <li><strong>Enxergar Aprendizagem, Credibilidade e Influência como cadeia</strong> — não como três ativos separados. O que você aprende alimenta credibilidade; credibilidade alimenta influência; influência abre novos aprendizados.</li>
-      <li><strong>Diagnosticar em qual elo você trava</strong> — muita gente aprende e não colhe credibilidade; muita gente tem credibilidade dentro de um círculo e não converte em influência.</li>
-      <li><strong>Escolher UMA ação de estirão</strong> que toque os três ao mesmo tempo — algo que aumenta aprendizagem visível, gera credibilidade documentada, e cria oportunidade de influência.</li>
+      <li><strong>Reconhecer que a escolha da versão certa envolve <em>o que sai</em>, não só <em>o que entra</em></strong> — McKeown mostra que "menos, mas melhor" só funciona com disciplina de subtração; pessoas boas na escolha do "o que fazer" frequentemente falham na escolha do "o que não fazer".</li>
+      <li><strong>Aplicar 3 movimentos essencialistas a cada Eu</strong> — Subtrair (o que precisa sair), Concentrar (onde vai a melhor energia), Automatizar (o que roda sem sua atenção). Cada movimento revela dependências reais.</li>
+      <li><strong>Descobrir se cada versão é atravessável hoje</strong> — se você não consegue nomear o que subtrai para essa versão caber, é sinal claro de que ela ainda não é uma opção real, mesmo com placar alto e propósito forte.</li>
     </ul>
   </section>
 
-  <!-- BLOCO 3 · PONTO DE PARTIDA -->
   <section class="bloco" id="ponto">
     <div class="bloco-num"><span class="n">3</span> O Ponto de Partida de Hoje</div>
-    <h2>Três ativos, uma cadeia.</h2>
-    <p class="subtitulo">Por que Aprendizagem, Credibilidade e Influência não fazem sentido separados — e o que muda quando você os enxerga como um continuum.</p>
+    <h2>Não é sobre <em>adicionar</em> a versão. É sobre <em>abrir espaço</em> para ela.</h2>
+    <p class="subtitulo">Strack: "pensamento estratégico começa com o que você <em>não</em> vai fazer."</p>
     <div class="ponto">
-
-      <div class="definicao-cadeia">
-        <div class="definicao-cadeia-label">A cadeia A·C·I</div>
-        <div class="definicao-cadeia-texto"><b>Aprendizagem</b> é o que você domina hoje e o que está construindo. <b>Credibilidade</b> é a razão pela qual outros apostam em você antes de você ter prova. <b>Influência</b> é onde a sua palavra pesa — quem escuta, e quem age depois de escutar. Os três operam <b>em sequência</b>: você aprende, ganha credibilidade sobre o que aprendeu, e essa credibilidade vira influência quando o que você diz move alguém.</div>
+      <div class="definicao-eu">
+        <div class="definicao-eu-label">O que é "essencial na carreira"</div>
+        <div class="definicao-eu-texto"><b>Essencial na carreira é o conjunto mínimo de atividades, relacionamentos e commitments que sustentam a versão que você quer</b> — nada além disso. McKeown chama de "menos, mas melhor". A maior parte das pessoas tenta <em>adicionar</em> a nova versão à vida atual sem subtrair nada; o resultado é uma versão que nunca vira realidade porque não tem <b>espaço vital</b> para acontecer.</div>
       </div>
 
-      <div class="cadeia-visual" aria-hidden="true">
-        <span class="cadeia-elo">Aprendizagem</span>
-        <span class="cadeia-seta">→</span>
-        <span class="cadeia-elo">Credibilidade</span>
-        <span class="cadeia-seta">→</span>
-        <span class="cadeia-elo">Influência</span>
+      <p style="margin-top:18px"><b>Greg McKeown (2012)</b> propôs o essencialismo como resposta ao "sim para tudo" que domina a vida profissional. A tese central é <em>disciplinada</em>: para poder dizer sim ao que importa, você precisa dizer não a muitas coisas — inclusive coisas boas. Só o que passa o filtro do essencial merece sua melhor energia.</p>
+
+      <p><b>Rainer Strack (2023)</b> traz o mesmo princípio para o pensamento estratégico aplicado à vida: cada decisão sobre "o que fazer" implica uma decisão silenciosa sobre "o que não fazer". Quem só olha para o "o que fazer" toma decisões piores — porque não vê os trade-offs. Estratégia é <em>desenhar as duas listas</em>: a de sim e a de não.</p>
+
+      <div class="teste-linha">
+        Teste rápido: se você fosse viver a versão "ganhadora" dos últimos 5 dias, <b>o que você teria que largar</b> da sua vida atual?
       </div>
 
-      <p><b>Por que tratar como cadeia, e não como três ativos independentes?</b> Porque a maioria das travas nesses três ativos vem de <b>onde a cadeia quebra</b>, não de fraqueza em cada um. Você pode aprender muito e nunca colher credibilidade (o conhecimento fica na sua cabeça). Pode ter credibilidade dentro do seu círculo e nunca virar influência (o círculo é pequeno demais). Pode ter influência situacional e não construir aprendizagem sistemática (fala muito, aprende pouco, credibilidade cai). Diagnosticar em <b>qual elo</b> a sua cadeia trava é mais útil que fortalecer os três em paralelo.</p>
-
-      <p><b>Quatro dias — quatro ativos aprofundados. Amanhã encontra tudo.</b> Você já mapeou Resultados (Etapa 3), Reputação (Etapa 4), Rede (Etapa 5). Hoje é o último aprofundamento — o mais integrado. Amanhã, todo esse material se agrega no seu Retrato de Capital de Carreira, junto com o filtro de valores que vai amarrar tudo ao propósito.</p>
+      <p style="margin-top:18px"><b>Por que hoje o exercício é aplicar 3 movimentos?</b> Porque "subtrair" sozinho é abstrato demais. Os 3 movimentos decompõem: <em>Subtrair</em> nomeia o que sai (atividades, relacionamentos, projetos, hábitos); <em>Concentrar</em> nomeia onde vai a energia liberada; <em>Automatizar</em> nomeia o que roda sem sua atenção diária. Uma versão sem essas 3 respostas nomeadas é uma versão que ainda não é uma opção real — é ideia sem plano.</p>
     </div>
   </section>
 
-  <!-- BLOCO 4 · CONTEÚDO -->
   <section class="bloco" id="conteudo">
     <div class="bloco-num"><span class="n">4</span> O conteúdo que direciona a sua missão de hoje</div>
-    <h2>Os três elos, um por vez — clicáveis para o conceito completo.</h2>
-    <p class="subtitulo">10–12 min. Material de referência — volte quando precisar durante a missão.</p>
+    <h2>Três movimentos essencialistas — clicáveis para o método.</h2>
+    <p class="subtitulo">10 min. Material de referência.</p>
 
     <div class="personagens-intro">
       <span class="personagens-intro-icone" aria-hidden="true">
@@ -443,50 +388,49 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">01</span>Aprendizagem · Credibilidade · Influência — a cadeia</h3>
-      <p>Toca em cada elo para ver o conceito completo, quando ele está forte na sua trajetória, quando está invisível, e o erro que mais custa caro.</p>
+      <h3><span class="marcador">01</span>Três movimentos essencialistas — Subtrair · Concentrar · Automatizar</h3>
+      <p>Cada movimento pergunta algo diferente sobre a viabilidade real da versão. Toque em cada um para método e exemplo.</p>
 
-      <div class="aci-grid">
-        <div class="aci-card" data-modal="aprendizagem" role="button" tabindex="0" aria-label="Aprendizagem — clique para o conceito completo">
-          <div class="aci-letra" aria-hidden="true">A</div>
-          <div class="aci-nome">Aprendizagem</div>
-          <div class="aci-pergunta">"O que você domina — e o que está construindo?"</div>
-          <span class="aci-seta" aria-hidden="true">›</span>
+      <div class="mov-grid">
+        <div class="mov-card" data-modal="subtrair" role="button" tabindex="0">
+          <div class="mov-icone">S</div>
+          <div class="mov-nome">Subtrair</div>
+          <div class="mov-pergunta">"O que precisa sair da vida atual?"</div>
+          <span class="mov-seta">›</span>
         </div>
-        <div class="aci-card" data-modal="credibilidade" role="button" tabindex="0" aria-label="Credibilidade — clique para o conceito completo">
-          <div class="aci-letra" aria-hidden="true">C</div>
-          <div class="aci-nome">Credibilidade</div>
-          <div class="aci-pergunta">"Por que apostam em você antes da prova?"</div>
-          <span class="aci-seta" aria-hidden="true">›</span>
+        <div class="mov-card" data-modal="concentrar" role="button" tabindex="0">
+          <div class="mov-icone">C</div>
+          <div class="mov-nome">Concentrar</div>
+          <div class="mov-pergunta">"Onde vai a melhor energia dessa versão?"</div>
+          <span class="mov-seta">›</span>
         </div>
-        <div class="aci-card" data-modal="influencia" role="button" tabindex="0" aria-label="Influência — clique para o conceito completo">
-          <div class="aci-letra" aria-hidden="true">I</div>
-          <div class="aci-nome">Influência</div>
-          <div class="aci-pergunta">"Onde a sua palavra pesa?"</div>
-          <span class="aci-seta" aria-hidden="true">›</span>
+        <div class="mov-card" data-modal="automatizar" role="button" tabindex="0">
+          <div class="mov-icone">A</div>
+          <div class="mov-nome">Automatizar</div>
+          <div class="mov-pergunta">"O que precisa rodar sem sua atenção?"</div>
+          <span class="mov-seta">›</span>
         </div>
       </div>
 
-      <span class="aci-hint">
+      <span class="mov-hint">
         <svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>
-        Toque em cada elo — a explicação completa fica dentro do modal.
+        Toque em cada movimento para o método completo.
       </span>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">02</span>Onde a cadeia costuma quebrar</h3>
-      <p>Três padrões comuns de trava — cada personagem ilustra um. Provavelmente você se reconhece em pelo menos um.</p>
+      <h3><span class="marcador">02</span>Aplicação nos personagens — o custo real de cada versão</h3>
 
       <div class="caso">
         <div class="caso-header">
           <div class="caso-avatar">C</div>
           <div>
             <div class="caso-nome">Camila</div>
-            <div class="caso-perfil">Analista sênior de dados</div>
+            <div class="caso-perfil">Continuação Paralela (referência + presença externa)</div>
           </div>
-          <span class="caso-tag">Quebra: Aprendizagem → Credibilidade</span>
+          <span class="caso-tag">Precisa subtrair pouco</span>
         </div>
-        <p>Camila aprende muito — cursos, certificações, leitura constante. Aprendizagem forte. Mas ela <b>não colhe credibilidade sobre o que aprende</b>: quando alguém precisa de alguém para "tirar dúvida sobre X", raramente é chamada. O conhecimento fica na cabeça dela; não se traduz em "essa é a pessoa do assunto X" na cabeça dos outros. A cadeia quebra <b>entre o primeiro e o segundo elo</b>.</p>
+        <p><b>Subtrair:</b> reduzir 4-6h semanais de tarefas administrativas do banco que não somam (delegar, dizer não, automatizar relatórios). <b>Concentrar:</b> o pico da semana para escrever/publicar. <b>Automatizar:</b> processo de análise mensal do dashboard que hoje ocupa 8h vira 2h com script + template. <em>Versão atravessável.</em></p>
       </div>
 
       <div class="caso">
@@ -494,11 +438,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <div class="caso-avatar rafael">R</div>
           <div>
             <div class="caso-nome">Rafael</div>
-            <div class="caso-perfil">Coordenador de operações</div>
+            <div class="caso-perfil">Adjacência Iterativa (indústria → fintech via cargo-ponte)</div>
           </div>
-          <span class="caso-tag">Quebra: Credibilidade → Influência</span>
+          <span class="caso-tag">Precisa subtrair muito</span>
         </div>
-        <p>Dentro do time e da fábrica, Rafael tem credibilidade sólida — é o cara que resolve problema difícil. Mas essa credibilidade <b>não sai da fronteira da fábrica</b>: em decisões estratégicas da empresa, ele não é chamado. A palavra dele pesa dentro da máquina; não move nada além dela. A cadeia quebra <b>entre o segundo e o terceiro elo</b>.</p>
+        <p><b>Subtrair:</b> 3-4 reuniões operacionais/semana no cargo atual (delegar para o time), 1-2 comitês corporativos que não somam à transição. <b>Concentrar:</b> 10h/semana em estudo de setor-alvo + coffee chats + projeto lateral. <b>Automatizar:</b> gestão do time atual via delegação estruturada (reunião semanal + dashboard). <em>Atravessável, mas exige disciplina alta de "não".</em></p>
       </div>
 
       <div class="caso">
@@ -506,75 +450,58 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <div class="caso-avatar juliana">J</div>
           <div>
             <div class="caso-nome">Juliana</div>
-            <div class="caso-perfil">Designer autônoma</div>
+            <div class="caso-perfil">Reinvenção Paralela (autora/educadora com plano de ponte)</div>
           </div>
-          <span class="caso-tag">Quebra: Influência sem retorno de Aprendizagem</span>
+          <span class="caso-tag">Subtração maior</span>
         </div>
-        <p>Juliana tem influência real — o que ela diz sobre reposicionamento circula, cliente cita ela em conversa, comunidade escuta. Mas ela virou "voz autoritativa" antes de sistematizar o próprio aprendizado — <b>fala muito, sistematiza pouco</b>. A cadeia funciona (aprende → credibilidade → influência) mas <b>não fecha o ciclo de volta</b>: influência não está alimentando aprendizagem estruturada. Risco: virar guru raso.</p>
+        <p><b>Subtrair:</b> 40% dos clientes atuais (recusar projetos novos por 12 meses; encerrar 2 contratos menores). <b>Concentrar:</b> 15h/semana em produto autoral (curso piloto, escrita, marketing). <b>Automatizar:</b> onboarding e proposta comercial dos clientes que ficam, para reduzir tempo de venda. <em>Atravessável com plano de ponte robusto; sem plano de ponte, insustentável.</em></p>
       </div>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">03</span>A regra da Etapa 6: uma ação de estirão que toca os três</h3>
-      <p>A missão de hoje é mais leve — três diagnósticos rápidos e uma única ação. Não porque os três ativos importem menos, mas porque <b>a mesma ação bem escolhida pode alimentar os três</b>. Publicar um artigo, apresentar um estudo interno, iniciar um mentorado, virar autor de uma frase — cada uma dessas coisas aprende, gera credibilidade documentada, e cria janela de influência. Escolha UMA para os próximos 7 dias.</p>
+      <h3><span class="marcador">03</span>A regra da Etapa 6: versão que não subtrai é ideia, não opção</h3>
+      <p>Se você não consegue nomear <b>o que subtrai, o que concentra, e o que automatiza</b> para uma versão específica, ela não é uma opção real — é ideia bem elaborada. Uma versão real cabe na vida real; e caber na vida real quase sempre exige tirar coisas. Esse é o teste do essencial: a versão que <em>ainda que abstrata pareça atrativa</em>, mas para a qual você não consegue nomear os 3 movimentos, provavelmente ainda não está madura para decisão.</p>
     </div>
   </section>
 
-  <!-- BLOCO 5 · BÔNUS -->
   <section class="bonus bloco" id="bonus">
     <div class="bloco-num"><span class="n">5</span> Seu bônus antes da missão</div>
-    <h2>Aprendizagem e credibilidade — o que diz quem estudou o padrão.</h2>
-    <p class="subtitulo">Duas leituras que aprofundam o dia.</p>
+    <h2>Menos, mas melhor. Pensamento estratégico para a vida.</h2>
+    <p class="subtitulo">Duas leituras que fundamentam os 3 movimentos.</p>
     <div class="leituras">
       <div class="leitura">
         <span class="tipo">Resumo · 3 páginas</span>
-        <h4>Aprender, desaprender, reaprender</h4>
-        <p class="meta-leitura">Tupper &amp; Ellis (2021) — em um mundo em mudança acelerada, a capacidade adaptativa (learn-unlearn-relearn) é o metaativo que sustenta os outros.</p>
+        <h4>A busca disciplinada por menos</h4>
+        <p class="meta-leitura">McKeown (2012) — o essencialismo como disciplina, não como estética. A diferença entre "sim para tudo" e "sim para o que importa" está no rigor da subtração.</p>
       </div>
       <div class="leitura">
         <span class="tipo">Resumo · 3 páginas</span>
-        <h4>Como ganhar credibilidade com pouca experiência</h4>
-        <p class="meta-leitura">Molinsky (2017) — protocolos para construir credibilidade quando o tempo de casa ainda é curto, sem simular autoridade que não se tem.</p>
+        <h4>Pensamento estratégico para a vida</h4>
+        <p class="meta-leitura">Strack (2023) — como aplicar a lógica de estratégia empresarial (o que não fazer, trade-offs explícitos, alocação disciplinada) para decisões de carreira e vida.</p>
       </div>
     </div>
     <a href="academia.html" class="link-academia">Abrir os resumos na Academia Intentia →</a>
-    <p class="bonus-nota">Opcional e para sempre disponível. As leituras enriquecem o dia — mas a missão de hoje não depende delas.</p>
+    <p class="bonus-nota">Opcional. As leituras enriquecem o dia — mas a missão funciona sem elas.</p>
   </section>
 
-  <!-- BLOCO 6 · MISSÃO -->
   <section class="bloco" id="missao">
     <div class="bloco-num"><span class="n">6</span> Missão do Dia</div>
     <div class="missao-header">
-      <h2>Sua leitura da Cadeia A·C·I.</h2>
-      <span class="missao-tempo">15 min</span>
+      <h2>Três movimentos por Eu.</h2>
+      <span class="missao-tempo">18 min</span>
     </div>
-    <p class="subtitulo">Três mini-diagnósticos rápidos + uma ação de estirão para os próximos 7 dias.</p>
+    <p class="subtitulo">Para cada versão, nomear concretamente: o que subtrai, o que concentra, o que automatiza. Se não conseguir nomear, a versão não é opção real ainda.</p>
 
     <ol class="passos">
-      <li>
-        <strong>Diagnóstico rápido — Aprendizagem <span class="tempo-passo">3 min</span></strong>
-        <p>Uma frase para "o que eu domino hoje" e uma frase para "o que estou construindo". Sem inflacionar — o que se sustenta em prática.</p>
-      </li>
-      <li>
-        <strong>Diagnóstico rápido — Credibilidade <span class="tempo-passo">3 min</span></strong>
-        <p>Uma pergunta: "para qual tipo de problema eu sou a primeira lembrança de alguém?" Se nenhuma resposta específica vier, é dado.</p>
-      </li>
-      <li>
-        <strong>Diagnóstico rápido — Influência <span class="tempo-passo">3 min</span></strong>
-        <p>Uma pergunta: "quando eu falo sobre X, quantas pessoas agem em cima disso?" — número aproximado, dentro da empresa e fora.</p>
-      </li>
-      <li>
-        <strong>Identifique o elo quebrado <span class="tempo-passo">2 min</span></strong>
-        <p>Olhando os três diagnósticos, onde a cadeia trava? Aprendizagem→Credibilidade, Credibilidade→Influência, ou Influência sem retorno de Aprendizagem?</p>
-      </li>
-      <li>
-        <strong>Uma ação de estirão para 7 dias <span class="tempo-passo">4 min</span></strong>
-        <p>Escolha UMA ação que toque os três elos ao mesmo tempo. Exemplos: publicar 1 texto curto sobre o que aprendeu recente / apresentar internamente um estudo próprio / responder publicamente 3 perguntas sobre o seu tema / iniciar 1 relação de mentoria.</p>
-      </li>
+      <li><strong>Recuperar seus 3 Eus + placares das Etapas 10 e 12 <span class="tempo-passo">3 min</span></strong><p>Reler o material anterior mentalmente. Cada versão tem preço, formato, placar de critério e placar de propósito.</p></li>
+      <li><strong>Aplicar Subtrair a cada Eu <span class="tempo-passo">5 min</span></strong><p>Nomear <b>2-3 coisas específicas</b> que precisam sair da sua vida atual para essa versão caber. Se não conseguir nomear, marque isso — é diagnóstico.</p></li>
+      <li><strong>Aplicar Concentrar a cada Eu <span class="tempo-passo">4 min</span></strong><p>Onde vai sua melhor energia (pico do dia/semana) nessa versão? Que atividade central absorve as horas de máxima presença?</p></li>
+      <li><strong>Aplicar Automatizar a cada Eu <span class="tempo-passo">4 min</span></strong><p>O que precisa rodar <em>sem sua atenção diária</em> para essa versão sobrar tempo de foco? Delegação, sistema, processo automatizado.</p></li>
+      <li><strong>Identificar a versão mais atravessável e o insight <span class="tempo-passo">2 min</span></strong><p>Qual Eu você conseguiu nomear os 3 movimentos com clareza? Qual ficou vago? Isso costuma coincidir com a versão que está pronta para virar decisão.</p></li>
     </ol>
 
-    <a href="missao.html" class="cta-missao" id="btn-missao">
-      <span class="cta-texto"><span class="cta-tempo">15 min</span>Fazer a Missão</span>
+    <a href="missao.html" class="cta-missao">
+      <span class="cta-texto"><span class="cta-tempo">18 min</span>Fazer a Missão</span>
       <span class="cta-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
     </a>
   </section>
@@ -598,10 +525,8 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   </div>
 </section>
 
-
 </main>
 
-<!-- MODAL -->
 <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
   <div class="modal-caixa">
     <button class="modal-close" id="modal-close" aria-label="Fechar">
@@ -616,62 +541,47 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
     <div class="modal-body">
       <div class="modal-secao">
-        <div class="modal-secao-label">O conceito</div>
+        <div class="modal-secao-label">O que o movimento faz</div>
         <p id="modal-conceito"></p>
       </div>
       <div class="modal-secao">
-        <div class="modal-estados">
-          <div class="modal-estado forte"><b>Quando está forte</b><span id="modal-forte"></span></div>
-          <div class="modal-estado invisivel"><b>Quando está invisível</b><span id="modal-invisivel"></span></div>
+        <div class="modal-exemplos">
+          <div class="modal-exemplos-label">Perguntas específicas</div>
+          <ul id="modal-exemplos"></ul>
         </div>
         <div class="modal-erro"><b>Erro comum</b><span id="modal-erro"></span></div>
       </div>
     </div>
-    <div class="modal-footer">
-      <a href="#" class="modal-cta" id="modal-link">
-        <span>Ler o aprofundamento completo no playbook</span>
-        <span class="seta">→</span>
-      </a>
-    </div>
   </div>
 </div>
 
-<footer>
-  <div class="assinatura">Do reagir ao conduzir.</div>
-  <div>Etapa 6 · A cadeia A·C·I</div>
-</footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 6 · Essencial — três movimentos</div></footer>
 
 <script>
-  const ACI_DETALHE = {
-    aprendizagem: {
-      nome: 'Aprendizagem',
-      tagline: 'o que você domina hoje e o que está construindo',
-      letra: 'A',
-      conceito: 'O primeiro elo: o repertório real de habilidades, conhecimentos e leituras que você aciona no dia a dia — e o que você está deliberadamente construindo para os próximos meses. Aprendizagem sem prática vira acumulação; prática sem aprendizagem estruturada vira repetição. O elo saudável é a mistura: você domina algumas coisas com profundidade e está construindo outras com intenção.',
-      forte: 'Você consegue nomear 3-5 domínios em que se apoia sem esforço — e 1-2 domínios que está construindo com prática recorrente e clara.',
-      invisivel: 'Você lista "faço de tudo um pouco" ou "adaptação rápida" — sem nomear domínio específico. Aprendizagem que ninguém aponta nem você aponta tende a virar generalismo sem base.',
-      erro: 'Confundir consumo (cursos, livros, podcasts) com aprendizagem. Aprendizagem é o que fica quando você tenta aplicar — não o que passou pelos seus olhos.',
-      link: 'playbook.html'
+  const MOV_DETALHE = {
+    subtrair: {
+      nome: 'Movimento Subtrair',
+      tagline: 'o que precisa sair da vida atual',
+      icone: 'S',
+      conceito: 'Subtrair é o movimento fundador do essencialismo. McKeown mostra que <em>tempo e energia são recursos finitos</em> — cada nova versão de você exige espaço, e espaço não aparece por milagre; aparece porque você tirou algo. Subtrair é nomear concretamente o que sai: atividades, projetos, relacionamentos, hábitos, obrigações. Sem subtração explícita, a nova versão vira só mais uma camada em cima do que já pesa.',
+      exemplos: ['Que 2-3 atividades da minha semana atual precisam sair?', 'Que projeto/comitê/reunião não soma à versão futura e ainda ocupa tempo?', 'Que "sim" antigo eu ainda estou honrando por hábito?', 'Que relacionamentos profissionais consomem sem devolver?'],
+      erro: 'Subtrair "no futuro" ("um dia eu paro de X"). Subtração real tem <b>data</b> e <b>o que substitui</b>. Se você não sabe até quando vai parar de fazer X, ainda não subtraiu — só imaginou subtração.'
     },
-    credibilidade: {
-      nome: 'Credibilidade',
-      tagline: 'a razão pela qual apostam em você antes',
-      letra: 'C',
-      conceito: 'O segundo elo: por que alguém apostaria em você <em>antes</em> de você ter prova para dar. Credibilidade é a intersecção entre o que você sabe (aprendizagem) e o que os outros associam a você (reputação). Sem credibilidade, cada oportunidade nova exige começar do zero, mostrar tudo, provar tudo. Com credibilidade, você recebe crédito inicial — e usa esse crédito para entregar.',
-      forte: 'Existem tipos específicos de projeto ou problema em que você é convidado sem competir com outros. Alguém já disse sim para você antes de você mostrar portfólio ou apresentação — porque sua credibilidade em X já estava estabelecida.',
-      invisivel: 'Toda oportunidade nova exige provar-se do zero. Você faz o trabalho, entrega bem, e mesmo assim a próxima oportunidade também parte do zero. Credibilidade não está sendo <em>capitalizada</em> — só demonstrada.',
-      erro: 'Achar que credibilidade vem só do tempo de casa. Molinsky (leitura da Academia hoje) mostra que credibilidade pode ser construída com pouca experiência, mas exige movimentos deliberados: apresentar estudos próprios, escrever sobre o tema, pedir feedback específico. Ela nunca chega por si.',
-      link: 'playbook.html'
+    concentrar: {
+      nome: 'Movimento Concentrar',
+      tagline: 'onde vai a melhor energia dessa versão',
+      icone: 'C',
+      conceito: 'Concentrar é decidir <em>onde vai o pico de atenção diário/semanal</em>. Toda pessoa tem 2-4 horas por dia de <b>presença máxima</b> — o resto do dia é energia média ou baixa. A versão nova precisa acessar essa faixa de pico, senão vira só mais uma tarefa espremida em faixas de energia média. Concentrar é nomear <b>qual atividade dessa versão fica no pico</b>, e proteger essa faixa contra invasão.',
+      exemplos: ['Em qual horário da minha semana eu mais rendo?', 'Qual atividade central dessa versão precisa acontecer nesse horário?', 'O que hoje ocupa essa faixa de pico e não deveria?', 'Como eu protejo esse tempo (agenda, ambiente, dispositivos)?'],
+      erro: 'Concentrar sem proteger. Se você nomeia a faixa de pico mas continua deixando reuniões, notificações e tarefas urgentes invadirem, a concentração vira ideia. <b>Concentração real tem regras explícitas de proteção</b> — não é aspiração.'
     },
-    influencia: {
-      nome: 'Influência',
-      tagline: 'onde a sua palavra pesa',
-      letra: 'I',
-      conceito: 'O terceiro elo: quando você diz algo sobre o seu tema, quantas pessoas agem em cima disso? Influência não é fama — é <em>capacidade de mover ação</em>. Pode ser dentro do time (o que você propõe é acatado), fora do time (áreas adjacentes te consultam), ou fora da empresa (comunidade escuta e replica). Influência sem credibilidade vira palanque vazio; credibilidade sem influência fica encolhida no círculo pequeno.',
-      forte: 'Você tem exemplos concretos de decisões, projetos ou práticas que mudaram porque você falou sobre elas — dentro ou fora da empresa. Sua palavra <em>move</em>, não só é ouvida.',
-      invisivel: 'As pessoas concordam com o que você fala, mas nada muda depois. Influência aparente sem ação por trás é <em>ruído respeitoso</em> — soa como influência, mas não é.',
-      erro: 'Confundir alcance (número de seguidores, número de reuniões) com influência (ação depois). Um post com 50 pessoas que agem tem mais influência que um com 5.000 que só curtem.',
-      link: 'playbook.html'
+    automatizar: {
+      nome: 'Movimento Automatizar',
+      tagline: 'o que precisa rodar sem sua atenção',
+      icone: 'A',
+      conceito: 'Automatizar é <em>tirar da sua atenção diária</em> tudo que pode ser feito por sistema, delegação, processo ou rotina. Não é sobre tecnologia — é sobre <b>liberar ciclo cognitivo</b>. Toda versão nova falha quando você continua cuidando manualmente das mesmas 20 coisas da versão antiga; a atenção acaba, a versão nova não recebe seu pico, e ela nunca acontece de verdade. Automatizar é criar <em>infraestrutura invisível</em> que sustenta a nova versão.',
+      exemplos: ['Que decisões repetitivas eu ainda tomo caso a caso e poderia virar regra fixa?', 'Que atividade que hoje ocupa 5h/semana poderia ser delegada?', 'Que informação eu ainda busco manualmente e poderia ter dashboard/relatório automático?', 'Que relacionamentos eu poderia manter com sistema (newsletter, atualização mensal) em vez de contatos ad hoc?'],
+      erro: 'Automatizar tudo. O ponto do essencialismo não é otimização total — é liberar atenção <em>para o que importa</em>. Automatizar coisas que você já não faz (ou não deveria estar fazendo) é falso ganho. Primeiro subtraia; depois automatize o que sobrou.'
     }
   };
 </script>
@@ -681,11 +591,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     const items = document.querySelectorAll('.nav-item');
     const secoes = Array.from(items).map(it => document.getElementById(it.dataset.target)).filter(Boolean);
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          items.forEach(it => it.classList.toggle('ativo', it.dataset.target === entry.target.id));
-        }
-      });
+      entries.forEach(entry => { if(entry.isIntersecting){ items.forEach(it => it.classList.toggle('ativo', it.dataset.target === entry.target.id)); } });
     }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
     secoes.forEach(s => observer.observe(s));
     if(items[0]) items[0].classList.add('ativo');
@@ -693,55 +599,36 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   (function(){
     const wf = document.getElementById('waveform');
     if(!wf) return;
-    const total = 64;
-    const alturas = [22,28,34,40,32,26,30,38,44,50,42,36,44,52,58,50,42,34,40,48,56,64,72,66,58,50,42,50,58,66,74,80,74,66,58,50,44,38,32,40,48,56,50,42,36,30,38,46,40,34,28,24,30,36,42,36,30,26,32,28,22,20,26,22];
-    const progresso = 0.34;
-    alturas.forEach((h, i) => {
-      const bar = document.createElement('div');
-      bar.className = 'bar' + (i / total < progresso ? ' tocada' : '');
-      bar.style.height = h + '%';
-      wf.appendChild(bar);
-    });
-    const cursor = document.createElement('div');
-    cursor.className = 'cursor-audio';
-    cursor.style.left = (progresso * 100) + '%';
-    wf.appendChild(cursor);
+    const alturas = [24,30,38,44,36,30,34,42,48,54,46,40,48,56,62,54,46,38,44,52,60,68,74,68,60,52,44,52,60,68,76,82,76,68,60,52,46,40,34,42,50,58,52,44,38,32,40,48,42,36,30,26,32,38,44,38,32,28,34,30,24,22,28,24];
+    alturas.forEach(h => { const bar = document.createElement('div'); bar.className = 'bar'; bar.style.height = h + '%'; wf.appendChild(bar); });
   })();
   (function(){
     const btn = document.getElementById('btn-play');
     if(!btn) return;
     let tocando = false;
-    btn.addEventListener('click', () => {
-      tocando = !tocando;
-      btn.innerHTML = tocando ? '<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>' : '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
-    });
+    btn.addEventListener('click', () => { tocando = !tocando; btn.innerHTML = tocando ? '<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>' : '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; });
   })();
   (function(){
-    document.querySelectorAll('.vel-btn').forEach(b => b.addEventListener('click', () => {
-      document.querySelectorAll('.vel-btn').forEach(x => x.classList.remove('ativa'));
-      b.classList.add('ativa');
-    }));
+    document.querySelectorAll('.vel-btn').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('.vel-btn').forEach(x => x.classList.remove('ativa')); b.classList.add('ativa'); }));
   })();
   (function(){
     const overlay = document.getElementById('modal-overlay');
     const btnClose = document.getElementById('modal-close');
     if(!overlay) return;
     window.abrirModal = function(id){
-      const d = ACI_DETALHE[id];
+      const d = MOV_DETALHE[id];
       if(!d) return;
-      document.getElementById('modal-icone').textContent = d.letra;
+      document.getElementById('modal-icone').textContent = d.icone;
       document.getElementById('modal-titulo').textContent = d.nome;
       document.getElementById('modal-tagline').textContent = d.tagline;
-      document.getElementById('modal-conceito').textContent = d.conceito;
-      document.getElementById('modal-forte').textContent = d.forte;
-      document.getElementById('modal-invisivel').textContent = d.invisivel;
-      document.getElementById('modal-erro').textContent = d.erro;
-      document.getElementById('modal-link').href = d.link;
+      document.getElementById('modal-conceito').innerHTML = d.conceito;
+      document.getElementById('modal-exemplos').innerHTML = d.exemplos.map(e => `<li>${e}</li>`).join('');
+      document.getElementById('modal-erro').innerHTML = d.erro;
       overlay.classList.add('aberto');
       document.body.style.overflow = 'hidden';
     };
     function fechar(){ overlay.classList.remove('aberto'); document.body.style.overflow = ''; }
-    document.querySelectorAll('.aci-card[data-modal]').forEach(card => {
+    document.querySelectorAll('.mov-card[data-modal]').forEach(card => {
       card.addEventListener('click', () => abrirModal(card.dataset.modal));
       card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirModal(card.dataset.modal); } });
     });

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 17 · Redes de influência</title>
+<title>Intentia · Etapa 17 · Sistema de manutenção</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -27,8 +27,7 @@
   .nav-label{font-size:11.5px;font-weight:600;letter-spacing:.02em;text-align:center;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;transition:color .2s}
   .nav-item:hover .nav-num{border-color:var(--coral);color:var(--coral);transform:scale(1.08)}
   .nav-item.ativo .nav-num{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 0 0 4px #fff, 0 4px 14px rgba(255,104,66,.35)}
-  .nav-item.ativo{color:var(--verde-900)}
-  .nav-item.ativo .nav-label{color:var(--verde-900);font-weight:700}
+  .nav-item.ativo{color:var(--verde-900)}.nav-item.ativo .nav-label{color:var(--verde-900);font-weight:700}
   @media (max-width:640px){.nav-label{display:none}.nav-inner::before{top:22px}.nav-num{width:40px;height:40px;font-size:16px}}
   section.bloco[id]{scroll-margin-top:100px}
   .onde-estamos{background:var(--verde-100);border-top:1px solid var(--verde-500);border-bottom:1px solid var(--verde-500);padding:18px 24px}
@@ -96,16 +95,16 @@
   .conteudo-item{padding:18px 20px;background:var(--creme);border-radius:10px;margin-bottom:12px;border-left:3px solid var(--verde-500)}
   .conteudo-item h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--verde-900);margin-bottom:8px}
   .conteudo-item h3 .marcador{font-family:var(--sans);font-size:11px;font-weight:700;color:#fff;background:var(--verde-700);padding:3px 8px;border-radius:4px;letter-spacing:.1em;margin-right:8px;vertical-align:2px}
-  .rede-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
-  @media (max-width:640px){.rede-grid{grid-template-columns:1fr}}
-  .rede-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
-  .rede-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
-  .rede-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
-  .rede-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
-  .rede-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
-  .rede-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
-  .rede-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
-  .rede-hint svg{width:12px;height:12px;fill:currentColor}
+  .spt-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:16px}
+  @media (max-width:640px){.spt-grid{grid-template-columns:1fr}}
+  .spt-card{background:#fff;border:1px solid var(--verde-100);border-radius:12px;padding:20px 18px 18px;font-size:13.5px;cursor:pointer;transition:all .2s;position:relative;user-select:none;text-align:center}
+  .spt-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 20px rgba(39,87,80,.10)}
+  .spt-icone{width:60px;height:60px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%);color:#fff;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(255,104,66,.28);font-family:var(--serif);font-size:26px;font-weight:600}
+  .spt-nome{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--verde-900);margin-bottom:5px;line-height:1.2}
+  .spt-pergunta{font-size:12.5px;color:var(--tinta-suave);line-height:1.4;font-style:italic}
+  .spt-seta{position:absolute;top:14px;right:14px;font-size:16px;color:var(--verde-500);line-height:1;font-weight:700}
+  .spt-hint{display:inline-flex;align-items:center;gap:6px;background:var(--verde-100);color:var(--verde-900);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px;margin-top:14px}
+  .spt-hint svg{width:12px;height:12px;fill:currentColor}
   .modal-overlay{position:fixed;inset:0;background:rgba(32,51,47,.55);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s}
   .modal-overlay.aberto{display:flex;opacity:1}
   .modal-caixa{background:#fff;border-radius:20px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;transform:translateY(20px);transition:transform .3s ease}
@@ -131,8 +130,7 @@
   .personagens-intro{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--tinta-suave);margin:16px 0 10px;padding:11px 16px;background:var(--verde-100);border-radius:10px;border-left:3px solid var(--verde-700)}
   .personagens-intro-icone{width:22px;height:22px;flex-shrink:0;color:var(--verde-700)}
   .personagens-intro-icone svg{width:22px;height:22px;fill:currentColor}
-  .personagens-intro-texto{flex:1;line-height:1.45}
-  .personagens-intro b{color:var(--verde-900);font-weight:600}
+  .personagens-intro-texto{flex:1;line-height:1.45}.personagens-intro b{color:var(--verde-900);font-weight:600}
   .personagens-intro a{color:var(--verde-700);text-decoration:none;font-weight:600;border-bottom:1px dotted var(--verde-500)}
   .caso{margin-top:14px;padding:16px 18px;background:#fff;border:1px solid var(--verde-100);border-radius:10px}
   .caso-header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
@@ -141,12 +139,10 @@
   .caso-nome{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--verde-900)}
   .caso-perfil{font-size:12px;color:var(--tinta-suave);font-weight:500}
   .caso-tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--verde-100);color:var(--verde-900);padding:4px 9px;border-radius:6px;margin-left:auto}
-  .caso p{font-size:14.5px;line-height:1.55;color:var(--tinta);margin-bottom:0}
-  .caso p b{color:var(--verde-900)}
+  .caso p{font-size:14.5px;line-height:1.55;color:var(--tinta);margin-bottom:0}.caso p b{color:var(--verde-900)}
   .bonus{background:var(--verde-900);color:var(--creme);border-radius:16px;padding:32px 30px;margin:24px 0}
   .bonus .bloco-num{color:var(--coral-soft)}.bonus .bloco-num .n{background:var(--coral)}
-  .bonus h2{color:#fff;font-family:var(--serif)}.bonus .subtitulo{color:#CFE0D6;font-style:italic}
-  .bonus p{color:#CFE0D6}
+  .bonus h2{color:#fff;font-family:var(--serif)}.bonus .subtitulo{color:#CFE0D6;font-style:italic}.bonus p{color:#CFE0D6}
   .leituras{display:grid;gap:14px;margin-top:20px}
   .leitura{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 20px}
   .leitura .tipo{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--coral-soft);margin-bottom:8px;display:block}
@@ -272,8 +268,8 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <header>
   <div class="hero-inner">
     <div class="eyebrow">Trilha Capital de Carreira · Bloco A · Etapa 17</div>
-    <h1>Redes — a sua não é <span class="grifo">uma só</span>.</h1>
-    <p class="lede">Ibarra & Hunter: existem 3 tipos de rede, e a maioria dos profissionais desenvolve só 1 bem. Hoje: diagnóstico das 3 redes vinculadas à sua direção — e o alerta de Cross sobre sobrecarga de colaboração.</p>
+    <h1>Sistema de manutenção — <span class="grifo">o antídoto</span> ao que sabota.</h1>
+    <p class="lede">Kegan & Lahey: profissionais capazes não falham por falta de disciplina — falham porque um compromisso oculto os protege de algo que a mudança ameaça. Hoje: nomear o compromisso oculto do hábito 1 e desenhar 1 experimento pequeno para testá-lo.</p>
   </div>
   <div class="arc"></div>
 </header>
@@ -290,12 +286,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <div class="onde-estamos">
   <div class="oe-inner">
     <div class="oe-camada">
-      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 3 de 4 · Amplificar</div>
+      <div class="oe-eyebrow">Bloco Capital de Carreira · Bloco 2 de 3 · Instalar rotina</div>
       <div class="oe-semanas">
         <span class="oe-semana feita"><span class="num">A</span>Mapear ativos ✓</span>
         <span class="oe-semana feita"><span class="num">B</span>Escolher direção ✓</span>
-        <span class="oe-semana atual"><span class="num">C</span>Amplificar</span>
-        <span class="oe-semana"><span class="num">D</span>Instalar rotina</span>
+        <span class="oe-semana feita"><span class="num">C</span>Amplificar ✓</span>
+        <span class="oe-semana atual"><span class="num">D</span>Instalar rotina</span>
       </div>
     </div>
     <div class="oe-camada">
@@ -311,7 +307,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
     </div>
     <p class="oe-texto">
-      Presença + autoridade + <span class="oe-tag-dia">Redes</span>. Hoje: os 3 tipos de rede que Ibarra & Hunter mostraram — e o cuidado de Cross para não confundir "mais colaboração" com "mais rede".
+      Hábito desenhado, ambiente ajustado. Hoje: <span class="oe-tag-dia">Sabotagem · Proteção · Teste</span> — o que sabota vem de dentro; entender e neutralizar.
     </p>
   </div>
 </div>
@@ -322,11 +318,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <h2>A ideia central, contada com calma.</h2>
     <p class="subtitulo">Ouça antes de começar — 5 min.</p>
     <div class="player">
-      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 17 · Bloco A · Bloco 3</span></div>
-      <div class="player-titulo">Suas 3 redes — e o custo de confundi-las</div>
+      <div class="player-topo"><span class="eyebrow-audio">Áudio do dia</span><span class="player-tag">Ep. 17 · Bloco A · Bloco 2</span></div>
+      <div class="player-titulo">Imunidade à mudança: o compromisso oculto</div>
       <div class="player-sub">A ideia central do dia — contada pela <b>voz do Intentia</b>.</div>
       <div class="waveform" id="waveform"></div>
-      <div class="player-tempo"><span>00:00</span><span>05:10</span></div>
+      <div class="player-tempo"><span>00:00</span><span>05:20</span></div>
       <div class="player-controles">
         <button class="ctrl-btn"><svg viewBox="0 0 24 24"><path d="M12.5 3v2.5c4.14 0 7.5 3.36 7.5 7.5s-3.36 7.5-7.5 7.5-7.5-3.36-7.5-7.5c0-1.4.39-2.7 1.06-3.83L4.32 7.86A9.955 9.955 0 003 13c0 5.24 4.26 9.5 9.5 9.5S22 18.24 22 13s-4.26-10-9.5-10z"/></svg></button>
         <button class="ctrl-play" id="btn-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
@@ -349,44 +345,44 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <h2>Você termina o dia sendo capaz de…</h2>
     <p class="subtitulo">Três capacidades no presente.</p>
     <ul class="leva-lista">
-      <li><strong>Distinguir 3 tipos de rede — Operacional, Pessoal, Estratégica</strong> — Ibarra & Hunter mostraram que profissionais competentes tipicamente têm rede operacional forte e rede estratégica quase inexistente. É a diferença entre "conheço quem faz o meu trabalho" e "conheço quem abre meu próximo trabalho".</li>
-      <li><strong>Diagnosticar densidade em cada rede</strong> — vinculada à sua direção da Etapa 14. Uma direção nova exige rede estratégica nova — que quase nunca coincide com a que você já tem.</li>
-      <li><strong>Escapar da armadilha da sobrecarga</strong> — Cross: 30-40% do tempo dos profissionais é gasto em colaboração de baixo retorno. Rede boa não é rede grande. É rede <em>diferenciada</em> pelo tipo.</li>
+      <li><strong>Reconhecer que "falta disciplina" quase nunca é o diagnóstico correto</strong> — Kegan & Lahey (Harvard, 30 anos de pesquisa): profissionais capazes que não conseguem sustentar hábitos raramente têm problema de vontade. Têm um <em>compromisso oculto</em> que protege algo importante — e enquanto esse compromisso não for nomeado, todo esforço bate na mesma parede.</li>
+      <li><strong>Nomear o compromisso oculto por trás da sabotagem do hábito 1</strong> — o comportamento que sabota o hábito não é fraqueza; é serviço a outra coisa. Nomear a "outra coisa" (proteção contra fracasso público, contra abandono, contra excesso, contra risco) libera a mudança do plano de "esforçar mais" para o de "reintegrar o que estava dividido".</li>
+      <li><strong>Desenhar 1 experimento pequeno para testar a suposição por trás da proteção</strong> — Kegan & Lahey: não é para "vencer" a proteção. É para testar se a suposição que a sustenta ainda é verdadeira. A maioria das suposições que nos protegem foi formada há muito tempo — o teste revela que muitas já não valem mais.</li>
     </ul>
   </section>
 
   <section class="bloco" id="ponto">
     <div class="bloco-num"><span class="n">3</span> O Ponto de Partida de Hoje</div>
-    <h2>A sua rede não é uma — são <em>três</em> redes diferentes.</h2>
-    <p class="subtitulo">E a que você mais desenvolveu quase nunca é a que a sua direção precisa.</p>
+    <h2>Você não falha por preguiça. <em>Você falha protegendo algo</em> que a mudança ameaça.</h2>
+    <p class="subtitulo">Kegan & Lahey (2009): "toda pessoa capaz que não consegue mudar tem, sem saber, um compromisso oculto que produz exatamente a paralisia observada."</p>
     <div class="ponto">
 
       <div class="direcao-recap">
-        <div class="direcao-recap-label">Sua direção escolhida (Etapa 14)</div>
+        <div class="direcao-recap-label">Sua direção (Etapa 7) · seu hábito 1 (Etapa 15)</div>
         <div class="direcao-recap-frase" id="direcao-recap-txt">—</div>
-        <small>Rede sem direção é acúmulo. Rede com direção é infraestrutura.</small>
+        <small>Hoje: se esse hábito ainda "escapa" apesar do desenho e do ambiente, é porque tem sabotagem sistemática — e ela protege algo específico.</small>
       </div>
 
       <div class="definicao-eu">
-        <div class="definicao-eu-label">O que é "rede" nesta semana</div>
-        <div class="definicao-eu-texto"><b>Rede é o conjunto de pessoas cuja proximidade com você amplifica sua direção</b> — não a lista de contatos, não o número de LinkedIn. Ibarra & Hunter mostraram que essa proximidade se manifesta em 3 tipos com funções muito diferentes: <em>Operacional</em> (quem faz o trabalho atual acontecer), <em>Pessoal</em> (quem te desenvolve como profissional) e <em>Estratégica</em> (quem abre as próximas portas). Confundir os 3 é a razão pela qual muita gente com "boa rede" fica travada mesmo assim.</div>
+        <div class="definicao-eu-label">O que é "imunidade à mudança" nesta semana</div>
+        <div class="definicao-eu-texto"><b>Imunidade à mudança é o padrão em que uma parte de você quer mudar (o hábito bom) e outra parte silenciosamente sabota (o compromisso oculto)</b>. Não é conflito consciente. É <em>sistema imunológico interno</em> — protegendo você de algo que a mudança ameaça. Enquanto a proteção não for reconhecida, ela vence sempre.</div>
       </div>
 
-      <p style="margin-top:18px"><b>Herminia Ibarra e Mark Hunter (2007)</b> estudaram executivos em transição e descobriram um padrão consistente: pessoas competentes desenvolvem rede <b>Operacional</b> forte quase automaticamente (o time, os pares, os clientes do trabalho atual). Rede <b>Pessoal</b> vem em segundo — mentores, grupos de aprendizagem, colegas de fora. Mas rede <b>Estratégica</b> — as pessoas que abrem futuras oportunidades — quase sempre é <em>fraca ou inexistente</em>. E é justamente ela que a nova direção precisa.</p>
+      <p style="margin-top:18px"><b>Robert Kegan e Lisa Laskow Lahey</b> (Harvard Graduate School of Education, em <em>Immunity to Change</em>, 2009) sistematizaram 30 anos de pesquisa e chegaram a um mapa em 4 colunas: (1) o objetivo declarado — o que você quer melhorar; (2) os comportamentos contrários — o que você faz ou deixa de fazer que trabalha contra o objetivo; (3) o compromisso oculto competitivo — o outro compromisso, geralmente inconsciente, ao qual seus comportamentos contrários fazem sentido; (4) a suposição grande — a crença subjacente que sustenta o compromisso oculto.</p>
 
-      <p><b>Rob Cross (2016)</b> adiciona um alerta importante: mais colaboração não é mais rede. Ele mediu que profissionais gastam 30-40% do tempo em colaboração <em>de baixo retorno</em> — reuniões que não precisavam existir, e-mails de FYI, coordenação redundante. Rede boa <em>economiza</em> seu tempo (te conecta ao que importa); rede ruim <em>consome</em>. A diferença é diferenciação por tipo, não volume.</p>
+      <p>A descoberta central é contraintuitiva: <b>seus comportamentos contrários não são falhas — são sucessos</b>. Eles servem perfeitamente ao compromisso oculto. Por isso "esforçar mais" não funciona: o que aparenta falta de vontade é, na verdade, ação eficiente numa direção que você não vê. Só nomear o compromisso oculto (e testar a suposição por trás dele) muda o equilíbrio.</p>
 
       <div class="teste-linha">
-        Teste rápido: se você precisasse hoje de <b>uma indicação forte na sua nova direção</b>, quantas pessoas você conseguiria pedir? Menos de 3 significa rede estratégica frágil.
+        Teste rápido: se o hábito 1 tem escapado em pontos que se repetem, pergunte: <b>que outro compromisso essa sabotagem está servindo</b> — que eu não quero admitir?
       </div>
 
-      <p style="margin-top:18px"><b>Por que hoje o exercício é o mapa dos 3 tipos?</b> Porque tentar "melhorar minha rede" sem distinguir tipos é receita para gastar energia na rede errada. Você reforça a operacional (que já é forte) porque é mais confortável, e continua com a estratégica frágil (que é o gargalo real). O diagnóstico separado por tipo revela o que a intuição esconde.</p>
+      <p style="margin-top:18px"><b>Por que hoje o exercício é nomear + 1 experimento?</b> Porque nomear sozinho não muda nada — mas nomear <em>e testar a suposição por trás</em> muda. Kegan & Lahey: a suposição é geralmente antiga (formada em outra época da vida) e sobreviveu sem ser questionada. Um teste pequeno hoje mostra se ela ainda vale ou se já pode ser aposentada — e a aposentadoria da suposição libera a mudança.</p>
     </div>
   </section>
 
   <section class="bloco" id="conteudo">
     <div class="bloco-num"><span class="n">4</span> O conteúdo que direciona a sua missão de hoje</div>
-    <h2>Três tipos de rede — clicáveis para o método.</h2>
+    <h2>Três lentes — Sabotagem · Proteção · Teste.</h2>
     <p class="subtitulo">10 min. Material de referência.</p>
 
     <div class="personagens-intro">
@@ -399,120 +395,116 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">01</span>Três redes — Operacional · Pessoal · Estratégica</h3>
-      <p>Cada rede tem função diferente e é construída de forma diferente. Toque em cada uma para o método e o exemplo.</p>
+      <h3><span class="marcador">01</span>Três lentes — Sabotagem · Proteção · Teste</h3>
+      <p>Toque em cada lente para o método, exemplos e o erro clássico.</p>
 
-      <div class="rede-grid">
-        <div class="rede-card" data-modal="operacional" role="button" tabindex="0">
-          <div class="rede-icone">O</div>
-          <div class="rede-nome">Operacional</div>
-          <div class="rede-pergunta">"quem faz o trabalho atual acontecer"</div>
-          <span class="rede-seta">›</span>
+      <div class="spt-grid">
+        <div class="spt-card" data-modal="sabotagem" role="button" tabindex="0">
+          <div class="spt-icone">S</div>
+          <div class="spt-nome">Sabotagem</div>
+          <div class="spt-pergunta">"o que se repete apesar do plano?"</div>
+          <span class="spt-seta">›</span>
         </div>
-        <div class="rede-card" data-modal="pessoal" role="button" tabindex="0">
-          <div class="rede-icone">P</div>
-          <div class="rede-nome">Pessoal</div>
-          <div class="rede-pergunta">"quem te desenvolve como profissional"</div>
-          <span class="rede-seta">›</span>
+        <div class="spt-card" data-modal="protecao" role="button" tabindex="0">
+          <div class="spt-icone">P</div>
+          <div class="spt-nome">Proteção</div>
+          <div class="spt-pergunta">"que compromisso oculto isso serve?"</div>
+          <span class="spt-seta">›</span>
         </div>
-        <div class="rede-card" data-modal="estrategica" role="button" tabindex="0">
-          <div class="rede-icone">E</div>
-          <div class="rede-nome">Estratégica</div>
-          <div class="rede-pergunta">"quem abre as próximas portas"</div>
-          <span class="rede-seta">›</span>
+        <div class="spt-card" data-modal="teste" role="button" tabindex="0">
+          <div class="spt-icone">T</div>
+          <div class="spt-nome">Teste</div>
+          <div class="spt-pergunta">"a suposição ainda vale?"</div>
+          <span class="spt-seta">›</span>
         </div>
       </div>
 
-      <span class="rede-hint">
+      <span class="spt-hint">
         <svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>
-        Toque em cada rede para o método e o erro clássico.
+        Toque em cada lente para o método e o exemplo aplicado.
       </span>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">02</span>Padrão dos personagens — quem tem forte, quem tem frágil</h3>
+      <h3><span class="marcador">02</span>Compromisso oculto — leitura dos personagens</h3>
 
       <div class="caso">
         <div class="caso-header">
           <div class="caso-avatar">C</div>
           <div>
-            <div class="caso-nome">Camila · Continuação Paralela</div>
-            <div class="caso-perfil">Direção: análise de decisão com IA</div>
+            <div class="caso-nome">Camila</div>
+            <div class="caso-perfil">Hábito: 20 min de escrita/dia. Sabotagem: adia para "quando ler mais"</div>
           </div>
-          <span class="caso-tag">Estratégica frágil</span>
+          <span class="caso-tag">S·P·T</span>
         </div>
-        <p><b>Operacional (5):</b> forte — 8 anos de banco, time, pares, colegas de outras áreas. <b>Pessoal (3):</b> ok — um ex-chefe que virou mentor, 2 colegas de MBA, grupo de estudos de dados. <b>Estratégica (1):</b> quase zero — nenhuma pessoa hoje na comunidade externa de IA aplicada a análise que a mencionaria. E é essa a rede que a Continuação Paralela precisa. Gargalo claro.</p>
+        <p><b>Proteção:</b> "não posso escrever medíocre — se eu publicar algo ruim, minha reputação no banco cai." Compromisso oculto: proteger reputação técnica sólida contra risco de exposição imperfeita. <b>Suposição:</b> "artigo curto publicado vale menos que artigo perfeito não publicado." <b>Teste:</b> publicar 1 artigo curto (400 palavras) esta semana, marcado como "notas rápidas" — testar se reação profissional real é negativa (raramente é).</p>
       </div>
 
       <div class="caso">
         <div class="caso-header">
           <div class="caso-avatar rafael">R</div>
           <div>
-            <div class="caso-nome">Rafael · Adjacência Iterativa</div>
-            <div class="caso-perfil">Direção: operações para escala digital</div>
+            <div class="caso-nome">Rafael</div>
+            <div class="caso-perfil">Hábito: 10 min de leitura em voz alta/noite. Sabotagem: fica no celular até tarde</div>
           </div>
-          <span class="caso-tag">Estratégica em construção</span>
+          <span class="caso-tag">S·P·T</span>
         </div>
-        <p><b>Operacional (5):</b> 12 anos de indústria, time e pares sólidos. <b>Pessoal (2):</b> pouca — Rafael sempre priorizou entrega, negligenciou desenvolvimento pessoal fora do trabalho. <b>Estratégica (2):</b> começou — 3 contatos em fintechs feitos nos últimos meses. Precisa crescer para 10-15 no próximo trimestre. Trabalho ativo, começando quase do zero.</p>
+        <p><b>Proteção:</b> "se eu não checar mensagens à noite, algo urgente vai passar e vou parecer omisso." Compromisso oculto: manter reputação de disponibilidade constante — construída em anos de operação industrial. <b>Suposição:</b> "resposta lenta = falha profissional." <b>Teste:</b> por 5 dias, deixar o celular fora do quarto às 22h — mensagens depois só de manhã. Medir: quantas urgências reais surgiram, quantas eram falso alarme.</p>
       </div>
 
       <div class="caso">
         <div class="caso-header">
           <div class="caso-avatar juliana">J</div>
           <div>
-            <div class="caso-nome">Juliana · Reinvenção Paralela</div>
-            <div class="caso-perfil">Direção: design de sistemas para pequenos negócios</div>
+            <div class="caso-nome">Juliana</div>
+            <div class="caso-perfil">Hábito: 15 min de esboço da aula/dia. Sabotagem: refina infinitamente sem testar</div>
           </div>
-          <span class="caso-tag">Rede difusa</span>
+          <span class="caso-tag">S·P·T</span>
         </div>
-        <p><b>Operacional (4):</b> clientes ativos, fornecedores, mas cada projeto novo é começar. <b>Pessoal (3):</b> 4-5 designers que ela consulta, participa de 1 comunidade online. <b>Estratégica (2):</b> fraca — Juliana conhece muita gente mas ninguém "carrega o nome dela" como referência em design de sistemas. Confundiu rede operacional (clientes) com rede estratégica (indicadores de novos horizontes). Gargalo camuflado.</p>
+        <p><b>Proteção:</b> "se a aula ficar mediana e os alunos não pagarem, vou virar 'mais uma' no mercado." Compromisso oculto: diferenciar-se por qualidade extrema como defesa contra competição. <b>Suposição:</b> "aula boa exige refinamento pré-teste; aula em fase de teste desmerece minha marca." <b>Teste:</b> testar a aula piloto com 3 alunos beta em estado 60% pronto — coletar 3 feedbacks específicos e ver se a qualidade do <em>desenho final</em> pós-feedback supera qualquer refinamento solo.</p>
       </div>
     </div>
 
     <div class="conteudo-item">
-      <h3><span class="marcador">03</span>A regra da Etapa 17: cada tipo cresce por método diferente</h3>
-      <p>Rede operacional cresce por <b>fazer bem o trabalho</b>. Rede pessoal cresce por <b>investir em desenvolvimento próprio</b> (leituras, cursos, encontros). Rede estratégica cresce por <b>gestos deliberados de aproximação</b> a pessoas específicas ligadas ao futuro que você quer. Confundir os métodos = falha: tentar fazer estratégica com energia de operacional (cansaço, sem retorno) ou operacional com energia de estratégica (política em vez de entrega).</p>
+      <h3><span class="marcador">03</span>A regra da Etapa 17: nomear + testar, não "vencer"</h3>
+      <p>Kegan &amp; Lahey são enfáticos: <b>o objetivo não é derrotar a proteção</b>. Ela existe porque um dia serviu você. O objetivo é <em>testar se a suposição que a sustenta ainda vale</em> — no seu contexto atual, na sua fase de carreira atual, com quem você é hoje. Muitas suposições foram formadas há 10, 15, 20 anos — em circunstâncias diferentes. Um teste pequeno hoje mostra se ela ainda vale ou se pode ser aposentada com gratidão.</p>
     </div>
   </section>
 
   <section class="bonus bloco" id="bonus">
     <div class="bloco-num"><span class="n">5</span> Seu bônus antes da missão</div>
-    <h2>Como líderes usam redes. E o alerta contra sobrecarga.</h2>
-    <p class="subtitulo">Duas leituras que fundamentam os 3 tipos + a régua de qualidade.</p>
+    <h2>Imunidade à mudança em profundidade.</h2>
+    <p class="subtitulo">Uma leitura que fundamenta S·P·T.</p>
     <div class="leituras">
       <div class="leitura">
-        <span class="tipo">Resumo · 3 páginas</span>
-        <h4>Como líderes usam redes</h4>
-        <p class="meta-leitura">Ibarra & Hunter (2007) — a pesquisa canônica que separa Operacional, Pessoal e Estratégica. Mostra por que a maioria dos profissionais em transição falha na estratégica (que é a única que a nova direção pede).</p>
-      </div>
-      <div class="leitura">
-        <span class="tipo">Resumo · 3 páginas</span>
-        <h4>Sobrecarga de colaboração</h4>
-        <p class="meta-leitura">Cross (2016) — 30-40% do tempo dos profissionais é gasto em colaboração de baixo retorno. Rede boa economiza; rede ruim consome. Como distinguir e cortar.</p>
+        <span class="tipo">Resumo · 4 páginas</span>
+        <h4>Immunity to Change</h4>
+        <p class="meta-leitura">Robert Kegan & Lisa Laskow Lahey · Harvard Business Review Press · 2009. O mapa de 4 colunas (objetivo, comportamentos contrários, compromisso oculto competitivo, suposição grande) — como profissionais capazes descobrem por que sabotam o que dizem querer.</p>
       </div>
     </div>
-    <a href="academia.html" class="link-academia">Abrir os resumos na Academia Intentia →</a>
-    <p class="bonus-nota">Opcional. As leituras enriquecem o dia — mas a missão funciona sem elas.</p>
+    <a href="academia.html" class="link-academia">Abrir o resumo na Academia Intentia →</a>
+    <p class="bonus-nota">Opcional. A leitura enriquece o dia — mas a missão funciona sem ela.</p>
   </section>
 
   <section class="bloco" id="missao">
     <div class="bloco-num"><span class="n">6</span> Missão do Dia</div>
     <div class="missao-header">
-      <h2>Mapa das 3 redes + gargalo.</h2>
-      <span class="missao-tempo">18 min</span>
+      <h2>Nomear 1 compromisso oculto + desenhar 1 teste.</h2>
+      <span class="missao-tempo">20 min</span>
     </div>
-    <p class="subtitulo">Listar pessoas concretas em cada tipo. Avaliar densidade. Escolher gargalo. Movimento pequeno esta semana — na rede certa.</p>
+    <p class="subtitulo">Observar sabotagem repetida do hábito 1. Nomear o compromisso oculto que ela protege. Escrever a suposição por trás. Desenhar 1 experimento pequeno para testar.</p>
 
     <ol class="passos">
-      <li><strong>Reler sua direção (Etapa 14) <span class="tempo-passo">2 min</span></strong><p>Frase-síntese e história curta. As 3 redes serão avaliadas <em>a serviço dessa direção</em> — não da carreira atual.</p></li>
-      <li><strong>Listar rede Operacional <span class="tempo-passo">4 min</span></strong><p>Nomes de pessoas com quem você trabalha regularmente hoje (time, pares, clientes, fornecedores). Meta: 8-15 nomes. Nota 1-5 de densidade.</p></li>
-      <li><strong>Listar rede Pessoal <span class="tempo-passo">4 min</span></strong><p>Mentores, colegas de fora, grupos, comunidades. Pessoas que te desenvolvem como profissional. Meta: 5-10 nomes. Nota 1-5.</p></li>
-      <li><strong>Listar rede Estratégica <span class="tempo-passo">4 min</span></strong><p>Pessoas do <em>território</em> da sua direção que hoje te associam a esse território. Meta: 3-10 nomes. Nota 1-5. Se você tem menos de 3, escreva "menos de 3" — isso é diagnóstico.</p></li>
-      <li><strong>Escolher gargalo + movimento pequeno <span class="tempo-passo">4 min</span></strong><p>A rede com nota mais baixa é o gargalo (quase sempre a Estratégica quando você mudou de direção). Movimento pequeno: específico, executável esta semana. Ex.: "mandar mensagem para 2 pessoas específicas da área nova esta semana com 1 insight útil".</p></li>
+      <li><strong>Onde o hábito 1 tem escapado <span class="tempo-passo">3 min</span></strong><p>Pense nos últimos 2-3 dias. Momentos específicos em que você não fez o hábito — não a regra, os padrões que se repetem.</p></li>
+      <li><strong>O comportamento contrário (o que você faz em vez) <span class="tempo-passo">3 min</span></strong><p>Muito específico. Não "distração"; "abro Slack e fico 45 min conversando." Não "cansaço"; "adio para 'depois do jantar' e depois nunca faço."</p></li>
+      <li><strong>Se esse comportamento fizesse sentido, que outra coisa ele protegeria? <span class="tempo-passo">6 min</span></strong><p>É a pergunta central de Kegan & Lahey. Não é "por que sou fraca?" — é "que outro compromisso, se eu admitisse, faz esse comportamento parecer sábio?" Escreva 2-3 frases.</p></li>
+      <li><strong>A suposição por trás (a "verdade" antiga) <span class="tempo-passo">4 min</span></strong><p>"Se eu [fizer o hábito completamente], então [acontece consequência ruim]." A frase completa. Kegan & Lahey: a suposição raramente é dita — está por debaixo, silenciosa.</p></li>
+      <li><strong>1 experimento pequeno para testar <span class="tempo-passo">3 min</span></strong><p>Não teste a suposição inteira (arriscado, dramático). Teste uma versão pequena — o que muda no mundo real em pequena dose. 1 semana de duração, mensurável.</p></li>
+      <li><strong>Marcar revisão do teste <span class="tempo-passo">1 min</span></strong><p>Daqui a 7 dias — data específica. Que dado o teste vai gerar? Como você vai decidir se a suposição ainda vale?</p></li>
     </ol>
 
     <a href="missao.html" class="cta-missao">
-      <span class="cta-texto"><span class="cta-tempo">18 min</span>Fazer a Missão</span>
+      <span class="cta-texto"><span class="cta-tempo">20 min</span>Fazer a Missão</span>
       <span class="cta-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></span>
     </a>
   </section>
@@ -552,12 +544,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
     <div class="modal-body">
       <div class="modal-secao">
-        <div class="modal-secao-label">O que a rede faz</div>
+        <div class="modal-secao-label">O que a lente faz</div>
         <p id="modal-conceito"></p>
       </div>
       <div class="modal-secao">
         <div class="modal-exemplos">
-          <div class="modal-exemplos-label">Movimentos pequenos que fortalecem</div>
+          <div class="modal-exemplos-label">Como aplicar</div>
           <ul id="modal-exemplos"></ul>
         </div>
         <div class="modal-erro"><b>Erro comum</b><span id="modal-erro"></span></div>
@@ -566,33 +558,33 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   </div>
 </div>
 
-<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 17 · Redes de influência</div></footer>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 17 · Sistema de manutenção — S·P·T</div></footer>
 
 <script>
-  const REDE_DETALHE = {
-    operacional: {
-      nome: 'Rede Operacional',
-      tagline: 'quem faz o trabalho atual acontecer',
-      icone: 'O',
-      conceito: 'A rede que executa: <b>time, pares, clientes, fornecedores</b> — todas as pessoas cuja proximidade permite você entregar o trabalho de hoje. É a mais fácil de crescer (aparece sozinha quando você faz bem o trabalho), e por isso a maioria dos profissionais competentes tem essa forte. O erro é confundir tê-la forte com "ter rede boa" — Operacional forte sustenta o presente, não o futuro.',
-      exemplos: ['1:1 semanal de qualidade com o time direto', 'Entrega consistente que gera reciprocidade natural', 'Investimento em relações cross-funcionais no trabalho atual', 'Manter contato ativo com ex-colegas quando ainda são pares operacionais'],
-      erro: 'Achar que rede operacional forte compensa rede estratégica fraca. Não compensa. As duas fazem coisas diferentes. Uma sustenta seu trabalho atual; outra abre o próximo trabalho.'
+  const SPT_DETALHE = {
+    sabotagem: {
+      nome: 'Sabotagem',
+      tagline: '"o que se repete apesar do plano?"',
+      icone: 'S',
+      conceito: 'Sabotagem é <b>o comportamento contrário que se repete</b> — o que você faz (ou deixa de fazer) que trabalha contra o hábito, apesar da intenção sincera. Kegan &amp; Lahey: sabotagem não é falha aleatória; é padrão. Se você observar, o mesmo tipo de "sabotagem" acontece em situações parecidas. Reconhecer o padrão é o primeiro passo — porque padrão indica que há um sistema atuando, não força de vontade insuficiente.',
+      exemplos: ['Observar 3-5 momentos recentes em que o hábito escapou — não regra, padrões', 'Nomear o comportamento contrário específico: não "distração", mas "abri Slack ao invés do doc"', 'Notar o horário/contexto onde a sabotagem aparece — quase sempre repete', 'Escrever sem julgamento — é dado, não veredito sobre você'],
+      erro: '<b>Chamar de "preguiça" ou "falta de disciplina".</b> Essas rotulações fecham a investigação. Kegan &amp; Lahey: quando você culpa "vontade", você para de observar o padrão real — e sem observar o padrão, a proteção que ele serve permanece invisível, e o hábito continua sabotado.'
     },
-    pessoal: {
-      nome: 'Rede Pessoal',
-      tagline: 'quem te desenvolve como profissional',
+    protecao: {
+      nome: 'Proteção',
+      tagline: '"que compromisso oculto isso serve?"',
       icone: 'P',
-      conceito: 'A rede que <b>faz você crescer</b>: mentores, ex-professores, colegas de fora da sua empresa, grupos de estudo, comunidades profissionais, pessoas cujo diálogo te expande. É a rede que dá contexto e perspectiva — sem ela, você fica trancada no ponto de vista da sua área/empresa. Rede pessoal boa te faz enxergar padrões que o dia a dia esconde.',
-      exemplos: ['1 mentor com quem você fala trimestralmente', 'Grupo de 4-6 pessoas de outras áreas onde vocês trocam ideias com regularidade', 'Comunidade online ativa em algo que te desafia', 'Curso/programa recente que te conectou a 3-5 pessoas de outros contextos', 'Meetup ou clube pequeno mensal'],
-      erro: 'Confundir rede pessoal com <b>rede social</b>. Amigos importam para vida, mas não para desenvolvimento profissional. Rede pessoal tem função específica: te expandir profissionalmente. Uma amiga próxima que trabalha na mesma área que você e pensa igual = amiga, não rede pessoal.'
+      conceito: 'Proteção é <b>o compromisso oculto competitivo</b> — o outro compromisso, geralmente inconsciente, ao qual seus comportamentos contrários fazem perfeito sentido. Kegan &amp; Lahey: seus comportamentos não são falhas; são <em>sucessos</em> a serviço da proteção. A pergunta central: "se esse comportamento fosse sábio, que outra coisa ele estaria protegendo?" A resposta quase sempre é ligada a: reputação, controle, autonomia, pertencimento, ou a evitar rejeição.',
+      exemplos: ['Perguntar: "o que eu ganho ao <em>não</em> fazer o hábito?" (ganho existe, senão não repetiria)', 'Nomear a proteção com honestidade: "protejo minha imagem de sólida evitando exposição imperfeita"', 'Reconhecer que a proteção já foi útil — em alguma fase da vida ela fez sentido; hoje talvez não faça mais', 'Escrever a proteção sem culpa — não é fraqueza, é sistema imunológico interno'],
+      erro: '<b>Confundir proteção com "coisa ruim para eliminar".</b> A proteção foi criada por uma razão — geralmente uma que fez sentido em outra fase. O objetivo não é destruí-la; é <em>reconhecer</em>, <em>agradecer</em>, e <em>testar</em> se ainda vale. Tratar a proteção como inimiga produz mais defesa, não menos.'
     },
-    estrategica: {
-      nome: 'Rede Estratégica',
-      tagline: 'quem abre as próximas portas',
-      icone: 'E',
-      conceito: 'A rede que <b>puxa você para o futuro</b>: pessoas do território da sua nova direção que hoje conhecem seu trabalho e te associam a esse território. Ibarra & Hunter: é a rede mais rara e a mais importante em transições. Quando você mudou de direção (ou está mudando), essa rede quase sempre é frágil — porque as pessoas que te conhecem estão na direção anterior. Precisa ser <em>construída deliberadamente</em>.',
-      exemplos: ['Mensagem estruturada a 3-5 pessoas do território novo por trimestre', '1-2 encontros presenciais/call com pessoas do território a cada 2 meses', 'Presença ativa em 1 comunidade online do território — comentários substantivos, não likes', 'Palestrar/publicar 1 vez por semestre em espaços do território (mesmo pequenos)', 'Colaboração pontual (projeto lateral) com alguém do território novo'],
-      erro: 'Achar que rede estratégica cresce sozinha depois de "produzir bom trabalho". Não cresce. Rede operacional cresce por trabalho; rede estratégica só cresce por <b>gestos específicos e repetidos</b> em direção às pessoas certas. Se você não faz isso deliberadamente, ela fica em zero — mesmo com trabalho excelente.'
+    teste: {
+      nome: 'Teste',
+      tagline: '"a suposição ainda vale?"',
+      icone: 'T',
+      conceito: 'Teste é <b>o experimento pequeno que verifica se a suposição por trás da proteção ainda é verdadeira</b> no seu contexto atual. Kegan &amp; Lahey: quase todas as suposições que nos protegem foram formadas em outra época — muitas já não valem mais, mas continuam operando porque nunca foram testadas. Um teste bem desenhado é: pequeno (baixo risco), específico (dados observáveis), curto (1-2 semanas), reversível (pode voltar se der ruim).',
+      exemplos: ['Escrever a suposição completa: "se eu X, então Y" — a "verdade" antiga que sustenta a proteção', 'Desenhar teste com escopo mínimo: 1 semana, 1 versão pequena da mudança, dados coletados', 'Definir o que "prova/não prova" a suposição — antes de começar, para não distorcer depois', 'Aposentar suposições que não passam no teste — com gratidão pelo serviço que fizeram'],
+      erro: '<b>Testar a suposição inteira de uma vez.</b> Isso é dramático e assusta a proteção — que reage aumentando defesa. Teste pequeno, com dados claros, permite que a proteção observe (não decida) e vá se acalmando conforme os dados chegam. Mudança sustentada vem de teste iterativo — nunca de decisão heroica única.'
     }
   };
 </script>
@@ -607,61 +599,25 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     secoes.forEach(s => observer.observe(s));
     if(items[0]) items[0].classList.add('ativo');
   })();
+  (function(){ const wf = document.getElementById('waveform'); if(!wf) return; const alturas = [24,30,38,44,36,30,34,42,48,54,46,40,48,56,62,54,46,38,44,52,60,68,74,68,60,52,44,52,60,68,76,82,76,68,60,52,46,40,34,42,50,58,52,44,38,32,40,48,42,36,30,26,32,38,44,38,32,28,34,30,24,22,28,24]; alturas.forEach(h => { const bar = document.createElement('div'); bar.className = 'bar'; bar.style.height = h + '%'; wf.appendChild(bar); }); })();
+  (function(){ const btn = document.getElementById('btn-play'); if(!btn) return; let tocando = false; btn.addEventListener('click', () => { tocando = !tocando; btn.innerHTML = tocando ? '<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>' : '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; }); })();
+  (function(){ document.querySelectorAll('.vel-btn').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('.vel-btn').forEach(x => x.classList.remove('ativa')); b.classList.add('ativa'); })); })();
   (function(){
-    const wf = document.getElementById('waveform');
-    if(!wf) return;
-    const alturas = [24,30,38,44,36,30,34,42,48,54,46,40,48,56,62,54,46,38,44,52,60,68,74,68,60,52,44,52,60,68,76,82,76,68,60,52,46,40,34,42,50,58,52,44,38,32,40,48,42,36,30,26,32,38,44,38,32,28,34,30,24,22,28,24];
-    alturas.forEach(h => { const bar = document.createElement('div'); bar.className = 'bar'; bar.style.height = h + '%'; wf.appendChild(bar); });
-  })();
-  (function(){
-    const btn = document.getElementById('btn-play');
-    if(!btn) return;
-    let tocando = false;
-    btn.addEventListener('click', () => { tocando = !tocando; btn.innerHTML = tocando ? '<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>' : '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; });
-  })();
-  (function(){
-    document.querySelectorAll('.vel-btn').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('.vel-btn').forEach(x => x.classList.remove('ativa')); b.classList.add('ativa'); }));
-  })();
-  (function(){
-    const overlay = document.getElementById('modal-overlay');
-    const btnClose = document.getElementById('modal-close');
-    if(!overlay) return;
-    window.abrirModal = function(id){
-      const d = REDE_DETALHE[id];
-      if(!d) return;
-      document.getElementById('modal-icone').textContent = d.icone;
-      document.getElementById('modal-titulo').textContent = d.nome;
-      document.getElementById('modal-tagline').textContent = d.tagline;
-      document.getElementById('modal-conceito').innerHTML = d.conceito;
-      document.getElementById('modal-exemplos').innerHTML = d.exemplos.map(e => `<li>${e}</li>`).join('');
-      document.getElementById('modal-erro').innerHTML = d.erro;
-      overlay.classList.add('aberto');
-      document.body.style.overflow = 'hidden';
-    };
+    const overlay = document.getElementById('modal-overlay'); const btnClose = document.getElementById('modal-close'); if(!overlay) return;
+    window.abrirModal = function(id){ const d = SPT_DETALHE[id]; if(!d) return; document.getElementById('modal-icone').textContent = d.icone; document.getElementById('modal-titulo').textContent = d.nome; document.getElementById('modal-tagline').textContent = d.tagline; document.getElementById('modal-conceito').innerHTML = d.conceito; document.getElementById('modal-exemplos').innerHTML = d.exemplos.map(e => `<li>${e}</li>`).join(''); document.getElementById('modal-erro').innerHTML = d.erro; overlay.classList.add('aberto'); document.body.style.overflow = 'hidden'; };
     function fechar(){ overlay.classList.remove('aberto'); document.body.style.overflow = ''; }
-    document.querySelectorAll('.rede-card[data-modal]').forEach(card => {
-      card.addEventListener('click', () => abrirModal(card.dataset.modal));
-      card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirModal(card.dataset.modal); } });
-    });
-    btnClose.addEventListener('click', fechar);
-    overlay.addEventListener('click', (e) => { if(e.target === overlay) fechar(); });
-    document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && overlay.classList.contains('aberto')) fechar(); });
+    document.querySelectorAll('.spt-card[data-modal]').forEach(card => { card.addEventListener('click', () => abrirModal(card.dataset.modal)); card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirModal(card.dataset.modal); } }); });
+    btnClose.addEventListener('click', fechar); overlay.addEventListener('click', (e) => { if(e.target === overlay) fechar(); }); document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && overlay.classList.contains('aberto')) fechar(); });
   })();
   (function(){
     try {
-      const s = sessionStorage.getItem('intentia-dia14');
-      if (s) {
-        const p = JSON.parse(s);
-        if (p && p.escolhaFrase) {
-          document.getElementById('direcao-recap-txt').textContent = p.escolhaFrase;
-          return;
-        }
-      }
+      const s22 = sessionStorage.getItem('intentia-dia15');
+      if (s22) { const p = JSON.parse(s22); const a = p.amanha || 'h1'; const h = p[a]; if (h) { document.getElementById('direcao-recap-txt').textContent = h; return; } }
+      const s = sessionStorage.getItem('intentia-dia7'); if (s) { const p = JSON.parse(s); if (p && p.escolhaFrase) { document.getElementById('direcao-recap-txt').textContent = p.escolhaFrase; return; } }
     } catch(e){}
     document.getElementById('direcao-recap-txt').textContent = 'sigo com Continuação Paralela — analista sênior + presença externa em análise de decisão com IA (exemplo demonstrativo)';
   })();
 </script>
-
 
 <script>
 /* Player real (integração 21/07/2026): toca o audio.mp3 da pasta do dia.

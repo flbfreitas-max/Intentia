@@ -1,59 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intentia · Etapa 17 · Playbook — 3 Redes</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}
-  *{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}
-  .grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}
-  header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}
-  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
-  .voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}
-  .voltar svg{width:14px;height:14px;fill:currentColor}
-  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
-  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:14px}
-  header .lede{font-size:16px;color:#CFE0D6;max-width:600px}
-  .arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}
-  main{max-width:760px;margin:0 auto;padding:0 24px 40px}
-  .intro-caixa{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}
-  .intro-caixa h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
-  .intro-caixa p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
-  .intro-caixa p:last-child{margin-bottom:0}
-  .intro-caixa b{color:var(--verde-900)}
-  .rede-secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06)}
-  .rede-secao-header{padding:22px 28px 20px;color:#fff;display:flex;align-items:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%)}
-  .rede-secao-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}
-  .rede-secao-titulo{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2}
-  .rede-secao-sub{font-size:13px;opacity:.92;font-style:italic;margin-top:3px}
-  .rede-secao-body{padding:22px 28px 26px}
-  .rede-secao-body p{margin-bottom:14px;font-size:15px;line-height:1.7}
-  .rede-secao-body p:last-child{margin-bottom:0}
-  .rede-secao-body b{color:var(--verde-900)}
-  .subsec-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin:22px 0 10px;padding-top:18px;border-top:1px dashed var(--verde-100)}
-  .subsec-label:first-child{margin-top:0;padding-top:0;border-top:none}
-  .lista-check{list-style:none;padding:0;margin-top:8px}
-  .lista-check li{padding:8px 0 8px 26px;position:relative;font-size:14px;line-height:1.55;color:var(--tinta)}
-  .lista-check li::before{content:"→";position:absolute;left:0;top:8px;color:var(--coral);font-weight:700}
-  .lista-check li b{color:var(--verde-900)}
-  .antidoto-box{background:#F0F5F2;border-left:3px solid var(--verde-700);padding:14px 20px;border-radius:0 10px 10px 0;margin-top:12px;font-size:14.5px;line-height:1.6}
-  .antidoto-box b{color:var(--verde-900)}
-  .antidoto-box .antidoto-titulo{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:6px}
-  .erro-caixa{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}
-  .erro-caixa .erro-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
-  .erro-caixa b{color:var(--verde-900)}
-  .aviso-final{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0 20px}
-  .aviso-final h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}
-  .aviso-final p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}
-  .aviso-final p:last-child{margin-bottom:0}
-  .aviso-final b{color:var(--verde-900)}
-  footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}
-  footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}
-</style>
-
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Intentia · Etapa 17 · Playbook — S·P·T</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><style>:root{--verde-900:#275750;--verde-700:#336B62;--verde-500:#7CA89E;--verde-100:#DAE6E1;--areia:#EFF2EE;--coral:#FF6842;--coral-soft:#FFC0AB;--tinta:#20332F;--tinta-suave:#57706A;--creme:#F5F7F3;--serif:'Fraunces', Georgia, serif;--sans:'Hanken Grotesk', -apple-system, sans-serif}*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sans);background:var(--areia);color:var(--tinta);line-height:1.65;font-size:16px}.grifo{background:linear-gradient(transparent 62%, var(--coral-soft) 62%, var(--coral-soft) 92%, transparent 92%);padding:0 .1em}header{background:var(--verde-900);color:var(--creme);padding:52px 24px 60px;position:relative;overflow:hidden}.hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}.voltar{display:inline-flex;align-items:center;gap:6px;color:var(--verde-500);text-decoration:none;font-size:12.5px;font-weight:600;margin-bottom:16px}.voltar svg{width:14px;height:14px;fill:currentColor}.eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:14px}header .lede{font-size:16px;color:#CFE0D6;max-width:600px}.arc{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:2px solid rgba(255,255,255,.06);border-radius:50%}main{max-width:760px;margin:0 auto;padding:0 24px 40px}.intro{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 28px;margin:24px 0;box-shadow:0 3px 12px rgba(39,87,80,.05)}.intro h2{font-family:var(--serif);font-size:20px;color:var(--verde-900);margin-bottom:10px;font-weight:600}.intro p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}.intro p:last-child{margin-bottom:0}.intro b{color:var(--verde-900)}.secao{background:#fff;border:1px solid var(--verde-100);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:0 4px 16px rgba(39,87,80,.06)}.secao-header{padding:22px 28px 20px;color:#fff;display:flex;align-items:center;gap:14px;background:linear-gradient(135deg, #FF7A57 0%, var(--coral) 100%)}.secao-letra{width:44px;height:44px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;flex-shrink:0}.secao-titulo{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2}.secao-sub{font-size:13px;opacity:.92;font-style:italic;margin-top:3px}.secao-body{padding:22px 28px 26px}.secao-body p{margin-bottom:14px;font-size:15px;line-height:1.7}.secao-body p:last-child{margin-bottom:0}.secao-body b{color:var(--verde-900)}.subsec{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin:22px 0 10px;padding-top:18px;border-top:1px dashed var(--verde-100)}.subsec:first-child{margin-top:0;padding-top:0;border-top:none}.check{list-style:none;padding:0;margin-top:8px}.check li{padding:8px 0 8px 26px;position:relative;font-size:14px;line-height:1.55;color:var(--tinta)}.check li::before{content:"→";position:absolute;left:0;top:8px;color:var(--coral);font-weight:700}.check li b{color:var(--verde-900)}.info{background:#F0F5F2;border-left:3px solid var(--verde-700);padding:14px 20px;border-radius:0 10px 10px 0;margin-top:12px;font-size:14px;line-height:1.6}.info b{color:var(--verde-900)}.info-titulo{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-700);margin-bottom:6px}.erro{background:#FBF0EA;border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:14px;line-height:1.55}.erro-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}.erro b{color:var(--verde-900)}.aviso{background:linear-gradient(135deg, #fff 0%, var(--verde-100) 100%);border-left:6px solid var(--verde-700);border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0 20px}.aviso h3{font-family:var(--serif);font-size:19px;color:var(--verde-900);margin-bottom:10px;font-weight:600}.aviso p{font-size:14.5px;line-height:1.65;color:var(--tinta);margin-bottom:10px}.aviso p:last-child{margin-bottom:0}.aviso b{color:var(--verde-900)}footer{text-align:center;padding:36px 24px 60px;color:var(--tinta-suave);font-size:12px}footer .assinatura{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--verde-900);margin-bottom:4px}</style>
 <!--intentia-mobile:start--><style>
 /* Intentia — navegabilidade mobile (iOS + Android) */
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -133,89 +79,73 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 })();
 </script><!--intentia-nav:end-->
 
-<header>
-  <div class="hero-inner">
-    <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 17</a>
-    <div class="eyebrow">Playbook · Etapa 17</div>
-    <h1>Operacional, Pessoal, Estratégica — <span class="grifo">a fundo</span>.</h1>
-    <p class="lede">Os 3 tipos de rede em profundidade: função de cada, como crescer cada uma, e por que confundi-las mantém profissionais competentes travados em transição.</p>
-  </div>
-  <div class="arc"></div>
-</header>
+<header><div class="hero-inner"><a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 17</a><div class="eyebrow">Playbook · Etapa 17</div><h1>Sabotagem, Proteção, Teste — <span class="grifo">a fundo</span>.</h1><p class="lede">A pesquisa de Kegan &amp; Lahey em profundidade: o mapa das 4 colunas, por que "esforçar mais" quase nunca funciona em profissionais capazes, e como desenhar experimentos que testam suposições sem drama.</p></div><div class="arc"></div></header>
 <main>
-  <div class="intro-caixa">
-    <h2>O paradoxo da rede em transição</h2>
-    <p>Ibarra & Hunter descobriram um padrão consistente: profissionais em transição de liderança <b>continuam investindo tempo na rede que já é forte</b> (Operacional) e negligenciam a que virou o gargalo (Estratégica). Por quê? Porque investir na Operacional é confortável — as pessoas te conhecem, você sabe o que dizer. Investir na Estratégica é desconfortável — as pessoas ainda não te conhecem no território novo.</p>
-    <p>A saída é <b>diferenciação consciente</b>: reconhecer que cada rede tem função, método de crescimento e sinais de saúde diferentes. Uma vez que você separa, o trabalho fica claro: cortar sobrecarga da Operacional, manter a Pessoal, investir deliberadamente na Estratégica.</p>
+  <div class="intro">
+    <h2>Por que "falta disciplina" quase nunca é o diagnóstico</h2>
+    <p>Kegan &amp; Lahey passaram 30 anos observando executivos, líderes e educadores tentarem instalar mudanças que <em>sinceramente</em> queriam manter — e sistematicamente falharem. A intuição comum diagnostica: "não teve disciplina", "faltou vontade". Mas quando os autores investigaram profundamente, descobriram algo diferente: <b>a maioria dessas pessoas tem, simultaneamente, um compromisso declarado (o objetivo) e um compromisso oculto competitivo (o que a sabotagem protege) — e o oculto vence sempre, porque o consciente não sabe que está lutando</b>.</p>
+    <p>Essa descoberta reorganiza a estratégia. Não é força de vontade que precisa crescer — é <b>consciência da estrutura interna</b> que precisa emergir. Depois de nomeada, a proteção pode ser testada; depois de testada (se a suposição não se confirma), ela pode ser aposentada com gratidão pelo serviço que fez. Mudança sustentada segue.</p>
   </div>
 
-  <section class="rede-secao">
-    <div class="rede-secao-header"><div class="rede-secao-letra">O</div><div><div class="rede-secao-titulo">Rede Operacional</div><div class="rede-secao-sub">"quem faz o trabalho atual acontecer"</div></div></div>
-    <div class="rede-secao-body">
-      <div class="subsec-label">Como funciona bem</div>
-      <p>A rede Operacional é <b>consequência natural de fazer o trabalho bem</b>. Não exige "trabalhar em rede" — exige entregar consistente, ser confiável, tratar bem os pares. Ela cresce sozinha se você faz o resto certo. É a única rede que <em>não precisa de esforço explícito</em> para se manter.</p>
-
-      <div class="subsec-label">Sinais de saúde</div>
-      <ul class="lista-check">
-        <li>Você tem 1:1 regular (mensal ou mais frequente) com as 5-8 pessoas-chave do trabalho atual</li>
-        <li>Suas entregas passam por pares antes de ir para cima — feedback flui de forma natural</li>
-        <li>Quando um problema surge no trabalho, você sabe imediatamente a quem recorrer</li>
-        <li>Você tem pelo menos 2-3 relações cross-funcionais que sustentam projetos entre áreas</li>
+  <section class="secao">
+    <div class="secao-header"><div class="secao-letra">S</div><div><div class="secao-titulo">Sabotagem</div><div class="secao-sub">o padrão que se repete</div></div></div>
+    <div class="secao-body">
+      <div class="subsec">O que Kegan &amp; Lahey chamam de "coluna 2"</div>
+      <p>A coluna 2 do mapa é <b>comportamentos contrários</b> — o que você faz (ou deixa de fazer) que trabalha contra o objetivo declarado. A observação-chave é que sabotagem raramente é aleatória; ela <b>segue padrões</b>. Sempre no mesmo horário. Sempre no mesmo tipo de situação. Sempre com o mesmo sabor. Reconhecer o padrão é o primeiro passo — sem ele, você só se sente frustrada; com ele, você tem material para investigar.</p>
+      <div class="info"><div class="info-titulo">Como observar sem julgar</div>Escreva 3-5 exemplos específicos dos últimos 7 dias. Não "distraí-me"; "abri Slack antes do doc às 07h15 na terça, ficei 42 min". Especificidade cria dado; generalidade cria juízo.</div>
+      <div class="subsec">Como aplicar</div>
+      <ul class="check">
+        <li><b>Observar 3-5 exemplos concretos</b> de sabotagem do hábito 1 nos últimos dias</li>
+        <li><b>Nomear o comportamento contrário específico</b> — o que exatamente acontece, não sinônimo emocional</li>
+        <li><b>Notar padrões</b> — mesmo horário, mesmo tipo de situação, mesmo estado emocional prévio</li>
+        <li><b>Registrar sem culpa</b> — é dado, não veredito. Kegan: culpa fecha investigação; observação abre</li>
       </ul>
-
-      <div class="antidoto-box"><div class="antidoto-titulo">Se está fraca</div><p>O antídoto raramente é "networking dentro da empresa" — geralmente é <b>voltar ao trabalho básico</b>. Sua entrega está desalinhada dos que precisam dela? Você está sendo pouco confiável? A rede Operacional se cura quando o trabalho volta a ser sólido.</p></div>
-
-      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p>Investir energia grande na Operacional quando ela já é forte. <b>Rede Operacional em 5 = pare de investir</b> e libere tempo para as outras. Cross: essa é a fonte da sobrecarga de colaboração — profissionais que continuam expandindo Operacional em vez de podar.</p></div>
+      <div class="erro"><span class="erro-label">Erro clássico</span><p><b>Chamar de preguiça, falta de vontade, distração.</b> Essas etiquetas fecham a investigação — porque explicam sem revelar. Depois delas, não há próximo passo. A observação honesta dos padrões abre a próxima coluna.</p></div>
     </div>
   </section>
 
-  <section class="rede-secao">
-    <div class="rede-secao-header"><div class="rede-secao-letra">P</div><div><div class="rede-secao-titulo">Rede Pessoal</div><div class="rede-secao-sub">"quem te desenvolve como profissional"</div></div></div>
-    <div class="rede-secao-body">
-      <div class="subsec-label">Como funciona bem</div>
-      <p>A rede Pessoal é <b>seu sistema de expansão de perspectiva</b>. Sem ela, você fica preso no ponto de vista do seu contexto imediato. Ela vem de mentores, colegas de fora da empresa, comunidades, grupos de estudo. Diferente da Operacional (que aparece sozinha), a Pessoal exige <em>investimento explícito de tempo</em> — não muito, mas regular.</p>
-
-      <div class="subsec-label">Sinais de saúde</div>
-      <ul class="lista-check">
-        <li>Você tem 1 mentor com quem fala trimestralmente com pauta real</li>
-        <li>Participa de 1 grupo/comunidade onde troca ideias com regularidade</li>
-        <li>Tem 3-5 pessoas de outras áreas com quem discute questões maiores da profissão</li>
-        <li>Faz 1-2 movimentos de aprendizagem por trimestre (curso, evento, mentoria) que conectam a novas pessoas</li>
+  <section class="secao">
+    <div class="secao-header"><div class="secao-letra">P</div><div><div class="secao-titulo">Proteção</div><div class="secao-sub">o compromisso oculto competitivo</div></div></div>
+    <div class="secao-body">
+      <div class="subsec">A coluna 3 — o coração do método</div>
+      <p>A coluna 3 pergunta: <b>se o comportamento contrário fosse sábio, que outra coisa ele estaria protegendo?</b> Kegan &amp; Lahey observaram que os compromissos ocultos geralmente giram em torno de 4-5 áreas: proteção de <em>reputação</em>, proteção de <em>controle/autonomia</em>, proteção de <em>pertencimento</em>, proteção de <em>identidade</em>, proteção de <em>evitação de rejeição/fracasso público</em>. Ao nomear, o padrão vira legível — e o que era "fraqueza" vira "sistema imunológico interno" a serviço de algo importante para você.</p>
+      <div class="info"><div class="info-titulo">Por que "oculto"</div>Kegan: o compromisso é oculto porque foi construído em outra fase — muitas vezes na infância, adolescência ou primeiros anos de carreira — para responder a um contexto real. Ele nunca foi revisto porque nunca foi <em>reconhecido</em>. Emerge só quando você faz a pergunta "que compromisso essa sabotagem serve?".</div>
+      <div class="subsec">Como nomear</div>
+      <ul class="check">
+        <li><b>Pergunta central:</b> "se esse comportamento fosse sábio, o que ele protegeria?"</li>
+        <li><b>Escreva 2-3 frases</b> com honestidade — sem edição de "como deveria ser"</li>
+        <li><b>Reconheça sem julgar</b> — a proteção provavelmente já foi útil em outro momento</li>
+        <li><b>Se sentir emoção surgindo</b>, é sinal de que está no lugar certo — Kegan: proteção real vem carregada</li>
       </ul>
-
-      <div class="antidoto-box"><div class="antidoto-titulo">Se está fraca</div><p>Escolha <b>uma comunidade ou grupo</b> alinhado ao seu momento (não à sua área atual — à sua direção nova) e comprometa-se a participar ativamente por 3 meses. Rede Pessoal cresce por presença, não por eventos únicos.</p></div>
-
-      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p>Confundir amigos com rede pessoal. Amigos importam para a vida; para o desenvolvimento profissional, você precisa de gente que <b>pensa diferente</b> — não parecida. Se sua "rede pessoal" só tem colegas da mesma bolha profissional, não é rede pessoal — é bolha.</p></div>
+      <div class="erro"><span class="erro-label">Erro clássico</span><p><b>Tratar a proteção como "coisa a eliminar".</b> Ela existe por razão real. Tentar destruí-la aumenta a defesa e reforça a sabotagem. O objetivo é <em>reconhecer</em> (sem julgar), <em>agradecer</em> (pelo serviço que fez) e <em>testar</em> (se ainda faz sentido no seu contexto atual).</p></div>
     </div>
   </section>
 
-  <section class="rede-secao">
-    <div class="rede-secao-header"><div class="rede-secao-letra">E</div><div><div class="rede-secao-titulo">Rede Estratégica</div><div class="rede-secao-sub">"quem abre as próximas portas"</div></div></div>
-    <div class="rede-secao-body">
-      <div class="subsec-label">Como funciona bem</div>
-      <p>A rede Estratégica é <b>a mais difícil e a mais importante em transição</b>. São pessoas do território da sua direção nova que hoje te associam a esse território — não à sua área anterior. Elas são as que respondem "sim, conheço, vou te apresentar" quando alguém pergunta "quem eu procuro para X?". Rede Estratégica não vem sozinha; ela é <em>construída deliberadamente</em>.</p>
-
-      <div class="subsec-label">Sinais de saúde</div>
-      <ul class="lista-check">
-        <li>Você tem 5-15 pessoas do território novo que te associam a esse território</li>
-        <li>Recebe pelo menos 1 indicação/apresentação por trimestre sem precisar pedir</li>
-        <li>É convidado 1-2 vezes por ano para conversas/eventos do território novo</li>
-        <li>Consegue nomear 3 pessoas do território que "puxariam seu nome" numa conversa relevante</li>
+  <section class="secao">
+    <div class="secao-header"><div class="secao-letra">T</div><div><div class="secao-titulo">Teste</div><div class="secao-sub">o experimento que verifica a suposição</div></div></div>
+    <div class="secao-body">
+      <div class="subsec">A coluna 4 vira ação — o experimento pequeno</div>
+      <p>Depois de nomear o compromisso oculto (coluna 3), Kegan &amp; Lahey pedem para escrever a <b>suposição grande</b> (coluna 4) na forma "se eu ___, então ___". Essa é a "verdade" tácita que sustenta a proteção. Quase todas as suposições são <em>antigas</em>: formadas em contextos que já mudaram (outra empresa, outra fase da vida, outro tipo de relacionamento). Elas continuam operando porque nunca foram testadas — só assumidas.</p>
+      <p>O teste é o mecanismo de <em>verificação suave</em>. Não é para dramaticamente confrontar a suposição inteira; é para desenhar 1 experimento pequeno, curto (1 semana), reversível, com dados claros — que revele se a suposição ainda vale <em>no seu contexto atual</em>.</p>
+      <div class="info"><div class="info-titulo">Anatomia de um bom teste</div><b>Pequeno</b> (baixo risco, escala reduzida). <b>Específico</b> (dados observáveis, não sensação). <b>Curto</b> (1-2 semanas, com data marcada). <b>Reversível</b> (se der ruim, você volta). <b>Critério antes</b> (o que prova / não prova, definido antes de começar).</div>
+      <div class="subsec">Como desenhar</div>
+      <ul class="check">
+        <li><b>Escreva a suposição completa:</b> "se eu X, então Y" — antes do teste</li>
+        <li><b>Escolha 1 versão pequena da mudança</b> — não a mudança inteira, uma amostra</li>
+        <li><b>Defina critério de resultado</b> — o que "prova" a suposição, o que "não prova"</li>
+        <li><b>Marque data de revisão</b> — 7-14 dias; sem data, o teste morre</li>
+        <li><b>Se a suposição não passar no teste,</b> aposente-a com gratidão pelo serviço que fez</li>
       </ul>
-
-      <div class="antidoto-box"><div class="antidoto-titulo">Se está fraca (o caso comum em transição)</div><p><b>Mensagem estruturada a 3 pessoas por semana</b>, por 12 semanas. Cada mensagem: 1 insight ou pergunta útil, sem pedido. Zero venda. Zero pauta comercial. É a única forma sistemática de construir. Depois de 3 meses, algumas viram conversas; algumas viram cafés; algumas viram indicações. É lento — não tem atalho.</p></div>
-
-      <div class="erro-caixa"><span class="erro-label">Erro clássico</span><p>Achar que rede Estratégica cresce depois de "consolidar o trabalho novo". Não cresce. <b>Precisa começar antes</b> — enquanto o trabalho novo ainda é pequeno/incompleto. Se você espera "ter o que mostrar" para começar, você chega no momento da mudança com rede Estratégica em zero — e a mudança fica travada.</p></div>
+      <div class="erro"><span class="erro-label">Erro clássico</span><p><b>Distorcer o resultado do teste para confirmar a suposição.</b> É a defesa da proteção. Por isso o <em>critério antes</em> é obrigatório — sem ele, você lê o resultado através dos óculos da suposição e ela "sempre se confirma". Comprometa-se com o critério antes; leia o resultado depois com honestidade.</p></div>
     </div>
   </section>
 
-  <div class="aviso-final">
-    <h3>A regra da rede: gargalo primeiro, sempre</h3>
-    <p>Se você tem O:5 P:3 E:1 (padrão comum em transição), o trabalho da semana é na Estratégica. Não na Operacional (que já está boa) nem na Pessoal (que está aceitável). Trabalhar onde é confortável perpetua o problema.</p>
-    <p>4-6 semanas por ciclo — tempo mínimo para a nota do gargalo subir 1 ponto. Se depois de 6 semanas não subiu, o movimento foi genérico demais. Escale a especificidade (3 pessoas nomeadas em vez de "eventos da área"; mensagem preparada em vez de "conversar").</p>
-    <p>Amanhã (Etapa 18) você entra em <b>Persuasão</b> — como pedir e propor bem. Ter rede sem saber pedir é ter um telefone sem saber discar. Persuasão + Rede é o par que gera as próximas oportunidades.</p>
+  <div class="aviso">
+    <h3>A regra da Etapa 17: 1 mapa por mês, não por semana</h3>
+    <p>Kegan &amp; Lahey são explícitos: <b>mapas de imunidade não são para uso frequente</b>. Cada mapa exige tempo — o experimento precisa rodar (7-14 dias), a suposição precisa ser vivida, o dado precisa se acumular. 1 mapa por mês, por 3-4 meses, revela padrões maiores: várias sabotagens em áreas diferentes servem geralmente a algumas poucas proteções centrais.</p>
+    <p>Cuidado com o <b>uso terapêutico auto-aplicado</b>. O mapa toca material profundo — se o que emergir ressoar com áreas ligadas a experiências difíceis (perdas, traumas, momentos delicados), considere trabalhar com apoio profissional (terapia, coaching sério). O mapa é ferramenta; a profundidade que revela pode se beneficiar de acompanhamento.</p>
+    <p>Amanhã (Etapa 18): <b>Ciclo de revisão sustentável</b> — Heifetz &amp; Linsky. Como distinguir na revisão semanal problemas <em>técnicos</em> (aplique o que já sabe) de problemas <em>adaptativos</em> (o mapa de imunidade é ferramenta para os adaptativos). Isso muda como você reage aos "ainda não consegui" da revisão.</p>
   </div>
 </main>
-<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 17 · Playbook — Redes de influência</div></footer>
-</body>
-</html>
+<footer><div class="assinatura">Do reagir ao conduzir.</div><div>Etapa 17 · Playbook — S·P·T</div></footer>
+</body></html>
