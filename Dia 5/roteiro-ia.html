@@ -189,7 +189,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
     <div class="principio">
       <h4>Contrato da Etapa 0: nunca julgar, nunca rotular, nunca comparar</h4>
-      <p>A IA não qualifica lente como bonita ou pobre, não infere vocação a partir de outros campos ("pelo que você escreveu na Etapa 2, sua vocação parece ser X" é proibido), não compara ("a maioria marca Serviço como forte"). Marcar Fraco é tão válido quanto marcar Forte — a missão diz explicitamente que o valor do exercício é a honestidade, e a IA protege isso não premiando o Forte.</p>
+      <p>A IA não qualifica lente como bonita ou pobre, não infere vocação a partir de outros campos ("pelo que você escreveu no seu Retrato, sua vocação parece ser X" é proibido), não compara ("a maioria marca Serviço como forte"). Marcar Fraco é tão válido quanto marcar Forte — a missão diz explicitamente que o valor do exercício é a honestidade, e a IA protege isso não premiando o Forte.</p>
     </div>
 
     <div class="principio">
@@ -204,7 +204,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
     <div class="principio">
       <h4>O que a IA puxa dos dias anteriores</h4>
-      <p>Do sessionStorage: os <b>3 Eus da Etapa 1</b> (nome de cada versão, exibido no recap "Sua versão" de cada bloco), o <b>placar de critério da Etapa 3</b>, e os <b>valores da Etapa 7, se disponíveis</b>. Uso principal: cruzar os valores com o que a pessoa escreveu em Serviço para checar coerência — apontando a distância como pergunta, nunca como erro.</p>
+      <p>Do sessionStorage: os <b>3 Eus da Etapa 1</b> (nome de cada versão, exibido no recap "Sua versão" de cada bloco), o <b>placar de critério da Etapa 3</b>, e os <b>valores do Retrato, trazidos na ponte da Etapa 0 (chave intentia-dia0), se disponíveis</b>. Uso principal: cruzar os valores com o que a pessoa escreveu em Serviço para checar coerência — apontando a distância como pergunta, nunca como erro.</p>
     </div>
 
     <div class="nota">
@@ -315,8 +315,8 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <div class="campo-bloco-conteudo">Nome do público e tipo de contribuição — o placeholder da missão dá a régua: "gestores não-técnicos que precisam interpretar dados; ~3-5 mil pessoas por ano via blog". O teste de solidez aprovado para serviço abstrato ("serve as pessoas"): <b>"isso é serviço abstrato. Consegue nomear <i>uma pessoa específica</i> que essa versão serviria hoje? Se não, o serviço ainda não é forte."</b></div>
         </div>
         <div class="campo-bloco">
-          <div class="campo-bloco-label">Cruzamento com a Etapa 7</div>
-          <div class="campo-bloco-conteudo">Se os valores da Etapa 7 estiverem no sessionStorage, a IA checa coerência entre valores e serviço. Distância grande (valor central "autonomia", serviço descrito como "servir a diretoria no que pedirem") vira uma pergunta única: "Esse serviço conversa com o valor que você marcou como central na Etapa 7? Se não conversa, qual dos dois está desatualizado?" Nunca vira correção.</div>
+          <div class="campo-bloco-label">Cruzamento com os valores do Retrato</div>
+          <div class="campo-bloco-conteudo">Se os valores do Retrato estiverem na ponte (chave intentia-dia0, trazida na Etapa 0), a IA checa coerência entre valores e serviço. Distância grande (valor central "autonomia", serviço descrito como "servir a diretoria no que pedirem") vira uma pergunta única: "Esse serviço conversa com o valor que você marcou como central no seu Retrato? Se não conversa, qual dos dois está desatualizado?" Nunca vira correção.</div>
         </div>
         <div class="campo-bloco">
           <div class="campo-bloco-label">Prompt sugerido para a IA</div>
@@ -325,7 +325,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 Sua tarefa:
 - Se o texto nomeia público específico + tipo de contribuição, devolva versão polida (1,5x a 3x), preservando números e nomes que a pessoa deu.
 - Se o texto for abstrato ("ajudar pessoas", "servir a sociedade"), devolva o teste: "isso é serviço abstrato. Consegue nomear uma pessoa específica que essa versão serviria hoje? Se não, o serviço ainda não é forte."
-- Se houver valores da Etapa 7 e a distância for evidente, pergunte UMA vez se o serviço conversa com o valor central. Não corrija, não escolha lado.
+- Se houver valores do Retrato (ponte da Etapa 0) e a distância for evidente, pergunte UMA vez se o serviço conversa com o valor central. Não corrija, não escolha lado.
 
 Regras absolutas:
 - Nunca sugerir um público, uma causa ou uma contribuição que a pessoa não mencionou.

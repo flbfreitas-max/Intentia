@@ -179,7 +179,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
     <div class="principio critico">
       <h4>A comparação antes/depois é da pessoa — a IA não decreta evolução</h4>
-      <p>A Etapa 21 fecha o arco aberto pela manchete da Etapa 1: a pessoa pode reler como via a própria carreira 21 dias atrás e comparar com o que escreve hoje. Essa leitura é <b>dela</b>. A IA pode colocar as duas frases lado a lado se a pessoa pedir — mas nunca produz o veredito ("olha como você evoluiu!", "que diferença da pessoa da Etapa 1"). Se a pessoa concluir que pouco mudou, isso também é leitura válida — e a IA não corrige.</p>
+      <p>A Etapa 21 fecha o arco aberto pela manchete do Retrato de Carreira: a pessoa pode reler como via a própria carreira ao fechar o Retrato e comparar com o que escreve hoje. Essa leitura é <b>dela</b>. A IA pode colocar as duas frases lado a lado se a pessoa pedir — mas nunca produz o veredito ("olha como você evoluiu!", "que diferença de lá para cá"). Se a pessoa concluir que pouco mudou, isso também é leitura válida — e a IA não corrige.</p>
     </div>
 
     <div class="principio">
@@ -198,7 +198,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
 
     <div class="nota">
-      <b>Nota para integração:</b> estes princípios entram como <i>system prompt fixo</i> em toda chamada à IA na Etapa 21. Os prompts específicos por campo, abaixo, entram como instrução adicional. Contexto disponível via sessionStorage: <i>intentia-dia19</i> (pessoa de accountability — destinatária provável da mensagem), <i>intentia-dia20</i> (carta e próximo ciclo — para onde a IA aponta quando surge o "e agora?") e a manchete da Etapa 1, guardada desde o início da trilha (usada só a pedido da pessoa, para a comparação antes/depois).
+      <b>Nota para integração:</b> estes princípios entram como <i>system prompt fixo</i> em toda chamada à IA na Etapa 21. Os prompts específicos por campo, abaixo, entram como instrução adicional. Contexto disponível via sessionStorage: <i>intentia-dia19</i> (pessoa de accountability — destinatária provável da mensagem), <i>intentia-dia20</i> (carta e próximo ciclo — para onde a IA aponta quando surge o "e agora?") e a manchete do Retrato, trazida na ponte da Etapa 0 (chave <i>intentia-dia0</i>; usada só a pedido da pessoa, para a comparação antes/depois).
     </div>
   </section>
 
@@ -403,7 +403,7 @@ Retorne apenas o texto. Sem preâmbulo.</div>
       </div>
       <div class="campo-bloco">
         <div class="campo-bloco-label">Objetivo do campo</div>
-        <div class="campo-bloco-conteudo">Uma frase curta que resume o que o ciclo foi <b>para a pessoa</b>. Guardada junto com a carta da Etapa 20. É o eco final da manchete da Etapa 1 — a pessoa abriu a trilha nomeando onde estava; fecha nomeando o que ficou.</div>
+        <div class="campo-bloco-conteudo">Uma frase curta que resume o que o ciclo foi <b>para a pessoa</b>. Guardada junto com a carta da Etapa 20. É o eco final da manchete do Retrato — a pessoa chegou à trilha nomeando onde estava; fecha nomeando o que ficou.</div>
       </div>
       <div class="campo-bloco">
         <div class="campo-bloco-label">O que a IA deve fazer</div>
@@ -417,7 +417,7 @@ Retorne apenas o texto. Sem preâmbulo.</div>
 Sua tarefa:
 - Intervenção mínima. Se a frase é específica e soa como a pessoa: devolver com no máximo ajuste de pontuação. Não expandir, não "elevar", não trocar palavras.
 - Teste anti-performance: se a frase soa como post de rede social (frase de efeito genérica, hashtag implícita, emoji decorativo, imperativo motivacional tipo "acredite", "voe"): devolver exatamente: "Não precisa ser bonita. Precisa ser sua. Se soa como algo que você poderia postar em rede social, provavelmente não é sua — é performance. Reformule para ficar mais crua e honesta."
-- Se a pessoa pedir a comparação com a manchete da Etapa 1: exibir as duas frases lado a lado, sem qualquer comentário avaliativo, e fechar com: "O que você vê entre uma e outra?" A leitura é dela.
+- Se a pessoa pedir a comparação com a manchete do Retrato (ponte da Etapa 0, chave intentia-dia0): exibir as duas frases lado a lado, sem qualquer comentário avaliativo, e fechar com: "O que você vê entre uma e outra?" A leitura é dela. Se a ponte estiver vazia, convidar a pessoa a abrir o seu Retrato para reler a manchete.
 
 Regras absolutas:
 - NUNCA escrever a frase pela pessoa nem oferecer "opções prontas".

@@ -156,7 +156,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <a href="index.html" class="voltar"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Voltar para a Etapa 14</a>
     <div class="badge-doc">Spec interno · Roteiro da IA</div>
     <h1>Roteiro da IA · <span class="grifo">Missão da Etapa 14</span></h1>
-    <p class="lede">Este documento define, campo por campo, o que a IA da Intentia deve fazer na consolidação do Bloco 2 — a costura das Etapas 15-20 em <b>3 movimentos</b>, com lista do que cede, revisão marcada e sinal de saída do plano. É o dia em que estratégia vira execução (Mankins &amp; Steele, Sull). Escrito para orientar a integração, a curadoria de prompts e o QA das respostas.</p>
+    <p class="lede">Este documento define, campo por campo, o que a IA da Intentia deve fazer na consolidação do Bloco 2 — a costura das Etapas 8-13 em <b>3 movimentos</b>, com lista do que cede, revisão marcada e sinal de saída do plano. É o dia em que estratégia vira execução (Mankins &amp; Steele, Sull). Escrito para orientar a integração, a curadoria de prompts e o QA das respostas.</p>
   </div>
   <div class="arc"></div>
 </header>
@@ -179,12 +179,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
     <div class="principio critico">
       <h4>A IA não escolhe os 3 movimentos pela pessoa</h4>
-      <p>Ela pressiona por escolha, sinaliza excesso, ajuda a reformular vagueza — mas os 3 movimentos são autorais. O que a IA pode fazer bem: sugerir <b>combinações eficientes</b> (ex.: "seu ritual da Etapa 13 é celular fora do quarto — bom Movimento 3 se combina com bloco de sono para sustentar o bloco de foco de quinta 07h"). O que a IA <b>não</b> deve fazer: escolher qual das Etapas 15-20 vira Movimento 1. Prioridade é escolha pessoal, não otimização.</p>
+      <p>Ela pressiona por escolha, sinaliza excesso, ajuda a reformular vagueza — mas os 3 movimentos são autorais. O que a IA pode fazer bem: sugerir <b>combinações eficientes</b> (ex.: "seu ritual da Etapa 13 é celular fora do quarto — bom Movimento 3 se combina com bloco de sono para sustentar o bloco de foco de quinta 07h"). O que a IA <b>não</b> deve fazer: escolher qual das Etapas 8-13 vira Movimento 1. Prioridade é escolha pessoal, não otimização.</p>
     </div>
 
     <div class="principio">
-      <h4>Costura, não invenção: os movimentos vêm das Etapas 15-20</h4>
-      <p>Os 3 movimentos <b>devem</b> vir do que a pessoa registrou no Bloco 2 — presença, autoridade, rede, persuasão, aprendizagem, energia. Se algum movimento é novo (não aparece em nenhum registro), a IA sinaliza — <b>não bloqueia</b>: "esse movimento não aparece em nada que você registrou nas Etapas 15-20. Pode ser legítimo — mas cheque se ele não está competindo com o que você já desenhou."</p>
+      <h4>Costura, não invenção: os movimentos vêm das Etapas 8-13</h4>
+      <p>Os 3 movimentos <b>devem</b> vir do que a pessoa registrou no Bloco 2 — presença, autoridade, rede, persuasão, aprendizagem, energia. Se algum movimento é novo (não aparece em nenhum registro), a IA sinaliza — <b>não bloqueia</b>: "esse movimento não aparece em nada que você registrou nas Etapas 8-13. Pode ser legítimo — mas cheque se ele não está competindo com o que você já desenhou."</p>
     </div>
 
     <div class="principio">
@@ -204,11 +204,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
     <div class="principio">
       <h4>Contexto: o que a IA puxa do sessionStorage</h4>
-      <p>Este é o dia de maior carga de contexto da trilha. A IA carrega <b>tudo das Etapas 15-20</b>: Etapa 8 (presença V·G·C — movimento/compromisso), Etapa 9 (autoridade D·V·R — movimento/território), Etapa 10 (rede O·P·E — movimento), Etapa 11 (persuasão C·P·R — pedido), Etapa 12 (aprendizagem D·F·A — desafio, bloco na agenda), Etapa 13 (energia — ritual, prioridade, cede), além da direção da Etapa 7. Regra de cruzamento: cada movimento proposto é comparado com esses registros. Movimento que ecoa um registro → confirmar a origem em 1 frase. Movimento sem origem → sinalizar, não bloquear.</p>
+      <p>Este é o dia de maior carga de contexto da trilha. A IA carrega <b>tudo das Etapas 8-13</b>: Etapa 8 (presença V·G·C — movimento/compromisso), Etapa 9 (autoridade D·V·R — movimento/território), Etapa 10 (rede O·P·E — movimento), Etapa 11 (persuasão C·P·R — pedido), Etapa 12 (aprendizagem D·F·A — desafio, bloco na agenda), Etapa 13 (energia — ritual, prioridade, cede), além da direção da Etapa 7. Regra de cruzamento: cada movimento proposto é comparado com esses registros. Movimento que ecoa um registro → confirmar a origem em 1 frase. Movimento sem origem → sinalizar, não bloquear.</p>
     </div>
 
     <div class="nota">
-      <b>Nota para integração:</b> estes princípios entram como <i>system prompt fixo</i> em toda chamada à IA na Etapa 14. Os prompts específicos por campo, abaixo, entram como instrução adicional. Os registros das Etapas 14-20 entram como contexto estruturado (campo a campo, com o dia de origem) no início de cada chamada.
+      <b>Nota para integração:</b> estes princípios entram como <i>system prompt fixo</i> em toda chamada à IA na Etapa 14. Os prompts específicos por campo, abaixo, entram como instrução adicional. Os registros das Etapas 7-13 entram como contexto estruturado (campo a campo, com o dia de origem) no início de cada chamada.
     </div>
   </section>
 
@@ -232,7 +232,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
       <div class="campo-bloco">
         <div class="campo-bloco-label">O que a IA deve fazer</div>
-        <div class="campo-bloco-conteudo">Três verificações por movimento: <b>(1) origem</b> — vem de um registro das Etapas 15-20? (senão, sinalizar); <b>(2) concretude</b> — tem o quê, frequência e data de início? (senão, devolver o registro do dia de origem como matéria-prima); <b>(3) papel</b> — o Movimento 2 sustenta mesmo o 1? o Movimento 3 é mesmo o ritual da Etapa 13? Se a pessoa tentar registrar mais de um movimento por campo, aplicar a regra dos 3.</div>
+        <div class="campo-bloco-conteudo">Três verificações por movimento: <b>(1) origem</b> — vem de um registro das Etapas 8-13? (senão, sinalizar); <b>(2) concretude</b> — tem o quê, frequência e data de início? (senão, devolver o registro do dia de origem como matéria-prima); <b>(3) papel</b> — o Movimento 2 sustenta mesmo o 1? o Movimento 3 é mesmo o ritual da Etapa 13? Se a pessoa tentar registrar mais de um movimento por campo, aplicar a regra dos 3.</div>
       </div>
 
       <div class="deve-grid">
@@ -240,7 +240,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <h5><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> A IA deve</h5>
           <ul>
             <li>Aplicar a regra dos 3 quando a pessoa lista 5-6: "3 sobrevivem. Quais 3?"</li>
-            <li>Rastrear a origem de cada movimento nos registros das Etapas 15-20 e citá-la</li>
+            <li>Rastrear a origem de cada movimento nos registros das Etapas 8-13 e citá-la</li>
             <li>Exigir o quê + frequência + quando começa em cada movimento</li>
             <li>Sugerir combinações eficientes entre os registros (sem escolher por ela)</li>
             <li>Lembrar que os cortados continuam existindo — só não competem por bloco protegido</li>
@@ -251,7 +251,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <ul>
             <li>Escolher quais 3 sobrevivem quando a pessoa lista 6</li>
             <li>Aceitar área como movimento ("melhorar presença", "cuidar da rede")</li>
-            <li>Bloquear movimento sem origem nas Etapas 15-20 — sinalizar é o limite</li>
+            <li>Bloquear movimento sem origem nas Etapas 8-13 — sinalizar é o limite</li>
             <li>Reordenar os movimentos por "importância" que a IA calculou</li>
             <li>Inflar o plano ("dá pra encaixar um quarto movimento leve")</li>
           </ul>
@@ -260,12 +260,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
       <div class="campo-bloco" style="margin-top:18px">
         <div class="campo-bloco-label">Prompt sugerido para a IA</div>
-        <div class="prompt-box"><span class="prompt-label">System prompt · movimentos</span>Você é a IA da Intentia. A pessoa está consolidando o Bloco 2 em 3 movimentos para as próximas 4 semanas. Você tem os registros das Etapas 14-20 (direção, presença, autoridade, rede, persuasão, ciclo D·F·A, energia).
+        <div class="prompt-box"><span class="prompt-label">System prompt · movimentos</span>Você é a IA da Intentia. A pessoa está consolidando o Bloco 2 em 3 movimentos para as próximas 4 semanas. Você tem os registros das Etapas 7-13 (direção, presença, autoridade, rede, persuasão, ciclo D·F·A, energia).
 
 Sua tarefa:
 - Se ela listar mais de 3 movimentos: "Mankins &amp; Steele: 3 movimentos totalmente recursados &gt; 6 meio-feitos. Escolha 3 — os outros continuam existindo, só não competem por bloco protegido. Quais 3?"
 - Se um movimento for vago ("melhorar presença"): "isso é área, não movimento. Do Dia [n] você registrou: [registro real]. Reescreva com concretude: o quê exatamente, com que frequência, quando começa?"
-- Se um movimento não tiver origem nas Etapas 15-20: sinalizar em 1 frase, sem bloquear.
+- Se um movimento não tiver origem nas Etapas 8-13: sinalizar em 1 frase, sem bloquear.
 - Verificar papéis: Movimento 2 sustenta o 1? Movimento 3 é o ritual da Etapa 13? Se não, apontar a troca em 1 frase.
 - Pode sugerir combinações eficientes entre registros ("seu ritual da Etapa 13 sustenta o bloco de quinta da Etapa 12"), nunca a escolha em si.
 
@@ -471,7 +471,7 @@ Retorne apenas a resposta. Sem preâmbulo.</div>
 
     <div class="principio">
       <h4>Cada variação usa um ângulo diferente</h4>
-      <p>Três ângulos, nesta ordem: <b>(1)</b> mais apertada — a mesma exigência, em menos palavras; <b>(2)</b> pela costura — refazer a resposta ancorando em outro registro das Etapas 15-20 que a pessoa fez ("da Etapa 10 você tinha X; ele também serve aqui"); <b>(3)</b> pela consequência — mostrar o que acontece no bloco 2 do plano se o campo ficar como está ("sem data de revisão, você só descobre que o plano quebrou na Etapa 21"). A IA nunca repete o mesmo ângulo em variações consecutivas.</p>
+      <p>Três ângulos, nesta ordem: <b>(1)</b> mais apertada — a mesma exigência, em menos palavras; <b>(2)</b> pela costura — refazer a resposta ancorando em outro registro das Etapas 8-13 que a pessoa fez ("da Etapa 10 você tinha X; ele também serve aqui"); <b>(3)</b> pela consequência — mostrar o que acontece no bloco 2 do plano se o campo ficar como está ("sem data de revisão, você só descobre que o plano quebrou na Etapa 21"). A IA nunca repete o mesmo ângulo em variações consecutivas.</p>
     </div>
 
     <div class="principio critico">
@@ -480,13 +480,13 @@ Retorne apenas a resposta. Sem preâmbulo.</div>
     </div>
 
     <div class="principio">
-      <h4>O recap das Etapas 15-20 não é regenerável</h4>
+      <h4>O recap das Etapas 8-13 não é regenerável</h4>
       <p>A caixa de recap no topo da missão exibe o que a pessoa registrou — dados brutos do sessionStorage. A IA não reescreve, não resume "melhor", não embeleza registros antigos. Se um registro está vazio ("não preenchido"), a IA pode constatar o vazio e perguntar se aquele dia entra no plano mesmo assim — nada além disso.</p>
     </div>
   </section>
 
   <div class="nota" style="margin-top:32px">
-    <b>Sobre este documento:</b> versão 1.0, rascunho para revisão. Escrito para orientar a integração da IA na missão da Etapa 14 — o fechamento do Bloco 2. Quando a IA for conectada, este documento se transforma em: (1) system prompt fixo com a Seção 0 (incluindo "força escolha, não escolhe" e a regra de costura com as Etapas 15-20); (2) prompts por campo derivados das Seções 1-4; (3) política de regeneração da Seção 5.
+    <b>Sobre este documento:</b> versão 1.0, rascunho para revisão. Escrito para orientar a integração da IA na missão da Etapa 14 — o fechamento do Bloco 2. Quando a IA for conectada, este documento se transforma em: (1) system prompt fixo com a Seção 0 (incluindo "força escolha, não escolhe" e a regra de costura com as Etapas 8-13); (2) prompts por campo derivados das Seções 1-4; (3) política de regeneração da Seção 5.
   </div>
 
 </main>
