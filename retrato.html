@@ -879,7 +879,9 @@
   // e paga lá dentro (Mercado Pago). Quando houver domínio próprio do app,
   // basta trocar esta URL.
   const CHECKOUT_URL = "https://app-seven-henna-11gcmp4vfx.vercel.app/entrar";
-  document.querySelectorAll('a[data-checkout]').forEach(a => {
+  // Só o botão DENTRO da oferta (.of-btn) leva à página de compra;
+  // todos os outros "Quero meu Retrato" rolam até a oferta (#oferta).
+  document.querySelectorAll('a.of-btn[data-checkout]').forEach(a => {
     if (CHECKOUT_URL) a.href = CHECKOUT_URL;
   });
 
