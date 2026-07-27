@@ -391,8 +391,12 @@
   .demo-legenda{text-align:center;margin-top:26px;color:#A9C6B8;font-size:13.5px;position:relative;z-index:1}
 
   /* Depoimentos */
-  .depo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:920px;margin:0 auto}
-  @media(max-width:840px){.depo-grid{grid-template-columns:1fr}}
+  /* Depoimentos em carrossel de rolagem lateral, para dar sensação de volume */
+  .depo-grid{display:flex;overflow-x:auto;scroll-snap-type:x proximity;gap:18px;max-width:1000px;margin:0 auto;padding:4px 4px 18px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#7CA89E #EFF2EE}
+  .depo-grid .depo{flex:0 0 320px;scroll-snap-align:start}
+  @media(max-width:640px){.depo-grid .depo{flex-basis:84%}}
+  .depo-hint{text-align:center;font-size:12.5px;color:var(--tinta-suave);margin-top:2px}
+  .depo-hint b{color:var(--coral)}
   .depo{background:#fff;border:1px solid var(--verde-100);border-radius:18px;padding:28px 26px;display:flex;flex-direction:column;gap:18px}
   .depo .aspas{font-family:var(--serif);font-size:44px;line-height:.6;color:var(--coral-soft)}
   .depo blockquote{font-size:15px;color:var(--tinta);flex:1;font-style:italic}
@@ -782,14 +786,15 @@
         <div class="aval" role="img" aria-label="Avaliação máxima: 5 de 5"><i></i><i></i><i></i><i></i><i></i></div>
         <div class="depo-autor"><div class="foto" aria-hidden="true">E</div><div><b>Elisa Pesa</b><span>Head de Recursos Humanos e Capacitação</span></div></div>
       </article>
-      <article class="depo rev" style="grid-column:1/-1">
+      <article class="depo rev">
         <span class="aspas" aria-hidden="true">“</span>
         <blockquote>A plataforma é muito bem estruturada para trazer a quem acessa uma visão prática sobre como investir o seu tempo de forma efetiva no desenvolvimento de carreira. Fazendo o Retrato, tem-se a oportunidade de pensar no desenvolvimento de habilidades que ainda são pouco exploradas, mas essenciais para o sucesso profissional.</blockquote>
         <div class="aval" role="img" aria-label="Avaliação máxima: 5 de 5"><i></i><i></i><i></i><i></i><i></i></div>
         <div class="depo-autor"><div class="foto" aria-hidden="true">J</div><div><b>Jean Lopes</b><span>Economista</span></div></div>
       </article>
     </div>
-    <p class="rev" style="text-align:center;margin-top:20px;font-size:13.5px;color:var(--tinta-suave)">As cinco pessoas que testaram a plataforma avaliaram com a nota máxima.</p>
+    <p class="depo-hint rev">Deslize para o lado para ver mais avaliações <b>→</b></p>
+    <p class="rev" style="text-align:center;margin-top:14px;font-size:13.5px;color:var(--tinta-suave)">As cinco pessoas que testaram a plataforma avaliaram com a nota máxima.</p>
   </div>
 </section>
 
