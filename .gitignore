@@ -14,3 +14,8 @@ Desktop.ini
 
 # Atalho local de publicacao
 publicar.bat
+
+# Produto antigo e arquivos fora do site — nunca publicar
+Mapeamento/
+*.pptx
+amostra-dossie-*.jpg

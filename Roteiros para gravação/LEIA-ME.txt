@@ -1,8 +1,8 @@
 ROTEIROS PARA GRAVAÇÃO — Trilha Capital de Carreira
 ====================================================
 
-Esta pasta tem o texto limpo de narração de cada um dos 29 áudios
-(dia-00.txt a dia-28.txt), sem marcações de leitura nem indicações
+Esta pasta tem o texto limpo de narração de cada um dos 22 áudios
+(dia-00.txt a dia-21.txt), sem marcações de leitura nem indicações
 técnicas — pronto para colar em um serviço de TTS profissional
 (ElevenLabs, OpenAI TTS, Azure etc.) ou entregar a um locutor.
 
