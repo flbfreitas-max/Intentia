@@ -889,6 +889,40 @@
   </div>
 </section>
 
+<!-- Banner do bônus. Aparece uma vez por visita, depois que a pessoa começou a
+     ler — abrir de cara, antes de qualquer contexto, é o que faz gente fechar
+     sem ler. Descreve uma ferramenta que existe: a Agenda da Rede está no ar. -->
+<style>
+  .bonus-fundo{position:fixed;inset:0;background:rgba(20,51,47,.55);z-index:80;display:none;align-items:center;justify-content:center;padding:22px}
+  .bonus-fundo.on{display:flex}
+  .bonus{position:relative;background:var(--creme);border-radius:22px;max-width:520px;width:100%;padding:38px 38px 32px;box-shadow:0 30px 80px rgba(20,51,47,.4);text-align:left}
+  @media(max-width:520px){.bonus{padding:30px 22px 26px}}
+  .bonus-x{position:absolute;top:14px;right:14px;width:36px;height:36px;border:none;background:var(--areia);border-radius:50%;font-size:20px;line-height:1;color:var(--tinta-suave);cursor:pointer}
+  .bonus-x:hover{background:var(--verde-100)}
+  .bonus-etq{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--coral-esc);margin-bottom:12px}
+  .bonus h3{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.15;color:var(--verde-900);margin-bottom:12px}
+  .bonus p{font-size:15.5px;line-height:1.6;color:var(--tinta-suave);margin-bottom:16px}
+  .bonus .fer{background:#fff;border:1px solid var(--verde-100);border-left:4px solid var(--coral);border-radius:14px;padding:16px 18px;margin-bottom:18px}
+  .bonus .fer b{display:block;font-family:var(--serif);font-size:17px;color:var(--verde-900);margin-bottom:3px}
+  .bonus .fer span{font-size:14.5px;line-height:1.55;color:var(--tinta-suave)}
+  .bonus .btn{width:100%;padding:14px 20px;font-size:16px}
+  .bonus .depois{display:block;width:100%;margin-top:12px;background:none;border:none;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--tinta-suave);cursor:pointer}
+</style>
+<div class="bonus-fundo" id="bonus-fundo" role="dialog" aria-modal="true" aria-labelledby="bonus-tit">
+  <div class="bonus">
+    <button class="bonus-x" id="bonus-x" aria-label="Fechar">&times;</button>
+    <p class="bonus-etq">Incluído na Trilha</p>
+    <h3 id="bonus-tit">Ferramentas que mantêm o seu capital vivo depois dos 21 passos.</h3>
+    <p>A Trilha organiza. Estas ferramentas fazem o trabalho continuar — nos dois ativos que mais se deterioram quando ninguém cuida.</p>
+    <div class="fer">
+      <b>Agenda da Rede · já disponível</b>
+      <span>A sua rede não avisa quando esfria. Você define de quanto em quanto tempo quer falar com cada pessoa, e a plataforma lembra por e-mail. Os contatos vêm do que você já registrou na jornada.</span>
+    </div>
+    <a class="btn btn-coral" href="#oferta" id="bonus-ver">Quero evoluir na minha carreira<span class="seta" aria-hidden="true"> →</span></a>
+    <button class="depois" id="bonus-depois">Continuar lendo</button>
+  </div>
+</div>
+
 <div class="barra-fixa" id="barra-fixa" hidden>
   <span class="bf-txt"><b>Trilha Capital de Carreira</b> · 10x de R$ 39,70 · garantia de 7 dias</span>
   <a class="btn btn-coral of-btn" data-checkout href="#oferta">Quero evoluir na minha carreira<span class="seta" aria-hidden="true"> →</span></a>
@@ -1006,6 +1040,33 @@
   document.querySelectorAll('a.of-btn[data-checkout]').forEach(a => {
     if (CHECKOUT_URL) a.href = CHECKOUT_URL;
   });
+
+  // Banner do bônus: abre uma vez por visita, depois que a pessoa passou do
+  // hero. Fechou, não volta — insistir com quem já disse não é o oposto do
+  // que esta página promete.
+  (function(){
+    var fundo = document.getElementById('bonus-fundo');
+    if (!fundo) return;
+    var visto = false;
+    try { visto = sessionStorage.getItem('intentia-bonus-visto') === '1'; } catch (e) {}
+    function fechar(){
+      fundo.classList.remove('on');
+      try { sessionStorage.setItem('intentia-bonus-visto', '1'); } catch (e) {}
+    }
+    function abrir(){
+      if (visto || fundo.classList.contains('on')) return;
+      visto = true;
+      fundo.classList.add('on');
+      removeEventListener('scroll', aoRolar);
+    }
+    function aoRolar(){ if (scrollY > innerHeight * 1.2) abrir(); }
+    if (!visto) addEventListener('scroll', aoRolar, {passive:true});
+    document.getElementById('bonus-x').addEventListener('click', fechar);
+    document.getElementById('bonus-depois').addEventListener('click', fechar);
+    document.getElementById('bonus-ver').addEventListener('click', fechar);
+    fundo.addEventListener('click', function(e){ if (e.target === fundo) fechar(); });
+    addEventListener('keydown', function(e){ if (e.key === 'Escape') fechar(); });
+  })();
 
   // Barra fixa: entra depois do hero e sai de cena quando a oferta está à vista
   const barra = document.getElementById('barra-fixa');
