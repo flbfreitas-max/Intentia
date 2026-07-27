@@ -116,10 +116,12 @@
   .qf-texto{max-width:680px;margin:0 auto}
   .qf-texto p{margin-bottom:16px;font-size:16.5px}
   .qf-texto strong{color:var(--verde-900)}
-  .qf-fund{max-width:680px;margin:26px auto 0;background:#fff;border:1px solid var(--verde-100);border-left:4px solid var(--coral);border-radius:18px;padding:26px 28px}
+  .qf-funds{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;max-width:920px;margin:26px auto 0}
+  .qf-fund{display:flex;flex-direction:column;background:#fff;border:1px solid var(--verde-100);border-left:4px solid var(--coral);border-radius:18px;padding:26px 28px}
   .qf-fund .aspas{font-family:var(--serif);font-size:40px;line-height:.6;color:var(--coral-soft);display:block;margin-bottom:14px}
   .qf-fund blockquote{font-size:15.5px;font-style:italic;color:var(--tinta);line-height:1.6}
-  .qf-fund .qf-autor{display:flex;align-items:center;gap:13px;margin-top:18px}
+  .qf-fund .qf-autor{display:flex;align-items:center;gap:13px;margin-top:auto;padding-top:18px}
+  .qf-espera{font-size:15px;font-style:italic;color:var(--tinta-suave);opacity:.75}
   .qf-fund .foto{width:46px;height:46px;flex:none;border-radius:50%;background:var(--verde-100);color:var(--verde-700);font-family:var(--serif);font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center}
   .qf-fund .qf-autor b{display:block;font-size:14.5px;color:var(--verde-900);line-height:1.3}
   .qf-fund .qf-autor span{font-size:12.5px;color:var(--tinta-suave)}
@@ -746,10 +748,19 @@
       <p>O Intentia é feito por um grupo de profissionais com longa trajetória de mercado — caminhos diversos, áreas diferentes, tempos de carreira que quase não se cruzam. O que nos une é uma constatação comum: <strong>carreira que avança não se constrói no improviso</strong>.</p>
       <p>Vimos de perto, anos a fio, o mesmo padrão: gente competente, entregando muito, esperando que o trabalho falasse por si. O trabalho não fala. O método nasceu daí — do que vivemos, do que erramos e do que aprendemos a fazer com intenção. E cada dia da trilha aponta as fontes que o sustentam.</p>
     </div>
+    <div class="qf-funds">
     <div class="qf-fund rev">
       <span class="aspas" aria-hidden="true">“</span>
       <blockquote>Por muitos anos fui uma advogada extremamente técnica, mas nunca tinha investido em elementos como construção de relações de mercado e efetiva visibilidade do valor das minhas entregas — nem dentro do meu ambiente de trabalho, nem fora dele. Com o tempo, desenvolvi técnicas efetivas para ultrapassar essas barreiras, que me trouxeram resultados efetivos. Hoje, com muito orgulho do que construí, é muito gratificante poder dividir esse conteúdo com quem ainda precisa de clareza e direção para alcançar seus objetivos.</blockquote>
       <div class="qf-autor"><div class="foto" aria-hidden="true">F</div><div><b>Fernanda Freitas</b><span>Executiva Jurídica · fundadora da Intentia</span></div></div>
+    </div>
+    <!-- Card da Karina: substituir o parágrafo .qf-espera pelo <blockquote> com
+         o depoimento dela, e completar o cargo antes de "fundadora". -->
+    <div class="qf-fund rev">
+      <span class="aspas" aria-hidden="true">“</span>
+      <p class="qf-espera">Depoimento em breve.</p>
+      <div class="qf-autor"><div class="foto" aria-hidden="true">K</div><div><b>Karina D'Ornelas</b><span>Fundadora da Intentia</span></div></div>
+    </div>
     </div>
   </div>
 </section>
