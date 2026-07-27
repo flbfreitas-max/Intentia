@@ -330,7 +330,7 @@ var DIAS=[
   {n:4, t:"Armadilhas da decisão", href:"Dia 4/index.html"},
   {n:5, t:"Propósito construído", href:"Dia 5/index.html"},
   {n:6, t:"Essencial — o que fica quando você tira o resto", href:"Dia 6/index.html"},
-  {n:7, t:"Marca + Direção Escolhida", href:"Dia 7/index.html", marco:"Direção", ent:"Direção Escolhida + Marca"},
+  {n:7, t:"Marca + Direção Escolhida", href:"Dia 7/index.html", marco:"Direção", ent:"Direção Escolhida"},
   {n:8, t:"Presença executiva", href:"Dia 8/index.html"},
   {n:9, t:"Autoridade — o que faz sua palavra pesar", href:"Dia 9/index.html"},
   {n:10,t:"Redes de influência", href:"Dia 10/index.html"},
@@ -344,14 +344,14 @@ var DIAS=[
   {n:18,t:"Ciclo de revisão sustentável", href:"Dia 18/index.html"},
   {n:19,t:"Rede de suporte pós-Intentia", href:"Dia 19/index.html"},
   {n:20,t:"Próximo horizonte — os 90 dias que vêm", href:"Dia 20/index.html"},
-  {n:21,t:"Fechamento e celebração", href:"Dia 21/index.html", marco:"Fechamento", ent:"Compromisso de 90 dias + ritual instalado"}
+  {n:21,t:"Fechamento e celebração", href:"Dia 21/index.html", marco:"Fechamento", ent:"Compromisso de 90 dias instalado"}
 ];
 
 var BLOCOS=[
   {antes:0, pe:"Travessia · Etapa 0", h:"Você chega com o seu Retrato de Carreira — aqui ele entra na trilha", de:0, ate:0, ent:null},
-  {antes:1, pe:"Bloco 1 · Etapas 1–7", h:"Quem eu quero me tornar — e para onde faz sentido eu ir?", de:1, ate:7, ent:"Direção Escolhida + Marca"},
-  {antes:8, pe:"Bloco 2 · Etapas 8–14", h:"Como eu chego lá — presença, autoridade, redes, aprendizado, energia.", de:8, ate:14, ent:"Plano de Execução · v1"},
-  {antes:15,pe:"Bloco 3 · Etapas 15–21", h:"Como isso vira rotina — e não mais uma lista abandonada?", de:15, ate:21, ent:"Compromisso de 90 dias + ritual"}
+  {antes:1, pe:"Bloco 1 · Etapas 1–7", h:"Quem eu quero me tornar — e para onde faz sentido eu ir?", de:1, ate:7, ent:"Direção Escolhida"},
+  {antes:8, pe:"Bloco 2 · Etapas 8–14", h:"Como eu chego lá — presença, autoridade, redes, aprendizado, energia.", de:8, ate:14, ent:"Plano de Execução"},
+  {antes:15,pe:"Bloco 3 · Etapas 15–21", h:"Como isso vira rotina — e não mais uma lista abandonada?", de:15, ate:21, ent:"Compromisso de 90 dias"}
 ];
 
 var MARCOS=[
@@ -549,7 +549,7 @@ function desenharTrilha(S, atual, completo){
   cheg.className='chegada'+(completo?' celebra':'');
   cheg.style.top=(y-6)+'px';
   cheg.innerHTML=completo
-    ? '<div class="band"><div class="bt">Trilha concluída. 🎉</div><p>Vinte e um dias, três construções sobre o seu Retrato: Direção Escolhida + Marca, Plano de Execução e o Compromisso de 90 dias — sustentado pelo ritual semanal.</p></div>'
+    ? '<div class="band"><div class="bt">Trilha concluída. 🎉</div><p>Vinte e um dias, três construções sobre o seu Retrato: Direção Escolhida, Plano de Execução e o Compromisso de 90 dias — sustentado pelo ritual semanal.</p></div>'
     : '<div class="band"><div class="bt">Etapa 21 · A chegada</div><p>No final da trilha: o seu Plano de Execução calibrado, o ritual semanal e o compromisso de 90 dias — construídos um dia por vez.</p></div>';
   frag.appendChild(cheg);
   var altura=y+120;
