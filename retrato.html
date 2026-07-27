@@ -727,6 +727,14 @@
 </section>
 
 <!-- ========== DEPOIMENTOS — VALIDAR O TEXTO DE CADA FALA COM A PESSOA NOMEADA ANTES DE PUBLICAR ========== -->
+<style>
+/* Depoimentos: com 5 avaliações, a grade vira carrossel de rolagem lateral */
+.depo-grid.tres{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x proximity;gap:18px;max-width:1000px;padding:4px 4px 18px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#7CA89E #EFF2EE}
+.depo-grid.tres .depo{flex:0 0 320px;scroll-snap-align:start}
+@media(max-width:640px){.depo-grid.tres .depo{flex-basis:84%}}
+.depo-hint{text-align:center;font-size:12.5px;color:#57706A;margin-top:10px}
+.depo-hint b{color:#F0623E}
+</style>
 <section id="depoimentos">
   <div class="wrap">
     <div class="sec-head rev">
@@ -752,7 +760,20 @@
         <div class="aval" role="img" aria-label="Avaliação máxima: 5 de 5"><i></i><i></i><i></i><i></i><i></i></div>
         <div class="depo-autor"><div class="foto" aria-hidden="true">V</div><div><b>Veronica Belmont</b><span>Coordenadora de Backoffice Jurídico</span></div></div>
       </article>
+      <article class="depo rev">
+        <span class="aspas" aria-hidden="true">“</span>
+        <blockquote>A plataforma é muito bem estruturada para trazer a quem acessa uma visão prática sobre como investir o seu tempo de forma efetiva no desenvolvimento de carreira. Fazendo o Retrato, tem-se a oportunidade de pensar no desenvolvimento de habilidades que ainda são pouco exploradas, mas essenciais para o sucesso profissional.</blockquote>
+        <div class="aval" role="img" aria-label="Avaliação máxima: 5 de 5"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="depo-autor"><div class="foto" aria-hidden="true">J</div><div><b>Jean Lopes</b><span>Economista</span></div></div>
+      </article>
+      <article class="depo rev">
+        <span class="aspas" aria-hidden="true">“</span>
+        <blockquote>É muito estimulante ler o Retrato de Carreira e ter a percepção de que, investindo no desenvolvimento de algumas habilidades, é possível alcançar outros patamares de carreira.</blockquote>
+        <div class="aval" role="img" aria-label="Avaliação máxima: 5 de 5"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="depo-autor"><div class="foto" aria-hidden="true">E</div><div><b>Elisa Pesa</b><span>Executiva de RH</span></div></div>
+      </article>
     </div>
+    <p class="depo-hint rev">Deslize para o lado para ver mais avaliações <b>→</b></p>
     <div class="cta-meio rev"><a class="btn btn-coral btn-grande" data-checkout href="#oferta">Quero meu Retrato de Carreira<span class="seta" aria-hidden="true"> →</span></a></div>
   </div>
 </section>
