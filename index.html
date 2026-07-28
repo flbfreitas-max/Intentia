@@ -100,12 +100,12 @@
   .no .check{position:absolute;right:-3px;bottom:-3px;width:20px;height:20px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;border:2px solid var(--areia)}
   .no.marco .check{width:24px;height:24px;font-size:13px}
 
-  .voce-aqui{position:absolute;z-index:3;transform:translate(-50%,0);background:var(--verde-900);color:var(--creme);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border-radius:999px;white-space:nowrap}
+  .voce-aqui{position:absolute;z-index:3;text-decoration:none;cursor:pointer;transform:translate(-50%,0);background:var(--verde-900);color:var(--creme);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border-radius:999px;white-space:nowrap}
   .voce-aqui::after{content:"";position:absolute;top:-5px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--verde-900)}
 
-  .rotulo{position:absolute;z-index:1;max-width:300px;background:#fff;border:1px solid var(--verde-100);border-radius:11px;padding:9px 14px;font-size:13px;line-height:1.45;box-shadow:0 4px 14px rgba(39,87,80,.06)}
-  @media(max-width:700px){.rotulo{max-width:200px;font-size:12px}}
-  @media(max-width:480px){.rotulo{max-width:150px}}
+  .rotulo{position:absolute;z-index:1;width:300px;box-sizing:border-box;background:#fff;border:1px solid var(--verde-100);border-radius:11px;padding:9px 14px;font-size:13px;line-height:1.45;box-shadow:0 4px 14px rgba(39,87,80,.06)}
+  @media(max-width:700px){.rotulo{width:200px;font-size:12px}}
+  @media(max-width:480px){.rotulo{width:150px}}
   .rotulo .rd{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);display:block}
   .rotulo .rt{font-weight:600;color:var(--verde-900);display:block}
   .rotulo.bloq-r{opacity:.55}
@@ -497,7 +497,7 @@ function desenharTrilha(S, atual, completo){
         +'<div class="pl"><span class="pd">'+rotProg+'</span>'
         +(bl.ent?'<span class="ent">Entrega: '+bl.ent+'</span>':'')+'</div>';
       frag.appendChild(placa);
-      y+=(bl.antes===0?135:190)+(w<640?40:0);
+      y+=250+(w<640?70:0); // a placa tem ~215px; menos que isso, o nó nasce atrás dela
     }
 
     var x=cx+Math.sin(fase)*amp; fase+=0.82;
@@ -535,8 +535,8 @@ function desenharTrilha(S, atual, completo){
 
     /* "você está aqui" */
     if(d.n===atual){
-      var va=document.createElement('div');
-      va.className='voce-aqui'; va.textContent='Você está aqui';
+      var va=document.createElement('a'); va.href=d.href;
+      va.className='voce-aqui'; va.textContent=(d.n===0?'Comece aqui — toque no 0':'Você está aqui — continuar');
       va.style.left=x+'px'; va.style.top=(y+raio+10)+'px';
       frag.appendChild(va);
       y+=26;

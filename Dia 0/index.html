@@ -189,6 +189,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .velocidade{flex-wrap:wrap !important}
 }
 </style><!--intentia-mobile:end-->
+<style>/* texto justificado */ main p{text-align:justify;hyphens:auto}</style>
 </head>
 <body>
 <!--intentia-nav:start--><style>
@@ -449,9 +450,10 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   </style>
   <section class="bloco" id="retrato">
     <div class="bloco-num"><span class="n">6</span> A ponte · o seu Retrato entra na trilha</div>
-    <h2>Traga o seu Retrato para cá.</h2>
-    <p class="subtitulo">Três peças do seu Retrato de Carreira voltam a trabalhar nos próximos 21 dias. Copie-as para cá — leva 2 minutos, e fica guardado só neste navegador.</p>
-    <p>Abra o seu Retrato em outra aba — <a class="ponte-abrir" href="https://app-seven-henna-11gcmp4vfx.vercel.app/mapa" target="_blank" rel="noopener">abrir o meu Retrato de Carreira ↗</a> — e traga:</p>
+    <h2>O seu ponto de partida.</h2>
+    <p class="subtitulo">Três peças abrem a jornada: a sua manchete, a sua prioridade e os seus valores. <b>Se você fez o Retrato de Carreira, elas chegam preenchidas sozinhas</b> — só confira e ajuste. Se ainda não fez, escreva nas suas palavras: a trilha funciona igual.</p>
+    <p id="pt-status" style="display:none;margin-top:10px;padding:10px 14px;border-radius:10px;font-size:13.5px;font-weight:600"></p>
+    <p id="pt-abrir-linha">Quer rever o material completo? — <a class="ponte-abrir" href="https://app-seven-henna-11gcmp4vfx.vercel.app/mapa" target="_blank" rel="noopener">abrir o meu Retrato de Carreira ↗</a> — e traga:</p>
     <div class="ponte-campo">
       <label for="pt-manchete">A sua manchete, revisada</label>
       <div class="onde">Está na página "Valores e manchete" do Retrato — a versão do Dia 3.</div>
@@ -471,7 +473,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       <button type="button" class="ponte-guardar" id="pt-guardar">Guardar o meu Retrato aqui</button>
       <span class="ponte-estado" id="pt-estado">Guardado ✓</span>
     </div>
-    <p class="ponte-nota">Tudo fica apenas neste navegador — como em toda a trilha, só você lê. Se preferir, siga sem preencher: dá para voltar aqui a qualquer momento.</p>
+    <p class="ponte-nota">Fica guardado na sua conta — e, como em toda a trilha, só você lê. Se preferir, siga sem preencher: dá para voltar aqui a qualquer momento.</p>
   </section>
 
   <section class="bloco" id="missao">
@@ -491,8 +493,8 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
         <p>Os três profissionais de referência que vão acompanhar você em cada dia — <a href="personagens.html">conhecer agora</a>.</p>
       </li>
       <li>
-        <strong>Traga o seu Retrato <span class="tempo-passo">2 min</span></strong>
-        <p>Copie a manchete, a prioridade e os valores para a ponte (bloco 6, logo acima) — eles voltam a trabalhar nas Etapas 5 e 21.</p>
+        <strong>Confirme o seu ponto de partida <span class="tempo-passo">2 min</span></strong>
+        <p>No bloco 6, logo acima: se você fez o Retrato, ele já chega preenchido — confira. Senão, escreva nas suas palavras. Essas três peças voltam a trabalhar nas Etapas 5 e 21.</p>
       </li>
       <li>
         <strong>Confirme os combinados e prepare a chegada <span class="tempo-passo">1 min</span></strong>
@@ -578,6 +580,59 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   // seguir para a Etapa 1 também conclui a Etapa 0 (com ou sem a ponte preenchida)
   var cta = el('cta-etapa1');
   if(cta) cta.addEventListener('click', function(){ salvar(true); });
+
+  /* ================= Retrato entra sozinho =================
+     A plataforma já tem o Retrato de quem o fez — pedir para copiar à mão
+     era trabalho jogado na pessoa. Com a chave que o portão guardou, lemos
+     a missão do Dia 3 direto do banco (a permissão por linha garante que
+     cada uma só enxerga a sua) e preenchemos a ponte.
+     Campo que a pessoa já editou aqui NÃO é sobrescrito: a palavra final é
+     sempre dela. Quem não tem Retrato vê o convite, não uma exigência. */
+  (function(){
+    var status = document.getElementById('pt-status');
+    function diz(texto, cor, fundo){
+      if(!status) return;
+      status.style.display='block';
+      status.style.color=cor; status.style.background=fundo;
+      status.innerHTML=texto;
+    }
+    var SEM = 'Ainda não fez o Retrato de Carreira? Ele faz este trabalho de forma guiada, em 3 dias — <a href="https://intentiahub.com/retrato.html" target="_blank" rel="noopener" style="color:#C04A22">conhecer o Retrato ↗</a>. Opcional: dá para seguir escrevendo nas suas palavras.';
+    var chave=null;
+    try{ chave=localStorage.getItem('intentia-trilha-chave'); }catch(e){}
+    if(!chave){ diz(SEM, '#57706A', '#F5F7F3'); return; }
+    fetch('https://vshdylgkhkdanrwwbfzi.supabase.co/rest/v1/missoes?dia=eq.3&select=dados', {
+      headers: {
+        apikey: 'sb_publishable_Oeva_8hObZCbgGTWB5a7uQ__aUAyeIi',
+        Authorization: 'Bearer ' + chave,
+      },
+    })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(linhas){
+      var d = linhas && linhas[0] && linhas[0].dados;
+      if(!d){ diz(SEM, '#57706A', '#F5F7F3'); return; }
+      var preencheu = 0;
+      function poe(id, valor){
+        var e = el(id);
+        if(!e || !valor) return;
+        if(e.value.trim()) return;      // o que a pessoa escreveu vence
+        e.value = String(valor).trim(); preencheu++;
+      }
+      poe('pt-manchete', d.mancheteRevisada);
+      poe('pt-prioridade', d.sintese);
+      if(Array.isArray(d.valores)){
+        var vs = d.valores.map(function(v){ return v && v.valor ? String(v.valor).trim() : ''; })
+                          .filter(Boolean).join('\n');
+        poe('pt-valores', vs);
+      }
+      if(preencheu){
+        salvar(false);
+        diz('✓ Trouxemos estas peças do seu Retrato automaticamente. Confira, ajuste se quiser — a palavra final é sua.', '#275750', '#E4EEE9');
+      } else {
+        diz('O seu Retrato já está aqui — os campos abaixo são os que você guardou.', '#275750', '#E4EEE9');
+      }
+    })
+    .catch(function(){ /* sem rede: a ponte manual continua servindo */ });
+  })();
 })();
 </script>
 
