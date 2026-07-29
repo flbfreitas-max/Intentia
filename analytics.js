@@ -92,30 +92,29 @@
     if (document.getElementById('intentia-consent')) return;
     var css = document.createElement('style');
     css.textContent = [
-      '#intentia-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9000;max-width:560px;margin:0 auto;',
-      'background:#F5F7F3;color:#20332F;border:1px solid #DAE6E1;border-radius:16px;padding:18px 20px;',
-      'box-shadow:0 18px 44px rgba(20,51,47,.28);font-family:"Hanken Grotesk",-apple-system,"Segoe UI",sans-serif;font-size:14px;line-height:1.5}',
-      '#intentia-consent p{margin:0 0 14px;color:#57706A}',
-      '#intentia-consent b{color:#275750}#intentia-consent a{color:#C04A22;font-weight:700}',
-      '#intentia-consent .linha{display:flex;gap:10px;flex-wrap:wrap}',
-      '#intentia-consent button{flex:1;min-width:140px;font-family:inherit;font-weight:700;font-size:14px;padding:11px 16px;border-radius:24px;cursor:pointer;border:1.5px solid #DAE6E1;background:#fff;color:#275750}',
-      '#intentia-consent button.sim{background:#FF6842;border-color:#FF6842;color:#fff}',
-      '@media print{#intentia-consent{display:none!important}}',
-    ].join('');
+      '#intentia-consent{position:fixed;left:12px;right:12px;bottom:12px;z-index:9000;max-width:520px;margin:0 auto;',
+      'display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;',
+      'background:#F5F7F3;color:#20332F;border:1px solid #DAE6E1;border-radius:12px;padding:12px 16px;',
+      'box-shadow:0 12px 32px rgba(20,51,47,.26);font-family:"Hanken Grotesk",-apple-system,"Segoe UI",sans-serif;font-size:13px;line-height:1.35}',
+      '#intentia-consent p{margin:0;flex:1;min-width:180px;color:#57706A}',
+      '#intentia-consent a{color:#C04A22;font-weight:600}',
+      '#intentia-consent .linha{display:flex;gap:8px;flex:none}',
+      '#intentia-consent button{font-family:inherit;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;cursor:pointer;border:none;background:none;color:#57706A}',
+      '#intentia-consent button.sim{background:#FF6842;color:#fff;font-weight:700}',
+      '@media print{#intentia-consent{display:none!important}}',    ].join('');
     document.head.appendChild(css);
 
     var c = document.createElement('div');
     c.id = 'intentia-consent';
     c.setAttribute('role', 'dialog');
     c.setAttribute('aria-label', 'Preferência de medição de uso');
+    // Uma linha só: aviso que ocupa meia tela vira obstáculo, e quem precisa
+    // do detalhe encontra na Política de Privacidade.
     c.innerHTML =
-      '<p><b>Cookies e medição de uso.</b> Alguns cookies são necessários para a plataforma funcionar — ' +
-      'são eles que mantêm você conectada e guardam o que você escreve. Esses sempre existem.</p>' +
-      '<p>Com a sua permissão, usamos também cookies de medição: eles registram quais páginas são abertas ' +
-      'e por onde você chegou, para descobrirmos onde a plataforma trava. <b>Nunca registram o que você ' +
-      'escreve na plataforma</b>. <a href="' + PRIVACIDADE + '" target="_blank" rel="noopener">Como tratamos os dados</a></p>' +
-      '<div class="linha"><button type="button" class="sim" data-resp="sim">Aceitar</button>' +
-      '<button type="button" data-resp="nao">Só os essenciais</button></div>';
+      '<p>Usamos cookies para medir o uso das páginas — nunca o que você escreve. ' +
+      '<a href="' + PRIVACIDADE + '" target="_blank" rel="noopener">Saiba mais</a></p>' +
+      '<div class="linha"><button type="button" data-resp="nao">Só essenciais</button>' +
+      '<button type="button" class="sim" data-resp="sim">Aceitar</button></div>';
     document.body.appendChild(c);
     c.addEventListener('click', function (ev) {
       var b = ev.target.closest('button[data-resp]');
