@@ -34,6 +34,11 @@ const PUBLICAS = [/sb_publishable_/, /\bphc_[A-Za-z0-9]{20,}/];
 /** Arquivos que nunca deveriam entrar, independentemente do conteúdo. */
 const PROIBIDOS = /(^|\/)\.env(\..*)?$|(^|\/)\.vercel\/|\.pem$|\.p12$|(^|\/)id_rsa$/;
 
+/* O modelo de variáveis é versionado de propósito: só tem NOMES, nunca
+   valores. Sem esta exceção, o próprio .env.example é barrado — foi o
+   primeiro falso positivo real deste verificador. */
+const MODELOS = /(^|\/)\.env\.(example|sample|template)$/;
+
 function git(args) {
   return execFileSync('git', args, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
 }
@@ -45,7 +50,7 @@ const arquivos = git(['diff', '--cached', '--name-only', '--diff-filter=ACM'])
 const achados = [];
 
 for (const arquivo of arquivos) {
-  if (PROIBIDOS.test(arquivo)) {
+  if (PROIBIDOS.test(arquivo) && !MODELOS.test(arquivo)) {
     achados.push({ arquivo, linha: 0, tipo: 'arquivo que não deve ser versionado', trecho: arquivo });
     continue;
   }
