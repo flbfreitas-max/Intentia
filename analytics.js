@@ -109,10 +109,13 @@
     c.setAttribute('role', 'dialog');
     c.setAttribute('aria-label', 'Preferência de medição de uso');
     c.innerHTML =
-      '<p><b>Podemos medir como as páginas são usadas?</b> Registramos apenas quais páginas são abertas e por onde você chegou — ' +
-      'nunca o que você escreve na plataforma. <a href="' + PRIVACIDADE + '" target="_blank" rel="noopener">Como tratamos os dados</a></p>' +
+      '<p><b>Cookies e medição de uso.</b> Alguns cookies são necessários para a plataforma funcionar — ' +
+      'são eles que mantêm você conectada e guardam o que você escreve. Esses sempre existem.</p>' +
+      '<p>Com a sua permissão, usamos também cookies de medição: eles registram quais páginas são abertas ' +
+      'e por onde você chegou, para descobrirmos onde a plataforma trava. <b>Nunca registram o que você ' +
+      'escreve na plataforma</b>. <a href="' + PRIVACIDADE + '" target="_blank" rel="noopener">Como tratamos os dados</a></p>' +
       '<div class="linha"><button type="button" class="sim" data-resp="sim">Aceitar</button>' +
-      '<button type="button" data-resp="nao">Só o essencial</button></div>';
+      '<button type="button" data-resp="nao">Só os essenciais</button></div>';
     document.body.appendChild(c);
     c.addEventListener('click', function (ev) {
       var b = ev.target.closest('button[data-resp]');
