@@ -16,7 +16,7 @@
  * perde o que a pessoa escreveu — o texto continua na tela para reenviar.
  */
 (function () {
-  var APP = 'https://app-seven-henna-11gcmp4vfx.vercel.app';
+  var APP = 'https://app.intentiahub.com';
   var alvo = document.getElementById('avaliar-trilha');
   if (!alvo) return;
 

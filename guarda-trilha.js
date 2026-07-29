@@ -25,7 +25,7 @@
  *    momentos diferentes, mesclar inventaria versões que ninguém escreveu.
  */
 (function () {
-  var APP = 'https://app-seven-henna-11gcmp4vfx.vercel.app';
+  var APP = 'https://app.intentiahub.com';
   var DURACAO_MS = 12 * 60 * 60 * 1000; // revalida no servidor a cada 12h
   var CHAVE_ACESSO = 'intentia-trilha-chave';
   var CHAVE_OK = 'intentia-trilha-ok';
