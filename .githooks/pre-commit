@@ -1,0 +1,4 @@
+#!/bin/sh
+# Roda a cada commit. Ver .githooks/procurar-segredos.mjs.
+# Ligado neste clone com:  git config core.hooksPath .githooks
+exec node .githooks/procurar-segredos.mjs
