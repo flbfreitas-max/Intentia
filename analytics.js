@@ -61,6 +61,12 @@
         capture_pageview: true,
         capture_pageleave: true,
         disable_session_recording: true,
+        // mesma régua do app: cliques sem efeito e tempo de carregamento sim,
+        // com o texto mascarado; autocapture geral e gravação de sessão não
+        capture_dead_clicks: true,
+        capture_performance: true,
+        disable_surveys: true,
+        advanced_disable_feature_flags: true,
         person_profiles: 'identified_only',
         cross_subdomain_cookie: true,
         persistence: 'localStorage+cookie',
