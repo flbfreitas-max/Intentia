@@ -145,9 +145,28 @@
   .garantia-of{margin-top:16px;background:var(--areia);border:1px solid var(--verde-100);border-radius:14px;padding:18px 22px;font-size:13.5px;color:var(--tinta-suave);text-align:left;line-height:1.65}
   .garantia-of b{color:var(--verde-900)}
   .fechamento{background:var(--verde-900);border-top:1px solid rgba(255,255,255,.14);padding:80px 0}
-  .fech-texto{max-width:640px;margin:0 auto;text-align:center}
-  .fech-texto p{color:#CFE0D6;font-size:16.5px;margin-bottom:18px}
-  .fech-texto .fech-final{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--creme)}
+  /* Fechamento: quatro parágrafos do mesmo tamanho e cor não tinham hierarquia
+     nenhuma — o olho não sabia onde pousar. Agora a abertura é serifada e
+     grande, o miolo é apoio, e o fecho ganha destaque de bloco com o coral
+     marcando as três ideias que a pessoa deve levar embora. */
+  .fech-texto{max-width:660px;margin:0 auto;text-align:center}
+  .fech-texto p{color:#CFE0D6;font-size:16.5px;line-height:1.62;margin-bottom:16px}
+  .fech-abre{font-family:var(--serif);font-size:clamp(21px,3.2vw,27px);line-height:1.32;
+    color:var(--creme)!important;margin-bottom:22px!important}
+  .fech-texto .g{color:#fff;font-weight:600}
+  .fech-risco{-webkit-box-decoration-break:clone;box-decoration-break:clone;
+    background:linear-gradient(transparent 62%, rgba(240,98,62,.42) 62%, rgba(240,98,62,.42) 94%, transparent 94%);
+    padding:0 .1em;color:#fff;font-weight:600}
+  .fech-sep{width:46px;height:3px;background:var(--coral);border-radius:2px;margin:26px auto 24px;opacity:.9}
+  .fech-caixa{border:1px solid rgba(240,98,62,.45);border-radius:18px;background:rgba(240,98,62,.07);
+    padding:26px 28px;margin-top:6px}
+  .fech-texto .fech-final{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.5vw,21px);
+    line-height:1.45;color:var(--creme);margin-bottom:0}
+  .fech-texto .fech-final + .fech-final{margin-top:16px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.12)}
+  .fech-selo{display:inline-block;font-family:var(--sans);font-style:normal;font-size:11px;font-weight:700;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--coral);margin-bottom:12px}
+  @media(max-width:560px){ .fech-caixa{padding:22px 18px} .fechamento{padding:60px 0} }
 
 
   .reflexo{background:var(--menta-suave);padding:96px 0;position:relative;overflow:hidden}
@@ -929,12 +948,17 @@
 <section class="fechamento">
   <div class="wrap">
     <div class="fech-texto rev">
-      <p>Sua carreira nunca foi apenas a soma dos cargos que ocupou. Ela é a história das decisões que tomou, das competências que desenvolveu e das transformações que provocou ao longo do caminho.</p>
-      <p>O problema é que, vivendo essa história por dentro, nem sempre conseguimos enxergar o desenho completo.</p>
-      <p>O Retrato de Carreira existe para tornar visível aquilo que sempre esteve presente.</p>
-      <p>E, no fim, você sabe contar a sua história.</p>
-      <p class="fech-final">Porque quando você compreende a trajetória que construiu, passa a decidir com muito mais segurança a trajetória que deseja construir daqui pra frente.</p>
-      <p class="fech-final">É o momento em que a régua que mede você passa a ser sua.</p>
+      <p class="fech-abre">Sua carreira nunca foi apenas a <span class="fech-risco">soma dos cargos</span> que ocupou. Ela é a história das <span class="g">decisões que tomou</span>, das <span class="g">competências que desenvolveu</span> e das <span class="g">transformações que provocou</span> ao longo do caminho.</p>
+      <p>O problema é que, vivendo essa história por dentro, <span class="g">nem sempre conseguimos enxergar o desenho completo</span>.</p>
+      <p>O Retrato de Carreira existe para <span class="fech-risco">tornar visível</span> aquilo que sempre esteve presente. E, no fim, <span class="g">você sabe contar a sua história</span>.</p>
+
+      <div class="fech-sep" aria-hidden="true"></div>
+
+      <div class="fech-caixa">
+        <span class="fech-selo">O que muda</span>
+        <p class="fech-final">Porque quando você <span class="fech-risco">compreende a trajetória que construiu</span>, passa a decidir com muito mais segurança a trajetória que deseja construir daqui pra frente.</p>
+        <p class="fech-final">É o momento em que <span class="fech-risco">a régua que mede você passa a ser sua</span>.</p>
+      </div>
     </div>
   </div>
 </section>
