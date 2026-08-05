@@ -19,3 +19,10 @@ publicar.bat
 Mapeamento/
 *.pptx
 amostra-dossie-*.jpg
+
+# Fontes da Academia (artigos do MIT SMR, em PDF e captura de tela).
+# São material de leitura interna; republicar o texto integral num site
+# acessível é proibido pelos termos da revista. O que vai ao ar é só o
+# estudo comentado, que é análise própria.
+Academia/*.pdf
+Academia/*.png
