@@ -15,6 +15,15 @@ Desktop.ini
 # Atalho local de publicacao
 publicar.bat
 
+# Arquivos de chave. Nenhum existe hoje, e o .githooks/pre-commit ja barra chave
+# do Gemini (AIza...) e outras no conteudo — mas o guarda depende de o arquivo ser
+# lido, e um .env com a chave nao tem motivo para chegar perto de um commit.
+# Duas travas em vez de uma.
+.env
+.env.*
+*.pem
+*.key
+
 # Produto antigo e arquivos fora do site — nunca publicar
 Mapeamento/
 *.pptx
