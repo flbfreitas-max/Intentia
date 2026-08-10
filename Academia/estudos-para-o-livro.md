@@ -790,3 +790,57 @@ Os dois textos são ensaios de uma autora, e não pesquisa apresentada com méto
 **Referência.** Leituras de referência: Gratton, L. (2018). “How Leaders Face the Future of Work”. MIT Sloan Management Review, vol. 59, nº 4, reprint 59427. Gratton, L. (2019). “New Frontiers in Re-skilling and Upskilling”. MIT Sloan Management Review, vol. 61, nº 1, reprint 61109. Lynda Gratton é professora na London Business School e coautora de “The 100-Year Life” (Bloomsbury, 2016). Estudo comentado da Academia Intentia; a análise e as ferramentas são próprias e não reproduzem as obras.
 
 ---
+
+---
+
+## O ambiente decide antes de você
+
+**Dia 16 · Ambiente e fricção**
+
+_Estudo do Intentia inspirado em uma conversa com Wendy Wood sobre como os hábitos realmente se formam — e por que o autocontrole é o último lugar onde procurar (Behavioral Scientist, a partir da pesquisa reunida em Good Habits, Bad Habits, 2019)._
+
+### 1. Por que esta leitura importa
+
+Wendy Wood passou décadas medindo hábito, e o número que ficou famoso é o mais desconfortável: cerca de 43% do que uma pessoa faz num dia comum é repetição, no mesmo contexto, enquanto ela pensa em outra coisa. Não é preguiça nem falta de caráter — é o modo padrão de funcionamento. A partir daí ela desmonta duas crenças que sustentam quase todo conselho de produtividade. A primeira é que hábito se instala com força de vontade. Wood é direta: "para começar um hábito novo você precisa exercer autocontrole — e isso simplesmente não é verdade". A segunda é a dos vinte e um dias. Um hábito simples, segundo ela, leva de dois a três meses. O que aparece no lugar do autocontrole é o contexto — as pistas do ambiente que disparam a ação antes de qualquer decisão. E há um achado que inverte a intuição de forma quase cruel: pensar conscientemente pode **quebrar** um hábito bom. Num experimento com joystick, participantes treinados a escolher cenoura em vez de M&M continuavam escolhendo cenoura em mais de 60% das vezes enquanto a tela ficava igual. Quando o layout mudava e obrigava a decidir de novo, muitos trocavam por M&M. O hábito bom não sobreviveu ao momento em que a pessoa teve de pensar.
+
+> **A leitura do Intentia** — Se 43% do seu dia já está decidido pelo ambiente, a pergunta não é como ter mais disciplina. É quem desenhou o lugar onde você trabalha — e se foi você.
+
+### 2. A contribuição central dos autores
+
+A contribuição de Wood é ter transferido a explicação do hábito de dentro da pessoa para a relação entre a pessoa e o lugar. Hábito, na definição dela, é automaticidade que se desenvolve quando alguém repete uma ação em circunstâncias estáveis: a repetição grava uma associação entre contexto e comportamento, e a partir de certo ponto a intenção deixa de prever o que a pessoa faz. Duas consequências saem disso. A primeira é que a estabilidade do contexto, e não a duração do esforço, é o que sustenta o hábito. Ela mostra isso com alunos que trocaram de universidade: quem manteve a rotina de exercício foi quem reencontrou pistas parecidas — academia perto, equipamento do mesmo tipo. Ambiente diferente desmontou hábitos antigos independentemente de quantos anos tinham. A segunda é sobre recompensa: a dopamina opera numa janela de aproximadamente um minuto, então a recompensa precisa vir junto com o comportamento, não no salário do fim do mês. Isso explica por que "vou me sentir melhor em seis meses" nunca instalou hábito nenhum, e por que escolher uma atividade que a pessoa genuinamente gosta funciona melhor do que insistir numa que ela detesta. Wood leva o argumento até a escala pública — calçada, coleta seletiva acessível, desenho de bairro mudam comportamento de população inteira — e registra que momentos de transição na vida, uma mudança de casa, uma mudança de arranjo familiar, são as janelas em que hábitos velhos soltam, porque as pistas desapareceram. Essa é a contribuição da pesquisa. O que vem a seguir é a leitura do Intentia.
+
+### 3. Como o Intentia interpreta essas ideias
+
+O método adota a inversão como regra prática: antes de pedir mais disciplina, mexer no lugar. É por isso que a etapa não pede um compromisso, pede dois ajustes — um físico e um digital — em vinte e quatro horas. A régua é a fricção. Aproximar de você o que quer fazer, afastar o que não quer, medido em segundos e cliques, não em intenção.
+
+Há uma consequência que o método assume e que soa contraintuitiva: se pensar pode quebrar o hábito bom, então **estabilidade é um ativo**. A vontade de reorganizar tudo com frequência — trocar de aplicativo, mudar a mesa de lugar, adotar um sistema novo — costuma ser vivida como progresso e funciona como sabotagem. Ambiente estável é o que permite que o comportamento aconteça sem custo. A hora de mexer no ambiente é quando ele está trabalhando contra você, não quando o tédio bate.
+
+Sobre a recompensa de um minuto, o método é explícito no que ela **não** é. Não é se premiar. É que a ação precisa ter algo de bom acontecendo dentro dela, agora — a marca no registro, o alívio de ter tirado uma coisa da cabeça, o texto que ficou pronto. Se a única recompensa da sua rotina está a seis meses de distância, o problema não é a sua constância; é o desenho.
+
+E aqui o Intentia registra uma tensão dentro do próprio percurso, em vez de esconder. Wood diz dois a três meses para um hábito simples. O registro de sete dias que você monta na etapa do hábito não é um hábito instalado — é um teste de desenho: serve para descobrir se o gatilho funciona e se a recompensa chega perto o suficiente. O prazo que corresponde à pesquisa dela é outro, e ele já existe no fim da trilha: o compromisso de noventa dias. Quem tratar os sete dias como conquista vai se decepcionar por um motivo que não é falta de disciplina — é aritmética.
+
+Por último, a janela. Wood mostra que transições soltam hábitos porque apagam pistas. O Intentia lê isso como oportunidade e como aviso: quem está mudando de função, de cidade ou de casa tem uma janela rara para instalar coisa nova — e, ao mesmo tempo, está sob risco de perder rotinas boas sem perceber. Nas duas direções, o trabalho é o mesmo: decidir quais pistas reconstruir de propósito.
+
+### 4. Onde esta visão encontra limites
+
+O primeiro limite é de tradução: a pesquisa de hábito é feita em maioria com comportamentos simples e mensuráveis — comer, exercitar-se, reciclar, ir de carro ou a pé. Trabalho de conhecimento é feito de tarefas que mudam de forma toda semana, e a automaticidade tem menos onde se agarrar. O ambiente ajuda a começar; ele não escreve o documento difícil por você. Segundo, há um risco de leitura fatalista: se 43% já está decidido, para que decidir? Não é o que a pesquisa diz — ela diz que a decisão eficaz acontece antes, no desenho, e não no momento do impulso. Terceiro, a recomendação de mexer no ambiente pressupõe controle sobre ele, e muita gente não tem: quem divide mesa, quem trabalha em escala, quem não escolhe o próprio horário. Nesses casos a margem existe, mas é menor e mais digital do que física — e prometer o contrário é desonesto. Por fim, o número de 43% vem de estudos de diário sobre populações específicas; é uma ordem de grandeza para pensar, não uma medida da sua vida.
+
+### 5. Aplicação prática
+
+**Ferramenta Intentia · Os dois ajustes**
+
+1. Escolha o comportamento que você já decidiu fazer e não está acontecendo. Um só.
+2. Ajuste físico: o que você aproxima e o que você afasta? Meça em segundos — quantos segundos até começar, hoje, e quantos depois do ajuste.
+3. Ajuste digital: qual aplicativo, notificação ou aba sai do caminho, e qual entra no caminho? Meça em cliques.
+4. Recompensa de um minuto: o que vai ter de bom **dentro** da ação, no primeiro minuto? Se a resposta estiver a semanas de distância, o desenho ainda não está pronto.
+5. Marque a data de não mexer: 30 dias sem reorganizar nada. Estabilidade é parte do ajuste, não descanso dele.
+
+### 6. O que levar desta leitura
+
+1. Cerca de 43% do dia é repetição disparada por contexto. Disciplina não disputa com isso — desenho, sim.
+2. Autocontrole não é o que instala hábito. Pistas estáveis, sim — e pensar demais pode quebrar o hábito bom que já existia.
+3. A recompensa tem de estar dentro do primeiro minuto da ação. Recompensa distante não instala nada.
+4. Sete dias testam um desenho; dois a três meses instalam um hábito. Os noventa dias do fim da trilha são o prazo que a pesquisa sustenta.
+5. Mudança de casa, de função ou de arranjo é janela: hábito velho solta. Serve para instalar o novo e para perder o bom sem notar.
+
+**Referência.** Leitura de referência: "Good Habits, Bad Habits: A Conversation with Wendy Wood", Behavioral Scientist — conversa a partir de Wood, W. (2019). "Good Habits, Bad Habits: The Science of Making Positive Changes That Stick", Farrar, Straus and Giroux. O dado dos 43% vem da linha de pesquisa de diário da autora e colaboradores. Estudo comentado da Academia Intentia; a análise e as ferramentas são próprias e não reproduzem a obra.

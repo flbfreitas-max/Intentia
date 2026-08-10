@@ -61,7 +61,12 @@ const CFG = {
   'A saída também é um vínculo':
       { slug: 'resumo-a-saida-tambem-e-um-vinculo-laker-2023',
         autor: 'Benjamin Laker · MIT Sloan Management Review · 2023',
-        tpl: 'resumo-reserve-tempo-para-refletir-porter-2017.html' },
+        // O Dia 19 tem uma leitura so — esta. Entao o molde e a propria pagina:
+        // gerar() le o molde antes de escrever, e reconstruir a partir da
+        // propria casca e idempotente. Um molde de outro dia traria a
+        // navegacao errada, e o molde antigo (Reserve tempo para refletir)
+        // mudou para o Dia 18 quando a Academia foi realinhada.
+        tpl: 'resumo-a-saida-tambem-e-um-vinculo-laker-2023.html' },
   'Ver a mudança antes de ela chegar':
       { slug: 'resumo-ver-a-mudanca-antes-johnson-2019',
         autor: 'Whitney Johnson e Paul Michelman · MIT Sloan Management Review · 2019',
@@ -70,6 +75,13 @@ const CFG = {
       { slug: 'resumo-a-vida-em-tres-atos-acabou-gratton',
         autor: 'Lynda Gratton · MIT Sloan Management Review · 2018 e 2019',
         tpl: 'resumo-a-ciencia-das-metas-locke-latham-2002.html' },
+  'O ambiente decide antes de você':
+      { slug: 'resumo-o-ambiente-decide-antes-de-voce-wood',
+        autor: 'Wendy Wood · Behavioral Scientist · a partir de Good Habits, Bad Habits (2019)',
+        // Mesma situacao do Dia 19: o Dia 16 tem uma leitura so, esta. O molde
+        // e a propria pagina. As duas de feedback que moravam aqui sairam do
+        // acervo no realinhamento — o dia e sobre ambiente, nao sobre critica.
+        tpl: 'resumo-o-ambiente-decide-antes-de-voce-wood.html' },
 };
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
