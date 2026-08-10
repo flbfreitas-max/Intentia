@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intentia Hub — Acesso antecipado</title>
+<meta name="description" content="O Intentia Hub está abrindo acesso em primeira mão. Deixe o seu e-mail e entre entre os primeiros a conduzir a carreira com método.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Intentia Hub — Acesso antecipado">
+<meta property="og:description" content="A plataforma inteira da sua carreira: método, repertório e ferramenta. Entre na lista de acesso antecipado.">
+<meta name="theme-color" content="#275750">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjMgMTggMTE5IDk3IiB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQ5MCI+PHBhdGggZmlsbD0iIzJFN0Q2RiIgZD0iTTQwLDk0IFE4Niw3NCAxMTAsMzAgUTEwMyw2MCA5Niw3MiBRNzAsOTAgNTIsOTAgWiI+PC9wYXRoPjxjaXJjbGUgZmlsbD0iI0YwNjIzRSIgY3g9IjI2IiBjeT0iOTIiIHI9IjExIj48L2NpcmNsZT48L3N2Zz4=">
+
+<style>
+:root{
+  --ink:#14403a; --teal:#2e7d6f; --deep:#275750; --spark:#f0623e;
+  --mint:#69a99b; --mint-soft:#dcede8; --paper:#f2f6f4; --white:#fff;
+  --deep-plus:#1d473f; --spark-hover:#d9502c;
+  --text-muted:#3a5b54; --text-soft:#5b7a73; --text-faint:#8aa39c;
+  --text-on-dark:#f2f6f4; --text-on-dark-muted:#9ed0c5; --text-on-dark-soft:#cfe6df;
+  --border-subtle:#e0ebe7; --border-card:#e6efeb; --border-on-dark:#3a6c62;
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-sans:"Hanken Grotesk",system-ui,-apple-system,sans-serif;
+  --ease:cubic-bezier(.2,.85,.25,1);
+  --radius:16px; --radius-sm:12px; --radius-pill:999px;
+  --shadow-card:0 6px 18px rgba(39,87,80,.06);
+  --shadow-raise:0 18px 50px rgba(20,64,58,.18);
+  --shadow-spark:0 8px 22px rgba(240,98,62,.4);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--font-sans); font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;letter-spacing:-.015em;margin:0}
+p{margin:0}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+
+/* ---------- header ---------- */
+.bar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(29,71,63,.82); backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(58,108,98,.6);
+}
+.bar-in{max-width:1180px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:16px}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.logo img{width:26px;height:26px}
+.logo span{
+  font-family:var(--font-sans);font-weight:600;letter-spacing:-.015em;line-height:1;
+  color:var(--text-on-dark);font-size:21px;display:inline-flex;align-items:baseline;
+}
+.logo svg.i{height:.9em;width:.3em}
+.bar-note{
+  margin-left:auto;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--text-on-dark-muted);
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:var(--deep);color:var(--text-on-dark)}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(120% 90% at 8% 0%, rgba(46,125,111,.55) 0%, rgba(46,125,111,0) 58%),
+    radial-gradient(80% 70% at 100% 100%, rgba(20,64,58,.75) 0%, rgba(20,64,58,0) 60%);
+  pointer-events:none;
+}
+.leaf{
+  position:absolute;right:-8%;top:-6%;width:min(58vw,720px);opacity:.09;
+  pointer-events:none;transform:rotate(-8deg);
+}
+.hero-grid{
+  position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;
+  align-items:center;padding:84px 0 96px;
+}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--text-on-dark-muted);margin-bottom:22px;
+}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--spark);display:block}
+
+h1{font-size:clamp(34px,5.4vw,54px);line-height:1.05;color:var(--white)}
+h1 em{font-style:normal;color:var(--mint-soft)}
+.lead{
+  margin-top:22px;font-size:18px;line-height:1.65;color:var(--text-on-dark-soft);max-width:50ch;
+}
+
+.capitals{margin-top:38px;padding-top:26px;border-top:1px solid var(--border-on-dark)}
+.capitals-label{
+  font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-on-dark-muted);margin-bottom:14px;
+}
+.capitals ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.capitals li{
+  font-size:13.5px;font-weight:500;color:var(--text-on-dark-soft);
+  border:1px solid var(--border-on-dark);border-radius:var(--radius-pill);
+  padding:6px 14px;background:rgba(242,246,244,.04);
+}
+
+/* ---------- form card ---------- */
+.card{
+  background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-raise);
+  padding:36px 34px 30px;position:relative;
+}
+.card h2{font-size:25px;line-height:1.14;color:var(--ink)}
+.card .sub{margin-top:9px;font-size:14.5px;color:var(--text-soft);line-height:1.55}
+
+form{margin-top:24px;display:grid;gap:15px}
+.row{display:grid;gap:15px;grid-template-columns:1fr 1fr}
+.field{display:grid;gap:6px}
+label{font-size:12.5px;font-weight:600;letter-spacing:.04em;color:var(--text-muted)}
+input,select{
+  font-family:var(--font-sans);font-size:15px;color:var(--ink);
+  background:var(--paper);border:1px solid var(--border-subtle);border-radius:var(--radius-sm);
+  padding:12px 13px;width:100%;transition:border-color .2s var(--ease),box-shadow .2s var(--ease),background .2s var(--ease);
+  appearance:none;-webkit-appearance:none;
+}
+select{
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' stroke='%235b7a73' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 13px center;padding-right:36px;
+}
+input::placeholder{color:var(--text-faint)}
+input:focus,select:focus{
+  outline:none;background:var(--white);border-color:var(--teal);
+  box-shadow:0 0 0 3px rgba(46,125,111,.16);
+}
+input:user-invalid{border-color:var(--spark)}
+
+.consent{display:flex;gap:10px;align-items:flex-start;margin-top:3px}
+.consent label{font-size:12.5px;font-weight:400;line-height:1.5;color:var(--text-soft);letter-spacing:0;cursor:pointer}
+.consent a{color:var(--teal);text-underline-offset:2px}
+
+/* Caixa de seleção desenhada à mão: a regra global usa appearance:none
+   (necessária para estilizar os selects), o que apaga o desenho nativo.
+   Então o estado "marcado" precisa ser desenhado aqui. */
+.consent input[type="checkbox"]{
+  appearance:none;-webkit-appearance:none;
+  width:18px;height:18px;flex:none;margin:1px 0 0;padding:0;
+  border:1.5px solid #bfd6d0;border-radius:5px;background:var(--white);
+  cursor:pointer;position:relative;
+  transition:background .18s var(--ease),border-color .18s var(--ease);
+}
+.consent input[type="checkbox"]:hover{border-color:var(--teal)}
+.consent input[type="checkbox"]:checked{background:var(--teal);border-color:var(--teal)}
+.consent input[type="checkbox"]:checked::after{
+  content:"";position:absolute;left:5px;top:1px;
+  width:5px;height:10px;border:solid var(--white);border-width:0 2px 2px 0;
+  transform:rotate(45deg);
+}
+.consent input[type="checkbox"]:focus-visible{
+  outline:none;box-shadow:0 0 0 3px rgba(46,125,111,.22);border-color:var(--teal);
+}
+
+button{
+  font-family:var(--font-sans);font-weight:600;font-size:16px;line-height:1;
+  background:var(--spark);color:var(--white);border:none;border-radius:var(--radius-pill);
+  padding:16px 22px;cursor:pointer;margin-top:6px;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  transition:transform .22s var(--ease),box-shadow .22s var(--ease),background .22s var(--ease);
+}
+button:hover:not(:disabled){background:var(--spark-hover);transform:translateY(-1px);box-shadow:var(--shadow-spark)}
+button:focus-visible{outline:none;box-shadow:0 0 0 5px rgba(240,98,62,.22)}
+button:disabled{opacity:.6;cursor:default}
+button svg{transition:transform .22s var(--ease)}
+button:hover:not(:disabled) svg{transform:translateX(3px)}
+
+.assure{
+  margin-top:16px;padding-top:16px;border-top:1px solid var(--border-hairline,#eef4f1);
+  display:grid;gap:7px;
+}
+.assure div{font-size:12.5px;color:var(--text-soft);display:flex;gap:8px;align-items:flex-start;line-height:1.45}
+.assure svg{flex:none;margin-top:2px}
+
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+
+.err{
+  font-size:13px;color:var(--spark);background:rgba(240,98,62,.07);
+  border:1px solid rgba(240,98,62,.28);border-radius:var(--radius-sm);
+  padding:10px 12px;display:none;
+}
+.err.on{display:block}
+
+/* erro por campo, no padrão que o Formspree devolve */
+.fe{font-size:12px;color:var(--spark);line-height:1.4;display:none}
+.fe.on{display:block}
+input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--spark)}
+
+/* success */
+.done{display:none;text-align:left;padding:14px 0 6px}
+.done.on{display:block;animation:rise .5s var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.done .mark{
+  width:52px;height:52px;border-radius:50%;background:var(--mint-soft);
+  display:grid;place-items:center;margin-bottom:18px;
+}
+.done h2{font-size:26px}
+.done p{margin-top:10px;font-size:15px;color:var(--text-soft);line-height:1.6}
+
+/* ---------- reasons ---------- */
+.reasons{background:var(--paper);padding:80px 0}
+.sec-head{max-width:44ch;margin-bottom:44px}
+.sec-eyebrow{
+  font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:14px;
+}
+.sec-head h2{font-size:clamp(26px,4vw,34px);line-height:1.14}
+.sec-head p{margin-top:14px;font-size:16.5px;color:var(--text-muted);line-height:1.65}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.r{
+  background:var(--white);border:1px solid var(--border-card);border-radius:var(--radius);
+  padding:30px 26px 28px;box-shadow:var(--shadow-card);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+}
+.r:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(39,87,80,.1)}
+.r .num{
+  font-family:var(--font-display);font-size:14px;color:var(--teal);
+  letter-spacing:.06em;margin-bottom:20px;display:block;
+}
+.r h3{font-size:20px;line-height:1.2;margin-bottom:10px}
+.r p{font-size:14.8px;color:var(--text-soft);line-height:1.62}
+.r .rule{width:26px;height:3px;background:var(--spark);border-radius:2px;margin-bottom:20px}
+
+.closer{
+  margin-top:52px;background:var(--mint-soft);border-radius:var(--radius);
+  padding:32px 34px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+}
+.closer p{font-family:var(--font-display);font-size:20px;line-height:1.4;color:#0f3b34;flex:1;min-width:260px}
+.closer a{
+  font-weight:600;font-size:15px;text-decoration:none;color:var(--white);background:var(--ink);
+  border-radius:var(--radius-pill);padding:14px 24px;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:transform .22s var(--ease),background .22s var(--ease);
+}
+.closer a:hover{background:var(--deep-plus);transform:translateY(-1px)}
+
+/* ---------- footer ---------- */
+footer{background:var(--deep-plus);color:var(--text-on-dark-muted);padding:38px 0}
+.foot{display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:13px}
+.foot .logo span{font-size:17px}
+.foot nav{margin-left:auto;display:flex;gap:20px;flex-wrap:wrap}
+.foot a{text-decoration:none;transition:color .2s var(--ease)}
+.foot a:hover{color:var(--text-on-dark)}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:44px;padding:56px 0 64px}
+  .cards{grid-template-columns:1fr;gap:16px}
+  .lead{max-width:none}
+  .leaf{width:min(90vw,520px);right:-22%;top:auto;bottom:-4%;opacity:.07}
+}
+@media (max-width:640px){
+  .wrap,.bar-in{padding-left:20px;padding-right:20px}
+  .bar-note{display:none}
+  .hero-grid{padding:44px 0 52px}
+  .card{padding:28px 22px 24px}
+  .row{grid-template-columns:1fr}
+  .reasons{padding:60px 0}
+  .closer{padding:26px 24px;gap:20px}
+  .closer a{width:100%;justify-content:center}
+  .foot nav{margin-left:0;width:100%;gap:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="logo" href="#topo">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjMgMTggMTE5IDk3IiB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQ5MCI+PHBhdGggZmlsbD0iIzJFN0Q2RiIgZD0iTTQwLDk0IFE4Niw3NCAxMTAsMzAgUTEwMyw2MCA5Niw3MiBRNzAsOTAgNTIsOTAgWiI+PC9wYXRoPjxjaXJjbGUgZmlsbD0iI0YwNjIzRSIgY3g9IjI2IiBjeT0iOTIiIHI9IjExIj48L2NpcmNsZT48L3N2Zz4=" alt="Intentia">
+      <span>Intent<svg class="i" viewBox="0 0 30 96" aria-hidden="true"><rect x="10" y="38" width="10" height="58" rx="4.5" fill="currentColor"></rect><circle cx="15.5" cy="22" r="8.5" fill="#f0623e"></circle></svg>a</span>
+    </a>
+    <div class="bar-note">Acesso antecipado</div>
+  </div>
+</header>
+
+<main id="topo">
+
+  <section class="hero">
+    <svg class="leaf" viewBox="3 18 119 97" aria-hidden="true">
+      <path fill="#dcede8" d="M40,94 Q86,74 110,30 Q103,60 96,72 Q70,90 52,90 Z"></path>
+      <circle fill="#f0623e" cx="26" cy="92" r="11"></circle>
+    </svg>
+
+    <div class="wrap hero-grid">
+
+      <div>
+        <div class="eyebrow"><i></i> Lista de acesso antecipado</div>
+
+        <h1>A sua carreira sai da inércia.<br><em>E você entra primeiro.</em></h1>
+
+        <p class="lead">
+          O Intentia Hub reúne método, repertório e ferramenta num só lugar — para você
+          conduzir a sua carreira de propósito, e não reagir a ela. Deixe o seu e-mail
+          e receba o convite antes da abertura ao público.
+        </p>
+
+        <div class="capitals">
+          <div class="capitals-label">O que a plataforma constrói</div>
+          <ul>
+            <li>Resultados</li>
+            <li>Reputação</li>
+            <li>Relacionamentos</li>
+            <li>Aprendizagem</li>
+            <li>Credibilidade</li>
+            <li>Influência</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+
+        <div id="formArea">
+          <h2>Quero entrar em primeira mão</h2>
+          <p class="sub">Leva menos de um minuto. As informações abaixo ajudam a preparar a plataforma para quem vai chegar.</p>
+
+          <div class="err" id="err"></div>
+
+          <!-- ================================================================
+               FORMSPREE — formulário conectado à conta flbfreitas@gmail.com.
+               Se um dia trocar de serviço, mude só o endereço do action abaixo.
+               ================================================================ -->
+          <form id="form" action="https://formspree.io/f/mdenkvvk" method="POST" novalidate>
+
+            <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="_subject" value="Nova inscrição — acesso antecipado Intentia Hub">
+            <input type="hidden" name="origem" value="landing-acesso-antecipado">
+
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como você quer ser chamado" required>
+              <span class="fe" data-fe="nome"></span>
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+              <span class="fe" data-fe="email"></span>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="genero">Gênero</label>
+                <select id="genero" name="genero" required>
+                  <option value="" disabled selected>Selecione</option>
+                  <option>Mulher</option>
+                  <option>Homem</option>
+                  <option>Não-binário</option>
+                  <option>Outro</option>
+                  <option>Prefiro não informar</option>
+                </select>
+              <span class="fe" data-fe="genero"></span>
+              </div>
+
+              <div class="field">
+                <label for="faixa">Faixa etária</label>
+                <select id="faixa" name="faixa_etaria" required>
+                  <option value="" disabled selected>Selecione</option>
+                  <option>Até 24 anos</option>
+                  <option>25 a 34 anos</option>
+                  <option>35 a 44 anos</option>
+                  <option>45 a 54 anos</option>
+                  <option>55 anos ou mais</option>
+                </select>
+              <span class="fe" data-fe="faixa_etaria"></span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="escolaridade">Escolaridade</label>
+              <select id="escolaridade" name="escolaridade" required>
+                <option value="" disabled selected>Selecione</option>
+                <option>Ensino médio</option>
+                <option>Graduação em andamento</option>
+                <option>Graduação completa</option>
+                <option>Pós-graduação ou MBA</option>
+                <option>Mestrado</option>
+                <option>Doutorado</option>
+              </select>
+              <span class="fe" data-fe="escolaridade"></span>
+            </div>
+
+            <div class="consent">
+              <input id="ok" name="consentimento" type="checkbox" value="sim" required>
+              <label for="ok">
+                Concordo em receber o convite de acesso e novidades do Intentia, e li a
+                <a href="https://intentiahub.com/privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>.
+              </label>
+            </div>
+
+            <button type="submit" id="btn">
+              <span id="btnTxt">Entrar na lista</span>
+              <svg width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true">
+                <path d="M1 6h12M9 1.5 13.5 6 9 10.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </form>
+
+          <div class="assure">
+            <div>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7.3 5.4 10.2 11.5 4.1" stroke="#2e7d6f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Sem spam. Você recebe o aviso do lançamento e pode sair da lista quando quiser.
+            </div>
+            <div>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7.3 5.4 10.2 11.5 4.1" stroke="#2e7d6f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Os seus dados são usados só para preparar e liberar o seu acesso.
+            </div>
+          </div>
+        </div>
+
+        <div class="done" id="done">
+          <div class="mark">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" stroke="#2e7d6f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h2>Pronto. Você está na lista.</h2>
+          <p id="doneMsg">
+            Assim que o acesso abrir, o convite chega no seu e-mail — antes da abertura ao público.
+            Enquanto isso, nada mais precisa ser feito.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="reasons">
+    <div class="wrap">
+
+      <div class="sec-head">
+        <div class="sec-eyebrow">O que você encontra lá dentro</div>
+        <h2>Método, repertório e ferramenta — num só lugar.</h2>
+        <p>Carreira não se mede por cargo: mede-se pelo que fica com você quando o contexto muda. O Hub existe para construir isso de propósito.</p>
+      </div>
+
+      <div class="cards">
+
+        <article class="r">
+          <div class="rule"></div>
+          <span class="num">01 · Trilhas</span>
+          <h3>As jornadas que dão direção</h3>
+          <p>Do Retrato de Carreira à jornada do Capital de Carreira: áudio, playbook e missão por dia, com o que você escreve virando documento seu. Feito para caber na vida real — 15 a 20 minutos por dia.</p>
+        </article>
+
+        <article class="r">
+          <div class="rule"></div>
+          <span class="num">02 · Academia</span>
+          <h3>O repertório que sustenta</h3>
+          <p>Prática sem repertório vira receita. Mais de 100 leituras escritas na voz da casa — ensaios de fundamentos e textos pareados com cada etapa do percurso.</p>
+        </article>
+
+        <article class="r">
+          <div class="rule"></div>
+          <span class="num">03 · Lab</span>
+          <h3>As ferramentas que potencializam</h3>
+          <p>Tecnologia a serviço do método: organiza, sugere e devolve clareza. Nunca avaliar, nunca comparar, nunca expor — a decisão continua sendo sua, do primeiro ao último passo.</p>
+        </article>
+
+      </div>
+
+      <div class="closer">
+        <p>Do reagir ao conduzir. O primeiro passo é entrar na lista.</p>
+        <a href="#topo">
+          Quero o meu acesso
+          <svg width="14" height="11" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M1 6h12M9 1.5 13.5 6 9 10.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="logo" href="#topo">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjMgMTggMTE5IDk3IiB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQ5MCI+PHBhdGggZmlsbD0iIzJFN0Q2RiIgZD0iTTQwLDk0IFE4Niw3NCAxMTAsMzAgUTEwMyw2MCA5Niw3MiBRNzAsOTAgNTIsOTAgWiI+PC9wYXRoPjxjaXJjbGUgZmlsbD0iI0YwNjIzRSIgY3g9IjI2IiBjeT0iOTIiIHI9IjExIj48L2NpcmNsZT48L3N2Zz4=" alt="">
+      <span style="color:#f2f6f4">Intent<svg class="i" viewBox="0 0 30 96" aria-hidden="true"><rect x="10" y="38" width="10" height="58" rx="4.5" fill="currentColor"></rect><circle cx="15.5" cy="22" r="8.5" fill="#f0623e"></circle></svg>a</span>
+    </a>
+    <nav>
+      <a href="https://intentiahub.com/privacidade.html">Política de Privacidade</a>
+      <a href="https://intentiahub.com/termos.html">Termos de uso</a>
+      <a href="mailto:contato@intentiahub.com">Contato</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form = document.getElementById('form');
+  var btn  = document.getElementById('btn');
+  var txt  = document.getElementById('btnTxt');
+  var err  = document.getElementById('err');
+  var area = document.getElementById('formArea');
+  var done = document.getElementById('done');
+
+  function fail(msg){
+    err.textContent = msg;
+    err.classList.add('on');
+    btn.disabled = false;
+    txt.textContent = 'Entrar na lista';
+  }
+
+  // Limpa os erros por campo (o Formspree pode devolver erro em campo específico).
+  function limpar(){
+    err.classList.remove('on');
+    Array.prototype.forEach.call(form.querySelectorAll('.fe'), function(el){
+      el.textContent = '';
+      el.classList.remove('on');
+    });
+    Array.prototype.forEach.call(form.querySelectorAll('[aria-invalid]'), function(el){
+      el.removeAttribute('aria-invalid');
+    });
+  }
+
+  // Distribui os erros: os que têm campo vão para baixo do campo; o resto vai para o topo.
+  function mostrarErros(lista){
+    var sobrou = [];
+    lista.forEach(function(e){
+      var campo = e.field || e.name;
+      var alvo  = campo ? form.querySelector('.fe[data-fe="' + campo + '"]') : null;
+      if(alvo){
+        alvo.textContent = e.message || 'Confira este campo.';
+        alvo.classList.add('on');
+        var input = form.querySelector('[name="' + campo + '"]');
+        if(input){ input.setAttribute('aria-invalid','true'); }
+      } else {
+        sobrou.push(e.message);
+      }
+    });
+    if(sobrou.length){ fail(sobrou.join(' ')); }
+    else {
+      btn.disabled = false;
+      txt.textContent = 'Entrar na lista';
+      var primeiro = form.querySelector('[aria-invalid="true"]');
+      if(primeiro){ primeiro.focus(); }
+    }
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    limpar();
+
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+
+    btn.disabled = true;
+    txt.textContent = 'Enviando…';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(r){
+      if(r.ok){
+        area.style.display = 'none';
+        done.classList.add('on');
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      return r.json().then(function(d){
+        if(d && d.errors && d.errors.length){ mostrarErros(d.errors); }
+        else if(r.status === 429){ fail('Muitas tentativas seguidas. Espere um instante e tente de novo.'); }
+        else { fail('Não foi possível enviar agora. Tente novamente em instantes.'); }
+      }).catch(function(){
+        fail('Não foi possível enviar agora. Tente novamente em instantes.');
+      });
+    })
+    .catch(function(){
+      fail('Sem conexão com o servidor. Verifique a internet e tente de novo.');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
