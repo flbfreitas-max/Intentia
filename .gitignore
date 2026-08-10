@@ -20,6 +20,19 @@ Mapeamento/
 *.pptx
 amostra-dossie-*.jpg
 
+# Saida do /graphify — grafo, relatorio e cache (4,5 MB). E gerada a partir do
+# proprio repositorio e se reconstroi com `/graphify --update`, quase toda do
+# cache. Nao e parte do site.
+graphify-out/
+
+# Videos renderizados. Ficam fora por dois motivos: o repositorio e servido pelo
+# GitHub Pages, e o GitHub avisa acima de 50 MB e RECUSA acima de 100 MB por
+# arquivo — o retrato-editado.mp4 tem 89 MB e faria o push falhar. Alem disso,
+# binario grande nunca sai do historico depois de entrar. A fonte de edicao esta
+# no projeto "Video Retrato"; para publicar, hospedar fora (ou usar Git LFS).
+*.mp4
+*.mov
+
 # Fontes da Academia (artigos do MIT SMR, em PDF e captura de tela).
 # São material de leitura interna; republicar o texto integral num site
 # acessível é proibido pelos termos da revista. O que vai ao ar é só o
