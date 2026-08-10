@@ -118,6 +118,22 @@ const CFG = {
       { slug: 'resumo-a-folga-que-faz-o-sistema-durar-sharif-2017',
         autor: 'Marissa Sharif · Knowledge at Wharton · 2017',
         tpl: 'resumo-o-poder-das-pequenas-vitorias-amabile-kramer-2011.html' },
+  'A porta aberta que você nunca vai usar':
+      { slug: 'resumo-a-porta-aberta-que-voce-nunca-vai-usar-li-2022',
+        autor: 'Xiaomeng Li e colegas · Psychology Research and Behavior Management · 2022',
+        tpl: 'resumo-decidir-melhor-sobre-a-carreira-yen-2021.html' },
+  'Conhecer o viés não é o bastante — e a lista é':
+      { slug: 'resumo-conhecer-o-vies-nao-e-o-bastante-korteling-2021',
+        autor: 'Hans Korteling, Jasmin Gerritsma e Alexander Toet · Frontiers in Psychology · 2021',
+        tpl: 'resumo-armadilhas-escondidas-da-decisao-hammond-1998.html' },
+  'A restrição funcionou melhor que a boa intenção':
+      { slug: 'resumo-a-restricao-funcionou-melhor-milkman-volpp-minson',
+        autor: 'Katherine Milkman, Kevin Volpp e Julia Minson · Knowledge at Wharton · Management Science',
+        tpl: 'resumo-intencoes-de-implementacao-gollwitzer-1999.html' },
+  'O ritual não melhora o desempenho — muda como o erro chega':
+      { slug: 'resumo-o-ritual-nao-melhora-o-desempenho-hobson-2017',
+        autor: 'Nicholas Hobson, Devin Bonk e Michael Inzlicht · PeerJ · 2017',
+        tpl: 'resumo-o-efeito-do-recomeco-dai-milkman-riis-2014.html' },
 };
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
