@@ -1167,3 +1167,163 @@ O limite mais forte é o domínio: são cientistas, medidos por publicação e p
 5. Tácito não se pega por pergunta, se pega por convivência em trabalho real. Prefira quem você vê decidindo a quem admira de longe.
 
 **Referência.** Leitura de referência: "What's the Secret Ingredient to Great Mentorship?", Kellogg Insight, Kellogg School of Management, Northwestern University, 2020 — sobre Ma, Y., Mukherjee, S., & Uzzi, B. (2020), "Mentorship and protégé success in STEM fields", Proceedings of the National Academy of Sciences (PNAS), acesso aberto. Estudo comentado da Academia Intentia; a análise e as ferramentas são próprias e não reproduzem a obra.
+
+---
+
+## Andar de lado não é andar para trás
+
+**Dia 2 · Carreira não linear**
+
+_Estudo do Intentia inspirado em um artigo de Brian Elliott sobre movimento lateral de carreira — quando ele compensa, e o que faz um lado dar certo (MIT Sloan Management Review, 2024)._
+
+### 1. Por que esta leitura importa
+
+A escada é uma metáfora ruim e continua governando decisão de carreira: se não é para cima, é fracasso. Elliott argumenta contra isso a partir de dois lados. Do lado do desgaste, os números que ele reúne descrevem uma população em atrito — **51%** dos trabalhadores relatam terminar o dia esgotados e **44%** relatam esgotamento profissional. Do lado do mercado, a folga que existia acabou: a taxa de desemprego rompeu **4%** pela primeira vez desde 2021, e a proporção de vagas abertas por trabalhador desempregado caiu para **1,2**, contra mais de duas no pico de 2022. Quer dizer: sair para fora ficou mais caro justamente quando mais gente quer sair. E aí o movimento lateral **dentro** de onde se está deixa de ser consolo e passa a ser a opção com melhor relação entre risco e retorno. Ele cita o caso da Allstate, que ao mudar o foco dos recrutadores elevou a contratação interna de **45% para 60%**, e a prática do Google, onde engenheiros podiam trocar de equipe com liberdade. A frase que carrega o texto é direta: mover-se de lado, ou mesmo descer um degrau, pode compensar no longo prazo se a atitude for a certa.
+
+> **A leitura do Intentia** — A pergunta não é se o movimento é para cima. É se ele te põe de novo na curva de aprendizagem — porque é ali que capital de carreira se forma, e não no degrau.
+
+### 2. A contribuição central dos autores
+
+A contribuição prática do artigo é separar dois movimentos que são tratados como um só. Um lado **dentro da mesma função**, mudando de time ou de produto, é de risco baixo: o repertório continua valendo e a credibilidade se transfere. Um lado **entre funções** é de risco alto: a pessoa recomeça a construir competência técnica e reputação ao mesmo tempo. Confundir os dois é o que produz tanto a paralisia — tratar tudo como salto no escuro — quanto o arrependimento, ao tratar um salto no escuro como se fosse mudança de time. Elliott também insiste numa distinção de rede que vale mais que o resto do texto: **aliados** são quem te dá informação, e **patrocinadores** são quem te defende ativamente. A frase dele explica por quê: saber que alguém está comprometido em te ajudar durante a transição reduz o grau de risco pessoal. Não é conforto emocional — é redução mensurável de exposição, porque num movimento lateral a pessoa perde temporariamente o histórico que a protegia. E há um argumento que ele traz do lado da organização, útil de conhecer porque é o que faz um pedido ser aceito: diversidade funcional e de time é uma das maiores alavancas de inovação, e mobilidade interna reduz esgotamento sem perder produtividade. Ou seja, quem pede um lado não está pedindo favor. Essa é a contribuição do artigo. O que vem a seguir é a leitura do Intentia.
+
+### 3. Como o Intentia interpreta essas ideias
+
+A etapa da carreira não linear já desmonta a escada. Este texto acrescenta a régua para decidir **qual** movimento lateral, e é aqui que o método puxa a distinção de risco para dentro da ferramenta. Antes de avaliar uma oportunidade de lado, classifique: mesma função ou função diferente? A resposta muda tudo o que vem depois — o tempo esperado até render, a quantidade de apoio necessária, e a honestidade da conversa com quem depende de você financeiramente.
+
+Sobre aliado e patrocinador, o método adota a distinção porque ela corrige um erro comum de rede: acumular gente que informa e não ter ninguém que defende. Informação é abundante e barata; defesa é escassa e custa reputação de quem defende. Num movimento lateral, a pergunta que decide não é "quem pode me contar como é lá" — é "quem vai dizer meu nome numa sala onde eu não estou".
+
+Há um ponto em que o Intentia lê o artigo contra a corrente. Elliott escreve para um contexto de empresa grande com programa de mobilidade interna — Google, Allstate, PepsiCo. A maior parte das pessoas não tem isso. A tradução da casa é que a lógica sobrevive sem o programa: o movimento lateral existe em qualquer lugar onde haja mais de uma frente de trabalho, e às vezes ele não tem nome nem mudança de cargo — é assumir um projeto de outra área, é a substituição temporária de alguém, é o pedaço de escopo que ninguém quer. Esses são laterais reais e não aparecem em organograma.
+
+E o método faz uma correção de expectativa que o artigo não faz. Os números de esgotamento e de mercado apertado explicam **por que** o lado se tornou atraente agora, mas não são argumento para se mexer. Mudar por exaustão é a pior razão possível para escolher direção — é a decisão tomada no improviso que a trilha inteira tenta evitar. O lado compensa quando aparece na frente de uma direção já escolhida. Antes disso, é fuga com outro nome.
+
+### 4. Onde esta visão encontra limites
+
+O limite mais forte é de fonte: o artigo reúne dados de pesquisa de opinião — os 51% e os 44% vêm de levantamento com autorrelato — e casos de empresa, não estudo com desenho causal. Nada ali demonstra que quem se moveu de lado ficou melhor do que quem não se moveu; mostra que empresas que facilitam o movimento relatam menos esgotamento, o que é diferente. Segundo, os números de mercado são americanos e de 2024; a leitura brasileira é outra. Terceiro, os casos são de empresas grandes; para quem é de empresa pequena, autônomo ou de operação, o utilizável é o raciocínio, não o mecanismo. Por fim, há um viés de quem escreve: o interesse do empregador em manter gente sem promover é real — o que não invalida o argumento, mas pede que quem lê pergunte a quem serve o conselho.
+
+### 5. Aplicação prática
+
+**Ferramenta Intentia · Classificar o lado**
+
+1. Escreva o movimento lateral que está no seu horizonte, mesmo que informal — projeto de outra área, escopo que ninguém quer, substituição temporária.
+2. Classifique: **mesma função** (risco baixo, repertório se transfere) ou **função diferente** (risco alto, recomeça competência e reputação juntas)?
+3. Escreva o que você espera **aprender** com ele. Se a resposta for só "sair de onde estou", não é um lado — é fuga, e ela não escolhe direção.
+4. Nomeie um aliado (te dá informação) e um patrocinador (diz seu nome onde você não está). Se você não tem o segundo, essa é a única tarefa antes de se mexer.
+5. Confira contra a direção que você escolheu no Bloco 1: este lado te aproxima dela, ou só te tira de onde dói?
+
+### 6. O que levar desta leitura
+
+1. A escada é metáfora ruim. A pergunta é se o movimento te devolve à curva de aprendizagem, não se ele é para cima.
+2. Lado na mesma função é risco baixo; lado entre funções é risco alto. Tratar os dois como um só produz paralisia ou arrependimento.
+3. Aliado informa, patrocinador defende. No lado você perde o histórico que te protegia, e é o patrocinador que cobre isso.
+4. Mobilidade lateral interessa a quem emprega: diversidade funcional é alavanca de inovação. Quem pede um lado não pede favor.
+5. Mudar por exaustão é a pior razão para escolher direção. O lado compensa quando aparece na frente de uma direção já escolhida.
+
+**Referência.** Leitura de referência: Elliott, B. (2024). "When Moving Sideways Makes Sense". MIT Sloan Management Review, 23 de setembro de 2024 — com dados de esgotamento atribuídos a levantamento da SHRM e casos de Allstate, Google e PepsiCo. A imagem da carreira como "jungle gym, não escada" é atribuída no artigo a Pattie Sellers. Estudo comentado da Academia Intentia; a análise e as ferramentas são próprias e não reproduzem a obra.
+
+---
+
+## Saber que pode recusar não é saber como
+
+**Dia 6 · Essencial**
+
+_Estudo do Intentia inspirado na pesquisa de Rachel Schlund, Roseanna Sommers e Vanessa Bohns sobre por que dizer não é difícil mesmo quando ninguém obriga a dizer sim (Scientific Reports, 2024)._
+
+### 1. Por que esta leitura importa
+
+Todo conselho sobre priorizar termina no mesmo lugar: aprenda a dizer não. Ninguém explica por que é difícil, e a pesquisa aqui responde de um jeito que reorganiza o problema. Os autores partem de uma constatação simples: informar alguém de que ele **pode** recusar não é o que falta. O que falta é saber **como** recusar sem parecer grosseiro. A frase que resume o achado é essa: mesmo quando a pessoa é tranquilizada de que pode dizer não, o problema real é saber como fazê-lo com elegância. Para testar, eles montaram dois experimentos com um pedido deliberadamente invasivo — destravar o próprio celular e entregá-lo ao pesquisador. Um grupo ouvia "se você quiser recusar, pode recusar". O outro ouvia a mesma coisa **mais as palavras exatas**: "se quiser recusar, diga: prefiro não". No primeiro estudo, com 174 participantes, a sensação de liberdade para recusar subiu de 4,25 para 4,71 numa escala. No segundo, com 323 participantes e roteiros refinados, subiu de 4,51 para 4,83. A meta-análise dos dois dá um efeito pequeno mas consistente — d = 0,27, p = 0,002. E há um resultado que precisa ser dito no mesmo parágrafo, porque é o que separa esta leitura de uma promessa: **o comportamento não mudou de forma significativa.** As pessoas entregaram o celular quase na mesma proporção. O que mudou foi a experiência de estar escolhendo.
+
+> **A leitura do Intentia** — Você não precisa de permissão para recusar. Precisa da frase. E não é a mesma coisa: a permissão você já tem, e ela nunca resolveu nada.
+
+### 2. A contribuição central dos autores
+
+A contribuição é isolar o mecanismo. A explicação que os autores propõem é que existe um **roteiro implícito** de polidez, e ele determina a concordância antes de qualquer avaliação do pedido. Recusar não custa por falta de direito: custa porque negar um pedido insinua algo negativo sobre quem pediu, e as normas de gentileza pressupõem que se aceite. Dar à pessoa um roteiro explícito — palavras prontas, curtas, neutras — **compete com esse roteiro automático** e o sobrepõe. É por isso que a intervenção funciona no plano da experiência: ela não muda o que é permitido, muda o que está disponível na hora. E o detalhe metodológico que dá força ao desenho é a escolha do pedido: destravar o celular e entregá-lo é invasivo o suficiente para que quase ninguém queira aceitar, o que faz da concordância uma medida limpa da pressão social. Os autores também são explícitos sobre o que não encontraram, e isso conta a favor deles: com 174 e depois 323 participantes, a diferença de comportamento — 70% contra 80% no primeiro, 78% contra 83% no segundo — não alcançou significância, e a meta-análise ficou na fronteira, em p = 0,053. Eles relatam do mesmo jeito. Essa é a contribuição do estudo. O que vem a seguir é a leitura do Intentia.
+
+### 3. Como o Intentia interpreta essas ideias
+
+A etapa do essencial pede subtração, e subtrair quase sempre significa recusar algo que outra pessoa pediu. O método adota este estudo como correção de rota de um conselho que ele mesmo poderia dar mal. Dizer "aprenda a dizer não" é dar permissão — e permissão é justamente o que não estava faltando. O que a etapa passa a pedir é concreto: **escreva as frases antes de precisar delas.**
+
+Duas ou três frases, curtas, que você usaria sem pensar. "Prefiro não." "Não vou conseguir dar conta disso com a qualidade que precisa." "Consigo em duas semanas, não antes." A pesquisa mostra que a existência da frase muda a experiência de estar decidindo — e essa mudança é o que interessa aqui, porque a etapa é sobre a pessoa recuperar o comando das próprias escolhas, não sobre reduzir uma métrica.
+
+E é exatamente por isso que o método faz questão de registrar o resultado nulo em vez de esconder. **A frase não vai fazer você recusar mais.** Se a promessa fosse essa, seria mentira, e a etapa perderia a confiança de quem testar e não vir diferença na contagem. O que ela faz é fazer o sim voltar a ser sim. Alguém que aceita sabendo que tinha a frase à mão e escolheu não usá-la está em outra posição — aceitou — do que alguém que aceitou porque não sabia como sair. O trabalho não é dizer não mais vezes; é parar de dizer sim por falta de repertório.
+
+Há uma consequência de vocabulário que o método puxa daqui. Quando alguém diz "não consegui dizer não", quase sempre não é fraqueza de caráter: é ausência de frase no momento em que a frase era necessária. Trocar o diagnóstico muda a solução — de trabalhar a personalidade para escrever três linhas.
+
+E uma nota sobre elegância, porque o achado depende dela. As frases funcionam por serem neutras. Recusa que explica demais convida negociação; recusa que se desculpa demais transfere para o outro a tarefa de te absolver. "Prefiro não" funciona porque não abre porta.
+
+### 4. Onde esta visão encontra limites
+
+O limite mais importante é o que já está dito: **o efeito no comportamento não foi significativo.** Quem espera recusar mais depois de escrever as frases vai se frustrar, e a etapa precisa ser honesta sobre isso. Segundo, os efeitos na sensação de liberdade são pequenos — d = 0,27 é modesto, mesmo consistente. Terceiro, e é grande: as amostras são universitárias, com média de 18,75 e 22,63 anos, o que é a população menos parecida com quem faz esta trilha em experiência de trabalho e em custo real de recusar. Quarto, o pedido testado — entregar o celular a um estranho — não tem a estrutura de um pedido do chefe: não há relação continuada, não há avaliação de desempenho, não há dependência econômica. Recusar no trabalho tem consequência que o laboratório não reproduz, e é plausível que a frase pronta ajude menos exatamente onde ajudaria mais. Por fim, os estudos são de 2024 e recentes; o efeito é pequeno e ainda não tem replicação independente ampla.
+
+### 5. Aplicação prática
+
+**Ferramenta Intentia · As três frases**
+
+1. Escreva três frases de recusa, prontas, curtas, neutras. Sem explicação e sem desculpa. Uma para prazo, uma para escopo, uma para pedido que não é seu.
+2. Leia em voz alta. Se alguma soar como abertura de negociação, corte pela metade.
+3. Escolha onde elas ficam guardadas — bloco de notas, nota fixa, o que você abre sem procurar.
+4. Uma semana: em quantos pedidos você **soube** que tinha a frase? Conte isso, não o número de recusas.
+5. Ao fim da semana, releia os sins que você deu. Quantos foram escolha, e quantos foram falta de repertório?
+
+### 6. O que levar desta leitura
+
+1. Você já tem permissão para recusar. O que falta é a frase — e são coisas diferentes.
+2. Existe um roteiro implícito de polidez que determina a concordância antes da avaliação. Um roteiro explícito compete com ele.
+3. O efeito medido foi na **sensação de liberdade** (d = 0,27), não no comportamento. Quem espera recusar mais vai se frustrar.
+4. O ganho real: o sim volta a ser sim. Aceitar tendo a frase à mão é outra posição que aceitar por não saber sair.
+5. Recusa neutra funciona. Explicar demais convida negociação; desculpar-se demais transfere ao outro a tarefa de te absolver.
+
+**Referência.** Leitura de referência: Schlund, R., Sommers, R., & Bohns, V. K. (2024). "Giving people the words to say no leads them to feel freer to say yes". Scientific Reports, 5 de janeiro de 2024. Estudo comentado da Academia Intentia; a análise e as ferramentas são próprias e não reproduzem a obra.
+
+---
+
+## A folga que faz o sistema durar
+
+**Dia 17 · Sistema de manutenção**
+
+_Estudo do Intentia inspirado na pesquisa de Marissa Sharif sobre "reservas de emergência" — a folga embutida na meta que faz as pessoas chegarem mais longe do que metas sem folga (Knowledge at Wharton, 2017)._
+
+### 1. Por que esta leitura importa
+
+O desenho de meta que quase todo mundo usa é o mais frágil que existe: todos os dias, sem falta. Marissa Sharif testou isso contra uma alternativa que parece mais frouxa e produz mais. Ela pediu a participantes que instalassem um aplicativo de contagem de passos e dividiu em três grupos. O primeiro tinha de bater a meta — entre sete e dez mil passos — **todos os sete dias** da semana. O segundo, **cinco dias** por semana. O terceiro tinha a meta dos sete dias **mais duas folgas de emergência**, que podia usar quando quisesse. O grupo com folga de emergência bateu a meta com mais frequência que os outros dois e acumulou **mais passos no total**. Repare no que isso significa: a folga não custou desempenho. Ela produziu desempenho. E os participantes ainda **preferiam** metas com reserva a metas sem — ou seja, o desenho que funciona melhor também é o que as pessoas escolhem, o que é raro.
+
+> **A leitura do Intentia** — Sistema que não prevê a semana ruim não é sistema, é aposta. A folga não é concessão à sua fraqueza: é a peça que faz o resto durar.
+
+### 2. A contribuição central dos autores
+
+A contribuição é mostrar que a comparação certa não é entre exigência alta e exigência baixa, e sim entre **exigência alta sem escapatória** e **exigência alta com escapatória nomeada**. O grupo dos cinco dias por semana é o controle que torna o achado interessante: ele tem a mesma folga na prática — dois dias livres — e rendeu menos. A diferença não está na quantidade de dias, está em como a folga é enquadrada. Sharif propõe dois mecanismos para explicar. O primeiro é a **preservação da reserva**: as pessoas resistem a gastar o que foi chamado de emergência, guardam para quando for de verdade, e essa resistência mantém uma tensão motivacional que a meta de cinco dias não cria — ali o dia livre é direito, não reserva. O segundo é o **amortecimento do fracasso**: quando a falha acontece, quem tem reserva usa a reserva e sente menos culpa, em vez de concluir que quebrou tudo e abandonar. É o mesmo evento com duas leituras possíveis, e o desenho decide qual delas ocorre. E Sharif nomeia a pergunta aberta, o que é sinal de honestidade: haverá um limiar em que reserva demais — quatro dias de folga, por exemplo — dissolve a tensão e piora o resultado? Ela não sabe, e diz que não sabe. Essa é a contribuição da pesquisa. O que vem a seguir é a leitura do Intentia.
+
+### 3. Como o Intentia interpreta essas ideias
+
+Esta é a etapa do sistema de manutenção, e este estudo entrega a peça que faltava — a que responde pelo que acontece na primeira semana em que a vida atravessa. O método passa a pedir que a folga seja **desenhada junto com o hábito, e não improvisada quando ele falhar**. Duas folgas por semana, nomeadas como emergência, escritas no mesmo lugar em que está o registro.
+
+A distinção entre "cinco dias por semana" e "sete dias com duas folgas" é o achado mais fino e o mais fácil de desperdiçar, então o método a explicita: **é a mesma aritmética e não é o mesmo desenho.** No primeiro, a pessoa entra na semana esperando não fazer dois dias. No segundo, entra esperando fazer sete e sabendo que tem margem. A intenção declarada muda o comportamento, e a folga permanece intacta na maioria das semanas justamente porque foi chamada de emergência.
+
+O amortecimento do fracasso é o que liga esta etapa à anterior. O mapa de imunidade à mudança trata do compromisso oculto que sabota — e a queda de uma semana é o momento em que esse compromisso ganha o argumento mais persuasivo que existe: "está vendo, não é para você". A reserva desarma esse argumento antes de ele ser feito. Usar uma folga prevista não é falhar; é o sistema funcionando como projetado. Essa reinterpretação é metade do valor do desenho.
+
+Sobre a pergunta aberta de Sharif, o método toma uma posição e diz que é posição, não evidência: **duas por semana**, não quatro. A razão é a lógica da própria pesquisa — se o mecanismo é a resistência a gastar, então reserva abundante deixa de ser reserva e passa a ser regra. Quem quiser testar outro número, teste; mas comece com pouco, porque é o pouco que carrega tensão.
+
+E uma advertência sobre transferência, para não vender mais do que se comprou: contar passos é um comportamento simples, diário e mensurável. Os hábitos desta etapa muitas vezes não são — escrever, estudar, procurar conversa difícil. A folga de emergência é um princípio de desenho que se transporta bem; os números do estudo não se transportam.
+
+### 4. Onde esta visão encontra limites
+
+O primeiro limite é o comportamento estudado: passos. É diário, contável, com feedback imediato e sem dependência de outras pessoas — quase o oposto do trabalho de carreira. Segundo, a pesquisa é de 2017 e vem de um contexto de pesquisa de consumo, com aplicação sugerida a programas de bem-estar e produtos de saúde; o destinatário original não é a pessoa desenhando o próprio sistema. Terceiro, e o próprio autor levanta: não se sabe o limiar. Duas folgas funcionaram; quatro pode não funcionar, e não há número testado. Quarto, o efeito depende de a reserva ser percebida como emergência — o que é uma condição psicológica, não uma regra escrita. Quem usa as duas folgas toda semana por padrão não tem reserva, tem meta de cinco dias com nome bonito, e a pesquisa não diz nada sobre esse caso. Por fim, o desfecho medido é adesão e volume, não permanência: nada aqui mostra que o hábito sobrevive a meses.
+
+### 5. Aplicação prática
+
+**Ferramenta Intentia · A reserva de emergência**
+
+1. Escreva o hábito e a cadência cheia — quantos dias por semana, sem desconto.
+2. Acrescente **duas** folgas de emergência por semana. Escreva a palavra "emergência" ao lado; o nome faz parte do mecanismo.
+3. Escreva a regra de uso numa frase: quando você considera que é emergência de verdade? Decidir agora evita negociar consigo no dia ruim.
+4. Escreva também a frase que você vai ler quando usar uma: "usei a reserva, o sistema está funcionando como projetado".
+5. Ao fim de quatro semanas, conte quantas reservas você gastou. Se gastou todas as oito, o seu desenho é de cinco dias — reescreva a cadência em vez de fingir.
+
+### 6. O que levar desta leitura
+
+1. Meta com duas folgas de emergência bateu mais vezes e acumulou mais passos que meta de sete dias corridos **e** que meta de cinco dias por semana.
+2. "Cinco dias por semana" e "sete dias com duas folgas" têm a mesma aritmética e não são o mesmo desenho. O enquadramento é o que produz o resultado.
+3. Dois mecanismos: resiste-se a gastar o que se chama de emergência, e a reserva impede que uma falha vire abandono.
+4. Usar uma folga prevista não é falhar — é o sistema funcionando. Essa reinterpretação desarma o "está vendo, não é para você".
+5. Comece com duas, não quatro. Reserva abundante deixa de ser reserva e vira regra — e é a resistência a gastar que carrega a tensão.
+
+**Referência.** Leitura de referência: "Why Flexibility Is the Key to Reaching Your Goals", Knowledge at Wharton, Wharton School of the University of Pennsylvania, 28 de dezembro de 2017 — sobre a pesquisa de Marissa Sharif (Wharton) a respeito de reservas de emergência em metas. Estudo comentado da Academia Intentia; a análise e as ferramentas são próprias e não reproduzem a obra.

@@ -106,6 +106,18 @@ const CFG = {
       { slug: 'resumo-o-que-o-mentor-ensina-uzzi-2020',
         autor: 'Brian Uzzi, Yifang Ma e Satyam Mukherjee · Kellogg Insight · PNAS · 2020',
         tpl: 'resumo-a-saida-tambem-e-um-vinculo-laker-2023.html' },
+  'Andar de lado não é andar para trás':
+      { slug: 'resumo-andar-de-lado-nao-e-andar-para-tras-elliott-2024',
+        autor: 'Brian Elliott · MIT Sloan Management Review · 2024',
+        tpl: 'resumo-repensar-trajetorias-a-escada-ultrapassada-rinne-2023.html' },
+  'Saber que pode recusar não é saber como':
+      { slug: 'resumo-saber-que-pode-recusar-schlund-2024',
+        autor: 'Rachel Schlund, Roseanna Sommers e Vanessa Bohns · Scientific Reports · 2024',
+        tpl: 'resumo-a-busca-disciplinada-por-menos-mckeown-2012.html' },
+  'A folga que faz o sistema durar':
+      { slug: 'resumo-a-folga-que-faz-o-sistema-durar-sharif-2017',
+        autor: 'Marissa Sharif · Knowledge at Wharton · 2017',
+        tpl: 'resumo-o-poder-das-pequenas-vitorias-amabile-kramer-2011.html' },
 };
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
