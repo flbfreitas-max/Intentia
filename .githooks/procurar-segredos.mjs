@@ -22,6 +22,11 @@ const PADROES = [
   ['Supabase service_role (JWT)', /\beyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}/],
   ['Resend (chave de API)', /\bre_[A-Za-z0-9]{8,}_[A-Za-z0-9]{16,}/],
   ['Google / Gemini (chave de API)', /\bAIza[0-9A-Za-z_-]{35}\b/],
+  // O Google mudou o formato: as chaves novas do AI Studio começam com "AQ." e
+  // não casavam com o padrão acima — passavam batidas por este guarda. A que
+  // está em uso tem "AQ." + 50 caracteres; exijo 40+ para não gritar à toa.
+  // Varri os 368 arquivos rastreados com este padrão: zero falso positivo.
+  ['Google / Gemini (chave de API, formato novo)', /\bAQ\.[A-Za-z0-9_-]{40,}\b/],
   ['GitHub (token)', /\bgh[pousr]_[A-Za-z0-9]{36}\b/],
   ['OpenAI / Anthropic (chave)', /\b(sk-ant-|sk-proj-|sk-)[A-Za-z0-9_-]{24,}/],
   ['Chave privada (bloco PEM)', /-----BEGIN [A-Z ]*PRIVATE KEY-----/],
