@@ -5,13 +5,13 @@ Plataforma da trilha **Capital de Carreira** — Dia 0 (travessia) + **21 dias e
 Cada dia reúne um áudio, um conteúdo curto e uma missão de 15–20 minutos, além de
 material, playbook, Academia (resumos comentados) e roteiro de IA.
 
-A trilha é a continuação do **Retrato de Carreira** (produto de entrada, app
+A trilha é a continuação da **Trilha Retrato de Carreira** (produto de entrada, app
 próprio com Supabase): a pessoa chega com o Retrato pronto e o traz para a
 trilha na **ponte do Dia 0** ("Traga o seu Retrato": manchete, prioridade e
 valores → chave `intentia-dia0`, lida pelas Etapas 5 e 21).
 
 > Histórico: até 26/07/2026 a trilha tinha 28 dias; o antigo Bloco 1 "Onde
-> estou" (Dias 1–7) foi substituído pelo Retrato de Carreira e os demais dias
+> estou" (Dias 1–7) foi substituído pela Trilha Retrato de Carreira e os demais dias
 > foram renumerados (8–28 → 1–21).
 
 ## Site estático

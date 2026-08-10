@@ -9,7 +9,7 @@ Versão 1.0 · 22/07/2026 · Preparado a partir do protótipo em `Trilha Nova Es
 
 Este documento foi escrito para a trilha de 28 dias. Em 26/07/2026 a estrutura mudou; **leia todas as referências abaixo através deste mapeamento**:
 
-- O antigo **Bloco 1 "Onde estou" (Dias 1–7)** foi **substituído pelo produto de entrada Retrato de Carreira** (app próprio: Vercel + Supabase, repositório `Intentia_Mapa_Estrategico/app`). A trilha não mapeia mais os ativos — ela **parte do Retrato**.
+- O antigo **Bloco 1 "Onde estou" (Dias 1–7)** foi **substituído pelo produto de entrada, a Trilha Retrato de Carreira** (app próprio: Vercel + Supabase, repositório `Intentia_Mapa_Estrategico/app`). A trilha não mapeia mais os ativos — ela **parte do Retrato**.
 - Os antigos **Dias 8–28 viraram Dias 1–21**, em **3 blocos**: Direção (1–7), Amplificação (8–14), Rotina (15–21). Marcos nas Etapas **7 (Direção Escolhida), 14 (Plano) e 21 (Fechamento)**. Ao ler "Dia N" (N ≥ 8) neste documento, subtraia 7.
 - O **Dia 0** foi reescrito: recebe quem chega do Retrato e tem a **ponte de dados** — formulário "Traga o seu Retrato" (manchete revisada, prioridade, valores) que grava `intentia-dia0` (session + localStorage) e marca a Etapa 0 no `intentia-progresso`. **As Etapas 5 e 21 leem essa chave** (cruzamento de valores e comparação de manchetes).
 - O encadeamento de dados citado no §de dados passa a ser: `escolhaFrase` vive no **Dia 7** (ex-14), `novaDirecao` no **Dia 20** (ex-27), lidos pelo **Dia 21** (ex-28). A chave mais lida é `intentia-dia7`.
