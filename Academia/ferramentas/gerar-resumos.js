@@ -82,6 +82,14 @@ const CFG = {
         // e a propria pagina. As duas de feedback que moravam aqui sairam do
         // acervo no realinhamento — o dia e sobre ambiente, nao sobre critica.
         tpl: 'resumo-o-ambiente-decide-antes-de-voce-wood.html' },
+  'A mesma carga, em outra ordem, dá outro resultado':
+      { slug: 'resumo-a-mesma-carga-em-outra-ordem-kellogg-2023',
+        autor: 'Kellogg Insight · Kellogg School of Management, Northwestern University · 2023',
+        tpl: 'resumo-cuidado-gestor-ocupado-bruch-ghoshal-2002.html' },
+  'Pensar sobre si é remédio ou veneno, dependendo da distância':
+      { slug: 'resumo-pensar-sobre-si-e-remedio-ou-veneno-kross-2023',
+        autor: 'Ethan Kross, Madeline Ong e Ozlem Ayduk · Annual Review of Organizational Psychology and Organizational Behavior · 2023',
+        tpl: 'resumo-o-poder-da-autorreflexao-bailey-rehman-2022.html' },
 };
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

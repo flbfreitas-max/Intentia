@@ -844,3 +844,109 @@ O primeiro limite é de tradução: a pesquisa de hábito é feita em maioria co
 5. Mudança de casa, de função ou de arranjo é janela: hábito velho solta. Serve para instalar o novo e para perder o bom sem notar.
 
 **Referência.** Leitura de referência: "Good Habits, Bad Habits: A Conversation with Wendy Wood", Behavioral Scientist — conversa a partir de Wood, W. (2019). "Good Habits, Bad Habits: The Science of Making Positive Changes That Stick", Farrar, Straus and Giroux. O dado dos 43% vem da linha de pesquisa de diário da autora e colaboradores. Estudo comentado da Academia Intentia; a análise e as ferramentas são próprias e não reproduzem a obra.
+
+---
+
+## A mesma carga, em outra ordem, dá outro resultado
+
+**Dia 13 · Energia e prioridades**
+
+_Estudo do Intentia inspirado em uma compilação de cinco pesquisas da Kellogg School of Management sobre como a ordem e o horário das tarefas mudam o resultado do trabalho (Kellogg Insight, 2023)._
+
+### 1. Por que esta leitura importa
+
+Quase todo conselho sobre produtividade fala de quanto se faz. Estas cinco pesquisas falam de **quando** — e o achado comum é que a mesma carga de trabalho, colocada em outra ordem, produz um resultado diferente. Maryam Kouchaki acompanhou médicos de emergência por seis anos e observou o que eles escolhem quando podem escolher: sob sobrecarga, a mão vai para o caso fácil. O efeito de longo prazo é o inverso do esperado — quem pegava os casos difíceis foi quem aprendeu e passou a gerar mais valor para o hospital. Maria Ibanez mediu fiscais sanitários e encontrou um número que incomoda: **cada hora mais tarde no dia significa 3,7% menos autuações por inspeção**, e as inspeções que terminam depois do horário de sair são feitas 4% mais rápido e encontram 5% menos irregularidades. Nicola Persico e Rob Bray acompanharam por três anos seis juízes trabalhistas de Roma: só reagrupar os casos com antecedência, em vez de jogá-los no fim da fila, cortou **140 dias** do tempo de resolução — 19%. Jan Van Mieghem e colegas mediram médicos obrigados a colaborar com especialistas: a produtividade caiu, com **20% de tempo extra só em prontuário**, e a maior parte da perda vinha de sequência e interrupção, não do trabalho em si. E Robert Bray, em registros de entrega da Alibaba, mostrou que avisos concentrados no fim elevam a avaliação do cliente, enquanto avisos no começo seguidos de silêncio a derrubam — com o mesmo tempo de entrega.
+
+> **A leitura do Intentia** — Antes de cobrar mais disciplina de si, olhe a ordem. Cinco pesquisas dizem a mesma coisa por caminhos diferentes: sequência e horário não são detalhe de agenda, são variável de desempenho.
+
+### 2. A contribuição central dos autores
+
+A contribuição não está numa teoria única, e é justamente a convergência que dá força: cinco desenhos independentes, em cinco profissões, apontando para o mesmo lugar. Vale separar o que cada um estabelece. Kouchaki estabelece que a escolha da tarefa sob pressão é enviesada para o fácil, e que esse viés custa aprendizado — o difícil é onde a curva acontece. Ibanez estabelece que a qualidade do julgamento decai ao longo do dia de forma mensurável, e que o fim do turno não produz apenas cansaço: produz **decisão pior e mais rápida**, o que é a combinação mais perigosa. Persico e Bray estabelecem que a perda de trocar de assunto é grande o bastante para ser medida em meses de atraso, e que agrupar por antecedência — não trabalhar mais — recupera esse tempo. Van Mieghem e colegas estabelecem que colaboração imposta tem preço, e o preço é pago em fragmentação e em registro. Bray estabelece que a percepção de quem espera se forma no fim, não na média. Nenhum dos cinco propõe uma técnica nova de foco. Todos mostram que o desenho da sequência já estava decidindo o resultado antes de qualquer esforço. Essa é a contribuição das pesquisas. O que vem a seguir é a leitura do Intentia.
+
+### 3. Como o Intentia interpreta essas ideias
+
+A etapa já pede uma prioridade e um ritual. Estas pesquisas acrescentam a pergunta que costuma faltar: **em que hora do dia essa prioridade está caindo?** É comum a pessoa colocar o que mais importa no fim, depois de "resolver as coisas rápidas" — e a curva de Ibanez diz que ali o julgamento já está pior. O método inverte: a prioridade única ocupa o melhor horário de julgamento, e as coisas rápidas ficam com o horário em que decidir mal custa menos.
+
+Sobre o achado de Kouchaki, o Intentia é cuidadoso. Ele não vira "pegue sempre o difícil" — vira uma advertência sobre um padrão específico: quando a semana aperta, a lista de feitos cresce e o trabalho que importa não anda. É a sensação de ter trabalhado muito e não ter saído do lugar, e ela tem explicação. Não é falha de caráter; é o viés do fácil sob carga. Reconhecer é o que permite corrigir.
+
+Sobre os 140 dias de Roma, a leitura da casa é a mais aplicável de todas. O ganho não veio de trabalhar mais nem de ter mais foco: veio de **agrupar com antecedência**. É a mesma lógica do ritual da etapa — decidir a sequência num momento calmo, para não decidi-la no calor do dia. E é por isso que o método insiste que o ritual tenha hora marcada: um ritual sem horário é uma intenção.
+
+A pesquisa da colaboração merece uma nota, porque ela é sobre um assunto delicado. Colaborar tem valor, e a etapa não sugere se fechar. O que a pesquisa mede é o custo da colaboração **imposta e simultânea** — a que fragmenta. A leitura útil aqui é distinguir a conversa que resolve da conversa que interrompe, e concentrar a segunda.
+
+E o achado da Alibaba tem uma tradução direta para quem trabalha com outras pessoas: a percepção do seu trabalho se forma no fim. Silenciar durante a entrega e aparecer com tudo pronto entrega o mesmo resultado com pior leitura. Comunicar mais perto do fim não é vaidade — é o desenho que a pesquisa mostra funcionar.
+
+### 4. Onde esta visão encontra limites
+
+O limite maior é de tradução, e é grande. Todas as cinco pesquisas medem trabalho com resultado contável: pacientes atendidos, inspeções feitas, processos julgados, entregas concluídas. Trabalho de conhecimento tem resultado difuso, e o que é "uma tarefa" muda de semana para semana — o que enfraquece a extrapolação. Segundo, três das cinco tratam de **organizações escalando pessoas**, não de pessoas organizando o próprio dia: o achado dos juízes é sobre desenho de fila, e quem não controla a própria fila tem margem menor. Terceiro, a curva de Ibanez descreve média de população, não a sua: há gente cujo melhor julgamento é à noite, e o método pede que você meça em vez de aceitar a média. Por fim, uma compilação como esta perde o detalhe metodológico de cada estudo — os números aqui servem para orientar decisão, não para citar como se fossem lei.
+
+### 5. Aplicação prática
+
+**Ferramenta Intentia · A ordem do dia**
+
+1. Em que horário, nos últimos sete dias, a sua prioridade única de fato aconteceu? Escreva a hora, não a intenção.
+2. Em que horário você decide melhor? Use evidência sua: onde estavam as decisões de que você se orgulha, e onde as que refez.
+3. Mova a prioridade para esse horário e proteja-o. O que sai do lugar: as tarefas em que decidir mal custa pouco.
+4. Agrupe com antecedência: escolha um momento fixo da semana para decidir a sequência dos próximos dias — foi isso que valeu 140 dias em Roma, não mais esforço.
+5. Uma pergunta de controle no fim da semana: eu peguei o difícil, ou fui empilhando o fácil e chamando de dia cheio?
+
+### 6. O que levar desta leitura
+
+1. A mesma carga em outra ordem dá outro resultado. Sequência e horário são variável de desempenho, não detalhe de agenda.
+2. O julgamento decai ao longo do dia de forma mensurável — e no fim do turno decide-se pior **e mais rápido**.
+3. Sob sobrecarga, a mão vai para o fácil. Isso custa aprendizado, e é padrão, não falta de caráter.
+4. Agrupar com antecedência recuperou 140 dias sem ninguém trabalhar mais. Decidir a sequência no frio é a alavanca mais barata que existe.
+5. A percepção do seu trabalho se forma no fim. Comunicar perto da entrega muda a leitura sem mudar a entrega.
+
+**Referência.** Leitura de referência: "Take 5: Research-Backed Tips for Scheduling Your Day", Kellogg Insight, Kellogg School of Management, Northwestern University, 1º de abril de 2023 — compilação com pesquisas de Maryam Kouchaki, Maria Ibanez, Nicola Persico, Robert L. Bray, Jan A. Van Mieghem e Itai Gurvich. Estudo comentado da Academia Intentia; a análise e as ferramentas são próprias e não reproduzem a obra.
+
+---
+
+## Pensar sobre si é remédio ou veneno, dependendo da distância
+
+**Dia 18 · Ciclo de revisão sustentável**
+
+_Estudo do Intentia inspirado no artigo de revisão de Ethan Kross, Madeline Ong e Ozlem Ayduk sobre por que a autorreflexão às vezes ajuda e às vezes piora — e o que decide de que lado ela cai (Annual Review of Organizational Psychology and Organizational Behavior, 2023)._
+
+### 1. Por que esta leitura importa
+
+Há um paradoxo bem documentado que quase ninguém nomeia. De um lado, uma literatura grande mostra que olhar para dentro é o que permite aprender do erro, dar sentido ao que aconteceu e planejar — sem isso, nenhuma organização funciona. De outro, a mesma literatura mostra que olhar para dentro **focando no que deu errado costuma piorar tudo**: a pessoa entra em laços de pensamento negativo, e o efeito medido não é só desconforto — é decisão pior, desempenho pior, saúde pior e relações piores. Kross, Ong e Ayduk passam o artigo resolvendo esse paradoxo, e a resposta deles é uma variável só: **distância psicológica**. Reflexão feita de perto, imersa na experiência, vira ruminação. Reflexão feita com algum afastamento vira aprendizado. E o achado que interessa a quem vai desenhar uma rotina é que a distância não é talento nem temperamento: é uma coisa que se produz, e a pesquisa identificou as ferramentas que a produzem. Elas organizam em quatro famílias — linguísticas, conceituais, comportamentais e relacionais — e algumas delas são de uma simplicidade quase desconfortável. Referir-se a si mesmo pelo próprio nome ou por "você", em vez de "eu", durante a reflexão silenciosa reduziu reatividade emocional em medidas de autorrelato, fisiológicas e de imagem cerebral. Não é força de expressão: Moser e colegas mediram menos ativação no córtex pré-frontal medial, o marcador que costuma estar elevado em quem sofre de formas disfuncionais de autorreflexão.
+
+> **A leitura do Intentia** — A pergunta não é se você reflete o suficiente. É de que distância. Pensado de perto, o mesmo problema cansa; pensado com afastamento, ensina.
+
+### 2. A contribuição central dos autores
+
+A contribuição é ter transformado uma contradição aparente numa variável mensurável, e depois em ferramenta. Vale registrar a força da evidência, porque ela é o que separa este artigo de um conselho. A fala autodistanciada baixou a resistência periférica total — marcador fisiológico de resposta de estresse nociva — em pessoas que iam falar diante de uma banca (Streamer e colegas, 2017). Fora do laboratório, uma intervenção breve promoveu raciocínio mais sábio sobre conflitos interpessoais ao longo de trinta dias (Grossmann e colegas, 2021). E há um achado que os autores destacam por ser incomum: diferente de outras técnicas de reavaliação cognitiva, que perdem eficácia justamente quando o estresse é alto, a fala autodistanciada **funciona independentemente da intensidade** da experiência e da vulnerabilidade da pessoa. Os estudos de neuroimagem explicam por quê: ela reduz a ativação das redes de processamento emocional autorreferente **sem** acionar as redes de controle cognitivo. Em outras palavras, não custa esforço. Os autores catalogam ainda o "você" genérico, viagem mental no tempo, ver o quadro maior, escrita expressiva, e duas famílias que interessam a quem desenha rotina: **comportamentais, onde eles listam rituais**, e **relacionais, que é conversar com alguém que ajuda a ativar as outras**. Essa é a contribuição da revisão. O que vem a seguir é a leitura do Intentia.
+
+### 3. Como o Intentia interpreta essas ideias
+
+Este é o texto que explica por que a revisão desta etapa é desenhada como é — e o método assume que a explicação vinha faltando. A etapa pede hora marcada, mesmo dia, três perguntas fixas e resposta escrita. Cada um desses elementos aparece na tabela dos autores como produtor de distância: **ritual** é ferramenta comportamental, **escrita expressiva** é ferramenta linguística, e pergunta fixa é o que impede a reflexão de virar caça livre ao que doeu. O improviso não é neutro. Sem estrutura, a mente vai para o episódio mais quente e fica lá — e é isso que a literatura chama de ruminação, com todos os custos medidos.
+
+A segunda pergunta da revisão — se o que não aconteceu é técnico ou adaptativo — ganha aqui um segundo sentido. Classificar é, em si, um ato de distanciamento: obriga a olhar o padrão em vez de reviver o episódio. Não é acaso que ela seja a pergunta que muda tudo.
+
+Sobre a fala autodistanciada, o método incorpora com uma ressalva de honestidade. Escrever "você travou de novo nisso" em vez de "eu travei de novo nisso" parece truque bobo, e é justamente por parecer bobo que costuma ser descartado. A pesquisa é forte e o custo é zero, então a etapa passa a sugerir explicitamente: nas três respostas, escreva no "você" ou no seu próprio nome. Quem achar estranho pode testar uma semana e comparar como se sente ao reler.
+
+Há um limite que o método marca com cuidado, porque ele é o que separa esta etapa de um convite a se analisar sem parar: **mais reflexão não é melhor.** O artigo mostra o contrário — reflexão sem distância é ativamente prejudicial. Quinze minutos com estrutura fazem o trabalho; uma hora sem estrutura faz o dano. E é por isso que a etapa define, de antemão, o sinal de pedir apoio: quando o mesmo padrão resiste semana após semana, a ferramenta relacional da tabela é a resposta certa — alguém que ajude a produzir a distância que você sozinho não conseguiu. Mentor, coach ou terapia não são fracasso da rotina; são a próxima ferramenta da mesma lista.
+
+### 4. Onde esta visão encontra limites
+
+O primeiro limite é de contexto: a maior parte da evidência vem de laboratório e de estudos fora do domínio organizacional, e os próprios autores dizem que revisar essa literatura mais ampla e discutir implicações para a pesquisa em organizações é o objetivo do artigo — ou seja, a transposição para o trabalho é proposta, não estabelecida. Segundo, é um artigo de revisão: ele sintetiza dezenas de estudos com desenhos diferentes, e a força de cada achado varia. Terceiro, a distância tem um outro lado que o texto não resolve: afastar-se demais do que aconteceu pode virar desengajamento, e a literatura não oferece um número para "distância suficiente". Por fim, nada aqui substitui cuidado clínico. Ruminação persistente é um quadro descrito com consequências de saúde, e uma revisão semanal bem desenhada é uma boa prática de trabalho — não é tratamento.
+
+### 5. Aplicação prática
+
+**Ferramenta Intentia · A distância nas três perguntas**
+
+1. Escreva as três respostas da sua revisão no "você" ou usando o seu próprio nome, não no "eu". Uma semana. Depois releia e compare a sensação.
+2. Na segunda pergunta, descreva o padrão, não o episódio: "isso apareceu três vezes" em vez de "que semana horrível".
+3. Se der vontade de continuar depois dos quinze minutos, pare. Passar do tempo não é dedicação — é o começo da ruminação, e a pesquisa mostra o custo.
+4. Use o "você" genérico quando o que aconteceu parecer só seu: "a gente trava quando o risco é real". Descrever em termos universais é ferramenta de distância, não desculpa.
+5. Deixe escrito, agora, quem é a sua ferramenta relacional — o nome da pessoa a quem você recorre quando o mesmo padrão resistir por semanas. Decidir com calma evita protelar no dia.
+
+### 6. O que levar desta leitura
+
+1. Refletir ajuda ou piora dependendo da distância. Focar no que deu errado, de perto, é a receita da ruminação — e o custo é medido em decisão, desempenho, saúde e relações.
+2. Distância se produz. Não é temperamento: é ferramenta, e há quatro famílias delas catalogadas.
+3. Falar consigo pelo nome ou no "você" reduz reatividade em medidas fisiológicas e cerebrais — e, ao contrário de outras técnicas, **não perde efeito quando o estresse é alto**.
+4. Ritual com hora marcada e resposta escrita não são disciplina: são ferramentas de distanciamento. É por isso que a revisão desta etapa tem essa forma.
+5. Mais reflexão não é melhor. Quinze minutos com estrutura fazem o trabalho; uma hora sem estrutura faz o dano.
+
+**Referência.** Leitura de referência: Kross, E., Ong, M., & Ayduk, O. (2023). "Self-Reflection at Work: Why It Matters and How to Harness Its Potential and Avoid Its Pitfalls". Annual Review of Organizational Psychology and Organizational Behavior, vol. 10, pp. 441–464. doi:10.1146/annurev-orgpsych-031921-024406. Publicado sob licença Creative Commons Attribution 4.0 International. Estudo comentado da Academia Intentia; a análise e as ferramentas são próprias e não reproduzem a obra.
