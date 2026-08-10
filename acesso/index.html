@@ -138,6 +138,7 @@ input:focus,select:focus{
   box-shadow:0 0 0 3px rgba(46,125,111,.16);
 }
 input:user-invalid{border-color:var(--spark)}
+label .opt{font-weight:400;letter-spacing:0;color:var(--text-faint)}
 
 .consent{display:flex;gap:10px;align-items:flex-start;margin-top:3px}
 .consent label{font-size:12.5px;font-weight:400;line-height:1.5;color:var(--text-soft);letter-spacing:0;cursor:pointer}
@@ -334,7 +335,9 @@ footer{background:var(--deep-plus);color:var(--text-on-dark-muted);padding:38px 
 
           <!-- ================================================================
                FORMSPREE — formulário conectado à conta flbfreitas@gmail.com.
-               Se um dia trocar de serviço, mude só o endereço do action abaixo.
+               Se um dia trocar de serviço, mude o endereço do action abaixo E a
+               seção "Lista de acesso antecipado" da privacidade.html: o nome do
+               operador e o país dos servidores estão declarados lá.
                ================================================================ -->
           <form id="form" action="https://formspree.io/f/mdenkvvk" method="POST" novalidate>
 
@@ -354,11 +357,13 @@ footer{background:var(--deep-plus);color:var(--text-on-dark-muted);padding:38px 
               <span class="fe" data-fe="email"></span>
             </div>
 
+            <p class="sub" style="margin:4px 0 -4px">Os três campos abaixo são opcionais e servem só para dimensionar o público. Deixar em branco não muda a sua entrada na lista.</p>
+
             <div class="row">
               <div class="field">
-                <label for="genero">Gênero</label>
-                <select id="genero" name="genero" required>
-                  <option value="" disabled selected>Selecione</option>
+                <label for="genero">Gênero <span class="opt">· opcional</span></label>
+                <select id="genero" name="genero">
+                  <option value="" selected>Selecione</option>
                   <option>Mulher</option>
                   <option>Homem</option>
                   <option>Não-binário</option>
@@ -369,9 +374,9 @@ footer{background:var(--deep-plus);color:var(--text-on-dark-muted);padding:38px 
               </div>
 
               <div class="field">
-                <label for="faixa">Faixa etária</label>
-                <select id="faixa" name="faixa_etaria" required>
-                  <option value="" disabled selected>Selecione</option>
+                <label for="faixa">Faixa etária <span class="opt">· opcional</span></label>
+                <select id="faixa" name="faixa_etaria">
+                  <option value="" selected>Selecione</option>
                   <option>Até 24 anos</option>
                   <option>25 a 34 anos</option>
                   <option>35 a 44 anos</option>
@@ -383,9 +388,9 @@ footer{background:var(--deep-plus);color:var(--text-on-dark-muted);padding:38px 
             </div>
 
             <div class="field">
-              <label for="escolaridade">Escolaridade</label>
-              <select id="escolaridade" name="escolaridade" required>
-                <option value="" disabled selected>Selecione</option>
+              <label for="escolaridade">Escolaridade <span class="opt">· opcional</span></label>
+              <select id="escolaridade" name="escolaridade">
+                <option value="" selected>Selecione</option>
                 <option>Ensino médio</option>
                 <option>Graduação em andamento</option>
                 <option>Graduação completa</option>
@@ -399,7 +404,9 @@ footer{background:var(--deep-plus);color:var(--text-on-dark-muted);padding:38px 
             <div class="consent">
               <input id="ok" name="consentimento" type="checkbox" value="sim" required>
               <label for="ok">
-                Concordo em receber o convite de acesso e novidades do Intentia, e li a
+                Concordo em receber o convite de acesso e novidades do Intentia. Os dados deste
+                formulário são recebidos pelo Formspree, serviço com servidores nos Estados Unidos
+                que opera esta lista. Li a
                 <a href="https://intentiahub.com/privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>.
               </label>
             </div>
