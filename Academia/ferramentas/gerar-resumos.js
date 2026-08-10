@@ -21,7 +21,7 @@ const CFG = {
   'As três respostas que não se encontram':
       { slug: 'resumo-tres-respostas-que-nao-se-encontram-michaelson-2010',
         autor: 'Christopher Michaelson · MIT Sloan Management Review · 2010',
-        tpl: 'resumo-a-busca-disciplinada-por-menos-mckeown-2012.html' },
+        tpl: 'resumo-proposito-se-constroi-coleman-2017.html' },
   'Ser respeitado não é ser escolhido':
       { slug: 'resumo-ser-respeitado-nao-e-ser-escolhido-ettenson-knowles-2008',
         autor: 'Richard Ettenson e Jonathan Knowles · MIT Sloan Management Review · 2008',
@@ -41,19 +41,19 @@ const CFG = {
   'Quando falta poder, e o cargo não vem':
       { slug: 'resumo-quando-falta-poder-barsoux-bouquet-2013',
         autor: 'Jean-Louis Barsoux e Cyril Bouquet, por Leslie Brokaw · MIT Sloan Management Review · 2013',
-        tpl: 'resumo-ciencia-da-persuasao-cialdini-2001.html' },
+        tpl: 'resumo-arte-necessaria-persuasao-conger-1998.html' },
   'Ouvir não é uma coisa só':
       { slug: 'resumo-ouvir-nao-e-uma-coisa-so-duarte-2022',
         autor: 'Nancy Duarte · MIT Sloan Management Review · 2022',
-        tpl: 'resumo-ciencia-da-persuasao-cialdini-2001.html' },
+        tpl: 'resumo-arte-necessaria-persuasao-conger-1998.html' },
   'O trem que anda aos solavancos':
       { slug: 'resumo-o-trem-que-anda-aos-solavancos-tan-2024',
         autor: 'Wendy Tan e Joo-Seng Tan · MIT Sloan Management Review · 2024',
-        tpl: 'resumo-mentalidade-de-crescimento-dweck-2016.html' },
+        tpl: 'resumo-a-construcao-de-um-expert-ericsson-2007.html' },
   'O que sobra quando a máquina leva a parte fácil':
       { slug: 'resumo-o-que-sobra-quando-a-maquina-anderson-2023',
         autor: 'Shelia Anderson (Aflac) · MIT Sloan Management Review · 2023',
-        tpl: 'resumo-mentalidade-de-crescimento-dweck-2016.html' },
+        tpl: 'resumo-a-construcao-de-um-expert-ericsson-2007.html' },
   'Onde você aplica o que tem':
       { slug: 'resumo-onde-voce-aplica-o-que-tem-macdonald-2019',
         autor: 'Ally MacDonald · MIT Sloan Management Review · 2019',
@@ -174,7 +174,13 @@ function gerar(e) {
   return destino;
 }
 
-const estudos = parseMd(fs.readFileSync(MD, 'utf8'));
+// Normaliza CRLF -> LF antes de qualquer coisa. Sem isto o gerador nao le a
+// propria fonte: o git desta maquina tem core.autocrlf=true, entao depois de
+// qualquer checkout o markdown chega com \r\n, e todo padrao daqui para baixo
+// esta ancorado em \n — o corte por /\n---\n/ devolve UM bloco (o arquivo
+// inteiro, que comeca com '# ' e nao com '## ') e o gerador anuncia
+// "estudos encontrados: 0" sem escrever nada e sem falhar.
+const estudos = parseMd(fs.readFileSync(MD, 'utf8').replace(/\r\n/g, '\n'));
 console.log('estudos encontrados:', estudos.length);
 for (const e of estudos) {
   for (const s of [1, 2, 3, 4, 5, 6]) if (!e.secoes[s]) throw new Error(`Dia ${e.dia}: falta secao ${s}`);

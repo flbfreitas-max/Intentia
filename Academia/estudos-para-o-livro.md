@@ -322,7 +322,7 @@ A base empírica é modesta e mista: vinte e quatro entrevistas somadas a uma am
 
 ## As três respostas que não se encontram
 
-**Dia 6 · Essencial**
+**Dia 5 · Propósito construído**
 
 _Estudo do Intentia inspirado em um artigo de Christopher Michaelson sobre a distância entre o trabalho que se espera ter, o que se considera valioso e o que se desejaria fazer (MIT Sloan Management Review, 2010)._
 
