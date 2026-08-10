@@ -90,6 +90,22 @@ const CFG = {
       { slug: 'resumo-pensar-sobre-si-e-remedio-ou-veneno-kross-2023',
         autor: 'Ethan Kross, Madeline Ong e Ozlem Ayduk · Annual Review of Organizational Psychology and Organizational Behavior · 2023',
         tpl: 'resumo-o-poder-da-autorreflexao-bailey-rehman-2022.html' },
+  'A fricção que ninguém desenhou de propósito':
+      { slug: 'resumo-a-friccao-que-ninguem-desenhou-lamberton-soman-2020',
+        autor: 'Cait Lamberton e Dilip Soman · Knowledge at Wharton · 2020',
+        tpl: 'resumo-o-ambiente-decide-antes-de-voce-wood.html' },
+  'O que fica na sua cabeça depois que você troca de tarefa':
+      { slug: 'resumo-o-que-fica-na-sua-cabeca-leroy-newport',
+        autor: 'Sophie Leroy e Cal Newport · Knowledge at Wharton · 2016',
+        tpl: 'resumo-o-ambiente-decide-antes-de-voce-wood.html' },
+  'Um mentor não dá conta, e nunca deu':
+      { slug: 'resumo-um-mentor-nao-da-conta-shen-cotton-kram-2015',
+        autor: 'Yan Shen, Richard D. Cotton e Kathy E. Kram · MIT Sloan Management Review · 2015',
+        tpl: 'resumo-a-saida-tambem-e-um-vinculo-laker-2023.html' },
+  'O que o mentor ensina sem saber que está ensinando':
+      { slug: 'resumo-o-que-o-mentor-ensina-uzzi-2020',
+        autor: 'Brian Uzzi, Yifang Ma e Satyam Mukherjee · Kellogg Insight · PNAS · 2020',
+        tpl: 'resumo-a-saida-tambem-e-um-vinculo-laker-2023.html' },
 };
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

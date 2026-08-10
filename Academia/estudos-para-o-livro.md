@@ -950,3 +950,220 @@ O primeiro limite é de contexto: a maior parte da evidência vem de laboratóri
 5. Mais reflexão não é melhor. Quinze minutos com estrutura fazem o trabalho; uma hora sem estrutura faz o dano.
 
 **Referência.** Leitura de referência: Kross, E., Ong, M., & Ayduk, O. (2023). "Self-Reflection at Work: Why It Matters and How to Harness Its Potential and Avoid Its Pitfalls". Annual Review of Organizational Psychology and Organizational Behavior, vol. 10, pp. 441–464. doi:10.1146/annurev-orgpsych-031921-024406. Publicado sob licença Creative Commons Attribution 4.0 International. Estudo comentado da Academia Intentia; a análise e as ferramentas são próprias e não reproduzem a obra.
+
+---
+
+## A fricção que ninguém desenhou de propósito
+
+**Dia 16 · Ambiente e fricção**
+
+_Estudo do Intentia inspirado em um artigo de Cait Lamberton e Dilip Soman sobre "sludge" — a fricção que impede as pessoas de fazer o que já decidiram fazer (Knowledge at Wharton, 2020)._
+
+### 1. Por que esta leitura importa
+
+Existe um vocabulário para empurrãozinho — o nudge, a mudança pequena no ambiente que facilita a escolha boa. O que quase não tem nome é o contrário: a fricção que atravessa o caminho de quem já decidiu. Lamberton e Soman usam o termo **sludge**, e o mais útil do artigo é que eles o dividem em três tipos, cada um com um mecanismo diferente. **Sludge de acesso** é a barreira na porta: a pessoa não consegue nem começar. **Sludge de complexidade** é o excesso de passos: ela começa e desiste no meio. E **sludge de insegurança** é a dúvida: ela chega até o fim e não conclui, porque não sabe se está fazendo certo nem se pode voltar atrás. A escala do problema, quando medida, é desconcertante — o jurista Cass Sunstein estima **quase 10 bilhões de horas por ano** de burocracia despejadas sobre cidadãos americanos. E o caminho inverso também é mensurável: quando a H&R Block passou a pré-preencher o formulário de auxílio estudantil com dados que já existiam, **a adesão de concluintes do ensino médio subiu cerca de 30%**. Ninguém ficou mais motivado. Só tiraram passos do caminho.
+
+> **A leitura do Intentia** — A sua semana também tem sludge, e quase todo ele foi você que instalou sem perceber. A pergunta do dia não é "por que não fiz", é "quantos passos existem entre mim e isso".
+
+### 2. A contribuição central dos autores
+
+A contribuição é dar nome e tipologia a uma coisa que costuma ser tratada como falta de vontade da outra parte. Os autores mostram que a fricção tem endereço e forma, e que cada forma pede uma correção diferente — o que transforma reclamação em diagnóstico. Eles documentam o lado predatório com casos: a Vision Property Management, cujo esquema de aluguel-com-opção-de-compra usava contratos e exigências de reparo tão complicados que privavam as pessoas do acesso à casa, terminou em **3 milhões de dólares de restituição** a consumidores em janeiro de 2020; e a Intuit foi processada por obscurecer deliberadamente o acesso ao seu próprio software gratuito de declaração. Mas o argumento mais forte não é sobre má-fé: é que a maior parte do sludge é **acidental** — sistemas herdados, formulários que cresceram, processos que ninguém revisou. Uma pesquisa da VisaHQ encontrou trinta tipos diferentes de visto com informação faltando sobre requisitos; não há vilão ali, há acúmulo. E daí saem as correções que eles propõem, todas do mesmo formato: pré-preencher com o que já se sabe, garantir que o processo termine no mesmo aparelho em que começou, oferecer saída e reversibilidade, limitar a quantidade de opções, e dizer com clareza o efeito de cada decisão. A frase que resume o custo é dura: sludge não só afasta a pessoa, como destrói qualquer boa vontade que ela levaria embora. Essa é a contribuição do artigo. O que vem a seguir é a leitura do Intentia.
+
+### 3. Como o Intentia interpreta essas ideias
+
+O artigo é escrito para empresas e governos que atrapalham clientes e cidadãos. O método faz uma transposição que muda tudo: **na sua semana, você é a empresa e o cliente ao mesmo tempo.** Quem instalou o sludge foi você — e é por isso que ele é invisível. Ninguém enxerga a burocracia que criou; enxerga só a própria falha em atravessá-la.
+
+A tipologia dos três tipos é o que o dia ganha de mais prático, porque ela troca uma pergunta ruim por três boas. Em vez de "por que não consegui manter", pergunta-se: **é acesso** — não consigo nem começar, o material não está aberto, o arquivo não está na mão? **É complexidade** — começo e me perco, são muitos passos, muitas abas, muitos aplicativos? **Ou é insegurança** — chego até a hora de fazer e paro, porque não sei se é assim que se faz nem se posso desfazer? Cada uma tem correção diferente, e tratar as três como falta de disciplina é o erro que a etapa quer desmontar.
+
+A correção de pré-preencher é a que o método adota com mais entusiasmo, porque foi a que produziu os 30% de adesão. Traduzida: deixe o começo já começado. O documento aberto na página certa, o campo com a data preenchida, o arquivo no lugar onde a mão vai. Não é preguiça — é retirar da sua semana o passo que não produz nada.
+
+E a reversibilidade merece nota própria, porque é a menos óbvia. Sludge de insegurança se resolve sabendo que dá para voltar. Aplicado aqui: definir de antemão que o experimento da semana pode ser abandonado sem custo torna mais provável que ele comece. Compromisso irreversível parece seriedade e funciona como travessia.
+
+Uma advertência que o método faz questão de registrar: fricção não é sempre inimiga. O artigo trata da fricção que atravessa o que a pessoa **quer** fazer. A fricção deliberada no caminho do que ela não quer fazer — o aplicativo desinstalado, a notificação desligada — é a mesma ferramenta com o sinal invertido, e é metade da missão de hoje.
+
+### 4. Onde esta visão encontra limites
+
+O limite maior é o destinatário: o artigo é sobre organizações desenhando processos para terceiros, com escala e dados agregados. Uma pessoa desenhando a própria semana não tem amostra, não tem grupo de controle e é juíza em causa própria — o que significa que a tipologia serve como lente de diagnóstico, não como evidência de que o seu ajuste vai funcionar. Segundo, os casos citados são de consumo e de serviço público, onde o resultado é contável (adesão, restituição, abandono); trabalho pessoal não tem esse contador, e a tentação de declarar vitória sem medir é grande. Terceiro, o artigo é de 2020 e trata sobretudo de formulário e interface — o sludge de quem trabalha hoje é feito também de reunião e de expectativa de resposta imediata, que a tipologia cobre mal. E há um risco de leitura que vale nomear: nem toda dificuldade é sludge. Trabalho difícil continua sendo difícil depois de tirar todos os passos inúteis, e confundir as duas coisas leva a redesenhar o ambiente para sempre em vez de fazer a coisa.
+
+### 5. Aplicação prática
+
+**Ferramenta Intentia · Os três tipos de atravessamento**
+
+1. Escolha o comportamento que você decidiu e não está acontecendo. Conte os passos entre você e ele — em segundos e em cliques, hoje.
+2. Classifique o que trava: acesso (não começo), complexidade (me perco no meio) ou insegurança (paro na hora de concluir)?
+3. Se é acesso, deixe o começo já começado: pré-preencha, deixe aberto, ponha na mão.
+4. Se é complexidade, corte um passo — só um — e garanta que tudo aconteça no mesmo aparelho.
+5. Se é insegurança, escreva a saída: o que exatamente acontece se você abandonar. Reversibilidade declarada faz o começo acontecer.
+6. E a metade inversa da missão: escolha uma coisa que você **não** quer fazer e instale sludge nela de propósito.
+
+### 6. O que levar desta leitura
+
+1. Fricção tem três formas — acesso, complexidade e insegurança — e cada uma pede correção diferente. Chamar as três de falta de disciplina é o erro.
+2. A maior parte do sludge é acidental, herdada e invisível. Na sua semana, quem instalou foi você.
+3. Pré-preencher elevou em cerca de 30% a adesão a um auxílio, sem motivar ninguém. Deixar o começo já começado é a alavanca mais barata.
+4. Reversibilidade declarada faz a coisa começar. Compromisso irreversível parece seriedade e funciona como travessia.
+5. Fricção deliberada no caminho do que você não quer é a mesma ferramenta com o sinal invertido.
+
+**Referência.** Leitura de referência: Lamberton, C., & Soman, D. (2020). "Sweeping Away Sludge: How Consumers and Firms Can Find a Barrier-free Path". Knowledge at Wharton, Wharton School of the University of Pennsylvania, 22 de fevereiro de 2020. Estudo comentado da Academia Intentia; a análise e as ferramentas são próprias e não reproduzem a obra.
+
+---
+
+## O que fica na sua cabeça depois que você troca de tarefa
+
+**Dia 16 · Ambiente e fricção**
+
+_Estudo do Intentia inspirado em uma reportagem sobre a pesquisa de Sophie Leroy a respeito do resíduo de atenção, e sobre o argumento de trabalho profundo de Cal Newport (Knowledge at Wharton, 2016)._
+
+### 1. Por que esta leitura importa
+
+A conta que quase todo mundo faz sobre interrupção está errada por uma razão específica: ela mede o tempo perdido e ignora o que sobra na cabeça. Sophie Leroy mediu o que sobra. Em experimentos de laboratório, ela punha pessoas a trabalhar em quebra-cabeças de palavras, interrompia e mandava trocar para outra tarefa — avaliar candidatos, lendo currículos. Entre as duas, um teste de decisão lexical media quanto da tarefa anterior ainda estava ocupando a mente. Ela chamou isso de **resíduo de atenção**, e o achado é que quem carrega resíduo tem desempenho pior na tarefa seguinte, com a piora acompanhando a intensidade do resíduo. Mas o detalhe que transforma isso em ferramenta é o mecanismo: o resíduo é maior quando a tarefa anterior ficou **inacabada** — ou quando foi feita sem intensidade. Não é a troca em si que custa. É trocar deixando algo aberto. Do lado prático, o argumento de Cal Newport dá a fórmula: trabalho de qualidade é tempo gasto multiplicado por intensidade de foco. Um multiplicando perto de zero anula o outro, e é por isso que somar horas fragmentadas não produz o resultado de horas inteiras.
+
+> **A leitura do Intentia** — Cada aba aberta e cada e-mail lido pela metade é um laço que continua rodando. O ajuste digital de hoje não é sobre disciplina para não olhar — é sobre não abrir o que você não vai fechar.
+
+### 2. A contribuição central dos autores
+
+A contribuição de Leroy é ter medido uma coisa que todo mundo sente e ninguém contabilizava, e ter isolado a variável que a controla. Antes dela, o custo de trocar de tarefa era discutido em termos de tempo de retomada — quanto demora para voltar ao ponto. Ela mostra que existe um custo **cognitivo residual** que persiste depois da retomada e degrada a tarefa nova, e que ele não é constante: depende de a tarefa anterior ter sido concluída ou não. Isso reposiciona a recomendação inteira. Não se trata de nunca trocar, o que é irreal em qualquer trabalho com outras pessoas; trata-se de **fechar laço antes de trocar**, ou de não abrir laço que não se vai fechar. A contribuição de Newport, no mesmo texto, é a formalização e o exemplo: ele descreve a prática de agrupar trabalho relacionado em blocos longos, minimizar troca de contexto, e evitar conferir caixa de entrada com frequência — porque cada conferida deixa alvos de atenção não resolvidos. E oferece um caso extremo de produção acadêmica: Adam Grant publicou sete artigos em revistas de primeira linha em 2012, cinco em 2013, além de um livro que se tornou best-seller, e passava de sessenta artigos revisados por pares em 2014. Essa é a contribuição do material. O que vem a seguir é a leitura do Intentia.
+
+### 3. Como o Intentia interpreta essas ideias
+
+A missão da etapa pede um ajuste físico e um digital. Este estudo é sobre o digital, e ele muda a natureza do ajuste. O ajuste digital comum é de força: desligar notificação, instalar bloqueador, prometer não olhar. A leitura de Leroy sugere outro, mais barato e mais durável: **reduzir a quantidade de laços que você abre**. Conferir a caixa de entrada e não responder é a pior das combinações — abre o laço e não fecha. Olhar uma mensagem que exige decisão e deixá-la para depois instala um processo que continua rodando enquanto você tenta fazer outra coisa.
+
+Disso o método tira uma regra que é quase o oposto do conselho usual. O usual é "não olhe". O da casa é: **se for olhar, feche.** Uma conferida em que tudo o que abre é resolvido, arquivado ou marcado com uma decisão explícita de quando será resolvido custa menos do que três conferidas passivas.
+
+Sobre a fórmula de Newport, a etapa faz uma tradução e uma advertência. A tradução: duas horas em pedaços de dez minutos não são duas horas. A advertência: intensidade não é algo que se decide sentindo — é o que o ambiente permite. Voltar à fórmula pedindo mais intensidade de si é o mesmo erro que a etapa desmonta desde o começo. O caminho é ajustar o lugar, e a intensidade aparece.
+
+E há um cuidado que o método registra sobre o exemplo do professor com sessenta artigos. Esse número não é meta nem prova de método: é um caso extremo de alguém cujo trabalho é escrever artigos, com estrutura de universidade em volta. Ele serve para mostrar que o desenho tem consequência, e não para sugerir que a mesma prática produz o mesmo resultado em qualquer profissão. Quem trabalha em serviço, em operação ou em atendimento tem laços abertos por outras pessoas, e a régua ali é outra: proteger um bloco, não o dia.
+
+Uma última tradução, que liga esta etapa à anterior. Se o resíduo depende de a tarefa ter ficado inacabada, então **terminar coisas pequenas tem valor desproporcional** — não pela entrega, mas por não deixar processo rodando. É um argumento de desenho a favor de fatiar trabalho em pedaços que caibam inteiros no tempo que você tem.
+
+### 4. Onde esta visão encontra limites
+
+O limite mais evidente é o do laboratório: quebra-cabeça de palavras e leitura de currículos são tarefas curtas e sem consequência real, e o resíduo medido ali não é necessariamente da mesma ordem do resíduo de um problema de trabalho que envolve pessoas e dinheiro. Segundo, a pesquisa é de 2009, anterior ao ambiente de mensageria contínua em que quase todo mundo trabalha hoje — e é plausível que o efeito seja maior agora, mas plausível não é medido. Terceiro, o argumento do trabalho profundo é de livro de divulgação, não de estudo: ele organiza evidência de terceiros e experiência própria, e a fórmula é uma metáfora útil, não uma equação. Quarto, e mais importante para quem vai aplicar: a recomendação de blocos longos pressupõe controle sobre a agenda. Muita gente não tem, e para essas pessoas a parte utilizável é a de fechar laço — não a de isolar-se por horas. Por fim, o caso do professor prolífico é seleção pelo resultado: não se sabe quantos adotaram a mesma prática e não publicaram nada.
+
+### 5. Aplicação prática
+
+**Ferramenta Intentia · Laços abertos**
+
+1. Nas próximas duas horas de trabalho, conte quantas vezes você abre algo que não fecha — mensagem lida e não respondida, aba aberta e não usada, decisão vista e adiada. Só conte.
+2. Escolha o gerador de laços mais frequente e faça **um** ajuste digital nele: tirá-lo do caminho, ou agrupá-lo num horário.
+3. Adote a regra do fecho: quando conferir, resolva, arquive ou marque a decisão de quando vai resolver. Conferida passiva é o pior dos mundos.
+4. Fatie a próxima tarefa importante em pedaços que caibam **inteiros** no tempo que você realmente tem. Pedaço que sobra é processo rodando.
+5. Meça uma vez, sete dias depois: a contagem do passo 1 caiu?
+
+### 6. O que levar desta leitura
+
+1. O custo de trocar de tarefa não é só o tempo de retomada: é o resíduo de atenção que degrada a tarefa seguinte.
+2. O resíduo é maior quando a tarefa anterior ficou **inacabada**. Não é a troca que custa — é trocar deixando aberto.
+3. Conferir e não resolver é a pior combinação. Se for olhar, feche.
+4. Trabalho de qualidade é tempo multiplicado por intensidade. Duas horas em pedaços de dez minutos não são duas horas.
+5. Intensidade não se decide sentindo: é o que o ambiente permite. Ajuste o lugar, e ela aparece.
+
+**Referência.** Leitura de referência: "Deep Work: The Secret to Achieving Peak Productivity", Knowledge at Wharton, Wharton School of the University of Pennsylvania, 2016 — sobre a pesquisa de resíduo de atenção de Sophie Leroy (University of Minnesota, 2009) e o argumento de Cal Newport em "Deep Work: Rules for Focused Success in a Distracted World" (Grand Central Publishing, 2016). Estudo comentado da Academia Intentia; a análise e as ferramentas são próprias e não reproduzem a obra.
+
+---
+
+## Um mentor não dá conta, e nunca deu
+
+**Dia 19 · Rede de suporte pós-Intentia**
+
+_Estudo do Intentia inspirado em um artigo de Yan Shen, Richard D. Cotton e Kathy E. Kram sobre montar um conselho pessoal de conselheiros em vez de procurar um mentor (MIT Sloan Management Review, 2015)._
+
+### 1. Por que esta leitura importa
+
+A busca pelo mentor é uma das mais frustrantes da vida profissional, e os autores mostram por quê: a pergunta está errada. A ideia de que uma pessoa possa atender todas as necessidades de desenvolvimento de alguém é, nas palavras deles, cada vez mais inconcebível — mobilidade, permanência curta nos cargos, diversidade de contextos e tecnologia tornaram isso aritmeticamente impossível. O que existe no lugar é um **conselho**, e ele é mais comum do que parece: numa amostra de 315 profissionais e executivos, com média de 42 anos e dezesseis anos de carreira, o número médio de pessoas nesse conselho foi **4,9**. Não uma. Cinco. E o achado que mais desloca a expectativa é sobre quem entra: os autores encontraram, tanto nos 64 expatriados que entrevistaram quanto nos **176 discursos de posse** em halls da fama que analisaram, gente que **não tem contato frequente nem proximidade** com quem foi ajudado. Entram heróis que a pessoa nunca conheceu. Entram pessoas que já morreram e continuam orientando decisão. E entra uma categoria que ninguém pensa em nomear: o **antimodelo** — alguém que a pessoa enfaticamente não quer ser, e que por isso organiza escolhas com a mesma força de um exemplo.
+
+> **A leitura do Intentia** — Você não está procurando um mentor. Está montando um conselho de cinco — e alguns deles não precisam nem saber que você existe.
+
+### 2. A contribuição central dos autores
+
+A contribuição é uma tipologia construída do ponto de vista de quem recebe o apoio, e não de quem o oferece — o que é a inversão que torna a coisa utilizável. Eles cruzam duas variáveis: o **tipo de apoio** (de carreira, psicossocial, ou os dois) e a **natureza da interação** (frequência e proximidade). Do cruzamento saem seis tipos de membro de conselho: guias pessoais, conselheiros pessoais, mentores de serviço completo, conselheiros de carreira, guias de carreira e modelos. A utilidade de separar assim é que cada tipo custa uma coisa diferente de manter — um mentor de serviço completo exige tempo e reciprocidade; um modelo à distância não exige nada além de atenção. Isso permite montar um conselho compatível com a vida que a pessoa tem, em vez de sonhar com um que ela não vai sustentar. A base empírica são três estudos: as entrevistas em profundidade com 64 expatriados na China e em Singapura, sendo mais de um terço americanos e o resto de dezenove outros países, a quem se pediu que descrevessem e **desenhassem** a própria rede; a análise dos 176 discursos de posse, escolhidos porque são o momento em que alguém diz publicamente a quem deve o que conquistou; e a validação com os 315 profissionais. E os autores organizam o artigo em torno de três perguntas, sendo a terceira a mais desconfortável: o que acontece quando existe **lacuna** entre as necessidades de desenvolvimento de alguém e o apoio que ele de fato recebe. Essa é a contribuição do artigo. O que vem a seguir é a leitura do Intentia.
+
+### 3. Como o Intentia interpreta essas ideias
+
+A etapa pede três nomes — uma pessoa de accountability, uma comunidade e uma referência. Este artigo explica por que três e não um, e acrescenta duas coisas que a etapa não tinha.
+
+A primeira é o número. Se a média de um conselho maduro é perto de cinco, então três nomes não são um conselho completo: são o **começo** de um, e é assim que o método passa a apresentá-los. Isso muda a expectativa de quem termina a etapa com a sensação de ter feito pouco. Três é onde se começa, aos dezesseis anos de carreira se chega a cinco, e a diferença entre os dois números é tempo, não talento social.
+
+A segunda é a perna da **referência**, que era a mais vaga das três e agora tem chão. Uma referência não precisa te conhecer. Pode ser alguém cujo trabalho você acompanha, alguém que já morreu, alguém que você nunca vai encontrar. Isso tira do caminho o obstáculo que mais trava essa parte da missão — a ideia de que seria preciso abordar alguém importante e pedir tempo. Não é preciso. A referência funciona pela clareza do exemplo, não pela relação.
+
+O antimodelo é a adição que o método adota com mais gosto, porque ele é honesto sobre uma coisa que as pessoas usam e não admitem. Quase todo profissional tem, na cabeça, alguém que representa o que ele não quer se tornar — e essa figura organiza decisões silenciosamente. Nomeá-la de propósito converte um desconforto difuso em critério. O método pede o nome por escrito, com uma frase sobre o que exatamente você não quer repetir. E marca o limite: antimodelo é critério, não julgamento da pessoa. Você não sabe o que levou aquele profissional até ali.
+
+Sobre a lacuna — a terceira pergunta dos autores — o método é direto. Depois de escrever os nomes, olhe o que **não** está coberto. Se ninguém no seu conselho te dá apoio psicossocial, você montou um comitê técnico. Se ninguém te dá informação de carreira, montou um grupo de amigos. As duas coisas são úteis e nenhuma das duas é um conselho.
+
+### 4. Onde esta visão encontra limites
+
+O artigo é de 2015, e duas das três amostras carregam viés grande: os 176 discursos de posse são de gente que chegou ao hall da fama, o que é o mais extremo dos vieses de sobrevivência — quem não chegou não fez discurso, e não se sabe quantos tinham conselhos parecidos e não deu certo. A amostra de validação, com 315 pessoas, era **90,7% branca** e de duas universidades do nordeste dos Estados Unidos; a leitura sobre quem se torna referência de quem muda muito com contexto e com acesso. Os 64 expatriados são um grupo particular por definição — pessoas deslocadas, cuja rede foi reconstruída às pressas, o que pode exagerar a importância de relações à distância. E há um limite conceitual: a tipologia descreve conselhos que **existiram**, olhando para trás. Ela não demonstra que montar um conselho de propósito produz o mesmo efeito de um que se formou pela vida. Por fim, a média de 4,9 é média de população — não é meta, e persegui-la como número é perder o ponto.
+
+### 5. Aplicação prática
+
+**Ferramenta Intentia · O conselho, não o mentor**
+
+1. Escreva os nomes que você já tem, sem filtrar por importância. Inclua quem te dá apoio emocional, não só quem te dá informação.
+2. Ao lado de cada nome, marque o que aquela pessoa te dá: carreira, apoio pessoal, ou os dois. E marque o custo de manter: contato frequente ou distância.
+3. Acrescente ao menos uma referência que **não te conhece** — alguém cujo trabalho você acompanha, alguém que já morreu. Escreva o que exatamente você aprende com ela.
+4. Escreva o antimodelo: quem você decidiu não ser, e a frase do que você não quer repetir.
+5. Olhe a lacuna: qual tipo de apoio não tem ninguém? Esse é o único nome que você precisa procurar de propósito.
+
+### 6. O que levar desta leitura
+
+1. Um mentor não dá conta, e a busca por ele é o que trava. O que existe é um conselho — média de 4,9 pessoas em profissionais com dezesseis anos de carreira.
+2. Três nomes não são um conselho completo. São o começo de um, e a diferença é tempo.
+3. Referência não precisa te conhecer. Pode ser alguém que você nunca vai encontrar, ou que já morreu.
+4. O antimodelo — quem você decidiu não ser — organiza decisão com a mesma força de um exemplo. Nomeá-lo transforma desconforto em critério.
+5. Depois dos nomes, olhe o que ficou descoberto. Conselho sem apoio pessoal é comitê técnico; sem informação de carreira, é grupo de amigos.
+
+**Referência.** Leitura de referência: Shen, Y., Cotton, R. D., & Kram, K. E. (2015). "Assembling Your Personal Board of Advisors". MIT Sloan Management Review, vol. 56, nº 3 (primavera de 2015), reprint 56314. Estudo comentado da Academia Intentia; a análise e as ferramentas são próprias e não reproduzem a obra.
+
+---
+
+## O que o mentor ensina sem saber que está ensinando
+
+**Dia 19 · Rede de suporte pós-Intentia**
+
+_Estudo do Intentia inspirado na pesquisa de Brian Uzzi, Yifang Ma e Satyam Mukherjee sobre o que separa a boa orientação da orientação comum — e sobre o que o orientado precisa fazer com ela (Kellogg Insight, a partir do estudo publicado na PNAS, 2020)._
+
+### 1. Por que esta leitura importa
+
+Esta é uma das pesquisas mais bem desenhadas que existem sobre orientação, e o desenho importa porque ela resolve o problema que invalida quase todo estudo do tema: quem é talentoso atrai orientador realizado, então é impossível saber se o resultado vem da orientação ou do talento que já estava lá. Uzzi, Ma e Mukherjee atacaram isso com escala e com método. Mapearam a trajetória de **37.157 cientistas** e seus orientadores, e **1.167.518 artigos** produzidos entre 1960 e 2017, cruzando árvores acadêmicas com colocações, financiamentos e prêmios. Depois separaram seis grupos de orientadores **estatisticamente idênticos** entre si, e compararam o que aconteceu com os orientados de quem viria a ganhar prêmio contra os orientados de quem não viria. O resultado: os orientados de futuros premiados tiveram **quase seis vezes mais chance** de se tornarem eles mesmos referências na área. Mas o achado que muda o comportamento de quem lê é outro, e é sobre tempo: **na primeira década, os orientados dos não premiados publicaram mais.** A vantagem só aparece na segunda. E há um terceiro achado que desmonta a expectativa mais comum: os orientados que mais se destacaram foram justamente os que **seguiram para assuntos diferentes** dos do orientador — o modelo do "mini-eu" é o que dá errado.
+
+> **A leitura do Intentia** — O que se transmite numa boa orientação não é conteúdo, é jeito de pensar. E ele só rende quando você o aplica em outro lugar, não quando repete o caminho de quem te ensinou.
+
+### 2. A contribuição central dos autores
+
+A contribuição central é nomear o que passa de uma pessoa para outra: **conhecimento tácito**. Não é domínio de assunto — isso está em livro, em curso, em artigo, e não precisa de orientador. O que os grandes orientadores transferem é a coisa intuitiva, construída por experiência, sobre como se formula uma pergunta que vale a pena, como se conduz um brainstorm que produz algo, como se colabora sem se perder. Nada disso é ensinável por explicação; é absorvido por convivência. Daí decorre a explicação do atraso de uma década: conteúdo rende rápido e conhecimento tácito rende devagar, porque leva tempo para ser incorporado e mais tempo ainda para virar produção própria. Quem escolheu o orientador que publica muito e ensina método sai na frente e é ultrapassado. E daí decorre também a explicação do "mini-eu": se o que você recebeu é jeito de pensar, ele é **portátil** — vale em qualquer assunto. Repetir o assunto do orientador desperdiça a parte transferível e coloca você a competir com ele no único terreno onde ele tem vantagem estrutural. A frase de Uzzi que fecha a lógica é uma cobrança dirigida a quem foi orientado: cabe ao orientado ramificar, pegar o conhecimento tácito do orientador e fazer algo que abra terreno novo. Essa é a contribuição do estudo. O que vem a seguir é a leitura do Intentia.
+
+### 3. Como o Intentia interpreta essas ideias
+
+A etapa pede uma referência no conselho, e este estudo diz o que procurar nela — e o que não procurar. Não é a pessoa que sabe mais do seu assunto. É a pessoa cujo **jeito de decidir** você quer absorver. São critérios diferentes e costumam apontar para pessoas diferentes.
+
+Sobre a década de atraso, o método é explícito porque é a informação mais útil e a mais fácil de perder: se você escolher a referência pelo jeito de pensar, é provável que os primeiros resultados sejam **piores** do que se tivesse escolhido pelo método pronto. Isso não é sinal de erro. É a curva. Quem não sabe disso troca de referência exatamente no momento em que a coisa começaria a render, e recomeça a contagem.
+
+Sobre o conhecimento tácito, há uma consequência prática que o método adota: ele não se pega por pergunta. Perguntar "como você faz?" produz a resposta que a pessoa **acredita** que dá — que é sempre a parte explícita. O tácito se pega por proximidade em trabalho real: ver a pessoa decidir, ver o que ela descarta, ver onde ela hesita. Por isso o método prefere, na perna da referência, quem você consegue observar decidindo a quem você admira de longe.
+
+E o achado do "mini-eu" recebe a leitura mais direta de todas: **não repita o caminho.** Se a sua referência é excelente naquilo, aquele é o único terreno onde você começa em desvantagem estrutural. A ferramenta que a etapa acrescenta é uma pergunta única: qual é o assunto **adjacente** ao dela onde o jeito de pensar dela ainda funciona e a vantagem dela não existe?
+
+Vale registrar uma ressalva que o método faz para não transformar isto em instrumentalização de gente. A pesquisa descreve o que **produz** carreira notável. Ela não diz que uma relação de orientação deve ser escolhida por cálculo de retorno, e o Intentia não sugere isso. Escolher com clareza é diferente de usar alguém.
+
+### 4. Onde esta visão encontra limites
+
+O limite mais forte é o domínio: são cientistas, medidos por publicação e prêmio. Ciência é um dos poucos campos em que a produção é contável, atribuída e rastreável por seis décadas — e é exatamente por isso que o estudo pôde ser feito nessa escala. Carreira corporativa não tem esse registro, e não há motivo para supor que os números se transportem. Segundo, "tornar-se referência na área" é um resultado extremo; o estudo fala do topo da distribuição, não da vida da maioria — e a maioria não quer aquilo. Terceiro, os seis grupos de orientadores idênticos resolvem a assortatividade, mas não o que não foi medido: quem escolhe orientador ainda não premiado talvez seja quem tolera mais risco, e o traço explicaria parte do resultado. Por fim, prêmio é medida enviesada pelos mesmos mecanismos de reputação que a trilha estuda em outras etapas — quem já é visível ganha mais prêmios.
+
+### 5. Aplicação prática
+
+**Ferramenta Intentia · A referência pelo jeito, não pelo assunto**
+
+1. Escreva a referência que você escolheria pelo **assunto**. Agora escreva a que você escolheria pelo **jeito de decidir**. São a mesma pessoa? Se não, é a segunda que entra no conselho.
+2. O que exatamente você quer absorver dela? Escreva em forma de verbo — como escolhe o que recusar, como decide quando não há dado, como comunica coisa difícil.
+3. Você consegue vê-la **decidindo**? Se a resposta for não, procure uma forma de trabalho real junto, mesmo pequeno. Conhecimento tácito não se obtém por entrevista.
+4. Qual é o assunto adjacente ao dela onde o jeito dela funciona e a vantagem dela não existe? Esse é o seu terreno.
+5. Escreva a data de hoje e a frase: "o retorno disto pode levar mais tempo do que o do caminho óbvio, e isso é esperado". É contra a troca precoce de referência.
+
+### 6. O que levar desta leitura
+
+1. Orientados de futuros premiados tiveram quase seis vezes mais chance de se tornarem referências.
+2. Na primeira década, os orientados dos não premiados publicaram **mais**. A vantagem aparece na segunda. Quem não sabe disso troca de referência na hora errada.
+3. O que se transfere é conhecimento tácito — jeito de formular pergunta, de colaborar, de decidir. Conteúdo você acha em qualquer lugar.
+4. Quem mais se destacou seguiu para assunto **diferente** do orientador. O modelo do "mini-eu" é o que dá errado.
+5. Tácito não se pega por pergunta, se pega por convivência em trabalho real. Prefira quem você vê decidindo a quem admira de longe.
+
+**Referência.** Leitura de referência: "What's the Secret Ingredient to Great Mentorship?", Kellogg Insight, Kellogg School of Management, Northwestern University, 2020 — sobre Ma, Y., Mukherjee, S., & Uzzi, B. (2020), "Mentorship and protégé success in STEM fields", Proceedings of the National Academy of Sciences (PNAS), acesso aberto. Estudo comentado da Academia Intentia; a análise e as ferramentas são próprias e não reproduzem a obra.
