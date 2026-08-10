@@ -677,6 +677,26 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 (function(){
   var audio = new Audio('audio.mp3');
   var pronto = false;
+  // Se o audio.mp3 nao carregar, o `loadedmetadata` nunca dispara e a pessoa
+  // fica com o player ilustrativo: duracao fixa no markup e play que finge.
+  // Sem aviso. Com a troca de todos os audios, um nome errado ou um encode ruim
+  // deixaria o dia com cara de funcionando e som nenhum.
+  function semAudio(){
+    if (pronto) return;
+    var pl = document.querySelector('.player');
+    if (!pl || pl.getAttribute('data-sem-audio')) return;
+    pl.setAttribute('data-sem-audio', '1');
+    var bp = document.getElementById('btn-play');
+    if (bp) { bp.disabled = true; bp.style.opacity = '.45'; bp.style.cursor = 'not-allowed'; }
+    var tp = pl.querySelector('.player-tempo');
+    if (tp) tp.innerHTML = '<span>--:--</span><span>--:--</span>';
+    var sb = pl.querySelector('.player-sub');
+    if (sb) sb.innerHTML = 'O \u00e1udio deste dia n\u00e3o carregou. '
+      + '<a href="audio.html" style="color:inherit;text-decoration:underline">'
+      + 'Ler o texto deste \u00e1udio &rarr;</a>';
+  }
+  audio.addEventListener('error', semAudio);
+  setTimeout(semAudio, 8000);
   function fmt(t){ t=Math.max(0,Math.round(t)); var m=Math.floor(t/60), s=t%60; return (m<10?'0':'')+m+':'+(s<10?'0':'')+s; }
   function icone(tocando){
     var b = document.getElementById('btn-play');
