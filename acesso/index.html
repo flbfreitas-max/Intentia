@@ -438,7 +438,7 @@ footer p{opacity:.65}
 </section>
 
 <!-- 10. BASE DO MÉTODO -->
-<section class="light center" style="padding-bottom:0">
+<section class="light center">
   <div class="wrap reveal">
     <p class="kicker">Base do método</p>
     <h2>Construído por quem viveu isso.</h2>
@@ -446,26 +446,10 @@ footer p{opacity:.65}
   </div>
 </section>
 
-<!-- 11. DEPOIMENTOS -->
-<section class="light">
-  <div class="wrap reveal">
-    <div class="center"><p class="kicker">Depoimentos</p><h2>Quem já passou pelo Retrato de Carreira.</h2></div>
-    <div class="carousel">
-      <div class="track" id="track">
-        <div class="slide"><blockquote>Achei que encontraria apenas um exercício de reflexão. Terminei os três dias com um documento robusto, com uma visão das possibilidades que posso explorar para continuar desenvolvendo a minha carreira.</blockquote><div class="autor"><div class="foto" aria-hidden="true">A</div><div><strong>Alessandra McNamee</strong><span>Expert em Desenvolvimento de SAP</span></div></div></div>
-        <div class="slide"><blockquote>O Retrato de Carreira é uma oportunidade real de reflexão sobre a sua carreira e, ainda, ele traz uma visão prática de como se pode explorar elementos importantes para desenvolvimento profissional.</blockquote><div class="autor"><div class="foto" aria-hidden="true">A</div><div><strong>Andressa Lessa</strong><span>Product Owner</span></div></div></div>
-        <div class="slide"><blockquote>O Retrato de Carreira me trouxe a oportunidade de identificar o quanto eu já construí na minha carreira e de pensar em direções que eu não conhecia de forma tão clara.</blockquote><div class="autor"><div class="foto" aria-hidden="true">V</div><div><strong>Veronica Belmont</strong><span>Coordenadora Jurídica</span></div></div></div>
-        <div class="slide"><blockquote>A plataforma é muito bem estruturada para trazer a quem acessa uma visão prática sobre como investir o seu tempo de forma efetiva no desenvolvimento de carreira. Fazendo o Retrato, tem-se a oportunidade de pensar no desenvolvimento de habilidades que ainda são pouco exploradas, mas essenciais para o sucesso profissional.</blockquote><div class="autor"><div class="foto" aria-hidden="true">J</div><div><strong>Jean Lopes</strong><span>Economista</span></div></div></div>
-        <div class="slide"><blockquote>É muito estimulante ler o Retrato de Carreira e ter a percepção de que, investindo no desenvolvimento de algumas habilidades, é possível alcançar outros patamares de carreira.</blockquote><div class="autor"><div class="foto" aria-hidden="true">E</div><div><strong>Elisa Pesa</strong><span>Executiva de RH</span></div></div></div>
-      </div>
-      <div class="nav">
-        <button type="button" aria-label="Anterior" onclick="mover(-1)"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
-        <div class="dots" id="dots"></div>
-        <button type="button" aria-label="Próximo" onclick="mover(1)"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- 11. DEPOIMENTOS — retirados a pedido em 17/08/2026, "depois eu volto".
+     A seção completa (5 depoimentos reais do Retrato + carrossel) está no
+     histórico do git, commit a47696a. O CSS do carrossel foi mantido acima
+     para o retorno ser só colar o HTML e o script de volta. -->
 
 <!-- 12. FAQ -->
 <section class="light" style="padding-top:0">
@@ -594,14 +578,6 @@ form.addEventListener('submit',async e=>{
   }catch(_){falha('Sem conexão no momento. Verifique a internet e tente de novo.');}
   btn.disabled=false;btnTxt.textContent='Acesso antecipado';
 });
-
-// Carrossel de depoimentos.
-const track=document.getElementById('track'),dots=document.getElementById('dots'),slides=[...track.children];
-slides.forEach((_,i)=>{const d=document.createElement('i');if(i===0)d.className='on';d.onclick=()=>irPara(i);dots.appendChild(d)});
-function idx(){return Math.round(track.scrollLeft/(slides[0].offsetWidth+14))}
-function irPara(i){i=Math.max(0,Math.min(slides.length-1,i));track.scrollTo({left:i*(slides[0].offsetWidth+14),behavior:'smooth'})}
-function mover(d){irPara(idx()+d)}
-track.addEventListener('scroll',()=>{const i=idx();[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i))},{passive:true});
 
 // Revelação ao rolar, desligada em prefers-reduced-motion pelo CSS.
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
