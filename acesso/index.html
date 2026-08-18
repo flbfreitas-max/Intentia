@@ -339,36 +339,38 @@ h1,h2{line-height:1.05}
   .grupo-faixa h3{font-size:1.02rem}
   }
 
-/* OS DOIS VIDEOS VERTICAIS (reels) — 18/08/2026.
-   Ela nao faz video deitado, e perguntou se o formato em pe cabe aqui. Cabe, e
-   e ate melhor: o site inteiro e uma coluna estreita de leitura, e um 16:9
-   ficaria com tarjas pretas dos lados no celular. O 9:16 preenche.
+/* O VIDEO VERTICAL, EMPARELHADO COM O TEXTO — 18/08/2026.
+   Ela: "em vertical, acho que ele tem que ficar embalado visualmente melhor com
+   algum texto". Esta certa, e a razao e geometrica: um 9:16 sozinho ocupa uma
+   coluna estreita no meio de uma pagina larga, e sobra vazio dos dois lados. O
+   texto ao lado fecha a linha.
 
-   O QUE DECIDE O DESENHO E O TAMANHO NO COMPUTADOR
-   Um 9:16 sozinho numa tela de 1280 ficaria com quase 1100px de altura: a pessoa
-   rolaria a pagina para ver o proprio video. Por isso sao DOIS lado a lado, com
-   largura maxima — assim cada um fica em ~340x604, que e a altura de um cartao
-   comum, e nao de uma pagina.
+   POR QUE FLEX E NAO GRADE FIXA
+   Os videos podem ser um ou dois, e a secao tem de servir aos dois casos sem eu
+   voltar aqui. Com `flex`, o texto ocupa o que sobra: com UM video ele fica com
+   ~760px; com DOIS, com ~460px. Grade de duas colunas quebraria no dia em que o
+   segundo entrasse.
 
-   `aspect-ratio` reserva o espaco ANTES de o video carregar. Sem isso a pagina
-   pula quando o poster chega, e pulo de layout e o defeito que mais irrita em
-   celular.
+   `align-items:center` alinha o texto pelo MEIO do video, e nao pelo topo: como
+   o texto e mais curto, alinhado em cima ele deixaria um buraco embaixo.
 
-   Tres cuidados que vieram do VideoDoHub do app:
-     · `preload="none"` — sao megabytes, e ninguem que abre a pagina pediu para
-       baixar video;
-     · `playsinline` — sem ele o iPhone toma a tela inteira ao dar play;
-     · `poster` — sem ele o quadro fica PRETO ate a pessoa clicar. */
-.video-abertura{font-size:1.05rem;opacity:.85;max-width:56ch;margin-top:18px}
-.videos{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px;max-width:760px}
-.vcard{margin:0}
+   Os tres cuidados do video seguem: preload="none" (sao megabytes), playsinline
+   (sem ele o iPhone toma a tela) e o aspect-ratio, que reserva o espaco antes de
+   a capa chegar e evita o pulo de layout. */
+.video-par{display:flex;flex-wrap:wrap;align-items:center;gap:36px;margin-top:8px}
+.video-texto{flex:1 1 340px;min-width:0}
+.video-texto h2{margin-bottom:18px}
+.video-texto p{font-size:1.05rem;line-height:1.65;opacity:.85;max-width:52ch}
+.vcard{flex:0 0 300px;margin:0}
 .vbox{aspect-ratio:9/16;background:var(--ink);border:1px solid var(--line-dark);overflow:hidden}
 .vbox video{width:100%;height:100%;object-fit:cover;display:block}
 .vcard figcaption{margin-top:12px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.7}
 @media(max-width:820px){
-  /* Um por vez no celular: dois 9:16 lado a lado a 375px dariam 160px de largura
-     cada, que e menor que a miniatura de qualquer aplicativo de video. */
-  .videos{grid-template-columns:1fr;max-width:420px;gap:28px}
+  /* Empilhado: o texto primeiro, porque e ele que explica por que valeria a pena
+     gastar 32 segundos assistindo. */
+  .video-par{gap:28px}
+  .vcard{flex:1 1 100%;max-width:380px;margin:0 auto}
+}
 }
 </style>
 </head>
@@ -528,13 +530,18 @@ h1,h2{line-height:1.05}
   </div>
 </section>
 
-<!-- 8b. VÍDEOS — dois espaços em formato vertical (reels) -->
+<!-- 8b. VÍDEOS — vertical (reels), emparelhado com o texto -->
 <section class="light">
   <div class="wrap reveal">
-    <p class="kicker left">Em vídeo</p>
-    <h2>Veja em movimento.</h2>
-    <p class="video-abertura">O método explicado por quem o construiu.</p>
-    <div class="videos">
+    <div class="video-par">
+      <div class="video-texto">
+        <p class="kicker left">Em vídeo</p>
+        <h2>Não existe uma resposta pronta para a sua carreira.</h2>
+        <p>Existe uma estratégia que precisa fazer sentido para você. No Intentia, suas
+        respostas orientam uma jornada personalizada, com missões práticas para reconhecer o
+        que você já construiu, identificar o que precisa desenvolver e decidir onde concentrar
+        sua energia para avançar.</p>
+      </div>
       <figure class="vcard" data-video="/video/intentia-1.mp4">
         <div class="vbox">
           <video controls preload="none" playsinline poster="/video/intentia-1-capa.jpg">
