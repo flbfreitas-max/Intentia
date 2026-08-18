@@ -365,7 +365,7 @@ h1,h2{line-height:1.05}
 .video-par{display:flex;flex-wrap:wrap;align-items:flex-start;gap:36px;margin-top:8px}
 .video-texto{flex:1 1 340px;min-width:0}
 .video-texto h2{margin-bottom:18px}
-.video-texto p{font-size:1.05rem;line-height:1.65;opacity:.85;max-width:52ch}
+.video-texto p{font-size:1.18rem;line-height:1.68;opacity:.85;max-width:46ch}
 .vcard{flex:0 0 300px;margin:0}
 .vbox{aspect-ratio:9/16;background:var(--ink);border:1px solid var(--line-dark);overflow:hidden}
 .vbox video{width:100%;height:100%;object-fit:cover;display:block}
@@ -376,7 +376,13 @@ h1,h2{line-height:1.05}
   .video-par{gap:28px}
   .vcard{flex:1 1 100%;max-width:380px;margin:0 auto}
 }
-}
+
+/* A QUEBRA DO TITULO em tres linhas, a pedido dela.
+   `<br>` so vale no computador: no celular a coluna e estreita e o titulo ja
+   quebra sozinho — as marcas forcadas somariam quebra a quebra e sobrariam
+   linhas de duas palavras. */
+.quebra{display:none}
+@media(min-width:821px){.quebra{display:inline}}
 </style>
 </head>
 <body>
@@ -541,7 +547,7 @@ h1,h2{line-height:1.05}
     <div class="video-par">
       <div class="video-texto">
         <p class="kicker left">Em vídeo</p>
-        <h2>Não existe uma resposta pronta para a sua carreira.</h2>
+        <h2>Não existe <br class="quebra">uma resposta pronta <br class="quebra">para a sua carreira.</h2>
         <p>Existe uma estratégia que precisa fazer sentido para você. No Intentia, suas
         respostas orientam uma jornada personalizada, com missões práticas para reconhecer o
         que você já construiu, identificar o que precisa desenvolver e decidir onde concentrar
@@ -554,7 +560,7 @@ h1,h2{line-height:1.05}
             O seu navegador não reproduz vídeo. <a href="/video/intentia-1.mp4">Baixar o arquivo</a>.
           </video>
         </div>
-        <figcaption>As trilhas, em dois minutos</figcaption>
+        <figcaption>As trilhas, em 30 segundos</figcaption>
       </figure>
       <figure class="vcard" data-video="/video/intentia-2.mp4">
         <div class="vbox">
