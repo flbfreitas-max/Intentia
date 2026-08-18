@@ -338,6 +338,38 @@ h1,h2{line-height:1.05}
   .tr{border-right:0;padding:24px 20px 22px}
   .grupo-faixa h3{font-size:1.02rem}
   }
+
+/* OS DOIS VIDEOS VERTICAIS (reels) — 18/08/2026.
+   Ela nao faz video deitado, e perguntou se o formato em pe cabe aqui. Cabe, e
+   e ate melhor: o site inteiro e uma coluna estreita de leitura, e um 16:9
+   ficaria com tarjas pretas dos lados no celular. O 9:16 preenche.
+
+   O QUE DECIDE O DESENHO E O TAMANHO NO COMPUTADOR
+   Um 9:16 sozinho numa tela de 1280 ficaria com quase 1100px de altura: a pessoa
+   rolaria a pagina para ver o proprio video. Por isso sao DOIS lado a lado, com
+   largura maxima — assim cada um fica em ~340x604, que e a altura de um cartao
+   comum, e nao de uma pagina.
+
+   `aspect-ratio` reserva o espaco ANTES de o video carregar. Sem isso a pagina
+   pula quando o poster chega, e pulo de layout e o defeito que mais irrita em
+   celular.
+
+   Tres cuidados que vieram do VideoDoHub do app:
+     · `preload="none"` — sao megabytes, e ninguem que abre a pagina pediu para
+       baixar video;
+     · `playsinline` — sem ele o iPhone toma a tela inteira ao dar play;
+     · `poster` — sem ele o quadro fica PRETO ate a pessoa clicar. */
+.video-abertura{font-size:1.05rem;opacity:.85;max-width:56ch;margin-top:18px}
+.videos{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px;max-width:760px}
+.vcard{margin:0}
+.vbox{aspect-ratio:9/16;background:var(--ink);border:1px solid var(--line-dark);overflow:hidden}
+.vbox video{width:100%;height:100%;object-fit:cover;display:block}
+.vcard figcaption{margin-top:12px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.7}
+@media(max-width:820px){
+  /* Um por vez no celular: dois 9:16 lado a lado a 375px dariam 160px de largura
+     cada, que e menor que a miniatura de qualquer aplicativo de video. */
+  .videos{grid-template-columns:1fr;max-width:420px;gap:28px}
+}
 </style>
 </head>
 <body>
@@ -492,6 +524,35 @@ h1,h2{line-height:1.05}
     <div class="quem">
       <div class="card sim"><h3>É para você se</h3><ul><li>Tem alguns anos de trajetória e sente que o crescimento não reflete sua entrega</li><li>Quer intencionalidade, não sorte, na próxima etapa</li><li>Está pronto para tratar carreira como projeto, com método e ferramenta</li></ul></div>
       <div class="card nao"><h3>Não é para você se</h3><ul><li>Busca atalhos ou dicas rápidas de rede social</li><li>Não quer olhar com honestidade para onde está hoje</li><li>Prefere esperar que a carreira aconteça</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8b. VÍDEOS — dois espaços em formato vertical (reels) -->
+<section class="light">
+  <div class="wrap reveal">
+    <p class="kicker left">Em vídeo</p>
+    <h2>Veja em movimento.</h2>
+    <p class="video-abertura">O método explicado por quem o construiu.</p>
+    <div class="videos">
+      <figure class="vcard" data-video="/video/intentia-1.mp4">
+        <div class="vbox">
+          <video controls preload="none" playsinline poster="/video/intentia-1-capa.jpg">
+            <source src="/video/intentia-1.mp4" type="video/mp4">
+            O seu navegador não reproduz vídeo. <a href="/video/intentia-1.mp4">Baixar o arquivo</a>.
+          </video>
+        </div>
+        <figcaption>As trilhas, em dois minutos</figcaption>
+      </figure>
+      <figure class="vcard" data-video="/video/intentia-2.mp4">
+        <div class="vbox">
+          <video controls preload="none" playsinline poster="/video/intentia-2-capa.jpg">
+            <source src="/video/intentia-2.mp4" type="video/mp4">
+            O seu navegador não reproduz vídeo. <a href="/video/intentia-2.mp4">Baixar o arquivo</a>.
+          </video>
+        </div>
+        <figcaption>Para quem é</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -673,5 +734,24 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </div>
+
+<script>
+/* A secao de video some sozinha enquanto os arquivos nao existirem.
+   Sem isto, quem abrisse a pagina hoje veria dois retangulos pretos e uma
+   promessa vazia — pior que nao ter secao nenhuma. Quando ela subir os .mp4
+   para /video/, a secao aparece sem ninguem tocar no codigo. */
+(function () {
+  var cartoes = document.querySelectorAll('.vcard[data-video]');
+  if (!cartoes.length) return;
+  var secao = cartoes[0].closest('section');
+  var pendentes = cartoes.length, vivos = 0;
+  cartoes.forEach(function (c) {
+    fetch(c.getAttribute('data-video'), { method: 'HEAD' })
+      .then(function (r) { if (r.ok) { vivos++; } else { c.remove(); } })
+      .catch(function () { c.remove(); })
+      .then(function () { if (--pendentes === 0 && vivos === 0 && secao) secao.remove(); });
+  });
+})();
+</script>
 </body>
 </html>
