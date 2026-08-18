@@ -351,13 +351,18 @@ h1,h2{line-height:1.05}
    ~760px; com DOIS, com ~460px. Grade de duas colunas quebraria no dia em que o
    segundo entrasse.
 
-   `align-items:center` alinha o texto pelo MEIO do video, e nao pelo topo: como
-   o texto e mais curto, alinhado em cima ele deixaria um buraco embaixo.
+   O ALINHAMENTO E PELO TOPO, e nao pelo meio. Eu tinha centralizado, para o texto
+   nao deixar buraco embaixo — e ela corrigiu: "o Em Video deveria estar alinhado
+   verticalmente com o inicio do video". Ela tem razao e o motivo e de leitura: o
+   olho procura uma linha de partida, e o olho da secao ("EM VIDEO") e a linha
+   mais alta do texto. Alinhado ao topo do video, os dois comecam juntos; pelo
+   meio, o olho comecava no ar. O vazio embaixo do texto e mais barato que a
+   ausencia dessa linha.
 
    Os tres cuidados do video seguem: preload="none" (sao megabytes), playsinline
    (sem ele o iPhone toma a tela) e o aspect-ratio, que reserva o espaco antes de
    a capa chegar e evita o pulo de layout. */
-.video-par{display:flex;flex-wrap:wrap;align-items:center;gap:36px;margin-top:8px}
+.video-par{display:flex;flex-wrap:wrap;align-items:flex-start;gap:36px;margin-top:8px}
 .video-texto{flex:1 1 340px;min-width:0}
 .video-texto h2{margin-bottom:18px}
 .video-texto p{font-size:1.05rem;line-height:1.65;opacity:.85;max-width:52ch}
