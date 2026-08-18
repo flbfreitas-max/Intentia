@@ -42,6 +42,20 @@ graphify-out/
 *.mp4
 *.mov
 
+# EXCECAO: os videos da pagina de acesso antecipado.
+#
+# A regra acima existe por causa de um arquivo de 89 MB, nao por causa da
+# extensao. Estes sao recomprimidos para a WEB antes de entrar — o primeiro tem
+# 4,4 MB, vindo de 78 MB de fonte de edicao — e ficam MUITO abaixo do aviso de
+# 50 MB do GitHub.
+#
+# A regra de quem publicar o proximo: comprimir ANTES de tirar do ignore.
+#   ffmpeg -i entrada.mp4 -c:v libx264 -crf 26 -preset slow -movflags +faststart \
+#          -c:a aac -b:a 96k -ac 1 video/intentia-N.mp4
+# Acima de ~8 MB, hospedar fora em vez de versionar: binario grande nunca sai do
+# historico depois que entra.
+!video/*.mp4
+
 # Fontes da Academia (artigos do MIT SMR, em PDF e captura de tela).
 # São material de leitura interna; republicar o texto integral num site
 # acessível é proibido pelos termos da revista. O que vai ao ar é só o
