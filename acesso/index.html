@@ -518,7 +518,11 @@ h1,h2{line-height:1.05}
    e insistir espremeria o titulo. Entre 821 e 1080 sao duas colunas, com a
    lista sob o texto. */
 @media(min-width:1121px){
-  .video-lado{display:flex;align-items:flex-start;gap:44px}
+  /* O agrupador tambem se estica ate a altura da fileira, que quem define e o
+     video. Sem isto a lista se esticava ate a altura do PROPRIO agrupador, que
+     era a do texto, e a distribuicao nao acontecia: medido, lista de 440px
+     dentro de uma fileira de 612. */
+  .video-lado{display:flex;align-items:stretch;gap:44px;align-self:stretch}
   .video-texto{flex:1 1 380px;min-width:360px}
   /* O fio que separa as duas colunas de texto. So aqui: empilhado ele
      viraria um risco atravessado no meio do conteudo. */
@@ -526,7 +530,16 @@ h1,h2{line-height:1.05}
      dela para o titulo continuar em tres linhas. Estreitando esta coluna os
      itens ficam mais altos e mais verticais, que foi o pedido, e o video pode
      ser mais largo sem espremer a leitura. */
-  .video-lista{flex:0 1 252px;min-width:224px;margin:0;border-left:1px solid var(--line-dark);padding-left:32px}
+  .video-lista{flex:0 1 252px;min-width:224px;margin:0;border-left:1px solid var(--line-dark);padding-left:32px;
+    align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;padding-bottom:30px}
+  /* A lista se ESTICA ate a altura do video e reparte os tres itens pelo
+     caminho; o `padding-bottom` faz o texto do "Decidir" terminar 30px antes
+     da base do video, que foi o "pouquinho de espaco ao final" que ela pediu.
+     Feito assim, e nao encolhendo o video ate a altura do texto, porque ela
+     tinha acabado de pedir o video MAIOR. E feito por distribuicao, e nao por
+     medida fixa: a altura da lista muda com a largura da tela, entao qualquer
+     numero cravado so acertaria numa largura. */
+  .video-lista li{padding-bottom:0}
 }
 /* QUANDO O SEGUNDO VIDEO CHEGAR: volta a duas colunas.
    Medido clonando o cartao no navegador: com dois videos as tres colunas ainda
