@@ -132,6 +132,14 @@ header .btn{padding:8px 12px;font-size:.62rem;letter-spacing:.1em}
 .foto-par .beneficio{border-right:0;border-bottom:1px solid var(--line)}
 .foto-par .beneficio:last-child{border-bottom:0}
 .foto-par--espelho .foto-vert{order:-1}
+/* A foto pendura pela BASE, e nao pelo topo: a grade ao lado e mais alta que
+   ela, e alinhando por cima sobrava um vao embaixo, do lado do ultimo quadro.
+   Pedido dela em 18/08, com o cuidado que ela mesma nomeou: o topo NAO deve
+   casar com o topo do primeiro quadro.
+   Vale nos DOIS blocos. Eu tinha feito so no dos passos, achando que no
+   espelhado o buraco subiria para a borda de entrada da leitura; ela olhou
+   os beneficios e pediu igual. */
+.foto-par .foto-vert{align-self:flex-end}
 .foto-vert{flex:0 0 372px;min-width:0;position:relative;margin:0}
 .foto-vert .fbox{aspect-ratio:4/5;overflow:hidden;border:1px solid var(--line-dark);background:var(--ink)}
 .foto-vert img,.foto-banda img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.88)}
@@ -434,9 +442,9 @@ h1,h2{line-height:1.05}
 /* Base 400, e nao a largura que ele de fato ocupa. O flex quebra linha
    comparando a BASE, nao o tamanho ja encolhido: com base 560 a conta dava
    904 numa faixa de 767 (janela de 830) e o video descia sozinho de novo.
-   400 + 44 + 300 = 744, que cabe ate na faixa mais estreita desta banda
+   356 + 44 + 344 = 744, que cabe ate na faixa mais estreita desta banda
    (758px, na janela de 821). Depois de colocado, ele cresce e ocupa o resto. */
-.video-lado{flex:1 1 400px;min-width:360px;display:block}
+.video-lado{flex:1 1 356px;min-width:330px;display:block}
 .video-texto{min-width:0}
 /* A COLUNA DO MEIO, que fecha a largura.
    Com duas colunas o par media 834px numa faixa de 1072: o vao saiu do meio e
@@ -465,7 +473,7 @@ h1,h2{line-height:1.05}
    onde o certo sao 32. Medido: virava um titulo de cinco linhas. */
 .video-texto h2{margin-bottom:18px;font-size:clamp(2rem,4.4vw,2.9rem);line-height:1.1}
 .video-texto p{font-size:1.12rem;line-height:1.68;opacity:.85}
-.vcard{flex:0 0 300px;margin:0}
+.vcard{flex:0 0 344px;margin:0}
 /* QUANDO HOUVER DOIS VIDEOS eles encolhem, senao a linha quebra: 490 de texto
    + 44 + 300 + 44 + 300 da 1178, e o wrap tem 1072. Com 245 cada, fecha em
    1068. O seletor conta os irmaos — `:first-of-type:nth-last-of-type(2)` so
@@ -505,23 +513,27 @@ h1,h2{line-height:1.05}
    linhas de duas palavras. */
 .quebra{display:none}
 @media(min-width:821px){.quebra{display:inline}}
-/* Tres colunas so acima de 1080px de janela: abaixo disso a faixa nao
-   comporta 320 (texto) + 250 (lista) + 300 (video) + os dois vaos de 44,
+/* Tres colunas so acima de 1120px de janela: abaixo disso a faixa nao
+   comporta 360 (texto) + 224 (lista) + 344 (video) + os dois vaos de 44,
    e insistir espremeria o titulo. Entre 821 e 1080 sao duas colunas, com a
    lista sob o texto. */
-@media(min-width:1081px){
+@media(min-width:1121px){
   .video-lado{display:flex;align-items:flex-start;gap:44px}
-  .video-texto{flex:1 1 400px;min-width:320px}
+  .video-texto{flex:1 1 380px;min-width:360px}
   /* O fio que separa as duas colunas de texto. So aqui: empilhado ele
      viraria um risco atravessado no meio do conteudo. */
-  .video-lista{flex:1 1 300px;min-width:270px;margin:0;border-left:1px solid var(--line-dark);padding-left:36px}
+  /* Nao cresce (`0 1`): a sobra da faixa vai toda para o texto, que precisa
+     dela para o titulo continuar em tres linhas. Estreitando esta coluna os
+     itens ficam mais altos e mais verticais, que foi o pedido, e o video pode
+     ser mais largo sem espremer a leitura. */
+  .video-lista{flex:0 1 252px;min-width:224px;margin:0;border-left:1px solid var(--line-dark);padding-left:32px}
 }
 /* QUANDO O SEGUNDO VIDEO CHEGAR: volta a duas colunas.
    Medido clonando o cartao no navegador: com dois videos as tres colunas ainda
    cabem, mas o texto e espremido ate o piso de 320px e o titulo quebra em cinco
    linhas em vez de tres. Entao a lista desce para baixo do texto e o lado inteiro
    fica com 494px, que e largura de sobra para as tres linhas. */
-@media(min-width:1081px){
+@media(min-width:1121px){
   .video-par:has(.vcard + .vcard) .video-lado{display:block}
   .video-par:has(.vcard + .vcard) .video-lista{margin-top:26px;border-left:0;padding-left:0}
 }
