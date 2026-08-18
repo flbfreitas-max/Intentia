@@ -26,7 +26,7 @@
 
   .kpis{max-width:1180px;margin:-32px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
   @media(max-width:800px){.kpis{grid-template-columns:1fr 1fr}}
-  .kpi{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:18px 20px;box-shadow:0 8px 24px rgba(39,87,80,.08)}
+  .kpi{background:#fff;border:1px solid var(--verde-100);border-radius:0;padding:18px 20px;box-shadow:0 8px 24px rgba(39,87,80,.08)}
   .kpi .lab{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-suave);margin-bottom:4px}
   .kpi .val{font-family:var(--serif);font-weight:700;font-size:28px;color:var(--verde-900);line-height:1.1}
   .kpi .val small{font-size:14px;color:var(--tinta-suave);font-weight:600;letter-spacing:0}
@@ -40,10 +40,10 @@
   h2{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--verde-900);margin-bottom:14px}
 
   .legenda{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
-  .lg{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--verde-100);border-radius:8px;padding:5px 12px;font-size:12.5px}
-  .lg .b{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;font-weight:700;font-size:13px}
+  .lg{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--verde-100);border-radius:0;padding:5px 12px;font-size:12.5px}
+  .lg .b{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:0;font-weight:700;font-size:13px}
 
-  table.mapa{width:100%;border-collapse:separate;border-spacing:2px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(39,87,80,.08)}
+  table.mapa{width:100%;border-collapse:separate;border-spacing:2px;background:#fff;border-radius:0;overflow:hidden;box-shadow:0 6px 20px rgba(39,87,80,.08)}
   .mapa th{background:var(--verde-900);color:var(--creme);font-family:var(--serif);font-weight:600;padding:12px 8px;font-size:12.5px;text-align:center}
   .mapa th.txt{text-align:left;padding-left:16px}
   .mapa td.dia{text-align:center;font-family:var(--serif);font-weight:700;font-size:16px;color:var(--verde-900);background:var(--areia);padding:8px 0;width:44px}
@@ -51,7 +51,7 @@
   .mapa td.cell{text-align:center;font-weight:700;font-size:14px;padding:8px 0;width:82px}
   .mapa tr.sep td{padding:8px 14px;font-family:var(--serif);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
 
-  .lac{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:24px 26px;box-shadow:0 4px 14px rgba(39,87,80,.06)}
+  .lac{background:#fff;border:1px solid var(--verde-100);border-radius:0;padding:24px 26px;box-shadow:0 4px 14px rgba(39,87,80,.06)}
   .lac h3{font-family:var(--serif);font-weight:600;color:var(--verde-900);font-size:19px;margin-bottom:10px;display:flex;align-items:center;gap:10px}
   .lac .icone{display:inline-flex;width:36px;height:36px;border-radius:50%;background:var(--coral);color:#fff;align-items:center;justify-content:center;font-weight:700}
   .lac .icone.verde{background:var(--verde-900)}
@@ -60,11 +60,11 @@
   .lac ul{padding-left:22px;font-size:14px;line-height:1.75}
   .lac ul li{margin-bottom:2px}
   .lac + .lac{margin-top:14px}
-  .lac .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:var(--areia);color:var(--tinta-suave)}
+  .lac .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border-radius:0;background:var(--areia);color:var(--tinta-suave)}
   .lac .tag.alto{background:var(--coral-soft);color:var(--verde-900)}
   .lac .tag.medio{background:var(--verde-100);color:var(--verde-700)}
 
-  details.resumos{background:#fff;border:1px solid var(--verde-100);border-radius:14px;padding:0;box-shadow:0 4px 14px rgba(39,87,80,.06);margin-top:14px}
+  details.resumos{background:#fff;border:1px solid var(--verde-100);border-radius:0;padding:0;box-shadow:0 4px 14px rgba(39,87,80,.06);margin-top:14px}
   details.resumos summary{list-style:none;cursor:pointer;padding:18px 26px;font-family:var(--serif);font-weight:600;color:var(--verde-900);font-size:16px}
   details.resumos summary::-webkit-details-marker{display:none}
   details.resumos summary::after{content:'▸';float:right;color:var(--coral);transition:transform .2s}
@@ -111,7 +111,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .intnav .intnav-spacer{flex:1 1 auto}
 .intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .intnav .intnav-jornada{font-weight:600}
-.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:0;padding:6px 12px;
   font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap}
 .intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
 .intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
@@ -123,6 +123,14 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .intnav .intnav-pill .lbl{display:none}
   .intnav .intnav-pill{padding:6px 10px}
 }
+
+/* IDENTIDADE v2 RETANGULAR — a mesma do app, aplicada aqui em 18/08/2026.
+   As caixas ja foram zeradas nas regras acima; aqui so a letra.
+   opsz 144 e o eixo optico da Fraunces: sem ele o peso 500 fica so mais gordo,
+   e nao mais elegante, que era o ponto da v2. */
+h1,h2,h3{font-weight:500;font-variation-settings:"opsz" 144;letter-spacing:-.015em}
+h1,h2{line-height:1.05}
+.btn,.of-btn,.cta,.nav-cta,.btn-primario{text-transform:uppercase;letter-spacing:.14em;font-weight:600}
 </style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="index.html" title="Jornada — início da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="index.html">Jornada</a><span class="sep sep-capa">›</span><span class="cur">Mapa da trilha</span></span><span class="intnav-spacer"></span><span class="intnav-right"><a class="intnav-pill" href="index.html">Jornada</a></span></nav><!--intentia-nav:end-->
 
 <header>

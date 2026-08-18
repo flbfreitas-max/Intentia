@@ -18,14 +18,22 @@
   .marca{display:block;height:42px;width:auto;margin-bottom:18px}
   h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,5vw,34px);line-height:1.14;margin:0 0 8px}
   .meta{color:var(--tinta-suave);font-size:14px;margin-bottom:8px}
-  .rev{background:#FFF6E8;border:1px solid #F0D8A8;color:#8a6414;border-radius:10px;padding:11px 14px;font-size:13.5px;margin:18px 0 30px}
+  .rev{background:#FFF6E8;border:1px solid #F0D8A8;color:#8a6414;border-radius:0;padding:11px 14px;font-size:13.5px;margin:18px 0 30px}
   h2{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--verde-900);margin:34px 0 10px}
   p{margin:0 0 12px}
   ul{margin:0 0 12px;padding-left:20px}
   li{margin-bottom:6px}
   a{color:var(--coral-esc)}
-  .destaque{background:#fff;border:1px solid var(--verde-100);border-left:4px solid var(--verde-900);border-radius:0 10px 10px 0;padding:13px 16px;margin:14px 0;font-size:15px}
+  .destaque{background:#fff;border:1px solid var(--verde-100);border-left:4px solid var(--verde-900);border-radius:0;padding:13px 16px;margin:14px 0;font-size:15px}
   .rodape{border-top:1px solid var(--verde-100);margin-top:40px;padding-top:20px;color:var(--tinta-suave);font-size:13.5px}
+
+/* IDENTIDADE v2 RETANGULAR — a mesma do app, aplicada aqui em 18/08/2026.
+   As caixas ja foram zeradas nas regras acima; aqui so a letra.
+   opsz 144 e o eixo optico da Fraunces: sem ele o peso 500 fica so mais gordo,
+   e nao mais elegante, que era o ponto da v2. */
+h1,h2,h3{font-weight:500;font-variation-settings:"opsz" 144;letter-spacing:-.015em}
+h1,h2{line-height:1.05}
+.btn,.of-btn,.cta,.nav-cta,.btn-primario{text-transform:uppercase;letter-spacing:.14em;font-weight:600}
 </style>
 </head>
 <body>

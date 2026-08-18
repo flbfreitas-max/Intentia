@@ -36,7 +36,7 @@
 
   main{max-width:680px;margin:0 auto;padding:0 24px}
 
-  .nota-producao{background:#fff;border:1px solid var(--verde-100);border-left:4px solid var(--coral);border-radius:12px;padding:16px 20px;margin:-28px auto 8px;position:relative;z-index:2;box-shadow:0 10px 30px rgba(39,87,80,.10);font-size:13.5px;color:var(--tinta-suave)}
+  .nota-producao{background:#fff;border:1px solid var(--verde-100);border-left:4px solid var(--coral);border-radius:0;padding:16px 20px;margin:-28px auto 8px;position:relative;z-index:2;box-shadow:0 10px 30px rgba(39,87,80,.10);font-size:13.5px;color:var(--tinta-suave)}
   .nota-producao b{color:var(--verde-900);font-family:var(--sans);font-weight:700}
 
   .roteiro{padding:44px 0 8px}
@@ -86,21 +86,21 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .intnav .intnav-spacer{flex:1 1 auto}
 .intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .intnav .intnav-jornada{font-weight:600}
-.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:0;padding:6px 12px;
   font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
 .intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
 .intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
 .intnav .intnav-menu{position:relative;flex-shrink:0}
 .intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
-  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+  border-radius:0;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
 .intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
 .intnav .intnav-menu-btn .caret{transition:transform .18s}
 .intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
 .intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
-  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  border:1px solid #DAE6E1;border-radius:0;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
   display:none;flex-direction:column;z-index:100000}
 .intnav .intnav-menu.open .intnav-menu-panel{display:flex}
-.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:0;font-size:13.5px;font-weight:500;white-space:nowrap}
 .intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
 .intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
 @media(max-width:620px){
@@ -112,6 +112,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .intnav .intnav-pill .lbl{display:none}
   .intnav .intnav-pill{padding:6px 10px}
 }
+
+/* IDENTIDADE v2 RETANGULAR — 18/08/2026. Ver a nota igual nas outras paginas. */
+h1,h2,h3{font-weight:500;font-variation-settings:"opsz" 144;letter-spacing:-.015em}
+h1,h2{line-height:1.05}
+.btn,.of-btn,.cta{text-transform:uppercase;letter-spacing:.14em;font-weight:600}
 </style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Jornada — início da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Jornada</a><span class="sep sep-capa">›</span><a href="index.html">Etapa 3</a><span class="sep">›</span><span class="cur">Áudio</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html" class="atual">Áudio</a><a href="academia.html">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-pill" href="../Dia 2/index.html" title="Etapa 2 (tecla ←)">←<span class="lbl"> Etapa 2</span></a><a class="intnav-pill" href="../Dia 4/index.html" title="Etapa 4 (tecla →)"><span class="lbl">Etapa 4 </span>→</a></span></nav><script>
 (function(){
   // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)
@@ -153,7 +158,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
 <main>
   <div class="nota-producao"><b>Roteiro de áudio</b> · para gravação na voz do Intentia · tom de conversa, sem pressa · ~5-6 min. As marcações [entre colchetes] são orientações de leitura — não devem ser lidas em voz alta.</div>
-  <div style="background:#fff;border:1px solid #DAE6E1;border-radius:12px;padding:14px 18px;margin:18px 0 0;box-shadow:0 4px 14px rgba(39,87,80,.06)">
+  <div style="background:#fff;border:1px solid #DAE6E1;border-radius:0;padding:14px 18px;margin:18px 0 0;box-shadow:0 4px 14px rgba(39,87,80,.06)">
     <div style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#FF6842;margin-bottom:8px;font-family:'Hanken Grotesk',-apple-system,sans-serif">Ouvir o áudio · voz provisória (sintética) — substituir pela gravação final</div>
     <audio controls preload="none" src="audio.mp3" style="width:100%"></audio>
   </div>

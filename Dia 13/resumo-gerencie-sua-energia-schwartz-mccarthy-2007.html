@@ -36,7 +36,7 @@
   strong{font-weight:700}
   em{font-style:italic}
 
-  .destaque{background:var(--verde-900);color:var(--creme);border-radius:12px;padding:14px 18px;margin:12px 0}
+  .destaque{background:var(--verde-900);color:var(--creme);border-radius:0;padding:14px 18px;margin:12px 0}
   .destaque .rot{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-500);display:block;margin-bottom:6px}
   .destaque p{font-family:var(--serif);font-style:italic;font-size:14px;line-height:1.5;margin:0;color:#EAF2ED;text-align:left}
 
@@ -47,17 +47,17 @@
   ol.num li{counter-increment:t;padding-left:30px}
   ol.num li::before{content:counter(t);background:var(--verde-900);color:#fff;width:20px;height:20px;border-radius:50%;top:1px;left:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-family:var(--serif)}
 
-  .conexao{background:#fff;border:1px solid var(--verde-100);border-left:4px solid var(--coral);border-radius:10px;padding:12px 16px;margin:12px 0;text-align:justify}
+  .conexao{background:#fff;border:1px solid var(--verde-100);border-left:4px solid var(--coral);border-radius:0;padding:12px 16px;margin:12px 0;text-align:justify}
   .conexao b{color:var(--verde-900)}
 
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .card{background:#fff;border:1px solid var(--verde-100);border-radius:10px;padding:12px 14px}
+  .card{background:#fff;border:1px solid var(--verde-100);border-radius:0;padding:12px 14px}
   .card b{display:block;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--verde-700);margin-bottom:5px}
   .card p{font-size:11.5px;margin:0;line-height:1.5;text-align:justify}
 
   .rodape{margin-top:auto;padding-top:10px;border-top:1px solid var(--verde-100);display:flex;justify-content:space-between;align-items:baseline;font-size:9px;color:var(--tinta-suave)}
   .rodape .assin{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--verde-700)}
-  .fonte{font-size:9.5px;color:var(--tinta-suave);line-height:1.5;margin-top:10px;background:var(--verde-100);border-radius:8px;padding:10px 12px;text-align:justify}
+  .fonte{font-size:9.5px;color:var(--tinta-suave);line-height:1.5;margin-top:10px;background:var(--verde-100);border-radius:0;padding:10px 12px;text-align:justify}
   .fonte b{color:var(--verde-900)}
 
   @media print{ body{background:#fff} .folha{margin:0;box-shadow:none;page-break-after:always} .folha:last-child{page-break-after:auto} }
@@ -94,21 +94,21 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .intnav .intnav-spacer{flex:1 1 auto}
 .intnav .intnav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .intnav .intnav-jornada{font-weight:600}
-.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;
+.intnav .intnav-pill{border:1px solid rgba(255,255,255,.22);border-radius:0;padding:6px 12px;
   font-size:12.5px;font-weight:600;color:#F5F7F3;white-space:nowrap;background:none}
 .intnav .intnav-pill:hover{border-color:#FF6842;color:#FF6842}
 .intnav .intnav-pill.disabled{opacity:.32;pointer-events:none}
 .intnav .intnav-menu{position:relative;flex-shrink:0}
 .intnav .intnav-menu-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(255,255,255,.22);
-  border-radius:999px;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
+  border-radius:0;color:#F5F7F3;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;cursor:pointer;white-space:nowrap}
 .intnav .intnav-menu-btn:hover{border-color:#FF6842;color:#FF6842}
 .intnav .intnav-menu-btn .caret{transition:transform .18s}
 .intnav .intnav-menu.open .intnav-menu-btn .caret{transform:rotate(180deg)}
 .intnav .intnav-menu-panel{position:absolute;top:calc(100% + 8px);right:0;left:auto;min-width:196px;background:#fff;
-  border:1px solid #DAE6E1;border-radius:12px;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
+  border:1px solid #DAE6E1;border-radius:0;box-shadow:0 14px 34px rgba(39,87,80,.24);padding:6px;
   display:none;flex-direction:column;z-index:100000}
 .intnav .intnav-menu.open .intnav-menu-panel{display:flex}
-.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.intnav .intnav-menu-panel a{color:#20332F;padding:9px 12px;border-radius:0;font-size:13.5px;font-weight:500;white-space:nowrap}
 .intnav .intnav-menu-panel a:hover{background:#EFF2EE;color:#275750}
 .intnav .intnav-menu-panel a.atual{color:#275750;font-weight:700;background:#F4FAF7}
 @media(max-width:620px){
@@ -120,6 +120,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .intnav .intnav-pill .lbl{display:none}
   .intnav .intnav-pill{padding:6px 10px}
 }
+
+/* IDENTIDADE v2 RETANGULAR — 18/08/2026. Ver a nota igual nas outras paginas. */
+h1,h2,h3{font-weight:500;font-variation-settings:"opsz" 144;letter-spacing:-.015em}
+h1,h2{line-height:1.05}
+.btn,.of-btn,.cta{text-transform:uppercase;letter-spacing:.14em;font-weight:600}
 </style><nav class="intnav" aria-label="Navegação da trilha Intentia"><a class="intnav-brand" href="../index.html" title="Jornada — início da trilha">Intentia<span>· Capital de Carreira</span></a><span class="intnav-crumb"><a class="crumb-capa" href="../index.html">Jornada</a><span class="sep sep-capa">›</span><a href="index.html">Etapa 13</a><span class="sep">›</span><a href="academia.html">Academia</a><span class="sep">›</span><span class="cur">Resumo</span></span><span class="intnav-spacer"></span><span class="intnav-right"><div class="intnav-menu"><button class="intnav-menu-btn" aria-haspopup="true" aria-expanded="false"><span class="lbl">Neste dia</span><span class="caret">▾</span></button><div class="intnav-menu-panel" role="menu"><a href="index.html">Visão geral</a><a href="audio.html">Áudio</a><a href="academia.html" class="atual">Academia</a><a href="playbook.html">Playbook</a><a href="missao.html">Missão</a><a href="material.html">Material</a><a href="roteiro-ia.html">Roteiro IA</a></div></div><a class="intnav-pill" href="../Dia 12/index.html" title="Etapa 12 (tecla ←)">←<span class="lbl"> Etapa 12</span></a><a class="intnav-pill" href="../Dia 14/index.html" title="Etapa 14 (tecla →)"><span class="lbl">Etapa 14 </span>→</a></span></nav><script>
 (function(){
   // Atalhos de teclado: ← dia anterior / → próximo dia (não dispara ao digitar)

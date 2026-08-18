@@ -22,31 +22,36 @@ body{font-family:var(--sans);background:var(--verde-900);color:var(--tinta);line
 .topo{padding:20px 24px}
 .topo img{height:30px}
 main{flex:1;display:flex;align-items:center;justify-content:center;padding:16px 20px 48px}
-.cartao{width:min(560px,100%);background:var(--papel);border-radius:22px;padding:38px 34px;box-shadow:0 26px 70px rgba(16,32,29,.4)}
+.cartao{width:min(560px,100%);background:var(--papel);border-radius:0;padding:38px 34px;box-shadow:0 26px 70px rgba(16,32,29,.4)}
 @media(max-width:480px){.cartao{padding:28px 22px}}
 .etq{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ambar-escuro);margin-bottom:12px}
 h1,h2{font-family:var(--serif);font-weight:600;color:var(--verde-900);line-height:1.25}
 h1{font-size:clamp(22px,5.5vw,28px);margin-bottom:14px}
 p.intro{color:var(--tinta-suave);margin-bottom:24px;font-size:15px}
-.btn{display:inline-block;border:none;border-radius:999px;padding:15px 32px;font-family:var(--sans);font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;text-align:center;background:linear-gradient(100deg,var(--coral),#f5825f);color:#fff;box-shadow:0 6px 20px rgba(240,98,62,.35);transition:transform .18s}
+.btn{display:inline-block;border:none;border-radius:0;padding:15px 32px;font-family:var(--sans);font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;text-align:center;background:linear-gradient(100deg,var(--coral),#f5825f);color:#fff;box-shadow:0 6px 20px rgba(240,98,62,.35);transition:transform .18s}
 .btn:hover{transform:translateY(-2px)}
 .progresso{display:flex;gap:6px;margin-bottom:22px}
-.progresso i{flex:1;height:5px;border-radius:99px;background:var(--menta-clara)}
+.progresso i{flex:1;height:5px;border-radius:0;background:var(--menta-clara)}
 .progresso i.on{background:var(--ambar)}
 .pg-num{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
 h2.perg{font-size:clamp(19px,4.6vw,23px);margin-bottom:20px}
-.opcao{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--menta-clara);border-radius:14px;padding:15px 18px;margin-bottom:11px;font-family:var(--sans);font-size:15px;color:var(--tinta);cursor:pointer;transition:border-color .15s, transform .15s}
+.opcao{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--menta-clara);border-radius:0;padding:15px 18px;margin-bottom:11px;font-family:var(--sans);font-size:15px;color:var(--tinta);cursor:pointer;transition:border-color .15s, transform .15s}
 .opcao:hover{border-color:var(--teal);transform:translateY(-1px)}
 .res-terr{font-family:var(--serif);font-weight:600;font-size:clamp(26px,6vw,34px);color:var(--verde-900);margin:6px 0 4px}
 .res-def{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--teal);margin-bottom:16px}
 .res-txt{color:var(--tinta);font-size:15px;margin-bottom:12px}
 .res-nota{font-size:12.5px;color:var(--tinta-suave);font-style:italic;margin:16px 0 22px}
-.res-cta{background:var(--menta-clara);border-radius:16px;padding:20px 22px;margin-top:8px}
+.res-cta{background:var(--menta-clara);border-radius:0;padding:20px 22px;margin-top:8px}
 .res-cta b{font-family:var(--serif);font-weight:600;font-size:16.5px;color:var(--verde-900);display:block;margin-bottom:6px}
 .res-cta p{font-size:14px;color:var(--tinta-suave);margin-bottom:14px}
 .rodape{padding:18px 24px;text-align:center;font-size:12px;color:#7FA095}
 [hidden]{display:none !important}
 @media(prefers-reduced-motion:reduce){.btn,.opcao{transition:none}}
+
+/* IDENTIDADE v2 RETANGULAR — 18/08/2026. Ver a nota igual nas outras paginas. */
+h1,h2,h3{font-weight:500;font-variation-settings:"opsz" 144;letter-spacing:-.015em}
+h1,h2{line-height:1.05}
+.btn,.of-btn,.cta{text-transform:uppercase;letter-spacing:.14em;font-weight:600}
 </style>
 </head>
 <body>
