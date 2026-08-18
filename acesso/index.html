@@ -312,6 +312,7 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
 footer nav a{color:inherit;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;font-size:.68rem;opacity:.8}
 footer nav a:hover{color:var(--spark);opacity:1}
 footer p{opacity:.65}
+footer .empresa span{display:block}
 footer .social{display:flex;gap:14px;justify-content:center}
 footer .social a{width:42px;height:42px;border:1px solid var(--line);display:grid;place-items:center;color:var(--paper);transition:background .15s,color .15s,border-color .15s}
 footer .social a:hover{background:var(--spark);border-color:var(--spark);color:#fff}
@@ -590,10 +591,27 @@ h1,h2{line-height:1.05}
       <p class="kicker">Como funciona</p>
       <h2>Do diagnóstico ao plano, em três passos.</h2>
     </div>
-    <div class="passos">
-      <div class="passo"><div class="n">01</div><h3>Retrato de Carreira</h3><p>Você descobre onde está hoje em cada uma das seis frentes, e o que pede atenção primeiro.</p></div>
-      <div class="passo"><div class="n">02</div><h3>Trilha</h3><p>Segue um percurso guiado, dia a dia, para agir com intenção nas frentes que importam agora.</p></div>
-      <div class="passo"><div class="n">03</div><h3>Plano em movimento</h3><p>Sai com um plano concreto, ferramentas para acompanhar e clareza sobre os próximos passos.</p></div>
+    <div class="foto-par">
+      <div class="passos">
+        <div class="passo"><div class="n">01</div><h3>Retrato de Carreira</h3><p>Você descobre onde está hoje em cada uma das seis frentes, e o que pede atenção primeiro.</p></div>
+        <div class="passo"><div class="n">02</div><h3>Trilha</h3><p>Segue um percurso guiado, dia a dia, para agir com intenção nas frentes que importam agora.</p></div>
+        <div class="passo"><div class="n">03</div><h3>Plano em movimento</h3><p>Sai com um plano concreto, ferramentas para acompanhar e clareza sobre os próximos passos.</p></div>
+      </div>
+      <!-- O arquivo publicado JA ESTA CORTADO, e nao cortado pelo CSS: o original
+           tem a plateia em primeiro plano e nas poltronas da esquerda, com rostos
+           reconheciveis. Decisao dela em 18/08 - "sem plateia identificavel". Um
+           corte feito por CSS deixaria o arquivo inteiro no servidor, ao alcance
+           de quem abrisse o endereco da imagem. O corte esta na imagem. -->
+      <figure class="foto-vert">
+        <div class="fbox">
+          <img src="/imagens/foto-palestra.jpg" width="760" height="950" loading="lazy" decoding="async"
+               alt="Apresentação em um palco, diante do painel de madeira do auditório">
+        </div>
+        <figcaption class="fcard">
+          <span class="rot"><i></i>Carreira em movimento</span>
+          <b>Do reagir ao conduzir.</b>
+        </figcaption>
+      </figure>
     </div>
     </div>
   </div>
@@ -604,7 +622,7 @@ h1,h2{line-height:1.05}
   <div class="wrap reveal">
     <p class="kicker">A ruptura</p>
     <h2>As carreiras que mais crescem hoje são as que se conduzem <span class="mk">com intenção.</span></h2>
-    <p class="sub">Competência já não basta. Um pequeno grupo de profissionais cresce de forma consistente porque trata a carreira como projeto, e não como consequência.<b>É a <span class="mk">carreira com intenção.</span></b></p>
+    <p class="sub">Competência já não basta. Quem cresce de forma consistente trata a carreira como projeto, e não como consequência.<b>É a <span class="mk">diferença entre conduzir e esperar.</span></b></p>
     <div class="ruptura">
       <div class="col col--reativa">
         <h3>Como a maioria tenta crescer:</h3>
@@ -767,7 +785,7 @@ h1,h2{line-height:1.05}
   <div class="wrap reveal">
     <p class="kicker">Base do método</p>
     <h2>Construído por quem viveu isso.</h2>
-    <p class="lead mt-32" style="max-width:60ch">O Intentia nasce da experiência de executivos que construíram carreiras longas em grandes organizações e da curadoria de referências reconhecidas em desenvolvimento de carreira e liderança. Sem promessas: método, ferramenta e um jeito honesto de olhar para onde você está.</p>
+    <p class="lead mt-32" style="max-width:60ch">O Intentia nasce da experiência de executivas que construíram carreiras longas em grandes organizações e da curadoria de referências reconhecidas em desenvolvimento de carreira e liderança. Sem promessas: método, ferramenta e um jeito honesto de olhar para onde você está.</p>
   </div>
 </section>
 
@@ -890,11 +908,16 @@ h1,h2{line-height:1.05}
   </div>
   <nav>
     <a href="https://intentiahub.com/privacidade.html">Política de Privacidade</a>
+    <!-- "Contato" saiu em 18/08: o icone do envelope, logo acima, aponta para
+         este MESMO mailto. Dois caminhos para o mesmo lugar, um deles escrito
+         e outro desenhado, e so uma lista mais longa para ler. -->
     <a href="https://intentiahub.com/termos.html">Termos de uso</a>
-    <a href="mailto:contato@intentiahub.com">Contato</a>
   </nav>
   <p>Carreira com intenção · © 2026 Intentia · Todos os direitos reservados</p>
-  <p>Intentia Desenvolvimento e Tecnologia Ltda · CNPJ 68.600.826/0001-25</p>
+  <!-- Razao social e CNPJ em DUAS linhas declaradas, e nao numa so deixada
+       para o navegador quebrar: numa linha unica ele partia entre "CNPJ" e o
+       numero, e o CNPJ aparecia orfao na linha de baixo. -->
+  <p class="empresa">Intentia Desenvolvimento e Tecnologia Ltda<span>CNPJ 68.600.826/0001-25</span></p>
 </div></footer>
 
 <script>
