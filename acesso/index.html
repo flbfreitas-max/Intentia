@@ -374,9 +374,40 @@ h1,h2{line-height:1.05}
    (sem ele o iPhone toma a tela) e o aspect-ratio, que reserva o espaco antes de
    a capa chegar e evita o pulo de layout. */
 .video-par{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:flex-start;gap:44px;margin-top:8px}
-.video-texto{flex:0 1 490px;min-width:0}
-.video-texto h2{margin-bottom:18px}
-.video-texto p{font-size:1.18rem;line-height:1.68;opacity:.85;max-width:46ch}
+/* O LADO ESQUERDO, que segura texto e lista JUNTOS.
+   Sem ele, medido a 980px de janela: texto e lista ficavam lado a lado e o
+   VIDEO caia sozinho na linha de baixo, encostado a esquerda, com 617px de
+   vazio a direita. Era o mesmo defeito que ela apontou, so que uma linha
+   abaixo. Agrupados, os dois descem juntos e o video nunca fica orfao. */
+/* Base 400, e nao a largura que ele de fato ocupa. O flex quebra linha
+   comparando a BASE, nao o tamanho ja encolhido: com base 560 a conta dava
+   904 numa faixa de 767 (janela de 830) e o video descia sozinho de novo.
+   400 + 44 + 300 = 744, que cabe ate na faixa mais estreita desta banda
+   (758px, na janela de 821). Depois de colocado, ele cresce e ocupa o resto. */
+.video-lado{flex:1 1 400px;min-width:360px;display:block}
+.video-texto{min-width:0}
+/* A COLUNA DO MEIO, que fecha a largura.
+   Com duas colunas o par media 834px numa faixa de 1072: o vao saiu do meio e
+   foi para a direita do video. Ela viu de novo, e sugeriu a saida: "sera que a
+   gente nao consegue dividir esse espaco em tipo 3 colunas, colocando um pouco
+   mais de texto?".
+   O texto do meio NAO E NOVO: sao os tres verbos que ja estavam no paragrafo
+   dela (reconhecer, identificar, decidir), tirados de la e postos em lista. O
+   paragrafo encurtou na mesma medida, entao nada se repete. */
+.video-lista{min-width:0;margin-top:26px;list-style:none;margin:0;padding:0;display:grid;gap:20px}
+.video-lista li{position:relative;padding-left:20px;font-size:1rem;line-height:1.6;opacity:.9}
+.video-lista li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;background:var(--spark)}
+.video-lista b{display:block;font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.12rem;letter-spacing:-.01em;margin-bottom:4px;opacity:1}
+/* Menor que o h2 padrao (3.2rem) DE PROPOSITO: com tres colunas a do
+   texto tem 400px, e a linha mais longa do titulo forcado ("uma resposta
+   pronta") mede 386px a 51px. Cabia por 14px, o que e o mesmo que nao
+   caber: qualquer fonte que carregue um pouco mais larga quebra em 4
+   linhas, e foi o que o navegador fez. A 46px sobra folga real.
+   O teto entra no clamp, e nao como tamanho fixo: fixo venceria o
+   clamp geral dos h2 e deixaria o titulo com 46px tambem no celular,
+   onde o certo sao 32. Medido: virava um titulo de cinco linhas. */
+.video-texto h2{margin-bottom:18px;font-size:clamp(2rem,4.4vw,2.9rem);line-height:1.1}
+.video-texto p{font-size:1.12rem;line-height:1.68;opacity:.85}
 .vcard{flex:0 0 300px;margin:0}
 /* QUANDO HOUVER DOIS VIDEOS eles encolhem, senao a linha quebra: 490 de texto
    + 44 + 300 + 44 + 300 da 1178, e o wrap tem 1072. Com 245 cada, fecha em
@@ -391,7 +422,11 @@ h1,h2{line-height:1.05}
 @media(max-width:820px){
   /* Empilhado: o texto primeiro, porque e ele que explica por que valeria a pena
      gastar 32 segundos assistindo. */
-  .video-par{gap:28px}
+  .video-par{gap:26px}
+  /* O piso de 360px do agrupador so faz sentido quando ele divide a
+     linha com o video. Aqui a coluna tem 327px, e o piso empurrava a
+     pagina inteira para o lado: medido, rolagem horizontal no celular. */
+  .video-lado{min-width:0}
   .vcard{flex:1 1 100%;max-width:380px;margin:0 auto}
 }
 
@@ -401,6 +436,24 @@ h1,h2{line-height:1.05}
    linhas de duas palavras. */
 .quebra{display:none}
 @media(min-width:821px){.quebra{display:inline}}
+/* Tres colunas so acima de 1080px de janela: abaixo disso a faixa nao
+   comporta 320 (texto) + 250 (lista) + 300 (video) + os dois vaos de 44,
+   e insistir espremeria o titulo. Entre 821 e 1080 sao duas colunas, com a
+   lista sob o texto. */
+@media(min-width:1081px){
+  .video-lado{display:flex;align-items:flex-start;gap:44px}
+  .video-texto{flex:1 1 400px;min-width:320px}
+  .video-lista{flex:1 1 280px;min-width:250px;margin-top:0}
+}
+/* QUANDO O SEGUNDO VIDEO CHEGAR: volta a duas colunas.
+   Medido clonando o cartao no navegador: com dois videos as tres colunas ainda
+   cabem, mas o texto e espremido ate o piso de 320px e o titulo quebra em cinco
+   linhas em vez de tres. Entao a lista desce para baixo do texto e o lado inteiro
+   fica com 494px, que e largura de sobra para as tres linhas. */
+@media(min-width:1081px){
+  .video-par:has(.vcard + .vcard) .video-lado{display:block}
+  .video-par:has(.vcard + .vcard) .video-lista{margin-top:26px}
+}
 </style>
 </head>
 <body>
@@ -563,13 +616,18 @@ h1,h2{line-height:1.05}
 <section class="light">
   <div class="wrap reveal">
     <div class="video-par">
-      <div class="video-texto">
-        <p class="kicker left">Em vídeo</p>
-        <h2>Não existe <br class="quebra">uma resposta pronta <br class="quebra">para a sua carreira.</h2>
-        <p>Existe uma estratégia que precisa fazer sentido para você. No Intentia, suas
-        respostas orientam uma jornada personalizada, com missões práticas para reconhecer o
-        que você já construiu, identificar o que precisa desenvolver e decidir onde concentrar
-        sua energia para avançar.</p>
+      <div class="video-lado">
+        <div class="video-texto">
+          <p class="kicker left">Em vídeo</p>
+          <h2>Não existe <br class="quebra">uma resposta pronta <br class="quebra">para a sua carreira.</h2>
+          <p>Existe uma estratégia que precisa fazer sentido para você. No Intentia, as suas
+          respostas orientam uma jornada personalizada, com missões práticas.</p>
+        </div>
+        <ul class="video-lista">
+          <li><b>Reconhecer</b> o que você já construiu, e que hoje passa despercebido até para você.</li>
+          <li><b>Identificar</b> o que precisa desenvolver para chegar onde quer chegar.</li>
+          <li><b>Decidir</b> onde concentrar a sua energia, em vez de espalhá-la em tudo.</li>
+        </ul>
       </div>
       <figure class="vcard" data-video="/video/intentia-1.mp4">
         <div class="vbox">
