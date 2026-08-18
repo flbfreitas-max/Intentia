@@ -120,10 +120,18 @@ header .btn{padding:8px 12px;font-size:.62rem;letter-spacing:.1em}
    de escrever o CSS: a foto do caderno perde o caderno em faixa larga (era
    o assunto da foto), e por isso ela e a vertical; a da mesa sobrevive bem
    deitada, e por isso ela e a faixa. */
-.cf-corpo{display:flex;flex-wrap:wrap;align-items:flex-start;gap:52px;margin-top:48px}
-.cf-corpo .passos{flex:1 1 480px;min-width:300px;margin-top:0;grid-template-columns:1fr}
-.cf-corpo .passo{border-right:0;border-bottom:1px solid var(--line-dark)}
-.cf-corpo .passo:last-child{border-bottom:0}
+/* O par foto + grade. Serve aos dois blocos: nos tres passos a foto vai a
+   direita, e nos beneficios ela vai a esquerda (--espelho). Espelhar, e nao
+   repetir o mesmo lado, e o que impede a pagina de parecer que tem dois
+   blocos iguais. A grade que vem ao lado deixa de ser de tres colunas e
+   vira coluna unica, com os fios passando de vertical para horizontal. */
+.foto-par{display:flex;flex-wrap:wrap;align-items:flex-start;gap:52px;margin-top:48px}
+.foto-par .passos,.foto-par .beneficios{flex:1 1 480px;min-width:300px;margin-top:0;grid-template-columns:1fr}
+.foto-par .passo{border-right:0;border-bottom:1px solid var(--line-dark)}
+.foto-par .passo:last-child{border-bottom:0}
+.foto-par .beneficio{border-right:0;border-bottom:1px solid var(--line)}
+.foto-par .beneficio:last-child{border-bottom:0}
+.foto-par--espelho .foto-vert{order:-1}
 .foto-vert{flex:0 0 372px;min-width:0;position:relative;margin:0}
 .foto-vert .fbox{aspect-ratio:4/5;overflow:hidden;border:1px solid var(--line-dark);background:var(--ink)}
 .foto-vert img,.foto-banda img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.88)}
@@ -143,7 +151,11 @@ header .btn{padding:8px 12px;font-size:.62rem;letter-spacing:.1em}
 .foto-banda img{object-position:center 42%}
 .foto-banda figcaption{position:absolute;left:0;bottom:0;margin:0;background:var(--ink);color:#fff;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;padding:9px 13px}
 @media (max-width:900px){
-  .cf-corpo{gap:36px}
+  .foto-par{gap:36px}
+  /* Empilhado, a foto do bloco espelhado continua vindo ANTES da grade, que
+     e a mesma ordem que ela tem no computador. Eu tinha escrito order:0 aqui
+     achando que mandaria a foto para baixo; medido, nao manda - o seletor do
+     espelho e mais especifico e vence. Ficou como esta de proposito. */
   .foto-vert{flex:1 1 100%;max-width:420px;margin:0 auto}
 }
 /* Deitada a 327px de largura a faixa teria 143px de altura: uma tira, nao
@@ -578,22 +590,11 @@ h1,h2{line-height:1.05}
       <p class="kicker">Como funciona</p>
       <h2>Do diagnóstico ao plano, em três passos.</h2>
     </div>
-    <div class="cf-corpo">
-      <div class="passos">
-        <div class="passo"><div class="n">01</div><h3>Retrato de Carreira</h3><p>Você descobre onde está hoje em cada uma das seis frentes, e o que pede atenção primeiro.</p></div>
-        <div class="passo"><div class="n">02</div><h3>Trilha</h3><p>Segue um percurso guiado, dia a dia, para agir com intenção nas frentes que importam agora.</p></div>
-        <div class="passo"><div class="n">03</div><h3>Plano em movimento</h3><p>Sai com um plano concreto, ferramentas para acompanhar e clareza sobre os próximos passos.</p></div>
-      </div>
-      <figure class="foto-vert">
-        <div class="fbox">
-          <img src="/imagens/foto-caderno.jpg" width="1400" height="1000" loading="lazy" decoding="async"
-               alt="Profissional escrevendo no caderno enquanto consulta o celular e o notebook">
-        </div>
-        <figcaption class="fcard">
-          <span class="rot"><i></i>Carreira em movimento</span>
-          <b>Do reagir ao conduzir.</b>
-        </figcaption>
-      </figure>
+    <div class="passos">
+      <div class="passo"><div class="n">01</div><h3>Retrato de Carreira</h3><p>Você descobre onde está hoje em cada uma das seis frentes, e o que pede atenção primeiro.</p></div>
+      <div class="passo"><div class="n">02</div><h3>Trilha</h3><p>Segue um percurso guiado, dia a dia, para agir com intenção nas frentes que importam agora.</p></div>
+      <div class="passo"><div class="n">03</div><h3>Plano em movimento</h3><p>Sai com um plano concreto, ferramentas para acompanhar e clareza sobre os próximos passos.</p></div>
+    </div>
     </div>
   </div>
 </section>
@@ -740,10 +741,22 @@ h1,h2{line-height:1.05}
     <p class="kicker left">Acesso antecipado</p>
     <h2>Por que entrar <span class="mk">agora.</span></h2>
     <p class="lead" style="margin-top:16px">Quem entra antes do lançamento tem condições que não vão se repetir.</p>
-    <div class="beneficios">
-      <div class="beneficio"><svg viewBox="0 0 24 24"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg><h3>Desconto exclusivo</h3><p>Condição especial na entrada, válida no lançamento. Quem entra agora paga menos do que quem entra depois.</p></div>
-      <div class="beneficio"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 006.5 22H20V2H6.5A2.5 2.5 0 004 4.5z"/></svg><h3>Material bônus</h3><p>Conteúdos e ferramentas exclusivos de quem entrou antes, fora do catálogo aberto.</p></div>
-      <div class="beneficio"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><h3>Acesso antecipado</h3><p>Conteúdos e novas trilhas liberados para você antes do lançamento oficial.</p></div>
+    <div class="foto-par foto-par--espelho">
+      <figure class="foto-vert">
+        <div class="fbox">
+          <img src="/imagens/foto-caderno.jpg" width="1400" height="1000" loading="lazy" decoding="async"
+               alt="Profissional escrevendo no caderno enquanto consulta o celular e o notebook">
+        </div>
+        <figcaption class="fcard">
+          <span class="rot"><i></i>Antes do lançamento</span>
+          <b>Quem entra agora, entra primeiro.</b>
+        </figcaption>
+      </figure>
+      <div class="beneficios">
+        <div class="beneficio"><svg viewBox="0 0 24 24"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg><h3>Desconto exclusivo</h3><p>Condição especial na entrada, válida no lançamento. Quem entra agora paga menos do que quem entra depois.</p></div>
+        <div class="beneficio"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 006.5 22H20V2H6.5A2.5 2.5 0 004 4.5z"/></svg><h3>Material bônus</h3><p>Conteúdos e ferramentas exclusivos de quem entrou antes, fora do catálogo aberto.</p></div>
+        <div class="beneficio"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><h3>Acesso antecipado</h3><p>Conteúdos e novas trilhas liberados para você antes do lançamento oficial.</p></div>
+      </div>
     </div>
     <div class="mt-48"><a class="btn" href="#acesso">Acesso antecipado</a></div>
   </div>
