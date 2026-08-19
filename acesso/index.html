@@ -176,7 +176,11 @@ header .btn{padding:8px 12px;font-size:.62rem;letter-spacing:.1em}
      desenhando o retangulo sobre o recorte real, o cartao ficava em cima do
      rosto. Numa tela estreita a foto ja e pequena; tapar um pedaco dela para
      manter um efeito de computador e trocar o que importa pelo enfeite. */
-  .fcard{position:static;max-width:none;margin-top:14px;border-left:0;border-right:0;border-bottom:0;padding:14px 0 0}
+  /* O recuo lateral tem de VOLTAR aqui. Ao tirar o cartao de cima da foto eu
+     zerei o padding lateral junto, mas o fundo branco ficou: no celular virou
+     uma caixa branca com o texto colado na borda esquerda. Ela viu no aparelho
+     e apontou. E caixa, entao pede respiro dos quatro lados. */
+  .fcard{position:static;max-width:none;margin-top:14px;padding:16px 18px}
   /* Empilhado, a foto do bloco espelhado continua vindo ANTES da grade, que
      e a mesma ordem que ela tem no computador. Eu tinha escrito order:0 aqui
      achando que mandaria a foto para baixo; medido, nao manda - o seletor do
