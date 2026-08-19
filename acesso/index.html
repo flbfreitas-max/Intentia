@@ -126,20 +126,31 @@ header .btn{padding:8px 12px;font-size:.62rem;letter-spacing:.1em}
    blocos iguais. A grade que vem ao lado deixa de ser de tres colunas e
    vira coluna unica, com os fios passando de vertical para horizontal. */
 .foto-par{display:flex;flex-wrap:wrap;align-items:flex-start;gap:52px;margin-top:48px}
-.foto-par .passos,.foto-par .beneficios{flex:1 1 480px;min-width:300px;margin-top:0;grid-template-columns:1fr}
+/* Base 400, e nao 480: o flex decide a quebra de linha pela BASE, nao pela
+   largura ja encolhida. Com 480 a conta dava 904 numa faixa de 887 (janela de
+   950) e a foto descia para uma linha so dela - e ali, sem altura de grade
+   para casar, a caixa voltava a proporcao do arquivo e a do caderno virava uma
+   tira deitada de 372x266. Com 400 a soma e 824, que cabe ate na faixa mais
+   estreita desta banda. */
+.foto-par .passos,.foto-par .beneficios{flex:1 1 400px;min-width:300px;margin-top:0;grid-template-columns:1fr}
 .foto-par .passo{border-right:0;border-bottom:1px solid var(--line-dark)}
 .foto-par .passo:last-child{border-bottom:0}
 .foto-par .beneficio{border-right:0;border-bottom:1px solid var(--line)}
 .foto-par .beneficio:last-child{border-bottom:0}
 .foto-par--espelho .foto-vert{order:-1}
-/* A foto pendura pela BASE, e nao pelo topo: a grade ao lado e mais alta que
-   ela, e alinhando por cima sobrava um vao embaixo, do lado do ultimo quadro.
-   Pedido dela em 18/08, com o cuidado que ela mesma nomeou: o topo NAO deve
-   casar com o topo do primeiro quadro.
-   Vale nos DOIS blocos. Eu tinha feito so no dos passos, achando que no
-   espelhado o buraco subiria para a borda de entrada da leitura; ela olhou
-   os beneficios e pediu igual. */
-.foto-par .foto-vert{align-self:flex-end}
+/* A foto cobre a ALTURA INTEIRA da grade ao lado: comeca na linha de cima do
+   primeiro quadro e termina na linha de baixo do ultimo.
+   Antes ela pendurava pela base, e ficava um vao no alto. Foram tres
+   estados ate aqui, os tres pedidos por ela olhando a tela: alinhada por
+   cima (sobrava embaixo), alinhada por baixo (sobrava em cima), e agora
+   esticada, sem sobra nenhuma.
+   O `aspect-ratio` sai de cena aqui, e a altura passa a mandar; o corte fica
+   por conta do `object-fit:cover`. So a partir de 901px, porque empilhado a
+   figura nao tem altura definida e `height:100%` faria a caixa sumir. */
+@media (min-width:901px){
+  .foto-par .foto-vert{align-self:stretch}
+  .foto-par .foto-vert .fbox{height:100%;aspect-ratio:auto}
+}
 .foto-vert{flex:0 0 372px;min-width:0;position:relative;margin:0}
 .foto-vert .fbox{aspect-ratio:4/5;overflow:hidden;border:1px solid var(--line-dark);background:var(--ink)}
 .foto-vert img,.foto-banda img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.88)}
@@ -160,6 +171,12 @@ header .btn{padding:8px 12px;font-size:.62rem;letter-spacing:.1em}
 .foto-banda figcaption{position:absolute;left:0;bottom:0;margin:0;background:var(--ink);color:#fff;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;padding:9px 13px}
 @media (max-width:900px){
   .foto-par{gap:36px}
+  /* Empilhado o cartao DESCE da foto e vira legenda. Sobreposto ele nao cabe:
+     a caixa fica com 327px, o corte come a folga acima da cabeca dela e,
+     desenhando o retangulo sobre o recorte real, o cartao ficava em cima do
+     rosto. Numa tela estreita a foto ja e pequena; tapar um pedaco dela para
+     manter um efeito de computador e trocar o que importa pelo enfeite. */
+  .fcard{position:static;max-width:none;margin-top:14px;border-left:0;border-right:0;border-bottom:0;padding:14px 0 0}
   /* Empilhado, a foto do bloco espelhado continua vindo ANTES da grade, que
      e a mesma ordem que ela tem no computador. Eu tinha escrito order:0 aqui
      achando que mandaria a foto para baixo; medido, nao manda - o seletor do
@@ -629,7 +646,7 @@ h1,h2{line-height:1.05}
            de quem abrisse o endereco da imagem. O corte esta na imagem. -->
       <figure class="foto-vert">
         <div class="fbox">
-          <img src="/imagens/foto-palestra.jpg" width="760" height="950" loading="lazy" decoding="async"
+          <img src="/imagens/foto-palestra.jpg?v=2" width="760" height="950" loading="lazy" decoding="async"
                alt="Apresentação em um palco, diante do painel de madeira do auditório">
         </div>
         <figcaption class="fcard">
