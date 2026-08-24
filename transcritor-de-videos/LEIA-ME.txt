@@ -1,0 +1,53 @@
+TRANSCRITOR DE VÍDEOS — GUIA RÁPIDO
+====================================
+
+O QUE ELA FAZ
+-------------
+- Você cola um link (ou vários) de Instagram, TikTok ou YouTube.
+- Ela baixa SÓ o áudio, não o vídeo inteiro.
+- Transcreve no seu próprio computador — nenhum áudio sai da sua máquina
+  e não existe nenhum serviço pago envolvido.
+- Salva um arquivo de texto por vídeo em Documentos\Transcricoes, com:
+  autor, plataforma, link, duração, idioma detectado, a transcrição
+  corrida e a versão com marcação de tempo.
+- Se o vídeo já foi transcrito antes, ela avisa e NÃO sobrescreve.
+- Detecta sozinha o idioma do vídeo e mostra qual é.
+
+COMO INSTALAR (só uma vez)
+--------------------------
+1. Dê dois cliques em INSTALAR.bat e siga as mensagens.
+2. Ao final, aparece um atalho "Transcritor de Videos" na Área de Trabalho.
+
+COMO USAR
+---------
+1. Abra o atalho "Transcritor de Videos".
+2. Cole um ou vários links na caixa de cima.
+3. Clique em "Transcrever" e acompanhe o andamento.
+4. Clique em "Abrir pasta das transcrições" para ver os arquivos .txt.
+
+Na PRIMEIRA transcrição, ela baixa o modelo de voz (~500 MB) uma única
+vez. Depois disso, a transcrição em si roda offline.
+
+VÍDEOS QUE PEDEM LOGIN
+----------------------
+Alguns Reels só abrem para quem está logado. Nesses casos a ferramenta
+tenta usar automaticamente o login do seu Chrome (só os cookies — ela
+nunca vê sua senha). Se o Chrome estiver aberto e der erro, feche o
+Chrome e tente de novo (o Windows tranca o arquivo de cookies enquanto
+o navegador está aberto).
+
+AJUSTES (opcional)
+------------------
+O arquivo config.txt permite mudar:
+- MODELO: qualidade da transcrição (small é o recomendado;
+  medium é mais preciso e mais lento; base é mais rápido e menos preciso)
+- PASTA_SAIDA: onde salvar as transcrições
+- NAVEGADOR: de qual navegador pegar o login (chrome, edge, firefox)
+
+PROBLEMAS COMUNS
+----------------
+- "Vídeo indisponível/privado": o link não é público; confira se abre
+  numa janela anônima do navegador.
+- Primeira transcrição demorada: é o download único do modelo de voz.
+- Antivírus reclamando do INSTALAR.bat: é um script comum de instalação;
+  escolha "permitir" / "executar assim mesmo".
