@@ -181,81 +181,116 @@ body{
 </style>
 <style>
 /* ============================================================
-   ADAPTAÇÃO LINKEDIN — 1080 x 1080 (quadrado)
-   Só dimensões e composições novas; tokens, fontes e classes
-   do sistema Intentia permanecem intactos.
+   EDIÇÃO LINKEDIN — 1080 x 1080, linguagem de documento editorial.
+   Sem chrome de rede social (dots, arraste, pílulas). Fios finos,
+   cabeço com fólio, índices e colunas. Tokens da marca intactos.
    ============================================================ */
 :root{
-  --pad:84px;
-  --t-xl:82px; --t-l:68px; --t-m:56px; --t-s:46px;
+  --pad:88px;
+  --t-xl:88px; --t-l:72px; --t-m:58px; --t-s:46px;
   --corpo:31px; --micro:22px;
 }
 .slide{width:1080px;height:1080px}
-.corpo{gap:28px}
-.corpo--topo{padding-top:40px}
+.corpo{gap:30px}
+.slide--paper{--fio:rgba(20,64,58,.16)}
+.slide--deep {--fio:rgba(242,246,244,.20)}
+.slide--mint {--fio:rgba(15,59,52,.28)}
 .arco--br{width:780px;height:780px;right:-300px;bottom:-280px}
 .arco--tl{width:720px;height:720px;left:-390px;top:-400px}
 
-/* ---------- frases empilhadas (ritmo editorial) ---------- */
-.linhas{display:flex;flex-direction:column;gap:8px}
-.linhas .l{font-size:32px;line-height:1.5;font-weight:500}
-.slide--paper .linhas .l{color:#3A5B54}
-.slide--deep  .linhas .l{color:#CFE0DB}
+/* ---------- cabeço e rodapé de publicação ---------- */
+.cabeca{align-items:baseline;padding-bottom:24px;border-bottom:1.5px solid var(--fio)}
+.cabeca--marca{align-items:flex-start;padding-bottom:30px}
+.folio{font-size:21px;font-weight:600;letter-spacing:.18em;opacity:.5;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rodape{padding-top:24px;border-top:1.5px solid var(--fio)}
+.rodape .serie{font-size:20px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;opacity:.45}
+.rodape .casa{font-size:20px;font-weight:600;letter-spacing:.18em;opacity:.45}
+
+.secao{font-size:22px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;line-height:1.2}
+.secao--coral{color:var(--spark)}
+.secao--mint {color:var(--mint)}
+.secao--teal {color:var(--teal)}
+
+/* rótulo pequeno dentro do miolo */
+.rotulo{font-size:21px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;opacity:.62;line-height:1.3}
+
+/* ---------- linhas com filete (índice editorial) ---------- */
+.fios{display:flex;flex-direction:column}
+.fios .l{font-size:31px;font-weight:500;padding:21px 0;border-bottom:1.5px solid var(--fio)}
+.fios .l:first-child{border-top:1.5px solid var(--fio)}
+.slide--paper .fios .l{color:#3A5B54}
+.slide--deep  .fios .l{color:#CFE0DB}
+
+/* frase de impacto ancorada à direita */
+.punho{text-align:right;margin-left:auto;max-width:860px}
 
 /* ---------- contraposição tipográfica ---------- */
 .versus{display:flex;flex-direction:column}
 .versus .vs{
   font-family:'Fraunces',Georgia,serif;font-weight:600;
   font-variation-settings:'opsz' 14,'wght' 600,'SOFT' 0,'WONK' 0;
-  font-size:72px;line-height:1.08;letter-spacing:-.015em;
+  font-size:82px;line-height:1.06;letter-spacing:-.015em;
 }
-.versus .vs--antes{opacity:.38}
+.versus .vs--antes{opacity:.32}
 .versus .liga{
   font-size:22px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
-  margin:22px 0;color:var(--teal);
+  margin:26px 0;color:var(--teal);
 }
-.slide--deep .versus .liga{color:var(--mint)}
 
-/* ---------- quadro de percepções (caixas do site, canto reto) ---------- */
-.percep{display:flex;flex-direction:column;gap:20px;max-width:900px}
-.percep .p{padding:30px 36px;border:1.5px solid rgba(242,246,244,.25)}
-.percep .rotulo{
-  font-size:20px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-  opacity:.62;margin-bottom:10px;
-}
-.percep .frase{
+/* ---------- duas colunas com fio vertical ---------- */
+.split{display:flex;gap:0;max-width:920px}
+.split .col{flex:1;display:flex;flex-direction:column;gap:18px;padding-right:44px}
+.split .col + .col{border-left:1.5px solid var(--fio);padding-left:44px;padding-right:0}
+.split .frase{
   font-family:'Fraunces',Georgia,serif;font-weight:600;
   font-variation-settings:'opsz' 14,'wght' 600,'SOFT' 0,'WONK' 0;
-  font-size:40px;line-height:1.16;letter-spacing:-.01em;
+  font-size:42px;line-height:1.18;letter-spacing:-.01em;
 }
-.percep .p--proxima{border-color:var(--spark);background:rgba(240,98,62,.10)}
+.col--antes{opacity:.72}
 
-/* ---------- framework 2x2 (cartões do painel do site) ---------- */
-.quadro{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.quadro .q{background:#fff;border:1.5px solid var(--mint-soft);padding:30px 30px 28px}
-.quadro .cap{
-  font-size:22px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
-  color:var(--teal);margin-bottom:12px;
-}
-.quadro .perg{
-  font-family:'Fraunces',Georgia,serif;font-weight:600;
+/* ---------- índice dos capitais ---------- */
+.indice{list-style:none;display:flex;flex-direction:column}
+.indice li{display:flex;align-items:baseline;gap:26px;padding:21px 0;border-bottom:1.5px solid var(--fio)}
+.indice li:first-child{border-top:1.5px solid var(--fio)}
+.indice .n{
+  font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:23px;
   font-variation-settings:'opsz' 14,'wght' 600,'SOFT' 0,'WONK' 0;
-  font-size:30px;line-height:1.28;color:var(--ink);letter-spacing:-.01em;
+  color:var(--teal);opacity:.75;min-width:42px;font-variant-numeric:tabular-nums;
 }
+.indice .cap{
+  font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:33px;
+  font-variation-settings:'opsz' 14,'wght' 600,'SOFT' 0,'WONK' 0;
+  letter-spacing:-.01em;min-width:320px;color:var(--ink);
+}
+.indice .q{font-size:24px;line-height:1.35;color:#3A5B54;flex:1}
 
 /* ---------- pergunta antiga, em segundo plano ---------- */
 .pergunta-antiga{
   font-family:'Fraunces',Georgia,serif;font-weight:400;font-style:italic;
   font-variation-settings:'opsz' 14,'wght' 400,'SOFT' 0,'WONK' 0;
-  font-size:38px;line-height:1.25;opacity:.55;
+  font-size:40px;line-height:1.25;opacity:.55;
 }
 
-/* ---------- checagem simples (slide do teste) ---------- */
-.teste{display:flex;flex-direction:column;gap:18px}
-.teste .t{display:flex;gap:20px;align-items:baseline;font-size:32px;line-height:1.4;font-weight:500;color:#3A5B54}
-.teste .marcador{flex:0 0 auto;width:16px;height:16px;background:var(--mint);align-self:center}
+/* ---------- checklist de formulário (o teste) ---------- */
+.teste{display:flex;flex-direction:column}
+.teste .t{
+  display:flex;align-items:center;gap:26px;padding:21px 0;
+  border-bottom:1.5px solid var(--fio);
+  font-size:31px;font-weight:500;color:#3A5B54;
+}
+.teste .t:first-child{border-top:1.5px solid var(--fio)}
+.teste .caixa{width:26px;height:26px;border:2px solid var(--teal);flex:0 0 auto}
 
-/* nota final discreta */
+/* ---------- os seis capitais em linha corrida ---------- */
+.capitais{
+  margin-top:6px;
+  display:flex;flex-wrap:wrap;align-items:baseline;row-gap:16px;
+  font-size:23px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:#CFE0DB;
+}
+.capitais span{white-space:nowrap}
+.capitais span:not(:last-child)::after{content:"·";margin:0 20px;color:var(--mint)}
+
 .nota{font-size:25px;line-height:1.5;opacity:.72;font-weight:500}
 </style>
 </head>
@@ -264,8 +299,7 @@ body{
 <!-- ===== 01 · CAPA ===== -->
 <section class="slide slide--deep">
   <div class="arco arco--br"></div>
-  <div class="ponto" style="width:40px;height:40px;right:150px;bottom:280px"></div>
-  <div class="top">
+  <div class="top cabeca cabeca--marca">
     <div class="marca">
       <div class="lockup">
         <svg width="58" height="58" viewBox="0 0 128 128" aria-hidden="true">
@@ -276,166 +310,161 @@ body{
       </div>
       <div class="assinatura">carreira com intenção</div>
     </div>
-    <div class="contador">01 / 08</div>
+    <div class="folio">oito páginas</div>
   </div>
   <div class="corpo">
-    <h2 class="titulo titulo--xl">Por que profissionais competentes ficam anos no <span class="grifo">mesmo nível</span>?</h2>
+    <div class="secao secao--mint">Capital de carreira</div>
+    <h2 class="titulo titulo--xl">Por que profissionais competentes ficam anos no <span class="grifo">mesmo&nbsp;nível</span>?</h2>
     <p class="apoio apoio--largo">Nem sempre é falta de resultado.</p>
   </div>
-  <div class="base">
-    <div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    <span class="arraste">arraste
-      <svg width="30" height="14" viewBox="0 0 30 14" fill="none" aria-hidden="true"><path d="M0 7h27M22 2l5 5-5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </span>
+  <div class="base rodape">
+    <span class="serie">Uma leitura Intentia sobre carreira</span>
+    <span class="folio">01 — 08</span>
   </div>
 </section>
 
 <!-- ===== 02 · VOCÊ ENTREGA BEM ===== -->
 <section class="slide slide--paper">
-  <div class="top">
-    <div class="eyebrow eyebrow--coral">O padrão</div>
-    <div class="contador">02 / 08</div>
+  <div class="top cabeca">
+    <div class="secao secao--coral">O padrão</div>
+    <div class="folio">02 — 08</div>
   </div>
   <div class="corpo">
     <h2 class="titulo">Você entrega bem.</h2>
-    <div class="linhas">
+    <div class="fios">
       <div class="l">Resolve problemas.</div>
       <div class="l">Cumpre o que promete.</div>
       <div class="l">Torna-se alguém em quem a liderança confia.</div>
     </div>
-    <p class="apoio">E então acontece algo previsível:</p>
-    <h3 class="titulo titulo--m">começam a entregar <span class="grifo">mais coisas</span> para você.</h3>
+    <div class="rotulo">E então acontece algo previsível:</div>
+    <h3 class="titulo titulo--m punho">começam a entregar <span class="grifo">mais coisas</span> para você.</h3>
   </div>
-  <div class="base">
-    <div class="dots"><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="base rodape">
+    <span class="serie">Capital de carreira</span>
+    <span class="casa">Intentia</span>
   </div>
 </section>
 
 <!-- ===== 03 · A ARMADILHA ===== -->
 <section class="slide slide--paper">
-  <div class="arco arco--tl"></div>
-  <div class="top">
-    <div class="eyebrow eyebrow--coral">A armadilha</div>
-    <div class="contador">03 / 08</div>
+  <div class="top cabeca">
+    <div class="secao secao--coral">A armadilha</div>
+    <div class="folio">03 — 08</div>
   </div>
   <div class="corpo">
     <p class="apoio apoio--largo"><b>Mais responsabilidade parece crescimento.</b><br>Seu escopo aumenta. Os problemas ficam maiores. Mais pessoas dependem de você.</p>
-    <p class="apoio">Mas existe uma diferença importante:</p>
+    <div class="rotulo">Mas existe uma diferença importante:</div>
     <div class="versus">
       <div class="vs vs--antes">crescer no trabalho</div>
       <div class="liga">não é necessariamente</div>
       <div class="vs">crescer na <span class="grifo">carreira</span>.</div>
     </div>
   </div>
-  <div class="base">
-    <div class="dots"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="base rodape">
+    <span class="serie">Capital de carreira</span>
+    <span class="casa">Intentia</span>
   </div>
 </section>
 
 <!-- ===== 04 · O PARADOXO ===== -->
 <section class="slide slide--deep">
-  <div class="top">
-    <div class="eyebrow eyebrow--mint">O paradoxo</div>
-    <div class="contador">04 / 08</div>
+  <div class="top cabeca">
+    <div class="secao secao--mint">O paradoxo</div>
+    <div class="folio">04 — 08</div>
   </div>
   <div class="corpo">
-    <h2 class="titulo titulo--s">Você se torna cada vez mais valioso onde está. Mas isso pode não mudar a percepção sobre onde você poderia estar.</h2>
-    <div class="percep">
-      <div class="p">
+    <h2 class="titulo titulo--m">Você se torna cada vez mais valioso onde está.</h2>
+    <p class="apoio apoio--largo">Mas isso pode não mudar a percepção sobre onde você poderia estar.</p>
+    <div class="split">
+      <div class="col col--antes">
         <div class="rotulo">A organização continua enxergando</div>
         <div class="frase">um excelente executor da posição atual.</div>
       </div>
-      <div class="p p--proxima">
+      <div class="col">
         <div class="rotulo">Não necessariamente</div>
-        <div class="frase">alguém pronto para a próxima.</div>
+        <div class="frase">alguém <span class="grifo">pronto para a próxima</span>.</div>
       </div>
     </div>
   </div>
-  <div class="base">
-    <div class="dots"><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i></div>
+  <div class="base rodape">
+    <span class="serie">Capital de carreira</span>
+    <span class="casa">Intentia</span>
   </div>
 </section>
 
-<!-- ===== 05 · PERFORMANCE NÃO É TUDO ===== -->
+<!-- ===== 05 · OS CAPITAIS ===== -->
 <section class="slide slide--paper">
-  <div class="top">
-    <div class="eyebrow eyebrow--coral">Performance não é tudo</div>
-    <div class="contador">05 / 08</div>
+  <div class="top cabeca">
+    <div class="secao secao--coral">Performance não é tudo</div>
+    <div class="folio">05 — 08</div>
   </div>
   <div class="corpo">
     <h2 class="titulo titulo--s">Performance é parte da equação. Não é a equação inteira.</h2>
-    <p class="apoio apoio--largo">Para avançar, seus resultados precisam construir também:</p>
-    <div class="quadro">
-      <div class="q">
-        <div class="cap">Reputação</div>
-        <div class="perg">Pelo que você é reconhecido?</div>
-      </div>
-      <div class="q">
-        <div class="cap">Influência</div>
-        <div class="perg">Quem considera sua opinião?</div>
-      </div>
-      <div class="q">
-        <div class="cap">Exposição</div>
-        <div class="perg">Quem conhece seu trabalho?</div>
-      </div>
-      <div class="q">
-        <div class="cap">Posicionamento</div>
-        <div class="perg">Para quais problemas começam a procurar você?</div>
-      </div>
-    </div>
+    <p class="apoio apoio--largo">Para avançar, seus resultados precisam construir também os seus capitais de carreira:</p>
+    <ol class="indice">
+      <li><span class="n">01</span><span class="cap">Resultados</span><span class="q">O que muda de fato quando você entrega?</span></li>
+      <li><span class="n">02</span><span class="cap">Reputação</span><span class="q">Pelo que você é reconhecido?</span></li>
+      <li><span class="n">03</span><span class="cap">Relacionamentos</span><span class="q">Quem conhece seu trabalho de perto?</span></li>
+      <li><span class="n">04</span><span class="cap">Aprendizagem</span><span class="q">O que você domina hoje que não dominava há um ano?</span></li>
+      <li><span class="n">05</span><span class="cap">Credibilidade</span><span class="q">Quanto pesa a sua palavra numa decisão?</span></li>
+      <li><span class="n">06</span><span class="cap">Influência</span><span class="q">Quem considera sua opinião? Para quais problemas começam a procurar você?</span></li>
+    </ol>
   </div>
-  <div class="base">
-    <div class="dots"><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div>
+  <div class="base rodape">
+    <span class="serie">Capital de carreira</span>
+    <span class="casa">Intentia</span>
   </div>
 </section>
 
 <!-- ===== 06 · MUDE A PERGUNTA ===== -->
 <section class="slide slide--mint">
-  <div class="top">
-    <div class="eyebrow eyebrow--teal">Mude a pergunta</div>
-    <div class="contador">06 / 08</div>
+  <div class="top cabeca">
+    <div class="secao secao--teal">Mude a pergunta</div>
+    <div class="folio">06 — 08</div>
   </div>
   <div class="corpo">
     <div>
-      <p class="apoio" style="margin-bottom:14px">Pare de perguntar apenas:</p>
+      <div class="rotulo" style="margin-bottom:16px">Pare de perguntar apenas:</div>
       <div class="pergunta-antiga">“Estou entregando bem?”</div>
     </div>
     <div>
-      <p class="apoio" style="margin-bottom:18px">Comece a perguntar:</p>
-      <h2 class="titulo titulo--m">“O que minhas entregas estão fazendo as pessoas <span class="grifo">concluírem sobre mim</span>?”</h2>
+      <div class="rotulo" style="margin-bottom:20px">Comece a perguntar:</div>
+      <h2 class="titulo">“O que minhas entregas estão fazendo as pessoas <span class="grifo">concluírem sobre mim</span>?”</h2>
     </div>
     <p class="nota">Essa pergunta muda a forma de gerir uma carreira.</p>
   </div>
-  <div class="base">
-    <div class="dots"><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i></div>
+  <div class="base rodape">
+    <span class="serie">Capital de carreira</span>
+    <span class="casa">Intentia</span>
   </div>
 </section>
 
 <!-- ===== 07 · O TESTE ===== -->
 <section class="slide slide--paper">
-  <div class="top">
-    <div class="eyebrow eyebrow--coral">O teste</div>
-    <div class="contador">07 / 08</div>
+  <div class="top cabeca">
+    <div class="secao secao--coral">O teste</div>
+    <div class="folio">07 — 08</div>
   </div>
   <div class="corpo">
     <h2 class="titulo titulo--s">Faça um teste simples. Nos últimos 12 meses:</h2>
     <div class="teste">
-      <div class="t"><span class="marcador"></span>Seu escopo aumentou?</div>
-      <div class="t"><span class="marcador"></span>Sua responsabilidade aumentou?</div>
-      <div class="t"><span class="marcador"></span>Sua carga de trabalho aumentou?</div>
+      <div class="t"><span class="caixa"></span>Seu escopo aumentou?</div>
+      <div class="t"><span class="caixa"></span>Sua responsabilidade aumentou?</div>
+      <div class="t"><span class="caixa"></span>Sua carga de trabalho aumentou?</div>
     </div>
-    <p class="apoio">Agora a pergunta mais importante:</p>
+    <div class="rotulo">Agora a pergunta mais importante:</div>
     <h3 class="titulo titulo--m">Sua posição na organização mudou <span class="grifo">na mesma proporção</span>?</h3>
   </div>
-  <div class="base">
-    <div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i></div>
+  <div class="base rodape">
+    <span class="serie">Capital de carreira</span>
+    <span class="casa">Intentia</span>
   </div>
 </section>
 
 <!-- ===== 08 · FECHAMENTO ===== -->
 <section class="slide slide--deep">
   <div class="arco arco--tl"></div>
-  <div class="top">
+  <div class="top cabeca cabeca--marca">
     <div class="marca">
       <div class="lockup">
         <svg width="58" height="58" viewBox="0 0 128 128" aria-hidden="true">
@@ -446,21 +475,19 @@ body{
       </div>
       <div class="assinatura">carreira com intenção</div>
     </div>
-    <div class="contador">08 / 08</div>
+    <div class="folio">08 — 08</div>
   </div>
   <div class="corpo corpo--fim">
     <p class="apoio apoio--largo">Não basta acumular trabalho.</p>
     <h2 class="titulo titulo--m">É preciso transformar trabalho em <span class="grifo">capital de carreira</span>.</h2>
-    <div class="tags">
-      <span class="tag">Resultados</span>
-      <span class="tag">Reputação</span>
-      <span class="tag">Influência</span>
-      <span class="tag">Relacionamentos</span>
-      <span class="tag">Evidências de prontidão para o próximo nível</span>
+    <div class="capitais">
+      <span>Resultados</span><span>Reputação</span><span>Relacionamentos</span><span>Aprendizagem</span><span>Credibilidade</span><span>Influência</span>
     </div>
+    <p class="apoio apoio--largo">São eles que viram evidências de prontidão para o próximo&nbsp;nível.</p>
   </div>
-  <div class="base">
-    <div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i></div>
+  <div class="base rodape">
+    <span class="serie">Capital de carreira</span>
+    <span class="folio">Intentia — carreira com intenção</span>
   </div>
 </section>
 
