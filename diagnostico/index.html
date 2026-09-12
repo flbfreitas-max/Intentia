@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intentia · Diagnóstico</title>
+<meta name="description" content="Baixe o Diagnóstico Intentia em PDF.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://intentiahub.com/diagnostico/">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<meta property="og:title" content="Intentia · Diagnóstico">
+<meta property="og:description" content="Baixe o Diagnóstico Intentia em PDF.">
+<meta property="og:url" content="https://intentiahub.com/diagnostico/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14403A; --paper:#F2F6F4; --spark:#F0623E;
+  --line:rgba(242,246,244,.22);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--ink)}
+body{font-family:"Hanken Grotesk",system-ui,sans-serif;color:var(--paper);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 24px;text-align:center}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:500;font-variation-settings:"opsz" 144;letter-spacing:-.015em;line-height:1.1;font-size:clamp(1.9rem,5vw,2.8rem);margin-bottom:16px}
+p{max-width:52ch;margin:0 auto;opacity:.9}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--spark);border:1px solid var(--spark);padding:7px 12px;margin-bottom:26px;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:18px 26px;border:1px solid var(--spark);background:var(--spark);color:#fff;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s}
+.btn:hover{background:transparent;color:var(--spark)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.btn.ghost:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:square;stroke-linejoin:miter}
+.acoes{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.micro{font-size:.82rem;opacity:.65;margin-top:22px;letter-spacing:.02em}
+.micro a{color:var(--spark)}
+.marca{display:inline-flex;align-items:center;gap:12px;font-family:"Fraunces",serif;font-weight:500;font-variation-settings:"opsz" 144;font-size:1.7rem;text-decoration:none;color:inherit;margin-bottom:36px}
+.marca .ii{position:relative;display:inline-block}
+.marca .ii::after{content:"";position:absolute;left:50%;top:.08em;width:.17em;height:.17em;border-radius:50%;background:var(--spark);transform:translateX(-50%)}
+footer{padding:28px 24px;font-size:.72rem;letter-spacing:.08em;text-align:center;border-top:1px solid var(--line);opacity:.65}
+</style>
+</head>
+<body>
+<main>
+  <div>
+    <a class="marca" href="../" aria-label="Intentia">
+      <svg width="34" height="34" viewBox="0 0 128 128" aria-hidden="true"><path fill="currentColor" d="M40,94 Q86,74 110,30 Q103,60 96,72 Q70,90 52,90 Z"/><circle fill="#F0623E" cx="26" cy="92" r="11"/></svg>
+      <span>Intent<span class="ii">ı</span>a</span>
+    </a>
+    <div><span class="tag">Diagnóstico Intentia</span></div>
+    <h1>Seu download vai começar em instantes.</h1>
+    <p>Se o download não iniciar automaticamente, use o botão abaixo para baixar o PDF do Diagnóstico Intentia.</p>
+    <div class="acoes">
+      <a class="btn" id="baixar" href="diagnostico-intentia.pdf" download="diagnostico-intentia.pdf">Baixar o diagnóstico <svg viewBox="0 0 24 24"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg></a>
+      <a class="btn ghost" href="https://intentiahub.com/acesso/">Conhecer o Intentia</a>
+    </div>
+    <p class="micro">Carreira não cresce por acaso. Cresce com intenção. · <a href="https://intentiahub.com/acesso/">intentiahub.com/acesso</a></p>
+  </div>
+</main>
+<footer>Intentia · intentiahub.com</footer>
+<script>
+/* GitHub Pages nao permite Content-Disposition, entao o download forcado
+   e feito pelo atributo download do proprio link, disparado ao carregar. */
+window.addEventListener('load',function(){
+  setTimeout(function(){document.getElementById('baixar').click()},600);
+});
+</script>
+</body>
+</html>
