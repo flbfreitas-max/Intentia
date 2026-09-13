@@ -48,8 +48,13 @@ function git(args) {
   return execFileSync('git', args, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
 }
 
-const arquivos = git(['diff', '--cached', '--name-only', '--diff-filter=ACM'])
-  .split('\n').map((s) => s.trim()).filter(Boolean)
+/* `-z` e `core.quotepath=false` NÃO são enfeite. Sem eles o git devolve nome
+   com acento ou travessão entre aspas e em octal ("01 A frase \342\200\224
+   prompt.md"), o `git show` abaixo falha, o `catch` pula o arquivo — e a trava
+   passa calada. Foi assim que as oito ferramentas GPT entraram sem varredura
+   em 13/09. Separar por NUL é o único jeito de ler qualquer nome como ele é. */
+const arquivos = git(['-c', 'core.quotepath=false', 'diff', '--cached', '--name-only', '-z', '--diff-filter=ACM'])
+  .split(NULO).filter(Boolean)
   .filter((f) => !f.startsWith('.githooks/'));   // o próprio verificador cita os padrões
 
 const achados = [];
