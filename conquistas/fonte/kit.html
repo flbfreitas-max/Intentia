@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Kit Diário de Conquistas com IA · Intentia</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14403A; --ink-2:#275750; --ink-soft:#57706A; --text:#20332F;
+  --spark:#F0623E; --spark-soft:#FDE6DE; --paper:#F2F6F4; --line:#DAE6E1; --white:#fff;
+}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#ccc}
+body{font-family:'Hanken Grotesk',sans-serif;color:var(--text);font-size:11.2pt;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;background:var(--white);position:relative;overflow:hidden;padding:20mm 18mm 22mm;page-break-after:always;margin:0 auto}
+.page:last-child{page-break-after:auto}
+@media screen{.page{margin:10mm auto;box-shadow:0 2px 12px rgba(0,0,0,.2)}}
+
+.tag{display:inline-block;background:var(--spark);color:#fff;font-weight:800;font-size:7.5pt;letter-spacing:.18em;text-transform:uppercase;padding:4px 10px;margin-bottom:10px}
+h1{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);font-size:29pt;line-height:1.1;letter-spacing:-.01em;margin-bottom:8px}
+h1 em,h2 em{font-style:normal;color:var(--spark)}
+h2{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);font-size:15pt;line-height:1.2;margin:0 0 6px}
+.lead{font-weight:600;color:var(--ink);font-size:12.5pt;line-height:1.45;margin-bottom:14px}
+p{margin-bottom:8px}
+.eyebrow{font-weight:800;font-size:8pt;letter-spacing:.16em;text-transform:uppercase;color:var(--spark);margin:18px 0 8px}
+strong{color:var(--ink)}
+
+.foot{position:absolute;left:18mm;right:18mm;bottom:10mm;display:flex;justify-content:space-between;font-size:7pt;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* prompt box */
+.prompt{background:var(--ink);color:#fff;padding:0;margin:8px 0 10px}
+.prompt .bar{display:flex;justify-content:space-between;align-items:center;padding:7px 12px;border-bottom:1px solid rgba(255,255,255,.12)}
+.prompt .dots i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#5f8580;margin-right:4px}
+.prompt .dots i:first-child{background:var(--spark)}
+.prompt .bar span{font-size:6.5pt;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--spark)}
+.prompt .body{padding:11px 15px 13px;font-size:9.4pt;line-height:1.5;white-space:pre-wrap}
+.prompt .body b{color:#FFC0AB;font-weight:700}
+.prompt .body .ph{color:#FFC0AB}
+
+.note{border-left:3px solid var(--spark);padding:4px 0 4px 10px;font-size:9.4pt;color:var(--ink-soft);margin:8px 0}
+.note strong{color:var(--ink)}
+
+/* platform columns */
+.plat{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:6px 0 8px}
+.plat > div{background:var(--paper);padding:10px 11px 9px;font-size:9.1pt;line-height:1.42}
+.plat h3{font-family:'Hanken Grotesk';font-weight:800;font-size:8pt;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:5px;display:flex;align-items:center;gap:6px}
+.plat h3::before{content:"";width:7px;height:7px;background:var(--spark);display:inline-block}
+.plat ol{padding-left:14px}
+.plat li{margin-bottom:3px}
+
+/* cards */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.card{background:var(--paper);padding:12px 13px}
+.card .n{font-family:'Fraunces';font-weight:600;color:var(--spark);font-size:18pt;line-height:1}
+.card h3{font-family:'Fraunces';font-weight:600;color:var(--ink);font-size:12pt;margin:4px 0 4px}
+.card p{font-size:9.9pt;margin:0;line-height:1.45}
+.card .ex{font-size:9.1pt;color:var(--ink-soft);margin-top:6px;font-style:italic}
+
+/* table */
+table{width:100%;border-collapse:collapse;font-size:9.6pt}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:7pt;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--ink);font-weight:800}
+td:first-child{font-weight:700;color:var(--ink);width:30%}
+tr:nth-child(even) td{background:#f8faf9}
+.rec td:first-child{font-size:7pt;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);width:28%;padding-top:8px}
+.rec td{font-size:10.3pt}
+
+ul.dot{list-style:none;margin:4px 0 8px}
+ul.dot li{position:relative;padding-left:14px;margin-bottom:7px;font-size:10.5pt}
+ul.dot li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--spark)}
+ul.check{list-style:none}
+ul.check li{position:relative;padding-left:20px;margin-bottom:8px;font-size:10.8pt}
+ul.check li::before{content:"";position:absolute;left:0;top:3px;width:10px;height:10px;border:1.5px solid var(--spark)}
+
+.glos{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:6px 0 12px}
+.glos div{border-top:2px solid var(--spark);padding-top:7px;font-size:9.5pt;line-height:1.42}
+.glos b{display:block;font-family:'Fraunces';font-weight:600;font-size:11pt;color:var(--ink);margin-bottom:2px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.box-dark{background:var(--ink);color:#fff;padding:16px 18px}
+.box-dark h2{color:#fff}
+.box-dark p{color:#dfe9e6;font-size:10.5pt}
+.box-soft{background:var(--spark-soft);padding:13px 15px;font-size:10pt}
+.box-soft strong{color:var(--ink)}
+
+/* cover */
+.cover{padding:0;background:var(--ink)}
+.cover .photo{position:absolute;inset:0 0 auto 0;height:62%;background:url(capa.jpg) center 20%/cover}
+.cover .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,64,58,0) 45%,var(--ink) 100%)}
+.cover .content{position:absolute;left:18mm;right:18mm;top:57%}
+.cover h1{color:#fff;font-size:38pt}
+.cover .sub{color:#fff;font-weight:600;font-size:12pt;line-height:1.45;max-width:150mm}
+.cover .chips{margin-top:14px;display:flex;gap:6px;flex-wrap:wrap}
+.cover .chips span{border:1px solid rgba(255,255,255,.35);color:#fff;font-size:7.5pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px}
+.cover .brand{position:absolute;left:18mm;right:18mm;bottom:16mm;display:flex;align-items:center;gap:24px;color:#fff;font-size:9pt}
+.cover .brand img{height:15mm}
+
+.rotina li b{color:var(--ink)}
+.small{font-size:9pt;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+
+<!-- 01 CAPA -->
+<section class="page cover">
+  <div class="photo"></div>
+  <div class="content">
+    <span class="tag">Kit gratuito · Intentia</span>
+    <h1>Diário de conquistas<br><em>com IA</em></h1>
+    <p class="sub">Como usar Claude, ChatGPT e Gemini para registrar o que você entrega, transformar trabalho em argumento e chegar à avaliação com o ano inteiro na mão.</p>
+    <div class="chips"><span>5 ferramentas</span><span>3 plataformas</span><span>8 comandos prontos</span></div>
+  </div>
+  <div class="brand"><img src="logo.png" alt="Intentia"><span>intentiahub.com · @intentia.hub</span></div>
+</section>
+
+<!-- 02 POR QUE IA -->
+<section class="page">
+  <span class="tag">Por que IA na carreira</span>
+  <h1>A IA não faz a sua carreira. <em>Mas trabalha por ela toda semana.</em></h1>
+  <p class="lead">Carreira se constrói com entregas, e se negocia com evidências. A IA é uma ferramenta poderosa justamente no espaço entre as duas: ela ajuda a lembrar, organizar, traduzir e preparar.</p>
+
+  <div class="cards">
+    <div class="card"><div class="n">01</div><h3>Memória externa</h3>
+      <p>Guarda e organiza o que você entrega, no momento em que acontece. Você para de depender da lembrança do último mês.</p>
+      <p class="ex">"Em março eu reestruturei o fechamento" vira um registro datado, com resultado e evidência.</p></div>
+    <div class="card"><div class="n">02</div><h3>Tradutora de impacto</h3>
+      <p>Transforma tarefa em resultado. Faz as perguntas que um bom gestor faria: quanto, para quem, o que mudou?</p>
+      <p class="ex">"Fiz um relatório" vira "reduzi o fechamento de 3 dias para 1".</p></div>
+    <div class="card"><div class="n">03</div><h3>Parceira de preparação</h3>
+      <p>Monta roteiros, antecipa objeções e simula conversas difíceis antes que elas aconteçam de verdade.</p>
+      <p class="ex">Ensaiar o pedido de promoção com a IA no papel da sua liderança.</p></div>
+    <div class="card"><div class="n">04</div><h3>Espelho de desenvolvimento</h3>
+      <p>Com meses de registros, revela padrões: em que você brilha, que competência não aparece, o que desenvolver.</p>
+      <p class="ex">"Tenho muitas entregas técnicas e quase nenhuma de liderança."</p></div>
+  </div>
+
+  <div class="two" style="margin-top:12px">
+    <div>
+      <p class="eyebrow" style="margin-top:0">O que a IA não faz por você</p>
+      <ul class="dot">
+        <li><strong>Não cria resultado.</strong> Ela organiza o que você fez; não deve inventar números.</li>
+        <li><strong>Não conhece o contexto da sua empresa</strong>: cultura, política, prioridades da liderança.</li>
+        <li><strong>Não substitui o seu julgamento.</strong> Ela sugere; quem decide e assina é você.</li>
+        <li><strong>Pode errar com segurança.</strong> Confira tudo antes de usar.</li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow" style="margin-top:0">Como usar este kit</p>
+      <table class="rec">
+        <tr><td>Passo 1</td><td>Entenda os recursos de cada plataforma <span class="small">(págs. 4–5)</span></td></tr>
+        <tr><td>Passo 2</td><td>Monte as 5 ferramentas na plataforma que você já usa <span class="small">(págs. 6–11)</span></td></tr>
+        <tr><td>Passo 3</td><td>Mantenha a rotina de 10 minutos por semana <span class="small">(pág. 12)</span></td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Kit Diário de Conquistas com IA</span><span>02</span></div>
+</section>
+
+<!-- 03 ANTES DE COMEÇAR -->
+<section class="page">
+  <span class="tag">Antes de começar</span>
+  <h1>A memória guarda o último mês. <em>A avaliação cobre o ano.</em></h1>
+  <p>Na hora da avaliação, quase todo mundo lembra do que fez em novembro e esquece o projeto difícil de março. Não é falta de resultado. É falta de registro.</p>
+  <p>O diário de conquistas resolve isso com 10 minutos por semana. E a IA tira o trabalho chato do caminho: você conta do seu jeito, ela organiza, e quando a avaliação chegar, transforma tudo em argumento.</p>
+
+  <p class="eyebrow">O formato de cada registro</p>
+  <p>Todas as ferramentas deste kit usam os mesmos seis campos. Veja um exemplo preenchido:</p>
+  <table class="rec" style="margin-bottom:10px">
+    <tr><td>Data</td><td>14 de outubro</td></tr>
+    <tr><td>Projeto</td><td>Fechamento mensal do orçamento</td></tr>
+    <tr><td>Problema</td><td>O relatório saía com 3 dias de atraso todo mês</td></tr>
+    <tr><td>Minha contribuição</td><td>Reorganizei a consolidação dos dados com o time de Compras e criei um modelo único</td></tr>
+    <tr><td>Resultado</td><td>Fechamento em 1 dia, a partir de outubro</td></tr>
+    <tr><td>Evidência</td><td>E-mail da diretoria agradecendo; calendário de fechamento novo</td></tr>
+  </table>
+
+  <div class="two">
+    <div class="note" style="margin:0"><strong>A evidência</strong> é o que separa "eu acho que fiz bem" de "está aqui o que mudou". Guarde o e-mail, o número ou o nome de quem viu.</div>
+    <div class="note" style="margin:0"><strong>Sem número? Tudo bem.</strong> Impacto também é prazo, qualidade, risco evitado, retrabalho eliminado ou alguém que passou a confiar no seu trabalho.</div>
+  </div>
+
+  <p class="eyebrow" style="margin-top:16px">Onde o diário mora de verdade</p>
+  <div class="box-soft">
+    A IA conversa; ela não é um arquivo confiável. Crie um <strong>documento-mestre</strong> (Google Docs, Word ou Notas) chamado "Diário de conquistas 2026". A cada registro pronto, copie para lá. Uma vez por mês, atualize esse arquivo dentro do seu projeto na IA. Assim o histórico fica sempre com você, mesmo que você troque de ferramenta, de plano ou de empresa.
+  </div>
+  <div class="foot"><span>Kit Diário de Conquistas com IA</span><span>03</span></div>
+</section>
+
+<!-- 04 MAPA DAS PLATAFORMAS: CONCEITOS -->
+<section class="page">
+  <span class="tag">Referencial</span>
+  <h1>Seis conceitos para <em>entender qualquer IA</em></h1>
+  <p class="lead">Claude, ChatGPT e Gemini usam nomes diferentes para ideias parecidas. Entendendo o conceito, você se vira em qualquer uma.</p>
+
+  <div class="glos">
+    <div><b>Chat</b>A conversa avulsa. Bom para dúvidas rápidas. Sem instruções fixas, você precisa explicar o contexto toda vez.</div>
+    <div><b>Projeto</b>Um espaço fixo com instruções e arquivos próprios. Toda conversa aberta ali já "sabe" quem você é e o que fazer.</div>
+    <div><b>Artefato / Canvas</b>Um documento que abre ao lado da conversa, para você ler, editar e pedir ajustes em partes específicas.</div>
+    <div><b>Tarefa agendada</b>A IA age sozinha em um horário combinado, como um agente: puxa a conversa e você só responde.</div>
+    <div><b>Skill</b>Um comando ou conjunto de instruções que você salva uma vez e reutiliza sempre que precisar.</div>
+    <div><b>Memória</b>A IA guarda preferências e fatos entre conversas. Útil, mas você pode ver, editar ou desligar.</div>
+  </div>
+
+  <p class="eyebrow">Qual usar em cada momento do diário</p>
+  <table>
+    <tr><th>Momento</th><th>Recurso ideal</th><th>Por quê</th></tr>
+    <tr><td>Registrar uma entrega</td><td>Projeto</td><td>O formato de seis campos já está nas instruções.</td></tr>
+    <tr><td>Lembrar de registrar</td><td>Tarefa agendada</td><td>A IA pergunta; você não depende de disciplina.</td></tr>
+    <tr><td>Contar a semana correndo</td><td>Voz / ditado</td><td>Dois minutos falando rendem mais que dez digitando.</td></tr>
+    <tr><td>Escrever a autoavaliação</td><td>Skill + Artefato/Canvas</td><td>Comando pronto e texto editável lado a lado.</td></tr>
+    <tr><td>Ensaiar a conversa</td><td>Chat no projeto, por voz</td><td>Simulação realista com seus dados à mão.</td></tr>
+  </table>
+
+  <div class="box-soft" style="margin-top:14px"><strong>Qual plataforma escolher?</strong> A que você já usa e que a sua empresa autoriza. As cinco ferramentas deste kit funcionam nas três. O que faz diferença não é a marca: é registrar toda semana.</div>
+  <div class="foot"><span>Kit Diário de Conquistas com IA</span><span>04</span></div>
+</section>
+
+<!-- 05 COMPARATIVO -->
+<section class="page">
+  <span class="tag">Referencial</span>
+  <h1>Claude, ChatGPT e Gemini: <em>o mesmo recurso, nomes diferentes</em></h1>
+  <p class="lead">Use esta tabela como dicionário. Nas próximas páginas, cada ferramenta vem com o passo a passo nas três plataformas.</p>
+
+  <table>
+    <tr><th>Conceito</th><th>Claude</th><th>ChatGPT</th><th>Gemini</th></tr>
+    <tr><td>Conversa</td><td>Chat</td><td>Chat</td><td>Chat</td></tr>
+    <tr><td>Espaço fixo com instruções e arquivos</td><td>Projetos</td><td>Projetos</td><td>Notebooks <span class="small">(integrados ao NotebookLM)</span></td></tr>
+    <tr><td>Documento editável ao lado</td><td>Artefatos</td><td>Canvas</td><td>Canvas</td></tr>
+    <tr><td>Instruções e comandos salvos</td><td>Skills</td><td>GPTs personalizados</td><td>Skills <span class="small">(substituem os Gems)</span></td></tr>
+    <tr><td>Tarefa em horário marcado</td><td>Tarefas agendadas</td><td>Tarefas</td><td>Ações programadas</td></tr>
+    <tr><td>Falar em vez de digitar</td><td>Modo de voz e ditado</td><td>Voz e ditado</td><td>Gemini Live e ditado</td></tr>
+    <tr><td>Lembrar entre conversas</td><td>Memória</td><td>Memória <span class="small">(pode ser só do projeto)</span></td><td>Memória <span class="small">(e memória do notebook)</span></td></tr>
+  </table>
+
+  <p class="eyebrow">O ponto forte de cada uma para este kit</p>
+  <div class="plat">
+    <div><h3>Claude</h3>Textos com tom natural e firme, bom para autoavaliação. Os <strong>Artefatos</strong> deixam o documento pronto ao lado da conversa, e as <strong>Skills</strong> guardam o seu método de avaliação.</div>
+    <div><h3>ChatGPT</h3><strong>Tarefas</strong> criadas com uma frase ("toda sexta às 17h…"), modo de voz maduro e <strong>memória do projeto</strong>, que mantém o contexto do diário separado do resto.</div>
+    <div><h3>Gemini</h3>Integração com o ecossistema Google: o documento-mestre pode viver no Google Docs, e os <strong>Notebooks</strong> sincronizam com o NotebookLM para resumos e revisões.</div>
+  </div>
+
+  <div class="note"><strong>Atualizado em outubro de 2026.</strong> Nomes de botões, recursos e limites mudam com frequência e variam conforme o plano (gratuito ou pago) e o tipo de conta (pessoal ou corporativa). No Gemini, os Gems estão sendo substituídos pelas Skills a partir de novembro de 2026. Se algo não aparecer na sua conta, procure o recurso equivalente nas configurações ou use o plano B indicado em cada ferramenta.</div>
+  <div class="foot"><span>Kit Diário de Conquistas com IA</span><span>05</span></div>
+</section>
+
+<!-- 06 FERRAMENTA 1 -->
+<section class="page">
+  <span class="tag">Ferramenta 1</span>
+  <h1>Um projeto <em>só seu</em> na IA</h1>
+  <p class="lead">Um espaço fixo, com instruções fixas, onde mora o seu diário. Você não precisa explicar tudo de novo a cada conversa.</p>
+
+  <p class="eyebrow" style="margin-top:4px">Como criar em cada plataforma</p>
+  <div class="plat">
+    <div><h3>Claude</h3><ol>
+      <li>Na barra lateral, abra <b>Projetos</b> › <b>Novo projeto</b>.</li>
+      <li>Nome: "Minhas conquistas".</li>
+      <li>Cole o texto abaixo nas <b>instruções do projeto</b>.</li>
+      <li>Suba o documento-mestre nos <b>arquivos do projeto</b>.</li></ol></div>
+    <div><h3>ChatGPT</h3><ol>
+      <li>Na barra lateral, abra <b>Projetos</b> › <b>Novo projeto</b>.</li>
+      <li>Se a opção aparecer, escolha <b>memória só do projeto</b>.</li>
+      <li>Nas configurações do projeto, cole o texto em <b>Instruções</b>.</li>
+      <li>Adicione o documento-mestre em <b>Arquivos</b>.</li></ol></div>
+    <div><h3>Gemini</h3><ol>
+      <li>Na barra lateral, abra <b>Notebooks</b> e crie um novo.</li>
+      <li>Nome: "Minhas conquistas".</li>
+      <li>Cole o texto nas <b>instruções personalizadas</b> do notebook.</li>
+      <li>Adicione o documento-mestre como <b>fonte</b>.</li></ol></div>
+  </div>
+
+  <div class="prompt"><div class="bar"><div class="dots"><i></i><i></i><i></i></div><span>Copie e cole nas instruções</span></div>
+<div class="body">Você é meu assistente de carreira e guarda o meu diário de conquistas profissionais.
+
+<b>MEU CONTEXTO</b>
+Cargo: <span class="ph">[seu cargo]</span> · Área: <span class="ph">[sua área]</span> · Objetivo deste ano: <span class="ph">[ex.: promoção a coordenação]</span>
+Critérios da minha avaliação: <span class="ph">[cole as metas ou competências da empresa, se tiver]</span>
+
+<b>QUANDO EU CONTAR UMA ENTREGA</b>
+1. Organize em seis campos: data, projeto, problema, minha contribuição, resultado e evidência.
+2. Se faltar algum campo, faça no máximo 2 perguntas curtas antes de registrar. Priorize o resultado concreto e a evidência.
+3. Ajude a medir o impacto: pergunte por tempo, dinheiro, volume, qualidade, risco ou satisfação. Sem número, registre o impacto qualitativo com honestidade.
+4. Separe o que eu fiz do que o time fez. Escreva "minha contribuição" com verbos de ação (liderei, criei, negociei, destravei).
+5. Marque cada registro com 1 a 3 etiquetas: Resultado de negócio, Liderança, Colaboração, Inovação ou Desenvolvimento, ou com as competências que informei.
+
+<b>REGRAS</b>
+· Nunca invente dados, números ou evidências. Se eu não souber, escreva "a confirmar".
+· Tom factual, firme e específico: sem exagero e sem falsa modéstia.
+· Se eu citar cliente, valor de contrato ou dado sigiloso, me avise e sugira uma versão genérica.
+
+<b>FORMATO</b>
+Mostre o registro em tabela, depois uma linha "Para fortalecer:" com o que ainda falta. Pergunte se pode considerar o registro final.</div></div>
+
+  <div class="note">Na primeira conversa, teste com uma entrega recente. Se o resultado vier longo demais ou com perguntas demais, ajuste as instruções: o projeto é seu.</div>
+  <div class="foot"><span>Kit Diário de Conquistas com IA</span><span>06</span></div>
+</section>
+
+<!-- 07 FERRAMENTA 2 -->
+<section class="page">
+  <span class="tag">Ferramenta 2</span>
+  <h1>Um agente que <em>pergunta por você</em></h1>
+  <p class="lead">Agende uma tarefa semanal (sexta, 17h). A IA vira um agente: lembra sozinha, puxa a conversa, e você só responde.</p>
+
+  <p class="eyebrow" style="margin-top:4px">Como agendar em cada plataforma</p>
+  <div class="plat">
+    <div><h3>Claude</h3><ol>
+      <li>Use as <b>tarefas agendadas</b>, quando disponíveis no seu plano.</li>
+      <li>Crie uma tarefa semanal, sexta, 17h, e cole o comando abaixo.</li>
+      <li>Se o recurso não aparecer na sua conta, use o plano B.</li></ol></div>
+    <div><h3>ChatGPT</h3><ol>
+      <li>Em uma conversa, cole o comando começando por <b>"Toda sexta às 17h"</b>.</li>
+      <li>O ChatGPT cria a tarefa e avisa quando chegar a hora.</li>
+      <li>Para editar ou pausar, abra <b>Tarefas</b> no menu.</li></ol></div>
+    <div><h3>Gemini</h3><ol>
+      <li>Cole o comando começando por <b>"Toda sexta às 17h"</b>.</li>
+      <li>O Gemini cria uma <b>ação programada</b>.</li>
+      <li>Para editar ou pausar, procure <b>Ações programadas</b> nas configurações.</li></ol></div>
+  </div>
+
+  <div class="prompt"><div class="bar"><div class="dots"><i></i><i></i><i></i></div><span>Copie e cole</span></div>
+<div class="body"><b>Toda sexta-feira às 17h:</b> conduza a revisão semanal do meu diário de conquistas. Você é meu assistente de carreira. Faça uma pergunta por vez e espere a minha resposta antes da próxima:
+
+1. Qual foi a entrega mais importante desta semana, mesmo que pareça pequena?
+2. Que problema você destravou, ou que risco evitou?
+3. Quem você ajudou, e o que mudou para essa pessoa ou time?
+4. Recebeu algum feedback, elogio ou número que comprove o resultado?
+5. O que você aprendeu ou fez pela primeira vez?
+
+Se eu responder "nada relevante", me ajude a lembrar: pergunte sobre reuniões, decisões, pedidos que recebi e problemas que alguém trouxe para mim.
+
+No final, transforme as respostas em registros no formato de seis campos (data, projeto, problema, minha contribuição, resultado, evidência) e liste à parte tudo o que ficou "a confirmar".</div></div>
+
+  <div class="two">
+    <div class="box-soft"><strong>Plano B, em qualquer plataforma:</strong> crie um lembrete no celular para sexta, 17h, abra o projeto "Minhas conquistas" e cole o comando (sem a primeira linha).</div>
+    <div class="note" style="margin:0"><strong>Atenção:</strong> em algumas plataformas a tarefa agendada roda fora do projeto. Se for o seu caso, responda normalmente e, no fim, cole os registros prontos dentro do projeto e no documento-mestre.</div>
+  </div>
+
+  <p class="eyebrow">Bônus: o resumo do mês</p>
+  <div class="prompt"><div class="bar"><div class="dots"><i></i><i></i><i></i></div><span>Uma vez por mês</span></div>
+<div class="body">Faça o resumo do mês de <span class="ph">[mês]</span> com base nos meus registros: principais entregas, números, competências que demonstrei e evidências que ainda preciso buscar. Termine com 1 sugestão do que priorizar no próximo mês para fortalecer o meu objetivo do ano.</div></div>
+  <div class="foot"><span>Kit Diário de Conquistas com IA</span><span>07</span></div>
+</section>
+
+<!-- 08 FERRAMENTA 3 -->
+<section class="page">
+  <span class="tag">Ferramenta 3</span>
+  <h1>Fale em vez <em>de digitar</em></h1>
+  <p class="lead">No carro, na caminhada ou no café: grave 2 minutos contando a semana, sem se preocupar com ordem. A IA separa, organiza e pergunta o que faltou.</p>
+
+  <p class="eyebrow" style="margin-top:4px">Como usar a voz em cada plataforma</p>
+  <div class="plat">
+    <div><h3>Claude</h3><ol>
+      <li>No app do celular, abra uma conversa dentro do projeto.</li>
+      <li>Toque no <b>microfone</b> para ditar, ou use o <b>modo de voz</b> para conversar.</li>
+      <li>Envie o comando abaixo antes de falar.</li></ol></div>
+    <div><h3>ChatGPT</h3><ol>
+      <li>No app, abra uma conversa dentro do projeto.</li>
+      <li>Use o <b>ditado</b> (microfone) para virar texto, ou o <b>modo de voz</b> para conversar.</li>
+      <li>Envie o comando abaixo antes de falar.</li></ol></div>
+    <div><h3>Gemini</h3><ol>
+      <li>No app, abra uma conversa no notebook.</li>
+      <li>Use o <b>microfone</b> para ditar, ou o <b>Gemini Live</b> para conversar.</li>
+      <li>Envie o comando abaixo antes de falar.</li></ol></div>
+  </div>
+
+  <div class="prompt"><div class="bar"><div class="dots"><i></i><i></i><i></i></div><span>Copie e cole antes do áudio</span></div>
+<div class="body">Vou te contar a minha semana falando, sem ordem e sem filtro. Transforme o que eu disser em registros do meu diário de conquistas:
+
+1. Faça um registro para cada entrega diferente, no formato de seis campos.
+2. Ignore desabafos e detalhes sem importância, mas guarde o que eu aprendi em uma seção "Aprendizados da semana".
+3. Quando eu disser "mais ou menos", "acho que" ou "uns", marque o dado como "a confirmar".
+4. Se eu mencionar algo que pode virar evidência (um e-mail, uma mensagem, um número), destaque para eu guardar.
+5. No fim, faça até 3 perguntas para completar o que faltou, começando pelos resultados.</div></div>
+
+  <p class="eyebrow">Roteiro para não travar no áudio</p>
+  <div class="cards" style="grid-template-columns:repeat(4,1fr);gap:8px;margin-top:4px">
+    <div class="card"><h3>O que fiz</h3><p>As 2 ou 3 coisas que mais tomaram o seu tempo.</p></div>
+    <div class="card"><h3>O que mudou</h3><p>Prazo, qualidade, custo, um problema que deixou de existir.</p></div>
+    <div class="card"><h3>Quem viu</h3><p>Quem recebeu, agradeceu, aprovou ou usou.</p></div>
+    <div class="card"><h3>O que aprendi</h3><p>Algo novo, uma conversa difícil, um erro que virou ajuste.</p></div>
+  </div>
+
+  <div class="note"><strong>Ditado ou conversa?</strong> Para o diário, prefira o ditado: o áudio vira texto na conversa e fica fácil revisar. O modo de conversa por voz é ótimo para ensaiar (ferramenta 5), mas confira se a transcrição ficou salva no histórico.</div>
+  <div class="foot"><span>Kit Diário de Conquistas com IA</span><span>08</span></div>
+</section>
+
+<!-- 09 FERRAMENTA 4 -->
+<section class="page">
+  <span class="tag">Ferramenta 4</span>
+  <h1>Uma skill para <em>a hora da avaliação</em></h1>
+  <p class="lead">Uma skill é um comando que você salva uma vez e usa sempre. Estes dois transformam meses de registros em resultados e em texto pronto para o formulário.</p>
+
+  <div class="prompt"><div class="bar"><div class="dots"><i></i><i></i><i></i></div><span>Comando 1 · Os 5 resultados do ano</span></div>
+<div class="body">Atue como especialista em avaliação de desempenho. Use todos os registros do meu diário <span class="ph">[no arquivo do projeto / colados abaixo]</span>.
+
+1. Selecione os 5 resultados mais relevantes do período. Priorize: impacto no negócio, alinhamento aos critérios da minha avaliação e qualidade da evidência.
+2. Para cada um, escreva: título curto · contexto em 1 frase · o que eu fiz · resultado com número · impacto para a área · evidência.
+3. Indique quais competências cada resultado demonstra.
+4. Liste à parte: registros fortes que ficaram de fora e lacunas (competências sem nenhuma evidência no ano).
+
+Use apenas o que está nos registros. Não invente números nem arredonde para cima.</div></div>
+
+  <div class="prompt"><div class="bar"><div class="dots"><i></i><i></i><i></i></div><span>Comando 2 · Autoavaliação</span></div>
+<div class="body">Agora transforme esses 5 resultados em texto para o meu formulário de autoavaliação.
+· Primeira pessoa, tom firme e sem exagero, frases curtas.
+· Um parágrafo de 3 a 5 linhas por resultado: situação → minha ação → resultado → impacto.
+· Respeite o limite de <span class="ph">[X]</span> caracteres por campo, se houver.
+· Feche com um parágrafo sobre o que quero desenvolver no próximo ciclo, a partir das lacunas.
+Entregue em um documento editável (artefato no Claude, canvas no ChatGPT ou no Gemini).</div></div>
+
+  <p class="eyebrow" style="margin-top:6px">Como salvar a skill em cada plataforma</p>
+  <div class="plat">
+    <div><h3>Claude</h3><ol>
+      <li>Crie uma skill "Avaliação de desempenho" no recurso <b>Skills</b> das configurações, conforme o seu plano.</li>
+      <li>Alternativa: salve os comandos como arquivo no projeto.</li>
+      <li>O texto final abre como <b>artefato</b>.</li></ol></div>
+    <div><h3>ChatGPT</h3><ol>
+      <li>Salve os comandos como arquivo no projeto e peça: "use o comando de avaliação".</li>
+      <li>Para reutilizar fora do projeto, crie um <b>GPT personalizado</b>.</li>
+      <li>O texto final abre no <b>Canvas</b>.</li></ol></div>
+    <div><h3>Gemini</h3><ol>
+      <li>Crie uma <b>skill</b> descrevendo o que ela faz e colando os comandos.</li>
+      <li>Se ainda usa um Gem, ele será migrado para skill.</li>
+      <li>Peça o texto final no <b>Canvas</b>.</li></ol></div>
+  </div>
+  <div class="foot"><span>Kit Diário de Conquistas com IA</span><span>09</span></div>
+</section>
+
+<!-- 10 FERRAMENTA 5 -->
+<section class="page">
+  <span class="tag">Ferramenta 5</span>
+  <h1>Prepare <em>a conversa</em></h1>
+  <p class="lead">Resultado registrado vira argumento quando chega à conversa certa. Antes de falar com a sua liderança, monte o roteiro e ensaie.</p>
+
+  <div class="prompt"><div class="bar"><div class="dots"><i></i><i></i><i></i></div><span>Comando 1 · O roteiro</span></div>
+<div class="body">Vou ter uma conversa de <span class="ph">[avaliação / feedback / promoção / aumento]</span> com <span class="ph">[cargo da liderança]</span> em <span class="ph">[data]</span>. Meu objetivo é <span class="ph">[o que quero sair da conversa sabendo ou tendo]</span>. Com base no meu diário:
+
+1. Monte um roteiro de 15 minutos: abertura, 3 resultados para destacar (com números), o meu pedido e as perguntas que vou fazer.
+2. Escreva o meu pedido em uma frase objetiva, sem rodeio e sem pedir desculpas.
+3. Antecipe as 3 objeções mais prováveis da liderança e sugira respostas apoiadas em evidências do diário.
+4. Sugira 3 perguntas que mostrem visão de futuro, como "o que você precisa ver de mim para o próximo nível?".</div></div>
+
+  <div class="prompt"><div class="bar"><div class="dots"><i></i><i></i><i></i></div><span>Comando 2 · O ensaio</span></div>
+<div class="body">Agora faça o papel da minha liderança nessa conversa. Seja realista e um pouco exigente, como alguém com orçamento apertado e outras prioridades. Faça uma pergunta ou objeção por vez e espere a minha resposta.
+
+Depois de 5 trocas, saia do personagem e me dê um feedback: o que foi convincente, o que ficou vago, onde faltou evidência e como eu poderia dizer melhor.</div></div>
+
+  <p class="eyebrow" style="margin-top:6px">Como fazer em cada plataforma</p>
+  <div class="plat">
+    <div><h3>Claude</h3>Abra uma conversa no projeto e use o comando 1. Para o ensaio, use o <b>modo de voz</b>: falar em voz alta revela onde você hesita.</div>
+    <div><h3>ChatGPT</h3>Abra uma conversa no projeto e use o comando 1. Faça o ensaio no <b>modo de voz</b> e peça o roteiro final no <b>Canvas</b> para ajustar.</div>
+    <div><h3>Gemini</h3>Abra uma conversa no notebook e use o comando 1. Para o ensaio, use o <b>Gemini Live</b>, ou o chat por texto se o Live não abrir no notebook.</div>
+  </div>
+  <div class="note"><strong>Depois da conversa:</strong> conte à IA como foi e registre os combinados, prazos e próximos passos. Isso vira o ponto de partida do próximo ciclo.</div>
+  <div class="foot"><span>Kit Diário de Conquistas com IA</span><span>10</span></div>
+</section>
+
+<!-- 11 CUIDADO -->
+<section class="page">
+  <span class="tag">Cuidado</span>
+  <h1>Não cole <em>informação confidencial.</em></h1>
+  <p class="lead">A IA é uma ferramenta poderosa, e por isso pede critério. Estas regras protegem você e a sua empresa.</p>
+  <ul class="dot">
+    <li><strong>Use a ferramenta de IA que a sua empresa autoriza.</strong> Na dúvida, pergunte ao time de TI ou de segurança. Muitas empresas têm versões corporativas com regras próprias.</li>
+    <li><strong>Registre o seu papel, não os segredos do negócio.</strong> "Reduzi o prazo de entrega em 40%" funciona sem o nome do cliente nem o valor do contrato.</li>
+    <li><strong>Troque por descrições genéricas</strong> nomes de clientes, projetos sigilosos, dados pessoais de colegas e números estratégicos.</li>
+    <li><strong>Confira as configurações de privacidade</strong> da sua conta: memória, histórico e uso das conversas para treinar modelos. Cada plataforma permite revisar isso.</li>
+    <li><strong>Confira tudo o que a IA escreve antes de usar.</strong> Ela organiza; quem responde pelo conteúdo é você.</li>
+  </ul>
+
+  <p class="eyebrow" style="margin-top:16px">Antes e depois: como generalizar</p>
+  <table>
+    <tr><th>Evite</th><th>Prefira</th></tr>
+    <tr><td style="font-weight:400;color:var(--text);width:50%">"Fechei o contrato de R$ 2,3 milhões com a Empresa X"</td><td>"Fechei o maior contrato do trimestre da minha carteira"</td></tr>
+    <tr><td style="font-weight:400;color:var(--text)">"Resolvi a falha no sistema de pagamentos do Projeto Aurora"</td><td>"Resolvi uma falha crítica em um sistema de pagamentos"</td></tr>
+    <tr><td style="font-weight:400;color:var(--text)">"Dei feedback ao Fulano sobre o desempenho dele"</td><td>"Conduzi uma conversa de desenvolvimento com uma pessoa do time"</td></tr>
+  </table>
+
+  <div class="box-soft" style="margin-top:16px"><strong>Regra de bolso:</strong> se você não colaria aquela frase em uma apresentação para outra empresa, não cole na IA.</div>
+  <div class="foot"><span>Kit Diário de Conquistas com IA</span><span>11</span></div>
+</section>
+
+<!-- 12 ROTINA + FECHO -->
+<section class="page">
+  <span class="tag">A sua rotina</span>
+  <h1>10 minutos por semana. <em>O ano inteiro na mão.</em></h1>
+
+  <p class="eyebrow">Hoje (20 minutos)</p>
+  <ul class="check rotina">
+    <li><b>Crie o documento-mestre</b> "Diário de conquistas 2026" (pág. 3).</li>
+    <li><b>Crie o projeto</b> "Minhas conquistas" e cole as instruções (ferramenta 1).</li>
+    <li><b>Agende a pergunta</b> de sexta, 17h, ou o lembrete do plano B (ferramenta 2).</li>
+    <li><b>Registre uma entrega recente</b> para testar o formato.</li>
+  </ul>
+  <p class="eyebrow">Toda sexta (10 minutos)</p>
+  <ul class="check rotina">
+    <li><b>Responda à pergunta</b> do agente ou grave o áudio de 2 minutos (ferramenta 3).</li>
+    <li><b>Copie os registros prontos</b> para o documento-mestre.</li>
+  </ul>
+  <p class="eyebrow">Uma vez por mês (15 minutos)</p>
+  <ul class="check rotina">
+    <li><b>Peça o resumo do mês</b> e busque as evidências que faltaram (pág. 7).</li>
+    <li><b>Atualize o documento-mestre</b> dentro do projeto.</li>
+  </ul>
+  <p class="eyebrow">Na avaliação</p>
+  <ul class="check rotina">
+    <li><b>Use a skill</b> dos 5 resultados e da autoavaliação (ferramenta 4).</li>
+    <li><b>Monte o roteiro e ensaie</b> a conversa com a liderança (ferramenta 5).</li>
+  </ul>
+
+  <div class="box-dark" style="margin-top:18px;display:flex;align-items:center;gap:20px">
+    <div style="flex:1">
+      <h2 style="font-size:19pt">Quem registra, <em>lembra.</em> Quem lembra, <em>argumenta.</em></h2>
+      <p style="margin:6px 0 0">Mais conteúdo sobre desenvolvimento de carreira no Instagram @intentia.hub e em intentiahub.com.</p>
+    </div>
+    <img src="logo.png" alt="Intentia" style="height:12mm">
+  </div>
+  <div class="foot"><span>Kit Diário de Conquistas com IA</span><span>12</span></div>
+</section>
+
+</body>
+</html>
